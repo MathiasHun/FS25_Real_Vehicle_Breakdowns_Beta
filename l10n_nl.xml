@@ -7,7 +7,7 @@
 		<e k="input_RVB_CONNECTING_JC" v="Startkabels aankoppelen"/>
 		<e k="action_RVB_DISCONNECTING_JC" v="Startkabels afkoppelen"/>
 		<e k="RVB_dialog_titleCONNECTING_JC" v="Startkabels aankoppelen"/>
-		<e k="RVB_dialog_descCONNECTING_JC" v="Het is niet nodig om het %s voertuig te starten. Weet u zeker dat u wilt doorgaan met het aansluiten van de startkabels? tag="format"/>
+		<e k="RVB_dialog_descCONNECTING_JC" v="Het is niet nodig om het %s voertuig te starten. Weet u zeker dat u wilt doorgaan met het aansluiten van de startkabels?" tag="format"/>
 		<e k="RVB_errorCONNECTING_JC" v="Slechts één voertuig heeft startkabels aangesloten."/>
 		<e k="RVB_addextra_progress" v="Starthulp is bezig. (%s %%)" tag="format"/>
 		<e k="RVB_addextra_connecting" v="Startkabels aangesloten"/>
