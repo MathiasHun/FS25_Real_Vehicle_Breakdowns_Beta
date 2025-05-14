@@ -172,6 +172,8 @@
 		<e k="electricChargeTurbine" v="Elektrische windturbinelader"/>
 		<e k="function_powerpack" v="Gebruik dit om uw elektrische voertuigen op te laden en elektrische energie naar afgelegen locaties te transporteren."/>
 
+		<e k="rvb_info_chargeTime" v="Tijd tot volledig opgeladen: %{hours}02d:%{minutes}02d:%{seconds}02d uur (%{percentage}d%%)" tag="format" />
+
 		<e k="Automatic_Repair_conflict_notice" v="Er zijn aanpassingen die het voertuig automatisch repareren, maar u kunt de optie &quot;Real Vehicle Breakdowns(RVB)&quot; u gebruikt ook een wijziging, dus deze kan conflicteren met andere wijzigingen. Bij de wijziging(en) in onderstaande lijst is het noodzakelijk om de automatische reparatie te overschrijven, deze overschrijving is al gedaan door de RVB wijziging."/>
 		<e k="Automatic_Repair_conflict_list" v="&#13;&#10;Overschreven wijziging(en): "/>
 		<e k="Automatic_Repair_conflict_signature" v="&#13;&#10;Bedankt voor uw begrip.&#13;&#10;&#13;&#10;Al het beste,&#13;&#10;MathiasHun"/>
