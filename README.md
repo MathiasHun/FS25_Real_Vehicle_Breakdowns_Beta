@@ -25,6 +25,7 @@
 - github issues#47
 - github issues#45
 - github issues#51 NL translation update - thanks by NozemOil1982
+- github issues#31
 - github issues#4
 - Italian translation added - thanks by caymann lo re
 
