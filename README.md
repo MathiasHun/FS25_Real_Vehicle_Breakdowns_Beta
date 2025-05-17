@@ -12,6 +12,9 @@
 
 <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=7">Download the latest developer TEST version</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
 
+## Changelog 0.9.2.3:
+- Fix for repeated jump-start cable warning message on the server.
+
 ## Changelog 0.9.2.2:
 - github issues#58
 - github issues#55
