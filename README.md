@@ -10,6 +10,42 @@
 </div>
 </br>
 
+## ⚠️Warning – Developer (Beta) Version!
+
+This mod is under development, which means bugs, unexpected behavior, unfinished features, and occasional surprises may occur.
+I take no responsibility for corrupted savegames, missing vehicles, or heartbroken farmers.
+
+## 🐞Reporting Issues
+
+If you run into problems, please help improve the mod by following these steps:
+
+1. State your Farming Simulator 25 game version (e.g., FS25: 1.8.0.1).
+
+2. Include the mod version number you are using (e.g., RVB: v0.9.2.3).
+
+3. Restart your savegame, and only enable this mod (and any other absolutely essential mods) when reproducing the issue.
+
+4. Upload your log.txt file to:
+
+   - <a href="https://pastebin.com/">PasteBin</a>
+
+5. Describe the issue in detail:
+
+   - Which vehicle or tool was involved?
+
+   - What were you trying to do?
+
+   - What did you expect to happen, and what actually happened?
+
+## 📌Important Notes:
+
+A well-documented bug report helps me find and fix issues faster.
+
+This is not a stable release, but meant for testing and feedback collection.
+
+Thanks for helping improve the mod!🚜
+
+</br></br>
 <!--<p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=7">Download the latest developer TEST version</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>-->
 
 <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=5">Download the latest developer version</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
