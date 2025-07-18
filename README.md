@@ -49,7 +49,7 @@ Thanks for helping improve the mod!🚜
 
 ## Changelog 0.9.2.7:
 - github issues#75
-- 
+
 ## Changelog 0.9.2.6:
 - Missing value (21) added to WorkshopClose array
 - Fixed missing translation during jump-start/charging
