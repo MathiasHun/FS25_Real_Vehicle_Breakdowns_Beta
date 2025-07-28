@@ -3,16 +3,18 @@
 	<translationContributors>SniperKittenCZ</translationContributors>
 	<elements>
 		<e k="input_VEHICLE_BREAKDOWN_MENU" v="Skutečné poruchy vozidel(RVB)"/>
+		<e k="input_RVB_SPEC" v="RVB zap/vyp"/>
 		<e k="input_RVB_CONNECTING_JC" v="Připojení startovacích kabelů"/>
 		<e k="action_RVB_DISCONNECTING_JC" v="Odpojení startovacích kabelů"/>
 		<e k="RVB_dialog_titleCONNECTING_JC" v="Připojení propojovacích kabelů"/>
 		<e k="RVB_dialog_descCONNECTING_JC" v="Vozidlo %s není třeba startovat. Jste si jisti, že chcete pokračovat v připojování startovacích kabelů?" tag="format"/>
 		<e k="RVB_errorCONNECTING_JC" v="Pouze jedno vozidlo má připojené startovací kabely."/>
 		<e k="RVB_addextra_progress" v="Probíhá startování. (%s %%)" tag="format"/>
+		<e k="RVB_addextra_charging" v="Nabíjení %s A" tag="format"/>
 		<e k="RVB_addextra_connecting" v="Startovací kabely připojeny"/>
 		<e k="RVB_blinking_connecting_toofar" v="Nenatahujte propojovací kabel dále, jinak se brzy odpojí od baterie! (%s m)" tag="format"/>
 		<e k="RVB_blinking_connecting_drive" v="Neodjíždějte, startovací kabely jsou stále připojené! (%s m)" tag="format"/>
-		<e k="RVB_blinking_connecting_length" v="Jumper cable length: %s m / 6 m" tag="format"/>
+		<e k="RVB_blinking_connecting_length" v="Jumper cable length: %s m / %s m" tag="format"/>
 		<e k="RVB_blinking_connecting_cableBroken" v="Startovací kabely byly připojeny. Poškodily se, takže ujste museli koupit nové za %s." tag="format"/>
 		<e k="RVB_blinking_connecting" v="%s: Startovací kabely připojeny." tag="format"/>
 		<e k="RVB_blinking_connecting_order" v="Nejprve připojte funkční vozidlo ke startovacím kabelům!"/>
@@ -171,12 +173,19 @@
 
 		<e k="electricChargeTurbine" v="Větrná turbína s nabíječkou"/>
 		<e k="function_powerpack" v="Slouží k nabíjení elektrických vozidel a k přepravě elektrické energie do vzdálených míst."/>
-		
-		<e k="rvb_info_chargeTime" v="Doba do úplného nabití: %{hours}02d:%{minutes}02d:%{seconds}02d hodin (%{percentage}d%%)" tag="format" />
 
-		<e k="Automatic_Repair_conflict_notice" v="Určité úpravy automaticky opravují vozidlo, ale protože používáte modifikaci &quot;Skutečné poruchy vozidel (RVB)&quot;, může být v rozporu s jinými mody. Následující mod(y) v seznamu vyžadují přepsání automatické opravy, kterou již RVB provedl na pozadí."/>
-		<e k="Automatic_Repair_conflict_list" v="&#13;&#10;Přepsaný mod: "/>
-		<e k="Automatic_Repair_conflict_signature" v="&#13;&#10;Děkujeme za pochopení.&#13;&#10;&#13;&#10;S pozdravem,&#13;&#10;MathiasHun"/>
+		<e k="rvb_info_chargeTime" v="Doba do úplného nabití:
+%{hours}02d:%{minutes}02d:%{seconds}02d (%{percentage}d%%)" tag="format"/>
+
+		<e k="Automatic_Repair_conflict_notice" v="Určité úpravy automaticky opravují vozidlo, ale protože používáte modifikaci &quot;Skutečné poruchy vozidel(RVB)&quot;, může být v rozporu s jinými mody. Následující mod(y) v seznamu vyžadují přepsání automatické opravy, kterou již RVB provedl na pozadí.
+
+Přepsaný mod: %s
+
+Děkujeme za pochopení.
+
+S pozdravem,
+
+MathiasHun" tag="format"/>
 
 		<e k="RVB_aimessage_batterydischarged" v="%s Pomocník AI neočekávaně přestal pracovat; baterie vozidla se vybila!"/>
 	</elements>

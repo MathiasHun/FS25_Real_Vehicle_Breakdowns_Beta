@@ -3,16 +3,18 @@
 	<translationContributors>LSMT-elMatado</translationContributors>
 	<elements>
 		<e k="input_VEHICLE_BREAKDOWN_MENU" v="Echte Fahrzeugpannen(RVB)"/>
+		<e k="input_RVB_SPEC" v="RVB on/off"/>
 		<e k="input_RVB_CONNECTING_JC" v="Connecting jumper cables"/>
 		<e k="action_RVB_DISCONNECTING_JC" v="Disconnecting jumper cables"/>
 		<e k="RVB_dialog_titleCONNECTING_JC" v="Connecting jumper cables"/>
 		<e k="RVB_dialog_descCONNECTING_JC" v="There is no need to jump-start the %s vehicle. Are you sure you want to continue connecting the jumper cables?" tag="format"/>
 		<e k="RVB_errorCONNECTING_JC" v="Only one vehicle has jumper cables connected."/>
 		<e k="RVB_addextra_progress" v="Jump-starting in progress. (%s %%)" tag="format"/>
+		<e k="RVB_addextra_charging" v="Laden %s A" tag="format"/>
 		<e k="RVB_addextra_connecting" v="Jumper cables connected"/>
 		<e k="RVB_blinking_connecting_toofar" v="Don't stretch the jumper cable any further, or it will soon detach from the battery! (%s m)" tag="format"/>
 		<e k="RVB_blinking_connecting_drive" v="Don't drive away, the jumper cables are still connected! (%s m)" tag="format"/>
-		<e k="RVB_blinking_connecting_length" v="Jumper cable length: %s m / 6 m" tag="format"/>
+		<e k="RVB_blinking_connecting_length" v="Jumper cable length: %s m / %s m" tag="format"/>
 		<e k="RVB_blinking_connecting_cableBroken" v="The jumper cables were connected. They got damaged, so you had to buy new ones for %s." tag="format"/>		
 		<e k="RVB_blinking_connecting" v="%s: Jumper cables connected." tag="format"/>
 		<e k="RVB_blinking_connecting_order" v="First, connect the working vehicle to the jumper cables!"/>
@@ -171,12 +173,21 @@
 
 		<e k="electricChargeTurbine" v="Electric Wind Turbine Charger"/>
 		<e k="function_powerpack" v="Use this to charge your electric vehicles and transport electric power to remote locations."/>
-		
-		<e k="rvb_info_chargeTime" v="Restladezeit: %{hours}02d:%{minutes}02d:%{seconds}02d Stunden (%{percentage}d%%)" tag="format" />
 
-		<e k="Automatic_Repair_conflict_notice" v="Es gibt Modifikationen, die das Fahrzeug automatisch reparieren, aber Sie können die &quot;Real Vehicle Breakdowns(RVB)&quot; verwenden. Sie verwenden auch eine Modifikation, daher kann es zu Konflikten mit anderen Modifikationen kommen. Bei den Modifikationen in der folgenden Liste ist es notwendig, die automatische Reparatur zu überschreiben. Diese Überschreibung wurde bereits durch die RVB-Modifikation durchgeführt.."/>
-		<e k="Automatic_Repair_conflict_list" v="&#13;&#10;Überschriebene modifizierung(en): "/>
-		<e k="Automatic_Repair_conflict_signature" v="&#13;&#10;Danke für Ihr Verständnisg.&#13;&#10;&#13;&#10;Alles Gute,&#13;&#10;MathiasHun"/>
+		<e k="rvb_info_chargeTime" v="Restladezeit:
+%{hours}02d:%{minutes}02d:%{seconds}02d (%{percentage}d%%)" tag="format"/>
+
+		<e k="Automatic_Repair_conflict_notice" v="Es gibt Modifikationen, die das Fahrzeug automatisch reparieren, daher kann der Modus &quot;Reale Fahrzeugschäden (RVB)&quot; mit ihnen in Konflikt stehen.
+
+Bei den folgenden Modifikationen wurde die automatische Reparatur vom RVB-Mod überschrieben.
+
+Überschriebene modifizierung(en): %s
+
+Danke für Ihr Verständnisg.
+
+Alles Gute,
+
+MathiasHun" tag="format"/>
 
 		<e k="RVB_aimessage_batterydischarged" v="%s KI-Arbeiter hat unerwartet die Arbeit eingestellt, die Fahrzeugbatterie ist entladen!"/>
 	</elements>

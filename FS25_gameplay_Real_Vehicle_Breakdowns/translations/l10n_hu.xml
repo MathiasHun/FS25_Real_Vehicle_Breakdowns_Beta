@@ -2,16 +2,18 @@
 <l10n>
 	<elements>
 		<e k="input_VEHICLE_BREAKDOWN_MENU" v="Valódi jármű meghibásodások(RVB)"/>
+		<e k="input_RVB_SPEC" v="RVB be/ki"/>
 		<e k="input_RVB_CONNECTING_JC" v="Indítókábel csatlakoztatása"/>
 		<e k="action_RVB_DISCONNECTING_JC" v="Indítókábel leválasztása"/>
 		<e k="RVB_dialog_titleCONNECTING_JC" v="Indítókábel csatlakoztatása"/>
 		<e k="RVB_dialog_descCONNECTING_JC" v="Nem szükséges a %s jármű bikázása. Biztos, hogy szeretnéd folytatni az indítókábel csatlakoztatását?" tag="format"/>
 		<e k="RVB_errorCONNECTING_JC" v="Csak egy járműre van csatlakoztatva indítókábel."/>
 		<e k="RVB_addextra_progress" v="Bikázása folyamatban van. (%s %%)" tag="format"/>
+		<e k="RVB_addextra_charging" v="Töltés %s A" tag="format"/>
 		<e k="RVB_addextra_connecting" v="Indítókábel csatlakoztatva"/>
 		<e k="RVB_blinking_connecting_toofar" v="Ne húzd tovább az indítókábelt, mert hamarosan leszakad az akkumulátorról! (%s m)" tag="format"/>
 		<e k="RVB_blinking_connecting_drive" v="Ne indulj el, az indítókábelek csatlakoztatva vannak! (%s m)" tag="format"/>
-		<e k="RVB_blinking_connecting_length" v="Indítókábel hossza: %s m / 6 m" tag="format"/>
+		<e k="RVB_blinking_connecting_length" v="Indítókábel hossza: %s m / %s m" tag="format"/>
 		<e k="RVB_blinking_connecting_cableBroken" v="Az indítókábelek csatlakoztatva voltak. Megsérültek, ezért újakat kellett venned, ára %s." tag="format"/>
 		<e k="RVB_blinking_connecting" v="%s: Indítókábel csatlakoztatva." tag="format"/>
 		<e k="RVB_blinking_connecting_order" v="Először a működő járművet csatlakoztassa az indítókábelhez!"/>
@@ -171,12 +173,20 @@
 		<e k="electricChargeTurbine" v="Elektromos szélturbina töltő"/>
 		<e k="function_powerpack" v="Használja ezt elektromos járművei feltöltésére és az elektromos töltés távoli helyekre való szállítására."/>
 		
-		<e k="rvb_info_chargeTime" v="Teljes feltöltésig hátralévő idő: %{hours}02d:%{minutes}02d:%{seconds}02d óra (%{percentage}d%%)" tag="format" />
+		<e k="rvb_info_chargeTime" v="Teljes feltöltésig hátralévő idő:
+%{hours}02d:%{minutes}02d:%{seconds}02d (%{percentage}d%%)" tag="format"/>
+		
+		<e k="Automatic_Repair_conflict_notice" v="Vannak módosítások, amelyek automatikusan javítják a járművet, ezért a &quot;Valódi jármű meghibásodások(RVB)&quot; mód ütközhet velük.
 
-		<e k="Automatic_Repair_conflict_notice" v="Vannak módosítások, amelyek automatikusan javítják a járművet, ezért a &quot;Valódi jármű meghibásodások(RVB)&quot; mód ütközhet velük."/>
-		<e k="Automatic_Repair_conflict_notice_b" v="Az alábbi listában szereplő módosítás(ok) esetében az automatikus javítást az RVB mod felülírta."/>
-		<e k="Automatic_Repair_conflict_list" v="&#13;&#10;Felülírt módosítás(ok): "/>
-		<e k="Automatic_Repair_conflict_signature" v="&#13;&#10;Megértésedet köszönöm.&#13;&#10;&#13;&#10;Minden jót,&#13;&#10;MathiasHun"/>
+Az alábbi listában szereplő módosítás(ok) esetében az automatikus javítást az RVB mod felülírta.
+
+Felülírt módosítás(ok): %s
+
+Megértésedet köszönöm.
+
+Minden jót,
+
+MathiasHun" tag="format"/>
 
 		<e k="RVB_aimessage_batterydischarged" v="%s gépi segítő váratlanul abbahagyta a munkát, a jármű akkumulátora lemerült!"/>
 	</elements>
