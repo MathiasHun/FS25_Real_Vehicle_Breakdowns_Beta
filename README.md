@@ -67,6 +67,9 @@ Thanks for helping improve the mod!🚜
 </br></br></br>-->
 ### <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=5">Download the latest developer version</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
 
+## Changelog 0.9.2.9:
+- Fixed an issue that prevented saved games from loading after updating to version v0.9.2.8
+
 ## Changelog 0.9.2.8:
 - github issues#79
 - github issues#78
