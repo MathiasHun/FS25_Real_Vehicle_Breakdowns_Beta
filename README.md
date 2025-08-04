@@ -7,6 +7,18 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_play_button_icon_%282013%E2%80%932017%29.svg" 
          style="width: 100px; height: auto; margin-left: 5px;">
   </a>
+</div></br>
+<div style="display: inline-flex; align-items: center;">FS25 Real Vehicle Breakdowns with mod</br>
+  <a href="https://www.youtube.com/watch?v=JYzBIWSU2MU" target="_blank" style="display: inline-block;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_play_button_icon_%282013%E2%80%932017%29.svg" 
+         style="width: 100px; height: auto; margin-left: 5px;">
+  </a>
+</div></br>
+<div style="display: inline-flex; align-items: center;">FS25 Real Vehicle Breakdowns without mod</br>
+  <a href="https://www.youtube.com/watch?v=HD5Ac-c1v6E" target="_blank" style="display: inline-block;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_play_button_icon_%282013%E2%80%932017%29.svg" 
+         style="width: 100px; height: auto; margin-left: 5px;">
+  </a>
 </div>
 </br>
 
