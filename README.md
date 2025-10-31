@@ -57,26 +57,12 @@ This is not a stable release, but meant for testing and feedback collection.
 
 Thanks for helping improve the mod!🚜
 </br></br>
-<!--## <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=7">Download the latest developer TEST version</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
+## <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=7">Download the latest developer TEST version</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
 
-## Changelog 0.9.2.7:
-- github issues#75
+## Changelog 0.9.5.0:
+- Available on the download page.
 
-## Changelog 0.9.2.6:
-- Missing value (21) added to WorkshopClose array
-- Fixed missing translation during jump-start/charging
-- Jumper cable length increased to 10 m
-- Now warns and breaks the jumper cable if either vehicle starts.
-
-## Changelog 0.9.2.5:
-- github issues#74
-- github issues#68
-- github issues#66
-- github issues#63
-- Fixed <part/> issues in vehicles.xml
-- RVB on/off - 20 %
-
-</br></br></br>-->
+</br></br></br>
 ### <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=5">Download the latest developer version</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
 
 ## Changelog 0.9.2.9:
