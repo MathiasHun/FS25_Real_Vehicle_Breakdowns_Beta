@@ -1,183 +1,206 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <l10n>
-	<translationContributors>nagor</translationContributors>
-	<elements>
-		<e k="input_VEHICLE_BREAKDOWN_MENU" v="Real Vehicle Breakdowns(RVB)"/>
-		<e k="input_RVB_SPEC" v="RVB on/off"/>
-		<e k="input_RVB_CONNECTING_JC" v="Connecting jumper cables"/>
-		<e k="action_RVB_DISCONNECTING_JC" v="Disconnecting jumper cables"/>
-		<e k="RVB_dialog_titleCONNECTING_JC" v="Connecting jumper cables"/>
-		<e k="RVB_dialog_descCONNECTING_JC" v="There is no need to jump-start the %s vehicle. Are you sure you want to continue connecting the jumper cables?" tag="format"/>
-		<e k="RVB_errorCONNECTING_JC" v="Only one vehicle has jumper cables connected."/>
-		<e k="RVB_addextra_progress" v="Jump-starting in progress. (%s %%)" tag="format"/>
-		<e k="RVB_addextra_charging" v="Зарядка %s A" tag="format"/>
-		<e k="RVB_addextra_connecting" v="Jumper cables connected"/>
-		<e k="RVB_blinking_connecting_toofar" v="Don't stretch the jumper cable any further, or it will soon detach from the battery! (%s m)" tag="format"/>
-		<e k="RVB_blinking_connecting_drive" v="Don't drive away, the jumper cables are still connected! (%s m)" tag="format"/>
-		<e k="RVB_blinking_connecting_length" v="Jumper cable length: %s m / %s m" tag="format"/>
-		<e k="RVB_blinking_connecting_cableBroken" v="The jumper cables were connected. They got damaged, so you had to buy new ones for %s." tag="format"/>
-		<e k="RVB_blinking_connecting" v="%s: Jumper cables connected." tag="format"/>
-		<e k="RVB_blinking_connecting_order" v="First, connect the working vehicle to the jumper cables!"/>
-		<e k="RVB_blinking_disconnecting" v="%s: Jumper cables disconnected." tag="format"/>
-		<e k="RVB_blinking_disconnecting_order" v="First, disconnect the dead vehicle from the jumper cables!"/>
-		<e k="RVB_blinking_no_morejumpercables" v="You have no more jumper cables. Remove them from the last connected vehicles!"/>
-		<e k="input_RVB_JUMPSTARTOFF" v="Jump-starting off"/>
-		<e k="action_RVB_JUMPSTARTON" v="Jump-starting on"/>
-		<e k="ui_RVB_reset_msg" v="Вы уверены?"/>
-		<e k="RVB_MenuGameSettingsGame" v="Настройки игры"/>
-		<e k="RVB_settingSectionHeader_Service" v="Услуга"/>
-		<e k="RVB_setting_dailyServiceInterval" v="Ежедневное ТО"/>
-		<e k="RVB_toolTip_dailyServiceInterval" v="Как часто следует проводить ежедневное техническое обслуживание (ТО). В настоящее время эта функция неактивна."/>
-		<e k="RVB_setting_periodicServiceInterval" v="Периодическое ТО"/>
-		<e k="RVB_toolTip_periodicServiceInterval" v="Интервал техобслуживания."/>
-		<e k="RVB_settingSectionHeader_Workshop" v="Автомастерская"/>
-		<e k="RVB_setting_workshopOpen" v="Открывается в"/>
-		<e k="RVB_toolTip_workshopOpen" v="В это время СТО открывается"/>
-		<e k="RVB_setting_workshopClose" v="Закрывается в"/>
-		<e k="RVB_toolTip_workshopClose" v="В это время СТО закрывается"/>
-		<e k="RVB_settingSectionHeader_LifetimeofParts" v="Срок службы частей ТС"/>
-		<e k="RVB_toolTip_lifetimeParts" v="Чем меньше это значение, тем раньше произойдёт сбой."/>
-		<e k="RVB_setting_thermostatLifetime" v="Термостат"/>
-		<e k="RVB_setting_lightingsLifetime" v="Осветительные приборы"/>
-		<e k="RVB_setting_glowplugLifetime" v="Свеча накаливания"/>
-		<e k="RVB_setting_wipersLifetime" v="Стеклоочистители"/>
-		<e k="RVB_setting_generatorLifetime" v="Генератор"/>
-		<e k="RVB_setting_engineLifetime" v="Двигатель"/>
-		<e k="RVB_setting_selfstarterLifetime" v="Стартер"/>
-		<e k="RVB_setting_batteryLifetime" v="Аккумулятор"/>
-		<e k="RVB_setting_tireLifetime" v="Шины/Гусеницы"/>
-		<e k="RVB_utils_hour" v="%s час." tag="format"/>
+    <translationContributors>nagor</translationContributors>
+    <elements>
+        <e k="input_VEHICLE_BREAKDOWN_MENU" v="Real Vehicle Breakdowns(RVB)"/>
+        <e k="input_RVB_SPEC" v="RVB on/off"/>
+        <e k="input_RVB_CONNECTING_JC" v="Connecting jumper cables"/>
+        <e k="action_RVB_DISCONNECTING_JC" v="Disconnecting jumper cables"/>
+        <e k="RVB_dialog_titleCONNECTING_JC" v="Connecting jumper cables"/>
+        <e k="RVB_dialog_descCONNECTING_JC" v="There is no need to jump-start the %s vehicle. Are you sure you want to continue connecting the jumper cables?" tag="format"/>
+        <e k="RVB_errorCONNECTING_JC" v="Only one vehicle has jumper cables connected."/>
+        <e k="RVB_addextra_progress" v="Jump-starting in progress. (%s %%)" tag="format"/>
+        <e k="RVB_addextra_charging" v="Зарядка %s A" tag="format"/>
+        <e k="RVB_addextra_connecting" v="Jumper cables connected"/>
+        <e k="RVB_blinking_connecting_toofar" v="Don't stretch the jumper cable any further, or it will soon detach from the battery! (%s m)" tag="format"/>
+        <e k="RVB_blinking_connecting_drive" v="Don't drive away, the jumper cables are still connected! (%s m)" tag="format"/>
+        <e k="RVB_blinking_connecting_length" v="Jumper cable length: %s m / %s m" tag="format"/>
+        <e k="RVB_blinking_connecting_cableBroken" v="The jumper cables were connected. They got damaged, so you had to buy new ones for %s." tag="format"/>
+        <e k="RVB_blinking_connecting" v="%s: Jumper cables connected." tag="format"/>
+        <e k="RVB_blinking_connecting_order" v="First, connect the working vehicle to the jumper cables!"/>
+        <e k="RVB_blinking_disconnecting" v="%s: Jumper cables disconnected." tag="format"/>
+        <e k="RVB_blinking_disconnecting_order" v="First, disconnect the dead vehicle from the jumper cables!"/>
+        <e k="RVB_blinking_no_morejumpercables" v="You have no more jumper cables. Remove them from the last connected vehicles!"/>
+        <e k="input_RVB_JUMPSTARTOFF" v="Jump-starting off"/>
+        <e k="action_RVB_JUMPSTARTON" v="Jump-starting on"/>
+        <e k="ui_RVB_reset_msg" v="Вы уверены?"/>
+        <e k="RVB_MenuGameSettingsGame" v="Настройки игры"/>
+        <e k="RVB_settingSectionHeader_Service" v="Услуга"/>
+        <e k="RVB_setting_dailyServiceInterval" v="Ежедневное ТО"/>
+        <e k="RVB_toolTip_dailyServiceInterval" v="Как часто следует проводить ежедневное техническое обслуживание (ТО). В настоящее время эта функция неактивна."/>
+        <e k="RVB_setting_periodicServiceInterval" v="Периодическое ТО"/>
+        <e k="RVB_toolTip_periodicServiceInterval" v="Интервал техобслуживания."/>
+        <e k="RVB_settingSectionHeader_Workshop" v="Автомастерская"/>
+        <e k="RVB_setting_workshopOpen" v="Открывается в"/>
+        <e k="RVB_toolTip_workshopOpen" v="В это время СТО открывается"/>
+        <e k="RVB_setting_workshopClose" v="Закрывается в"/>
+        <e k="RVB_toolTip_workshopClose" v="В это время СТО закрывается"/>
+        <e k="RVB_setting_workshopCountMax" v="Maximum vehicles in workshop"/>
+        <e k="RVB_toolTip_workshopCountMax" v="Here you can set how many vehicles can be handled by the mechanic at once."/>
+        <e k="RVB_settingSectionHeader_LifetimeofParts" v="Срок службы частей ТС"/>
+        <e k="RVB_toolTip_lifetimeParts" v="Чем меньше это значение, тем раньше произойдёт сбой."/>
+        <e k="RVB_setting_thermostatLifetime" v="Термостат"/>
+        <e k="RVB_setting_lightingsLifetime" v="Осветительные приборы"/>
+        <e k="RVB_setting_glowplugLifetime" v="Свеча накаливания"/>
+        <e k="RVB_setting_wipersLifetime" v="Стеклоочистители"/>
+        <e k="RVB_setting_generatorLifetime" v="Генератор"/>
+        <e k="RVB_setting_engineLifetime" v="Двигатель"/>
+        <e k="RVB_setting_selfstarterLifetime" v="Стартер"/>
+        <e k="RVB_setting_batteryLifetime" v="Аккумулятор"/>
+        <e k="RVB_setting_tireLifetime" v="Шины/Гусеницы"/>
+        <e k="RVB_utils_hour" v="%s час." tag="format"/>
+        <e k="RVB_utils_maxcount" v="%s pcs" tag="format"/>
 
-		<e k="RVB_MenuGameSettingsGeneral" v="Общие настройки"/>
-		<e k="RVB_setting_alertDialog" v="Предупреждающие сообщения"/>
-		<e k="RVB_toolTip_alertDialog" v="Если ваше ТС повреждено, прошло техобслуживание или ремонт, в центре экрана появится сообщение, если вы находитесь в ТС."/>
-		<e k="RVB_setting_rvbDifficulty" v="Поломка ТС"/>
-		<e k="RVB_toolTip_rvbDifficulty" v="ТС находится в ремонте, но уже готово к использованию."/>
-		<e k="RVB_difficulty_slow" v="Серьёзная"/>
-		<e k="RVB_difficulty_medium" v="Средняя"/>
-		<e k="RVB_difficulty_fast" v="Небольшая"/>
-		<e k="RVB_setting_rvbDebug" v="Отладка RVB"/>
-		<e k="RVB_toolTip_rvbDebug" v="Показывает время работы деталей ТС. Рекомендуется использовать это во время тестирования."/>
-		<e k="RVB_settingSectionHeader_HUD" v="Настройки HUD"/>
-		<e k="RVB_setting_showTemp" v="Температура двигателя"/>
-		<e k="RVB_toolTip_showTemp" v="Здесь вы можете включить или выключить отображение температуры двигателя."/>
-		<e k="RVB_setting_showRpm" v="RPM"/>
-		<e k="RVB_toolTip_showRpm" v="Здесь вы можете включить или выключить отображение Rpm."/>
-		<e k="RVB_setting_showFuel" v="Топливо"/>
-		<e k="RVB_toolTip_showFuel" v="Здесь вы можете включить или выключить отображение топлива."/>
+        <e k="RVB_MenuGameSettingsGeneral" v="Общие настройки"/>
+        <e k="RVB_setting_alertDialog" v="Предупреждающие сообщения"/>
+        <e k="RVB_toolTip_alertDialog" v="Если ваше ТС повреждено, прошло техобслуживание или ремонт, в центре экрана появится сообщение, если вы находитесь в ТС."/>
+        <e k="RVB_setting_rvbDifficulty" v="Поломка ТС"/>
+        <e k="RVB_toolTip_rvbDifficulty" v="ТС находится в ремонте, но уже готово к использованию."/>
+        <e k="RVB_difficulty_slow" v="Серьёзная"/>
+        <e k="RVB_difficulty_medium" v="Средняя"/>
+        <e k="RVB_difficulty_fast" v="Небольшая"/>
+        <e k="RVB_setting_vehicleHud" v="Vehicle Parts HUD"/>
+        <e k="RVB_toolTip_vehicleHud" v="Displays the operating hours of the vehicle's parts (can improve performance when turned off). Recommended for testing."/>
+        <e k="RVB_settingSectionHeader_HUD" v="Настройки HUD"/>
+        <e k="RVB_setting_showTemp" v="Температура двигателя"/>
+        <e k="RVB_toolTip_showTemp" v="Здесь вы можете включить или выключить отображение температуры двигателя."/>
+        <e k="RVB_setting_showRpm" v="RPM"/>
+        <e k="RVB_toolTip_showRpm" v="Здесь вы можете включить или выключить отображение Rpm."/>
+        <e k="RVB_setting_showFuel" v="Топливо"/>
+        <e k="RVB_toolTip_showFuel" v="Здесь вы можете включить или выключить отображение топлива."/>
 
-		<e k="RVB_WorkShopClose" v="СТО закрыта, приходите в %s часов." tag="format"/>
-		<e k="RVB_button_inspection" v="Техосмотр"/>
-		<e k="RVB_button_dailyservice" v="Ежедневное ТО"/>
-		<e k="RVB_button_periodicservice" v="Периодическое ТО"/>
-		<e k="RVB_button_battery_ch" v="Зарядить аккумулятор"/>
-		<e k="RVB_button_service" v="ТО"/>
-		<e k="RVB_button_vehicles" v="ТС"/>
-		<e k="RVB_button_vehiclesandequipment" v="ТС и оборудование"/>
-		<e k="RVB_inspectionDialog" v="Вы уверены, что хотите отправить это транспортное средство на техосмотр за %s?" tag="format"/>
-		<e k="RVB_inspectionTimeDialog" v="Техосмотр транспортного средства будет завершён в %s часов." tag="format"/>
-		<e k="RVB_inspectionDayDialog" v="Техосмотр ТС будет завершён завтра в %s часов." tag="format"/>
-		<e k="RVB_faultText_THERMOSTAT" v="Термостат"/>
-		<e k="RVB_faultText_LIGHTINGS" v="Осветительные приборы"/>
-		<e k="RVB_faultText_GLOWPLUG" v="Свеча накаливания"/>
-		<e k="RVB_faultText_WIPERS" v="Стеклоочистители"/>
-		<e k="RVB_faultText_GENERATOR" v="Генератор"/>
-		<e k="RVB_faultText_ENGINE" v="Двигатель"/>
-		<e k="RVB_faultText_SELFSTARTER" v="Стартер"/>
-		<e k="RVB_faultText_BATTERY" v="Аккумулятор"/>
-		<e k="RVB_faultText_TIRE" v="Шины/Гусеницы"/>
-		<e k="RVB_repairTimeDialog" v="Ремонт транспортного средства будет завершён в %s часов." tag="format"/>
-		<e k="RVB_repairDayDialog" v="Ремонт транспортного средства будет завершён завтра в %s часов." tag="format"/>
-		<e k="RVB_ErrorList" v="Список неисправностей:"/>
-		<e k="RVB_periodicserviceDialog" v="Вы уверены, что хотите отремонтировать транспортное средство за %s?" tag="format"/>
-		<e k="RVB_periodicserviceTimeDialog" v="Техобслуживание транспортного средства будет завершено в %s часов." tag="format"/>
-		<e k="RVB_periodicserviceDayDialog" v="Техобслуживание транспортного средства будет завершено завтра в %s часов." tag="format"/>
-		<e k="RVB_batteryChDialog" v="Вы уверены, что хотите зарядить аккумулятор вашего транспортного средства за %s?" tag="format"/>
-		<e k="RVB_batteryChTimeDialog" v="Зарядка аккумулятора транспортного средства будет завершена в %s часов." tag="format"/>
-		<e k="RVB_batteryChDayDialog" v="Зарядка аккумулятора транспортного средства будет завершена завтра в %s часов." tag="format"/>
-		<e k="RVB_occupied" v="Транспортное средство уже проходит техобслуживание!"/>
-		<e k="RVB_shop_operatingTime" v="%02d.%2d час." tag="format"/>
-		<e k="RVB_shop_operatingTimeG" v="%s:%s час." tag="format"/>
-		<e k="RVB_serviceHours" v="%01d/%01d час." tag="format"/>
-		<e k="RVB_alertmessage_inspection" v="Проводится техосмотр транспортного средства."/>
-		<e k="RVB_alertmessage_inspection_hud" v="Проводится техосмотр %s." tag="format"/>
-		<e k="RVB_alertmessage_repair" v="Ремонт транспортного средства продолжается."/>
-		<e k="RVB_alertmessage_repair_hud" v="Ремонт %s продолжается." tag="format"/>
-		<e k="RVB_alertmessage_service" v="Техобслуживание транспортного средства продолжается."/>
-		<e k="RVB_alertmessage_service_hud" v="Техобслуживание %s продолжается." tag="format"/>
-		<e k="RVB_alertmessage_batteryCh" v="Идёт зарядка аккумулятора."/>
-		<e k="RVB_alertmessage_batteryCh_hud" v="Зарядка аккумулятора %s продолжается." tag="format"/>
+        <e k="RVB_setting_showdebug" v="Troubleshooting"/>
+        <e k="RVB_toolTip_showdebug" v="Displays troubleshooting in the console and log.txt (can improve performance when turned off)"/>
 
-		<e k="RVB_list_vehicleorimplement" v="ТС/Оборудование"/>
-		<e k="RVB_list_hporle" v="Мощн. двиг."/>
-		<e k="RVB_list_currentvalue" v="Текущая цена"/>
-		<e k="RVB_list_age" v="Во владении"/>
-		<e k="RVB_list_operatinghours" v="Время работы"/>
-		<e k="RVB_list_realoperatinghours" v="Работа без ТО"/>
-		<e k="RVB_list_servicehours" v="ТО"/>
-		<e k="RVB_list_lease" v="В аренде"/>
-		<e k="RVB_list_battery" v="Аккумулятор"/>
-		<e k="RVB_parts_repair" v="Детали требующие ремонта"/>
+        <e k="RVB_MenuGamePartsSettings" v="Vehicle Settings"/>
+        <e k="RVB_Parts_currentValue" v="Current %s lifespan" tag="format"/>
+        <e k="RVB_Parts_remainingValue" v="%s lifespan setting" tag="format"/>
+        <e k="RVB_part_rvbDifficulty" v="Vehicle Breakdown"/>
+        <e k="RVB_Parts_utils_percent" v="%s %%" tag="format"/>
 
-		<e k="RVB_inspectionDialogFault" v="ТС %s осмотрено, требуется ремонт. %s"/>
-		<e k="RVB_inspectionDialogEnd" v="ТС %s осмотрено, ремонт не требуется."/>
-		<e k="RVB_inspectionDialogEnd_other" v="ТС %s проверено и отремонтировано. У вашего механика было много работы, поэтому начинающий механик починил ваш автомобиль. Однако этот начинающий механик не может перечислить, что он ремонтировал в вашем ТС."/>
+        <e k="RVB_WorkShopClose" v="СТО закрыта, приходите в %s часов." tag="format"/>
+        <e k="RVB_button_inspection" v="Техосмотр"/>
+        <e k="RVB_button_dailyservice" v="Ежедневное ТО"/>
+        <e k="RVB_button_periodicservice" v="Периодическое ТО"/>
+        <e k="RVB_button_battery_ch" v="Зарядить аккумулятор"/>
+        <e k="RVB_button_service" v="ТО"/>
+        <e k="RVB_button_vehicles" v="ТС"/>
+        <e k="RVB_button_vehiclesandequipment" v="ТС и оборудование"/>
+        <e k="RVB_inspectionDialog" v="Вы уверены, что хотите отправить это транспортное средство на техосмотр за %s?" tag="format"/>
+        <e k="RVB_inspectionTimeDialog" v="Техосмотр транспортного средства будет завершён в %s часов." tag="format"/>
+        <e k="RVB_inspectionDayDialog" v="Техосмотр ТС будет завершён завтра в %s часов." tag="format"/>
+        <e k="RVB_faultText_THERMOSTAT" v="Термостат"/>
+        <e k="RVB_faultText_LIGHTINGS" v="Осветительные приборы"/>
+        <e k="RVB_faultText_GLOWPLUG" v="Свеча накаливания"/>
+        <e k="RVB_faultText_WIPERS" v="Стеклоочистители"/>
+        <e k="RVB_faultText_GENERATOR" v="Генератор"/>
+        <e k="RVB_faultText_ENGINE" v="Двигатель"/>
+        <e k="RVB_faultText_SELFSTARTER" v="Стартер"/>
+        <e k="RVB_faultText_BATTERY" v="Аккумулятор"/>
+        <e k="RVB_faultText_TIRE" v="Шины/Гусеницы"/>
+        <e k="RVB_repairTimeDialog" v="Ремонт транспортного средства будет завершён в %s часов." tag="format"/>
+        <e k="RVB_repairDayDialog" v="Ремонт транспортного средства будет завершён завтра в %s часов." tag="format"/>
+        <e k="RVB_ErrorList" v="Список неисправностей:"/>
+        <e k="RVB_periodicserviceDialog" v="Вы уверены, что хотите отремонтировать транспортное средство за %s?" tag="format"/>
+        <e k="RVB_periodicserviceTimeDialog" v="Техобслуживание транспортного средства будет завершено в %s часов." tag="format"/>
+        <e k="RVB_periodicserviceDayDialog" v="Техобслуживание транспортного средства будет завершено завтра в %s часов." tag="format"/>
+        <e k="RVB_batteryChDialog" v="Вы уверены, что хотите зарядить аккумулятор вашего транспортного средства за %s?" tag="format"/>
+        <e k="RVB_batteryChTimeDialog" v="Зарядка аккумулятора транспортного средства будет завершена в %s часов." tag="format"/>
+        <e k="RVB_batteryChDayDialog" v="Зарядка аккумулятора транспортного средства будет завершена завтра в %s часов." tag="format"/>
+        <e k="RVB_occupied" v="Транспортное средство уже проходит техобслуживание!"/>
+        <e k="RVB_shop_operatingTime" v="%02d.%2d час." tag="format"/>
+        <e k="RVB_operatingTime" v="%02d hour" tag="format"/>
+        <e k="RVB_shop_operatingTimeG" v="%s:%s час." tag="format"/>
+        <e k="RVB_serviceHours" v="%01d/%01d час." tag="format"/>
+        <e k="RVB_alertmessage_inspection" v="Проводится техосмотр транспортного средства."/>
+        <e k="RVB_alertmessage_inspection_hud" v="Проводится техосмотр %s." tag="format"/>
+        <e k="RVB_alertmessage_repair" v="Ремонт транспортного средства продолжается."/>
+        <e k="RVB_alertmessage_repair_hud" v="Ремонт %s продолжается." tag="format"/>
+        <e k="RVB_alertmessage_service" v="Техобслуживание транспортного средства продолжается."/>
+        <e k="RVB_alertmessage_service_hud" v="Техобслуживание %s продолжается." tag="format"/>
+        <e k="RVB_alertmessage_batteryCh" v="Идёт зарядка аккумулятора."/>
+        <e k="RVB_alertmessage_batteryCh_hud" v="Зарядка аккумулятора %s продолжается." tag="format"/>
 
-		<e k="RVB_fault_" v="Не ездите слишком быстро, двигатель ещё холодный."/>
-		<e k="RVB_fault_hud" v="%s едет слишком быстро, двигатель ещё холодный." tag="format"/>
-		<e k="RVB_fault_thermostat" v="Охлаждающая жидкость перегревается."/>
-		<e k="RVB_fault_thermostat_hud" v="Охлаждающая жидкость %s перегревается." tag="format"/>
-		<e k="RVB_fault_thermostatC" v="Двигатель не прогрелся до рабочей температуры."/>
-		<e k="RVB_fault_thermostatC_hud" v="Двигатель %s не прогрелся до рабочей температуры." tag="format"/>
-		<e k="RVB_fault_lights" v="Освещение не работает."/>
-		<e k="RVB_fault_lights_hud" v="Осветительные приборы %s не работают." tag="format"/>
-		<e k="RVB_fault_BHlights" v="Уровень заряда аккумулятора слишком низкий."/>
-		<e k="RVB_fault_BHlights_hud" v="У %s, уровень заряда аккумулятора слишком низкий." tag="format"/>
-		<e k="RVB_fault_glowplug" v="Расход топлива увеличился."/>
-		<e k="RVB_fault_glowplug_hud" v="Расход топлива у %s увеличился." tag="format"/>
-		<e k="fault_battery" v="Аккумулятор разряжен."/>
-		<e k="fault_battery_hud" v="У %s разряжен аккумулятор." tag="format"/>
-		<e k="RVB_fault_operatinghours" v="Загорелась сервисная лампочка."/>
-		<e k="RVB_fault_operatinghours_hud" v="%s требует техобслуживания." tag="format"/>
+        <e k="RVB_list_vehicleorimplement" v="ТС/Оборудование"/>
+        <e k="RVB_list_hporle" v="Мощн. двиг."/>
+        <e k="RVB_list_currentvalue" v="Текущая цена"/>
+        <e k="RVB_list_age" v="Во владении"/>
+        <e k="RVB_list_operatinghours" v="Время работы"/>
+        <e k="RVB_list_realoperatinghours" v="Работа без ТО"/>
+        <e k="RVB_list_servicehours" v="ТО"/>
+        <e k="RVB_list_lease" v="В аренде"/>
+        <e k="RVB_list_battery" v="Аккумулятор"/>
+        <e k="RVB_parts_repair" v="Детали требующие ремонта"/>
 
-		<e k="RVB_main_repair_fault" v="Механик не может отремонтировать это транспортное средство, обратитесь в &quot;RVB&quot;."/>
+        <e k="RVB_Workshop" v="Workshop"/>
+        <e k="RVB_Workshop_diagnostics" v="Diagnostics"/>
+        <e k="RVB_Workshop_serviceManual" v="Service Log"/>
+        <e k="RVB_Workshop_noinspection" v="Vehicle has not been inspected!"/>
+        <e k="RVB_Workshop_noserviceManualEntry" v="No entries in the service log!"/>
 
-		<e k="VehicleBreakdown_DEAD_ENGINE" v="Отказ двигателя." />
-		<e k="VehicleBreakdown_DEAD_GENERATOR" v="Двигатель не запустится – вышел из строя генератор."/>
-		<e k="VehicleBreakdown_DEAD_ENGINE_INSPECTION" v="Двигатель не запустится – проводится техосмотр."/>
-		<e k="VehicleBreakdown_DEAD_ENGINE_REPAIR" v="Двигатель не запустится – идёт ремонт."/>
-		<e k="VehicleBreakdown_DEAD_ENGINE_SERVICE" v="Двигатель не запустится – идёт техобслуживание."/>
-		<e k="VehicleBreakdown_DEAD_ENGINE_SUSPENSION" v="Ключ от ТС у механика, который сейчас отдыхает."/>
-		<e k="VehicleBreakdown_DEAD_ENGINE_BATTERY" v="Двигатель не запустится – аккумулятор разряжен."/>
-		<e k="VehicleBreakdown_DEAD_ENGINE_BATTERY_CHARGING" v="Двигатель не запустится – идёт зарядка аккумулятора."/>
+        <e k="RVB_inspectionDialogFault" v="ТС %s осмотрено, требуется ремонт. %s"/>
+        <e k="RVB_inspectionDialogEnd" v="ТС %s осмотрено, ремонт не требуется."/>
+        <e k="RVB_inspectionDialogEnd_other" v="ТС %s проверено и отремонтировано. У вашего механика было много работы, поэтому начинающий механик починил ваш автомобиль. Однако этот начинающий механик не может перечислить, что он ремонтировал в вашем ТС."/>
 
-		<e k="RVB_fault_lights_INSPECTION" v="Освещение не может быть включено, пока идет проверка автомобиля."/>
-		<e k="RVB_fault_lights_REPAIR" v="Освещение не может быть включено, пока идет ремонт автомобиля."/>
-		<e k="RVB_fault_lights_SERVICE" v="Освещение не может быть включено, пока идет обслуживание автомобиля."/>
+        <e k="RVB_serviceDialogEnd" v="Service for %s vehicle completed."/>
+        <e k="RVB_repairDialogEnd" v="Repair of %s vehicle completed."/>
+        <e k="RVB_fault_" v="Не ездите слишком быстро, двигатель ещё холодный."/>
+        <e k="RVB_fault_engineload" v="Don't push it too hard, the engine is still cold."/>
+        <e k="RVB_fault_hud" v="%s едет слишком быстро, двигатель ещё холодный." tag="format"/>
+        <e k="RVB_fault_thermostat" v="Охлаждающая жидкость перегревается."/>
+        <e k="RVB_fault_thermostat_hud" v="Охлаждающая жидкость %s перегревается." tag="format"/>
+        <e k="RVB_fault_thermostatC" v="Двигатель не прогрелся до рабочей температуры."/>
+        <e k="RVB_fault_thermostatC_hud" v="Двигатель %s не прогрелся до рабочей температуры." tag="format"/>
+        <e k="RVB_fault_lights" v="Освещение не работает."/>
+        <e k="RVB_fault_lights_hud" v="Осветительные приборы %s не работают." tag="format"/>
+        <e k="RVB_fault_BHlights" v="Уровень заряда аккумулятора слишком низкий."/>
+        <e k="RVB_fault_BHlights_hud" v="У %s, уровень заряда аккумулятора слишком низкий." tag="format"/>
+        <e k="RVB_fault_glowplug" v="Расход топлива увеличился."/>
+        <e k="RVB_fault_glowplug_hud" v="Расход топлива у %s увеличился." tag="format"/>
+        <e k="fault_battery" v="Аккумулятор разряжен."/>
+        <e k="fault_battery_hud" v="У %s разряжен аккумулятор." tag="format"/>
+        <e k="RVB_fault_operatinghours" v="Загорелась сервисная лампочка."/>
+        <e k="RVB_fault_operatinghours_hud" v="%s требует техобслуживания." tag="format"/>
 
-		<e k="RVB_ErrorNotifi" v="Поломки: "/>
+        <e k="RVB_main_repair_fault" v="Механик не может отремонтировать это транспортное средство, обратитесь в &quot;RVB&quot;."/>
 
-		<e k="infoDisplayExtension_tomorrow" v="завтра "/>
-		<e k="infoDisplayExtension_currentPower" v="Мощность"/>
-		<e k="infoDisplayExtension_batteryCh" v="Заряд аккумулятора"/>
-		<e k="infoDisplayExtension_inspectionVheicle" v="Техосмотр"/>
-		<e k="infoDisplayExtension_repairVheicle" v="Ремонт"/>
-		<e k="infoDisplayExtension_serviceVheicle" v="Периодическое ТО"/>
+        <e k="VehicleBreakdown_DEAD_ENGINE" v="Отказ двигателя." />
+        <e k="VehicleBreakdown_DEAD_GENERATOR" v="Двигатель не запустится – вышел из строя генератор."/>
+        <e k="VehicleBreakdown_DEAD_ENGINE_INSPECTION" v="Двигатель не запустится – проводится техосмотр."/>
+        <e k="VehicleBreakdown_DEAD_ENGINE_REPAIR" v="Двигатель не запустится – идёт ремонт."/>
+        <e k="VehicleBreakdown_DEAD_ENGINE_SERVICE" v="Двигатель не запустится – идёт техобслуживание."/>
+        <e k="VehicleBreakdown_DEAD_ENGINE_SUSPENSION" v="Ключ от ТС у механика, который сейчас отдыхает."/>
+        <e k="VehicleBreakdown_DEAD_ENGINE_BATTERY" v="Двигатель не запустится – аккумулятор разряжен."/>
+        <e k="VehicleBreakdown_DEAD_ENGINE_BATTERY_CHARGING" v="Двигатель не запустится – идёт зарядка аккумулятора."/>
+        <e k="VehicleBreakdown_DEAD_ENGINE_GLOWPLUG" v="Engine won't start"/>
 
-		<e k="RVB_operatingHours" v="Часы работы"/>
+        <e k="RVB_fault_lights_INSPECTION" v="Освещение не может быть включено, пока идет проверка автомобиля."/>
+        <e k="RVB_fault_lights_REPAIR" v="Освещение не может быть включено, пока идет ремонт автомобиля."/>
+        <e k="RVB_fault_lights_SERVICE" v="Освещение не может быть включено, пока идет обслуживание автомобиля."/>
 
-		<e k="RVB_TotaloperatingHours" v="Общее время работы"/>
+        <e k="RVB_ErrorNotifi" v="Поломки: "/>
 
-		<e k="RVB_workshopVResetTitle" v="Сброс автомобиля"/>
-		<e k="RVB_workshopVResetDesc" v="Вы уверены, что хотите сбросить автомобиль %s в исходное состояние?" tag="format"/>
+        <e k="infoDisplayExtension_tomorrow" v="завтра "/>
+        <e k="infoDisplayExtension_currentPower" v="Мощность"/>
+        <e k="infoDisplayExtension_batteryCh" v="Заряд аккумулятора"/>
+        <e k="infoDisplayExtension_inspectionVheicle" v="Техосмотр"/>
+        <e k="infoDisplayExtension_repairVheicle" v="Ремонт"/>
+        <e k="infoDisplayExtension_serviceVheicle" v="Периодическое ТО"/>
 
-		<e k="electricChargeTurbine" v="Electric Wind Turbine Charger"/>
-		<e k="function_powerpack" v="Use this to charge your electric vehicles and transport electric power to remote locations."/>
-		
-		<e k="rvb_info_chargeTime" v="Время до полной зарядки:
+        <e k="RVB_operatingHours" v="Часы работы"/>
+
+        <e k="RVB_TotaloperatingHours" v="Общее время работы"/>
+
+        <e k="RVB_workshopVResetTitle" v="Сброс автомобиля"/>
+        <e k="RVB_workshopVResetDesc" v="Вы уверены, что хотите сбросить автомобиль %s в исходное состояние?" tag="format"/>
+
+        <e k="electricChargeTurbine" v="Electric Wind Turbine Charger"/>
+        <e k="function_powerpack" v="Use this to charge your electric vehicles and transport electric power to remote locations."/>
+
+        <e k="rvb_info_chargeTime" v="Время до полной зарядки:
 %{hours}02d:%{minutes}02d:%{seconds}02d (%{percentage}d%%)" tag="format"/>
 
-		<e k="Automatic_Repair_conflict_notice" v="Существуют моды, которые автоматически ремонтируют транспортное средство, и это может конфликтовать с режимом &quot;Реальные поломки транспорта (RVB)&quot;.
+        <e k="Automatic_Repair_conflict_notice" v="Существуют моды, которые автоматически ремонтируют транспортное средство, и это может конфликтовать с режимом &quot;Реальные поломки транспорта (RVB)&quot;.
 
 Для следующих модификаций автоматический ремонт был отключён модом RVB.
 
@@ -189,6 +212,6 @@
 
 MathiasHun" tag="format"/>
 
-		<e k="RVB_aimessage_batterydischarged" v="Работник на %s прекратил работу, аккумулятор ТС разряжен!"/>
-	</elements>
+        <e k="RVB_aimessage_batterydischarged" v="Работник на %s прекратил работу, аккумулятор ТС разряжен!"/>
+    </elements>
 </l10n>
