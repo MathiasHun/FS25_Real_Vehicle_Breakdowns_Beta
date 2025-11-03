@@ -152,6 +152,7 @@
         <e k="RVB_WorkshopD_conReplace" v="Cserére érett"/>
         <e k="RVB_WorkshopS_repNeed" v="Javítás szükséges. "/>
         <e k="RVB_WorkshopS_repNoNeed" v="Javítás nem szükséges."/>
+        <e k="RVB_WorkshopS_month" v=" hónap"/>
 
         <e k="RVB_inspectionDialogFault" v="%s jármű átvizsgálása befejeződött, javítás szükséges. %s"/>
         <e k="RVB_inspectionDialogEnd" v="%s jármű átvizsgálása befejeződött, nem szükséges a javítás."/>
@@ -232,4 +233,5 @@ MathiasHun" tag="format"/>
     </elements>
 
 </l10n>
+
 
