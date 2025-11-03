@@ -153,6 +153,7 @@
         <e k="RVB_WorkshopD_conReplace" v="Due for replacement"/>
         <e k="RVB_WorkshopS_repNeed" v="Repair needed. "/>
         <e k="RVB_WorkshopS_repNoNeed" v="No repair needed."/>
+        <e k="RVB_WorkshopS_month" v=" month"/>
 
         <e k="RVB_inspectionDialogFault" v="%s vehículo inspeccionado, se requieren reparaciones. %s"/>
         <e k="RVB_inspectionDialogEnd" v="%s vehículo inspeccionado, no se requieren reparaciones."/>
@@ -232,4 +233,5 @@ MathiasHun" tag="format"/>
     </elements>
 
 </l10n>
+
 
