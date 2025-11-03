@@ -31,9 +31,9 @@ I take no responsibility for corrupted savegames, missing vehicles, or heartbrok
 
 If you run into problems, please help improve the mod by following these steps:
 
-1. State your Farming Simulator 25 game version (e.g., FS25: 1.8.0.1).
+1. State your Farming Simulator 25 game version (e.g., FS25: 1.14.0.1).
 
-2. Include the mod version number you are using (e.g., RVB: v0.9.2.3).
+2. Include the mod version number you are using (e.g., RVB: v0.9.5.1).
 
 3. Restart your savegame, and only enable this mod (and any other absolutely essential mods) when reproducing the issue.
 
@@ -60,6 +60,11 @@ Thanks for helping improve the mod!🚜
 
 # Please don’t share this version on other sites, it’s a VERY early BETA.</br>
 ## <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=7">Download the latest developer TEST version</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
+
+## Changelog 0.9.5.1:
+- github issues#92
+- github issues#90
+- github issues#89
 
 ## Changelog 0.9.5.0:
 - Available on the download page.
