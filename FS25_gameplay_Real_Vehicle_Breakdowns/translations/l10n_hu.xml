@@ -136,6 +136,20 @@
         <e k="RVB_Workshop_serviceManual" v="Szervizkönyv"/>
         <e k="RVB_Workshop_noinspection" v="Nincs átvizsgálva a jármű!"/>
         <e k="RVB_Workshop_noserviceManualEntry" v="Nincs bejegyzés a szervizkönyvbe!"/>
+        <e k="RVB_Workshop_status" v="Állapot:"/>
+        <e k="RVB_Workshop_repair" v="Javítás?"/>
+        <e k="RVB_Workshop_work" v="Munka"/>
+        <e k="RVB_Workshop_date" v="Dátum"/>
+        <e k="RVB_Workshop_lifetime" v="Üzemóra"/>
+        <e k="RVB_Workshop_odometer" v="Km állás"/>
+        <e k="RVB_Workshop_cost" v="Költség"/>
+        <e k="RVB_WorkshopD_new" v="Új"/>
+        <e k="RVB_WorkshopD_conExcellent" v="Kiváló állapot"/>
+        <e k="RVB_WorkshopD_conGood" v="Jó állapot"/>
+        <e k="RVB_WorkshopD_conUsed" v="Használt, de működőképes"/>
+        <e k="RVB_WorkshopD_conFaults" v="Hibára hajlamos"/>
+        <e k="RVB_WorkshopD_conDown" v="Tönkrement"/>
+        <e k="RVB_WorkshopD_conReplace" v="Cserére érett"/>
 
         <e k="RVB_inspectionDialogFault" v="%s jármű átvizsgálása befejeződött, javítás szükséges. %s"/>
         <e k="RVB_inspectionDialogEnd" v="%s jármű átvizsgálása befejeződött, nem szükséges a javítás."/>
@@ -214,4 +228,5 @@ MathiasHun" tag="format"/>
         <e k="RVB_aimessage_batterydischarged" v="%s gépi segítő váratlanul abbahagyta a munkát, a jármű akkumulátora lemerült!"/>
 
     </elements>
+
 </l10n>
