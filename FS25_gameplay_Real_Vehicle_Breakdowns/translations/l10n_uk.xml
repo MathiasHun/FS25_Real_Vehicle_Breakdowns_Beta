@@ -151,6 +151,8 @@
         <e k="RVB_WorkshopD_conFaults" v="Prone to faults"/>
         <e k="RVB_WorkshopD_conDown" v="Broken Down"/>
         <e k="RVB_WorkshopD_conReplace" v="Due for replacement"/>
+        <e k="RVB_WorkshopS_repNeed" v="Repair needed. "/>
+        <e k="RVB_WorkshopS_repNoNeed" v="No repair needed."/>
 
         <e k="RVB_inspectionDialogFault" v="ТЗ %s оглянуто, потрібен ремонт. %s"/>
         <e k="RVB_inspectionDialogEnd" v="ТЗ %s оглянуто, ремонт не потрібен."/>
@@ -230,3 +232,4 @@ MathiasHun" tag="format"/>
     </elements>
 
 </l10n>
+
