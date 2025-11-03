@@ -136,6 +136,20 @@
         <e k="RVB_Workshop_serviceManual" v="Service Log"/>
         <e k="RVB_Workshop_noinspection" v="Vehicle has not been inspected!"/>
         <e k="RVB_Workshop_noserviceManualEntry" v="No entries in the service log!"/>
+        <e k="RVB_Workshop_status" v="Status:"/>
+        <e k="RVB_Workshop_repair" v="Repair?"/>
+        <e k="RVB_Workshop_work" v="Work"/>
+        <e k="RVB_Workshop_date" v="Date"/>
+        <e k="RVB_Workshop_lifetime" v="Operating hours"/>
+        <e k="RVB_Workshop_odometer" v="Odometer Reading"/>
+        <e k="RVB_Workshop_cost" v="Cost"/>
+        <e k="RVB_WorkshopD_new" v="New"/>
+        <e k="RVB_WorkshopD_conExcellent" v="Excellent condition"/>
+        <e k="RVB_WorkshopD_conGood" v="Good condition"/>
+        <e k="RVB_WorkshopD_conUsed" v="Used but in working"/>
+        <e k="RVB_WorkshopD_conFaults" v="Prone to faults"/>
+        <e k="RVB_WorkshopD_conDown" v="Broken Down"/>
+        <e k="RVB_WorkshopD_conReplace" v="Due for replacement"/>
 
         <e k="RVB_inspectionDialogFault" v="%s vehicle inspected, repair needed. %s"/>
         <e k="RVB_inspectionDialogEnd" v="%s vehicle inspected, no repairs needed."/>
@@ -213,4 +227,5 @@ MathiasHun" tag="format"/>
 
         <e k="RVB_aimessage_batterydischarged" v="%s AI helper unexpectedly stopped work; the vehicle's battery has discharged!"/>
     </elements>
+
 </l10n>
