@@ -155,6 +155,10 @@
         <e k="RVB_WorkshopS_repNoNeed" v="No repair needed."/>
         <e k="RVB_WorkshopS_month" v=" month"/>
 
+        <e k="RVB_WorkshopMessage_service" v="You have exceeded the specified service interval by %s hours, so the repair took longer and cost more." tag="format"/>
+        <e k="RVB_WorkshopMessage_serviceDone" v="Servicing completed."/>
+        <e k="RVB_WorkshopMessage_repairDone" v="Repair completed. Replaced/repaired part(s): %s" tag="format"/>
+
         <e k="RVB_inspectionDialogFault" v="Pojazd %s skontrolowany, wymagane naprawy. %s"/>
         <e k="RVB_inspectionDialogEnd" v="Pojazd %s skontrolowany, naprawy nie są wymagane."/>
         <e k="RVB_inspectionDialogEnd_other" v="Pojazd %s został skontrolowany i naprawiony. Twój mechanik miał dużo pracy, więc początkujący mechanik naprawił Twój pojazd. Jednak ten początkujący mechanik nie jest w stanie wypisać tego, co naprawił w Twoim pojeździe."/>
@@ -233,5 +237,6 @@ MathiasHun" tag="format"/>
     </elements>
 
 </l10n>
+
 
 
