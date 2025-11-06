@@ -155,6 +155,10 @@
         <e k="RVB_WorkshopS_repNoNeed" v="No repair needed."/>
         <e k="RVB_WorkshopS_month" v=" month"/>
 
+        <e k="RVB_WorkshopMessage_service" v="You have exceeded the specified service interval by %s hours, so the repair took longer and cost more." tag="format"/>
+        <e k="RVB_WorkshopMessage_serviceDone" v="Servicing completed."/>
+        <e k="RVB_WorkshopMessage_repairDone" v="Repair completed. Replaced/repaired part(s): %s" tag="format"/>
+
         <e k="RVB_inspectionDialogFault" v="Araç %s incelendi, onarım gerekiyor. %s"/>
         <e k="RVB_inspectionDialogEnd" v="Araç %s incelendi, onarım gerektirmiyor."/>
         <e k="RVB_inspectionDialogEnd_other" v="%s araç incelendi ve tamir edildi. Tamircinizin çok işi olduğu için çırak aracınızı tamir etti. Ancak çırak ustası olmadan tamir ettiği şeyleri listeleyemez."/>
@@ -233,5 +237,6 @@ MathiasHun" tag="format"/>
     </elements>
 
 </l10n>
+
 
 
