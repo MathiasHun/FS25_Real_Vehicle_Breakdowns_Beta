@@ -33,7 +33,7 @@ If you run into problems, please help improve the mod by following these steps:
 
 1. State your Farming Simulator 25 game version (e.g., FS25: 1.14.0.1).
 
-2. Include the mod version number you are using (e.g., RVB: v0.9.5.1).
+2. Include the mod version number you are using (e.g., RVB: v0.9.5.2).
 
 3. Restart your savegame, and only enable this mod (and any other absolutely essential mods) when reproducing the issue.
 
@@ -60,6 +60,15 @@ Thanks for helping improve the mod!🚜
 
 # Please don’t share this version on other sites, it’s a VERY early BETA.</br>
 ## <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=7">Download the latest developer TEST version</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
+
+Dependencies:
+- Wind Turbines Charging Station mod (i.e., FS25_electricChargeStation) - by HoT online Team https://www.kingmods.net/en/fs25/mods/62810/wind-turbines-charging-station
+- JCB E-tech Powerpack (i.e., FS25_JCB_Powerpack) - by RossN Mods https://www.farming-simulator.com/mod.php?mod_id=310865&title=fs2025
+
+## Changelog 0.9.5.2:
+- github issues#95
+- github issues#94
+- github issues#92
 
 ## Changelog 0.9.5.1:
 - github issues#92
