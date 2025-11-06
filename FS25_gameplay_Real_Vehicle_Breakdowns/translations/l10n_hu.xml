@@ -154,6 +154,10 @@
         <e k="RVB_WorkshopS_repNoNeed" v="Javítás nem szükséges."/>
         <e k="RVB_WorkshopS_month" v=" hónap"/>
 
+        <e k="RVB_WorkshopMessage_service" v="A megadott szervizintervallumot %s órával túllépted, ezért a javítás tovább tartott és többe került." tag="format"/>
+        <e k="RVB_WorkshopMessage_serviceDone" v="Szervizelés befejződött."/>
+        <e k="RVB_WorkshopMessage_repairDone" v="Javítás befejeződött. Cserélt/javított alkatrésze(ek): %s" tag="format"/>
+
         <e k="RVB_inspectionDialogFault" v="%s jármű átvizsgálása befejeződött, javítás szükséges. %s"/>
         <e k="RVB_inspectionDialogEnd" v="%s jármű átvizsgálása befejeződött, nem szükséges a javítás."/>
         <e k="RVB_inspectionDialogEnd_other" v="%s járművet átvizsgálták és megjavították. Szerelőjének sok munkája volt, ezért egy kezdő szerelő javította meg a járművedet. Ez a kezdő szerelő azonban nem tudja felsorolni, hogy mit javított meg a járműveden."/>
@@ -233,5 +237,6 @@ MathiasHun" tag="format"/>
     </elements>
 
 </l10n>
+
 
 
