@@ -15,7 +15,7 @@
         <e k="RVB_addextra_connecting" v="Startkabels aangesloten"/>
         <e k="RVB_blinking_connecting_toofar" v="Rek de startkabel niet te ver uit, anders zal deze snel losraken van de accu! (%s m)" tag="format"/>
         <e k="RVB_blinking_connecting_drive" v="Rijd niet weg, de startkabels zijn nog aangesloten! (%s m)" tag="format"/>
-        <e k="RVB_blinking_connecting_length" v="Jumper cable length: %s m / %s m" tag="format"/>
+        <e k="RVB_blinking_connecting_length" v="Lengte van startkabel: %s m / %s m" tag="format"/>
         <e k="RVB_blinking_connecting_cableBroken" v="De startkabels waren aangesloten. Ze raakten beschadigd, dus je moest nieuwe kopen.%s." tag="format"/>
         <e k="RVB_blinking_connecting" v="%s: Startkabels aangesloten." tag="format"/>
         <e k="RVB_blinking_connecting_order" v="Sluit eerst het werkende voertuig aan op de startkabels!"/>
@@ -36,8 +36,8 @@
         <e k="RVB_toolTip_workshopOpen" v="De voertuigwerkplaats gaat dan open"/>
         <e k="RVB_setting_workshopClose" v="Voertuigwerkplaats sluit"/>
         <e k="RVB_toolTip_workshopClose" v="De voertuigwerkplaats sluit op dat moment"/>
-        <e k="RVB_setting_workshopCountMax" v="Maximum vehicles in workshop"/>
-        <e k="RVB_toolTip_workshopCountMax" v="Here you can set how many vehicles can be handled by the mechanic at once."/>
+        <e k="RVB_setting_workshopCountMax" v="Maximum voertuigen in werkplaats"/>
+        <e k="RVB_toolTip_workshopCountMax" v="Hier kun je instellen hoeveel voertuigen de monteur tegelijkertijd kan behandelen."/>
         <e k="RVB_settingSectionHeader_LifetimeofParts" v="Levensduur van onderdelen"/>
         <e k="RVB_toolTip_lifetimeParts" v="Hoe kleiner dit getal, hoe sneller het defect raakt."/>
         <e k="RVB_setting_thermostatLifetime" v="Thermostaat"/>
@@ -50,7 +50,7 @@
         <e k="RVB_setting_batteryLifetime" v="Batterij"/>
         <e k="RVB_setting_tireLifetime" v="Band"/>
         <e k="RVB_utils_hour" v="%s uur" tag="format"/>
-        <e k="RVB_utils_maxcount" v="%s pcs" tag="format"/>
+        <e k="RVB_utils_maxcount" v="%s stuks" tag="format"/>
 
         <e k="RVB_MenuGameSettingsGeneral" v="Algemene instellingen"/>
         <e k="RVB_setting_alertDialog" v="Waarschuwingsbericht"/>
@@ -60,8 +60,8 @@
         <e k="RVB_difficulty_slow" v="Langzaam"/>
         <e k="RVB_difficulty_medium" v="Medium"/>
         <e k="RVB_difficulty_fast" v="Snel"/>
-        <e k="RVB_setting_vehicleHud" v="Vehicle Parts HUD"/>
-        <e k="RVB_toolTip_vehicleHud" v="Displays the operating hours of the vehicle's parts (can improve performance when turned off). Recommended for testing."/>
+        <e k="RVB_setting_vehicleHud" v="Voertuigonderdelen HUD"/>
+        <e k="RVB_toolTip_vehicleHud" v="Toont de bedrijfsuren van de voertuigonderdelen (kan de prestaties verbeteren als dit is uitgeschakeld). Aanbevolen voor testen."/>
         <e k="RVB_settingSectionHeader_HUD" v="HUD-instellingen"/>
         <e k="RVB_setting_showTemp" v="Motortemperatuur"/>
         <e k="RVB_toolTip_showTemp" v="Hier kunt u de weergave van de motortemperatuur in- of uitschakelen."/>
@@ -70,13 +70,13 @@
         <e k="RVB_setting_showFuel" v="Brandstof"/>
         <e k="RVB_toolTip_showFuel" v="Hier kun je de weergave van brandstof in- of uitschakelen."/>
 
-        <e k="RVB_setting_showdebug" v="Troubleshooting"/>
-        <e k="RVB_toolTip_showdebug" v="Displays troubleshooting in the console and log.txt (can improve performance when turned off)"/>
+        <e k="RVB_setting_showdebug" v="Foutopsporing"/>
+        <e k="RVB_toolTip_showdebug" v="Toont foutopsporingsinformatie in de console en log.txt (kan de prestaties verbeteren als dit is uitgeschakeld)."/>
 
-        <e k="RVB_MenuGamePartsSettings" v="Vehicle Settings"/>
-        <e k="RVB_Parts_currentValue" v="Current %s lifespan" tag="format"/>
-        <e k="RVB_Parts_remainingValue" v="%s lifespan setting" tag="format"/>
-        <e k="RVB_part_rvbDifficulty" v="Vehicle Breakdown"/>
+        <e k="RVB_MenuGamePartsSettings" v="Voertuiginstellingen"/>
+        <e k="RVB_Parts_currentValue" v="Huidige levensduur van %s" tag="format"/>
+        <e k="RVB_Parts_remainingValue" v="%s levensduurinstelling" tag="format"/>
+        <e k="RVB_part_rvbDifficulty" v="Voertuigpech"/>
         <e k="RVB_Parts_utils_percent" v="%s %%" tag="format"/>
 
         <e k="RVB_WorkShopClose" v="De Voertuigwerkplaats is gesloten, kom terug om %s uur." tag="format"/>
@@ -110,7 +110,7 @@
         <e k="RVB_batteryChDayDialog" v="Het opladen van de accu van het voertuig zal morgen om %s uur voltooid zijn." tag="format"/>
         <e k="RVB_occupied" v="Voertuig is al in gebruik!"/>
         <e k="RVB_shop_operatingTime" v="%02d.%2d uur" tag="format"/>
-        <e k="RVB_operatingTime" v="%02d hour" tag="format"/>
+        <e k="RVB_operatingTime" v="%02d uren" tag="format"/>
         <e k="RVB_shop_operatingTimeG" v="%s:%s uur" tag="format"/>
         <e k="RVB_serviceHours" v="%01d/%01d uur" tag="format"/>
         <e k="RVB_alertmessage_inspection" v="Voertuiginspectie is bezig."/>
@@ -133,41 +133,41 @@
         <e k="RVB_list_battery" v="Batterij"/>
         <e k="RVB_parts_repair" v="Te repareren onderdelen"/>
 
-        <e k="RVB_Workshop" v="Workshop"/>
-        <e k="RVB_Workshop_diagnostics" v="Diagnostics"/>
-        <e k="RVB_Workshop_serviceManual" v="Service Log"/>
-        <e k="RVB_Workshop_noinspection" v="Vehicle has not been inspected!"/>
-        <e k="RVB_Workshop_noserviceManualEntry" v="No entries in the service log!"/>
+        <e k="RVB_Workshop" v="Werkplaats"/>
+        <e k="RVB_Workshop_diagnostics" v="Diagnose"/>
+        <e k="RVB_Workshop_serviceManual" v="Serviceverslag"/>
+        <e k="RVB_Workshop_noinspection" v="Voertuig is nog niet geïnspecteerd!"/>
+        <e k="RVB_Workshop_noserviceManualEntry" v="Geen vermeldingen in het serviceverslag!"/>
         <e k="RVB_Workshop_status" v="Status:"/>
-        <e k="RVB_Workshop_repair" v="Repair?"/>
-        <e k="RVB_Workshop_work" v="Work"/>
-        <e k="RVB_Workshop_date" v="Date"/>
-        <e k="RVB_Workshop_lifetime" v="Operating hours"/>
-        <e k="RVB_Workshop_odometer" v="Odometer Reading"/>
-        <e k="RVB_Workshop_cost" v="Cost"/>
-        <e k="RVB_WorkshopD_new" v="New"/>
-        <e k="RVB_WorkshopD_conExcellent" v="Excellent condition"/>
-        <e k="RVB_WorkshopD_conGood" v="Good condition"/>
-        <e k="RVB_WorkshopD_conUsed" v="Used but in working"/>
-        <e k="RVB_WorkshopD_conFaults" v="Prone to faults"/>
-        <e k="RVB_WorkshopD_conDown" v="Broken Down"/>
-        <e k="RVB_WorkshopD_conReplace" v="Due for replacement"/>
-        <e k="RVB_WorkshopS_repNeed" v="Repair needed. "/>
-        <e k="RVB_WorkshopS_repNoNeed" v="No repair needed."/>
-        <e k="RVB_WorkshopS_month" v=" month"/>
+        <e k="RVB_Workshop_repair" v="Repareren?"/>
+        <e k="RVB_Workshop_work" v="Werk"/>
+        <e k="RVB_Workshop_date" v="Datum"/>
+        <e k="RVB_Workshop_lifetime" v="Bedrijfsuren"/>
+        <e k="RVB_Workshop_odometer" v="Kilometerstand"/>
+        <e k="RVB_Workshop_cost" v="Kosten"/>
+        <e k="RVB_WorkshopD_new" v="Nieuw"/>
+        <e k="RVB_WorkshopD_conExcellent" v="Uitstekende staat"/>
+        <e k="RVB_WorkshopD_conGood" v="Goede staat"/>
+        <e k="RVB_WorkshopD_conUsed" v="Gebruikt maar werkend"/>
+        <e k="RVB_WorkshopD_conFaults" v="Storingsgevoelig"/>
+        <e k="RVB_WorkshopD_conDown" v="Defect"/>
+        <e k="RVB_WorkshopD_conReplace" v="Vervanging nodig"/>
+        <e k="RVB_WorkshopS_repNeed" v="Reparatie nodig."/>
+        <e k="RVB_WorkshopS_repNoNeed" v="Geen reparatie nodig."/>
+        <e k="RVB_WorkshopS_month" v=" maand"/>
 
-        <e k="RVB_WorkshopMessage_service" v="You have exceeded the specified service interval by %s hours, so the repair took longer and cost more." tag="format"/>
-        <e k="RVB_WorkshopMessage_serviceDone" v="Servicing completed."/>
-        <e k="RVB_WorkshopMessage_repairDone" v="Repair completed. Replaced/repaired part(s): %s" tag="format"/>
+        <e k="RVB_WorkshopMessage_service" v="U heeft het opgegeven service-interval met %s uur overschreden, daarom duurde de reparatie langer en kostte het meer." tag="format"/>
+        <e k="RVB_WorkshopMessage_serviceDone" v="Onderhoud voltooid."/>
+        <e k="RVB_WorkshopMessage_repairDone" v="Reparatie voltooid. Vervangen/gerepareerde onderdeel(en): %s" tag="format"/>
 
         <e k="RVB_inspectionDialogFault" v="%s voertuig geïnspecteerd, reparatie vereist. %s"/>
         <e k="RVB_inspectionDialogEnd" v="%s voertuig geïnspecteerd, geen reparaties vereist."/>
         <e k="RVB_inspectionDialogEnd_other" v="%s voertuig is geïnspecteerd en gerepareerd. Uw monteur had veel werk, dus een beginnende monteur heeft uw voertuig gerepareerd. Deze beginnende monteur kan echter niet opsommen wat hij aan uw voertuig heeft gerepareerd."/>
 
-        <e k="RVB_serviceDialogEnd" v="Service for %s vehicle completed."/>
-        <e k="RVB_repairDialogEnd" v="Repair of %s vehicle completed."/>
+        <e k="RVB_serviceDialogEnd" v="Service voor voertuig %s voltooid."/>
+        <e k="RVB_repairDialogEnd" v="Reparatie van voertuig %s voltooid."/>
         <e k="RVB_fault_" v="Rijd niet te snel, de motor is nog koud."/>
-        <e k="RVB_fault_engineload" v="Don't push it too hard, the engine is still cold."/>
+        <e k="RVB_fault_engineload" v="Forceer de motor niet, hij is nog koud."/>
         <e k="RVB_fault_hud" v="%s het voertuig rijdt te snel, de motor is nog koud." tag="format"/>
         <e k="RVB_fault_thermostaat" v="Koelvloeistof raakt oververhit."/>
         <e k="RVB_fault_thermostat_hud" v="%s voertuigkoelvloeistof raakt oververhit." tag="format"/>
@@ -194,7 +194,7 @@
         <e k="VehicleBreakdown_DEAD_ENGINE_SUSPENSION" v="De voertuigsleutel ligt bij de monteur, die momenteel rust."/>
         <e k="VehicleBreakdown_DEAD_ENGINE_BATTERY" v="Motor start niet, accu is leeg."/>
         <e k="VehicleBreakdown_DEAD_ENGINE_BATTERY_CHARGING" v="Voertuig kan niet worden gestart, de batterij wordt opgeladen."/>
-        <e k="VehicleBreakdown_DEAD_ENGINE_GLOWPLUG" v="Engine won't start"/>
+        <e k="VehicleBreakdown_DEAD_ENGINE_GLOWPLUG" v="Motor start niet, gloeispiraal defect."/>
 
         <e k="RVB_fault_lights_INSPECTION" v="De verlichting kan niet worden ingeschakeld zolang de inspectie van het voertuig bezig is."/>
         <e k="RVB_fault_lights_REPAIR" v="De verlichting kan niet worden ingeschakeld zolang de reparatie van het voertuig bezig is."/>
@@ -203,7 +203,7 @@
         <e k="RVB_ErrorNotifi" v="Uitsplitsing(en): "/>
 
         <e k="infoDisplayExtension_tomorrow" v="morgen "/>
-        <e k="infoDisplayExtension_currentPower" v="Power"/>
+        <e k="infoDisplayExtension_currentPower" v="Vermogen"/>
         <e k="infoDisplayExtension_batteryCh" v="Batterij wordt opgeladen"/>
         <e k="infoDisplayExtension_inspectionVheicle" v="Voertuiginspectie"/>
         <e k="infoDisplayExtension_repairVheicle" v="Voertuigreparatie"/>
@@ -234,10 +234,6 @@ Al het beste,
 
 MathiasHun" tag="format"/>
 
-        <e k="RVB_aimessage_batterydischarged" v="%s AI-werknemer is onverwacht gestopt met werken, de accu van het voertuig is leeg!"/>
+        <e k="RVB_aimessage_batterydischarged" v="%s AI-arbeider is onverwacht gestopt met werken, de accu van het voertuig is leeg!"/>
     </elements>
-
 </l10n>
-
-
-
