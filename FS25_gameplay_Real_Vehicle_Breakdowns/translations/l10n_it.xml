@@ -158,6 +158,8 @@
         <e k="RVB_WorkshopMessage_service" v="You have exceeded the specified service interval by %s hours, so the repair took longer and cost more." tag="format"/>
         <e k="RVB_WorkshopMessage_serviceDone" v="Servicing completed."/>
         <e k="RVB_WorkshopMessage_repairDone" v="Repair completed. Replaced/repaired part(s): %s" tag="format"/>
+        <e k="RVB_WorkshopMessage_batteryDone" v="Battery fully charged."/>
+        <e k="RVB_WorkshopMessage_vResetDone" v="Vehicle has been reset."/>
 
         <e k="RVB_inspectionDialogFault" v="%s veicolo ispezionato, riparazione necessaria. %s"/>
         <e k="RVB_inspectionDialogEnd" v="%s veicolo revisionato, nessuna riparazione necessaria."/>
@@ -237,6 +239,7 @@ MathiasHun" tag="format"/>
     </elements>
 
 </l10n>
+
 
 
 
