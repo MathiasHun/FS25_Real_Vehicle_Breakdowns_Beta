@@ -159,6 +159,8 @@
         <e k="RVB_WorkshopMessage_service" v="U heeft het opgegeven service-interval met %s uur overschreden, daarom duurde de reparatie langer en kostte het meer." tag="format"/>
         <e k="RVB_WorkshopMessage_serviceDone" v="Onderhoud voltooid."/>
         <e k="RVB_WorkshopMessage_repairDone" v="Reparatie voltooid. Vervangen/gerepareerde onderdeel(en): %s" tag="format"/>
+        <e k="RVB_WorkshopMessage_batteryDone" v="Battery fully charged."/>
+        <e k="RVB_WorkshopMessage_vResetDone" v="Vehicle has been reset."/>
 
         <e k="RVB_inspectionDialogFault" v="%s voertuig geïnspecteerd, reparatie vereist. %s"/>
         <e k="RVB_inspectionDialogEnd" v="%s voertuig geïnspecteerd, geen reparaties vereist."/>
@@ -236,4 +238,5 @@ MathiasHun" tag="format"/>
 
         <e k="RVB_aimessage_batterydischarged" v="%s AI-arbeider is onverwacht gestopt met werken, de accu van het voertuig is leeg!"/>
     </elements>
+
 </l10n>
