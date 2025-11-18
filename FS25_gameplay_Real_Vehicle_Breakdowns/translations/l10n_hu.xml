@@ -157,6 +157,8 @@
         <e k="RVB_WorkshopMessage_service" v="A megadott szervizintervallumot %s órával túllépted, ezért a javítás tovább tartott és többe került." tag="format"/>
         <e k="RVB_WorkshopMessage_serviceDone" v="Szervizelés befejződött."/>
         <e k="RVB_WorkshopMessage_repairDone" v="Javítás befejeződött. Cserélt/javított alkatrésze(ek): %s" tag="format"/>
+        <e k="RVB_WorkshopMessage_batteryDone" v="Akkumulátor feltöltve."/>
+        <e k="RVB_WorkshopMessage_vResetDone" v="A járművet visszaállították."/>
 
         <e k="RVB_inspectionDialogFault" v="%s jármű átvizsgálása befejeződött, javítás szükséges. %s"/>
         <e k="RVB_inspectionDialogEnd" v="%s jármű átvizsgálása befejeződött, nem szükséges a javítás."/>
@@ -237,6 +239,7 @@ MathiasHun" tag="format"/>
     </elements>
 
 </l10n>
+
 
 
 
