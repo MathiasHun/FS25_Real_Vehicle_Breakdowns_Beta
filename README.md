@@ -57,7 +57,7 @@ This is not a stable release, but meant for testing and feedback collection.
 
 Thanks for helping improve the mod!🚜
 </br></br>
-<!-- -->
+<!-- 
 # Please don’t share this version on other sites, it’s a VERY early BETA.</br>
 ## <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=7">Download the latest developer TEST version</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
 
@@ -76,12 +76,23 @@ engine temperature, engine performance, etc.).
 - github issues#62 Conflict with Vehicle Shop Storage, fixed.
 - There might have been something else, but I didn’t take notes. :)
 
-</br></br></br>
+</br></br></br>-->
 ### <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=5">Download the latest developer version</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
 
 # Recommended Dependencies (to avoid errors):
 - Wind Turbines Charging Station mod (i.e., FS25_electricChargeStation) - by HoT online Team [FS25_electricChargeStation](https://www.kingmods.net/en/fs25/mods/62810/wind-turbines-charging-station)
 - JCB E-tech Powerpack (i.e., FS25_JCB_Powerpack) - by RossN Mods [FS25_JCB_Powerpack](https://www.farming-simulator.com/mod.php?mod_id=310865&title=fs2025)
+
+## Changelog 0.9.5.3:
+- In MP games, time acceleration incorrectly changed the components’ maximum operating hours, fixed.
+- The battery’s lifespan affects its maximum charge capacity.
+- Added the ConsoleCommand rvb_VehicleDebug, which displays extended live data of the current vehicle (component condition, battery discharge, battery charge level,
+engine temperature, engine performance, etc.).
+- When engine faults occur, a reduction in performance and a speed limit have been introduced.
+- The Dutch language file has been updated, thanks to NozemOil1982.
+- github issues#97
+- github issues#62 Conflict with Vehicle Shop Storage, fixed.
+- There might have been something else, but I didn’t take notes. :)
 
 ## Changelog 0.9.5.2:
 - github issues#95
