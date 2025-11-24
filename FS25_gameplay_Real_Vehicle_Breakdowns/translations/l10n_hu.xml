@@ -97,6 +97,11 @@
         <e k="RVB_faultText_SELFSTARTER" v="Önindító"/> 
         <e k="RVB_faultText_BATTERY" v="Akkumulátor"/>
         <e k="RVB_faultText_TIRE" v="Gumi"/>
+        <e k="RVB_faultText_TIREFL" v="Bal első gumi"/>
+        <e k="RVB_faultText_TIREFR" v="Jobb első gumi"/>
+        <e k="RVB_faultText_TIRERL" v="Bal hátsó gumi"/>
+        <e k="RVB_faultText_TIRERR" v="Jobb hátsó gumi"/>
+        <e k="RVB_repairErrorMechanics" v="Minden szerelő foglalt, egyszerre legfeljebb %s jármű javítható." tag="format"/>
         <e k="RVB_repairTimeDialog" v="A jármű javítása %s órakor fejeződik be." tag="format"/>
         <e k="RVB_repairDayDialog" v="A jármű javítása holnap %s órakor fejeződik be." tag="format"/>
         <e k="RVB_ErrorList" v="Hiba lista:" />
@@ -239,6 +244,7 @@ MathiasHun" tag="format"/>
     </elements>
 
 </l10n>
+
 
 
 
