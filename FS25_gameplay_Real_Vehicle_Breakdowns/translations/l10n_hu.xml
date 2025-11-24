@@ -48,6 +48,7 @@
         <e k="RVB_setting_batteryLifetime" v="Akkumulátor"/>
         <e k="RVB_setting_tireLifetime" v="Gumi"/>
         <e k="RVB_utils_hour" v="%s óra" tag="format"/>
+        <e k="RVB_utils_km" v="%s km" tag="format"/>
         <e k="RVB_utils_maxcount" v="%s db" tag="format"/>
 
         <e k="RVB_MenuGameSettingsGeneral" v="Általános beállítások"/>
@@ -239,13 +240,19 @@ Minden jót,
 
 MathiasHun" tag="format"/>
 
-        <e k="RVB_aimessage_batterydischarged" v="%s gépi segítő váratlanul abbahagyta a munkát, a jármű akkumulátora lemerült!"/>
+        <e k="RVB_aimessage_batterydischarged" v="%s gépi segítő váratlanul abbahagyta a munkát, a jármű akkumulátora lemerült!" tag="format"/>
+
+        <!-- EZEN NE VÁLTOZTASS, CSAK AKKOR, HA A FS25_useYourTyres MOD MÁR RENDELKEZIK HIVATALOS MAGYAR FORDÍTÁSSAL -->
+        <e k="infohud_uytTyresWear" v="Tyres wear"/>
+        <!-- Figyelmeztetés vége -->
+        <e k="rvb_infohud_uytTyresWear" v="Gumi %s" tag="format"/>
+        <!--<e k="input_UYT_REPLACE_TYRES" v="Gumik cseréje"/>
+        <e k="ui_uytReplaceDialog" v="Szeretnéd kicserélni a gumikat a(z) %s járműn?"/>
+        <e k="infohud_uytTyresWear" v="Gumik kopása"/>
+        <e k="infohud_uytTyresWearUnsupported" v="Nem támogatott!"/>
+        <e k="ui_uytSettingsTitle" v="Gumik használatának nyomon követése"/>
+        <e k="ui_uytSettingsTyreDistanceTitle" v="Gumik kopási sebessége"/>
+        <e k="ui_uytSettingsTyreDistanceDescription" v="Milyen gyorsan kopnak el teljesen a gumik."/>-->
 
     </elements>
-
 </l10n>
-
-
-
-
-

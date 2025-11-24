@@ -49,6 +49,7 @@
         <e k="RVB_setting_batteryLifetime" v="Аккумулятор"/>
         <e k="RVB_setting_tireLifetime" v="Шины/Гусеницы"/>
         <e k="RVB_utils_hour" v="%s час." tag="format"/>
+        <e k="RVB_utils_km" v="%s km" tag="format"/>
         <e k="RVB_utils_maxcount" v="%s pcs" tag="format"/>
 
         <e k="RVB_MenuGameSettingsGeneral" v="Общие настройки"/>

@@ -49,6 +49,7 @@
         <e k="RVB_setting_batteryLifetime" v="Batteria"/>
         <e k="RVB_setting_tireLifetime" v="Pneumatico"/>
         <e k="RVB_utils_hour" v="%s hour" tag="format"/>
+        <e k="RVB_utils_km" v="%s km" tag="format"/>
         <e k="RVB_utils_maxcount" v="%s pcs" tag="format"/>
 
         <e k="RVB_MenuGameSettingsGeneral" v="Impostazioni generali"/>
@@ -242,10 +243,4 @@ MathiasHun" tag="format"/>
 
         <e k="RVB_aimessage_batterydischarged" v="%s L'assistente AI ha smesso di funzionare inaspettatamente: la batteria del veicolo si è scaricata!"/>
     </elements>
-
 </l10n>
-
-
-
-
-

@@ -49,6 +49,7 @@
         <e k="RVB_setting_batteryLifetime" v="Bateria"/>
         <e k="RVB_setting_tireLifetime" v="Neumático"/>
         <e k="RVB_utils_hour" v="%s hora" tag="format"/>
+        <e k="RVB_utils_km" v="%s km" tag="format"/>
         <e k="RVB_utils_maxcount" v="%s pcs" tag="format"/>
 
         <e k="RVB_MenuGameSettingsGeneral" v="Configuración general"/>
@@ -242,10 +243,4 @@ MathiasHun" tag="format"/>
 
         <e k="RVB_aimessage_batterydischarged" v="%s trabajador de IA dejó de trabajar inesperadamente, ¡la batería del vehículo está descargada!"/>
     </elements>
-
 </l10n>
-
-
-
-
-

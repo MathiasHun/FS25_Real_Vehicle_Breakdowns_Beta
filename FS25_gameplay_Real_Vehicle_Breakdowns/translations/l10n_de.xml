@@ -49,6 +49,7 @@
         <e k="RVB_setting_batteryLifetime" v="Batterie"/>
         <e k="RVB_setting_tireLifetime" v="Reifen"/>
         <e k="RVB_utils_hour" v="%s stunden" tag="format"/>
+        <e k="RVB_utils_km" v="%s km" tag="format"/>
         <e k="RVB_utils_maxcount" v="%s pcs" tag="format"/>
 
         <e k="RVB_MenuGameSettingsGeneral" v="Allgemeine Einstellungen"/>
@@ -98,7 +99,7 @@
         <e k="RVB_faultText_SELFSTARTER" v="Self-starter"/>
         <e k="RVB_faultText_BATTERY" v="Batterie"/>
         <e k="RVB_faultText_TIRE" v="Reifen"/>
-		<e k="RVB_faultText_TIREFL" v="Front left tire"/>
+        <e k="RVB_faultText_TIREFL" v="Front left tire"/>
         <e k="RVB_faultText_TIREFR" v="Front right tire"/>
         <e k="RVB_faultText_TIRERL" v="Rear left tire"/>
         <e k="RVB_faultText_TIRERR" v="Rear right tire"/>
@@ -242,10 +243,4 @@ MathiasHun" tag="format"/>
 
         <e k="RVB_aimessage_batterydischarged" v="%s KI-Arbeiter hat unerwartet die Arbeit eingestellt, die Fahrzeugbatterie ist entladen!"/>
 	</elements>
-
 </l10n>
-
-
-
-
-

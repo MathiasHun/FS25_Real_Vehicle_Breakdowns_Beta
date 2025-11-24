@@ -49,6 +49,7 @@
         <e k="RVB_setting_batteryLifetime" v="Baterie"/>
         <e k="RVB_setting_tireLifetime" v="Pneumatika"/>
         <e k="RVB_utils_hour" v="%s hod." tag="format"/>
+        <e k="RVB_utils_km" v="%s km" tag="format"/>
         <e k="RVB_utils_maxcount" v="%s pcs" tag="format"/>
 
         <e k="RVB_MenuGameSettingsGeneral" v="Obecné nastavení"/>
@@ -240,10 +241,4 @@ MathiasHun" tag="format"/>
 
         <e k="RVB_aimessage_batterydischarged" v="%s Pomocník AI neočekávaně přestal pracovat; baterie vozidla se vybila!"/>
     </elements>
-
 </l10n>
-
-
-
-
-

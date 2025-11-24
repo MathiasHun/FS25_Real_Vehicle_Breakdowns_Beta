@@ -49,6 +49,7 @@
         <e k="RVB_setting_batteryLifetime" v="Akumulator"/>
         <e k="RVB_setting_tireLifetime" v="Opona"/>
         <e k="RVB_utils_hour" v="%s godzina" tag="format"/>
+        <e k="RVB_utils_km" v="%s km" tag="format"/>
         <e k="RVB_utils_maxcount" v="%s pcs" tag="format"/>
 
         <e k="RVB_MenuGameSettingsGeneral" v="Ustawienia ogólne"/>
@@ -242,10 +243,4 @@ MathiasHun" tag="format"/>
 
         <e k="RVB_aimessage_batterydischarged" v="%s Pracownik AI nieoczekiwanie przestał działać, akumulator pojazdu jest rozładowany!"/>
     </elements>
-
 </l10n>
-
-
-
-
-

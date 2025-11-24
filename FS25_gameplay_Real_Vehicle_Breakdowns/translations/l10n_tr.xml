@@ -49,6 +49,7 @@
         <e k="RVB_setting_batteryLifetime" v="Akü"/>
         <e k="RVB_setting_tireLifetime" v="Lastik"/>
         <e k="RVB_utils_hour" v="%s saat" tag="format"/>
+        <e k="RVB_utils_km" v="%s km" tag="format"/>
         <e k="RVB_utils_maxcount" v="%s pcs" tag="format"/>
 
         <e k="RVB_MenuGameSettingsGeneral" v="Genel Ayarlar"/>
@@ -242,10 +243,4 @@ MathiasHun" tag="format"/>
 
         <e k="RVB_aimessage_batterydischarged" v="%s AI çalışanı beklenmedik bir şekilde çalışmayı durdurdu, aracın aküsü boşaldı!"/>
     </elements>
-
 </l10n>
-
-
-
-
-

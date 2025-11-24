@@ -48,6 +48,7 @@
         <e k="RVB_setting_batteryLifetime" v="Batterie"/>
         <e k="RVB_setting_tireLifetime" v="Pneu"/>
         <e k="RVB_utils_hour" v="%s heures" tag="format"/>
+        <e k="RVB_utils_km" v="%s km" tag="format"/>
         <e k="RVB_utils_maxcount" v="%s pcs" tag="format"/>
 
         <e k="RVB_MenuGameSettingsGeneral" v="Paramètres généraux"/>
@@ -241,10 +242,4 @@ MathiasHun" tag="format"/>
 
         <e k="RVB_aimessage_batterydischarged" v="%s l'assistant machine a soudainement cessé de travailler, la batterie du véhicule est déchargée!"/>
     </elements>
-
 </l10n>
-
-
-
-
-

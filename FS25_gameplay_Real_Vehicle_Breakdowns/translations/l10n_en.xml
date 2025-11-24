@@ -48,6 +48,7 @@
         <e k="RVB_setting_batteryLifetime" v="Battery"/>
         <e k="RVB_setting_tireLifetime" v="Tire"/>
         <e k="RVB_utils_hour" v="%s hour" tag="format"/>
+        <e k="RVB_utils_km" v="%s km" tag="format"/>
         <e k="RVB_utils_maxcount" v="%s pcs" tag="format"/>
 
         <e k="RVB_MenuGameSettingsGeneral" v="General Settings"/>
@@ -240,11 +241,11 @@ Best regards,
 MathiasHun" tag="format"/>
 
         <e k="RVB_aimessage_batterydischarged" v="%s AI helper unexpectedly stopped work; the vehicle's battery has discharged!"/>
+
+        <!-- DO NOT CHANGE THIS, ONLY IF THE OFFICIAL ENGLISH TRANSLATION OF THE FS25_useYourTyres MOD CHANGES -->
+        <e k="infohud_uytTyresWear" v="Tyres wear"/>
+        <!-- End of warning -->
+        <e k="rvb_infohud_uytTyresWear" v="Tyre %s" tag="format"/>
+
     </elements>
-
 </l10n>
-
-
-
-
-

@@ -50,6 +50,7 @@
         <e k="RVB_setting_batteryLifetime" v="Batterij"/>
         <e k="RVB_setting_tireLifetime" v="Band"/>
         <e k="RVB_utils_hour" v="%s uur" tag="format"/>
+        <e k="RVB_utils_km" v="%s km" tag="format"/>
         <e k="RVB_utils_maxcount" v="%s stuks" tag="format"/>
 
         <e k="RVB_MenuGameSettingsGeneral" v="Algemene instellingen"/>
@@ -243,6 +244,4 @@ MathiasHun" tag="format"/>
 
         <e k="RVB_aimessage_batterydischarged" v="%s AI-arbeider is onverwacht gestopt met werken, de accu van het voertuig is leeg!"/>
     </elements>
-
 </l10n>
-

@@ -49,6 +49,7 @@
         <e k="RVB_setting_batteryLifetime" v="Акумулятор"/>
         <e k="RVB_setting_tireLifetime" v="Шини/Гусениці"/>
         <e k="RVB_utils_hour" v="%s час." tag="format"/>
+        <e k="RVB_utils_km" v="%s km" tag="format"/>
         <e k="RVB_utils_maxcount" v="%s pcs" tag="format"/>
 
         <e k="RVB_MenuGameSettingsGeneral" v="Загальні налаштування"/>
@@ -242,10 +243,4 @@ MathiasHun" tag="format"/>
 
         <e k="RVB_aimessage_batterydischarged" v="Працівний на %s зупинив роботу, акумулятор ТЗ розряджений!"/>
     </elements>
-
 </l10n>
-
-
-
-
-
