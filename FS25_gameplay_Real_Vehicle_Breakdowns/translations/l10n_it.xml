@@ -98,6 +98,11 @@
         <e k="RVB_faultText_SELFSTARTER" v="Antipasto"/> 
         <e k="RVB_faultText_BATTERY" v="Batteria"/>
         <e k="RVB_faultText_TIRE" v="Pneumatico"/>
+        <e k="RVB_faultText_TIREFL" v="Front left tire"/>
+        <e k="RVB_faultText_TIREFR" v="Front right tire"/>
+        <e k="RVB_faultText_TIRERL" v="Rear left tire"/>
+        <e k="RVB_faultText_TIRERR" v="Rear right tire"/>
+        <e k="RVB_repairErrorMechanics" v="All mechanics are busy, only up to %s vehicles can be repaired at the same time." tag="format"/>
         <e k="RVB_repairTimeDialog" v="La riparazione del veicolo verrà completata alle ore %s." tag="format"/>
         <e k="RVB_repairDayDialog" v="La riparazione del veicolo verrà completata domani alle ore %s." tag="format"/>
         <e k="RVB_ErrorList" v="Elenco degli errori:"/>
@@ -239,6 +244,7 @@ MathiasHun" tag="format"/>
     </elements>
 
 </l10n>
+
 
 
 
