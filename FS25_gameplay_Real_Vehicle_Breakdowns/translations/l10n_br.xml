@@ -97,6 +97,11 @@
         <e k="RVB_faultText_SELFSTARTER" v="Auto-iniciador"/>
         <e k="RVB_faultText_BATTERY" v="Bateria"/>
         <e k="RVB_faultText_TIRE" v="Pneu"/>
+        <e k="RVB_faultText_TIREFL" v="Front left tire"/>
+        <e k="RVB_faultText_TIREFR" v="Front right tire"/>
+        <e k="RVB_faultText_TIRERL" v="Rear left tire"/>
+        <e k="RVB_faultText_TIRERR" v="Rear right tire"/>
+        <e k="RVB_repairErrorMechanics" v="All mechanics are busy, only up to %s vehicles can be repaired at the same time." tag="format"/>
         <e k="RVB_repairTimeDialog" v="O reparo do veículo será concluído às %s." tag="format"/>
         <e k="RVB_repairDayDialog" v="O reparo do veículo será concluído amanhã às %s." tag="format"/>
         <e k="RVB_ErrorList" v="Lista de erros:" />
@@ -238,6 +243,7 @@ MathiasHun" tag="format"/>
     </elements>
 
 </l10n>
+
 
 
 
