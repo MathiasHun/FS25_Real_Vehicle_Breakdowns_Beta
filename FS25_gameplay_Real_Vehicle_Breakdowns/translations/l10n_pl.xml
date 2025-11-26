@@ -242,5 +242,11 @@ Wszystkiego najlepszego,
 MathiasHun" tag="format"/>
 
         <e k="RVB_aimessage_batterydischarged" v="%s Pracownik AI nieoczekiwanie przestał działać, akumulator pojazdu jest rozładowany!"/>
+
+        <!-- DO NOT CHANGE THIS, ONLY IF THE OFFICIAL POLAND TRANSLATION OF THE FS25_useYourTyres MOD CHANGES -->
+        <e k="infohud_uytTyresWear" v="Zużycie opon"/>
+        <!-- End of warning -->
+        <e k="rvb_infohud_uytTyresWear" v="Opona %s" tag="format"/>
+
     </elements>
 </l10n>

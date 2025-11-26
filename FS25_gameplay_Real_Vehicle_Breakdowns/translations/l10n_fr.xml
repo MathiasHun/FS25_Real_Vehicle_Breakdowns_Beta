@@ -241,5 +241,11 @@ Bonne continuation,
 MathiasHun" tag="format"/>
 
         <e k="RVB_aimessage_batterydischarged" v="%s l'assistant machine a soudainement cessé de travailler, la batterie du véhicule est déchargée!"/>
+
+        <!-- DO NOT CHANGE THIS, ONLY IF THE FS25_USEYOURTYRES MOD ALREADY HAS AN OFFICIAL FRANCE TRANSLATION -->
+        <e k="infohud_uytTyresWear" v="Tyres wear"/>
+        <!-- End of warning -->
+        <e k="rvb_infohud_uytTyresWear" v="Tyre %s" tag="format"/>
+
     </elements>
 </l10n>

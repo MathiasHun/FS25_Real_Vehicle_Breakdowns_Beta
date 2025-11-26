@@ -242,5 +242,11 @@
 MathiasHun" tag="format"/>
 
         <e k="RVB_aimessage_batterydischarged" v="Работник на %s прекратил работу, аккумулятор ТС разряжен!"/>
+
+        <!-- O NOT CHANGE THIS, ONLY IF THE FS25_USEYOURTYRES MOD ALREADY HAS AN OFFICIAL RUSSIA TRANSLATION -->
+        <e k="infohud_uytTyresWear" v="Tyres wear"/>
+        <!-- End of warning -->
+        <e k="rvb_infohud_uytTyresWear" v="Tyre %s" tag="format"/>
+
     </elements>
 </l10n>

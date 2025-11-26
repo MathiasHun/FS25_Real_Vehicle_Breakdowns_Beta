@@ -242,5 +242,11 @@ Cordiali saluti,
 MathiasHun" tag="format"/>
 
         <e k="RVB_aimessage_batterydischarged" v="%s L'assistente AI ha smesso di funzionare inaspettatamente: la batteria del veicolo si è scaricata!"/>
+
+        <!-- DO NOT CHANGE THIS, ONLY IF THE FS25_USEYOURTYRES MOD ALREADY HAS AN OFFICIAL ITALY TRANSLATION -->
+        <e k="infohud_uytTyresWear" v="Tyres wear"/>
+        <!-- End of warning -->
+        <e k="rvb_infohud_uytTyresWear" v="Tyre %s" tag="format"/>
+
     </elements>
 </l10n>

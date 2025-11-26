@@ -242,5 +242,11 @@ Alles Gute,
 MathiasHun" tag="format"/>
 
         <e k="RVB_aimessage_batterydischarged" v="%s KI-Arbeiter hat unerwartet die Arbeit eingestellt, die Fahrzeugbatterie ist entladen!"/>
-	</elements>
+
+        <!-- DO NOT CHANGE THIS, ONLY IF THE OFFICIAL DEUTSCHLAND TRANSLATION OF THE FS25_useYourTyres MOD CHANGES -->
+        <e k="infohud_uytTyresWear" v="Reifenverschleiß"/>
+        <!-- End of warning -->
+        <e k="rvb_infohud_uytTyresWear" v="Reifen %s" tag="format"/>
+
+    </elements>
 </l10n>

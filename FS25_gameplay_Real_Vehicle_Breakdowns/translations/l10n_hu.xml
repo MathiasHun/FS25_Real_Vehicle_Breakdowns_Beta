@@ -246,13 +246,6 @@ MathiasHun" tag="format"/>
         <e k="infohud_uytTyresWear" v="Tyres wear"/>
         <!-- Figyelmeztetés vége -->
         <e k="rvb_infohud_uytTyresWear" v="Gumi %s" tag="format"/>
-        <!--<e k="input_UYT_REPLACE_TYRES" v="Gumik cseréje"/>
-        <e k="ui_uytReplaceDialog" v="Szeretnéd kicserélni a gumikat a(z) %s járműn?"/>
-        <e k="infohud_uytTyresWear" v="Gumik kopása"/>
-        <e k="infohud_uytTyresWearUnsupported" v="Nem támogatott!"/>
-        <e k="ui_uytSettingsTitle" v="Gumik használatának nyomon követése"/>
-        <e k="ui_uytSettingsTyreDistanceTitle" v="Gumik kopási sebessége"/>
-        <e k="ui_uytSettingsTyreDistanceDescription" v="Milyen gyorsan kopnak el teljesen a gumik."/>-->
 
     </elements>
 </l10n>

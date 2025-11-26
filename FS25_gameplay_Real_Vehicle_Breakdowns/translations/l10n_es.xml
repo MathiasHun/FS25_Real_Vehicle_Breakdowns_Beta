@@ -242,5 +242,11 @@ Todo lo mejor,
 MathiasHun" tag="format"/>
 
         <e k="RVB_aimessage_batterydischarged" v="%s trabajador de IA dejó de trabajar inesperadamente, ¡la batería del vehículo está descargada!"/>
+
+        <!-- DO NOT CHANGE THIS, ONLY IF THE FS25_USEYOURTYRES MOD ALREADY HAS AN OFFICIAL SPAIN TRANSLATION -->
+        <e k="infohud_uytTyresWear" v="Tyres wear"/>
+        <!-- End of warning -->
+        <e k="rvb_infohud_uytTyresWear" v="Tyre %s" tag="format"/>
+
     </elements>
 </l10n>
