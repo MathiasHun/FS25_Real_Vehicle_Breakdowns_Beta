@@ -57,25 +57,18 @@ This is not a stable release, but meant for testing and feedback collection.
 
 Thanks for helping improve the mod!🚜
 </br></br>
-<!--
+<!---->
 # Please don’t share this version on other sites, it’s a VERY early BETA.</br>
-## <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=7">Download the latest developer TEST version 0.9.5.4</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
+## <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=7">Download the latest developer TEST version 0.9.5.5</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
 
 # Recommended Dependencies (to avoid errors):
 - Wind Turbines Charging Station mod (i.e., FS25_electricChargeStation) - by HoT online Team [FS25_electricChargeStation](https://www.kingmods.net/en/fs25/mods/62810/wind-turbines-charging-station)
 - JCB E-tech Powerpack (i.e., FS25_JCB_Powerpack) - by RossN Mods [FS25_JCB_Powerpack](https://www.farming-simulator.com/mod.php?mod_id=310865&title=fs2025)
 
-## Changelog 0.9.5.4:
-- The repair did not finish because a test code was left in. It has now been fixed.
-- Compatibility with the Use Up Your Tyres (FS25_useYourTyres) mod has been completed.
-In the RVB menu, the tyre lifetime can now be adjusted, for example to 340 km.
-Please note that tyre wear is affected by both of the following settings:
-Vehicle Failure in the RVB menu
-Tyre Usage Rate from the Use Up Your Tyres mod.
-- Missing workshop translation added.
-- github issues#99
+## Changelog 0.9.5.5:
+- github issues#102 - Now compatible with the Highlands Fishing Expansion DLC
 
-</br></br></br>-->
+</br></br></br><!---->
 ### <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=5">Download the latest developer version</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
 
 # Recommended Dependencies (to avoid errors):
