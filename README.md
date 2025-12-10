@@ -66,6 +66,7 @@ Thanks for helping improve the mod!🚜
 - JCB E-tech Powerpack (i.e., FS25_JCB_Powerpack) - by RossN Mods [FS25_JCB_Powerpack](https://www.farming-simulator.com/mod.php?mod_id=310865&title=fs2025)
 
 ## Changelog 0.9.5.5:
+- github issues#108 - Tires are not reset on vehicle reset via workshop reset
 - github issues#102 - Now compatible with the Highlands Fishing Expansion DLC
 
 </br></br></br><!---->
