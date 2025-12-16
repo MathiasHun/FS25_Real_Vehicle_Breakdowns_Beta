@@ -89,19 +89,19 @@ Thanks for helping improve the mod!🚜
 - github issues#74 - Just a little compatibility issue between RVB + Vehicle Shop Storage 1.0.0.0 + Use Up Your Tyres 1.0.0.3
 - github issues#63 - Fuel gauges
 - The following vehicles are “excluded” from RVB mode:
-  Base game vehicles:
-    piaggio/ape50
-    kubota/rtvxG850
-    kubota/rtvx1140
-    antonioCarraro/tigrecar3200
-  Mod vehicles:
-    FS25_JohnDeere_330_LawnTractor
-    FS25_JohnDeere445
-    TSN25_2doordefender
-  DLC vehicles (highlandsFishingPack):
-    canAm/outlanderPro
-    canAm/outlanderMax
-    canAm/defender
+  #### Base game vehicles:
+    - piaggio/ape50
+    - kubota/rtvxG850
+    - kubota/rtvx1140
+    - antonioCarraro/tigrecar3200
+  #### Mod vehicles:
+    - FS25_JohnDeere_330_LawnTractor
+    - FS25_JohnDeere445
+    - TSN25_2doordefender
+  #### DLC vehicles (highlandsFishingPack):
+    - canAm/outlanderPro
+    - canAm/outlanderMax
+    - canAm/defender
 
 ## Changelog 0.9.5.4:
 - The repair did not finish because a test code was left in. It has now been fixed.
