@@ -57,22 +57,18 @@ This is not a stable release, but meant for testing and feedback collection.
 
 Thanks for helping improve the mod!🚜
 </br></br>
-<!--
+<!---->
 # Please don’t share this version on other sites, it’s a VERY early BETA.</br>
-## <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=7">Download the latest developer TEST version 0.9.5.5</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
+## <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=7">Download the latest developer TEST version 0.9.5.6</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
 
 # Recommended Dependencies (to avoid errors):
 - Wind Turbines Charging Station mod (i.e., FS25_electricChargeStation) - by HoT online Team [FS25_electricChargeStation](https://www.kingmods.net/en/fs25/mods/62810/wind-turbines-charging-station)
 - JCB E-tech Powerpack (i.e., FS25_JCB_Powerpack) - by RossN Mods [FS25_JCB_Powerpack](https://www.farming-simulator.com/mod.php?mod_id=310865&title=fs2025)
 
-## Changelog 0.9.5.5:
-- github issues#109 - Not working on some vehicles
-- github issues#108 - Tires are not reset on vehicle reset via workshop reset
-- github issues#107 - strange object in 0,0,0 coordinates under vehicle
-- github issues#102 - Now compatible with the Highlands Fishing Expansion DLC
-- github issues#74 - Just a little compatibility issue between RVB + Vehicle Shop Storage 1.0.0.0 + Use Up Your Tyres 1.0.0.3
+## Changelog 0.9.5.6:
+- github issues#40 - AI workers should automatically shutdown lights/beacons when the vehicle engine stops, fixed
 
-</br></br></br>-->
+</br></br></br><!---->
 ### <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=5">Download the latest developer version</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
 
 # Recommended Dependencies (to avoid errors):
