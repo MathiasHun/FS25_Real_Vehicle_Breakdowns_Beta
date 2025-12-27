@@ -27,11 +27,14 @@
 This mod is under development, which means bugs, unexpected behavior, unfinished features, and occasional surprises may occur.
 I take no responsibility for corrupted savegames, missing vehicles, or heartbroken farmers.
 
-
+&nbsp;
+&nbsp;
 ## ⚠️ IMPORTANT
 Please read this before opening a new issue:
 👉 Issue [#114](https://github.com/MathiasHun/FS25_Real_Vehicle_Breakdowns_Beta/issues/114)
+&nbsp;
 
+&nbsp;
 
 ## 🐞Reporting Issues
 
