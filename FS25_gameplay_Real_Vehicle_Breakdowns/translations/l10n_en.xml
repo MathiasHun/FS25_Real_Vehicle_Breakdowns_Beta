@@ -173,7 +173,7 @@
         <e k="RVB_serviceDialogEnd" v="Service for %s vehicle completed."/>
         <e k="RVB_repairDialogEnd" v="Repair of %s vehicle completed."/>
         <e k="RVB_fault_" v="Don't drive too fast; the engine is still cold."/>
-        <e k="RVB_fault_engineload" v="Don't push it too hard, the engine is still cold."/>
+        <e k="RVB_fault_engineload" v="Don't overload the engine too early, it is still cold."/>
         <e k="RVB_fault_hud" v="%s is being driven too fast; the engine is still cold." tag="format"/>
         <e k="RVB_fault_thermostat" v="Coolant overheating."/>
         <e k="RVB_fault_thermostat_hud" v="%s vehicle's coolant is overheating." tag="format"/>
@@ -248,4 +248,5 @@ MathiasHun" tag="format"/>
         <e k="rvb_infohud_uytTyresWear" v="Tyre %s" tag="format"/>
 
     </elements>
+
 </l10n>
