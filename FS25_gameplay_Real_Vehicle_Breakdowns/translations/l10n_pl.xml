@@ -174,7 +174,7 @@
         <e k="RVB_serviceDialogEnd" v="Service for %s vehicle completed."/>
         <e k="RVB_repairDialogEnd" v="Repair of %s vehicle completed."/>
         <e k="RVB_fault_" v="Nie jedź zbyt szybko, silnik jest jeszcze zimny."/>
-        <e k="RVB_fault_engineload" v="Don't push it too hard, the engine is still cold."/>
+        <e k="RVB_fault_engineload" v="Don't overload the engine too early, it is still cold."/>
         <e k="RVB_fault_hud" v="%s pojazd jedzie zbyt szybko, silnik jest jeszcze zimny." tag="format"/>
         <e k="RVB_fault_thermostat" v="Płyn chłodzący przegrzewa się."/>
         <e k="RVB_fault_thermostat_hud" v="%s płyn chłodzący pojazdu przegrzewa się." tag="format"/>
@@ -249,4 +249,5 @@ MathiasHun" tag="format"/>
         <e k="rvb_infohud_uytTyresWear" v="Opona %s" tag="format"/>
 
     </elements>
+
 </l10n>
