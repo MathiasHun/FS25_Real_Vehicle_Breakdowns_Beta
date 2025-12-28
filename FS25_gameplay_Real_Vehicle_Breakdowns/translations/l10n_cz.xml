@@ -174,7 +174,7 @@
         <e k="RVB_serviceDialogEnd" v="Service for %s vehicle completed."/>
         <e k="RVB_repairDialogEnd" v="Repair of %s vehicle completed."/>
         <e k="RVB_fault_" v="Nejezděte příliš rychle, motor je ještě studený."/>
-        <e k="RVB_fault_engineload" v="Don't push it too hard, the engine is still cold."/>
+        <e k="RVB_fault_engineload" v="Don't overload the engine too early, it is still cold."/>
         <e k="RVB_fault_hud" v="%s jede příliš rychle; motor je ještě studený." tag="format"/>
         <e k="RVB_fault_thermostat" v="Chladicí kapalina se přehřívá."/>
         <e k="RVB_fault_thermostat_hud" v="%s chladicí kapalina vozidla se přehřívá." tag="format"/>
@@ -247,4 +247,5 @@ MathiasHun" tag="format"/>
         <e k="rvb_infohud_uytTyresWear" v="Tyre %s" tag="format"/>
 
     </elements>
+
 </l10n>
