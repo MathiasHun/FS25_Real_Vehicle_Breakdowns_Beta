@@ -173,7 +173,7 @@
         <e k="RVB_serviceDialogEnd" v="%s jármű szervizelése befejeződött."/>
         <e k="RVB_repairDialogEnd" v="%s jármű javítása befejeződött."/>
         <e k="RVB_fault_" v="Ne vezessen túl gyorsan, a motor még hideg."/>
-        <e k="RVB_fault_engineload" v="Ne terheld túl gyorsan, a motor még hideg."/>
+        <e k="RVB_fault_engineload" v="Ne terheld túl hamar, a motor még hideg."/>
         <e k="RVB_fault_hud" v="%s járművel túl gyorsan vezetnek, a motor még hideg." tag="format"/>
         <e k="RVB_fault_thermostat" v="Hűtőfolyadék túlmelegedik."/>
         <e k="RVB_fault_thermostat_hud" v="%s jármű hűtőfolyadéka túlmelegedik." tag="format"/>
@@ -248,4 +248,5 @@ MathiasHun" tag="format"/>
         <e k="rvb_infohud_uytTyresWear" v="Gumi %s" tag="format"/>
 
     </elements>
+
 </l10n>
