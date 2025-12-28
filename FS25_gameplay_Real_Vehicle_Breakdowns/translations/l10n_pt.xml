@@ -174,7 +174,7 @@
         <e k="RVB_serviceDialogEnd" v="Service for %s vehicle completed."/>
         <e k="RVB_repairDialogEnd" v="Repair of %s vehicle completed."/>
         <e k="RVB_fault_" v="Não conduzas tão rápido; o motor ainda está frio."/>
-        <e k="RVB_fault_engineload" v="Don't push it too hard, the engine is still cold."/>
+        <e k="RVB_fault_engineload" v="Don't overload the engine too early, it is still cold."/>
         <e k="RVB_fault_hud" v="%s está a conduzir demasiado rápido; o motor ainda está frio." tag="format"/>
         <e k="RVB_fault_thermostat" v="Sobre-aquecimento do líquido refrigerante."/>
         <e k="RVB_fault_thermostat_hud" v="O líquido refrigerante do veículo %s está a sobreaquecer." tag="format"/>
@@ -249,4 +249,5 @@ MathiasHun" tag="format"/>
         <e k="rvb_infohud_uytTyresWear" v="Tyre %s" tag="format"/>
 
     </elements>
+
 </l10n>
