@@ -70,12 +70,16 @@ Thanks for helping improve the mod!🚜
 # Please don’t share this version on other sites, it’s a VERY early BETA.</br>
 ## <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=7">Download the latest developer TEST version 0.9.5.6</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
 
-# Recommended Dependencies (to avoid errors):
-- Wind Turbines Charging Station mod (i.e., FS25_electricChargeStation) - by HoT online Team [FS25_electricChargeStation](https://www.kingmods.net/en/fs25/mods/62810/wind-turbines-charging-station)
-- JCB E-tech Powerpack (i.e., FS25_JCB_Powerpack) - by RossN Mods [FS25_JCB_Powerpack](https://www.farming-simulator.com/mod.php?mod_id=310865&title=fs2025)
-
 ## Changelog 0.9.5.6:
+- Engine wear below 50 °C is now based on engine load instead of speed: above 65 % load, wear increases until the engine reaches 50 °C
+- Choose the vehicle’s power carefully. If the engine is underpowered, higher engine load can lead to increased engine wear
+- Keep your vehicle clean! 100% dirt + 1 hour of operation = increased wear (engine, thermostat)
+- github issues#116 - Version v0.9.5.5 does not detect the battery
+- github issues#112 - Wear values too high
+- github issues#110 - RVB does not read the correct tires damage from Use Up Your Tyres mod
+- github issues#105 - Divide by zero error.
 - github issues#40 - AI workers should automatically shutdown lights/beacons when the vehicle engine stops, fixed
+- The following vehicles are “excluded” from RVB mode: https://github.com/MathiasHun/FS25_Real_Vehicle_Breakdowns_Beta/issues/114
 
 </br></br></br><!---->
 ### <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=5">Download the latest developer version</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
