@@ -174,7 +174,7 @@
         <e k="RVB_serviceDialogEnd" v="Service for %s vehicle completed."/>
         <e k="RVB_repairDialogEnd" v="Repair of %s vehicle completed."/>
         <e k="RVB_fault_" v="Не ездите слишком быстро, двигатель ещё холодный."/>
-        <e k="RVB_fault_engineload" v="Don't push it too hard, the engine is still cold."/>
+        <e k="RVB_fault_engineload" v="Don't overload the engine too early, it is still cold."/>
         <e k="RVB_fault_hud" v="%s едет слишком быстро, двигатель ещё холодный." tag="format"/>
         <e k="RVB_fault_thermostat" v="Охлаждающая жидкость перегревается."/>
         <e k="RVB_fault_thermostat_hud" v="Охлаждающая жидкость %s перегревается." tag="format"/>
