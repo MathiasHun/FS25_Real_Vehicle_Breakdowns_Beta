@@ -175,7 +175,7 @@
         <e k="RVB_serviceDialogEnd" v="Service voor voertuig %s voltooid."/>
         <e k="RVB_repairDialogEnd" v="Reparatie van voertuig %s voltooid."/>
         <e k="RVB_fault_" v="Rijd niet te snel, de motor is nog koud."/>
-        <e k="RVB_fault_engineload" v="Forceer de motor niet, hij is nog koud."/>
+        <e k="RVB_fault_engineload" v="Don't overload the engine too early, it is still cold."/>
         <e k="RVB_fault_hud" v="%s het voertuig rijdt te snel, de motor is nog koud." tag="format"/>
         <e k="RVB_fault_thermostaat" v="Koelvloeistof raakt oververhit."/>
         <e k="RVB_fault_thermostat_hud" v="%s voertuigkoelvloeistof raakt oververhit." tag="format"/>
@@ -250,4 +250,5 @@ MathiasHun" tag="format"/>
         <e k="rvb_infohud_uytTyresWear" v="Tyre %s" tag="format"/>
 
     </elements>
+
 </l10n>
