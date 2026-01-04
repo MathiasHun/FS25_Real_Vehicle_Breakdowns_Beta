@@ -73,6 +73,7 @@ Thanks for helping improve the mod!🚜
 ## Changelog 0.9.5.6:
 - The difficulty setting has been moved to Gameplay Settings.
 - You can now configure whether the vehicle workshop is open.
+- Engine Load in HUD
 - Engine wear below 50 °C is now based on engine load instead of speed: above 65 % load, wear increases until the engine reaches 50 °C
 - Choose the vehicle’s power carefully. If the engine is underpowered, higher engine load can lead to increased engine wear
 - Keep your vehicle clean! 100% dirt + 1 hour of operation = increased wear (engine, thermostat)
