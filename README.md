@@ -42,7 +42,7 @@ If you run into problems, please help improve the mod by following these steps:
 
 1. State your Farming Simulator 25 game version (e.g., FS25: 1.14.0.1).
 
-2. Include the mod version number you are using (e.g., RVB: v0.9.5.2).
+2. Include the mod version number you are using (e.g., RVB: v0.9.5.5).
 
 3. Restart your savegame, and only enable this mod (and any other absolutely essential mods) when reproducing the issue.
 
@@ -71,6 +71,8 @@ Thanks for helping improve the mod!🚜
 ## <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=7">Download the latest developer TEST version 0.9.5.6</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
 
 ## Changelog 0.9.5.6:
+- The difficulty setting has been moved to Gameplay Settings.
+- You can now configure whether the vehicle workshop is open.
 - Engine wear below 50 °C is now based on engine load instead of speed: above 65 % load, wear increases until the engine reaches 50 °C
 - Choose the vehicle’s power carefully. If the engine is underpowered, higher engine load can lead to increased engine wear
 - Keep your vehicle clean! 100% dirt + 1 hour of operation = increased wear (engine, thermostat)
