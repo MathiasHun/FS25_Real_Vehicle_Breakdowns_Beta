@@ -31,12 +31,14 @@
         <e k="RVB_setting_periodicServiceInterval" v="Periyodik bakım"/>
         <e k="RVB_toolTip_periodicServiceInterval" v="Araç bakım aralığı."/>
         <e k="RVB_settingSectionHeader_Workshop" v="Araç Atölyesi"/>
-        <e k="RVB_setting_workshopOpen" v="Araç tamirhanesi açılış saati"/>
-        <e k="RVB_toolTip_workshopOpen" v="Araç tamirhanesin açılış saati. Sadece ayarladığınız saatte açılır."/>
-        <e k="RVB_setting_workshopClose" v="Araç tamirhanesi kapanı saati."/>
-        <e k="RVB_toolTip_workshopClose" v="Araç tamirhanesin kapanış saati. Sadece ayarladığınız saatte kapanır."/>
-        <e k="RVB_setting_workshopCountMax" v="Maximum vehicles in workshop"/>
-        <e k="RVB_toolTip_workshopCountMax" v="Here you can set how many vehicles can be handled by the mechanic at once."/>
+        <e k="RVB_setting_workshopTime" v="Workshop Opening Time"/>
+        <e k="RVB_toolTip_workshopTime" v="If enabled, the workshop can only be used during the specified opening hours."/>
+        <e k="RVB_setting_workshopOpen" v="Opening Time"/>
+        <e k="RVB_toolTip_workshopOpen" v="The time when the vehicle workshop opens."/>
+        <e k="RVB_setting_workshopClose" v="Closing Time"/>
+        <e k="RVB_toolTip_workshopClose" v="The time when the vehicle workshop closes."/>
+        <e k="RVB_setting_workshopCountMax" v="Maximum Vehicles in workshop"/>
+        <e k="RVB_toolTip_workshopCountMax" v="Here you can set how many vehicles can fit in the workshop at once."/>
         <e k="RVB_settingSectionHeader_LifetimeofParts" v="Parçaların Ömrü."/>
         <e k="RVB_toolTip_lifetimeParts" v="Bu sayı ne kadar küçük, o kadar çabuk arızalanır."/>
         <e k="RVB_setting_thermostatLifetime" v="Termostat"/>
@@ -69,7 +71,6 @@
         <e k="RVB_toolTip_showRpm" v="Burada Rpm görüntüsünü açıp kapatabilirsiniz."/>
         <e k="RVB_setting_showFuel" v="Yakıt"/>
         <e k="RVB_toolTip_showFuel" v="Burada yakıt görüntüsünü açıp kapatabilirsiniz."/>
-
         <e k="RVB_setting_showdebug" v="Troubleshooting"/>
         <e k="RVB_toolTip_showdebug" v="Displays troubleshooting in the console and log.txt (can improve performance when turned off)"/>
 
@@ -249,5 +250,4 @@ MathiasHun" tag="format"/>
         <e k="rvb_infohud_uytTyresWear" v="Tyre %s" tag="format"/>
 
     </elements>
-
 </l10n>

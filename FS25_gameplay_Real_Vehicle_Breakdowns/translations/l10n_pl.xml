@@ -31,12 +31,14 @@
         <e k="RVB_setting_periodicServiceInterval" v="Okresowy serwis"/>
         <e k="RVB_toolTip_periodicServiceInterval" v="Interwał serwisowy pojazdu."/>
         <e k="RVB_settingSectionHeader_Workshop" v="Warsztat pojazdów"/>
-        <e k="RVB_setting_workshopOpen" v="Otwarcie warsztat pojazdów"/>
-        <e k="RVB_toolTip_workshopOpen" v="Warsztat pojazdów otwiera się o"/>
-        <e k="RVB_setting_workshopClose" v="Zamknięcie warsztatu pojazdów"/>
-        <e k="RVB_toolTip_workshopClose" v="Warsztat pojazdów zamyka się o"/>
-        <e k="RVB_setting_workshopCountMax" v="Maximum vehicles in workshop"/>
-        <e k="RVB_toolTip_workshopCountMax" v="Here you can set how many vehicles can be handled by the mechanic at once."/>
+        <e k="RVB_setting_workshopTime" v="Workshop Opening Time"/>
+        <e k="RVB_toolTip_workshopTime" v="If enabled, the workshop can only be used during the specified opening hours."/>
+        <e k="RVB_setting_workshopOpen" v="Opening Time"/>
+        <e k="RVB_toolTip_workshopOpen" v="The time when the vehicle workshop opens."/>
+        <e k="RVB_setting_workshopClose" v="Closing Time"/>
+        <e k="RVB_toolTip_workshopClose" v="The time when the vehicle workshop closes."/>
+        <e k="RVB_setting_workshopCountMax" v="Maximum Vehicles in workshop"/>
+        <e k="RVB_toolTip_workshopCountMax" v="Here you can set how many vehicles can fit in the workshop at once."/>
         <e k="RVB_settingSectionHeader_LifetimeofParts" v="Żywotność części."/>
         <e k="RVB_toolTip_lifetimeParts" v="Im mniejsza ta liczba, tym szybciej nastąpi awaria."/>
         <e k="RVB_setting_thermostatLifetime" v="Termostat"/>
@@ -69,7 +71,8 @@
         <e k="RVB_toolTip_showRpm" v="Tutaj możesz włączyć lub wyłączyć wyświetlanie Rpm."/>
         <e k="RVB_setting_showFuel" v="Paliwo"/>
         <e k="RVB_toolTip_showFuel" v="Tutaj możesz włączyć lub wyłączyć wyświetlanie paliwa."/>
-
+        <e k="RVB_setting_showMotorLoad" v="Engine Load"/>
+        <e k="RVB_toolTip_showMotorLoad" v="Here you can toggle the display of the engine load on or off."/>
         <e k="RVB_setting_showdebug" v="Troubleshooting"/>
         <e k="RVB_toolTip_showdebug" v="Displays troubleshooting in the console and log.txt (can improve performance when turned off)"/>
 
@@ -249,6 +252,4 @@ MathiasHun" tag="format"/>
         <e k="rvb_infohud_uytTyresWear" v="Opona %s" tag="format"/>
 
     </elements>
-
 </l10n>
-

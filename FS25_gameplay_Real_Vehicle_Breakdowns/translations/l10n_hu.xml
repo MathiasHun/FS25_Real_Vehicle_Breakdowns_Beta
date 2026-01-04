@@ -30,12 +30,14 @@
         <e k="RVB_setting_periodicServiceInterval" v="Időszakos szerviz"/>
         <e k="RVB_toolTip_periodicServiceInterval" v="Jármű szervizintervalluma."/>
         <e k="RVB_settingSectionHeader_Workshop" v="Járműműhely"/>
-        <e k="RVB_setting_workshopOpen" v="Járműműhely nyitás"/>
-        <e k="RVB_toolTip_workshopOpen" v="A járműműhely ekkor nyit."/>
-        <e k="RVB_setting_workshopClose" v="Járműműhely zárás"/>
-        <e k="RVB_toolTip_workshopClose" v="A járműműhely ekkor zár."/>
+        <e k="RVB_setting_workshopTime" v="Műhely nyitvatartás"/>
+        <e k="RVB_toolTip_workshopTime" v="Ha engedélyezve van, a műhely csak a megadott nyitvatartási időben használható."/>
+        <e k="RVB_setting_workshopOpen" v="Nyitási idő"/>
+        <e k="RVB_toolTip_workshopOpen" v="A járműműhely nyitásának időpontja."/>
+        <e k="RVB_setting_workshopClose" v="Zárási idő"/>
+        <e k="RVB_toolTip_workshopClose" v="A járműműhely zárásának időpontja."/>
         <e k="RVB_setting_workshopCountMax" v="Maximum járművek a műhelyben"/>
-        <e k="RVB_toolTip_workshopCountMax" v="Itt szabhatod meg, hány jármű fér be egyszerre a szerelőhöz."/>
+        <e k="RVB_toolTip_workshopCountMax" v="Itt szabhatod meg, hány jármű fér be egyszerre a műhelyben."/>
         <e k="RVB_settingSectionHeader_LifetimeofParts" v="Alkatrészek élettartama"/>
         <e k="RVB_toolTip_lifetimeParts" v="Minél kisebb ez a szám, annál hamarabb fog meghibásodni."/>
         <e k="RVB_setting_thermostatLifetime" v="Termosztát"/>
@@ -68,7 +70,8 @@
         <e k="RVB_toolTip_showRpm" v="Itt be- vagy kikapcsolhatod az Rpm megjelenítését."/>
         <e k="RVB_setting_showFuel" v="Üzemanyag"/>
         <e k="RVB_toolTip_showFuel" v="Itt be- vagy kikapcsolhatod az üzemanyag megjelenítését."/>
-
+        <e k="RVB_setting_showMotorLoad" v="Motorterhelés"/>
+        <e k="RVB_toolTip_showMotorLoad" v="Itt be- vagy kikapcsolhatod a motorterhelés megjelenítését."/>
         <e k="RVB_setting_showdebug" v="Hibakeresés"/>
         <e k="RVB_toolTip_showdebug" v="Megjeleníti hibakeresést a konzolon és log.txt-ben. (kikapcsolva fokozhatja a teljesítményt)"/>
 
@@ -172,8 +175,9 @@
 
         <e k="RVB_serviceDialogEnd" v="%s jármű szervizelése befejeződött."/>
         <e k="RVB_repairDialogEnd" v="%s jármű javítása befejeződött."/>
-        <e k="RVB_fault_" v="Ne vezessen túl gyorsan, a motor még hideg."/>
+        <e k="RVB_fault_" v="Ne vezess túl gyorsan, a motor még hideg."/>
         <e k="RVB_fault_engineload" v="Ne terheld túl hamar, a motor még hideg."/>
+        <e k="RVB_fault_engineload_hud" v="%s jármű motorja hidegen túl nagy terhelést kap." tag="format"/>
         <e k="RVB_fault_hud" v="%s járművel túl gyorsan vezetnek, a motor még hideg." tag="format"/>
         <e k="RVB_fault_thermostat" v="Hűtőfolyadék túlmelegedik."/>
         <e k="RVB_fault_thermostat_hud" v="%s jármű hűtőfolyadéka túlmelegedik." tag="format"/>
@@ -248,5 +252,4 @@ MathiasHun" tag="format"/>
         <e k="rvb_infohud_uytTyresWear" v="Gumi %s" tag="format"/>
 
     </elements>
-
 </l10n>
