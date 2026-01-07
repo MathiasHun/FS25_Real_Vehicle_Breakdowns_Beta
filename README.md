@@ -85,9 +85,9 @@ Thanks for helping improve the mod!🚜
 - The following vehicles are “excluded” from RVB mode: https://github.com/MathiasHun/FS25_Real_Vehicle_Breakdowns_Beta/issues/114
 
 </br></br></br>-->
-### <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=5">Download the latest developer version</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
+# <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=5">Download the latest developer version</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
 
-# Recommended Dependencies (to avoid errors):
+## Recommended Dependencies (to avoid errors):
 - Wind Turbines Charging Station mod (i.e., FS25_electricChargeStation) - by HoT online Team [FS25_electricChargeStation](https://www.kingmods.net/en/fs25/mods/62810/wind-turbines-charging-station)
 - JCB E-tech Powerpack (i.e., FS25_JCB_Powerpack) - by RossN Mods [FS25_JCB_Powerpack](https://www.farming-simulator.com/mod.php?mod_id=310865&title=fs2025)
 
