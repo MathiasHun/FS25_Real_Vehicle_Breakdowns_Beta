@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <l10n>
+    <translationContributors>Squall</translationContributors>
     <elements>
         <e k="input_VEHICLE_BREAKDOWN_MENU" v="Pannes Réalistes du Véhicule(RVB)"/>
         <e k="input_RVB_SPEC" v="RVB on/off"/>
-        <e k="input_RVB_CONNECTING_JC" v="Connecting jumper cables"/>
-        <e k="action_RVB_DISCONNECTING_JC" v="Disconnecting jumper cables"/>
-        <e k="RVB_dialog_titleCONNECTING_JC" v="Connecting jumper cables"/>
-        <e k="RVB_dialog_descCONNECTING_JC" v="There is no need to jump-start the %s vehicle. Are you sure you want to continue connecting the jumper cables?" tag="format"/>
-        <e k="RVB_errorCONNECTING_JC" v="Only one vehicle has jumper cables connected."/>
-        <e k="RVB_addextra_progress" v="Jump-starting in progress. (%s %%)" tag="format"/>
+        <e k="input_RVB_CONNECTING_JC" v="Connexion des câbles de démarrage"/>
+        <e k="action_RVB_DISCONNECTING_JC" v="Déconnexion des câbles de démarrage"/>
+        <e k="RVB_dialog_titleCONNECTING_JC" v="Connexion des câbles de démarrage"/>
+        <e k="RVB_dialog_descCONNECTING_JC" v="Il n'est pas nécessaire de démarrer le véhicule %s avec des câbles. Êtes-vous sûr de vouloir continuer à connecter les câbles ?" tag="format"/>
+        <e k="RVB_errorCONNECTING_JC" v="Un seul véhicule a des câbles de démarrage connectés."/>
+        <e k="RVB_addextra_progress" v="Démarrage par câbles en cours. (%s %%)" tag="format"/>
         <e k="RVB_addextra_charging" v="Chargement %s A" tag="format"/>
-        <e k="RVB_addextra_connecting" v="Jumper cables connected"/>
-        <e k="RVB_blinking_connecting_toofar" v="Don't stretch the jumper cable any further, or it will soon detach from the battery! (%s m)" tag="format"/>
-        <e k="RVB_blinking_connecting_drive" v="Don't drive away, the jumper cables are still connected! (%s m)" tag="format"/>
-        <e k="RVB_blinking_connecting_length" v="Jumper cable length: %s m / %s m" tag="format"/>
-        <e k="RVB_blinking_connecting_cableBroken" v="The jumper cables were connected. They got damaged, so you had to buy new ones for %s." tag="format"/>
-        <e k="RVB_blinking_connecting" v="%s: Jumper cables connected." tag="format"/>
-        <e k="RVB_blinking_connecting_order" v="First, connect the working vehicle to the jumper cables!"/>
-        <e k="RVB_blinking_disconnecting" v="%s: Jumper cables disconnected." tag="format"/>
-        <e k="RVB_blinking_disconnecting_order" v="First, disconnect the dead vehicle from the jumper cables!"/>
-        <e k="RVB_blinking_no_morejumpercables" v="You have no more jumper cables. Remove them from the last connected vehicles!"/>
-        <e k="input_RVB_JUMPSTARTOFF" v="Jump-starting off"/>
-        <e k="action_RVB_JUMPSTARTON" v="Jump-starting on"/>
+        <e k="RVB_addextra_connecting" v="Câbles de démarrage connectés"/>
+        <e k="RVB_blinking_connecting_toofar" v="N'étirez pas davantage le câble de démarrage, sinon il se détachera bientôt de la batterie ! (%s m)" tag="format"/>
+        <e k="RVB_blinking_connecting_drive" v="Ne partez pas, les câbles de démarrage sont toujours connectés ! (%s m)" tag="format"/>
+        <e k="RVB_blinking_connecting_length" v="Longueur du câble de démarrage : %s m / %s m" tag="format"/>
+        <e k="RVB_blinking_connecting_cableBroken" v="Les câbles de démarrage étaient connectés. Ils ont été endommagés, vous avez donc dû en acheter de nouveaux pour %s." tag="format"/>
+        <e k="RVB_blinking_connecting" v="%s : Câbles de démarrage connectés." tag="format"/>
+        <e k="RVB_blinking_connecting_order" v="Connectez d'abord le véhicule fonctionnel aux câbles de démarrage !"/>
+        <e k="RVB_blinking_disconnecting" v="%s : Câbles de démarrage déconnectés." tag="format"/>
+        <e k="RVB_blinking_disconnecting_order" v="Déconnectez d'abord le véhicule en panne des câbles de démarrage !"/>
+        <e k="RVB_blinking_no_morejumpercables" v="Vous n'avez plus de câbles de démarrage. Retirez-les des derniers véhicules connectés !"/>
+        <e k="input_RVB_JUMPSTARTOFF" v="Démarrage par câbles désactivé"/>
+        <e k="action_RVB_JUMPSTARTON" v="Démarrage par câbles activé"/>
         <e k="ui_RVB_reset_msg" v="Es-tu sûr de cela?"/>
         <e k="RVB_MenuGameSettingsGame" v="Paramètres du jeu"/>
         <e k="RVB_settingSectionHeader_Service" v="Service"/>
@@ -30,14 +31,14 @@
         <e k="RVB_setting_periodicServiceInterval" v="Service périodique"/>
         <e k="RVB_toolTip_periodicServiceInterval" v="Intervalle de service du véhicule."/>	
         <e k="RVB_settingSectionHeader_Workshop" v="Atelier de réparation"/>
-        <e k="RVB_setting_workshopTime" v="Workshop Opening Time"/>
-        <e k="RVB_toolTip_workshopTime" v="If enabled, the workshop can only be used during the specified opening hours."/>
-        <e k="RVB_setting_workshopOpen" v="Opening Time"/>
-        <e k="RVB_toolTip_workshopOpen" v="The time when the vehicle workshop opens."/>
-        <e k="RVB_setting_workshopClose" v="Closing Time"/>
-        <e k="RVB_toolTip_workshopClose" v="The time when the vehicle workshop closes."/>
-        <e k="RVB_setting_workshopCountMax" v="Maximum Vehicles in workshop"/>
-        <e k="RVB_toolTip_workshopCountMax" v="Here you can set how many vehicles can fit in the workshop at once."/>
+        <e k="RVB_setting_workshopTime" v="Heures d'ouverture de l'atelier"/>
+        <e k="RVB_toolTip_workshopTime" v="Si activé, l'atelier ne peut être utilisé que pendant les heures d'ouverture spécifiées."/>
+        <e k="RVB_setting_workshopOpen" v="Heure d'ouverture"/>
+        <e k="RVB_toolTip_workshopOpen" v="L'heure à laquelle l'atelier de véhicules ouvre."/>
+        <e k="RVB_setting_workshopClose" v="Heure de fermeture"/>
+        <e k="RVB_toolTip_workshopClose" v="L'heure à laquelle l'atelier de véhicules ferme."/>
+        <e k="RVB_setting_workshopCountMax" v="Véhicules maximum dans l'atelier"/>
+        <e k="RVB_toolTip_workshopCountMax" v="Ici, vous pouvez définir combien de véhicules peuvent tenir dans l'atelier en même temps."/>
         <e k="RVB_settingSectionHeader_LifetimeofParts" v="Durée de vie des pièces"/>
         <e k="RVB_toolTip_lifetimeParts" v="Plus ce nombre est petit, plus cela tombera en panne rapidement."/>
         <e k="RVB_setting_thermostatLifetime" v="Thermostat"/>
@@ -61,8 +62,8 @@
         <e k="RVB_difficulty_slow" v="Lent"/>
         <e k="RVB_difficulty_medium" v="Moyen"/>
         <e k="RVB_difficulty_fast" v="Rapide"/>
-        <e k="RVB_setting_rvbDebug" v="Débogage PVR"/>
-        <e k="RVB_toolTip_rvbDebug" v="Affiche le temps de fonctionnement des pièces du véhicule. À utiliser lors des tests."/>
+        <e k="RVB_setting_vehicleHud" v="HUD des pièces du véhicule"/>
+        <e k="RVB_toolTip_vehicleHud" v="Affiche le temps de fonctionnement des pièces du véhicule (peut améliorer les performances si désactivé). Recommandé pour les tests."/>
         <e k="RVB_settingSectionHeader_HUD" v="Paramètres HUD"/>
         <e k="RVB_setting_showTemp" v="Température du moteur"/>
         <e k="RVB_toolTip_showTemp" v="Ici, vous pouvez activer ou désactiver l'affichage de la température du moteur."/>
@@ -70,15 +71,15 @@
         <e k="RVB_toolTip_showRpm" v="Ici, vous pouvez activer ou désactiver l'affichage du Rpm."/>
         <e k="RVB_setting_showFuel" v="Carburant"/>
         <e k="RVB_toolTip_showFuel" v="Ici, vous pouvez activer ou désactiver l'affichage du carburant."/>
-        <e k="RVB_setting_showMotorLoad" v="Engine Load"/>
-        <e k="RVB_toolTip_showMotorLoad" v="Here you can toggle the display of the engine load on or off."/>
-        <e k="RVB_setting_showdebug" v="Troubleshooting"/>
-        <e k="RVB_toolTip_showdebug" v="Displays troubleshooting in the console and log.txt (can improve performance when turned off)"/>
+        <e k="RVB_setting_showMotorLoad" v="Charge moteur"/>
+        <e k="RVB_toolTip_showMotorLoad" v="Ici, vous pouvez activer ou désactiver l'affichage de la charge moteur."/>
+        <e k="RVB_setting_showdebug" v="Dépannage"/>
+        <e k="RVB_toolTip_showdebug" v="Affiche les informations de dépannage dans la console et le log.txt (peut améliorer les performances si désactivé)"/>
 
-        <e k="RVB_MenuGamePartsSettings" v="Vehicle Settings"/>
-        <e k="RVB_Parts_currentValue" v="Current %s lifespan" tag="format"/>
-        <e k="RVB_Parts_remainingValue" v="%s lifespan setting" tag="format"/>
-        <e k="RVB_part_rvbDifficulty" v="Vehicle Breakdown"/>
+        <e k="RVB_MenuGamePartsSettings" v="Paramètres du véhicule"/>
+        <e k="RVB_Parts_currentValue" v="Durée de vie actuelle %s" tag="format"/>
+        <e k="RVB_Parts_remainingValue" v="Réglage durée de vie %s" tag="format"/>
+        <e k="RVB_part_rvbDifficulty" v="Panne de véhicule"/>
         <e k="RVB_Parts_utils_percent" v="%s %%" tag="format"/>
 
         <e k="RVB_WorkShopClose" v="L'atelier de véhicules est fermé, reviens à %s heures." tag="format"/>
@@ -101,11 +102,11 @@
         <e k="RVB_faultText_SELFSTARTER" v="Démarreur"/>
         <e k="RVB_faultText_BATTERY" v="Batterie"/>
         <e k="RVB_faultText_TIRE" v="Pneu"/>
-        <e k="RVB_faultText_TIREFL" v="Front left tire"/>
-        <e k="RVB_faultText_TIREFR" v="Front right tire"/>
-        <e k="RVB_faultText_TIRERL" v="Rear left tire"/>
-        <e k="RVB_faultText_TIRERR" v="Rear right tire"/>
-        <e k="RVB_repairErrorMechanics" v="All mechanics are busy, only up to %s vehicles can be repaired at the same time." tag="format"/>
+        <e k="RVB_faultText_TIREFL" v="Pneu avant gauche"/>
+        <e k="RVB_faultText_TIREFR" v="Pneu avant droit"/>
+        <e k="RVB_faultText_TIRERL" v="Pneu arrière gauche"/>
+        <e k="RVB_faultText_TIRERR" v="Pneu arrière droit"/>
+        <e k="RVB_repairErrorMechanics" v="Tous les mécaniciens sont occupés, seulement jusqu'à %s véhicules peuvent être réparés en même temps." tag="format"/>
         <e k="RVB_repairTimeDialog" v="La réparation du véhicule se termine à %s heures." tag="format"/>
         <e k="RVB_repairDayDialog" v="La réparation du véhicule se termine demain à %s heures." tag="format"/>
         <e k="RVB_ErrorList" v="Liste des erreurs:" />
@@ -140,43 +141,43 @@
         <e k="RVB_list_battery" v="Batterie"/>
         <e k="RVB_parts_repair" v="Pièces à réparer"/>
 
-        <e k="RVB_Workshop" v="Workshop"/>
+        <e k="RVB_Workshop" v="Atelier"/>
         <e k="RVB_Workshop_diagnostics" v="Diagnostics"/>
-        <e k="RVB_Workshop_serviceManual" v="Service Log"/>
-        <e k="RVB_Workshop_noinspection" v="Vehicle has not been inspected!"/>
-        <e k="RVB_Workshop_noserviceManualEntry" v="No entries in the service log!"/>
-        <e k="RVB_Workshop_status" v="Status:"/>
-        <e k="RVB_Workshop_repair" v="Repair?"/>
-        <e k="RVB_Workshop_work" v="Work"/>
+        <e k="RVB_Workshop_serviceManual" v="Carnet d'entretien"/>
+        <e k="RVB_Workshop_noinspection" v="Le véhicule n'a pas été inspecté !"/>
+        <e k="RVB_Workshop_noserviceManualEntry" v="Aucune entrée dans le carnet d'entretien !"/>
+        <e k="RVB_Workshop_status" v="Statut :"/>
+        <e k="RVB_Workshop_repair" v="Réparer ?"/>
+        <e k="RVB_Workshop_work" v="Travail"/>
         <e k="RVB_Workshop_date" v="Date"/>
-        <e k="RVB_Workshop_lifetime" v="Operating hours"/>
-        <e k="RVB_Workshop_odometer" v="Odometer Reading"/>
-        <e k="RVB_Workshop_cost" v="Cost"/>
-        <e k="RVB_WorkshopD_new" v="New"/>
-        <e k="RVB_WorkshopD_conExcellent" v="Excellent condition"/>
-        <e k="RVB_WorkshopD_conGood" v="Good condition"/>
-        <e k="RVB_WorkshopD_conUsed" v="Used but in working"/>
-        <e k="RVB_WorkshopD_conFaults" v="Prone to faults"/>
-        <e k="RVB_WorkshopD_conDown" v="Broken Down"/>
-        <e k="RVB_WorkshopD_conReplace" v="Due for replacement"/>
-        <e k="RVB_WorkshopS_repNeed" v="Repair needed. "/>
-        <e k="RVB_WorkshopS_repNoNeed" v="No repair needed."/>
-        <e k="RVB_WorkshopS_month" v=" month"/>
+        <e k="RVB_Workshop_lifetime" v="Heures de fonctionnement"/>
+        <e k="RVB_Workshop_odometer" v="Relevé du compteur"/>
+        <e k="RVB_Workshop_cost" v="Coût"/>
+        <e k="RVB_WorkshopD_new" v="Neuf"/>
+        <e k="RVB_WorkshopD_conExcellent" v="Excellent état"/>
+        <e k="RVB_WorkshopD_conGood" v="Bon état"/>
+        <e k="RVB_WorkshopD_conUsed" v="Usagé mais fonctionnel"/>
+        <e k="RVB_WorkshopD_conFaults" v="Sujet aux pannes"/>
+        <e k="RVB_WorkshopD_conDown" v="En panne"/>
+        <e k="RVB_WorkshopD_conReplace" v="À remplacer"/>
+        <e k="RVB_WorkshopS_repNeed" v="Réparation nécessaire. "/>
+        <e k="RVB_WorkshopS_repNoNeed" v="Aucune réparation nécessaire."/>
+        <e k="RVB_WorkshopS_month" v=" mois"/>
 
-        <e k="RVB_WorkshopMessage_service" v="You have exceeded the specified service interval by %s hours, so the repair took longer and cost more." tag="format"/>
-        <e k="RVB_WorkshopMessage_serviceDone" v="Servicing completed."/>
-        <e k="RVB_WorkshopMessage_repairDone" v="Repair completed. Replaced/repaired part(s): %s" tag="format"/>
-        <e k="RVB_WorkshopMessage_batteryDone" v="Battery fully charged."/>
-        <e k="RVB_WorkshopMessage_vResetDone" v="Vehicle has been reset."/>
+        <e k="RVB_WorkshopMessage_service" v="Vous avez dépassé l'intervalle d'entretien spécifié de %s heures, la réparation a donc pris plus de temps et coûté plus cher." tag="format"/>
+        <e k="RVB_WorkshopMessage_serviceDone" v="Entretien terminé."/>
+        <e k="RVB_WorkshopMessage_repairDone" v="Réparation terminée. Pièce(s) remplacée(s)/réparée(s) : %s" tag="format"/>
+        <e k="RVB_WorkshopMessage_batteryDone" v="Batterie entièrement chargée."/>
+        <e k="RVB_WorkshopMessage_vResetDone" v="Le véhicule a été réinitialisé."/>
 
         <e k="RVB_inspectionDialogFault" v="%s véhicule inspecté, réparation nécessaire. %s"/>
         <e k="RVB_inspectionDialogEnd" v="%s véhicule inspecté, pas de réparation nécessaire."/>
         <e k="RVB_inspectionDialogEnd_other" v="%s véhicule a été inspecté et réparé. Le mécanicien a eu beaucoup de travail, donc un apprenti a réparé votre véhicule. Cet apprenti ne peut pas cependant énumérer ce qu'il a réparé sur votre véhicule."/>
 
-        <e k="RVB_serviceDialogEnd" v="Service for %s vehicle completed."/>
-        <e k="RVB_repairDialogEnd" v="Repair of %s vehicle completed."/>
+        <e k="RVB_serviceDialogEnd" v="Entretien du véhicule %s terminé."/>
+        <e k="RVB_repairDialogEnd" v="Réparation du véhicule %s terminée."/>
         <e k="RVB_fault_" v="Ne conduisez pas trop vite, le moteur est encore froid."/>
-        <e k="RVB_fault_engineload" v="Don't overload the engine too early, it is still cold."/>
+        <e k="RVB_fault_engineload" v="Ne surchargez pas le moteur trop tôt, il est encore froid."/>
         <e k="RVB_fault_hud" v="Le véhicule %s est conduit trop vite, le moteur est encore froid." tag="format"/>
         <e k="RVB_fault_thermostat" v="Le liquide de refroidissement surchauffe."/>
         <e k="RVB_fault_thermostat_hud" v="Le liquide de refroidissement du véhicule %s surchauffe." tag="format"/>
@@ -203,7 +204,7 @@
         <e k="VehicleBreakdown_DEAD_ENGINE_SUSPENSION" v="La clé du véhicule est chez le mécanicien, qui est actuellement en pause."/>
         <e k="VehicleBreakdown_DEAD_ENGINE_BATTERY" v="Le moteur ne démarre pas, la batterie est déchargée."/>
         <e k="VehicleBreakdown_DEAD_ENGINE_BATTERY_CHARGING" v="Le véhicule ne peut pas démarrer, la batterie est en cours de chargement."/>
-        <e k="VehicleBreakdown_DEAD_ENGINE_GLOWPLUG" v="Engine won't start"/>
+        <e k="VehicleBreakdown_DEAD_ENGINE_GLOWPLUG" v="Le moteur ne démarre pas"/>
 
         <e k="RVB_fault_lights_INSPECTION" v="L'éclairage ne peut pas être allumé tant que l'inspection du véhicule est en cours."/>
         <e k="RVB_fault_lights_REPAIR" v="L'éclairage ne peut pas être allumé tant que la réparation du véhicule est en cours."/>
@@ -225,8 +226,8 @@
         <e k="RVB_workshopVResetTitle" v="Réinitialisation du véhicule"/>
         <e k="RVB_workshopVResetDesc" v="Êtes-vous sûr de vouloir réinitialiser le véhicule %s à son état par défaut ?" tag="format"/>
 
-        <e k="electricChargeTurbine" v="Electric Wind Turbine Charger"/>
-        <e k="function_powerpack" v="Use this to charge your electric vehicles and transport electric power to remote locations."/>
+        <e k="electricChargeTurbine" v="Chargeur éolien électrique"/>
+        <e k="function_powerpack" v="Utilisez ceci pour charger vos véhicules électriques et transporter de l'énergie électrique vers des endroits éloignés."/>
         
         <e k="rvb_info_chargeTime" v="Temps restant avant charge complète:
 %{hours}02d:%{minutes}02d:%{seconds}02d (%{percentage}d%%)" tag="format"/>
@@ -248,7 +249,7 @@ MathiasHun" tag="format"/>
         <!-- DO NOT CHANGE THIS, ONLY IF THE FS25_USEYOURTYRES MOD ALREADY HAS AN OFFICIAL FRANCE TRANSLATION -->
         <e k="infohud_uytTyresWear" v="Tyres wear"/>
         <!-- End of warning -->
-        <e k="rvb_infohud_uytTyresWear" v="Tyre %s" tag="format"/>
+        <e k="rvb_infohud_uytTyresWear" v="Pneu %s" tag="format"/>
 
     </elements>
 </l10n>
