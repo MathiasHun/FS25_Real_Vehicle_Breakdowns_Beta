@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <l10n>
-    <translationContributors>Squall</translationContributors>
+    <translationContributors>Squallqt</translationContributors>
     <elements>
         <e k="input_VEHICLE_BREAKDOWN_MENU" v="Pannes Réalistes du Véhicule(RVB)"/>
         <e k="input_RVB_SPEC" v="RVB on/off"/>
@@ -253,3 +253,4 @@ MathiasHun" tag="format"/>
 
     </elements>
 </l10n>
+
