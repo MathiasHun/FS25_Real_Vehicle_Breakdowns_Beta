@@ -72,6 +72,7 @@ Thanks for helping improve the mod!🚜
 
 ## Changelog 0.9.5.7:
 - github issues#124 - Workshop menu bug
+- github issues#120 - Fixed DashboardLive compatibility issues
 - Coming soon
 - Unfortunately, there are still some issues, but they are mainly related to information display and, for example, missing money deduction during inspections. It has not been tested on a server yet. This is a quick release intended for testing, so you can try it before it is made available to the general public.
 
