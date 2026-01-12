@@ -78,7 +78,7 @@
         <e k="RVB_toolTip_showdebug" v="Affiche les informations de dépannage dans la console et le log.txt (peut améliorer les performances si désactivé)"/>
 
         <e k="RVB_MenuGamePartsSettings" v="Paramètres du véhicule"/>
-        <e k="RVB_Parts_stepInterval" v="Pas de réglage (%)"/>
+        <e k="RVB_Parts_stepInterval" v="Incrément (%)"/>
         <e k="RVB_Parts_currentValue" v="Durée de vie actuelle %s" tag="format"/>
         <e k="RVB_Parts_remainingValue" v="Réglage durée de vie %s" tag="format"/>
         <e k="RVB_part_rvbDifficulty" v="Panne de véhicule"/>
@@ -255,3 +255,4 @@ MathiasHun" tag="format"/>
 
     </elements>
 </l10n>
+
