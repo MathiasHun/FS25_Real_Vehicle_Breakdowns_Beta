@@ -13,6 +13,7 @@
         <e k="RVB_addextra_charging" v="Chargement %s A" tag="format"/>
         <e k="RVB_addextra_connecting" v="Câbles de démarrage connectés"/>
         <e k="RVB_blinking_connecting_toofar" v="N'étirez pas davantage le câble de démarrage, sinon il se détachera bientôt de la batterie ! (%s m)" tag="format"/>
+        <e k="RVB_blinking_disconnecting_toofar" v="Le câble de démarrage est trop court – il s’est débranché !"/>
         <e k="RVB_blinking_connecting_drive" v="Ne partez pas, les câbles de démarrage sont toujours connectés ! (%s m)" tag="format"/>
         <e k="RVB_blinking_connecting_length" v="Longueur du câble de démarrage : %s m / %s m" tag="format"/>
         <e k="RVB_blinking_connecting_cableBroken" v="Les câbles de démarrage étaient connectés. Ils ont été endommagés, vous avez donc dû en acheter de nouveaux pour %s." tag="format"/>
@@ -44,7 +45,7 @@
         <e k="RVB_setting_thermostatLifetime" v="Thermostat"/>
         <e k="RVB_setting_lightingsLifetime" v="Éclairage"/>
         <e k="RVB_setting_glowplugLifetime" v="Bougie de préchauffage"/>
-        <e k="RVB_setting_wipersLifetime" v="Essuie-glaces"/>
+        <e k="RVB_setting_wipersLifetime" v="Essuie-glace"/>
         <e k="RVB_setting_generatorLifetime" v="Générateur"/>
         <e k="RVB_setting_engineLifetime" v="Moteur"/>
         <e k="RVB_setting_selfstarterLifetime" v="Démarreur"/>
@@ -77,6 +78,7 @@
         <e k="RVB_toolTip_showdebug" v="Affiche les informations de dépannage dans la console et le log.txt (peut améliorer les performances si désactivé)"/>
 
         <e k="RVB_MenuGamePartsSettings" v="Paramètres du véhicule"/>
+        <e k="RVB_Parts_stepInterval" v="Pas de réglage (%)"/>
         <e k="RVB_Parts_currentValue" v="Durée de vie actuelle %s" tag="format"/>
         <e k="RVB_Parts_remainingValue" v="Réglage durée de vie %s" tag="format"/>
         <e k="RVB_part_rvbDifficulty" v="Panne de véhicule"/>
@@ -96,7 +98,7 @@
         <e k="RVB_faultText_THERMOSTAT" v="Thermostat"/>
         <e k="RVB_faultText_LIGHTINGS" v="Éclairage"/>
         <e k="RVB_faultText_GLOWPLUG" v="Bougie de préchauffage"/>
-        <e k="RVB_faultText_WIPERS" v="Essuie-glaces"/>
+        <e k="RVB_faultText_WIPERS" v="Essuie-glace"/>
         <e k="RVB_faultText_GENERATOR" v="Générateur"/>
         <e k="RVB_faultText_ENGINE" v="Moteur"/>
         <e k="RVB_faultText_SELFSTARTER" v="Démarreur"/>
@@ -118,7 +120,7 @@
         <e k="RVB_batteryChDayDialog" v="La charge de la batterie du véhicule se termine demain à %s heures." tag="format"/>
         <e k="RVB_occupied" v="Le véhicule est déjà en cours d'utilisation!"/>
         <e k="RVB_shop_operatingTime" v="%02d.%2d heures" tag="format"/>
-        <e k="RVB_operatingTime" v="%02d hour" tag="format"/>
+        <e k="RVB_operatingTime" v="%02d heure" tag="format"/>
         <e k="RVB_shop_operatingTimeG" v="%s:%s heures" tag="format"/>
         <e k="RVB_serviceHours" v="%01d/%01d heures" tag="format"/>
         <e k="RVB_alertmessage_inspection" v="Inspection du véhicule en cours."/>
@@ -131,7 +133,7 @@
         <e k="RVB_alertmessage_batteryCh_hud" v="Charge de la batterie du %s véhicule en cours." tag="format"/>
 
         <e k="RVB_list_vehicleorimplement" v="Véhicule/Engins"/>
-        <e k="RVB_list_hporle" v="Hp/LE"/>
+        <e k="RVB_list_hporle" v="Ch/CV"/>
         <e k="RVB_list_currentvalue" v="Valeur actuelle"/>
         <e k="RVB_list_age" v="Âge"/>
         <e k="RVB_list_operatinghours" v="Heures de fonctionnement"/>
@@ -244,7 +246,7 @@ Bonne continuation,
 
 MathiasHun" tag="format"/>
 
-        <e k="RVB_aimessage_batterydischarged" v="%s l'assistant machine a soudainement cessé de travailler, la batterie du véhicule est déchargée!"/>
+        <e k="RVB_aimessage_batterydischarged" v="%s l'assistant IA a soudainement cessé de travailler, la batterie du véhicule est déchargée!"/>
 
         <!-- DO NOT CHANGE THIS, ONLY IF THE FS25_USEYOURTYRES MOD ALREADY HAS AN OFFICIAL FRANCE TRANSLATION -->
         <e k="infohud_uytTyresWear" v="Tyres wear"/>
@@ -253,4 +255,3 @@ MathiasHun" tag="format"/>
 
     </elements>
 </l10n>
-
