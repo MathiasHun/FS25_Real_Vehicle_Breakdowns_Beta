@@ -14,6 +14,7 @@
         <e k="RVB_addextra_charging" v="Opladen %s A" tag="format"/>
         <e k="RVB_addextra_connecting" v="Startkabels aangesloten"/>
         <e k="RVB_blinking_connecting_toofar" v="Rek de startkabel niet te ver uit, anders zal deze snel losraken van de accu! (%s m)" tag="format"/>
+        <e k="RVB_blinking_disconnecting_toofar" v="The jumper cable is too short – it has disconnected!"/>
         <e k="RVB_blinking_connecting_drive" v="Rijd niet weg, de startkabels zijn nog aangesloten! (%s m)" tag="format"/>
         <e k="RVB_blinking_connecting_length" v="Lengte van startkabel: %s m / %s m" tag="format"/>
         <e k="RVB_blinking_connecting_cableBroken" v="De startkabels waren aangesloten. Ze raakten beschadigd, dus je moest nieuwe kopen.%s." tag="format"/>
@@ -78,6 +79,7 @@
         <e k="RVB_toolTip_showdebug" v="Toont foutopsporingsinformatie in de console en log.txt (kan de prestaties verbeteren als dit is uitgeschakeld)."/>
 
         <e k="RVB_MenuGamePartsSettings" v="Voertuiginstellingen"/>
+        <e k="RVB_Parts_stepInterval" v="Step Interval(%)"/>
         <e k="RVB_Parts_currentValue" v="Huidige levensduur van %s" tag="format"/>
         <e k="RVB_Parts_remainingValue" v="%s levensduurinstelling" tag="format"/>
         <e k="RVB_part_rvbDifficulty" v="Voertuigpech"/>
@@ -179,6 +181,7 @@
         <e k="RVB_repairDialogEnd" v="Reparatie van voertuig %s voltooid."/>
         <e k="RVB_fault_" v="Rijd niet te snel, de motor is nog koud."/>
         <e k="RVB_fault_engineload" v="Don't overload the engine too early, it is still cold."/>
+        <e k="RVB_fault_engineload_hud" v="The engine of %s receives too much load when cold." tag="format"/>
         <e k="RVB_fault_hud" v="%s het voertuig rijdt te snel, de motor is nog koud." tag="format"/>
         <e k="RVB_fault_thermostaat" v="Koelvloeistof raakt oververhit."/>
         <e k="RVB_fault_thermostat_hud" v="%s voertuigkoelvloeistof raakt oververhit." tag="format"/>
@@ -186,6 +189,7 @@
         <e k="RVB_fault_thermostatC_hud" v="%s motor bereikt de bedrijfstemperatuur niet." tag="format"/>
         <e k="RVB_fault_lights" v="De verlichting werkt niet."/>
         <e k="RVB_fault_lights_hud" v="%s de verlichting van het voertuig werkt niet." tag="format"/>
+        <e k="RVB_lowjumper" v="Motor will not start, continue jump-starting the vehicle."/>
         <e k="RVB_fault_BHlights" v="Het laadniveau van de batterij is te laag."/>
         <e k="RVB_fault_BHlights_hud" v="Het batterijniveau van %s is te laag." tag="format"/>
         <e k="RVB_fault_glowplug" v="Brandstofverbruik is toegenomen."/>

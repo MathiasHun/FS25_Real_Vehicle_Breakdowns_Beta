@@ -13,6 +13,7 @@
         <e k="RVB_addextra_charging" v="Nabíjení %s A" tag="format"/>
         <e k="RVB_addextra_connecting" v="Startovací kabely připojeny"/>
         <e k="RVB_blinking_connecting_toofar" v="Nenatahujte propojovací kabel dále, jinak se brzy odpojí od baterie! (%s m)" tag="format"/>
+        <e k="RVB_blinking_disconnecting_toofar" v="The jumper cable is too short – it has disconnected!"/>
         <e k="RVB_blinking_connecting_drive" v="Neodjíždějte, startovací kabely jsou stále připojené! (%s m)" tag="format"/>
         <e k="RVB_blinking_connecting_length" v="Jumper cable length: %s m / %s m" tag="format"/>
         <e k="RVB_blinking_connecting_cableBroken" v="Startovací kabely byly připojeny. Poškodily se, takže ujste museli koupit nové za %s." tag="format"/>
@@ -77,6 +78,7 @@
         <e k="RVB_toolTip_showdebug" v="Displays troubleshooting in the console and log.txt (can improve performance when turned off)"/>
 
         <e k="RVB_MenuGamePartsSettings" v="Vehicle Settings"/>
+        <e k="RVB_Parts_stepInterval" v="Step Interval(%)"/>
         <e k="RVB_Parts_currentValue" v="Current %s lifespan" tag="format"/>
         <e k="RVB_Parts_remainingValue" v="%s lifespan setting" tag="format"/>
         <e k="RVB_part_rvbDifficulty" v="Vehicle Breakdown"/>

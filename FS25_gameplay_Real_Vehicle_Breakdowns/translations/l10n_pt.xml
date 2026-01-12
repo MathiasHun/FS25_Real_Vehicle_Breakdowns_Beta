@@ -13,6 +13,7 @@
         <e k="RVB_addextra_charging" v="Carregamento %s A" tag="format"/>
         <e k="RVB_addextra_connecting" v="Jumper cables connected"/>
         <e k="RVB_blinking_connecting_toofar" v="Don't stretch the jumper cable any further, or it will soon detach from the battery! (%s m)" tag="format"/>
+        <e k="RVB_blinking_disconnecting_toofar" v="The jumper cable is too short – it has disconnected!"/>
         <e k="RVB_blinking_connecting_drive" v="Don't drive away, the jumper cables are still connected! (%s m)" tag="format"/>
         <e k="RVB_blinking_connecting_length" v="Jumper cable length: %s m / %s m" tag="format"/>
         <e k="RVB_blinking_connecting_cableBroken" v="The jumper cables were connected. They got damaged, so you had to buy new ones for %s." tag="format"/>
@@ -77,6 +78,7 @@
         <e k="RVB_toolTip_showdebug" v="Displays troubleshooting in the console and log.txt (can improve performance when turned off)"/>
 
         <e k="RVB_MenuGamePartsSettings" v="Vehicle Settings"/>
+        <e k="RVB_Parts_stepInterval" v="Step Interval(%)"/>
         <e k="RVB_Parts_currentValue" v="Current %s lifespan" tag="format"/>
         <e k="RVB_Parts_remainingValue" v="%s lifespan setting" tag="format"/>
         <e k="RVB_part_rvbDifficulty" v="Vehicle Breakdown"/>
@@ -156,7 +158,7 @@
         <e k="RVB_WorkshopD_new" v="New"/>
         <e k="RVB_WorkshopD_conExcellent" v="Excellent condition"/>
         <e k="RVB_WorkshopD_conGood" v="Good condition"/>
-        <e k="RVB_WorkshopD_conUsed" v="Used but in working"/>
+        <e k="RVB_WorkshopD_conUsed" v="Used but working"/>
         <e k="RVB_WorkshopD_conFaults" v="Prone to faults"/>
         <e k="RVB_WorkshopD_conDown" v="Broken Down"/>
         <e k="RVB_WorkshopD_conReplace" v="Due for replacement"/>
@@ -178,6 +180,7 @@
         <e k="RVB_repairDialogEnd" v="Repair of %s vehicle completed."/>
         <e k="RVB_fault_" v="Não conduzas tão rápido; o motor ainda está frio."/>
         <e k="RVB_fault_engineload" v="Don't overload the engine too early, it is still cold."/>
+        <e k="RVB_fault_engineload_hud" v="The engine of %s receives too much load when cold." tag="format"/>
         <e k="RVB_fault_hud" v="%s está a conduzir demasiado rápido; o motor ainda está frio." tag="format"/>
         <e k="RVB_fault_thermostat" v="Sobre-aquecimento do líquido refrigerante."/>
         <e k="RVB_fault_thermostat_hud" v="O líquido refrigerante do veículo %s está a sobreaquecer." tag="format"/>
@@ -185,6 +188,7 @@
         <e k="RVB_fault_thermostatC_hud" v="O motor do veículo %s não está a atingir a temperatura de funcionamento." tag="format"/>
         <e k="RVB_fault_lights" v="As luzes não estão a funcionar."/>
         <e k="RVB_fault_lights_hud" v="As luzes do veículo %s não estão a funcionar." tag="format"/>
+        <e k="RVB_lowjumper" v="Motor will not start, continue jump-starting the vehicle."/>
         <e k="RVB_fault_BHlights" v="Nível de carga da bateria demasiado baixo."/>
         <e k="RVB_fault_BHlights_hud" v="O nível de carga da bateria do veículo %s está demasiado baixo." tag="format"/>
         <e k="RVB_fault_glowplug" v="O consumo de combustível aumentou."/>

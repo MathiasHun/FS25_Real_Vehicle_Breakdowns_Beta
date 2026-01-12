@@ -12,6 +12,7 @@
         <e k="RVB_addextra_charging" v="Töltés %s A" tag="format"/>
         <e k="RVB_addextra_connecting" v="Indítókábel csatlakoztatva"/>
         <e k="RVB_blinking_connecting_toofar" v="Ne húzd tovább az indítókábelt, mert hamarosan leszakad az akkumulátorról! (%s m)" tag="format"/>
+        <e k="RVB_blinking_disconnecting_toofar" v="Az indítókábel túl rövid – lecsatlakozott!"/>
         <e k="RVB_blinking_connecting_drive" v="Ne indulj el, az indítókábelek csatlakoztatva vannak! (%s m)" tag="format"/>
         <e k="RVB_blinking_connecting_length" v="Indítókábel hossza: %s m / %s m" tag="format"/>
         <e k="RVB_blinking_connecting_cableBroken" v="Az indítókábelek csatlakoztatva voltak. Megsérültek, ezért újakat kellett venned, ára %s." tag="format"/>
@@ -76,6 +77,7 @@
         <e k="RVB_toolTip_showdebug" v="Megjeleníti hibakeresést a konzolon és log.txt-ben. (kikapcsolva fokozhatja a teljesítményt)"/>
 
         <e k="RVB_MenuGamePartsSettings" v="Jármű beállítások"/>
+        <e k="RVB_Parts_stepInterval" v="Lépésköz(%)"/>
         <e k="RVB_Parts_currentValue" v="Jelenlegi %s élettartama" tag="format"/>
         <e k="RVB_Parts_remainingValue" v="%s élettartam, beállítás" tag="format"/>
         <e k="RVB_part_rvbDifficulty" v="Jármű meghibásodása"/>
@@ -185,6 +187,7 @@
         <e k="RVB_fault_thermostatC_hud" v="%s motorja nem éri el az üzemi hőmérsékletet." tag="format"/>
         <e k="RVB_fault_lights" v="Nem müködik a világítás." />
         <e k="RVB_fault_lights_hud" v="%s járműnek nem müködik a világítása." tag="format"/>
+        <e k="RVB_lowjumper" v="Motor nem indul, folytasd a jármű bikázását."/>
         <e k="RVB_fault_BHlights" v="Az akkumulátor töltöttségi szintje túl alacsony." />
         <e k="RVB_fault_BHlights_hud" v="%s járműnek az akkumulátorának töltöttségi szintje túl alacsony." tag="format"/>
         <e k="RVB_fault_glowplug" v="Üzemanyag fogyasztás megnőtt." />
