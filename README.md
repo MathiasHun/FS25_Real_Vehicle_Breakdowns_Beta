@@ -66,25 +66,17 @@ This is not a stable release, but meant for testing and feedback collection.
 
 Thanks for helping improve the mod!🚜
 </br></br>
-<!--
+<!---->
 # Please don’t share this version on other sites, it’s a VERY early BETA.</br>
-## <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=7">Download the latest developer TEST version 0.9.5.6</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
+## <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=7">Download the latest developer TEST version 0.9.5.7</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
 
-## Changelog 0.9.5.6:
-- The difficulty setting has been moved to Gameplay Settings.
-- You can now configure whether the vehicle workshop is open.
-- Engine Load in HUD
-- Engine wear below 50 °C is now based on engine load instead of speed: above 65 % load, wear increases until the engine reaches 50 °C
-- Choose the vehicle’s power carefully. If the engine is underpowered, higher engine load can lead to increased engine wear
-- Keep your vehicle clean! 100% dirt + 1 hour of operation = increased wear (engine, thermostat)
-- github issues#116 - Version v0.9.5.5 does not detect the battery
-- github issues#112 - Wear values too high
-- github issues#110 - RVB does not read the correct tires damage from Use Up Your Tyres mod
-- github issues#105 - Divide by zero error.
-- github issues#40 - AI workers should automatically shutdown lights/beacons when the vehicle engine stops, fixed
-- The following vehicles are “excluded” from RVB mode: https://github.com/MathiasHun/FS25_Real_Vehicle_Breakdowns_Beta/issues/114
+## Changelog 0.9.5.7:
+- github issues#124 - Workshop menu bug
+- github issues#120 - Fixed DashboardLive compatibility issues
+- Coming soon
+- Unfortunately, there are still some issues, but they are mainly related to information display and, for example, missing money deduction during inspections. It has not been tested on a server yet. This is a quick release intended for testing, so you can try it before it is made available to the general public.
 
-</br></br></br>-->
+</br></br></br><!---->
 # <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=5">Download the latest developer version</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
 
 ## Recommended Dependencies (to avoid errors):
