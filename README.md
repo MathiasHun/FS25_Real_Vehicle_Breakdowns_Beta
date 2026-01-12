@@ -71,10 +71,14 @@ Thanks for helping improve the mod!🚜
 ## <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=7">Download the latest developer TEST version 0.9.5.7</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
 
 ## Changelog 0.9.5.7:
+- Reworked jump-start cable system for more reliable behavior
+- github issues#126
 - github issues#124 - Workshop menu bug
+- github issues#121 - FR translation update - thanks by Squallqt
 - github issues#120 - Fixed DashboardLive compatibility issues
-- Coming soon
-- Unfortunately, there are still some issues, but they are mainly related to information display and, for example, missing money deduction during inspections. It has not been tested on a server yet. This is a quick release intended for testing, so you can try it before it is made available to the general public.
+- Fixed missing localization string: “Lépésköz” in RVBMenuPartsSettingsFrame.xml
+- Update - The following vehicles are “excluded” from RVB mode: https://github.com/MathiasHun/FS25_Real_Vehicle_Breakdowns_Beta/issues/114
+This is a quick release intended for testing, so you can try it before it is made available to the general public.
 
 </br></br></br><!---->
 # <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=5">Download the latest developer version</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
