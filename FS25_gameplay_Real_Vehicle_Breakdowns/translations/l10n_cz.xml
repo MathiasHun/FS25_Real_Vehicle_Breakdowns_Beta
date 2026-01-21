@@ -2,29 +2,22 @@
 <l10n>
     <translationContributors>SniperKittenCZ</translationContributors>
     <elements>
-        <e k="input_VEHICLE_BREAKDOWN_MENU" v="Skutečné poruchy vozidel(RVB)"/>
+        <e k="input_RVB_MENU" v="Skutečné poruchy vozidel(RVB)"/>
         <e k="input_RVB_SPEC" v="RVB zap/vyp"/>
         <e k="input_RVB_CONNECTING_JC" v="Připojení startovacích kabelů"/>
         <e k="action_RVB_DISCONNECTING_JC" v="Odpojení startovacích kabelů"/>
         <e k="RVB_dialog_titleCONNECTING_JC" v="Připojení propojovacích kabelů"/>
         <e k="RVB_dialog_descCONNECTING_JC" v="Vozidlo %s není třeba startovat. Jste si jisti, že chcete pokračovat v připojování startovacích kabelů?" tag="format"/>
-        <e k="RVB_errorCONNECTING_JC" v="Pouze jedno vozidlo má připojené startovací kabely."/>
-        <e k="RVB_addextra_progress" v="Probíhá startování. (%s %%)" tag="format"/>
-        <e k="RVB_addextra_charging" v="Nabíjení %s A" tag="format"/>
         <e k="RVB_addextra_connecting" v="Startovací kabely připojeny"/>
         <e k="RVB_blinking_connecting_toofar" v="Nenatahujte propojovací kabel dále, jinak se brzy odpojí od baterie! (%s m)" tag="format"/>
-        <e k="RVB_blinking_disconnecting_toofar" v="The jumper cable is too short – it has disconnected!"/>
+        <e k="RVB_blinking_disconnecting_toofar" v="Startovací kabel je příliš krátký – odpojil se!"/>
         <e k="RVB_blinking_connecting_drive" v="Neodjíždějte, startovací kabely jsou stále připojené! (%s m)" tag="format"/>
-        <e k="RVB_blinking_connecting_length" v="Jumper cable length: %s m / %s m" tag="format"/>
-        <e k="RVB_blinking_connecting_cableBroken" v="Startovací kabely byly připojeny. Poškodily se, takže ujste museli koupit nové za %s." tag="format"/>
+        <e k="RVB_blinking_connecting_length" v="Délka startovacího kabelu: %s m / %s m" tag="format"/>
+        <e k="RVB_blinking_connecting_cableBroken" v="Startovací kabely byly připojeny. Poškodily se, takže jste museli koupit nové za %s." tag="format"/>
         <e k="RVB_blinking_connecting" v="%s: Startovací kabely připojeny." tag="format"/>
         <e k="RVB_blinking_connecting_order" v="Nejprve připojte funkční vozidlo ke startovacím kabelům!"/>
         <e k="RVB_blinking_disconnecting" v="%s: Startovací kabely odpojeny." tag="format"/>
         <e k="RVB_blinking_disconnecting_order" v="Nejprve odpojte mrtvé vozidlo od startovacích kabelů!"/>
-        <e k="RVB_blinking_no_morejumpercables" v="Už nemáte žádné startovací kabely. Odstraňte je z posledních připojených vozidel!"/>
-        <e k="input_RVB_JUMPSTARTOFF" v="Startování vyp."/>
-        <e k="action_RVB_JUMPSTARTON" v="Startování zap."/>
-        <e k="ui_RVB_reset_msg" v="Jsi si jistý?"/>
         <e k="RVB_MenuGameSettingsGame" v="Nastavení hry"/>
         <e k="RVB_settingSectionHeader_Service" v="Servis"/>
         <e k="RVB_setting_dailyServiceInterval" v="Denní servis"/>
@@ -32,28 +25,28 @@
         <e k="RVB_setting_periodicServiceInterval" v="Pravidelný servis"/>
         <e k="RVB_toolTip_periodicServiceInterval" v="Servisní interval vozidla."/>
         <e k="RVB_settingSectionHeader_Workshop" v="Dílna pro vozidla"/>
-        <e k="RVB_setting_workshopTime" v="Workshop Opening Time"/>
-        <e k="RVB_toolTip_workshopTime" v="If enabled, the workshop can only be used during the specified opening hours."/>
-        <e k="RVB_setting_workshopOpen" v="Opening Time"/>
-        <e k="RVB_toolTip_workshopOpen" v="The time when the vehicle workshop opens."/>
-        <e k="RVB_setting_workshopClose" v="Closing Time"/>
-        <e k="RVB_toolTip_workshopClose" v="The time when the vehicle workshop closes."/>
-        <e k="RVB_setting_workshopCountMax" v="Maximum Vehicles in workshop"/>
-        <e k="RVB_toolTip_workshopCountMax" v="Here you can set how many vehicles can fit in the workshop at once."/>
+        <e k="RVB_setting_workshopTime" v="Otevírací doba dílny"/>
+        <e k="RVB_toolTip_workshopTime" v="Pokud je povoleno, dílna může být používána pouze během stanovené otevírací doby."/>
+        <e k="RVB_setting_workshopOpen" v="Čas otevření"/>
+        <e k="RVB_toolTip_workshopOpen" v="Čas, kdy se dílna vozidel otevírá."/>
+        <e k="RVB_setting_workshopClose" v="Čas zavření"/>
+        <e k="RVB_toolTip_workshopClose" v="Čas, kdy se dílna vozidel zavírá."/>
+        <e k="RVB_setting_workshopCountMax" v="Maximální počet vozidel v dílně"/>
+        <e k="RVB_toolTip_workshopCountMax" v="Zde můžete nastavit, kolik vozidel se vejde do dílny najednou."/>
         <e k="RVB_settingSectionHeader_LifetimeofParts" v="Životnost dílů"/>
         <e k="RVB_toolTip_lifetimeParts" v="Čím menší je toto číslo, tím dříve dojde k selhání."/>
         <e k="RVB_setting_thermostatLifetime" v="Termostat"/>
         <e k="RVB_setting_lightingsLifetime" v="Osvětlení"/>
         <e k="RVB_setting_glowplugLifetime" v="Žhavicí svíčka"/>
         <e k="RVB_setting_wipersLifetime" v="Stěrače"/>
-        <e k="RVB_setting_generatorLifetime" v="Alternerátor"/>
+        <e k="RVB_setting_generatorLifetime" v="Alternátor"/>
         <e k="RVB_setting_engineLifetime" v="Motor"/>
         <e k="RVB_setting_selfstarterLifetime" v="Startér"/>
         <e k="RVB_setting_batteryLifetime" v="Baterie"/>
         <e k="RVB_setting_tireLifetime" v="Pneumatika"/>
         <e k="RVB_utils_hour" v="%s hod." tag="format"/>
         <e k="RVB_utils_km" v="%s km" tag="format"/>
-        <e k="RVB_utils_maxcount" v="%s pcs" tag="format"/>
+        <e k="RVB_utils_maxcount" v="%s ks" tag="format"/>
 
         <e k="RVB_MenuGameSettingsGeneral" v="Obecné nastavení"/>
         <e k="RVB_setting_alertDialog" v="Varovná zpráva"/>
@@ -63,8 +56,8 @@
         <e k="RVB_difficulty_slow" v="Pomalé"/>
         <e k="RVB_difficulty_medium" v="Střední"/>
         <e k="RVB_difficulty_fast" v="Rychlé"/>
-        <e k="RVB_setting_vehicleHud" v="Vehicle Parts HUD"/>
-        <e k="RVB_toolTip_vehicleHud" v="Displays the operating hours of the vehicle's parts (can improve performance when turned off). Recommended for testing."/>
+        <e k="RVB_setting_vehicleHud" v="HUD dílů vozidla"/>
+        <e k="RVB_toolTip_vehicleHud" v="Zobrazuje provozní hodiny dílů vozidla (vypnutí může zlepšit výkon). Doporučeno pro testování."/>
         <e k="RVB_settingSectionHeader_HUD" v="Nastavení HUD"/>
         <e k="RVB_setting_showTemp" v="Teplota motoru"/>
         <e k="RVB_toolTip_showTemp" v="Zde můžete zapnout nebo vypnout zobrazení teploty motoru."/>
@@ -72,16 +65,16 @@
         <e k="RVB_toolTip_showRpm" v="Zde můžete zapnout nebo vypnout zobrazení otáček."/>
         <e k="RVB_setting_showFuel" v="Palivo"/>
         <e k="RVB_toolTip_showFuel" v="Zde můžete zapnout nebo vypnout zobrazení paliva."/>
-        <e k="RVB_setting_showMotorLoad" v="Engine Load"/>
-        <e k="RVB_toolTip_showMotorLoad" v="Here you can toggle the display of the engine load on or off."/>
-        <e k="RVB_setting_showdebug" v="Troubleshooting"/>
-        <e k="RVB_toolTip_showdebug" v="Displays troubleshooting in the console and log.txt (can improve performance when turned off)"/>
+        <e k="RVB_setting_showMotorLoad" v="Zatížení motoru"/>
+        <e k="RVB_toolTip_showMotorLoad" v="Zde můžete zapnout nebo vypnout zobrazení zatížení motoru."/>
+        <e k="RVB_setting_showdebug" v="Odstraňování problémů"/>
+        <e k="RVB_toolTip_showdebug" v="Zobrazuje odstraňování problémů v konzoli a log.txt (vypnutí může zlepšit výkon)"/>
 
-        <e k="RVB_MenuGamePartsSettings" v="Vehicle Settings"/>
-        <e k="RVB_Parts_stepInterval" v="Step Interval(%)"/>
-        <e k="RVB_Parts_currentValue" v="Current %s lifespan" tag="format"/>
-        <e k="RVB_Parts_remainingValue" v="%s lifespan setting" tag="format"/>
-        <e k="RVB_part_rvbDifficulty" v="Vehicle Breakdown"/>
+        <e k="RVB_MenuGamePartsSettings" v="Nastavení vozidla"/>
+        <e k="RVB_Parts_stepInterval" v="Interval kroku(%)"/>
+        <e k="RVB_Parts_currentValue" v="Aktuální životnost %s" tag="format"/>
+        <e k="RVB_Parts_remainingValue" v="Nastavení životnosti %s" tag="format"/>
+        <e k="RVB_part_rvbDifficulty" v="Porucha vozidla"/>
         <e k="RVB_Parts_utils_percent" v="%s %%" tag="format"/>
 
         <e k="RVB_WorkShopClose" v="Dílna pro vozidla je uzavřena; vraťte se prosím v %s." tag="format"/>
@@ -90,8 +83,6 @@
         <e k="RVB_button_periodicservice" v="Pravidelný servis"/>
         <e k="RVB_button_battery_ch" v="Nabíjení baterie"/>
         <e k="RVB_button_service" v="Servis"/>
-        <e k="RVB_button_vehicles" v="Vozidla"/>
-        <e k="RVB_button_vehiclesandequipment" v="Vozidla a vybavení"/>
         <e k="RVB_inspectionDialog" v="Jste si jisti, že chcete toto vozidlo zkontrolovat za %s?" tag="format"/>
         <e k="RVB_inspectionTimeDialog" v="Kontrola vozidla bude dokončena v %s." tag="format"/>
         <e k="RVB_inspectionDayDialog" v="Kontrola vozidla bude dokončena zítra v %s." tag="format"/>
@@ -99,16 +90,16 @@
         <e k="RVB_faultText_LIGHTINGS" v="Osvětlení"/>
         <e k="RVB_faultText_GLOWPLUG" v="Žhavicí svíčka"/>
         <e k="RVB_faultText_WIPERS" v="Stěrače"/>
-        <e k="RVB_faultText_GENERATOR" v="Alterátor"/>
+        <e k="RVB_faultText_GENERATOR" v="Alternátor"/>
         <e k="RVB_faultText_ENGINE" v="Motor"/>
         <e k="RVB_faultText_SELFSTARTER" v="Startér"/>
         <e k="RVB_faultText_BATTERY" v="Baterie"/>
         <e k="RVB_faultText_TIRE" v="Pneumatika"/>
-        <e k="RVB_faultText_TIREFL" v="Front left tire"/>
-        <e k="RVB_faultText_TIREFR" v="Front right tire"/>
-        <e k="RVB_faultText_TIRERL" v="Rear left tire"/>
-        <e k="RVB_faultText_TIRERR" v="Rear right tire"/>
-        <e k="RVB_repairErrorMechanics" v="All mechanics are busy, only up to %s vehicles can be repaired at the same time." tag="format"/>
+        <e k="RVB_faultText_TIREFL" v="Přední levá pneumatika"/>
+        <e k="RVB_faultText_TIREFR" v="Přední pravá pneumatika"/>
+        <e k="RVB_faultText_TIRERL" v="Zadní levá pneumatika"/>
+        <e k="RVB_faultText_TIRERR" v="Zadní pravá pneumatika"/>
+        <e k="RVB_repairErrorMechanics" v="Všichni mechanici jsou zaneprázdněni, současně lze opravovat maximálně %s vozidel." tag="format"/>
         <e k="RVB_repairTimeDialog" v="Oprava vozidla bude dokončena v %s." tag="format"/>
         <e k="RVB_repairDayDialog" v="Oprava vozidla bude dokončena zítra v %s." tag="format"/>
         <e k="RVB_ErrorList" v="Seznam závad:" />
@@ -116,97 +107,63 @@
         <e k="RVB_periodicserviceTimeDialog" v="Servis vozidla bude dokončen v %s." tag="format"/>
         <e k="RVB_periodicserviceDayDialog" v="Servis vozidla bude dokončen zítra v %s." tag="format"/>
         <e k="RVB_batteryChDialog" v="Jste si jisti, že chcete nabít baterii vozidla za %s?" tag="format"/>
-        <e k="RVB_batteryChTimeDialog" v="Nabíjení baterie vozidla bude dokončeno v %s." tag="format"/>
-        <e k="RVB_batteryChDayDialog" v="Nabíjení baterie vozidla bude dokončeno zítra v %s." tag="format"/>
-        <e k="RVB_occupied" v="Vozidlo se již používá!"/>
-        <e k="RVB_shop_operatingTime" v="%02d.%2d hod." tag="format"/>
-        <e k="RVB_operatingTime" v="%02d hour" tag="format"/>
+        <e k="RVB_operatingTime" v="%02d hod." tag="format"/>
         <e k="RVB_shop_operatingTimeG" v="%s:%s hod." tag="format"/>
-        <e k="RVB_serviceHours" v="%01d/%01d hod." tag="format"/>
         <e k="RVB_alertmessage_inspection" v="Probíhá prohlídka vozidla."/>
-        <e k="RVB_alertmessage_inspection_hud" v="%s probíhající prohlídka vozidla." tag="format"/>
         <e k="RVB_alertmessage_repair" v="Probíhá oprava vozidla."/>
-        <e k="RVB_alertmessage_repair_hud" v="%s probíhající oprava vozidla." tag="format"/>
         <e k="RVB_alertmessage_service" v="Probíhá servis vozidla."/>
-        <e k="RVB_alertmessage_service_hud" v="%s probíhající servis vozidla." tag="format"/>
-        <e k="RVB_alertmessage_batteryCh" v="Probíhá dobíjení baterie."/>
-        <e k="RVB_alertmessage_batteryCh_hud" v="%s probíhající nabíjení baterie vozidla." tag="format"/>
 
-        <e k="RVB_list_vehicleorimplement" v="Vozidlo/příslušenství"/>
-        <e k="RVB_list_hporle" v="Hp/LE"/>
-        <e k="RVB_list_currentvalue" v="Aktuální cena"/>
-        <e k="RVB_list_age" v="Stáří"/>
-        <e k="RVB_list_operatinghours" v="Provozní doba"/>
-        <e k="RVB_list_realoperatinghours" v="Skutečná provozní doba"/>
-        <e k="RVB_list_servicehours" v="Servis"/>
-        <e k="RVB_list_lease" v="Pronájem"/>
         <e k="RVB_list_battery" v="Baterie"/>
-        <e k="RVB_parts_repair" v="Díly k opravě"/>
 
-        <e k="RVB_Workshop" v="Workshop"/>
-        <e k="RVB_Workshop_diagnostics" v="Diagnostics"/>
-        <e k="RVB_Workshop_serviceManual" v="Service Log"/>
-        <e k="RVB_Workshop_noinspection" v="Vehicle has not been inspected!"/>
-        <e k="RVB_Workshop_noserviceManualEntry" v="No entries in the service log!"/>
-        <e k="RVB_Workshop_status" v="Status:"/>
-        <e k="RVB_Workshop_repair" v="Repair?"/>
-        <e k="RVB_Workshop_work" v="Work"/>
-        <e k="RVB_Workshop_date" v="Date"/>
-        <e k="RVB_Workshop_lifetime" v="Operating hours"/>
-        <e k="RVB_Workshop_odometer" v="Odometer Reading"/>
-        <e k="RVB_Workshop_cost" v="Cost"/>
-        <e k="RVB_WorkshopD_new" v="New"/>
-        <e k="RVB_WorkshopD_conExcellent" v="Excellent condition"/>
-        <e k="RVB_WorkshopD_conGood" v="Good condition"/>
-        <e k="RVB_WorkshopD_conUsed" v="Used but in working"/>
-        <e k="RVB_WorkshopD_conFaults" v="Prone to faults"/>
-        <e k="RVB_WorkshopD_conDown" v="Broken Down"/>
-        <e k="RVB_WorkshopD_conReplace" v="Due for replacement"/>
-        <e k="RVB_WorkshopS_repNeed" v="Repair needed. "/>
-        <e k="RVB_WorkshopS_repNoNeed" v="No repair needed."/>
-        <e k="RVB_WorkshopS_month" v=" month"/>
+        <e k="RVB_Workshop" v="Dílna"/>
+        <e k="RVB_Workshop_diagnostics" v="Diagnostika"/>
+        <e k="RVB_Workshop_serviceManual" v="Servisní záznamy"/>
+        <e k="RVB_Workshop_noinspection" v="Vozidlo nebylo zkontrolováno!"/>
+        <e k="RVB_Workshop_noserviceManualEntry" v="Žádné záznamy v servisním deníku!"/>
+        <e k="RVB_Workshop_status" v="Stav:"/>
+        <e k="RVB_Workshop_repair" v="Opravit?"/>
+        <e k="RVB_Workshop_work" v="Práce"/>
+        <e k="RVB_Workshop_date" v="Datum"/>
+        <e k="RVB_Workshop_lifetime" v="Provozní hodiny"/>
+        <e k="RVB_Workshop_odometer" v="Stav tachometru"/>
+        <e k="RVB_Workshop_cost" v="Cena"/>
+        <e k="RVB_WorkshopD_new" v="Nové"/>
+        <e k="RVB_WorkshopD_conExcellent" v="Výborný stav"/>
+        <e k="RVB_WorkshopD_conGood" v="Dobrý stav"/>
+        <e k="RVB_WorkshopD_conUsed" v="Použité, ale funkční"/>
+        <e k="RVB_WorkshopD_conFaults" v="Náchylné k poruchám"/>
+        <e k="RVB_WorkshopD_conDown" v="Porouchané"/>
+        <e k="RVB_WorkshopD_conReplace" v="Nutná výměna"/>
+        <e k="RVB_WorkshopS_repNeed" v="Je potřeba oprava. "/>
+        <e k="RVB_WorkshopS_repNoNeed" v="Oprava není potřeba."/>
+        <e k="RVB_WorkshopS_month" v=" měsíc"/>
 
-        <e k="RVB_WorkshopMessage_service" v="You have exceeded the specified service interval by %s hours, so the repair took longer and cost more." tag="format"/>
-        <e k="RVB_WorkshopMessage_serviceDone" v="Servicing completed."/>
-        <e k="RVB_WorkshopMessage_repairDone" v="Repair completed. Replaced/repaired part(s): %s" tag="format"/>
-        <e k="RVB_WorkshopMessage_batteryDone" v="Battery fully charged."/>
-        <e k="RVB_WorkshopMessage_vResetDone" v="Vehicle has been reset."/>
+        <e k="RVB_WorkshopMessage_service" v="Překročili jste stanovený servisní interval o %s hodin, takže oprava trvala déle a stála více." tag="format"/>
+        <e k="RVB_WorkshopMessage_serviceDone" v="Servis dokončen."/>
+        <e k="RVB_WorkshopMessage_repairDone" v="Oprava dokončena. Vyměněná/opravena část(i): %s" tag="format"/>
+        <e k="RVB_WorkshopMessage_batteryDone" v="Baterie plně nabitá."/>
+        <e k="RVB_WorkshopMessage_vResetDone" v="Vozidlo bylo resetováno."/>
 
         <e k="RVB_inspectionDialogFault" v="%s vozidlo zkontrolováno, nutná oprava. %s"/>
         <e k="RVB_inspectionDialogEnd" v="%s vozidlo zkontrolováno, žádné opravy nejsou nutné."/>
         <e k="RVB_inspectionDialogEnd_other" v="%s vozidlo zkontrolováno a opraveno. Váš mechanik byl však velmi zaneprázdněn, tak vaše vozidlo opravil mladší mechanik. Tento učeň však nemůže uvést, co bylo na vašem vozidle opraveno."/>
 
-        <e k="RVB_serviceDialogEnd" v="Service for %s vehicle completed."/>
-        <e k="RVB_repairDialogEnd" v="Repair of %s vehicle completed."/>
-        <e k="RVB_fault_" v="Nejezděte příliš rychle, motor je ještě studený."/>
-        <e k="RVB_fault_engineload" v="Don't overload the engine too early, it is still cold."/>
-        <e k="RVB_fault_hud" v="%s jede příliš rychle; motor je ještě studený." tag="format"/>
-        <e k="RVB_fault_thermostat" v="Chladicí kapalina se přehřívá."/>
-        <e k="RVB_fault_thermostat_hud" v="%s chladicí kapalina vozidla se přehřívá." tag="format"/>
-        <e k="RVB_fault_thermostatC" v="Motor nedosáhl provozní teploty."/>
-        <e k="RVB_fault_thermostatC_hud" v="%s motor nedosahuje provozní teploty." tag="format"/>
+        <e k="RVB_serviceDialogEnd" v="Servis pro %s vozidlo dokončen."/>
+        <e k="RVB_repairDialogEnd" v="Oprava %s vozidla dokončena."/>
+        <e k="RVB_fault_engineload" v="Nezatěžujte motor příliš brzy, je stále studený."/>
+        <e k="RVB_fault_engineload_hud" v="Motor vozidla %s je při studeném stavu příliš zatížen." tag="format"/>
         <e k="RVB_fault_lights" v="Světla nefungují."/>
-        <e k="RVB_fault_lights_hud" v="%s světla vozidla nefungují." tag="format"/>
+        <e k="RVB_lowjumper" v="Motor nenastartuje. Pokračujte v startování pomocí kabelů."/>
+        <e k="RVB_lowjumperDonorMotor" v="Nastartujte motor druhého vozidla."/>
         <e k="RVB_fault_BHlights" v="Úroveň nabití baterie je příliš nízká."/>
-        <e k="RVB_fault_BHlights_hud" v="%s úroveň nabití baterie vozidla je příliš nízká." tag="format"/>
-        <e k="RVB_fault_glowplug" v="Spotřeba paliva se zvýšila." />
-        <e k="RVB_fault_glowplug_hud" v="%s spotřeba paliva vozidla se zvýšila." tag="format"/>
-        <e k="fault_battery" v="Baterie se vybíjí." />
-        <e k="fault_battery_hud" v="%s akumulátor vozidla se vybíjí." tag="format"/>
-        <e k="RVB_fault_operatinghours" v="Svítí servisní kontrolka."/>
-        <e k="RVB_fault_operatinghours_hud" v="%s vozidlo potřebuje servisní prohlídku." tag="format"/>
 
-        <e k="RVB_main_repair_fault" v="Mechanik nemůže toto vozidlo opravit; navštivte &quot;RVB&quot; servis"/>
-
-        <e k="VehicleBreakdown_DEAD_ENGINE" v="Porucha motoru."/>
-        <e k="VehicleBreakdown_DEAD_GENERATOR" v="Motor nenastartuje, porucha alternátoru."/>
-        <e k="VehicleBreakdown_DEAD_ENGINE_INSPECTION" v="Vozidlo nelze nastartovat, probíhá prohlídka."/>
-        <e k="VehicleBreakdown_DEAD_ENGINE_REPAIR" v="Vozidlo nelze nastartovat, probíhá oprava."/>
-        <e k="VehicleBreakdown_DEAD_ENGINE_SERVICE" v="Vozidlo nelze nastartovat, probíhá servis."/>
-        <e k="VehicleBreakdown_DEAD_ENGINE_SUSPENSION" v="Klíče od vozidla jsou u mechanika, který má přestávku."/>
-        <e k="VehicleBreakdown_DEAD_ENGINE_BATTERY" v="Motor nenastartuje, baterie je vybitá."/>
-        <e k="VehicleBreakdown_DEAD_ENGINE_BATTERY_CHARGING" v="Vozidlo nelze nastartovat, probíhá nabíjení baterie."/>
-        <e k="VehicleBreakdown_DEAD_ENGINE_GLOWPLUG" v="Engine won't start"/>
+        <e k="RVB_DEAD_ENGINE_INSPECTION" v="Vozidlo nelze nastartovat, probíhá prohlídka."/>
+        <e k="RVB_DEAD_ENGINE_REPAIR" v="Vozidlo nelze nastartovat, probíhá oprava."/>
+        <e k="RVB_DEAD_ENGINE_SERVICE" v="Vozidlo nelze nastartovat, probíhá servis."/>
+        <e k="RVB_DEAD_ENGINE_SUSPENSION" v="Klíče od vozidla jsou u mechanika, který má přestávku."/>
+        <e k="RVB_DEAD_ENGINE_BATTERY" v="Motor nenastartuje, baterie je vybitá."/>
+        <e k="RVB_DEAD_ENGINE_BATTERY_CHARGING" v="Vozidlo nelze nastartovat, probíhá nabíjení baterie."/>
+        <e k="RVB_DEAD_ENGINE" v="Porucha motoru."/>
 
         <e k="RVB_fault_lights_INSPECTION" v="Osvětlení nelze zapnout, dokud probíhá prohlídka vozidla."/>
         <e k="RVB_fault_lights_REPAIR" v="Osvětlení nelze zapnout, dokud probíhá oprava vozidla"/>
@@ -216,14 +173,9 @@
 
         <e k="infoDisplayExtension_tomorrow" v="zítra "/>
         <e k="infoDisplayExtension_currentPower" v="Výkon"/>
-        <e k="infoDisplayExtension_batteryCh" v="Nabíjení baterie"/>
         <e k="infoDisplayExtension_inspectionVheicle" v="Prohlídka vozidla"/>
         <e k="infoDisplayExtension_repairVheicle" v="Oprava vozidla"/>
         <e k="infoDisplayExtension_serviceVheicle" v="Pravidelný servis"/>
-
-        <e k="RVB_operatingHours" v="Servisní hodiny"/>
-
-        <e k="RVB_TotaloperatingHours" v="Celkové provozní hodiny"/>
 
         <e k="RVB_workshopVResetTitle" v="Obnovení vozidla"/>
         <e k="RVB_workshopVResetDesc" v="Jste si jisti, že chcete obnovit vozidlo %s do výchozího stavu?" tag="format"/>
@@ -231,10 +183,9 @@
         <e k="electricChargeTurbine" v="Větrná turbína s nabíječkou"/>
         <e k="function_powerpack" v="Slouží k nabíjení elektrických vozidel a k přepravě elektrické energie do vzdálených míst."/>
 
-        <e k="rvb_info_chargeTime" v="Doba do úplného nabití:
-%{hours}02d:%{minutes}02d:%{seconds}02d (%{percentage}d%%)" tag="format"/>
+        <e k="Automatic_Repair_conflict_notice" v="Určité úpravy automaticky opravují vozidlo, ale protože používáte modifikaci &quot;Skutečné poruchy vozidel(RVB)&quot;, může být v rozporu s jinými mody.
 
-        <e k="Automatic_Repair_conflict_notice" v="Určité úpravy automaticky opravují vozidlo, ale protože používáte modifikaci &quot;Skutečné poruchy vozidel(RVB)&quot;, může být v rozporu s jinými mody. Následující mod(y) v seznamu vyžadují přepsání automatické opravy, kterou již RVB provedl na pozadí.
+Následující mod(y) v seznamu vyžadují přepsání automatické opravy, kterou již RVB provedl na pozadí.
 
 Přepsaný mod: %s
 
@@ -249,7 +200,7 @@ MathiasHun" tag="format"/>
         <!-- DO NOT CHANGE THIS, ONLY IF THE FS25_USEYOURTYRES MOD ALREADY HAS AN OFFICIAL CZECH REPUBLIC TRANSLATION -->
         <e k="infohud_uytTyresWear" v="Tyres wear"/>
         <!-- End of warning -->
-        <e k="rvb_infohud_uytTyresWear" v="Tyre %s" tag="format"/>
+        <e k="rvb_infohud_uytTyresWear" v="Pneumatika %s" tag="format"/>
 
     </elements>
 </l10n>

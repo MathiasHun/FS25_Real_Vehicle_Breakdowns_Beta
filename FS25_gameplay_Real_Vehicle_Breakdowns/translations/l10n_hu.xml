@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <l10n>
     <elements>
-        <e k="input_VEHICLE_BREAKDOWN_MENU" v="Valódi jármű meghibásodások(RVB)"/>
+        <e k="input_RVB_MENU" v="RVB Menü"/>
         <e k="input_RVB_SPEC" v="RVB be/ki"/>
         <e k="input_RVB_CONNECTING_JC" v="Indítókábel csatlakoztatása"/>
         <e k="action_RVB_DISCONNECTING_JC" v="Indítókábel leválasztása"/>
         <e k="RVB_dialog_titleCONNECTING_JC" v="Indítókábel csatlakoztatása"/>
         <e k="RVB_dialog_descCONNECTING_JC" v="Nem szükséges a %s jármű bikázása. Biztos, hogy szeretnéd folytatni az indítókábel csatlakoztatását?" tag="format"/>
-        <e k="RVB_errorCONNECTING_JC" v="Csak egy járműre van csatlakoztatva indítókábel."/>
-        <e k="RVB_addextra_progress" v="Bikázása folyamatban van. (%s %%)" tag="format"/>
-        <e k="RVB_addextra_charging" v="Töltés %s A" tag="format"/>
         <e k="RVB_addextra_connecting" v="Indítókábel csatlakoztatva"/>
         <e k="RVB_blinking_connecting_toofar" v="Ne húzd tovább az indítókábelt, mert hamarosan leszakad az akkumulátorról! (%s m)" tag="format"/>
         <e k="RVB_blinking_disconnecting_toofar" v="Az indítókábel túl rövid – lecsatlakozott!"/>
@@ -20,10 +17,6 @@
         <e k="RVB_blinking_connecting_order" v="Először a működő járművet csatlakoztassa az indítókábelhez!"/>
         <e k="RVB_blinking_disconnecting" v="%s: Indítókábel leválasztva." tag="format"/>
         <e k="RVB_blinking_disconnecting_order" v="Először a lemerült járművet csatlakoztassa le az indítókábelről!"/>
-        <e k="RVB_blinking_no_morejumpercables" v="Nincs több indítókábeled. Vedd le a legutóbb csatlakoztatott járművekről!"/>
-        <e k="input_RVB_JUMPSTARTOFF" v="Bikázás kikapcsolva"/>
-        <e k="action_RVB_JUMPSTARTON" v="Bikázás bekapcsolva"/>
-        <e k="ui_RVB_reset_msg" v="Biztos vagy ebben?"/>
         <e k="RVB_MenuGameSettingsGame" v="Játékbeállítások"/>
         <e k="RVB_settingSectionHeader_Service" v="Szerviz"/>
         <e k="RVB_setting_dailyServiceInterval" v="Napi szerviz"/>
@@ -62,13 +55,13 @@
         <e k="RVB_difficulty_slow" v="Lassú"/>
         <e k="RVB_difficulty_medium" v="Közepes"/>
         <e k="RVB_difficulty_fast" v="Gyors"/>
-        <e k="RVB_setting_vehicleHud" v="Jármű alkatrész Hud"/>
+        <e k="RVB_setting_vehicleHud" v="Jármű alkatrész HUD"/>
         <e k="RVB_toolTip_vehicleHud" v="Megjeleníti a jármű alkatrészeinek üzemidejét (kikapcsolva fokozhatja a teljesítményt). Tesztelés során érdemes használni."/>
         <e k="RVB_settingSectionHeader_HUD" v="HUD beállítások"/>
         <e k="RVB_setting_showTemp" v="Motor hőmérséklet"/>
         <e k="RVB_toolTip_showTemp" v="Itt be- vagy kikapcsolhatod a Motor hőmérséklet megjelenítését."/>
         <e k="RVB_setting_showRpm" v="RPM"/>
-        <e k="RVB_toolTip_showRpm" v="Itt be- vagy kikapcsolhatod az Rpm megjelenítését."/>
+        <e k="RVB_toolTip_showRpm" v="Itt be- vagy kikapcsolhatod az RPM megjelenítését."/>
         <e k="RVB_setting_showFuel" v="Üzemanyag"/>
         <e k="RVB_toolTip_showFuel" v="Itt be- vagy kikapcsolhatod az üzemanyag megjelenítését."/>
         <e k="RVB_setting_showMotorLoad" v="Motorterhelés"/>
@@ -89,8 +82,6 @@
         <e k="RVB_button_periodicservice" v="Időszakos Szerviz"/>
         <e k="RVB_button_battery_ch" v="Akkumulátor töltés"/>
         <e k="RVB_button_service" v="Szerviz"/>
-        <e k="RVB_button_vehicles" v="Járművek"/>
-        <e k="RVB_button_vehiclesandequipment" v="Járművek és munkaeszközök"/>
         <e k="RVB_inspectionDialog" v="Biztosan megvizsgáltatod ezt a járművet %s áron?" tag="format"/>
         <e k="RVB_inspectionTimeDialog" v="A jármű átvizsgálása %s órakor fejeződik be." tag="format"/>
         <e k="RVB_inspectionDayDialog" v="A jármű átvizsgálása holnap %s órakor fejeződik be." tag="format"/>
@@ -115,32 +106,13 @@
         <e k="RVB_periodicserviceTimeDialog" v="A jármű szervizelése %s órakor fejeződik be." tag="format"/>
         <e k="RVB_periodicserviceDayDialog" v="A jármű szervizelése holnap %s órakor fejeződik be." tag="format"/>
         <e k="RVB_batteryChDialog" v="Biztosan felakarod tölteni a jármű akkumulátorát %s áron?" tag="format"/>
-        <e k="RVB_batteryChTimeDialog" v="A jármű akkumulátorának töltése %s órakor fejeződik be." tag="format"/>
-        <e k="RVB_batteryChDayDialog" v="A jármű akkumulátorának töltése holnap %s órakor fejeződik be." tag="format"/>
-        <e k="RVB_occupied" v="Már használatban van a jármű!" />
-        <e k="RVB_shop_operatingTime" v="%02d.%2d óra" tag="format"/>
         <e k="RVB_operatingTime" v="%02d óra" tag="format"/>
         <e k="RVB_shop_operatingTimeG" v="%s:%s óra" tag="format"/>
-        <e k="RVB_serviceHours" v="%01d/%01d óra" tag="format"/>
         <e k="RVB_alertmessage_inspection" v="Jármű átvizsgálása folyamatban van."/>
-        <e k="RVB_alertmessage_inspection_hud" v="%s jármű átvizsgálása folyamatban van." tag="format"/>
         <e k="RVB_alertmessage_repair" v="Jármű javítása folyamatban van."/>
-        <e k="RVB_alertmessage_repair_hud" v="%s jármű javítása folyamatban van." tag="format"/>
         <e k="RVB_alertmessage_service" v="Jármű szervizelése folyamatban van."/>
-        <e k="RVB_alertmessage_service_hud" v="%s jármű szervizelése folyamatban van." tag="format"/>
-        <e k="RVB_alertmessage_batteryCh" v="Akkumulátor töltés folyamatban van."/>
-        <e k="RVB_alertmessage_batteryCh_hud" v="%s jármű akkumulátorának töltése folyamatban van." tag="format"/>
 
-        <e k="RVB_list_vehicleorimplement" v="Jármű/Munkaeszközök"/>
-        <e k="RVB_list_hporle" v="Hp/LE"/>
-        <e k="RVB_list_currentvalue" v="Jelenlegi ára"/>
-        <e k="RVB_list_age" v="Kor"/>
-        <e k="RVB_list_operatinghours" v="Üzemidő"/>
-        <e k="RVB_list_realoperatinghours" v="Valós üzemidő"/>
-        <e k="RVB_list_servicehours" v="Szerviz"/>
-        <e k="RVB_list_lease" v="Bérelt"/>
         <e k="RVB_list_battery" v="Akkumulátor"/>
-        <e k="RVB_parts_repair" v="Javítandó alkatrészek"/>
 
         <e k="RVB_Workshop" v="Műhely"/>
         <e k="RVB_Workshop_diagnostics" v="Diagnosztika"/>
@@ -152,7 +124,7 @@
         <e k="RVB_Workshop_work" v="Munka"/>
         <e k="RVB_Workshop_date" v="Dátum"/>
         <e k="RVB_Workshop_lifetime" v="Üzemóra"/>
-        <e k="RVB_Workshop_odometer" v="Km állás"/>
+        <e k="RVB_Workshop_odometer" v="Km-állás"/>
         <e k="RVB_Workshop_cost" v="Költség"/>
         <e k="RVB_WorkshopD_new" v="Új"/>
         <e k="RVB_WorkshopD_conExcellent" v="Kiváló állapot"/>
@@ -166,7 +138,7 @@
         <e k="RVB_WorkshopS_month" v=" hónap"/>
 
         <e k="RVB_WorkshopMessage_service" v="A megadott szervizintervallumot %s órával túllépted, ezért a javítás tovább tartott és többe került." tag="format"/>
-        <e k="RVB_WorkshopMessage_serviceDone" v="Szervizelés befejződött."/>
+        <e k="RVB_WorkshopMessage_serviceDone" v="Szervizelés befejeződött."/>
         <e k="RVB_WorkshopMessage_repairDone" v="Javítás befejeződött. Cserélt/javított alkatrésze(ek): %s" tag="format"/>
         <e k="RVB_WorkshopMessage_batteryDone" v="Akkumulátor feltöltve."/>
         <e k="RVB_WorkshopMessage_vResetDone" v="A járművet visszaállították."/>
@@ -177,37 +149,20 @@
 
         <e k="RVB_serviceDialogEnd" v="%s jármű szervizelése befejeződött."/>
         <e k="RVB_repairDialogEnd" v="%s jármű javítása befejeződött."/>
-        <e k="RVB_fault_" v="Ne vezess túl gyorsan, a motor még hideg."/>
         <e k="RVB_fault_engineload" v="Ne terheld túl hamar, a motor még hideg."/>
         <e k="RVB_fault_engineload_hud" v="%s jármű motorja hidegen túl nagy terhelést kap." tag="format"/>
-        <e k="RVB_fault_hud" v="%s járművel túl gyorsan vezetnek, a motor még hideg." tag="format"/>
-        <e k="RVB_fault_thermostat" v="Hűtőfolyadék túlmelegedik."/>
-        <e k="RVB_fault_thermostat_hud" v="%s jármű hűtőfolyadéka túlmelegedik." tag="format"/>
-        <e k="RVB_fault_thermostatC" v="A motor nem éri el az üzemi hőmérsékletet."/>
-        <e k="RVB_fault_thermostatC_hud" v="%s motorja nem éri el az üzemi hőmérsékletet." tag="format"/>
-        <e k="RVB_fault_lights" v="Nem müködik a világítás." />
-        <e k="RVB_fault_lights_hud" v="%s járműnek nem müködik a világítása." tag="format"/>
-        <e k="RVB_lowjumper" v="Motor nem indul, folytasd a jármű bikázását."/>
-        <e k="RVB_fault_BHlights" v="Az akkumulátor töltöttségi szintje túl alacsony." />
-        <e k="RVB_fault_BHlights_hud" v="%s járműnek az akkumulátorának töltöttségi szintje túl alacsony." tag="format"/>
-        <e k="RVB_fault_glowplug" v="Üzemanyag fogyasztás megnőtt." />
-        <e k="RVB_fault_glowplug_hud" v="%s jármű üzemanyag fogyasztása megnőtt." tag="format"/>
-        <e k="fault_battery" v="Merül az akkumulátor." />
-        <e k="fault_battery_hud" v="%s járműnek merül az akkumulátora." tag="format"/>
-        <e k="RVB_fault_operatinghours" v="Felvillant a szerviz lámpa." />
-        <e k="RVB_fault_operatinghours_hud" v="%s járművet szervizeltetni kell." tag="format"/>
+        <e k="RVB_fault_lights" v="Nem működik a világítás."/>
+        <e k="RVB_lowjumper" v="A motor nem indul. Folytasd a bikázást."/>
+        <e k="RVB_lowjumperDonorMotor" v="Indítsd el a másik jármű motorját."/>
+        <e k="RVB_fault_BHlights" v="Az akkumulátor töltöttségi szintje túl alacsony."/>
 
-        <e k="RVB_main_repair_fault" v="A szerelő nem tudja megjavítani ezt a járművet, keresd fel a &quot;RVB&quot; Szervizt"/>
-
-        <e k="VehicleBreakdown_DEAD_ENGINE" v="Motor meghibásodása."/>
-        <e k="VehicleBreakdown_DEAD_GENERATOR" v="Motor nem indul, generátor meghibásodott."/>
-        <e k="VehicleBreakdown_DEAD_ENGINE_INSPECTION" v="Jármű nem indítható, átvizsgálása folyamatban van."/>
-        <e k="VehicleBreakdown_DEAD_ENGINE_REPAIR" v="Jármű nem indítható, javítás folyamatban van."/>
-        <e k="VehicleBreakdown_DEAD_ENGINE_SERVICE" v="Jármű nem indítható, szervizelés folyamatban van."/>
-        <e k="VehicleBreakdown_DEAD_ENGINE_SUSPENSION" v="Jármű kulcsa a szerelőnél van, aki éppen pihen."/>
-        <e k="VehicleBreakdown_DEAD_ENGINE_BATTERY" v="Motor nem indul, akkumulátor lemerült."/>
-        <e k="VehicleBreakdown_DEAD_ENGINE_BATTERY_CHARGING" v="Jármű nem indítható, akkumulátor töltés folyamatban van."/>
-        <e k="VehicleBreakdown_DEAD_ENGINE_GLOWPLUG" v="Motor nem indul."/>
+        <e k="RVB_DEAD_ENGINE_INSPECTION" v="Jármű nem indítható, átvizsgálása folyamatban van."/>
+        <e k="RVB_DEAD_ENGINE_REPAIR" v="Jármű nem indítható, javítás folyamatban van."/>
+        <e k="RVB_DEAD_ENGINE_SERVICE" v="Jármű nem indítható, szervizelés folyamatban van."/>
+        <e k="RVB_DEAD_ENGINE_SUSPENSION" v="Jármű kulcsa a szerelőnél van, aki éppen pihen."/>
+        <e k="RVB_DEAD_ENGINE_BATTERY" v="Motor nem indul, akkumulátor lemerült."/>
+        <e k="RVB_DEAD_ENGINE_BATTERY_CHARGING" v="Jármű nem indítható, akkumulátor töltés folyamatban van."/>
+        <e k="RVB_DEAD_ENGINE" v="A motor nem indul."/>
 
         <e k="RVB_fault_lights_INSPECTION" v="A világítás nem kapcsolható, amíg a jármű átvizsgálása folyamatban van."/>
         <e k="RVB_fault_lights_REPAIR" v="A világítás nem kapcsolható, amíg a jármű javítása folyamatban van."/>
@@ -217,23 +172,15 @@
 
         <e k="infoDisplayExtension_tomorrow" v="holnap "/>
         <e k="infoDisplayExtension_currentPower" v="Teljesítmény"/>
-        <e k="infoDisplayExtension_batteryCh" v="Akku töltés"/>
         <e k="infoDisplayExtension_inspectionVheicle" v="Jármű átvizsgálás"/>
         <e k="infoDisplayExtension_repairVheicle" v="Járműjavítás"/>
         <e k="infoDisplayExtension_serviceVheicle" v="Időszakos Szerviz"/>
-
-        <e k="RVB_operatingHours" v="Szerviz üzemóra"/>
-
-        <e k="RVB_TotaloperatingHours" v="Összes üzemóra"/>
 
         <e k="RVB_workshopVResetTitle" v="Jármű visszaállítása"/>
         <e k="RVB_workshopVResetDesc" v="Biztosan visszaállítod a %s járművet alapállapotba?" tag="format"/>
         
         <e k="electricChargeTurbine" v="Elektromos szélturbina töltő"/>
         <e k="function_powerpack" v="Használja ezt elektromos járművei feltöltésére és az elektromos töltés távoli helyekre való szállítására."/>
-        
-        <e k="rvb_info_chargeTime" v="Teljes feltöltésig hátralévő idő:
-%{hours}02d:%{minutes}02d:%{seconds}02d (%{percentage}d%%)" tag="format"/>
         
         <e k="Automatic_Repair_conflict_notice" v="Vannak módosítások, amelyek automatikusan javítják a járművet, ezért a &quot;Valódi jármű meghibásodások(RVB)&quot; mód ütközhet velük.
 
