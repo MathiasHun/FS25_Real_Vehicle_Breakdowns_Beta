@@ -70,13 +70,21 @@ Thanks for helping improve the mod!🚜
 # Please don’t share this version on other sites, it’s a VERY early BETA.</br>
 ## <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=7">Download the latest developer TEST version 0.9.5.7</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
 
-## Changelog 0.9.5.7:
-- Reworked jump-start cable system for more reliable behavior
+## Changelog 0.9.5.7: - I’ll be away for a few days soon.
+- Reworked jump-start cable system for more reliable behavior.
+The vehicle must be jump-started for 5–15 seconds to start. However, if you turn off the jump-started vehicle and its battery level is still below 10%, it will not start again.
+This should now work correctly in multiplayer as well.
+- Several functions have been relocated. Hopefully they won’t cause any issues, but extensive testing and feedback are needed.
+I will be away for a few days, so I won’t be able to test them myself.
+- The vehicle HUD received a small update. The dashboard icons are now slightly visible even before the engine starts.
+Later, the plan is for them to appear brighter when the headlights are on.
 - github issues#126
 - github issues#124 - Workshop menu bug
 - github issues#121 - FR translation update - thanks by Squallqt
 - github issues#120 - Fixed DashboardLive compatibility issues
 - Fixed missing localization string: “Lépésköz” in RVBMenuPartsSettingsFrame.xml
+- Engine wear below 50 °C is now based on engine load instead of speed: above 85 % load, wear increases until the engine reaches 50 °C
+- Localization files optimized and completed.
 - Update - The following vehicles are “excluded” from RVB mode: https://github.com/MathiasHun/FS25_Real_Vehicle_Breakdowns_Beta/issues/114
 This is a quick release intended for testing, so you can try it before it is made available to the general public.
 
