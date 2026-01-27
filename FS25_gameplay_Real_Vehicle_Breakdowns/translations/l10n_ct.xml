@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<l10n>
+    <translationContributors>XelaNull + Claude Code</translationContributors>
+    <elements>
+        <e k="input_RVB_MENU" v="RVB 選單" eh="befec422" />
+        <e k="input_RVB_SPEC" v="RVB 開/關" eh="ad0e92fa" />
+        <e k="input_RVB_CONNECTING_JC" v="連接跨接電纜" eh="d65bafa2" />
+        <e k="action_RVB_DISCONNECTING_JC" v="斷開跨接電纜" eh="af92d5db" />
+        <e k="RVB_dialog_titleCONNECTING_JC" v="連接跨接電纜" eh="d65bafa2" />
+        <e k="RVB_dialog_descCONNECTING_JC" v="%s 車輛無需跨接啟動。您確定要繼續連接跨接電纜嗎？" tag="format"/>
+        <e k="RVB_addextra_connecting" v="跨接電纜已連接" eh="3893af14" />
+        <e k="RVB_blinking_connecting_toofar" v="請勿再拉長跨接電纜，否則它將從電瓶脫落！（%s 公尺）" tag="format"/>
+        <e k="RVB_blinking_disconnecting_toofar" v="跨接電纜太短——已斷開連接！" eh="eed0846f" />
+        <e k="RVB_blinking_connecting_drive" v="請勿駛離，跨接電纜仍在連接中！（%s 公尺）" tag="format"/>
+        <e k="RVB_blinking_connecting_length" v="跨接電纜長度：%s 公尺 / %s 公尺" tag="format"/>
+        <e k="RVB_blinking_connecting_cableBroken" v="跨接電纜曾連接過。電纜已損壞，您需花費 %s 購買新的。" tag="format"/>
+        <e k="RVB_blinking_connecting" v="%s：跨接電纜已連接。" tag="format"/>
+        <e k="RVB_blinking_connecting_order" v="請先將正常車輛連接至跨接電纜！" eh="7342e321" />
+        <e k="RVB_blinking_disconnecting" v="%s：跨接電纜已斷開。" tag="format"/>
+        <e k="RVB_blinking_disconnecting_order" v="請先將故障車輛從跨接電纜斷開！" eh="e9970e17" />
+        <e k="RVB_MenuGameSettingsGame" v="遊戲設定" eh="f22e46f4" />
+        <e k="RVB_settingSectionHeader_Service" v="保養服務" eh="c2ba7e78" />
+        <e k="RVB_setting_dailyServiceInterval" v="每日保養" eh="af302edf" />
+        <e k="RVB_toolTip_dailyServiceInterval" v="每日應執行保養的頻率。此功能目前尚未啟用。" eh="5677120d" />
+        <e k="RVB_setting_periodicServiceInterval" v="定期保養" eh="37a54fc5" />
+        <e k="RVB_toolTip_periodicServiceInterval" v="車輛保養間隔。" eh="c486215a" />
+        <e k="RVB_settingSectionHeader_Workshop" v="車輛維修廠" eh="1f942e17" />
+        <e k="RVB_setting_workshopTime" v="維修廠營業時間" eh="d3841d21" />
+        <e k="RVB_toolTip_workshopTime" v="啟用後，維修廠僅在指定營業時間內開放使用。" eh="12d5b413" />
+        <e k="RVB_setting_workshopOpen" v="開門時間" eh="7ef9510d" />
+        <e k="RVB_toolTip_workshopOpen" v="車輛維修廠的開門時間。" eh="9fc2ad38" />
+        <e k="RVB_setting_workshopClose" v="關門時間" eh="608cf18d" />
+        <e k="RVB_toolTip_workshopClose" v="車輛維修廠的關門時間。" eh="b09cc785" />
+        <e k="RVB_setting_workshopCountMax" v="維修廠最大車輛數" eh="eaa9ec2d" />
+        <e k="RVB_toolTip_workshopCountMax" v="您可在此設定維修廠同時能容納的車輛數量。" eh="3fc3632c" />
+        <e k="RVB_settingSectionHeader_LifetimeofParts" v="零件壽命" eh="77504676" />
+        <e k="RVB_toolTip_lifetimeParts" v="此數值越小，零件越早故障。" eh="670fee78" />
+        <e k="RVB_setting_thermostatLifetime" v="節溫器" eh="91e0b95d" />
+        <e k="RVB_setting_lightingsLifetime" v="照明系統" eh="2e4b97fd" />
+        <e k="RVB_setting_glowplugLifetime" v="預熱塞" eh="6fdb6ce6" />
+        <e k="RVB_setting_wipersLifetime" v="雨刷" eh="6fdb61c4" />
+        <e k="RVB_setting_generatorLifetime" v="發電機" eh="92a8f0b9" />
+        <e k="RVB_setting_engineLifetime" v="引擎" eh="7bfa3072" />
+        <e k="RVB_setting_selfstarterLifetime" v="起動馬達" eh="ee6085db" />
+        <e k="RVB_setting_batteryLifetime" v="電瓶" eh="d67c9286" />
+        <e k="RVB_setting_tireLifetime" v="輪胎" eh="e4b17d74" />
+        <e k="RVB_utils_hour" v="%s 小時" tag="format"/>
+        <e k="RVB_utils_km" v="%s 公里" tag="format"/>
+        <e k="RVB_utils_maxcount" v="%s 台" tag="format"/>
+
+        <e k="RVB_MenuGameSettingsGeneral" v="一般設定" eh="52f4393e" />
+        <e k="RVB_setting_alertDialog" v="警告訊息" eh="252527bd" />
+        <e k="RVB_toolTip_alertDialog" v="當您在車內時，若車輛發生損壞、保養或維修，螢幕中央會顯示警告訊息。" eh="1a4ff708" />
+        <e k="RVB_setting_rvbDifficulty" v="車輛故障" eh="b74e5c9c" />
+        <e k="RVB_toolTip_rvbDifficulty" v="目前開發中，但已可使用。" eh="68ef8114" />
+        <e k="RVB_difficulty_slow" v="緩慢" eh="efa53979" />
+        <e k="RVB_difficulty_medium" v="中等" eh="87f8a6ab" />
+        <e k="RVB_difficulty_fast" v="快速" eh="e16b5b7f" />
+        <e k="RVB_setting_vehicleHud" v="車輛零件 HUD" eh="97c188e7" />
+        <e k="RVB_toolTip_vehicleHud" v="顯示車輛零件的運轉時數（關閉可提升效能）。建議用於測試。" eh="3fc04f06" />
+        <e k="RVB_settingSectionHeader_HUD" v="HUD 設定" eh="c45776a5" />
+        <e k="RVB_setting_showTemp" v="引擎溫度" eh="a6eab106" />
+        <e k="RVB_toolTip_showTemp" v="您可在此開啟或關閉引擎溫度顯示。" eh="77260a8c" />
+        <e k="RVB_setting_showRpm" v="轉速" eh="fe2284eb" />
+        <e k="RVB_toolTip_showRpm" v="您可在此開啟或關閉轉速顯示。" eh="a24f2ebc" />
+        <e k="RVB_setting_showFuel" v="燃油" eh="94fc563c" />
+        <e k="RVB_toolTip_showFuel" v="您可在此開啟或關閉燃油顯示。" eh="a762cfcc" />
+        <e k="RVB_setting_showMotorLoad" v="引擎負載" eh="62f58274" />
+        <e k="RVB_toolTip_showMotorLoad" v="您可在此開啟或關閉引擎負載顯示。" eh="3a8bdda4" />
+        <e k="RVB_setting_showdebug" v="疑難排解" eh="231cf4c7" />
+        <e k="RVB_toolTip_showdebug" v="在控制台和 log.txt 中顯示疑難排解資訊（關閉可提升效能）" eh="b8ee92ac" />
+
+        <e k="RVB_MenuGamePartsSettings" v="車輛設定" eh="b33d07b8" />
+        <e k="RVB_Parts_stepInterval" v="階段間隔(%%)" eh="a3db3e97" />
+        <e k="RVB_Parts_currentValue" v="目前 %s 壽命" tag="format"/>
+        <e k="RVB_Parts_remainingValue" v="%s 壽命設定" tag="format"/>
+        <e k="RVB_part_rvbDifficulty" v="車輛故障" eh="b74e5c9c" />
+        <e k="RVB_Parts_utils_percent" v="%s %%" tag="format"/>
+
+        <e k="RVB_WorkShopClose" v="車輛維修廠已關閉，請於 %s 點再來。" tag="format"/>
+        <e k="RVB_button_inspection" v="檢驗" eh="b4faa7ed" />
+        <e k="RVB_button_dailyservice" v="每日保養" eh="af302edf" />
+        <e k="RVB_button_periodicservice" v="定期保養" eh="37a54fc5" />
+        <e k="RVB_button_battery_ch" v="電瓶充電" eh="30a47fb3" />
+        <e k="RVB_button_service" v="保養服務" eh="c2ba7e78" />
+        <e k="RVB_inspectionDialog" v="您確定要花費 %s 檢驗此車輛嗎？" tag="format"/>
+        <e k="RVB_inspectionTimeDialog" v="車輛檢驗將於 %s 點完成。" tag="format"/>
+        <e k="RVB_inspectionDayDialog" v="車輛檢驗將於明天 %s 點完成。" tag="format"/>
+        <e k="RVB_faultText_THERMOSTAT" v="節溫器" eh="91e0b95d" />
+        <e k="RVB_faultText_LIGHTINGS" v="照明系統" eh="2e4b97fd" />
+        <e k="RVB_faultText_GLOWPLUG" v="預熱塞" eh="6fdb6ce6" />
+        <e k="RVB_faultText_WIPERS" v="雨刷" eh="6fdb61c4" />
+        <e k="RVB_faultText_GENERATOR" v="發電機" eh="92a8f0b9" />
+        <e k="RVB_faultText_ENGINE" v="引擎" eh="7bfa3072" />
+        <e k="RVB_faultText_SELFSTARTER" v="起動馬達" eh="ee6085db" />
+        <e k="RVB_faultText_BATTERY" v="電瓶" eh="d67c9286" />
+        <e k="RVB_faultText_TIRE" v="輪胎" eh="e4b17d74" />
+        <e k="RVB_faultText_TIREFL" v="左前輪胎" eh="4a8014f5" />
+        <e k="RVB_faultText_TIREFR" v="右前輪胎" eh="d65bdf73" />
+        <e k="RVB_faultText_TIRERL" v="左後輪胎" eh="8058c09e" />
+        <e k="RVB_faultText_TIRERR" v="右後輪胎" eh="433ab1ca" />
+        <e k="RVB_repairErrorMechanics" v="所有技師都在忙碌中，同時最多只能維修 %s 台車輛。" tag="format"/>
+        <e k="RVB_repairTimeDialog" v="車輛維修將於 %s 點完成。" tag="format"/>
+        <e k="RVB_repairDayDialog" v="車輛維修將於明天 %s 點完成。" tag="format"/>
+        <e k="RVB_ErrorList" v="故障清單：" eh="4e0dbac7" />
+        <e k="RVB_periodicserviceDialog" v="您確定要花費 %s 保養此車輛嗎？" tag="format"/>
+        <e k="RVB_periodicserviceTimeDialog" v="車輛保養將於 %s 點完成。" tag="format"/>
+        <e k="RVB_periodicserviceDayDialog" v="車輛保養將於明天 %s 點完成。" tag="format"/>
+        <e k="RVB_batteryChDialog" v="您確定要花費 %s 為車輛電瓶充電嗎？" tag="format"/>
+        <e k="RVB_operatingTime" v="%02d 小時" tag="format"/>
+        <e k="RVB_shop_operatingTimeG" v="%s:%s 小時" tag="format"/>
+        <e k="RVB_alertmessage_inspection" v="車輛檢驗進行中。" eh="65fb0250" />
+        <e k="RVB_alertmessage_repair" v="車輛維修進行中。" eh="e142d0e7" />
+        <e k="RVB_alertmessage_service" v="車輛保養進行中。" eh="b4b2edf3" />
+
+        <e k="RVB_list_battery" v="電瓶" eh="d67c9286" />
+
+        <e k="RVB_Workshop" v="維修廠" eh="8e5d9dbc" />
+        <e k="RVB_Workshop_diagnostics" v="診斷" eh="36b64aad" />
+        <e k="RVB_Workshop_serviceManual" v="保養紀錄" eh="076e552d" />
+        <e k="RVB_Workshop_noinspection" v="車輛尚未檢驗！" eh="58a6a5a1" />
+        <e k="RVB_Workshop_noserviceManualEntry" v="保養紀錄中無任何條目！" eh="7bf99f4e" />
+        <e k="RVB_Workshop_status" v="狀態：" eh="24a23d78" />
+        <e k="RVB_Workshop_repair" v="維修？" eh="e045471f" />
+        <e k="RVB_Workshop_work" v="作業" eh="0f926353" />
+        <e k="RVB_Workshop_date" v="日期" eh="44749712" />
+        <e k="RVB_Workshop_lifetime" v="運轉時數" eh="cb932a6d" />
+        <e k="RVB_Workshop_odometer" v="里程表讀數" eh="6e7f0879" />
+        <e k="RVB_Workshop_cost" v="費用" eh="20b4f77b" />
+        <e k="RVB_WorkshopD_new" v="全新" eh="03c2e7e4" />
+        <e k="RVB_WorkshopD_conExcellent" v="狀況極佳" eh="d351c1b2" />
+        <e k="RVB_WorkshopD_conGood" v="狀況良好" eh="2acb21a1" />
+        <e k="RVB_WorkshopD_conUsed" v="堪用" eh="c7981b42" />
+        <e k="RVB_WorkshopD_conFaults" v="易發故障" eh="0d2d90ed" />
+        <e k="RVB_WorkshopD_conDown" v="已故障" eh="6d10dc80" />
+        <e k="RVB_WorkshopD_conReplace" v="需要更換" eh="aedbbab2" />
+        <e k="RVB_WorkshopS_repNeed" v="需要維修。" eh="b9d46622" />
+        <e k="RVB_WorkshopS_repNoNeed" v="無需維修。" eh="3363e3de" />
+        <e k="RVB_WorkshopS_month" v=" 個月" eh="888b692b" />
+
+        <e k="RVB_WorkshopMessage_service" v="您已超過指定保養間隔 %s 小時，因此維修時間更長且費用更高。" tag="format"/>
+        <e k="RVB_WorkshopMessage_serviceDone" v="保養完成。" eh="92a45efa" />
+        <e k="RVB_WorkshopMessage_repairDone" v="維修完成。已更換/維修的零件：%s" tag="format"/>
+        <e k="RVB_WorkshopMessage_batteryDone" v="電瓶已充滿電。" eh="1ab095d0" />
+        <e k="RVB_WorkshopMessage_vResetDone" v="車輛已重置。" eh="1d94103e" />
+
+        <e k="RVB_inspectionDialogFault" v="%s 車輛檢驗完成，需要維修。%s" eh="63f23863" />
+        <e k="RVB_inspectionDialogEnd" v="%s 車輛檢驗完成，無需維修。" eh="adb75b1a" />
+        <e k="RVB_inspectionDialogEnd_other" v="%s 車輛已檢驗並維修。您的技師非常忙碌，因此由實習技師維修您的車輛。但這位實習技師無法列出您車輛的維修項目。" eh="fca01ba3" />
+
+        <e k="RVB_serviceDialogEnd" v="%s 車輛保養完成。" eh="b705ad92" />
+        <e k="RVB_repairDialogEnd" v="%s 車輛維修完成。" eh="5ce51ccd" />
+        <e k="RVB_fault_engineload" v="引擎仍處於冷車狀態，請勿過早施加過大負載。" eh="5de6f564" />
+        <e k="RVB_fault_engineload_hud" v="%s 的引擎在冷車時承受過大負載。" tag="format"/>
+        <e k="RVB_fault_lights" v="照明系統故障。" eh="488daec3" />
+        <e k="RVB_lowjumper" v="引擎無法啟動。請繼續跨接啟動。" eh="03bba9c6" />
+        <e k="RVB_lowjumperDonorMotor" v="請啟動另一台車輛的引擎。" eh="78fe1392" />
+        <e k="RVB_fault_BHlights" v="電瓶電量過低。" eh="53fe34e3" />
+
+        <e k="RVB_DEAD_ENGINE_INSPECTION" v="車輛無法啟動，檢驗進行中。" eh="8a60c6e5" />
+        <e k="RVB_DEAD_ENGINE_REPAIR" v="車輛無法啟動，維修進行中。" eh="abd5663f" />
+        <e k="RVB_DEAD_ENGINE_SERVICE" v="車輛無法啟動，保養進行中。" eh="71031492" />
+        <e k="RVB_DEAD_ENGINE_SUSPENSION" v="車鑰匙在休息中的技師那裡。" eh="7e1beb08" />
+        <e k="RVB_DEAD_ENGINE_BATTERY" v="引擎無法啟動，電瓶已耗盡。" eh="07b5c4d5" />
+        <e k="RVB_DEAD_ENGINE_BATTERY_CHARGING" v="車輛無法啟動，電瓶充電中。" eh="8a2973cd" />
+        <e k="RVB_DEAD_ENGINE" v="引擎無法啟動。" eh="1a9fc846" />
+
+        <e k="RVB_fault_lights_INSPECTION" v="車輛檢驗進行中，無法開啟照明。" eh="1818828a" />
+        <e k="RVB_fault_lights_REPAIR" v="車輛維修進行中，無法開啟照明。" eh="3de16a52" />
+        <e k="RVB_fault_lights_SERVICE" v="車輛保養進行中，無法開啟照明。" eh="c2a6e782" />
+
+        <e k="RVB_ErrorNotifi" v="故障項目：" eh="78b60278" />
+
+        <e k="infoDisplayExtension_tomorrow" v="明天 " eh="83a2134f" />
+        <e k="infoDisplayExtension_currentPower" v="功率" eh="dd4fe0cc" />
+        <e k="infoDisplayExtension_inspectionVheicle" v="車輛檢驗" eh="7276b8fd" />
+        <e k="infoDisplayExtension_repairVheicle" v="車輛維修" eh="6c545b62" />
+        <e k="infoDisplayExtension_serviceVheicle" v="定期保養" eh="37a54fc5" />
+
+        <e k="RVB_workshopVResetTitle" v="車輛重置" eh="9e1f8bcf" />
+        <e k="RVB_workshopVResetDesc" v="您確定要將 %s 車輛重置為預設狀態嗎？" tag="format"/>
+
+        <e k="electricChargeTurbine" v="電動風力發電充電器" eh="2d67b055" />
+        <e k="function_powerpack" v="用於為電動車輛充電並將電力運送至偏遠地區。" eh="eaa5e06e" />
+
+        <e k="Automatic_Repair_conflict_notice" v="某些模組會自動維修車輛，這可能與「真實車輛故障(RVB)」模式產生衝突。
+
+以下模組的自動維修功能已被 RVB 模組覆蓋。
+
+已覆蓋的模組：%s
+
+感謝您的理解。
+
+此致，
+
+MathiasHun" tag="format"/>
+
+        <e k="RVB_aimessage_batterydischarged" v="%s AI 助手意外停止工作；車輛電瓶已耗盡！" eh="ee374dc3" />
+
+        <!-- 請勿更改此項，除非 FS25_USEYOURTYRES 模組已有正式繁體中文翻譯 -->
+        <e k="infohud_uytTyresWear" v="輪胎磨損" eh="7cffdd14" />
+        <!-- 警告結束 -->
+        <e k="rvb_infohud_uytTyresWear" v="輪胎 %s" tag="format"/>
+
+    </elements>
+</l10n>

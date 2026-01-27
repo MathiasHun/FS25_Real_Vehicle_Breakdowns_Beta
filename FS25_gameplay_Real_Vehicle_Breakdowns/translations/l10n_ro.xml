@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<l10n>
+    <translationContributors>XelaNull + Claude Code</translationContributors>
+    <elements>
+        <e k="input_RVB_MENU" v="Meniu RVB" eh="befec422" />
+        <e k="input_RVB_SPEC" v="RVB pornit/oprit" eh="ad0e92fa" />
+        <e k="input_RVB_CONNECTING_JC" v="Conectare cabluri de pornire" eh="d65bafa2" />
+        <e k="action_RVB_DISCONNECTING_JC" v="Deconectare cabluri de pornire" eh="af92d5db" />
+        <e k="RVB_dialog_titleCONNECTING_JC" v="Conectare cabluri de pornire" eh="d65bafa2" />
+        <e k="RVB_dialog_descCONNECTING_JC" v="Nu este nevoie sa porniti vehiculul %s cu cabluri. Sunteti sigur ca doriti sa continuati conectarea cablurilor de pornire?" tag="format"/>
+        <e k="RVB_addextra_connecting" v="Cabluri de pornire conectate" eh="3893af14" />
+        <e k="RVB_blinking_connecting_toofar" v="Nu intindeti cablul de pornire mai mult, altfel se va deconecta de la baterie! (%s m)" tag="format"/>
+        <e k="RVB_blinking_disconnecting_toofar" v="Cablul de pornire este prea scurt - s-a deconectat!" eh="eed0846f" />
+        <e k="RVB_blinking_connecting_drive" v="Nu plecati, cablurile de pornire sunt inca conectate! (%s m)" tag="format"/>
+        <e k="RVB_blinking_connecting_length" v="Lungime cablu de pornire: %s m / %s m" tag="format"/>
+        <e k="RVB_blinking_connecting_cableBroken" v="Cablurile de pornire au fost conectate. S-au deteriorat, asa ca a trebuit sa cumparati altele noi pentru %s." tag="format"/>
+        <e k="RVB_blinking_connecting" v="%s: Cabluri de pornire conectate." tag="format"/>
+        <e k="RVB_blinking_connecting_order" v="Mai intai, conectati vehiculul functional la cablurile de pornire!" eh="7342e321" />
+        <e k="RVB_blinking_disconnecting" v="%s: Cabluri de pornire deconectate." tag="format"/>
+        <e k="RVB_blinking_disconnecting_order" v="Mai intai, deconectati vehiculul defect de la cablurile de pornire!" eh="e9970e17" />
+        <e k="RVB_MenuGameSettingsGame" v="Setari joc" eh="f22e46f4" />
+        <e k="RVB_settingSectionHeader_Service" v="Service" eh="c2ba7e78" />
+        <e k="RVB_setting_dailyServiceInterval" v="Service zilnic" eh="af302edf" />
+        <e k="RVB_toolTip_dailyServiceInterval" v="Cat de des ar trebui efectuata intretinerea zilnica. Aceasta functie este momentan inactiva." eh="5677120d" />
+        <e k="RVB_setting_periodicServiceInterval" v="Service periodic" eh="37a54fc5" />
+        <e k="RVB_toolTip_periodicServiceInterval" v="Intervalul de service al vehiculului." eh="c486215a" />
+        <e k="RVB_settingSectionHeader_Workshop" v="Atelier auto" eh="1f942e17" />
+        <e k="RVB_setting_workshopTime" v="Program de functionare atelier" eh="d3841d21" />
+        <e k="RVB_toolTip_workshopTime" v="Daca este activat, atelierul poate fi utilizat doar in timpul programului de functionare specificat." eh="12d5b413" />
+        <e k="RVB_setting_workshopOpen" v="Ora deschidere" eh="7ef9510d" />
+        <e k="RVB_toolTip_workshopOpen" v="Ora la care se deschide atelierul auto." eh="9fc2ad38" />
+        <e k="RVB_setting_workshopClose" v="Ora inchidere" eh="608cf18d" />
+        <e k="RVB_toolTip_workshopClose" v="Ora la care se inchide atelierul auto." eh="b09cc785" />
+        <e k="RVB_setting_workshopCountMax" v="Numar maxim vehicule in atelier" eh="eaa9ec2d" />
+        <e k="RVB_toolTip_workshopCountMax" v="Aici puteti seta cate vehicule pot fi in atelier simultan." eh="3fc3632c" />
+        <e k="RVB_settingSectionHeader_LifetimeofParts" v="Durata de viata a pieselor" eh="77504676" />
+        <e k="RVB_toolTip_lifetimeParts" v="Cu cat numarul este mai mic, cu atat mai repede se va defecta." eh="670fee78" />
+        <e k="RVB_setting_thermostatLifetime" v="Termostat" eh="91e0b95d" />
+        <e k="RVB_setting_lightingsLifetime" v="Iluminare" eh="2e4b97fd" />
+        <e k="RVB_setting_glowplugLifetime" v="Bujie incandescenta" eh="6fdb6ce6" />
+        <e k="RVB_setting_wipersLifetime" v="Stergatoare" eh="6fdb61c4" />
+        <e k="RVB_setting_generatorLifetime" v="Generator" eh="92a8f0b9" />
+        <e k="RVB_setting_engineLifetime" v="Motor" eh="7bfa3072" />
+        <e k="RVB_setting_selfstarterLifetime" v="Demaror" eh="ee6085db" />
+        <e k="RVB_setting_batteryLifetime" v="Baterie" eh="d67c9286" />
+        <e k="RVB_setting_tireLifetime" v="Anvelopa" eh="e4b17d74" />
+        <e k="RVB_utils_hour" v="%s ora" tag="format"/>
+        <e k="RVB_utils_km" v="%s km" tag="format"/>
+        <e k="RVB_utils_maxcount" v="%s buc" tag="format"/>
+
+        <e k="RVB_MenuGameSettingsGeneral" v="Setari generale" eh="52f4393e" />
+        <e k="RVB_setting_alertDialog" v="Mesaj de alerta" eh="252527bd" />
+        <e k="RVB_toolTip_alertDialog" v="Daca vehiculul este deteriorat, intretinut sau reparat, un mesaj de avertizare apare in centrul ecranului cat timp sunteti in vehicul." eh="1a4ff708" />
+        <e k="RVB_setting_rvbDifficulty" v="Defectiuni vehicul" eh="b74e5c9c" />
+        <e k="RVB_toolTip_rvbDifficulty" v="In curs de dezvoltare, dar gata de utilizare." eh="68ef8114" />
+        <e k="RVB_difficulty_slow" v="Lent" eh="efa53979" />
+        <e k="RVB_difficulty_medium" v="Mediu" eh="87f8a6ab" />
+        <e k="RVB_difficulty_fast" v="Rapid" eh="e16b5b7f" />
+        <e k="RVB_setting_vehicleHud" v="HUD piese vehicul" eh="97c188e7" />
+        <e k="RVB_toolTip_vehicleHud" v="Afiseaza orele de functionare ale pieselor vehiculului (dezactivarea poate imbunatati performanta). Recomandat pentru testare." eh="3fc04f06" />
+        <e k="RVB_settingSectionHeader_HUD" v="Setari HUD" eh="c45776a5" />
+        <e k="RVB_setting_showTemp" v="Temperatura motor" eh="a6eab106" />
+        <e k="RVB_toolTip_showTemp" v="Aici puteti activa sau dezactiva afisarea temperaturii motorului." eh="77260a8c" />
+        <e k="RVB_setting_showRpm" v="Turatia" eh="fe2284eb" />
+        <e k="RVB_toolTip_showRpm" v="Aici puteti activa sau dezactiva afisarea turatiei." eh="a24f2ebc" />
+        <e k="RVB_setting_showFuel" v="Combustibil" eh="94fc563c" />
+        <e k="RVB_toolTip_showFuel" v="Aici puteti activa sau dezactiva afisarea combustibilului." eh="a762cfcc" />
+        <e k="RVB_setting_showMotorLoad" v="Sarcina motor" eh="62f58274" />
+        <e k="RVB_toolTip_showMotorLoad" v="Aici puteti activa sau dezactiva afisarea sarcinii motorului." eh="3a8bdda4" />
+        <e k="RVB_setting_showdebug" v="Depanare" eh="231cf4c7" />
+        <e k="RVB_toolTip_showdebug" v="Afiseaza informatii de depanare in consola si log.txt (dezactivarea poate imbunatati performanta)" eh="b8ee92ac" />
+
+        <e k="RVB_MenuGamePartsSettings" v="Setari vehicul" eh="b33d07b8" />
+        <e k="RVB_Parts_stepInterval" v="Interval pas(%)" eh="a3db3e97" />
+        <e k="RVB_Parts_currentValue" v="Durata de viata curenta %s" tag="format"/>
+        <e k="RVB_Parts_remainingValue" v="Setare durata de viata %s" tag="format"/>
+        <e k="RVB_part_rvbDifficulty" v="Defectiuni vehicul" eh="b74e5c9c" />
+        <e k="RVB_Parts_utils_percent" v="%s %%" tag="format"/>
+
+        <e k="RVB_WorkShopClose" v="Atelierul auto este inchis; va rugam reveniti la ora %s." tag="format"/>
+        <e k="RVB_button_inspection" v="Inspectie" eh="b4faa7ed" />
+        <e k="RVB_button_dailyservice" v="Service zilnic" eh="af302edf" />
+        <e k="RVB_button_periodicservice" v="Service periodic" eh="37a54fc5" />
+        <e k="RVB_button_battery_ch" v="Incarcare baterie" eh="30a47fb3" />
+        <e k="RVB_button_service" v="Service" eh="c2ba7e78" />
+        <e k="RVB_inspectionDialog" v="Sunteti sigur ca doriti sa inspectati acest vehicul pentru %s?" tag="format"/>
+        <e k="RVB_inspectionTimeDialog" v="Inspectia vehiculului va fi finalizata la ora %s." tag="format"/>
+        <e k="RVB_inspectionDayDialog" v="Inspectia vehiculului va fi finalizata maine la ora %s." tag="format"/>
+        <e k="RVB_faultText_THERMOSTAT" v="Termostat" eh="91e0b95d" />
+        <e k="RVB_faultText_LIGHTINGS" v="Iluminare" eh="2e4b97fd" />
+        <e k="RVB_faultText_GLOWPLUG" v="Bujie incandescenta" eh="6fdb6ce6" />
+        <e k="RVB_faultText_WIPERS" v="Stergatoare" eh="6fdb61c4" />
+        <e k="RVB_faultText_GENERATOR" v="Generator" eh="92a8f0b9" />
+        <e k="RVB_faultText_ENGINE" v="Motor" eh="7bfa3072" />
+        <e k="RVB_faultText_SELFSTARTER" v="Demaror" eh="ee6085db" />
+        <e k="RVB_faultText_BATTERY" v="Baterie" eh="d67c9286" />
+        <e k="RVB_faultText_TIRE" v="Anvelopa" eh="e4b17d74" />
+        <e k="RVB_faultText_TIREFL" v="Anvelopa fata stanga" eh="4a8014f5" />
+        <e k="RVB_faultText_TIREFR" v="Anvelopa fata dreapta" eh="d65bdf73" />
+        <e k="RVB_faultText_TIRERL" v="Anvelopa spate stanga" eh="8058c09e" />
+        <e k="RVB_faultText_TIRERR" v="Anvelopa spate dreapta" eh="433ab1ca" />
+        <e k="RVB_repairErrorMechanics" v="Toti mecanicii sunt ocupati, doar pana la %s vehicule pot fi reparate simultan." tag="format"/>
+        <e k="RVB_repairTimeDialog" v="Reparatia vehiculului va fi finalizata la ora %s." tag="format"/>
+        <e k="RVB_repairDayDialog" v="Reparatia vehiculului va fi finalizata maine la ora %s." tag="format"/>
+        <e k="RVB_ErrorList" v="Lista erori:" eh="4e0dbac7" />
+        <e k="RVB_periodicserviceDialog" v="Sunteti sigur ca doriti sa efectuati service-ul vehiculului pentru %s?" tag="format"/>
+        <e k="RVB_periodicserviceTimeDialog" v="Service-ul vehiculului va fi finalizat la ora %s." tag="format"/>
+        <e k="RVB_periodicserviceDayDialog" v="Service-ul vehiculului va fi finalizat maine la ora %s." tag="format"/>
+        <e k="RVB_batteryChDialog" v="Sunteti sigur ca doriti sa incarcati bateria vehiculului pentru %s?" tag="format"/>
+        <e k="RVB_operatingTime" v="%02d ora" tag="format"/>
+        <e k="RVB_shop_operatingTimeG" v="%s:%s ora" tag="format"/>
+        <e k="RVB_alertmessage_inspection" v="Inspectia vehiculului in curs." eh="65fb0250" />
+        <e k="RVB_alertmessage_repair" v="Reparatia vehiculului in curs." eh="e142d0e7" />
+        <e k="RVB_alertmessage_service" v="Service-ul vehiculului in curs." eh="b4b2edf3" />
+
+        <e k="RVB_list_battery" v="Baterie" eh="d67c9286" />
+
+        <e k="RVB_Workshop" v="Atelier" eh="8e5d9dbc" />
+        <e k="RVB_Workshop_diagnostics" v="Diagnosticare" eh="36b64aad" />
+        <e k="RVB_Workshop_serviceManual" v="Registru service" eh="076e552d" />
+        <e k="RVB_Workshop_noinspection" v="Vehiculul nu a fost inspectiat!" eh="58a6a5a1" />
+        <e k="RVB_Workshop_noserviceManualEntry" v="Nicio inregistrare in registrul de service!" eh="7bf99f4e" />
+        <e k="RVB_Workshop_status" v="Stare:" eh="24a23d78" />
+        <e k="RVB_Workshop_repair" v="Reparatie?" eh="e045471f" />
+        <e k="RVB_Workshop_work" v="Lucrare" eh="0f926353" />
+        <e k="RVB_Workshop_date" v="Data" eh="44749712" />
+        <e k="RVB_Workshop_lifetime" v="Ore de functionare" eh="cb932a6d" />
+        <e k="RVB_Workshop_odometer" v="Kilometraj" eh="6e7f0879" />
+        <e k="RVB_Workshop_cost" v="Cost" eh="20b4f77b" />
+        <e k="RVB_WorkshopD_new" v="Nou" eh="03c2e7e4" />
+        <e k="RVB_WorkshopD_conExcellent" v="Stare excelenta" eh="d351c1b2" />
+        <e k="RVB_WorkshopD_conGood" v="Stare buna" eh="2acb21a1" />
+        <e k="RVB_WorkshopD_conUsed" v="Uzat dar functional" eh="c7981b42" />
+        <e k="RVB_WorkshopD_conFaults" v="Predispus la defectiuni" eh="0d2d90ed" />
+        <e k="RVB_WorkshopD_conDown" v="Defect" eh="6d10dc80" />
+        <e k="RVB_WorkshopD_conReplace" v="Necesita inlocuire" eh="aedbbab2" />
+        <e k="RVB_WorkshopS_repNeed" v="Reparatie necesara. " eh="b9d46622" />
+        <e k="RVB_WorkshopS_repNoNeed" v="Reparatie nu este necesara." eh="3363e3de" />
+        <e k="RVB_WorkshopS_month" v=" luna" eh="888b692b" />
+
+        <e k="RVB_WorkshopMessage_service" v="Ati depasit intervalul de service specificat cu %s ore, astfel reparatia a durat mai mult si a costat mai mult." tag="format"/>
+        <e k="RVB_WorkshopMessage_serviceDone" v="Service finalizat." eh="92a45efa" />
+        <e k="RVB_WorkshopMessage_repairDone" v="Reparatie finalizata. Piese inlocuite/reparate: %s" tag="format"/>
+        <e k="RVB_WorkshopMessage_batteryDone" v="Baterie complet incarcata." eh="1ab095d0" />
+        <e k="RVB_WorkshopMessage_vResetDone" v="Vehiculul a fost resetat." eh="1d94103e" />
+
+        <e k="RVB_inspectionDialogFault" v="Vehiculul %s inspectat, reparatie necesara. %s" eh="63f23863" />
+        <e k="RVB_inspectionDialogEnd" v="Vehiculul %s inspectat, nu sunt necesare reparatii." eh="adb75b1a" />
+        <e k="RVB_inspectionDialogEnd_other" v="Vehiculul %s inspectat si reparat. Mecanicul dumneavoastra a fost foarte ocupat, asa ca un mecanic stagiar v-a reparat vehiculul. Totusi, acest mecanic stagiar nu poate lista ce a fost reparat la vehiculul dumneavoastra." eh="fca01ba3" />
+
+        <e k="RVB_serviceDialogEnd" v="Service-ul pentru vehiculul %s finalizat." eh="b705ad92" />
+        <e k="RVB_repairDialogEnd" v="Reparatia vehiculului %s finalizata." eh="5ce51ccd" />
+        <e k="RVB_fault_engineload" v="Nu suprasolicitati motorul prea devreme, este inca rece." eh="5de6f564" />
+        <e k="RVB_fault_engineload_hud" v="Motorul vehiculului %s primeste prea multa sarcina cand este rece." tag="format"/>
+        <e k="RVB_fault_lights" v="Luminile nu functioneaza." eh="488daec3" />
+        <e k="RVB_lowjumper" v="Motorul nu porneste. Continuati pornirea cu cabluri." eh="03bba9c6" />
+        <e k="RVB_lowjumperDonorMotor" v="Porniti motorul celuilalt vehicul." eh="78fe1392" />
+        <e k="RVB_fault_BHlights" v="Nivelul de incarcare al bateriei este prea scazut." eh="53fe34e3" />
+
+        <e k="RVB_DEAD_ENGINE_INSPECTION" v="Vehiculul nu poate fi pornit, inspectie in curs." eh="8a60c6e5" />
+        <e k="RVB_DEAD_ENGINE_REPAIR" v="Vehiculul nu poate fi pornit, reparatie in curs." eh="abd5663f" />
+        <e k="RVB_DEAD_ENGINE_SERVICE" v="Vehiculul nu poate fi pornit, service in curs." eh="71031492" />
+        <e k="RVB_DEAD_ENGINE_SUSPENSION" v="Cheile vehiculului sunt la mecanicul care este in pauza." eh="7e1beb08" />
+        <e k="RVB_DEAD_ENGINE_BATTERY" v="Motorul nu porneste, bateria este descarcata." eh="07b5c4d5" />
+        <e k="RVB_DEAD_ENGINE_BATTERY_CHARGING" v="Vehiculul nu poate fi pornit, incarcarea bateriei in curs." eh="8a2973cd" />
+        <e k="RVB_DEAD_ENGINE" v="Motorul nu porneste." eh="1a9fc846" />
+
+        <e k="RVB_fault_lights_INSPECTION" v="Iluminarea nu poate fi pornita in timp ce inspectia vehiculului este in curs." eh="1818828a" />
+        <e k="RVB_fault_lights_REPAIR" v="Iluminarea nu poate fi pornita in timp ce reparatia vehiculului este in curs." eh="3de16a52" />
+        <e k="RVB_fault_lights_SERVICE" v="Iluminarea nu poate fi pornita in timp ce intretinerea vehiculului este in curs." eh="c2a6e782" />
+
+        <e k="RVB_ErrorNotifi" v="Defectiune(i): " eh="78b60278" />
+
+        <e k="infoDisplayExtension_tomorrow" v="maine " eh="83a2134f" />
+        <e k="infoDisplayExtension_currentPower" v="Putere" eh="dd4fe0cc" />
+        <e k="infoDisplayExtension_inspectionVheicle" v="Inspectie vehicul" eh="7276b8fd" />
+        <e k="infoDisplayExtension_repairVheicle" v="Reparatie vehicul" eh="6c545b62" />
+        <e k="infoDisplayExtension_serviceVheicle" v="Service periodic" eh="37a54fc5" />
+
+        <e k="RVB_workshopVResetTitle" v="Resetare vehicul" eh="9e1f8bcf" />
+        <e k="RVB_workshopVResetDesc" v="Sunteti sigur ca doriti sa resetati vehiculul %s la starea implicita?" tag="format"/>
+
+        <e k="electricChargeTurbine" v="Incarcator electric cu turbina eoliana" eh="2d67b055" />
+        <e k="function_powerpack" v="Folositi acest dispozitiv pentru a incarca vehiculele electrice si a transporta energie electrica in locatii izolate." eh="eaa5e06e" />
+
+        <e k="Automatic_Repair_conflict_notice" v="Unele modificari repara automat vehiculul, ceea ce poate intra in conflict cu modul &quot;Real Vehicle Breakdowns(RVB)&quot;.
+
+Pentru urmatoarele modificari, reparatia automata a fost suprascrisa de modul RVB.
+
+Modificari suprascrise: %s
+
+Va multumim pentru intelegere.
+
+Cu respect,
+
+MathiasHun" tag="format"/>
+
+        <e k="RVB_aimessage_batterydischarged" v="Ajutorul AI %s a oprit neasteptat lucrul; bateria vehiculului s-a descarcat!" eh="ee374dc3" />
+
+        <!-- DO NOT CHANGE THIS, ONLY IF THE FS25_USEYOURTYRES MOD ALREADY HAS AN OFFICIAL ENGLISH TRANSLATION -->
+        <e k="infohud_uytTyresWear" v="Uzura anvelope" eh="7cffdd14" />
+        <!-- End of warning -->
+        <e k="rvb_infohud_uytTyresWear" v="Anvelopa %s" tag="format"/>
+
+    </elements>
+</l10n>
