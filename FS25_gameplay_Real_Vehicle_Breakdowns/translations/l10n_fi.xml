@@ -7,16 +7,16 @@
         <e k="input_RVB_CONNECTING_JC" v="Apukaapeleiden kytkeminen" eh="d65bafa2" />
         <e k="action_RVB_DISCONNECTING_JC" v="Apukaapeleiden irrottaminen" eh="af92d5db" />
         <e k="RVB_dialog_titleCONNECTING_JC" v="Apukaapeleiden kytkeminen" eh="d65bafa2" />
-        <e k="RVB_dialog_descCONNECTING_JC" v="Ajoneuvoa %s ei tarvitse käynnistää apukaapeleilla. Haluatko varmasti jatkaa apukaapeleiden kytkemistä?" tag="format"/>
+        <e k="RVB_dialog_descCONNECTING_JC" v="Ajoneuvoa %s ei tarvitse käynnistää apukaapeleilla. Haluatko varmasti jatkaa apukaapeleiden kytkemistä?" eh="4a72e523" tag="format"/>
         <e k="RVB_addextra_connecting" v="Apukaapelit kytketty" eh="3893af14" />
-        <e k="RVB_blinking_connecting_toofar" v="Älä venytä apukaapelia enempää, se irtoaa pian akusta! (%s m)" tag="format"/>
+        <e k="RVB_blinking_connecting_toofar" v="Älä venytä apukaapelia enempää, se irtoaa pian akusta! (%s m)" eh="de01b5dd" tag="format"/>
         <e k="RVB_blinking_disconnecting_toofar" v="Apukaapeli on liian lyhyt – se on irronnut!" eh="eed0846f" />
-        <e k="RVB_blinking_connecting_drive" v="Älä aja pois, apukaapelit ovat vielä kiinni! (%s m)" tag="format"/>
-        <e k="RVB_blinking_connecting_length" v="Apukaapelin pituus: %s m / %s m" tag="format"/>
-        <e k="RVB_blinking_connecting_cableBroken" v="Apukaapelit olivat kytkettynä. Ne vaurioituivat, joten jouduit ostamaan uudet hintaan %s." tag="format"/>
-        <e k="RVB_blinking_connecting" v="%s: Apukaapelit kytketty." tag="format"/>
+        <e k="RVB_blinking_connecting_drive" v="Älä aja pois, apukaapelit ovat vielä kiinni! (%s m)" eh="e7083a37" tag="format"/>
+        <e k="RVB_blinking_connecting_length" v="Apukaapelin pituus: %s m / %s m" eh="00d9d387" tag="format"/>
+        <e k="RVB_blinking_connecting_cableBroken" v="Apukaapelit olivat kytkettynä. Ne vaurioituivat, joten jouduit ostamaan uudet hintaan %s." eh="5e93c08d" tag="format"/>
+        <e k="RVB_blinking_connecting" v="%s: Apukaapelit kytketty." eh="c2447083" tag="format"/>
         <e k="RVB_blinking_connecting_order" v="Kytke ensin toimiva ajoneuvo apukaapeleihin!" eh="7342e321" />
-        <e k="RVB_blinking_disconnecting" v="%s: Apukaapelit irrotettu." tag="format"/>
+        <e k="RVB_blinking_disconnecting" v="%s: Apukaapelit irrotettu." eh="1c1775a5" tag="format"/>
         <e k="RVB_blinking_disconnecting_order" v="Irrota ensin akkutyhjä ajoneuvo apukaapeleista!" eh="e9970e17" />
         <e k="RVB_MenuGameSettingsGame" v="Peliasetukset" eh="f22e46f4" />
         <e k="RVB_settingSectionHeader_Service" v="Huolto" eh="c2ba7e78" />
@@ -44,9 +44,9 @@
         <e k="RVB_setting_selfstarterLifetime" v="Käynnistin" eh="ee6085db" />
         <e k="RVB_setting_batteryLifetime" v="Akku" eh="d67c9286" />
         <e k="RVB_setting_tireLifetime" v="Rengas" eh="e4b17d74" />
-        <e k="RVB_utils_hour" v="%s tunti" tag="format"/>
-        <e k="RVB_utils_km" v="%s km" tag="format"/>
-        <e k="RVB_utils_maxcount" v="%s kpl" tag="format"/>
+        <e k="RVB_utils_hour" v="%s tunti" eh="0aaff306" tag="format"/>
+        <e k="RVB_utils_km" v="%s km" eh="7e78f68c" tag="format"/>
+        <e k="RVB_utils_maxcount" v="%s kpl" eh="eb664c9a" tag="format"/>
 
         <e k="RVB_MenuGameSettingsGeneral" v="Yleiset asetukset" eh="52f4393e" />
         <e k="RVB_setting_alertDialog" v="Hälytysviesti" eh="252527bd" />
@@ -72,20 +72,20 @@
 
         <e k="RVB_MenuGamePartsSettings" v="Ajoneuvon asetukset" eh="b33d07b8" />
         <e k="RVB_Parts_stepInterval" v="Askelväli (%)" eh="a3db3e97" />
-        <e k="RVB_Parts_currentValue" v="Nykyinen %s käyttöikä" tag="format"/>
-        <e k="RVB_Parts_remainingValue" v="%s käyttöikäasetus" tag="format"/>
+        <e k="RVB_Parts_currentValue" v="Nykyinen %s käyttöikä" eh="6a16b34b" tag="format"/>
+        <e k="RVB_Parts_remainingValue" v="%s käyttöikäasetus" eh="e5f12d35" tag="format"/>
         <e k="RVB_part_rvbDifficulty" v="Ajoneuvon vikaantuminen" eh="b74e5c9c" />
-        <e k="RVB_Parts_utils_percent" v="%s %%" tag="format"/>
+        <e k="RVB_Parts_utils_percent" v="%s %%" eh="7743aacb" tag="format"/>
 
-        <e k="RVB_WorkShopClose" v="Ajoneuvokorjaamo on suljettu; palaa kello %s." tag="format"/>
+        <e k="RVB_WorkShopClose" v="Ajoneuvokorjaamo on suljettu; palaa kello %s." eh="64254a65" tag="format"/>
         <e k="RVB_button_inspection" v="Tarkastus" eh="b4faa7ed" />
         <e k="RVB_button_dailyservice" v="Päivittäinen huolto" eh="af302edf" />
         <e k="RVB_button_periodicservice" v="Määräaikaishuolto" eh="37a54fc5" />
         <e k="RVB_button_battery_ch" v="Akun lataus" eh="30a47fb3" />
         <e k="RVB_button_service" v="Huolto" eh="c2ba7e78" />
-        <e k="RVB_inspectionDialog" v="Haluatko varmasti tarkastaa tämän ajoneuvon hintaan %s?" tag="format"/>
-        <e k="RVB_inspectionTimeDialog" v="Ajoneuvon tarkastus valmistuu kello %s." tag="format"/>
-        <e k="RVB_inspectionDayDialog" v="Ajoneuvon tarkastus valmistuu huomenna kello %s." tag="format"/>
+        <e k="RVB_inspectionDialog" v="Haluatko varmasti tarkastaa tämän ajoneuvon hintaan %s?" eh="7401f205" tag="format"/>
+        <e k="RVB_inspectionTimeDialog" v="Ajoneuvon tarkastus valmistuu kello %s." eh="06135b4d" tag="format"/>
+        <e k="RVB_inspectionDayDialog" v="Ajoneuvon tarkastus valmistuu huomenna kello %s." eh="af1c4b1b" tag="format"/>
         <e k="RVB_faultText_THERMOSTAT" v="Termostaatti" eh="91e0b95d" />
         <e k="RVB_faultText_LIGHTINGS" v="Valaistus" eh="2e4b97fd" />
         <e k="RVB_faultText_GLOWPLUG" v="Hehkutulppa" eh="6fdb6ce6" />
@@ -99,16 +99,16 @@
         <e k="RVB_faultText_TIREFR" v="Oikea eturengas" eh="d65bdf73" />
         <e k="RVB_faultText_TIRERL" v="Vasen takarengas" eh="8058c09e" />
         <e k="RVB_faultText_TIRERR" v="Oikea takarengas" eh="433ab1ca" />
-        <e k="RVB_repairErrorMechanics" v="Kaikki mekanikot ovat varattuja, vain %s ajoneuvoa voidaan korjata samanaikaisesti." tag="format"/>
-        <e k="RVB_repairTimeDialog" v="Ajoneuvon korjaus valmistuu kello %s." tag="format"/>
-        <e k="RVB_repairDayDialog" v="Ajoneuvon korjaus valmistuu huomenna kello %s." tag="format"/>
+        <e k="RVB_repairErrorMechanics" v="Kaikki mekanikot ovat varattuja, vain %s ajoneuvoa voidaan korjata samanaikaisesti." eh="8db25de5" tag="format"/>
+        <e k="RVB_repairTimeDialog" v="Ajoneuvon korjaus valmistuu kello %s." eh="1b895cdb" tag="format"/>
+        <e k="RVB_repairDayDialog" v="Ajoneuvon korjaus valmistuu huomenna kello %s." eh="3d3ab5be" tag="format"/>
         <e k="RVB_ErrorList" v="Vikalista:" eh="4e0dbac7" />
-        <e k="RVB_periodicserviceDialog" v="Haluatko varmasti huoltaa ajoneuvon hintaan %s?" tag="format"/>
-        <e k="RVB_periodicserviceTimeDialog" v="Ajoneuvon huolto valmistuu kello %s." tag="format"/>
-        <e k="RVB_periodicserviceDayDialog" v="Ajoneuvon huolto valmistuu huomenna kello %s." tag="format"/>
-        <e k="RVB_batteryChDialog" v="Haluatko varmasti ladata ajoneuvon akun hintaan %s?" tag="format"/>
-        <e k="RVB_operatingTime" v="%02d tunti" tag="format"/>
-        <e k="RVB_shop_operatingTimeG" v="%s:%s tunti" tag="format"/>
+        <e k="RVB_periodicserviceDialog" v="Haluatko varmasti huoltaa ajoneuvon hintaan %s?" eh="20eb9276" tag="format"/>
+        <e k="RVB_periodicserviceTimeDialog" v="Ajoneuvon huolto valmistuu kello %s." eh="1f9463c5" tag="format"/>
+        <e k="RVB_periodicserviceDayDialog" v="Ajoneuvon huolto valmistuu huomenna kello %s." eh="23dccb31" tag="format"/>
+        <e k="RVB_batteryChDialog" v="Haluatko varmasti ladata ajoneuvon akun hintaan %s?" eh="94b16ee9" tag="format"/>
+        <e k="RVB_operatingTime" v="%02d tunti" eh="ec877abb" tag="format"/>
+        <e k="RVB_shop_operatingTimeG" v="%s:%s tunti" eh="53789ab2" tag="format"/>
         <e k="RVB_alertmessage_inspection" v="Ajoneuvon tarkastus käynnissä." eh="65fb0250" />
         <e k="RVB_alertmessage_repair" v="Ajoneuvon korjaus käynnissä." eh="e142d0e7" />
         <e k="RVB_alertmessage_service" v="Ajoneuvon huolto käynnissä." eh="b4b2edf3" />
@@ -138,9 +138,9 @@
         <e k="RVB_WorkshopS_repNoNeed" v="Korjausta ei tarvita." eh="3363e3de" />
         <e k="RVB_WorkshopS_month" v=" kuukausi" eh="888b692b" />
 
-        <e k="RVB_WorkshopMessage_service" v="Olet ylittänyt määritetyn huoltovälin %s tunnilla, joten korjaus kesti kauemmin ja maksoi enemmän." tag="format"/>
+        <e k="RVB_WorkshopMessage_service" v="Olet ylittänyt määritetyn huoltovälin %s tunnilla, joten korjaus kesti kauemmin ja maksoi enemmän." eh="4793bc2c" tag="format"/>
         <e k="RVB_WorkshopMessage_serviceDone" v="Huolto valmis." eh="92a45efa" />
-        <e k="RVB_WorkshopMessage_repairDone" v="Korjaus valmis. Vaihdetut/korjatut osat: %s" tag="format"/>
+        <e k="RVB_WorkshopMessage_repairDone" v="Korjaus valmis. Vaihdetut/korjatut osat: %s" eh="2a748e5d" tag="format"/>
         <e k="RVB_WorkshopMessage_batteryDone" v="Akku ladattu täyteen." eh="1ab095d0" />
         <e k="RVB_WorkshopMessage_vResetDone" v="Ajoneuvo on nollattu." eh="1d94103e" />
 
@@ -151,7 +151,7 @@
         <e k="RVB_serviceDialogEnd" v="Ajoneuvon %s huolto valmis." eh="b705ad92" />
         <e k="RVB_repairDialogEnd" v="Ajoneuvon %s korjaus valmis." eh="5ce51ccd" />
         <e k="RVB_fault_engineload" v="Älä kuormita moottoria liikaa, se on vielä kylmä." eh="5de6f564" />
-        <e k="RVB_fault_engineload_hud" v="Ajoneuvon %s moottoria kuormitetaan liikaa kylmänä." tag="format"/>
+        <e k="RVB_fault_engineload_hud" v="Ajoneuvon %s moottoria kuormitetaan liikaa kylmänä." eh="36daf927" tag="format"/>
         <e k="RVB_fault_lights" v="Valot eivät toimi." eh="488daec3" />
         <e k="RVB_lowjumper" v="Moottori ei käynnisty. Jatka apukäynnistystä." eh="03bba9c6" />
         <e k="RVB_lowjumperDonorMotor" v="Käynnistä toisen ajoneuvon moottori." eh="78fe1392" />
@@ -178,7 +178,7 @@
         <e k="infoDisplayExtension_serviceVheicle" v="Määräaikaishuolto" eh="37a54fc5" />
 
         <e k="RVB_workshopVResetTitle" v="Ajoneuvon nollaus" eh="9e1f8bcf" />
-        <e k="RVB_workshopVResetDesc" v="Haluatko varmasti nollata ajoneuvon %s oletustilaan?" tag="format"/>
+        <e k="RVB_workshopVResetDesc" v="Haluatko varmasti nollata ajoneuvon %s oletustilaan?" eh="36cbd838" tag="format"/>
 
         <e k="electricChargeTurbine" v="Sähköinen tuuliturbiinilaturi" eh="2d67b055" />
         <e k="function_powerpack" v="Käytä tätä sähköajoneuvojen lataamiseen ja sähkön kuljettamiseen syrjäisiin paikkoihin." eh="eaa5e06e" />
@@ -193,14 +193,14 @@ Kiitos ymmärryksestäsi.
 
 Ystävällisin terveisin,
 
-MathiasHun" tag="format"/>
+MathiasHun" eh="a611a9ae" tag="format"/>
 
         <e k="RVB_aimessage_batterydischarged" v="%s tekoälyavustaja lopetti odottamatta työskentelyn; ajoneuvon akku on tyhjentynyt!" eh="ee374dc3" />
 
         <!-- ÄLÄ MUUTA TÄTÄ, ELLEI FS25_USEYOURTYRES-MODILLA OLE JO VIRALLISTA SUOMENNOSTA -->
         <e k="infohud_uytTyresWear" v="Renkaiden kuluminen" eh="7cffdd14" />
         <!-- Varoituksen loppu -->
-        <e k="rvb_infohud_uytTyresWear" v="Rengas %s" tag="format"/>
+        <e k="rvb_infohud_uytTyresWear" v="Rengas %s" eh="33b244d3" tag="format"/>
 
     </elements>
 </l10n>

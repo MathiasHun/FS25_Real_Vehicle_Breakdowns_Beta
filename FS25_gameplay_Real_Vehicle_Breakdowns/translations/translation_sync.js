@@ -473,13 +473,22 @@ function updateSourceHashes(sourceFile, format) {
 
         if (data.hash !== correctHash) {
             // Need to update or add the hash
+            // Match entry with any combination of eh= and tag= attributes
             const oldPattern = new RegExp(
-                `<e k="${escapeRegex(key)}" v="([^"]*)"(?:\\s+eh="[^"]*")?\\s*/>`,
+                `<e k="${escapeRegex(key)}" v="([^"]*)"([^>]*)\\s*/>`,
                 'g'
             );
 
-            content = content.replace(oldPattern, (match, value) => {
-                return `<e k="${key}" v="${value}" eh="${correctHash}" />`;
+            content = content.replace(oldPattern, (match, value, attrs) => {
+                // Remove any existing eh= attribute
+                const cleanAttrs = attrs.replace(/\s*eh="[^"]*"/g, '');
+                // Preserve tag="format" if present
+                const hasTag = cleanAttrs.includes('tag="format"');
+                if (hasTag) {
+                    return `<e k="${key}" v="${value}" eh="${correctHash}" tag="format"/>`;
+                } else {
+                    return `<e k="${key}" v="${value}" eh="${correctHash}" />`;
+                }
             });
 
             updated++;
@@ -652,12 +661,22 @@ function syncTranslations() {
                     const shouldAddHash = !stale.includes(key) || (hasNoHash && !isUntranslated);
 
                     if (shouldAddHash) {
+                        // Match entry with any combination of eh= and tag= attributes
+                        // Captures: value, optional existing attributes (eh, tag, etc.)
                         const pattern = new RegExp(
-                            `<e k="${escapeRegex(key)}" v="([^"]*)"(?:\\s+eh="[^"]*")?\\s*/>`,
+                            `<e k="${escapeRegex(key)}" v="([^"]*)"([^>]*)\\s*/>`,
                             'g'
                         );
-                        content = content.replace(pattern, (match, v) => {
-                            return `<e k="${key}" v="${v}" eh="${sourceHash}" />`;
+                        content = content.replace(pattern, (match, v, attrs) => {
+                            // Remove any existing eh= attribute
+                            const cleanAttrs = attrs.replace(/\s*eh="[^"]*"/g, '');
+                            // Preserve tag="format" if present
+                            const hasTag = cleanAttrs.includes('tag="format"');
+                            if (hasTag) {
+                                return `<e k="${key}" v="${v}" eh="${sourceHash}" tag="format"/>`;
+                            } else {
+                                return `<e k="${key}" v="${v}" eh="${sourceHash}" />`;
+                            }
                         });
                     }
                 }

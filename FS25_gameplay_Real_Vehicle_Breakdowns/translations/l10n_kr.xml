@@ -7,16 +7,16 @@
         <e k="input_RVB_CONNECTING_JC" v="점프 케이블 연결" eh="d65bafa2" />
         <e k="action_RVB_DISCONNECTING_JC" v="점프 케이블 분리" eh="af92d5db" />
         <e k="RVB_dialog_titleCONNECTING_JC" v="점프 케이블 연결" eh="d65bafa2" />
-        <e k="RVB_dialog_descCONNECTING_JC" v="%s 차량은 점프 시동이 필요하지 않습니다. 그래도 점프 케이블을 연결하시겠습니까?" tag="format"/>
+        <e k="RVB_dialog_descCONNECTING_JC" v="%s 차량은 점프 시동이 필요하지 않습니다. 그래도 점프 케이블을 연결하시겠습니까?" eh="4a72e523" tag="format"/>
         <e k="RVB_addextra_connecting" v="점프 케이블 연결됨" eh="3893af14" />
-        <e k="RVB_blinking_connecting_toofar" v="점프 케이블을 더 이상 늘리지 마세요. 곧 배터리에서 분리됩니다! (%s m)" tag="format"/>
+        <e k="RVB_blinking_connecting_toofar" v="점프 케이블을 더 이상 늘리지 마세요. 곧 배터리에서 분리됩니다! (%s m)" eh="de01b5dd" tag="format"/>
         <e k="RVB_blinking_disconnecting_toofar" v="점프 케이블이 너무 짧아서 분리되었습니다!" eh="eed0846f" />
-        <e k="RVB_blinking_connecting_drive" v="출발하지 마세요. 점프 케이블이 아직 연결되어 있습니다! (%s m)" tag="format"/>
-        <e k="RVB_blinking_connecting_length" v="점프 케이블 길이: %s m / %s m" tag="format"/>
-        <e k="RVB_blinking_connecting_cableBroken" v="점프 케이블이 연결되어 있었습니다. 케이블이 손상되어 %s에 새 케이블을 구매해야 했습니다." tag="format"/>
-        <e k="RVB_blinking_connecting" v="%s: 점프 케이블 연결됨." tag="format"/>
+        <e k="RVB_blinking_connecting_drive" v="출발하지 마세요. 점프 케이블이 아직 연결되어 있습니다! (%s m)" eh="e7083a37" tag="format"/>
+        <e k="RVB_blinking_connecting_length" v="점프 케이블 길이: %s m / %s m" eh="00d9d387" tag="format"/>
+        <e k="RVB_blinking_connecting_cableBroken" v="점프 케이블이 연결되어 있었습니다. 케이블이 손상되어 %s에 새 케이블을 구매해야 했습니다." eh="5e93c08d" tag="format"/>
+        <e k="RVB_blinking_connecting" v="%s: 점프 케이블 연결됨." eh="c2447083" tag="format"/>
         <e k="RVB_blinking_connecting_order" v="먼저 정상 작동하는 차량에 점프 케이블을 연결하세요!" eh="7342e321" />
-        <e k="RVB_blinking_disconnecting" v="%s: 점프 케이블 분리됨." tag="format"/>
+        <e k="RVB_blinking_disconnecting" v="%s: 점프 케이블 분리됨." eh="1c1775a5" tag="format"/>
         <e k="RVB_blinking_disconnecting_order" v="먼저 방전된 차량에서 점프 케이블을 분리하세요!" eh="e9970e17" />
         <e k="RVB_MenuGameSettingsGame" v="게임 설정" eh="f22e46f4" />
         <e k="RVB_settingSectionHeader_Service" v="정비" eh="c2ba7e78" />
@@ -44,9 +44,9 @@
         <e k="RVB_setting_selfstarterLifetime" v="시동 모터" eh="ee6085db" />
         <e k="RVB_setting_batteryLifetime" v="배터리" eh="d67c9286" />
         <e k="RVB_setting_tireLifetime" v="타이어" eh="e4b17d74" />
-        <e k="RVB_utils_hour" v="%s 시간" tag="format"/>
-        <e k="RVB_utils_km" v="%s km" tag="format"/>
-        <e k="RVB_utils_maxcount" v="%s 대" tag="format"/>
+        <e k="RVB_utils_hour" v="%s 시간" eh="0aaff306" tag="format"/>
+        <e k="RVB_utils_km" v="%s km" eh="7e78f68c" tag="format"/>
+        <e k="RVB_utils_maxcount" v="%s 대" eh="eb664c9a" tag="format"/>
 
         <e k="RVB_MenuGameSettingsGeneral" v="일반 설정" eh="52f4393e" />
         <e k="RVB_setting_alertDialog" v="경고 메시지" eh="252527bd" />
@@ -72,20 +72,20 @@
 
         <e k="RVB_MenuGamePartsSettings" v="차량 설정" eh="b33d07b8" />
         <e k="RVB_Parts_stepInterval" v="단계 간격(%)" eh="a3db3e97" />
-        <e k="RVB_Parts_currentValue" v="현재 %s 수명" tag="format"/>
-        <e k="RVB_Parts_remainingValue" v="%s 수명 설정" tag="format"/>
+        <e k="RVB_Parts_currentValue" v="현재 %s 수명" eh="6a16b34b" tag="format"/>
+        <e k="RVB_Parts_remainingValue" v="%s 수명 설정" eh="e5f12d35" tag="format"/>
         <e k="RVB_part_rvbDifficulty" v="차량 고장" eh="b74e5c9c" />
-        <e k="RVB_Parts_utils_percent" v="%s %%" tag="format"/>
+        <e k="RVB_Parts_utils_percent" v="%s %%" eh="7743aacb" tag="format"/>
 
-        <e k="RVB_WorkShopClose" v="차량 정비소가 문을 닫았습니다. %s시에 다시 방문해 주세요." tag="format"/>
+        <e k="RVB_WorkShopClose" v="차량 정비소가 문을 닫았습니다. %s시에 다시 방문해 주세요." eh="64254a65" tag="format"/>
         <e k="RVB_button_inspection" v="점검" eh="b4faa7ed" />
         <e k="RVB_button_dailyservice" v="일일 정비" eh="af302edf" />
         <e k="RVB_button_periodicservice" v="정기 정비" eh="37a54fc5" />
         <e k="RVB_button_battery_ch" v="배터리 충전" eh="30a47fb3" />
         <e k="RVB_button_service" v="정비" eh="c2ba7e78" />
-        <e k="RVB_inspectionDialog" v="이 차량을 %s에 점검하시겠습니까?" tag="format"/>
-        <e k="RVB_inspectionTimeDialog" v="차량 점검이 %s시에 완료됩니다." tag="format"/>
-        <e k="RVB_inspectionDayDialog" v="차량 점검이 내일 %s시에 완료됩니다." tag="format"/>
+        <e k="RVB_inspectionDialog" v="이 차량을 %s에 점검하시겠습니까?" eh="7401f205" tag="format"/>
+        <e k="RVB_inspectionTimeDialog" v="차량 점검이 %s시에 완료됩니다." eh="06135b4d" tag="format"/>
+        <e k="RVB_inspectionDayDialog" v="차량 점검이 내일 %s시에 완료됩니다." eh="af1c4b1b" tag="format"/>
         <e k="RVB_faultText_THERMOSTAT" v="서모스탯" eh="91e0b95d" />
         <e k="RVB_faultText_LIGHTINGS" v="조명" eh="2e4b97fd" />
         <e k="RVB_faultText_GLOWPLUG" v="예열 플러그" eh="6fdb6ce6" />
@@ -99,16 +99,16 @@
         <e k="RVB_faultText_TIREFR" v="전방 우측 타이어" eh="d65bdf73" />
         <e k="RVB_faultText_TIRERL" v="후방 좌측 타이어" eh="8058c09e" />
         <e k="RVB_faultText_TIRERR" v="후방 우측 타이어" eh="433ab1ca" />
-        <e k="RVB_repairErrorMechanics" v="모든 정비사가 작업 중입니다. 동시에 최대 %s대의 차량만 수리할 수 있습니다." tag="format"/>
-        <e k="RVB_repairTimeDialog" v="차량 수리가 %s시에 완료됩니다." tag="format"/>
-        <e k="RVB_repairDayDialog" v="차량 수리가 내일 %s시에 완료됩니다." tag="format"/>
+        <e k="RVB_repairErrorMechanics" v="모든 정비사가 작업 중입니다. 동시에 최대 %s대의 차량만 수리할 수 있습니다." eh="8db25de5" tag="format"/>
+        <e k="RVB_repairTimeDialog" v="차량 수리가 %s시에 완료됩니다." eh="1b895cdb" tag="format"/>
+        <e k="RVB_repairDayDialog" v="차량 수리가 내일 %s시에 완료됩니다." eh="3d3ab5be" tag="format"/>
         <e k="RVB_ErrorList" v="오류 목록:" eh="4e0dbac7" />
-        <e k="RVB_periodicserviceDialog" v="이 차량을 %s에 정비하시겠습니까?" tag="format"/>
-        <e k="RVB_periodicserviceTimeDialog" v="차량 정비가 %s시에 완료됩니다." tag="format"/>
-        <e k="RVB_periodicserviceDayDialog" v="차량 정비가 내일 %s시에 완료됩니다." tag="format"/>
-        <e k="RVB_batteryChDialog" v="이 차량의 배터리를 %s에 충전하시겠습니까?" tag="format"/>
-        <e k="RVB_operatingTime" v="%02d 시간" tag="format"/>
-        <e k="RVB_shop_operatingTimeG" v="%s:%s 시간" tag="format"/>
+        <e k="RVB_periodicserviceDialog" v="이 차량을 %s에 정비하시겠습니까?" eh="20eb9276" tag="format"/>
+        <e k="RVB_periodicserviceTimeDialog" v="차량 정비가 %s시에 완료됩니다." eh="1f9463c5" tag="format"/>
+        <e k="RVB_periodicserviceDayDialog" v="차량 정비가 내일 %s시에 완료됩니다." eh="23dccb31" tag="format"/>
+        <e k="RVB_batteryChDialog" v="이 차량의 배터리를 %s에 충전하시겠습니까?" eh="94b16ee9" tag="format"/>
+        <e k="RVB_operatingTime" v="%02d 시간" eh="ec877abb" tag="format"/>
+        <e k="RVB_shop_operatingTimeG" v="%s:%s 시간" eh="53789ab2" tag="format"/>
         <e k="RVB_alertmessage_inspection" v="차량 점검 진행 중입니다." eh="65fb0250" />
         <e k="RVB_alertmessage_repair" v="차량 수리 진행 중입니다." eh="e142d0e7" />
         <e k="RVB_alertmessage_service" v="차량 정비 진행 중입니다." eh="b4b2edf3" />
@@ -138,9 +138,9 @@
         <e k="RVB_WorkshopS_repNoNeed" v="수리가 필요 없습니다." eh="3363e3de" />
         <e k="RVB_WorkshopS_month" v=" 개월" eh="888b692b" />
 
-        <e k="RVB_WorkshopMessage_service" v="지정된 정비 주기를 %s시간 초과하여 수리에 더 많은 시간과 비용이 소요되었습니다." tag="format"/>
+        <e k="RVB_WorkshopMessage_service" v="지정된 정비 주기를 %s시간 초과하여 수리에 더 많은 시간과 비용이 소요되었습니다." eh="4793bc2c" tag="format"/>
         <e k="RVB_WorkshopMessage_serviceDone" v="정비가 완료되었습니다." eh="92a45efa" />
-        <e k="RVB_WorkshopMessage_repairDone" v="수리가 완료되었습니다. 교체/수리된 부품: %s" tag="format"/>
+        <e k="RVB_WorkshopMessage_repairDone" v="수리가 완료되었습니다. 교체/수리된 부품: %s" eh="2a748e5d" tag="format"/>
         <e k="RVB_WorkshopMessage_batteryDone" v="배터리가 완전히 충전되었습니다." eh="1ab095d0" />
         <e k="RVB_WorkshopMessage_vResetDone" v="차량이 초기화되었습니다." eh="1d94103e" />
 
@@ -151,7 +151,7 @@
         <e k="RVB_serviceDialogEnd" v="%s 차량 정비가 완료되었습니다." eh="b705ad92" />
         <e k="RVB_repairDialogEnd" v="%s 차량 수리가 완료되었습니다." eh="5ce51ccd" />
         <e k="RVB_fault_engineload" v="엔진이 아직 차갑습니다. 과부하를 주지 마세요." eh="5de6f564" />
-        <e k="RVB_fault_engineload_hud" v="%s의 엔진이 차가운 상태에서 과부하를 받고 있습니다." tag="format"/>
+        <e k="RVB_fault_engineload_hud" v="%s의 엔진이 차가운 상태에서 과부하를 받고 있습니다." eh="36daf927" tag="format"/>
         <e k="RVB_fault_lights" v="조명이 작동하지 않습니다." eh="488daec3" />
         <e k="RVB_lowjumper" v="엔진이 시동되지 않습니다. 점프 시동을 계속하세요." eh="03bba9c6" />
         <e k="RVB_lowjumperDonorMotor" v="다른 차량의 엔진을 시동하세요." eh="78fe1392" />
@@ -178,7 +178,7 @@
         <e k="infoDisplayExtension_serviceVheicle" v="정기 정비" eh="37a54fc5" />
 
         <e k="RVB_workshopVResetTitle" v="차량 초기화" eh="9e1f8bcf" />
-        <e k="RVB_workshopVResetDesc" v="%s 차량을 기본 상태로 초기화하시겠습니까?" tag="format"/>
+        <e k="RVB_workshopVResetDesc" v="%s 차량을 기본 상태로 초기화하시겠습니까?" eh="36cbd838" tag="format"/>
 
         <e k="electricChargeTurbine" v="전기 풍력 터빈 충전기" eh="2d67b055" />
         <e k="function_powerpack" v="전기 차량을 충전하고 원격 위치로 전력을 운반하는 데 사용합니다." eh="eaa5e06e" />
@@ -193,14 +193,14 @@
 
 감사합니다,
 
-MathiasHun" tag="format"/>
+MathiasHun" eh="a611a9ae" tag="format"/>
 
         <e k="RVB_aimessage_batterydischarged" v="%s AI 도우미가 예기치 않게 작업을 중단했습니다. 차량 배터리가 방전되었습니다!" eh="ee374dc3" />
 
         <!-- 이 항목은 FS25_USEYOURTYRES 모드에 공식 한국어 번역이 있는 경우에만 변경하세요 -->
         <e k="infohud_uytTyresWear" v="타이어 마모" eh="7cffdd14" />
         <!-- 경고 끝 -->
-        <e k="rvb_infohud_uytTyresWear" v="타이어 %s" tag="format"/>
+        <e k="rvb_infohud_uytTyresWear" v="타이어 %s" eh="33b244d3" tag="format"/>
 
     </elements>
 </l10n>

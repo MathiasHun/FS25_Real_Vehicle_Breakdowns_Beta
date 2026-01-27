@@ -7,16 +7,16 @@
         <e k="input_RVB_CONNECTING_JC" v="Kết nối cáp câu bình" eh="d65bafa2" />
         <e k="action_RVB_DISCONNECTING_JC" v="Ngắt cáp câu bình" eh="af92d5db" />
         <e k="RVB_dialog_titleCONNECTING_JC" v="Kết nối cáp câu bình" eh="d65bafa2" />
-        <e k="RVB_dialog_descCONNECTING_JC" v="Xe %s không cần câu bình. Bạn có chắc muốn tiếp tục kết nối cáp câu bình không?" tag="format"/>
+        <e k="RVB_dialog_descCONNECTING_JC" v="Xe %s không cần câu bình. Bạn có chắc muốn tiếp tục kết nối cáp câu bình không?" eh="4a72e523" tag="format"/>
         <e k="RVB_addextra_connecting" v="Đã kết nối cáp câu bình" eh="3893af14" />
-        <e k="RVB_blinking_connecting_toofar" v="Đừng kéo căng cáp câu bình thêm nữa, nếu không nó sẽ bị tuột khỏi bình ắc quy! (%s m)" tag="format"/>
+        <e k="RVB_blinking_connecting_toofar" v="Đừng kéo căng cáp câu bình thêm nữa, nếu không nó sẽ bị tuột khỏi bình ắc quy! (%s m)" eh="de01b5dd" tag="format"/>
         <e k="RVB_blinking_disconnecting_toofar" v="Cáp câu bình quá ngắn – đã bị ngắt kết nối!" eh="eed0846f" />
-        <e k="RVB_blinking_connecting_drive" v="Đừng chạy xe, cáp câu bình vẫn đang kết nối! (%s m)" tag="format"/>
-        <e k="RVB_blinking_connecting_length" v="Chiều dài cáp câu bình: %s m / %s m" tag="format"/>
-        <e k="RVB_blinking_connecting_cableBroken" v="Cáp câu bình đã bị kết nối. Chúng bị hỏng nên bạn phải mua mới với giá %s." tag="format"/>
-        <e k="RVB_blinking_connecting" v="%s: Đã kết nối cáp câu bình." tag="format"/>
+        <e k="RVB_blinking_connecting_drive" v="Đừng chạy xe, cáp câu bình vẫn đang kết nối! (%s m)" eh="e7083a37" tag="format"/>
+        <e k="RVB_blinking_connecting_length" v="Chiều dài cáp câu bình: %s m / %s m" eh="00d9d387" tag="format"/>
+        <e k="RVB_blinking_connecting_cableBroken" v="Cáp câu bình đã bị kết nối. Chúng bị hỏng nên bạn phải mua mới với giá %s." eh="5e93c08d" tag="format"/>
+        <e k="RVB_blinking_connecting" v="%s: Đã kết nối cáp câu bình." eh="c2447083" tag="format"/>
         <e k="RVB_blinking_connecting_order" v="Trước tiên, hãy kết nối xe đang hoạt động với cáp câu bình!" eh="7342e321" />
-        <e k="RVB_blinking_disconnecting" v="%s: Đã ngắt cáp câu bình." tag="format"/>
+        <e k="RVB_blinking_disconnecting" v="%s: Đã ngắt cáp câu bình." eh="1c1775a5" tag="format"/>
         <e k="RVB_blinking_disconnecting_order" v="Trước tiên, hãy ngắt kết nối xe chết máy khỏi cáp câu bình!" eh="e9970e17" />
         <e k="RVB_MenuGameSettingsGame" v="Cài đặt trò chơi" eh="f22e46f4" />
         <e k="RVB_settingSectionHeader_Service" v="Bảo dưỡng" eh="c2ba7e78" />
@@ -44,9 +44,9 @@
         <e k="RVB_setting_selfstarterLifetime" v="Máy đề" eh="ee6085db" />
         <e k="RVB_setting_batteryLifetime" v="Ắc quy" eh="d67c9286" />
         <e k="RVB_setting_tireLifetime" v="Lốp xe" eh="e4b17d74" />
-        <e k="RVB_utils_hour" v="%s giờ" tag="format"/>
-        <e k="RVB_utils_km" v="%s km" tag="format"/>
-        <e k="RVB_utils_maxcount" v="%s chiếc" tag="format"/>
+        <e k="RVB_utils_hour" v="%s giờ" eh="0aaff306" tag="format"/>
+        <e k="RVB_utils_km" v="%s km" eh="7e78f68c" tag="format"/>
+        <e k="RVB_utils_maxcount" v="%s chiếc" eh="eb664c9a" tag="format"/>
 
         <e k="RVB_MenuGameSettingsGeneral" v="Cài đặt chung" eh="52f4393e" />
         <e k="RVB_setting_alertDialog" v="Thông báo cảnh báo" eh="252527bd" />
@@ -72,20 +72,20 @@
 
         <e k="RVB_MenuGamePartsSettings" v="Cài đặt xe" eh="b33d07b8" />
         <e k="RVB_Parts_stepInterval" v="Khoảng cách bước(%)" eh="a3db3e97" />
-        <e k="RVB_Parts_currentValue" v="Tuổi thọ %s hiện tại" tag="format"/>
-        <e k="RVB_Parts_remainingValue" v="Cài đặt tuổi thọ %s" tag="format"/>
+        <e k="RVB_Parts_currentValue" v="Tuổi thọ %s hiện tại" eh="6a16b34b" tag="format"/>
+        <e k="RVB_Parts_remainingValue" v="Cài đặt tuổi thọ %s" eh="e5f12d35" tag="format"/>
         <e k="RVB_part_rvbDifficulty" v="Hỏng xe" eh="b74e5c9c" />
-        <e k="RVB_Parts_utils_percent" v="%s %%" tag="format"/>
+        <e k="RVB_Parts_utils_percent" v="%s %%" eh="7743aacb" tag="format"/>
 
-        <e k="RVB_WorkShopClose" v="Xưởng sửa chữa xe đã đóng cửa; vui lòng quay lại lúc %s giờ." tag="format"/>
+        <e k="RVB_WorkShopClose" v="Xưởng sửa chữa xe đã đóng cửa; vui lòng quay lại lúc %s giờ." eh="64254a65" tag="format"/>
         <e k="RVB_button_inspection" v="Kiểm tra" eh="b4faa7ed" />
         <e k="RVB_button_dailyservice" v="Bảo dưỡng hàng ngày" eh="af302edf" />
         <e k="RVB_button_periodicservice" v="Bảo dưỡng định kỳ" eh="37a54fc5" />
         <e k="RVB_button_battery_ch" v="Sạc ắc quy" eh="30a47fb3" />
         <e k="RVB_button_service" v="Bảo dưỡng" eh="c2ba7e78" />
-        <e k="RVB_inspectionDialog" v="Bạn có chắc muốn kiểm tra xe này với giá %s không?" tag="format"/>
-        <e k="RVB_inspectionTimeDialog" v="Việc kiểm tra xe sẽ hoàn thành lúc %s giờ." tag="format"/>
-        <e k="RVB_inspectionDayDialog" v="Việc kiểm tra xe sẽ hoàn thành vào ngày mai lúc %s giờ." tag="format"/>
+        <e k="RVB_inspectionDialog" v="Bạn có chắc muốn kiểm tra xe này với giá %s không?" eh="7401f205" tag="format"/>
+        <e k="RVB_inspectionTimeDialog" v="Việc kiểm tra xe sẽ hoàn thành lúc %s giờ." eh="06135b4d" tag="format"/>
+        <e k="RVB_inspectionDayDialog" v="Việc kiểm tra xe sẽ hoàn thành vào ngày mai lúc %s giờ." eh="af1c4b1b" tag="format"/>
         <e k="RVB_faultText_THERMOSTAT" v="Bộ điều nhiệt" eh="91e0b95d" />
         <e k="RVB_faultText_LIGHTINGS" v="Hệ thống đèn" eh="2e4b97fd" />
         <e k="RVB_faultText_GLOWPLUG" v="Bugi sấy" eh="6fdb6ce6" />
@@ -99,16 +99,16 @@
         <e k="RVB_faultText_TIREFR" v="Lốp trước phải" eh="d65bdf73" />
         <e k="RVB_faultText_TIRERL" v="Lốp sau trái" eh="8058c09e" />
         <e k="RVB_faultText_TIRERR" v="Lốp sau phải" eh="433ab1ca" />
-        <e k="RVB_repairErrorMechanics" v="Tất cả thợ máy đều bận, chỉ có thể sửa chữa tối đa %s xe cùng lúc." tag="format"/>
-        <e k="RVB_repairTimeDialog" v="Việc sửa chữa xe sẽ hoàn thành lúc %s giờ." tag="format"/>
-        <e k="RVB_repairDayDialog" v="Việc sửa chữa xe sẽ hoàn thành vào ngày mai lúc %s giờ." tag="format"/>
+        <e k="RVB_repairErrorMechanics" v="Tất cả thợ máy đều bận, chỉ có thể sửa chữa tối đa %s xe cùng lúc." eh="8db25de5" tag="format"/>
+        <e k="RVB_repairTimeDialog" v="Việc sửa chữa xe sẽ hoàn thành lúc %s giờ." eh="1b895cdb" tag="format"/>
+        <e k="RVB_repairDayDialog" v="Việc sửa chữa xe sẽ hoàn thành vào ngày mai lúc %s giờ." eh="3d3ab5be" tag="format"/>
         <e k="RVB_ErrorList" v="Danh sách lỗi:" eh="4e0dbac7" />
-        <e k="RVB_periodicserviceDialog" v="Bạn có chắc muốn bảo dưỡng xe với giá %s không?" tag="format"/>
-        <e k="RVB_periodicserviceTimeDialog" v="Việc bảo dưỡng xe sẽ hoàn thành lúc %s giờ." tag="format"/>
-        <e k="RVB_periodicserviceDayDialog" v="Việc bảo dưỡng xe sẽ hoàn thành vào ngày mai lúc %s giờ." tag="format"/>
-        <e k="RVB_batteryChDialog" v="Bạn có chắc muốn sạc ắc quy xe với giá %s không?" tag="format"/>
-        <e k="RVB_operatingTime" v="%02d giờ" tag="format"/>
-        <e k="RVB_shop_operatingTimeG" v="%s:%s giờ" tag="format"/>
+        <e k="RVB_periodicserviceDialog" v="Bạn có chắc muốn bảo dưỡng xe với giá %s không?" eh="20eb9276" tag="format"/>
+        <e k="RVB_periodicserviceTimeDialog" v="Việc bảo dưỡng xe sẽ hoàn thành lúc %s giờ." eh="1f9463c5" tag="format"/>
+        <e k="RVB_periodicserviceDayDialog" v="Việc bảo dưỡng xe sẽ hoàn thành vào ngày mai lúc %s giờ." eh="23dccb31" tag="format"/>
+        <e k="RVB_batteryChDialog" v="Bạn có chắc muốn sạc ắc quy xe với giá %s không?" eh="94b16ee9" tag="format"/>
+        <e k="RVB_operatingTime" v="%02d giờ" eh="ec877abb" tag="format"/>
+        <e k="RVB_shop_operatingTimeG" v="%s:%s giờ" eh="53789ab2" tag="format"/>
         <e k="RVB_alertmessage_inspection" v="Đang kiểm tra xe." eh="65fb0250" />
         <e k="RVB_alertmessage_repair" v="Đang sửa chữa xe." eh="e142d0e7" />
         <e k="RVB_alertmessage_service" v="Đang bảo dưỡng xe." eh="b4b2edf3" />
@@ -138,9 +138,9 @@
         <e k="RVB_WorkshopS_repNoNeed" v="Không cần sửa chữa." eh="3363e3de" />
         <e k="RVB_WorkshopS_month" v=" tháng" eh="888b692b" />
 
-        <e k="RVB_WorkshopMessage_service" v="Bạn đã vượt quá chu kỳ bảo dưỡng quy định %s giờ, nên việc sửa chữa mất nhiều thời gian và chi phí hơn." tag="format"/>
+        <e k="RVB_WorkshopMessage_service" v="Bạn đã vượt quá chu kỳ bảo dưỡng quy định %s giờ, nên việc sửa chữa mất nhiều thời gian và chi phí hơn." eh="4793bc2c" tag="format"/>
         <e k="RVB_WorkshopMessage_serviceDone" v="Bảo dưỡng hoàn thành." eh="92a45efa" />
-        <e k="RVB_WorkshopMessage_repairDone" v="Sửa chữa hoàn thành. Linh kiện đã thay thế/sửa chữa: %s" tag="format"/>
+        <e k="RVB_WorkshopMessage_repairDone" v="Sửa chữa hoàn thành. Linh kiện đã thay thế/sửa chữa: %s" eh="2a748e5d" tag="format"/>
         <e k="RVB_WorkshopMessage_batteryDone" v="Ắc quy đã được sạc đầy." eh="1ab095d0" />
         <e k="RVB_WorkshopMessage_vResetDone" v="Xe đã được đặt lại." eh="1d94103e" />
 
@@ -151,7 +151,7 @@
         <e k="RVB_serviceDialogEnd" v="Bảo dưỡng xe %s hoàn thành." eh="b705ad92" />
         <e k="RVB_repairDialogEnd" v="Sửa chữa xe %s hoàn thành." eh="5ce51ccd" />
         <e k="RVB_fault_engineload" v="Đừng tải động cơ quá sớm, nó vẫn còn nguội." eh="5de6f564" />
-        <e k="RVB_fault_engineload_hud" v="Động cơ của %s chịu tải quá nhiều khi còn nguội." tag="format"/>
+        <e k="RVB_fault_engineload_hud" v="Động cơ của %s chịu tải quá nhiều khi còn nguội." eh="36daf927" tag="format"/>
         <e k="RVB_fault_lights" v="Đèn không hoạt động." eh="488daec3" />
         <e k="RVB_lowjumper" v="Động cơ không khởi động được. Tiếp tục câu bình." eh="03bba9c6" />
         <e k="RVB_lowjumperDonorMotor" v="Khởi động động cơ xe kia." eh="78fe1392" />
@@ -178,7 +178,7 @@
         <e k="infoDisplayExtension_serviceVheicle" v="Bảo dưỡng định kỳ" eh="37a54fc5" />
 
         <e k="RVB_workshopVResetTitle" v="Đặt lại xe" eh="9e1f8bcf" />
-        <e k="RVB_workshopVResetDesc" v="Bạn có chắc muốn đặt lại xe %s về trạng thái mặc định không?" tag="format"/>
+        <e k="RVB_workshopVResetDesc" v="Bạn có chắc muốn đặt lại xe %s về trạng thái mặc định không?" eh="36cbd838" tag="format"/>
 
         <e k="electricChargeTurbine" v="Bộ sạc tua-bin gió điện" eh="2d67b055" />
         <e k="function_powerpack" v="Sử dụng để sạc xe điện và vận chuyển điện đến các vị trí xa." eh="eaa5e06e" />
@@ -193,14 +193,14 @@ Cảm ơn bạn đã thông cảm.
 
 Trân trọng,
 
-MathiasHun" tag="format"/>
+MathiasHun" eh="a611a9ae" tag="format"/>
 
         <e k="RVB_aimessage_batterydischarged" v="Trợ lý AI %s đã dừng công việc đột ngột; ắc quy xe đã hết!" eh="ee374dc3" />
 
         <!-- KHÔNG THAY ĐỔI MỤC NÀY, TRỪ KHI MOD FS25_USEYOURTYRES ĐÃ CÓ BẢN DỊCH TIẾNG VIỆT CHÍNH THỨC -->
         <e k="infohud_uytTyresWear" v="Độ mòn lốp" eh="7cffdd14" />
         <!-- Hết cảnh báo -->
-        <e k="rvb_infohud_uytTyresWear" v="Lốp %s" tag="format"/>
+        <e k="rvb_infohud_uytTyresWear" v="Lốp %s" eh="33b244d3" tag="format"/>
 
     </elements>
 </l10n>

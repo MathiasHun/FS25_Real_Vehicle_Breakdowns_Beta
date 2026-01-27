@@ -7,16 +7,16 @@
         <e k="input_RVB_CONNECTING_JC" v="Menyambungkan kabel jumper" eh="d65bafa2" />
         <e k="action_RVB_DISCONNECTING_JC" v="Melepaskan kabel jumper" eh="af92d5db" />
         <e k="RVB_dialog_titleCONNECTING_JC" v="Menyambungkan kabel jumper" eh="d65bafa2" />
-        <e k="RVB_dialog_descCONNECTING_JC" v="Kendaraan %s tidak perlu di-jump start. Apakah Anda yakin ingin melanjutkan menyambungkan kabel jumper?" tag="format"/>
+        <e k="RVB_dialog_descCONNECTING_JC" v="Kendaraan %s tidak perlu di-jump start. Apakah Anda yakin ingin melanjutkan menyambungkan kabel jumper?" eh="4a72e523" tag="format"/>
         <e k="RVB_addextra_connecting" v="Kabel jumper tersambung" eh="3893af14" />
-        <e k="RVB_blinking_connecting_toofar" v="Jangan tarik kabel jumper lebih jauh lagi, atau akan segera terlepas dari aki! (%s m)" tag="format"/>
+        <e k="RVB_blinking_connecting_toofar" v="Jangan tarik kabel jumper lebih jauh lagi, atau akan segera terlepas dari aki! (%s m)" eh="de01b5dd" tag="format"/>
         <e k="RVB_blinking_disconnecting_toofar" v="Kabel jumper terlalu pendek - sudah terputus!" eh="eed0846f" />
-        <e k="RVB_blinking_connecting_drive" v="Jangan berkendara, kabel jumper masih tersambung! (%s m)" tag="format"/>
-        <e k="RVB_blinking_connecting_length" v="Panjang kabel jumper: %s m / %s m" tag="format"/>
-        <e k="RVB_blinking_connecting_cableBroken" v="Kabel jumper tersambung. Kabel rusak, sehingga Anda harus membeli yang baru seharga %s." tag="format"/>
-        <e k="RVB_blinking_connecting" v="%s: Kabel jumper tersambung." tag="format"/>
+        <e k="RVB_blinking_connecting_drive" v="Jangan berkendara, kabel jumper masih tersambung! (%s m)" eh="e7083a37" tag="format"/>
+        <e k="RVB_blinking_connecting_length" v="Panjang kabel jumper: %s m / %s m" eh="00d9d387" tag="format"/>
+        <e k="RVB_blinking_connecting_cableBroken" v="Kabel jumper tersambung. Kabel rusak, sehingga Anda harus membeli yang baru seharga %s." eh="5e93c08d" tag="format"/>
+        <e k="RVB_blinking_connecting" v="%s: Kabel jumper tersambung." eh="c2447083" tag="format"/>
         <e k="RVB_blinking_connecting_order" v="Pertama, sambungkan kendaraan yang berfungsi ke kabel jumper!" eh="7342e321" />
-        <e k="RVB_blinking_disconnecting" v="%s: Kabel jumper terputus." tag="format"/>
+        <e k="RVB_blinking_disconnecting" v="%s: Kabel jumper terputus." eh="1c1775a5" tag="format"/>
         <e k="RVB_blinking_disconnecting_order" v="Pertama, lepaskan kendaraan mati dari kabel jumper!" eh="e9970e17" />
         <e k="RVB_MenuGameSettingsGame" v="Pengaturan Permainan" eh="f22e46f4" />
         <e k="RVB_settingSectionHeader_Service" v="Servis" eh="c2ba7e78" />
@@ -44,9 +44,9 @@
         <e k="RVB_setting_selfstarterLifetime" v="Starter" eh="ee6085db" />
         <e k="RVB_setting_batteryLifetime" v="Aki" eh="d67c9286" />
         <e k="RVB_setting_tireLifetime" v="Ban" eh="e4b17d74" />
-        <e k="RVB_utils_hour" v="%s jam" tag="format"/>
-        <e k="RVB_utils_km" v="%s km" tag="format"/>
-        <e k="RVB_utils_maxcount" v="%s unit" tag="format"/>
+        <e k="RVB_utils_hour" v="%s jam" eh="0aaff306" tag="format"/>
+        <e k="RVB_utils_km" v="%s km" eh="7e78f68c" tag="format"/>
+        <e k="RVB_utils_maxcount" v="%s unit" eh="eb664c9a" tag="format"/>
 
         <e k="RVB_MenuGameSettingsGeneral" v="Pengaturan Umum" eh="52f4393e" />
         <e k="RVB_setting_alertDialog" v="Pesan Peringatan" eh="252527bd" />
@@ -72,20 +72,20 @@
 
         <e k="RVB_MenuGamePartsSettings" v="Pengaturan Kendaraan" eh="b33d07b8" />
         <e k="RVB_Parts_stepInterval" v="Interval Langkah(%)" eh="a3db3e97" />
-        <e k="RVB_Parts_currentValue" v="Masa pakai %s saat ini" tag="format"/>
-        <e k="RVB_Parts_remainingValue" v="Pengaturan masa pakai %s" tag="format"/>
+        <e k="RVB_Parts_currentValue" v="Masa pakai %s saat ini" eh="6a16b34b" tag="format"/>
+        <e k="RVB_Parts_remainingValue" v="Pengaturan masa pakai %s" eh="e5f12d35" tag="format"/>
         <e k="RVB_part_rvbDifficulty" v="Kerusakan Kendaraan" eh="b74e5c9c" />
-        <e k="RVB_Parts_utils_percent" v="%s %%" tag="format"/>
+        <e k="RVB_Parts_utils_percent" v="%s %%" eh="7743aacb" tag="format"/>
 
-        <e k="RVB_WorkShopClose" v="Bengkel kendaraan tutup; silakan kembali pukul %s." tag="format"/>
+        <e k="RVB_WorkShopClose" v="Bengkel kendaraan tutup; silakan kembali pukul %s." eh="64254a65" tag="format"/>
         <e k="RVB_button_inspection" v="Inspeksi" eh="b4faa7ed" />
         <e k="RVB_button_dailyservice" v="Servis Harian" eh="af302edf" />
         <e k="RVB_button_periodicservice" v="Servis Berkala" eh="37a54fc5" />
         <e k="RVB_button_battery_ch" v="Pengisian Aki" eh="30a47fb3" />
         <e k="RVB_button_service" v="Servis" eh="c2ba7e78" />
-        <e k="RVB_inspectionDialog" v="Apakah Anda yakin ingin menginspeksi kendaraan ini seharga %s?" tag="format"/>
-        <e k="RVB_inspectionTimeDialog" v="Inspeksi kendaraan akan selesai pukul %s." tag="format"/>
-        <e k="RVB_inspectionDayDialog" v="Inspeksi kendaraan akan selesai besok pukul %s." tag="format"/>
+        <e k="RVB_inspectionDialog" v="Apakah Anda yakin ingin menginspeksi kendaraan ini seharga %s?" eh="7401f205" tag="format"/>
+        <e k="RVB_inspectionTimeDialog" v="Inspeksi kendaraan akan selesai pukul %s." eh="06135b4d" tag="format"/>
+        <e k="RVB_inspectionDayDialog" v="Inspeksi kendaraan akan selesai besok pukul %s." eh="af1c4b1b" tag="format"/>
         <e k="RVB_faultText_THERMOSTAT" v="Termostat" eh="91e0b95d" />
         <e k="RVB_faultText_LIGHTINGS" v="Lampu" eh="2e4b97fd" />
         <e k="RVB_faultText_GLOWPLUG" v="Busi Pijar" eh="6fdb6ce6" />
@@ -99,16 +99,16 @@
         <e k="RVB_faultText_TIREFR" v="Ban depan kanan" eh="d65bdf73" />
         <e k="RVB_faultText_TIRERL" v="Ban belakang kiri" eh="8058c09e" />
         <e k="RVB_faultText_TIRERR" v="Ban belakang kanan" eh="433ab1ca" />
-        <e k="RVB_repairErrorMechanics" v="Semua mekanik sedang sibuk, hanya maksimal %s kendaraan yang dapat diperbaiki secara bersamaan." tag="format"/>
-        <e k="RVB_repairTimeDialog" v="Perbaikan kendaraan akan selesai pukul %s." tag="format"/>
-        <e k="RVB_repairDayDialog" v="Perbaikan kendaraan akan selesai besok pukul %s." tag="format"/>
+        <e k="RVB_repairErrorMechanics" v="Semua mekanik sedang sibuk, hanya maksimal %s kendaraan yang dapat diperbaiki secara bersamaan." eh="8db25de5" tag="format"/>
+        <e k="RVB_repairTimeDialog" v="Perbaikan kendaraan akan selesai pukul %s." eh="1b895cdb" tag="format"/>
+        <e k="RVB_repairDayDialog" v="Perbaikan kendaraan akan selesai besok pukul %s." eh="3d3ab5be" tag="format"/>
         <e k="RVB_ErrorList" v="Daftar kerusakan:" eh="4e0dbac7" />
-        <e k="RVB_periodicserviceDialog" v="Apakah Anda yakin ingin menyervis kendaraan ini seharga %s?" tag="format"/>
-        <e k="RVB_periodicserviceTimeDialog" v="Servis kendaraan akan selesai pukul %s." tag="format"/>
-        <e k="RVB_periodicserviceDayDialog" v="Servis kendaraan akan selesai besok pukul %s." tag="format"/>
-        <e k="RVB_batteryChDialog" v="Apakah Anda yakin ingin mengisi aki kendaraan seharga %s?" tag="format"/>
-        <e k="RVB_operatingTime" v="%02d jam" tag="format"/>
-        <e k="RVB_shop_operatingTimeG" v="%s:%s jam" tag="format"/>
+        <e k="RVB_periodicserviceDialog" v="Apakah Anda yakin ingin menyervis kendaraan ini seharga %s?" eh="20eb9276" tag="format"/>
+        <e k="RVB_periodicserviceTimeDialog" v="Servis kendaraan akan selesai pukul %s." eh="1f9463c5" tag="format"/>
+        <e k="RVB_periodicserviceDayDialog" v="Servis kendaraan akan selesai besok pukul %s." eh="23dccb31" tag="format"/>
+        <e k="RVB_batteryChDialog" v="Apakah Anda yakin ingin mengisi aki kendaraan seharga %s?" eh="94b16ee9" tag="format"/>
+        <e k="RVB_operatingTime" v="%02d jam" eh="ec877abb" tag="format"/>
+        <e k="RVB_shop_operatingTimeG" v="%s:%s jam" eh="53789ab2" tag="format"/>
         <e k="RVB_alertmessage_inspection" v="Inspeksi kendaraan sedang berlangsung." eh="65fb0250" />
         <e k="RVB_alertmessage_repair" v="Perbaikan kendaraan sedang berlangsung." eh="e142d0e7" />
         <e k="RVB_alertmessage_service" v="Servis kendaraan sedang berlangsung." eh="b4b2edf3" />
@@ -138,9 +138,9 @@
         <e k="RVB_WorkshopS_repNoNeed" v="Tidak perlu perbaikan." eh="3363e3de" />
         <e k="RVB_WorkshopS_month" v=" bulan" eh="888b692b" />
 
-        <e k="RVB_WorkshopMessage_service" v="Anda telah melampaui interval servis yang ditentukan sebanyak %s jam, sehingga perbaikan memakan waktu lebih lama dan biaya lebih mahal." tag="format"/>
+        <e k="RVB_WorkshopMessage_service" v="Anda telah melampaui interval servis yang ditentukan sebanyak %s jam, sehingga perbaikan memakan waktu lebih lama dan biaya lebih mahal." eh="4793bc2c" tag="format"/>
         <e k="RVB_WorkshopMessage_serviceDone" v="Servis selesai." eh="92a45efa" />
-        <e k="RVB_WorkshopMessage_repairDone" v="Perbaikan selesai. Komponen yang diganti/diperbaiki: %s" tag="format"/>
+        <e k="RVB_WorkshopMessage_repairDone" v="Perbaikan selesai. Komponen yang diganti/diperbaiki: %s" eh="2a748e5d" tag="format"/>
         <e k="RVB_WorkshopMessage_batteryDone" v="Aki terisi penuh." eh="1ab095d0" />
         <e k="RVB_WorkshopMessage_vResetDone" v="Kendaraan telah direset." eh="1d94103e" />
 
@@ -151,7 +151,7 @@
         <e k="RVB_serviceDialogEnd" v="Servis kendaraan %s selesai." eh="b705ad92" />
         <e k="RVB_repairDialogEnd" v="Perbaikan kendaraan %s selesai." eh="5ce51ccd" />
         <e k="RVB_fault_engineload" v="Jangan bebani mesin terlalu dini, mesin masih dingin." eh="5de6f564" />
-        <e k="RVB_fault_engineload_hud" v="Mesin %s menerima beban terlalu berat saat dingin." tag="format"/>
+        <e k="RVB_fault_engineload_hud" v="Mesin %s menerima beban terlalu berat saat dingin." eh="36daf927" tag="format"/>
         <e k="RVB_fault_lights" v="Lampu tidak berfungsi." eh="488daec3" />
         <e k="RVB_lowjumper" v="Mesin tidak mau hidup. Lanjutkan jump-start." eh="03bba9c6" />
         <e k="RVB_lowjumperDonorMotor" v="Nyalakan mesin kendaraan lain." eh="78fe1392" />
@@ -178,7 +178,7 @@
         <e k="infoDisplayExtension_serviceVheicle" v="Servis Berkala" eh="37a54fc5" />
 
         <e k="RVB_workshopVResetTitle" v="Reset Kendaraan" eh="9e1f8bcf" />
-        <e k="RVB_workshopVResetDesc" v="Apakah Anda yakin ingin mereset kendaraan %s ke kondisi awal?" tag="format"/>
+        <e k="RVB_workshopVResetDesc" v="Apakah Anda yakin ingin mereset kendaraan %s ke kondisi awal?" eh="36cbd838" tag="format"/>
 
         <e k="electricChargeTurbine" v="Pengisi Daya Turbin Angin Listrik" eh="2d67b055" />
         <e k="function_powerpack" v="Gunakan ini untuk mengisi daya kendaraan listrik Anda dan mengangkut tenaga listrik ke lokasi terpencil." eh="eaa5e06e" />
@@ -193,14 +193,14 @@ Terima kasih atas pengertian Anda.
 
 Salam hormat,
 
-MathiasHun" tag="format"/>
+MathiasHun" eh="a611a9ae" tag="format"/>
 
         <e k="RVB_aimessage_batterydischarged" v="Pembantu AI %s tiba-tiba berhenti bekerja; aki kendaraan telah habis!" eh="ee374dc3" />
 
         <!-- JANGAN UBAH INI, KECUALI MOD FS25_USEYOURTYRES SUDAH MEMILIKI TERJEMAHAN RESMI BAHASA INDONESIA -->
         <e k="infohud_uytTyresWear" v="Keausan ban" eh="7cffdd14" />
         <!-- Akhir peringatan -->
-        <e k="rvb_infohud_uytTyresWear" v="Ban %s" tag="format"/>
+        <e k="rvb_infohud_uytTyresWear" v="Ban %s" eh="33b244d3" tag="format"/>
 
     </elements>
 </l10n>

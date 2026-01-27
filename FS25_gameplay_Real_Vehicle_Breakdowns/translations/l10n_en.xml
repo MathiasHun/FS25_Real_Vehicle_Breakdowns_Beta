@@ -6,16 +6,16 @@
         <e k="input_RVB_CONNECTING_JC" v="Connecting jumper cables" eh="d65bafa2" />
         <e k="action_RVB_DISCONNECTING_JC" v="Disconnecting jumper cables" eh="af92d5db" />
         <e k="RVB_dialog_titleCONNECTING_JC" v="Connecting jumper cables" eh="d65bafa2" />
-        <e k="RVB_dialog_descCONNECTING_JC" v="There is no need to jump-start the %s vehicle. Are you sure you want to continue connecting the jumper cables?" tag="format"/>
+        <e k="RVB_dialog_descCONNECTING_JC" v="There is no need to jump-start the %s vehicle. Are you sure you want to continue connecting the jumper cables?" eh="4a72e523" tag="format"/>
         <e k="RVB_addextra_connecting" v="Jumper cables connected" eh="3893af14" />
-        <e k="RVB_blinking_connecting_toofar" v="Don't stretch the jumper cable any further, or it will soon detach from the battery! (%s m)" tag="format"/>
+        <e k="RVB_blinking_connecting_toofar" v="Don't stretch the jumper cable any further, or it will soon detach from the battery! (%s m)" eh="de01b5dd" tag="format"/>
         <e k="RVB_blinking_disconnecting_toofar" v="The jumper cable is too short – it has disconnected!" eh="eed0846f" />
-        <e k="RVB_blinking_connecting_drive" v="Don't drive away, the jumper cables are still connected! (%s m)" tag="format"/>
-        <e k="RVB_blinking_connecting_length" v="Jumper cable length: %s m / %s m" tag="format"/>
-        <e k="RVB_blinking_connecting_cableBroken" v="The jumper cables were connected. They got damaged, so you had to buy new ones for %s." tag="format"/>
-        <e k="RVB_blinking_connecting" v="%s: Jumper cables connected." tag="format"/>
+        <e k="RVB_blinking_connecting_drive" v="Don't drive away, the jumper cables are still connected! (%s m)" eh="e7083a37" tag="format"/>
+        <e k="RVB_blinking_connecting_length" v="Jumper cable length: %s m / %s m" eh="00d9d387" tag="format"/>
+        <e k="RVB_blinking_connecting_cableBroken" v="The jumper cables were connected. They got damaged, so you had to buy new ones for %s." eh="5e93c08d" tag="format"/>
+        <e k="RVB_blinking_connecting" v="%s: Jumper cables connected." eh="c2447083" tag="format"/>
         <e k="RVB_blinking_connecting_order" v="First, connect the working vehicle to the jumper cables!" eh="7342e321" />
-        <e k="RVB_blinking_disconnecting" v="%s: Jumper cables disconnected." tag="format"/>
+        <e k="RVB_blinking_disconnecting" v="%s: Jumper cables disconnected." eh="1c1775a5" tag="format"/>
         <e k="RVB_blinking_disconnecting_order" v="First, disconnect the dead vehicle from the jumper cables!" eh="e9970e17" />
         <e k="RVB_MenuGameSettingsGame" v="Game Settings" eh="f22e46f4" />
         <e k="RVB_settingSectionHeader_Service" v="Service" eh="c2ba7e78" />
@@ -43,9 +43,9 @@
         <e k="RVB_setting_selfstarterLifetime" v="Starter" eh="ee6085db" />
         <e k="RVB_setting_batteryLifetime" v="Battery" eh="d67c9286" />
         <e k="RVB_setting_tireLifetime" v="Tire" eh="e4b17d74" />
-        <e k="RVB_utils_hour" v="%s hour" tag="format"/>
-        <e k="RVB_utils_km" v="%s km" tag="format"/>
-        <e k="RVB_utils_maxcount" v="%s pcs" tag="format"/>
+        <e k="RVB_utils_hour" v="%s hour" eh="0aaff306" tag="format"/>
+        <e k="RVB_utils_km" v="%s km" eh="7e78f68c" tag="format"/>
+        <e k="RVB_utils_maxcount" v="%s pcs" eh="eb664c9a" tag="format"/>
 
         <e k="RVB_MenuGameSettingsGeneral" v="General Settings" eh="52f4393e" />
         <e k="RVB_setting_alertDialog" v="Alert Message" eh="252527bd" />
@@ -71,20 +71,20 @@
 
         <e k="RVB_MenuGamePartsSettings" v="Vehicle Settings" eh="b33d07b8" />
         <e k="RVB_Parts_stepInterval" v="Step Interval(%)" eh="a3db3e97" />
-        <e k="RVB_Parts_currentValue" v="Current %s lifespan" tag="format"/>
-        <e k="RVB_Parts_remainingValue" v="%s lifespan setting" tag="format"/>
+        <e k="RVB_Parts_currentValue" v="Current %s lifespan" eh="6a16b34b" tag="format"/>
+        <e k="RVB_Parts_remainingValue" v="%s lifespan setting" eh="e5f12d35" tag="format"/>
         <e k="RVB_part_rvbDifficulty" v="Vehicle Breakdown" eh="b74e5c9c" />
-        <e k="RVB_Parts_utils_percent" v="%s %%" tag="format"/>
+        <e k="RVB_Parts_utils_percent" v="%s %%" eh="7743aacb" tag="format"/>
 
-        <e k="RVB_WorkShopClose" v="The vehicle workshop is closed; please return at %s o'clock." tag="format"/>
+        <e k="RVB_WorkShopClose" v="The vehicle workshop is closed; please return at %s o'clock." eh="64254a65" tag="format"/>
         <e k="RVB_button_inspection" v="Inspection" eh="b4faa7ed" />
         <e k="RVB_button_dailyservice" v="Daily Service" eh="af302edf" />
         <e k="RVB_button_periodicservice" v="Periodic Service" eh="37a54fc5" />
         <e k="RVB_button_battery_ch" v="Battery Charging" eh="30a47fb3" />
         <e k="RVB_button_service" v="Service" eh="c2ba7e78" />
-        <e k="RVB_inspectionDialog" v="Are you sure you want to inspect this vehicle for %s?" tag="format"/>
-        <e k="RVB_inspectionTimeDialog" v="The vehicle inspection will be completed at %s o'clock." tag="format"/>
-        <e k="RVB_inspectionDayDialog" v="The vehicle inspection will be completed tomorrow at %s o'clock." tag="format"/>
+        <e k="RVB_inspectionDialog" v="Are you sure you want to inspect this vehicle for %s?" eh="7401f205" tag="format"/>
+        <e k="RVB_inspectionTimeDialog" v="The vehicle inspection will be completed at %s o'clock." eh="06135b4d" tag="format"/>
+        <e k="RVB_inspectionDayDialog" v="The vehicle inspection will be completed tomorrow at %s o'clock." eh="af1c4b1b" tag="format"/>
         <e k="RVB_faultText_THERMOSTAT" v="Thermostat" eh="91e0b95d" />
         <e k="RVB_faultText_LIGHTINGS" v="Lighting" eh="2e4b97fd" />
         <e k="RVB_faultText_GLOWPLUG" v="Glow Plug" eh="6fdb6ce6" />
@@ -98,16 +98,16 @@
         <e k="RVB_faultText_TIREFR" v="Front right tire" eh="d65bdf73" />
         <e k="RVB_faultText_TIRERL" v="Rear left tire" eh="8058c09e" />
         <e k="RVB_faultText_TIRERR" v="Rear right tire" eh="433ab1ca" />
-        <e k="RVB_repairErrorMechanics" v="All mechanics are busy, only up to %s vehicles can be repaired at the same time." tag="format"/>
-        <e k="RVB_repairTimeDialog" v="The vehicle repair will be completed at %s o'clock." tag="format"/>
-        <e k="RVB_repairDayDialog" v="The vehicle repair will be completed tomorrow at %s o'clock." tag="format"/>
+        <e k="RVB_repairErrorMechanics" v="All mechanics are busy, only up to %s vehicles can be repaired at the same time." eh="8db25de5" tag="format"/>
+        <e k="RVB_repairTimeDialog" v="The vehicle repair will be completed at %s o'clock." eh="1b895cdb" tag="format"/>
+        <e k="RVB_repairDayDialog" v="The vehicle repair will be completed tomorrow at %s o'clock." eh="3d3ab5be" tag="format"/>
         <e k="RVB_ErrorList" v="Error list:" eh="4e0dbac7" />
-        <e k="RVB_periodicserviceDialog" v="Are you sure you want to service the vehicle for %s?" tag="format"/>
-        <e k="RVB_periodicserviceTimeDialog" v="The vehicle service will be completed at %s o'clock." tag="format"/>
-        <e k="RVB_periodicserviceDayDialog" v="The vehicle service will be completed tomorrow at %s o'clock." tag="format"/>
-        <e k="RVB_batteryChDialog" v="Are you sure you want to charge the vehicle's battery for %s?" tag="format"/>
-        <e k="RVB_operatingTime" v="%02d hour" tag="format"/>
-        <e k="RVB_shop_operatingTimeG" v="%s:%s hour" tag="format"/>
+        <e k="RVB_periodicserviceDialog" v="Are you sure you want to service the vehicle for %s?" eh="20eb9276" tag="format"/>
+        <e k="RVB_periodicserviceTimeDialog" v="The vehicle service will be completed at %s o'clock." eh="1f9463c5" tag="format"/>
+        <e k="RVB_periodicserviceDayDialog" v="The vehicle service will be completed tomorrow at %s o'clock." eh="23dccb31" tag="format"/>
+        <e k="RVB_batteryChDialog" v="Are you sure you want to charge the vehicle's battery for %s?" eh="94b16ee9" tag="format"/>
+        <e k="RVB_operatingTime" v="%02d hour" eh="ec877abb" tag="format"/>
+        <e k="RVB_shop_operatingTimeG" v="%s:%s hour" eh="53789ab2" tag="format"/>
         <e k="RVB_alertmessage_inspection" v="Vehicle inspection in progress." eh="65fb0250" />
         <e k="RVB_alertmessage_repair" v="Vehicle repair in progress." eh="e142d0e7" />
         <e k="RVB_alertmessage_service" v="Vehicle service in progress." eh="b4b2edf3" />
@@ -137,9 +137,9 @@
         <e k="RVB_WorkshopS_repNoNeed" v="No repair needed." eh="3363e3de" />
         <e k="RVB_WorkshopS_month" v=" month" eh="888b692b" />
 
-        <e k="RVB_WorkshopMessage_service" v="You have exceeded the specified service interval by %s hours, so the repair took longer and cost more." tag="format"/>
+        <e k="RVB_WorkshopMessage_service" v="You have exceeded the specified service interval by %s hours, so the repair took longer and cost more." eh="4793bc2c" tag="format"/>
         <e k="RVB_WorkshopMessage_serviceDone" v="Service  completed." eh="92a45efa" />
-        <e k="RVB_WorkshopMessage_repairDone" v="Repair completed. Replaced/repaired part(s): %s" tag="format"/>
+        <e k="RVB_WorkshopMessage_repairDone" v="Repair completed. Replaced/repaired part(s): %s" eh="2a748e5d" tag="format"/>
         <e k="RVB_WorkshopMessage_batteryDone" v="Battery fully charged." eh="1ab095d0" />
         <e k="RVB_WorkshopMessage_vResetDone" v="Vehicle has been reset." eh="1d94103e" />
 
@@ -150,7 +150,7 @@
         <e k="RVB_serviceDialogEnd" v="Service for %s vehicle completed." eh="b705ad92" />
         <e k="RVB_repairDialogEnd" v="Repair of %s vehicle completed." eh="5ce51ccd" />
         <e k="RVB_fault_engineload" v="Don't overload the engine too early, it is still cold." eh="5de6f564" />
-        <e k="RVB_fault_engineload_hud" v="The engine of %s receives too much load when cold." tag="format"/>
+        <e k="RVB_fault_engineload_hud" v="The engine of %s receives too much load when cold." eh="36daf927" tag="format"/>
         <e k="RVB_fault_lights" v="Lights are not working." eh="488daec3" />
         <e k="RVB_lowjumper" v="The engine won't start. Continue jump-starting." eh="03bba9c6" />
         <e k="RVB_lowjumperDonorMotor" v="Start the other vehicle's engine." eh="78fe1392" />
@@ -177,7 +177,7 @@
         <e k="infoDisplayExtension_serviceVheicle" v="Periodic Service" eh="37a54fc5" />
 
         <e k="RVB_workshopVResetTitle" v="Vehicle Reset" eh="9e1f8bcf" />
-        <e k="RVB_workshopVResetDesc" v="Are you sure you want to reset the %s vehicle to its default state?" tag="format"/>
+        <e k="RVB_workshopVResetDesc" v="Are you sure you want to reset the %s vehicle to its default state?" eh="36cbd838" tag="format"/>
 
         <e k="electricChargeTurbine" v="Electric Wind Turbine Charger" eh="2d67b055" />
         <e k="function_powerpack" v="Use this to charge your electric vehicles and transport electric power to remote locations." eh="eaa5e06e" />
@@ -192,14 +192,14 @@ Thank you for your understanding.
 
 Best regards,
 
-MathiasHun" tag="format"/>
+MathiasHun" eh="a611a9ae" tag="format"/>
 
         <e k="RVB_aimessage_batterydischarged" v="%s AI helper unexpectedly stopped work; the vehicle's battery has discharged!" eh="ee374dc3" />
 
         <!-- DO NOT CHANGE THIS, ONLY IF THE FS25_USEYOURTYRES MOD ALREADY HAS AN OFFICIAL ENGLISH TRANSLATION -->
         <e k="infohud_uytTyresWear" v="Tyres wear" eh="7cffdd14" />
         <!-- End of warning -->
-        <e k="rvb_infohud_uytTyresWear" v="Tyre %s" tag="format"/>
+        <e k="rvb_infohud_uytTyresWear" v="Tyre %s" eh="33b244d3" tag="format"/>
 
     </elements>
 </l10n>

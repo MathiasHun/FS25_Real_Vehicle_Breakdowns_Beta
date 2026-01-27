@@ -7,16 +7,16 @@
         <e k="input_RVB_CONNECTING_JC" v="Collegare i cavi di collegamento" eh="d65bafa2" />
         <e k="action_RVB_DISCONNECTING_JC" v="Scollegare i cavi di collegamento" eh="af92d5db" />
         <e k="RVB_dialog_titleCONNECTING_JC" v="Collegamento dei cavi di collegamento" eh="d65bafa2" />
-        <e k="RVB_dialog_descCONNECTING_JC" v="Non è necessario avviare il veicolo %s. È sicuro di voler continuare a collegare i cavi di avviamento?" tag="format"/>
+        <e k="RVB_dialog_descCONNECTING_JC" v="Non è necessario avviare il veicolo %s. È sicuro di voler continuare a collegare i cavi di avviamento?" eh="4a72e523" tag="format"/>
         <e k="RVB_addextra_connecting" v="Cavi di collegamento collegati" eh="3893af14" />
-        <e k="RVB_blinking_connecting_toofar" v="Non allungate ulteriormente il cavo del ponticello, altrimenti si staccherà presto dalla batteria! (%s m)" tag="format"/>
+        <e k="RVB_blinking_connecting_toofar" v="Non allungate ulteriormente il cavo del ponticello, altrimenti si staccherà presto dalla batteria! (%s m)" eh="de01b5dd" tag="format"/>
         <e k="RVB_blinking_disconnecting_toofar" v="Il cavo di avviamento è troppo corto – si è scollegato!" eh="eed0846f" />
-        <e k="RVB_blinking_connecting_drive" v="Non andate via, i cavi di avviamento sono ancora collegati! (%s m)" tag="format"/>
-        <e k="RVB_blinking_connecting_length" v="Lunghezza del cavo di avviamento: %s m / %s m" tag="format"/>
-        <e k="RVB_blinking_connecting_cableBroken" v="I cavi di collegamento erano collegati. Si sono danneggiati, quindi è stato necessario acquistarne di nuovi per %s." tag="format"/>
-        <e k="RVB_blinking_connecting" v="%s: Cavi di collegamento collegati." tag="format"/>
+        <e k="RVB_blinking_connecting_drive" v="Non andate via, i cavi di avviamento sono ancora collegati! (%s m)" eh="e7083a37" tag="format"/>
+        <e k="RVB_blinking_connecting_length" v="Lunghezza del cavo di avviamento: %s m / %s m" eh="00d9d387" tag="format"/>
+        <e k="RVB_blinking_connecting_cableBroken" v="I cavi di collegamento erano collegati. Si sono danneggiati, quindi è stato necessario acquistarne di nuovi per %s." eh="5e93c08d" tag="format"/>
+        <e k="RVB_blinking_connecting" v="%s: Cavi di collegamento collegati." eh="c2447083" tag="format"/>
         <e k="RVB_blinking_connecting_order" v="Per prima cosa, collegare il veicolo funzionante ai cavi di avviamento!" eh="7342e321" />
-        <e k="RVB_blinking_disconnecting" v="%s: Cavi di collegamento scollegati." tag="format"/>
+        <e k="RVB_blinking_disconnecting" v="%s: Cavi di collegamento scollegati." eh="1c1775a5" tag="format"/>
         <e k="RVB_blinking_disconnecting_order" v="Per prima cosa, scollegare il veicolo guasto dai cavi di avviamento!" eh="e9970e17" />
         <e k="RVB_MenuGameSettingsGame" v="Impostazioni di gioco" eh="f22e46f4" />
         <e k="RVB_settingSectionHeader_Service" v="Servizio" eh="c2ba7e78" />
@@ -44,9 +44,9 @@
         <e k="RVB_setting_selfstarterLifetime" v="Avviamento" eh="ee6085db" />
         <e k="RVB_setting_batteryLifetime" v="Batteria" eh="d67c9286" />
         <e k="RVB_setting_tireLifetime" v="Pneumatico" eh="e4b17d74" />
-        <e k="RVB_utils_hour" v="%s ora" tag="format"/>
-        <e k="RVB_utils_km" v="%s km" tag="format"/>
-        <e k="RVB_utils_maxcount" v="%s pezzi" tag="format"/>
+        <e k="RVB_utils_hour" v="%s ora" eh="0aaff306" tag="format"/>
+        <e k="RVB_utils_km" v="%s km" eh="7e78f68c" tag="format"/>
+        <e k="RVB_utils_maxcount" v="%s pezzi" eh="eb664c9a" tag="format"/>
 
         <e k="RVB_MenuGameSettingsGeneral" v="Impostazioni generali" eh="52f4393e" />
         <e k="RVB_setting_alertDialog" v="Messaggio di avviso" eh="252527bd" />
@@ -72,20 +72,20 @@
 
         <e k="RVB_MenuGamePartsSettings" v="Impostazioni del veicolo" eh="b33d07b8" />
         <e k="RVB_Parts_stepInterval" v="Intervallo di passo (%)" eh="a3db3e97" />
-        <e k="RVB_Parts_currentValue" v="Durata attuale di %s" tag="format"/>
-        <e k="RVB_Parts_remainingValue" v="Impostazione durata di %s" tag="format"/>
+        <e k="RVB_Parts_currentValue" v="Durata attuale di %s" eh="6a16b34b" tag="format"/>
+        <e k="RVB_Parts_remainingValue" v="Impostazione durata di %s" eh="e5f12d35" tag="format"/>
         <e k="RVB_part_rvbDifficulty" v="Guasto del veicolo" eh="b74e5c9c" />
-        <e k="RVB_Parts_utils_percent" v="%s %%" tag="format"/>
+        <e k="RVB_Parts_utils_percent" v="%s %%" eh="7743aacb" tag="format"/>
 
-        <e k="RVB_WorkShopClose" v="L'officina veicoli è chiusa; si prega di tornare alle ore %s." tag="format"/>
+        <e k="RVB_WorkShopClose" v="L'officina veicoli è chiusa; si prega di tornare alle ore %s." eh="64254a65" tag="format"/>
         <e k="RVB_button_inspection" v="Ispezione" eh="b4faa7ed" />
         <e k="RVB_button_dailyservice" v="Servizio giornaliero" eh="af302edf" />
         <e k="RVB_button_periodicservice" v="Servizio periodico" eh="37a54fc5" />
         <e k="RVB_button_battery_ch" v="Carica della batteria" eh="30a47fb3" />
         <e k="RVB_button_service" v="Servizio" eh="c2ba7e78" />
-        <e k="RVB_inspectionDialog" v="È sicuro di voler ispezionare questo veicolo per %s?" tag="format"/>
-        <e k="RVB_inspectionTimeDialog" v="L'ispezione del veicolo sarà completata alle ore %s." tag="format"/>
-        <e k="RVB_inspectionDayDialog" v="L'ispezione del veicolo sarà completata domani alle ore %s." tag="format"/>
+        <e k="RVB_inspectionDialog" v="È sicuro di voler ispezionare questo veicolo per %s?" eh="7401f205" tag="format"/>
+        <e k="RVB_inspectionTimeDialog" v="L'ispezione del veicolo sarà completata alle ore %s." eh="06135b4d" tag="format"/>
+        <e k="RVB_inspectionDayDialog" v="L'ispezione del veicolo sarà completata domani alle ore %s." eh="af1c4b1b" tag="format"/>
         <e k="RVB_faultText_THERMOSTAT" v="Termostato" eh="91e0b95d" />
         <e k="RVB_faultText_LIGHTINGS" v="Illuminazione" eh="2e4b97fd" />
         <e k="RVB_faultText_GLOWPLUG" v="Candeletta di preriscaldamento" eh="6fdb6ce6" />
@@ -99,16 +99,16 @@
         <e k="RVB_faultText_TIREFR" v="Pneumatico anteriore destro" eh="d65bdf73" />
         <e k="RVB_faultText_TIRERL" v="Pneumatico posteriore sinistro" eh="8058c09e" />
         <e k="RVB_faultText_TIRERR" v="Pneumatico posteriore destro" eh="433ab1ca" />
-        <e k="RVB_repairErrorMechanics" v="Tutti i meccanici sono occupati, è possibile riparare contemporaneamente al massimo %s veicoli." tag="format"/>
-        <e k="RVB_repairTimeDialog" v="La riparazione del veicolo verrà completata alle ore %s." tag="format"/>
-        <e k="RVB_repairDayDialog" v="La riparazione del veicolo verrà completata domani alle ore %s." tag="format"/>
+        <e k="RVB_repairErrorMechanics" v="Tutti i meccanici sono occupati, è possibile riparare contemporaneamente al massimo %s veicoli." eh="8db25de5" tag="format"/>
+        <e k="RVB_repairTimeDialog" v="La riparazione del veicolo verrà completata alle ore %s." eh="1b895cdb" tag="format"/>
+        <e k="RVB_repairDayDialog" v="La riparazione del veicolo verrà completata domani alle ore %s." eh="3d3ab5be" tag="format"/>
         <e k="RVB_ErrorList" v="Elenco degli errori:" eh="4e0dbac7" />
-        <e k="RVB_periodicserviceDialog" v="Sei sicuro di voler effettuare la manutenzione del veicolo per %s?" tag="format"/>
-        <e k="RVB_periodicserviceTimeDialog" v="Il servizio del veicolo verrà completato alle ore %s." tag="format"/>
-        <e k="RVB_periodicserviceDayDialog" v="Il servizio del veicolo verrà completato domani alle ore %s." tag="format"/>
-        <e k="RVB_batteryChDialog" v="Sei sicuro di voler caricare la batteria del veicolo per %s?" tag="format"/>
-        <e k="RVB_operatingTime" v="%02d ore" tag="format"/>
-        <e k="RVB_shop_operatingTimeG" v="%s:%s ore" tag="format"/>
+        <e k="RVB_periodicserviceDialog" v="Sei sicuro di voler effettuare la manutenzione del veicolo per %s?" eh="20eb9276" tag="format"/>
+        <e k="RVB_periodicserviceTimeDialog" v="Il servizio del veicolo verrà completato alle ore %s." eh="1f9463c5" tag="format"/>
+        <e k="RVB_periodicserviceDayDialog" v="Il servizio del veicolo verrà completato domani alle ore %s." eh="23dccb31" tag="format"/>
+        <e k="RVB_batteryChDialog" v="Sei sicuro di voler caricare la batteria del veicolo per %s?" eh="94b16ee9" tag="format"/>
+        <e k="RVB_operatingTime" v="%02d ore" eh="ec877abb" tag="format"/>
+        <e k="RVB_shop_operatingTimeG" v="%s:%s ore" eh="53789ab2" tag="format"/>
         <e k="RVB_alertmessage_inspection" v="Ispezione del veicolo in corso." eh="65fb0250" />
         <e k="RVB_alertmessage_repair" v="Riparazione del veicolo in corso." eh="e142d0e7" />
         <e k="RVB_alertmessage_service" v="Servizio di assistenza in corso." eh="b4b2edf3" />
@@ -138,9 +138,9 @@
         <e k="RVB_WorkshopS_repNoNeed" v="Nessuna riparazione necessaria." eh="3363e3de" />
         <e k="RVB_WorkshopS_month" v=" mese" eh="888b692b" />
 
-        <e k="RVB_WorkshopMessage_service" v="Hai superato l'intervallo di servizio specificato di %s ore, quindi la riparazione ha richiesto più tempo e ha avuto un costo maggiore." tag="format"/>
+        <e k="RVB_WorkshopMessage_service" v="Hai superato l'intervallo di servizio specificato di %s ore, quindi la riparazione ha richiesto più tempo e ha avuto un costo maggiore." eh="4793bc2c" tag="format"/>
         <e k="RVB_WorkshopMessage_serviceDone" v="Servizio completato." eh="92a45efa" />
-        <e k="RVB_WorkshopMessage_repairDone" v="Riparazione completata. Parti sostituite/riparate: %s" tag="format"/>
+        <e k="RVB_WorkshopMessage_repairDone" v="Riparazione completata. Parti sostituite/riparate: %s" eh="2a748e5d" tag="format"/>
         <e k="RVB_WorkshopMessage_batteryDone" v="Batteria completamente carica." eh="1ab095d0" />
         <e k="RVB_WorkshopMessage_vResetDone" v="Veicolo ripristinato." eh="1d94103e" />
 
@@ -151,7 +151,7 @@
         <e k="RVB_serviceDialogEnd" v="Servizio per il veicolo %s completato." eh="b705ad92" />
         <e k="RVB_repairDialogEnd" v="Riparazione del veicolo %s completata." eh="5ce51ccd" />
         <e k="RVB_fault_engineload" v="Non sovraccaricare il motore troppo presto, è ancora freddo." eh="5de6f564" />
-        <e k="RVB_fault_engineload_hud" v="Il motore di %s riceve un carico eccessivo quando è freddo." tag="format"/>
+        <e k="RVB_fault_engineload_hud" v="Il motore di %s riceve un carico eccessivo quando è freddo." eh="36daf927" tag="format"/>
         <e k="RVB_fault_lights" v="Le luci non funzionano." eh="488daec3" />
         <e k="RVB_lowjumper" v="Il motore non si avvia. Continua l’avviamento con i cavi." eh="03bba9c6" />
         <e k="RVB_lowjumperDonorMotor" v="Avvia il motore dell’altro veicolo." eh="78fe1392" />
@@ -178,7 +178,7 @@
         <e k="infoDisplayExtension_serviceVheicle" v="Servizio periodico" eh="37a54fc5" />
 
         <e k="RVB_workshopVResetTitle" v="Ripristino del veicolo" eh="9e1f8bcf" />
-        <e k="RVB_workshopVResetDesc" v="Vuoi davvero ripristinare lo stato predefinito del veicolo %s?" tag="format"/>
+        <e k="RVB_workshopVResetDesc" v="Vuoi davvero ripristinare lo stato predefinito del veicolo %s?" eh="36cbd838" tag="format"/>
 
         <e k="electricChargeTurbine" v="Caricabatterie elettrico per turbine eoliche" eh="2d67b055" />
         <e k="function_powerpack" v="Utilizzatelo per caricare i vostri veicoli elettrici e per trasportare l'energia elettrica in luoghi remoti." eh="eaa5e06e" />
@@ -193,14 +193,14 @@ Grazie per la comprensione.
 
 Cordiali saluti,
 
-MathiasHun" tag="format"/>
+MathiasHun" eh="a611a9ae" tag="format"/>
 
         <e k="RVB_aimessage_batterydischarged" v="%s L'assistente AI ha smesso di funzionare inaspettatamente: la batteria del veicolo si è scaricata!" eh="ee374dc3" />
 
         <!-- DO NOT CHANGE THIS, ONLY IF THE FS25_USEYOURTYRES MOD ALREADY HAS AN OFFICIAL ITALY TRANSLATION -->
         <e k="infohud_uytTyresWear" v="Tyres wear" eh="7cffdd14" />
         <!-- End of warning -->
-        <e k="rvb_infohud_uytTyresWear" v="Pneumatico %s" tag="format"/>
+        <e k="rvb_infohud_uytTyresWear" v="Pneumatico %s" eh="33b244d3" tag="format"/>
 
     </elements>
 </l10n>

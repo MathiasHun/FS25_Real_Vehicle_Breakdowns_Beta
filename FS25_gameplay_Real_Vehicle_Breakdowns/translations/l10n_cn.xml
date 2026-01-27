@@ -7,16 +7,16 @@
         <e k="input_RVB_CONNECTING_JC" v="连接跨接电缆" eh="d65bafa2" />
         <e k="action_RVB_DISCONNECTING_JC" v="断开跨接电缆" eh="af92d5db" />
         <e k="RVB_dialog_titleCONNECTING_JC" v="连接跨接电缆" eh="d65bafa2" />
-        <e k="RVB_dialog_descCONNECTING_JC" v="%s 车辆无需跨接启动。确定要继续连接跨接电缆吗？" tag="format"/>
+        <e k="RVB_dialog_descCONNECTING_JC" v="%s 车辆无需跨接启动。确定要继续连接跨接电缆吗？" eh="4a72e523" tag="format"/>
         <e k="RVB_addextra_connecting" v="跨接电缆已连接" eh="3893af14" />
-        <e k="RVB_blinking_connecting_toofar" v="不要再拉伸跨接电缆了，否则它很快就会从电池上脱落！（%s 米）" tag="format"/>
+        <e k="RVB_blinking_connecting_toofar" v="不要再拉伸跨接电缆了，否则它很快就会从电池上脱落！（%s 米）" eh="de01b5dd" tag="format"/>
         <e k="RVB_blinking_disconnecting_toofar" v="跨接电缆太短——已断开连接！" eh="eed0846f" />
-        <e k="RVB_blinking_connecting_drive" v="不要开走，跨接电缆还连着呢！（%s 米）" tag="format"/>
-        <e k="RVB_blinking_connecting_length" v="跨接电缆长度：%s 米 / %s 米" tag="format"/>
-        <e k="RVB_blinking_connecting_cableBroken" v="跨接电缆已连接。但电缆损坏了，您需要花费 %s 购买新电缆。" tag="format"/>
-        <e k="RVB_blinking_connecting" v="%s：跨接电缆已连接。" tag="format"/>
+        <e k="RVB_blinking_connecting_drive" v="不要开走，跨接电缆还连着呢！（%s 米）" eh="e7083a37" tag="format"/>
+        <e k="RVB_blinking_connecting_length" v="跨接电缆长度：%s 米 / %s 米" eh="00d9d387" tag="format"/>
+        <e k="RVB_blinking_connecting_cableBroken" v="跨接电缆已连接。但电缆损坏了，您需要花费 %s 购买新电缆。" eh="5e93c08d" tag="format"/>
+        <e k="RVB_blinking_connecting" v="%s：跨接电缆已连接。" eh="c2447083" tag="format"/>
         <e k="RVB_blinking_connecting_order" v="请先将正常车辆连接到跨接电缆！" eh="7342e321" />
-        <e k="RVB_blinking_disconnecting" v="%s：跨接电缆已断开。" tag="format"/>
+        <e k="RVB_blinking_disconnecting" v="%s：跨接电缆已断开。" eh="1c1775a5" tag="format"/>
         <e k="RVB_blinking_disconnecting_order" v="请先断开故障车辆的跨接电缆！" eh="e9970e17" />
         <e k="RVB_MenuGameSettingsGame" v="游戏设置" eh="f22e46f4" />
         <e k="RVB_settingSectionHeader_Service" v="保养" eh="c2ba7e78" />
@@ -44,9 +44,9 @@
         <e k="RVB_setting_selfstarterLifetime" v="启动机" eh="ee6085db" />
         <e k="RVB_setting_batteryLifetime" v="蓄电池" eh="d67c9286" />
         <e k="RVB_setting_tireLifetime" v="轮胎" eh="e4b17d74" />
-        <e k="RVB_utils_hour" v="%s 小时" tag="format"/>
-        <e k="RVB_utils_km" v="%s 公里" tag="format"/>
-        <e k="RVB_utils_maxcount" v="%s 辆" tag="format"/>
+        <e k="RVB_utils_hour" v="%s 小时" eh="0aaff306" tag="format"/>
+        <e k="RVB_utils_km" v="%s 公里" eh="7e78f68c" tag="format"/>
+        <e k="RVB_utils_maxcount" v="%s 辆" eh="eb664c9a" tag="format"/>
 
         <e k="RVB_MenuGameSettingsGeneral" v="常规设置" eh="52f4393e" />
         <e k="RVB_setting_alertDialog" v="警告消息" eh="252527bd" />
@@ -72,20 +72,20 @@
 
         <e k="RVB_MenuGamePartsSettings" v="车辆设置" eh="b33d07b8" />
         <e k="RVB_Parts_stepInterval" v="步进间隔（%）" eh="a3db3e97" />
-        <e k="RVB_Parts_currentValue" v="当前 %s 寿命" tag="format"/>
-        <e k="RVB_Parts_remainingValue" v="%s 寿命设置" tag="format"/>
+        <e k="RVB_Parts_currentValue" v="当前 %s 寿命" eh="6a16b34b" tag="format"/>
+        <e k="RVB_Parts_remainingValue" v="%s 寿命设置" eh="e5f12d35" tag="format"/>
         <e k="RVB_part_rvbDifficulty" v="车辆故障" eh="b74e5c9c" />
-        <e k="RVB_Parts_utils_percent" v="%s %%" tag="format"/>
+        <e k="RVB_Parts_utils_percent" v="%s %%" eh="7743aacb" tag="format"/>
 
-        <e k="RVB_WorkShopClose" v="车辆维修厂已关门，请在 %s 点返回。" tag="format"/>
+        <e k="RVB_WorkShopClose" v="车辆维修厂已关门，请在 %s 点返回。" eh="64254a65" tag="format"/>
         <e k="RVB_button_inspection" v="检测" eh="b4faa7ed" />
         <e k="RVB_button_dailyservice" v="日常保养" eh="af302edf" />
         <e k="RVB_button_periodicservice" v="定期保养" eh="37a54fc5" />
         <e k="RVB_button_battery_ch" v="蓄电池充电" eh="30a47fb3" />
         <e k="RVB_button_service" v="保养" eh="c2ba7e78" />
-        <e k="RVB_inspectionDialog" v="确定要花费 %s 检测此车辆吗？" tag="format"/>
-        <e k="RVB_inspectionTimeDialog" v="车辆检测将于 %s 点完成。" tag="format"/>
-        <e k="RVB_inspectionDayDialog" v="车辆检测将于明天 %s 点完成。" tag="format"/>
+        <e k="RVB_inspectionDialog" v="确定要花费 %s 检测此车辆吗？" eh="7401f205" tag="format"/>
+        <e k="RVB_inspectionTimeDialog" v="车辆检测将于 %s 点完成。" eh="06135b4d" tag="format"/>
+        <e k="RVB_inspectionDayDialog" v="车辆检测将于明天 %s 点完成。" eh="af1c4b1b" tag="format"/>
         <e k="RVB_faultText_THERMOSTAT" v="节温器" eh="91e0b95d" />
         <e k="RVB_faultText_LIGHTINGS" v="照明系统" eh="2e4b97fd" />
         <e k="RVB_faultText_GLOWPLUG" v="预热塞" eh="6fdb6ce6" />
@@ -99,16 +99,16 @@
         <e k="RVB_faultText_TIREFR" v="右前轮胎" eh="d65bdf73" />
         <e k="RVB_faultText_TIRERL" v="左后轮胎" eh="8058c09e" />
         <e k="RVB_faultText_TIRERR" v="右后轮胎" eh="433ab1ca" />
-        <e k="RVB_repairErrorMechanics" v="所有技师都在忙碌中，最多只能同时维修 %s 辆车。" tag="format"/>
-        <e k="RVB_repairTimeDialog" v="车辆维修将于 %s 点完成。" tag="format"/>
-        <e k="RVB_repairDayDialog" v="车辆维修将于明天 %s 点完成。" tag="format"/>
+        <e k="RVB_repairErrorMechanics" v="所有技师都在忙碌中，最多只能同时维修 %s 辆车。" eh="8db25de5" tag="format"/>
+        <e k="RVB_repairTimeDialog" v="车辆维修将于 %s 点完成。" eh="1b895cdb" tag="format"/>
+        <e k="RVB_repairDayDialog" v="车辆维修将于明天 %s 点完成。" eh="3d3ab5be" tag="format"/>
         <e k="RVB_ErrorList" v="故障列表：" eh="4e0dbac7" />
-        <e k="RVB_periodicserviceDialog" v="确定要花费 %s 保养此车辆吗？" tag="format"/>
-        <e k="RVB_periodicserviceTimeDialog" v="车辆保养将于 %s 点完成。" tag="format"/>
-        <e k="RVB_periodicserviceDayDialog" v="车辆保养将于明天 %s 点完成。" tag="format"/>
-        <e k="RVB_batteryChDialog" v="确定要花费 %s 为车辆蓄电池充电吗？" tag="format"/>
-        <e k="RVB_operatingTime" v="%02d 小时" tag="format"/>
-        <e k="RVB_shop_operatingTimeG" v="%s:%s 小时" tag="format"/>
+        <e k="RVB_periodicserviceDialog" v="确定要花费 %s 保养此车辆吗？" eh="20eb9276" tag="format"/>
+        <e k="RVB_periodicserviceTimeDialog" v="车辆保养将于 %s 点完成。" eh="1f9463c5" tag="format"/>
+        <e k="RVB_periodicserviceDayDialog" v="车辆保养将于明天 %s 点完成。" eh="23dccb31" tag="format"/>
+        <e k="RVB_batteryChDialog" v="确定要花费 %s 为车辆蓄电池充电吗？" eh="94b16ee9" tag="format"/>
+        <e k="RVB_operatingTime" v="%02d 小时" eh="ec877abb" tag="format"/>
+        <e k="RVB_shop_operatingTimeG" v="%s:%s 小时" eh="53789ab2" tag="format"/>
         <e k="RVB_alertmessage_inspection" v="正在进行车辆检测。" eh="65fb0250" />
         <e k="RVB_alertmessage_repair" v="正在进行车辆维修。" eh="e142d0e7" />
         <e k="RVB_alertmessage_service" v="正在进行车辆保养。" eh="b4b2edf3" />
@@ -138,9 +138,9 @@
         <e k="RVB_WorkshopS_repNoNeed" v="无需维修。" eh="3363e3de" />
         <e k="RVB_WorkshopS_month" v=" 个月" eh="888b692b" />
 
-        <e k="RVB_WorkshopMessage_service" v="您已超过规定的保养间隔 %s 小时，因此维修时间更长、费用更高。" tag="format"/>
+        <e k="RVB_WorkshopMessage_service" v="您已超过规定的保养间隔 %s 小时，因此维修时间更长、费用更高。" eh="4793bc2c" tag="format"/>
         <e k="RVB_WorkshopMessage_serviceDone" v="保养完成。" eh="92a45efa" />
-        <e k="RVB_WorkshopMessage_repairDone" v="维修完成。已更换/修复的零件：%s" tag="format"/>
+        <e k="RVB_WorkshopMessage_repairDone" v="维修完成。已更换/修复的零件：%s" eh="2a748e5d" tag="format"/>
         <e k="RVB_WorkshopMessage_batteryDone" v="蓄电池已充满电。" eh="1ab095d0" />
         <e k="RVB_WorkshopMessage_vResetDone" v="车辆已重置。" eh="1d94103e" />
 
@@ -151,7 +151,7 @@
         <e k="RVB_serviceDialogEnd" v="%s 车辆保养完成。" eh="b705ad92" />
         <e k="RVB_repairDialogEnd" v="%s 车辆维修完成。" eh="5ce51ccd" />
         <e k="RVB_fault_engineload" v="发动机还冷着，不要过早加大负载。" eh="5de6f564" />
-        <e k="RVB_fault_engineload_hud" v="%s 的发动机在冷态时负载过大。" tag="format"/>
+        <e k="RVB_fault_engineload_hud" v="%s 的发动机在冷态时负载过大。" eh="36daf927" tag="format"/>
         <e k="RVB_fault_lights" v="灯光无法工作。" eh="488daec3" />
         <e k="RVB_lowjumper" v="发动机无法启动。请继续跨接启动。" eh="03bba9c6" />
         <e k="RVB_lowjumperDonorMotor" v="请启动另一辆车的发动机。" eh="78fe1392" />
@@ -178,7 +178,7 @@
         <e k="infoDisplayExtension_serviceVheicle" v="定期保养" eh="37a54fc5" />
 
         <e k="RVB_workshopVResetTitle" v="车辆重置" eh="9e1f8bcf" />
-        <e k="RVB_workshopVResetDesc" v="确定要将 %s 车辆重置为默认状态吗？" tag="format"/>
+        <e k="RVB_workshopVResetDesc" v="确定要将 %s 车辆重置为默认状态吗？" eh="36cbd838" tag="format"/>
 
         <e k="electricChargeTurbine" v="电动风力涡轮充电器" eh="2d67b055" />
         <e k="function_powerpack" v="使用此设备为您的电动车辆充电，并将电力输送到偏远地区。" eh="eaa5e06e" />
@@ -193,14 +193,14 @@
 
 此致敬礼，
 
-MathiasHun" tag="format"/>
+MathiasHun" eh="a611a9ae" tag="format"/>
 
         <e k="RVB_aimessage_batterydischarged" v="%s AI 助手意外停止工作；车辆蓄电池已耗尽！" eh="ee374dc3" />
 
         <!-- 请勿更改此项，除非 FS25_USEYOURTYRES 模组已有官方中文翻译 -->
         <e k="infohud_uytTyresWear" v="轮胎磨损" eh="7cffdd14" />
         <!-- 警告结束 -->
-        <e k="rvb_infohud_uytTyresWear" v="轮胎 %s" tag="format"/>
+        <e k="rvb_infohud_uytTyresWear" v="轮胎 %s" eh="33b244d3" tag="format"/>
 
     </elements>
 </l10n>
