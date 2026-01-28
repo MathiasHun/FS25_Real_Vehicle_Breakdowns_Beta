@@ -66,7 +66,7 @@ This is not a stable release, but meant for testing and feedback collection.
 
 Thanks for helping improve the mod!🚜
 </br></br>
-<!---->
+<!--
 # Please don’t share this version on other sites, it’s a VERY early BETA.</br>
 ## <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=7">Download the latest developer TEST version 0.9.5.7</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
 
@@ -88,12 +88,29 @@ Later, the plan is for them to appear brighter when the headlights are on.
 - Update - The following vehicles are “excluded” from RVB mode: https://github.com/MathiasHun/FS25_Real_Vehicle_Breakdowns_Beta/issues/114
 This is a quick release intended for testing, so you can try it before it is made available to the general public.
 
-</br></br></br><!---->
+</br></br></br>-->
 # <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=5">Download the latest developer version</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
 
 ## Recommended Dependencies (to avoid errors):
 - Wind Turbines Charging Station mod (i.e., FS25_electricChargeStation) - by HoT online Team [FS25_electricChargeStation](https://www.kingmods.net/en/fs25/mods/62810/wind-turbines-charging-station)
 - JCB E-tech Powerpack (i.e., FS25_JCB_Powerpack) - by RossN Mods [FS25_JCB_Powerpack](https://www.farming-simulator.com/mod.php?mod_id=310865&title=fs2025)
+
+## Changelog 0.9.5.7:
+- Reworked jump-start cable system for more reliable behavior.
+The vehicle must be jump-started for 5–15 seconds to start. However, if you turn off the jump-started vehicle and its battery level is still below 10%, it will not start again.
+This should now work correctly in multiplayer as well.
+- Several functions have been relocated. Hopefully they won’t cause any issues, but extensive testing and feedback are needed.
+- The vehicle HUD received a small update. The dashboard icons are now slightly visible even before the engine starts,
+and their brightness increases when the headlights are switched on.
+- github issues#126
+- github issues#124 - Workshop menu bug
+- github issues#121 - FR translation update - thanks by Squallqt
+- github issues#120 - Fixed DashboardLive compatibility issues
+- Fixed missing localization string: “Lépésköz” in RVBMenuPartsSettingsFrame.xml
+- Engine wear below 50 °C is now based on engine load instead of speed: above 70 % load, wear increases until the engine reaches 50 °C
+- Localization files optimized and completed.
+- Update - The following vehicles are “excluded” from RVB mode: https://github.com/MathiasHun/FS25_Real_Vehicle_Breakdowns_Beta/issues/114
+This is a quick release intended for testing, so you can try it before it is made available to the general public.
 
 ## Changelog 0.9.5.6:
 - The difficulty setting has been moved to Gameplay Settings.
