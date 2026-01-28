@@ -64,6 +64,9 @@ A well-documented bug report helps me find and fix issues faster.
 
 This is not a stable release, but meant for testing and feedback collection.
 
+If you experience excessively fast component wear on a server, it is recommended to shut down the vehicles’ engines before time acceleration or sleeping.
+If the issue persists after this, please report it.
+
 Thanks for helping improve the mod!🚜
 </br></br>
 <!--
