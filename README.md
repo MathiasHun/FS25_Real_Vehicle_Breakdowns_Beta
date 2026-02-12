@@ -40,9 +40,9 @@ Please read this before opening a new issue:
 
 If you run into problems, please help improve the mod by following these steps:
 
-1. State your Farming Simulator 25 game version (e.g., FS25: 1.15.0.0)
+1. State your Farming Simulator 25 game version (e.g., FS25: 1.16.0.3)
 
-2. Include the mod version number you are using (e.g., RVB: v0.9.5.6)
+2. Include the mod version number you are using (e.g., RVB: v0.9.5.9)
 
 3. Restart your savegame, and only enable this mod (and any other absolutely essential mods) when reproducing the issue.
 
