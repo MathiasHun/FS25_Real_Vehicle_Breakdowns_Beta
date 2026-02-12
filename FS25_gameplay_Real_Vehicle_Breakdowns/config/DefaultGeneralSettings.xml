@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<rvbGeneralSettings>
+    <alertmessage value="true"/>
+    <vhuddisplay value="false"/>
+    <showtempdisplay value="true"/>
+    <showrpmdisplay value="true"/>
+    <showfueldisplay value="true"/>
+    <showmotorloaddisplay value="true"/>
+    <showdebugisplay value="false"/>
+    <cp_notice value="false"/>
+</rvbGeneralSettings>

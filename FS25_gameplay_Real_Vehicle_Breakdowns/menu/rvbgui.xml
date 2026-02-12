@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<texture>
+   <meta>
+      <filename>hud_icons.dds</filename>
+      <size width="1024" height="1024" />
+   </meta>
+   <slices>
+      <slice id="temperature" uvs="0px 0px 25px 23px" />
+      <slice id="battery" uvs="25px 0px 25px 23px" />
+      <slice id="engine" uvs="50px 0px 25px 23px" />
+      <slice id="lights" uvs="75px 0px 25px 23px" />
+      <slice id="service" uvs="100px 0px 30px 27px" />
+   </slices>
+</texture>

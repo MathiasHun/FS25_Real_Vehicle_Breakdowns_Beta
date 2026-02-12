@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<GUIProfiles>
+    <Profile name="rvb_dialogBg" extends="baseReference" with="pivotMiddleCenter">
+        <size value="831px 353px" />
+        <Variant name="mobile">
+            <size value="1400px 450px" />
+            <position value="0px 54px" />
+            <hasFrame value="false" />
+            <color value="$preset_colorBlack80" />
+        </Variant>
+    </Profile>
+    <Profile name="rvbinfoDialogBg" extends="rvb_dialogBg">
+        <height value="270px" />
+        <Variant name="mobile">
+            <size value="1400px 300px" />
+        </Variant>
+    </Profile>
+    <Profile name="rvb_dialogText" extends="fs25_textDefault" with="anchorTopCenter">
+        <size value="720px 20px" />
+        <position value="0px -145px" />
+        <textSize value="16px" />
+        <textMaxNumLines value="20" />
+        <textAlignment value="left" />
+        <textLineHeightScale value="1.5" />
+        <textVerticalAlignment value="top" />
+        <Variant name="mobile">
+            <textSize value="40px" />
+            <size value="1200px 20px" />
+            <position value="0px -180px" />
+        </Variant>
+    </Profile>
+    <Profile name="rvbinfoDialogText" extends="rvb_dialogText">
+        <Variant name="mobile">
+            <textSize value="40px" />
+            <position value="0px -210px" />
+            <textMaxNumLines value="7" />
+        </Variant>
+    </Profile>
+    <Profile name="fs25_savegameListItemText_rvb" extends="fs25_textDarkHighlight" with="anchorBottomLeft">
+        <size value="550px 40px" />
+        <position value="830px 35px" />
+        <textSize value="20px" />
+        <textBold value="true" />
+        <textLayoutMode value="scrolling" />
+    </Profile>
+</GUIProfiles>

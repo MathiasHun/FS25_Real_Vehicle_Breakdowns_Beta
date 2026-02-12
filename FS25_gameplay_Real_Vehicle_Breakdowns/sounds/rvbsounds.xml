@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<sounds>
+    <dasalert file="sounds/dashboardAlert_mono.ogg" linkNode="0" innerRadius="7.0" outerRadius="60.0">
+        <volume indoor="1.5" outdoor="1.6"/>
+        <pitch indoor="1.0" outdoor="1.0"/>
+        <lowpassGain indoor="1.0" outdoor="1.0"/>
+        <lowpassCutoffFrequency indoor="20000.0" outdoor="20000.0"/>
+        <lowpassResonance indoor="1.0" outdoor="1.0"/>
+    </dasalert>
+    <motormuting file="sounds/silent_400ms.ogg" linkNode="0" innerRadius="7.0" outerRadius="60.0">
+        <volume indoor="1.5" outdoor="1.6"/>
+        <pitch indoor="1.0" outdoor="1.0"/>
+        <lowpassGain indoor="1.0" outdoor="1.0"/>
+        <lowpassCutoffFrequency indoor="20000.0" outdoor="20000.0"/>
+        <lowpassResonance indoor="1.0" outdoor="1.0"/>
+    </motormuting>
+    <self_starter file="sounds/self_starter.ogg" linkNode="0" innerRadius="7.0" outerRadius="60.0">
+        <volume indoor="1.5" outdoor="1.6"/>
+        <pitch indoor="1.0" outdoor="1.0"/>
+        <lowpassGain indoor="1.0" outdoor="1.0"/>
+        <lowpassCutoffFrequency indoor="20000.0" outdoor="20000.0"/>
+        <lowpassResonance indoor="1.0" outdoor="1.0"/>
+    </self_starter>
+    <battery file="sounds/battery_mono.ogg" linkNode="0" innerRadius="7.0" outerRadius="60.0">
+        <volume indoor="0.65" outdoor="1.0"/>
+        <pitch indoor="1.0" outdoor="1.0"/>
+        <lowpassGain indoor="1.0" outdoor="1.0"/>
+        <lowpassCutoffFrequency indoor="20000.0" outdoor="20000.0"/>
+        <lowpassResonance indoor="1.0" outdoor="1.0"/>
+    </battery>
+    <motorStop file="sounds/silent_1s.ogg" linkNode="0" innerRadius="7.0" outerRadius="60.0">
+        <volume indoor="0.65" outdoor="1.0"/>
+        <pitch indoor="1.0" outdoor="1.0"/>
+        <lowpassGain indoor="1.0" outdoor="1.0"/>
+        <lowpassCutoffFrequency indoor="20000.0" outdoor="20000.0"/>
+        <lowpassResonance indoor="1.0" outdoor="1.0"/>
+    </motorStop>
+</sounds>

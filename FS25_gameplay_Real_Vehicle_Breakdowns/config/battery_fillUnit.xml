@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<vehicle type="base" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://validation.gdn.giants-software.com/xml/fs25/vehicle.xsd">
+   <fillUnit>
+      <fillUnitConfigurations>
+         <fillUnitConfiguration>
+            <fillUnits>
+               <fillUnit unitTextOverride=" %" showOnHud="false" showInShop="false" fillTypes="BATTERYCHARGE" capacity="100" startFillType="BATTERYCHARGE" startFillLevel="100">
+                  <!--<exactFillRootNode node="0>0"/>-->
+               </fillUnit>
+            </fillUnits>
+         </fillUnitConfiguration>
+      </fillUnitConfigurations>
+   </fillUnit>
+</vehicle>

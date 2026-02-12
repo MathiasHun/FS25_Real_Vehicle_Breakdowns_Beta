@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<GUI name="rvbMenuSettings">
+    <GuiElement profile="fs25_menuContainer">
+        <GuiElement profile="fs25_menuHeaderPanel">
+            <Bitmap profile="fs25_menuHeaderIconBg">
+                <Bitmap profile="fs25_menuHeaderIcon" id="categoryHeaderIcon" />
+            </Bitmap>
+            <Text profile="fs25_menuHeaderTitle" id="categoryHeaderText" />
+        </GuiElement>
+        <BoxLayout profile="fs25_subCategorySelectorTabbedBox" id="subCategoryBox">
+            <Button profile="fs25_subCategorySelectorTabbedTab" id="subCategoryTabs[1]" text="$l10n_RVB_MenuGameSettingsGame" onClick="onClickGameSettings">
+                <ThreePartBitmap profile="fs25_subCategorySelectorTabbedTabBg" name="background" />
+            </Button>
+            <Button profile="fs25_subCategorySelectorTabbedTab" id="subCategoryTabs[2]" text="$l10n_RVB_MenuGameSettingsGeneral" onClick="onClickGeneralSettings">
+                <ThreePartBitmap profile="fs25_subCategorySelectorTabbedTabBg" name="background" />
+            </Button>
+        </BoxLayout>
+        <ThreePartBitmap profile="fs25_lineSeparatorTopHighlighted" position="0px -57px" />
+        <MultiTextOption profile="fs25_subCategorySelectorTabbed" id="subCategoryPaging" position="0px -10px" onClick="updateSubCategoryPages" />
+        <GuiElement profile="fs25_subCategorySelectorTabbedContainer" id="subCategoryPages[1]">
+            <Text profile="fs25_settingsNoPermissionText" id="gameSettingsNoPermissionText" text="$l10n_ui_settingsNoPermission" />
+            <ScrollingLayout profile="fs25_settingsLayout" id="gameSettingsLayout">
+                <Text profile="fs25_settingsSectionHeader" name="sectionHeader" text="$l10n_RVB_settingSectionHeader_Service" />
+                <Bitmap profile="fs25_multiTextOptionContainer" id="dailyServiceIntervalBox">
+                    <MultiTextOption profile="fs25_settingsMultiTextOption" onClick="onClickDailyServiceInterval" id="multidailyServiceInterval">
+                        <Text profile="fs25_multiTextOptionTooltip" name="ignore" text="$l10n_RVB_toolTip_dailyServiceInterval" />
+                    </MultiTextOption>
+                    <Text profile="fs25_settingsMultiTextOptionTitle" text="$l10n_RVB_setting_dailyServiceInterval" />
+                </Bitmap>
+                <Bitmap profile="fs25_multiTextOptionContainer" id="periodicServiceIntervalBox">
+                    <MultiTextOption profile="fs25_settingsMultiTextOption" onClick="onClickPeriodicServiceInterval" id="multiperiodicServiceInterval">
+                        <Text profile="fs25_multiTextOptionTooltip" name="ignore" text="$l10n_RVB_toolTip_periodicServiceInterval" />
+                    </MultiTextOption>
+                    <Text profile="fs25_settingsMultiTextOptionTitle" text="$l10n_RVB_setting_periodicServiceInterval" />
+                </Bitmap>
+                <Text profile="fs25_settingsSectionHeader" name="sectionHeader" text="$l10n_RVB_settingSectionHeader_Workshop" />
+                <Bitmap profile="fs25_multiTextOptionContainer">
+                    <BinaryOption profile="fs25_settingsBinaryOption" onClick="onClickWorkshopTime" id="checkworkshopTime">
+                        <Text profile="fs25_multiTextOptionTooltip" name="ignore" text="$l10n_RVB_toolTip_workshopTime" />
+                    </BinaryOption>
+                    <Text profile="fs25_settingsMultiTextOptionTitle" text="$l10n_RVB_setting_workshopTime" />
+                </Bitmap>
+                <Bitmap profile="fs25_multiTextOptionContainer">
+                    <MultiTextOption profile="fs25_settingsMultiTextOption" onClick="onClickWorkshopOpen" id="multiworkshopOpen">
+                        <Text profile="fs25_multiTextOptionTooltip" name="ignore" text="$l10n_RVB_toolTip_workshopOpen" />
+                    </MultiTextOption>
+                    <Text profile="fs25_settingsMultiTextOptionTitle" text="$l10n_RVB_setting_workshopOpen" />
+                </Bitmap>
+                <Bitmap profile="fs25_multiTextOptionContainer">
+                    <MultiTextOption profile="fs25_settingsMultiTextOption" onClick="onClickWorkshopClose" id="multiworkshopClose">
+                        <Text profile="fs25_multiTextOptionTooltip" name="ignore" text="$l10n_RVB_toolTip_workshopClose" />
+                    </MultiTextOption>
+                    <Text profile="fs25_settingsMultiTextOptionTitle" text="$l10n_RVB_setting_workshopClose" />
+                </Bitmap>
+                <Bitmap profile="fs25_multiTextOptionContainer">
+                    <MultiTextOption profile="fs25_settingsMultiTextOption" onClick="onClickWorkshopCountMax" id="multiworkshopCountMax">
+                        <Text profile="fs25_multiTextOptionTooltip" name="ignore" text="$l10n_RVB_toolTip_workshopCountMax" />
+                    </MultiTextOption>
+                    <Text profile="fs25_settingsMultiTextOptionTitle" text="$l10n_RVB_setting_workshopCountMax" />
+                </Bitmap>
+                <Text profile="fs25_settingsSectionHeader" name="sectionHeader" text="$l10n_RVB_settingSectionHeader_LifetimeofParts" />
+                <Bitmap profile="fs25_multiTextOptionContainer">
+                    <MultiTextOption profile="fs25_settingsMultiTextOption" onClick="onClickRvbDifficulty" id="multiRvbDifficulty">
+                        <Text profile="fs25_multiTextOptionTooltip" name="ignore" text="$l10n_RVB_toolTip_rvbDifficulty" />
+                    </MultiTextOption>
+                    <Text profile="fs25_settingsMultiTextOptionTitle" text="$l10n_RVB_setting_rvbDifficulty" />
+                </Bitmap>
+                <Bitmap profile="fs25_multiTextOptionContainer">
+                    <MultiTextOption profile="fs25_settingsMultiTextOption" onClick="onClickThermostatLifetime" id="multiThermostatLifetime">
+                        <Text profile="fs25_multiTextOptionTooltip" name="ignore" text="$l10n_RVB_toolTip_lifetimeParts" />
+                    </MultiTextOption>
+                    <Text profile="fs25_settingsMultiTextOptionTitle" text="$l10n_RVB_setting_thermostatLifetime" />
+                </Bitmap>
+                <Bitmap profile="fs25_multiTextOptionContainer">
+                    <MultiTextOption profile="fs25_settingsMultiTextOption" onClick="onClickLightingsLifetime" id="multiLightingsLifetime">
+                        <Text profile="fs25_multiTextOptionTooltip" name="ignore" text="$l10n_RVB_toolTip_lifetimeParts" />
+                    </MultiTextOption>
+                    <Text profile="fs25_settingsMultiTextOptionTitle" text="$l10n_RVB_setting_lightingsLifetime" />
+                </Bitmap>
+                <Bitmap profile="fs25_multiTextOptionContainer">
+                    <MultiTextOption profile="fs25_settingsMultiTextOption" onClick="onClickGlowplugLifetime" id="multiGlowplugLifetime">
+                        <Text profile="fs25_multiTextOptionTooltip" name="ignore" text="$l10n_RVB_toolTip_lifetimeParts" />
+                    </MultiTextOption>
+                    <Text profile="fs25_settingsMultiTextOptionTitle" text="$l10n_RVB_setting_glowplugLifetime" />
+                </Bitmap>
+                <Bitmap profile="fs25_multiTextOptionContainer">
+                    <MultiTextOption profile="fs25_settingsMultiTextOption" onClick="onClickWipersLifetime" id="multiWipersLifetime">
+                        <Text profile="fs25_multiTextOptionTooltip" name="ignore" text="$l10n_RVB_toolTip_lifetimeParts" />
+                    </MultiTextOption>
+                    <Text profile="fs25_settingsMultiTextOptionTitle" text="$l10n_RVB_setting_wipersLifetime" />
+                </Bitmap>
+                <Bitmap profile="fs25_multiTextOptionContainer">
+                    <MultiTextOption profile="fs25_settingsMultiTextOption" onClick="onClickGeneratorLifetime" id="multiGeneratorLifetime">
+                        <Text profile="fs25_multiTextOptionTooltip" name="ignore" text="$l10n_RVB_toolTip_lifetimeParts" />
+                    </MultiTextOption>
+                    <Text profile="fs25_settingsMultiTextOptionTitle" text="$l10n_RVB_setting_generatorLifetime" />
+                </Bitmap>
+                <Bitmap profile="fs25_multiTextOptionContainer">
+                    <MultiTextOption profile="fs25_settingsMultiTextOption" onClick="onClickEngineLifetime" id="multiEngineLifetime">
+                        <Text profile="fs25_multiTextOptionTooltip" name="ignore" text="$l10n_RVB_toolTip_lifetimeParts" />
+                    </MultiTextOption>
+                    <Text profile="fs25_settingsMultiTextOptionTitle" text="$l10n_RVB_setting_engineLifetime" />
+                </Bitmap>
+                <Bitmap profile="fs25_multiTextOptionContainer">
+                    <MultiTextOption profile="fs25_settingsMultiTextOption" onClick="onClickSelfstarterLifetime" id="multiSelfstarterLifetime">
+                        <Text profile="fs25_multiTextOptionTooltip" name="ignore" text="$l10n_RVB_toolTip_lifetimeParts" />
+                    </MultiTextOption>
+                    <Text profile="fs25_settingsMultiTextOptionTitle" text="$l10n_RVB_setting_selfstarterLifetime" />
+                </Bitmap>
+                <Bitmap profile="fs25_multiTextOptionContainer">
+                    <MultiTextOption profile="fs25_settingsMultiTextOption" onClick="onClickBatteryLifetime" id="multiBatteryLifetime">
+                        <Text profile="fs25_multiTextOptionTooltip" name="ignore" text="$l10n_RVB_toolTip_lifetimeParts" />
+                    </MultiTextOption>
+                    <Text profile="fs25_settingsMultiTextOptionTitle" text="$l10n_RVB_setting_batteryLifetime" />
+                </Bitmap>
+                <Bitmap profile="fs25_multiTextOptionContainer">
+                    <MultiTextOption profile="fs25_settingsMultiTextOption" onClick="onClickTireLifetime" id="multiTireLifetime">
+                        <Text profile="fs25_multiTextOptionTooltip" name="ignore" text="$l10n_RVB_toolTip_lifetimeParts" />
+                    </MultiTextOption>
+                    <Text profile="fs25_settingsMultiTextOptionTitle" text="$l10n_RVB_setting_tireLifetime" />
+                </Bitmap>
+            </ScrollingLayout>
+            <Bitmap profile="fs25_settingsTooltipSeparator" id="gameSettingsSeparator" />
+        </GuiElement>
+        <GuiElement profile="fs25_subCategorySelectorTabbedContainer" id="subCategoryPages[2]">
+            <ScrollingLayout profile="fs25_settingsLayout" id="generalSettingsLayout">
+                <Bitmap profile="fs25_multiTextOptionContainer">
+                    <BinaryOption profile="fs25_settingsBinaryOption" onClick="onClickAlertDialog" id="checkAlertDialog">
+                        <Text profile="fs25_multiTextOptionTooltip" name="ignore" text="$l10n_RVB_toolTip_alertDialog" />
+                    </BinaryOption>
+                    <Text profile="fs25_settingsMultiTextOptionTitle" text="$l10n_RVB_setting_alertDialog" />
+                </Bitmap>
+                <Bitmap profile="fs25_multiTextOptionContainer">
+                    <BinaryOption profile="fs25_settingsBinaryOption" onClick="onClickVHud" id="checkVHud">
+                        <Text profile="fs25_multiTextOptionTooltip" name="ignore" text="$l10n_RVB_toolTip_vehicleHud" />
+                    </BinaryOption>
+                    <Text profile="fs25_settingsMultiTextOptionTitle" text="$l10n_RVB_setting_vehicleHud" />
+                </Bitmap>
+                <Text profile="fs25_settingsSectionHeader" name="sectionHeader" text="$l10n_RVB_settingSectionHeader_HUD" />
+                <Bitmap profile="fs25_multiTextOptionContainer" id="showTempBox">
+                    <BinaryOption profile="fs25_settingsBinaryOption" onClick="onClickshowTemp" id="checkshowTemp">
+                        <Text profile="fs25_multiTextOptionTooltip" name="ignore" text="$l10n_RVB_toolTip_showTemp" />
+                    </BinaryOption>
+                    <Text profile="fs25_settingsMultiTextOptionTitle" text="$l10n_RVB_setting_showTemp" />
+                </Bitmap>
+                <Bitmap profile="fs25_multiTextOptionContainer" id="showRpmBox">
+                    <BinaryOption profile="fs25_settingsBinaryOption" onClick="onClickshowRpm" id="checkshowRpm">
+                        <Text profile="fs25_multiTextOptionTooltip" name="ignore" text="$l10n_RVB_toolTip_showRpm" />
+                    </BinaryOption>
+                    <Text profile="fs25_settingsMultiTextOptionTitle" text="$l10n_RVB_setting_showRpm" />
+                </Bitmap>
+                <Bitmap profile="fs25_multiTextOptionContainer" id="showFuelBox">
+                    <BinaryOption profile="fs25_settingsBinaryOption" onClick="onClickshowFuel" id="checkshowFuel">
+                        <Text profile="fs25_multiTextOptionTooltip" name="ignore" text="$l10n_RVB_toolTip_showFuel" />
+                    </BinaryOption>
+                    <Text profile="fs25_settingsMultiTextOptionTitle" text="$l10n_RVB_setting_showFuel" />
+                </Bitmap>
+                <Bitmap profile="fs25_multiTextOptionContainer" id="showMotorLoadBox">
+                    <BinaryOption profile="fs25_settingsBinaryOption" onClick="onClickshowMotorLoad" id="checkshowMotorLoad">
+                        <Text profile="fs25_multiTextOptionTooltip" name="ignore" text="$l10n_RVB_toolTip_showMotorLoad" />
+                    </BinaryOption>
+                    <Text profile="fs25_settingsMultiTextOptionTitle" text="$l10n_RVB_setting_showMotorLoad" />
+                </Bitmap>
+                <Bitmap profile="fs25_multiTextOptionContainer">
+                    <BinaryOption profile="fs25_settingsBinaryOption" onClick="onClickshowDebug" id="checkshowDebug">
+                        <Text profile="fs25_multiTextOptionTooltip" name="ignore" text="$l10n_RVB_toolTip_showdebug" />
+                    </BinaryOption>
+                    <Text profile="fs25_settingsMultiTextOptionTitle" text="$l10n_RVB_setting_showdebug" />
+                </Bitmap>
+            </ScrollingLayout>
+            <Bitmap profile="fs25_settingsTooltipSeparator" />
+        </GuiElement>
+    </GuiElement>
+    <ThreePartBitmap profile="fs25_sliderDockedBg" id="settingsSliderBox">
+        <ThreePartBitmap profile="fs25_sliderDockedBox">
+            <Slider profile="fs25_sliderDocked" id="settingsSlider" dataElementId="generalSettingsLayout" />
+        </ThreePartBitmap>
+    </ThreePartBitmap>
+    <GUIProfiles>
+        <Profile name="fs25_settingsNoPermissionText" extends="fs25_textDefault" with="anchorMiddleStretchingX">
+            <size value="100% 40px" />
+            <textSize value="20px" />
+            <textAlignment value="center" />
+            <textColor value="$preset_fs25_colorMainLight" />
+        </Profile>
+        <Profile name="fs25_settingsPauseButton" extends="emptyPanel" with="anchorMiddleRight">
+            <size value="280px 32px" />
+            <position value="-10px 0px" />
+            <focusOnHighlight value="true" />
+            <textResizeWidth value="200px" />
+            <iconSize value="16px 16px" />
+            <iconTextOffset value="-10px -1px" />
+            <iconSliceId value="gui.pause" />
+            <iconColor value="$preset_fs25_colorMainLight" />
+            <iconFocusedColor value="$preset_fs25_colorMainDark" />
+            <iconHighlightedColor value="$preset_fs25_colorMainLight" />
+            <textSize value="16px" />
+            <textBold value="true" />
+            <textUpperCase value="true" />
+            <textAlignment value="center" />
+            <textColor value="$preset_fs25_colorMainLight" />
+            <textDisabledColor value="$preset_colorDisabled" />
+            <textFocusedColor value="$preset_fs25_colorMainDark" />
+        </Profile>
+        <Profile name="fs25_settingsUnpauseButton" extends="fs25_settingsPauseButton">
+            <iconSliceId value="gui.play" />
+        </Profile>
+        <Profile name="fs25_settingsTextInput" extends="fs25_textInput" with="anchorMiddleRight">
+            <position value="-41px 0px" />
+        </Profile>
+    </GUIProfiles>
+</GUI>

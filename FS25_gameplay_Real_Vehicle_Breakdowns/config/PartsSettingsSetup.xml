@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Parts>
+   <Part name="THERMOSTAT" lifetime="150" operatingHours="0.000000" repairreq="false" prefault="empty" fault="empty" cost="0"/>
+   <Part name="LIGHTINGS" lifetime="220" operatingHours="0.000000" repairreq="false" prefault="empty" fault="empty" cost="0"/>
+   <Part name="GLOWPLUG" lifetime="2" operatingHours="0.000000" repairreq="false" prefault="empty" fault="empty" cost="0"/>
+   <Part name="WIPERS" lifetime="80" operatingHours="0.000000" repairreq="false" prefault="empty" fault="empty" cost="0"/>
+   <Part name="GENERATOR" lifetime="180" operatingHours="0.000000" repairreq="false" prefault="empty" fault="empty" cost="0"/>
+   <Part name="ENGINE" lifetime="210" operatingHours="0.000000" repairreq="false" prefault="empty" fault="empty" cost="0"/>
+   <Part name="SELFSTARTER" lifetime="3" operatingHours="0.000000" repairreq="false" prefault="empty" fault="empty" cost="0"/>
+   <Part name="BATTERY" lifetime="140" operatingHours="0.000000" repairreq="false" prefault="empty" fault="empty" cost="0"/>
+   <Part name="TIREFL" lifetime="130" operatingHours="0.000000" repairreq="false" prefault="empty" fault="empty" cost="0"/>
+   <Part name="TIREFR" lifetime="130" operatingHours="0.000000" repairreq="false" prefault="empty" fault="empty" cost="0"/>
+   <Part name="TIRERL" lifetime="130" operatingHours="0.000000" repairreq="false" prefault="empty" fault="empty" cost="0"/>
+   <Part name="TIRERR" lifetime="130" operatingHours="0.000000" repairreq="false" prefault="empty" fault="empty" cost="0"/>
+</Parts>

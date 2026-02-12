@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<map xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://validation.gdn.giants-software.com/xml/fs25/fillTypes.xsd">
+   <fillTypes>
+      <fillType name="BATTERYCHARGE" title="$l10n_RVB_faultText_BATTERY" showOnPriceTable="false" isBulkType="true" unitShort="%">
+         <physics massPerLiter="0.00" maxPhysicalSurfaceAngle="0"/>
+         <economy pricePerLiter="0.35"/>
+         <image hud="menu/hud/fillTypes/hud_fill_batteryCharge.dds"/>
+      </fillType>
+   </fillTypes>
+   <fillTypeCategories>
+      <fillTypeCategory name="PRODUCT_BGA">BATTERYCHARGE</fillTypeCategory>
+   </fillTypeCategories>
+</map>

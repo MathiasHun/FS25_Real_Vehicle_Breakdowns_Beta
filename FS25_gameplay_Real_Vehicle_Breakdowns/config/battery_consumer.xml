@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<vehicle type="base" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="$data/shared/xml/schema/vehicle.xsd">
+   <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
+   <motorized>
+      <consumerConfigurations>
+         <consumerConfiguration>
+            <consumer fillUnitIndex="4" fillType="batteryCharge" usage="12"/>
+         </consumerConfiguration>
+      </consumerConfigurations>
+   </motorized>
+</vehicle>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<vehicle type="palletbattery" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://validation.gdn.giants-software.com/xml/fs25/vehicle.xsd">
+    <annotation>RossN Mods, All Rights Reserved.</annotation>
+
+    <storeData>
+        <name>Powerpack 1.50QE</name>
+        <functions>
+            <function>$l10n_function_powerpack</function>
+        </functions>
+        <specs>
+            <capacity>46</capacity>
+            <fillTypes>BATTERYCHARGE</fillTypes>
+            <weight ignore="true"/>
+        </specs>
+        <image>../FS25_JCB_Powerpack/store_powerpack.dds</image>
+        <price>4980</price>
+        <lifetime>600</lifetime>
+        <rotation>0</rotation>
+        <brand>JCB</brand>
+        <category>misc</category>
+        <shopTranslationOffset>0 0 0</shopTranslationOffset>
+        <shopRotationOffset>0 0 0</shopRotationOffset>
+        <vertexBufferMemoryUsage>87808</vertexBufferMemoryUsage>
+        <indexBufferMemoryUsage>22272</indexBufferMemoryUsage>
+        <textureMemoryUsage>851968</textureMemoryUsage>
+        <audioMemoryUsage>0</audioMemoryUsage>
+        <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
+        <instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
+    </storeData>
+
+    <base><!--$moddir$FS25_JCB_Powerpack/-->
+        <typeDesc>$l10n_typeDesc_trailer</typeDesc>
+        <filename>../FS25_JCB_Powerpack/etechPowerpack.i3d</filename>
+        <size width="1.2" length="1.2" height="1.2" />
+        <components maxMass="850">
+            <component centerOfMass="0 0.1 0" solverIterationCount="10" mass="100" />
+        </components>
+        <mapHotspot type="TOOL" />
+    </base>
+
+    <fillUnit>
+        <fillUnitConfigurations>
+            <fillUnitConfiguration>
+                <!--<fillUnits>-->
+            <fillUnits removeVehicleIfEmpty="true">
+                    <fillUnit unitTextOverride="$l10n_unit_literShort" fillTypes="BATTERYCHARGE" capacity="46" startFillType="BATTERYCHARGE" startFillLevel="46" ignoreFillLimit="true">
+    <dashboard displayType="TEXT" valueType="fillLevel" node="fillDisplay" textSize="0.008" textMask="00000" font="GENERIC" textAlignment="CENTER" idleValue="-1"/>
+                        <exactFillRootNode node="exactFillRootNodeFuel"/>
+                    </fillUnit>
+                </fillUnits>
+            </fillUnitConfiguration>
+        </fillUnitConfigurations>
+    <sounds>
+            <fill template="electricChargingStation"/>
+        </sounds>
+    </fillUnit>
+
+    <fillTriggerVehicle triggerNode="fillTrigger" fillUnitIndex="1" litersPerSecond="1"/>
+
+    <enterable isTabbable="false" >
+<enterReferenceNode node="powerpack_main_component1" interactionRadius="2" />
+<exitPoint node="exitPoint" />
+    <cameras>
+            <camera node="outdoorCamera" rotatable="false" rotateNode="outdoorCamera" limit="true" useWorldXZRotation="false" rotMinX="0" rotMaxX="0" transMin="0" transMax="0" />
+        </cameras>
+</enterable>
+
+    <dischargeable requiresTipOcclusionArea="false">
+        <dischargeNode node="dischargeNode" emptySpeed="1" fillUnitIndex="1" canDischargeToGround="false" allowAIDischarge="true">
+            <info width="1.0" length="1.0" zOffset="0" />
+            <trigger node="dischargeTrigger" />
+        </dischargeNode>
+    </dischargeable>
+
+    <dynamicMount triggerNode="dynamicMountTrigger" triggerForceAcceleration="5" additionalMountDistance="0.7" jointTransY="0.11" jointLimitToRotY="true"/>
+
+    <tensionBeltObject>
+        <meshNodes>
+            <meshNode node="main_vis"/>
+        </meshNodes>
+    </tensionBeltObject>
+
+    <tipOccluder>
+        <occlusionArea start="tipOcclusionArea1Start" width="tipOcclusionArea1Width" height="tipOcclusionArea1Height"/>
+    </tipOccluder>
+
+
+	<ai>
+        <agentAttachment width="1" height="1" length="1" lengthOffset="0"/>
+    </ai>
+
+    <foliageBending>
+        <bendingNode minX="-0.6" maxX="0.6" minZ="-0.6" maxZ="0.6" yOffset="0.02"/>
+    </foliageBending>
+
+    <wearable wearDuration="480" workMultiplier="5" fieldMultiplier="2"/>
+    <washable dirtDuration="90" washDuration="1" workMultiplier="2" fieldMultiplier="2"/>
+
+
+    <i3dMappings>
+        <i3dMapping id="powerpack_main_component1" node="0>" />
+        <i3dMapping id="outdoorCamera" node="0>0|0|0" />
+        <i3dMapping id="main_vis" node="0>0|1|1" />
+        <i3dMapping id="fillDisplay" node="0>0|2" />
+        <i3dMapping id="exitPoint" node="0>0|3" />
+        <i3dMapping id="dynamicMountTrigger" node="0>0|4|0" />
+        <i3dMapping id="fillTrigger" node="0>0|4|1" />
+        <i3dMapping id="dischargeNode" node="0>0|4|2" />
+        <i3dMapping id="dischargeTrigger" node="0>0|4|3" />
+        <i3dMapping id="exactFillRootNodeFuel" node="0>0|5" />
+        <i3dMapping id="tipOcclusionAreas" node="0>0|6" />
+        <i3dMapping id="tipOcclusionArea1Start" node="0>0|6|0" />
+        <i3dMapping id="tipOcclusionArea1Width" node="0>0|6|1" />
+        <i3dMapping id="tipOcclusionArea1Height" node="0>0|6|2" />
+        <i3dMapping id="floorCol2" node="0>2|0" />
+        <i3dMapping id="floorCol1" node="0>2|1" />
+    </i3dMappings>
+</vehicle>

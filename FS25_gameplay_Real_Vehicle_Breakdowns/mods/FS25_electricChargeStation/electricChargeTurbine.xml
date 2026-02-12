@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<placeable type="chargingWindTurbine" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../shared/xml/schema/placeable.xsd">
+   <storeData>
+      <name>$l10n_electricChargeTurbine</name>
+      <functions>
+         <function>$l10n_function_chargingStation</function>
+      </functions>
+      <image>../FS25_electricChargeStation/store/store_electricChargeTurbine.dds</image>
+      <price>26400</price>
+      <dailyUpkeep>10</dailyUpkeep>
+      <lifetime>1000</lifetime>
+      <rotation>0</rotation>
+      <brand>NONE</brand>
+      <species>PLACEABLE</species>
+      <category>placeableMisc</category>
+      <brush>
+         <type>placeable</type>
+         <category>buildings</category>
+         <tab>tools</tab>
+      </brush>
+      <canBeSold>true</canBeSold>
+      <showInStore>true</showInStore>
+      <vertexBufferMemoryUsage>188672</vertexBufferMemoryUsage>
+      <indexBufferMemoryUsage>35840</indexBufferMemoryUsage>
+      <textureMemoryUsage>327680</textureMemoryUsage>
+      <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
+      <instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
+      <storeIconRendering>
+         <settings cameraYRot="28" advancedBoundingBox="true"/>
+      </storeIconRendering>
+      <audioMemoryUsage>0</audioMemoryUsage>
+   </storeData>
+   <base>
+      <filename>../FS25_electricChargeStation/electricChargeStation.i3d</filename>
+      <canBeRenamed>true</canBeRenamed>
+   </base>
+   <placement useRandomYRotation="false" useManualYRotation="true" >
+      <testAreas>
+         <testArea startNode="testAreaStart01" endNode="testAreaEnd01" />
+      </testAreas>
+      <sounds>
+         <place template="siloImp" pitchScale="1.2"/>
+      </sounds>
+   </placement>
+   <clearAreas>
+      <clearArea startNode="clearAreaStart01" widthNode="clearAreaWidth01" heightNode="clearAreaHeight01"/>
+   </clearAreas>
+   <leveling requireLeveling="true" maxSmoothDistance="1" maxSlope="75" maxEdgeAngle="30">
+      <levelAreas>
+         <levelArea startNode="levelAreaStart01" widthNode="levelAreaWidth01" heightNode="levelAreaHeight01"/>
+      </levelAreas>
+      <paintAreas/>
+   </leveling>
+   <indoorAreas/>
+   <tipOcclusionUpdateAreas>
+      <tipOcclusionUpdateArea startNode="tipOcclusionUpdateAreaStart01" endNode="tipOcclusionUpdateAreaEnd01" />
+   </tipOcclusionUpdateAreas>
+   <ai>
+      <updateAreas>
+         <updateArea startNode="tipOcclusionUpdateAreaStart01" endNode="tipOcclusionUpdateAreaEnd01" />
+      </updateAreas>
+   </ai>
+   <chargingStation>
+      <chargeIndicator node="chargeFlash" light="chargeLight" blinkSpeed="0.75"/>
+      <sounds>
+         <fill template="electricChargingStation" innerRadius="5" outerRadius="30" volumeScale="1" pitchScale="1" />
+      </sounds>
+   </chargingStation>
+   <buyingStation node="chargeTrigger" supportsExtension="false">
+      <loadTrigger triggerNode="chargeTrigger" fillTypes="ELECTRICCHARGE BATTERYCHARGE" fillLitersPerSecond="1" autoStart="true" infiniteCapacity="true" startFillText="$l10n_action_startCharging" stopFillText="$l10n_action_stopCharging"/>
+      <fillType name="electricCharge batteryCharge" priceScale="0"/>
+   </buyingStation>
+   <hotspots>
+      <hotspot type="ELECTRICITY" linkNode="hotspotNode" teleportNode="teleportNode" />
+   </hotspots>
+   <windTurbine optimalWindSpeed="10" incomePerHour="0">
+      <animationNodes>
+         <animationNode node="rotationNode" rotSpeed="240" rotAxis="2" />
+      </animationNodes>
+      <sounds>
+         <idle template="generator05" innerRadius="5" outerRadius="25" volumeScale="1" pitchScale="1.3"/>
+      </sounds>
+   </windTurbine>
+   <i3dMappings>
+      <i3dMapping id="clearAreaStart01" node="0>0|0" />
+      <i3dMapping id="clearAreaWidth01" node="0>0|0|0" />
+      <i3dMapping id="clearAreaHeight01" node="0>0|0|1" />
+      <i3dMapping id="levelAreaStart01" node="0>1|0" />
+      <i3dMapping id="levelAreaWidth01" node="0>1|0|0" />
+      <i3dMapping id="levelAreaHeight01" node="0>1|0|1" />
+      <i3dMapping id="testAreaStart01" node="0>2|0" />
+      <i3dMapping id="testAreaEnd01" node="0>2|0|0" />
+      <i3dMapping id="tipOcclusionUpdateAreaStart01" node="0>3|0" />
+      <i3dMapping id="tipOcclusionUpdateAreaEnd01" node="0>3|0|0" />
+      <i3dMapping id="chargeLight" node="0>4|0" />
+      <i3dMapping id="chargeTrigger" node="0>5|0" />
+      <i3dMapping id="hotspotNode" node="0>5|1" />
+      <i3dMapping id="teleportNode" node="0>5|2" />
+      <i3dMapping id="chargeFlash" node="0>6|0" />
+      <i3dMapping id="tipCollision" node="0>7|1" />
+      <i3dMapping id="rotationNode" node="0>8|0|0|0" />
+   </i3dMappings>
+</placeable>

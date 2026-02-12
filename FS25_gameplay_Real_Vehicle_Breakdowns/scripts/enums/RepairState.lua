@@ -1,0 +1,6 @@
+REPAIR_STATE = {
+	NONE		= 1,
+	ACTIVE		= 2,
+	PAUSED		= 3
+}
+Enum(REPAIR_STATE)

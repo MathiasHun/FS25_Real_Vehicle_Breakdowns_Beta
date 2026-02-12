@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<texture>
+   <meta>
+      <filename>debugHud.dds</filename>
+      <size width="1024" height="1024" />
+   </meta>
+   <slices>
+      <slice id="debugBg" uvs="3px 3px 247px 232px" />
+      <slice id="debugBgRight" uvs="254px 3px 23px 232px" />
+      <slice id="debugBgScale" uvs="249px 3px 5px 232px" />
+   </slices>
+</texture>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GUI onOpen="onOpen" onClose="onClose" onCreate="onCreate">
+    <GuiElement profile="newLayer"/>
+    <Bitmap profile="dialogFullscreenBg" id="dialogBg"/>
+    <GuiElement profile="rvbinfoDialogBg" id="dialogElement">
+        <ThreePartBitmap profile="fs25_dialogBgMiddleSmall"/>
+        <ThreePartBitmap profile="fs25_dialogBgTopSmall"/>
+        <ThreePartBitmap profile="fs25_dialogBgBottom"/>
+        <GuiElement profile="fs25_dialogContentContainer">
+            <Animation profile="fs25_dialogLoading" id="iconLoadingElement"/>
+            <Bitmap profile="fs25_dialogCircle" id="dialogCircle">
+                <Bitmap profile="fs25_dialogQuestion" id="iconQuestionElement"/>
+                <Bitmap profile="fs25_dialogWarning" id="iconWarningElement"/>
+                <Bitmap profile="fs25_dialogKey" id="iconKeyElement"/>
+                <Bitmap profile="fs25_dialogInfo" id="iconInfoElement"/>
+            </Bitmap>
+            <Text profile="rvbinfoDialogText" text="" id="dialogTextElement"/>
+        </GuiElement>
+        <BoxLayout profile="fs25_dialogButtonBox">
+            <Button profile="buttonOK" text="$l10n_button_ok" onClick="onClickOk" id="okButton"/>
+        </BoxLayout>
+    </GuiElement>
+</GUI>

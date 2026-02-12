@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<GUI name="rvbMenuPartsSettings">
+    <GuiElement profile="fs25_menuContainer">
+        <GuiElement profile="fs25_menuHeaderPanel">
+            <Bitmap profile="fs25_menuHeaderIconBg">
+                <Bitmap profile="fs25_menuHeaderIcon" id="categoryHeaderIcon"/>
+            </Bitmap>
+            <Text profile="fs25_menuHeaderTitle" id="categoryHeaderText" text="$l10n_RVB_MenuGamePartsSettings"/>
+        </GuiElement>
+        <BoxLayout profile="rvb_boxLayout" id="boxLayout">
+            <MultiTextOption profile="rvb_multiTextOption_First_line" id="textInputPercentStep" onClick="onClickPercentStep">
+                <ThreePartBitmap profile="rvb_multiTextOptionBg" name="background">
+                    <ThreePartBitmap profile="rvb_outlineBg"/>
+                </ThreePartBitmap>
+                <Text profile="rvb_title" name="ignore" id="textFillUnitFillLevelTitleW" text="$l10n_RVB_Parts_stepInterval"/>
+            </MultiTextOption>
+            <MultiTextOption profile="rvb_multiTextOption_First_line" id="textInputCurrentTHERMOSTATLifetime">
+                <ThreePartBitmap profile="rvb_multiTextOptionBg" name="background">
+                    <ThreePartBitmap profile="rvb_outlineBg"/>
+                </ThreePartBitmap>
+                <Text profile="rvb_title" name="ignore" id="textCurrentTHERMOSTAT" text="$l10n_RVB_Parts_currentValue"/>
+            </MultiTextOption>
+            <MultiTextOption profile="rvb_multiTextOption" id="textInputTHERMOSTATPercent">
+                <ThreePartBitmap profile="rvb_multiTextOptionBg" name="background">
+                    <ThreePartBitmap profile="rvb_outlineBg"/>
+                </ThreePartBitmap>
+                <Text profile="rvb_title" name="ignore" id="textRemainingTHERMOSTAT" text="$l10n_RVB_Parts_remainingValue"/>
+            </MultiTextOption>
+            <Button profile="rvb_buttonClose" id="buttonConfirmCondition" onClick="onClickConfirmThermostatLifetime">
+                <ThreePartBitmap profile="rvb_buttonBg"/>
+                <ThreePartBitmap profile="rvb_outlineBg"/>
+            </Button>
+            <MultiTextOption profile="rvb_multiTextOption" id="textInputCurrentLIGHTINGSLifetime">
+                <ThreePartBitmap profile="rvb_multiTextOptionBg" name="background">
+                    <ThreePartBitmap profile="rvb_outlineBg"/>
+                </ThreePartBitmap>
+                <Text profile="rvb_title" name="ignore" id="textCurrentLIGHTINGS" text="$l10n_RVB_Parts_currentValue"/>
+            </MultiTextOption>
+            <MultiTextOption profile="rvb_multiTextOption" id="textInputLIGHTINGSPercent">
+                <ThreePartBitmap profile="rvb_multiTextOptionBg" name="background">
+                    <ThreePartBitmap profile="rvb_outlineBg"/>
+                </ThreePartBitmap>
+                <Text profile="rvb_title" name="ignore" id="textRemainingLIGHTINGS" text="$l10n_RVB_Parts_remainingValue"/>
+            </MultiTextOption>
+            <Button profile="rvb_buttonClose" id="buttonConfirmCondition" onClick="onClickConfirmLightingsLifetime">
+                <ThreePartBitmap profile="rvb_buttonBg"/>
+                <ThreePartBitmap profile="rvb_outlineBg"/>
+            </Button>
+            <MultiTextOption profile="rvb_multiTextOption" id="textInputCurrentGLOWPLUGLifetime">
+                <ThreePartBitmap profile="rvb_multiTextOptionBg" name="background">
+                    <ThreePartBitmap profile="rvb_outlineBg"/>
+                </ThreePartBitmap>
+                <Text profile="rvb_title" name="ignore" id="textCurrentGLOWPLUG" text="$l10n_RVB_Parts_currentValue"/>
+            </MultiTextOption>
+            <MultiTextOption profile="rvb_multiTextOption" id="textInputGLOWPLUGPercent">
+                <ThreePartBitmap profile="rvb_multiTextOptionBg" name="background">
+                    <ThreePartBitmap profile="rvb_outlineBg"/>
+                </ThreePartBitmap>
+                <Text profile="rvb_title" name="ignore" id="textRemainingGLOWPLUG" text="$l10n_RVB_Parts_remainingValue"/>
+            </MultiTextOption>
+            <Button profile="rvb_buttonClose" id="buttonConfirmCondition" onClick="onClickConfirmGlowplugLifetime">
+                <ThreePartBitmap profile="rvb_buttonBg"/>
+                <ThreePartBitmap profile="rvb_outlineBg"/>
+            </Button>
+            <MultiTextOption profile="rvb_multiTextOption_sec_column" id="textInputCurrentWIPERSLifetime">
+                <ThreePartBitmap profile="rvb_multiTextOptionBg" name="background">
+                    <ThreePartBitmap profile="rvb_outlineBg"/>
+                </ThreePartBitmap>
+                <Text profile="rvb_title" name="ignore" id="textCurrentWIPERS" text="$l10n_RVB_Parts_currentValue"/>
+            </MultiTextOption>
+            <MultiTextOption profile="rvb_multiTextOption" id="textInputWIPERSPercent">
+                <ThreePartBitmap profile="rvb_multiTextOptionBg" name="background">
+                    <ThreePartBitmap profile="rvb_outlineBg"/>
+                </ThreePartBitmap>
+                <Text profile="rvb_title" name="ignore" id="textRemainingWIPERS" text="$l10n_RVB_Parts_remainingValue"/>
+            </MultiTextOption>
+            <Button profile="rvb_buttonClose" id="buttonConfirmCondition" onClick="onClickConfirmWipersLifetime">
+                <ThreePartBitmap profile="rvb_buttonBg"/>
+                <ThreePartBitmap profile="rvb_outlineBg"/>
+            </Button>
+            <MultiTextOption profile="rvb_multiTextOption" id="textInputCurrentGENERATORLifetime">
+                <ThreePartBitmap profile="rvb_multiTextOptionBg" name="background">
+                    <ThreePartBitmap profile="rvb_outlineBg"/>
+                </ThreePartBitmap>
+                <Text profile="rvb_title" name="ignore" id="textCurrentGENERATOR" text="$l10n_RVB_Parts_currentValue"/>
+            </MultiTextOption>
+            <MultiTextOption profile="rvb_multiTextOption" id="textInputGENERATORPercent">
+                <ThreePartBitmap profile="rvb_multiTextOptionBg" name="background">
+                    <ThreePartBitmap profile="rvb_outlineBg"/>
+                </ThreePartBitmap>
+                <Text profile="rvb_title" name="ignore" id="textRemainingGENERATOR" text="$l10n_RVB_Parts_remainingValue"/>
+            </MultiTextOption>
+            <Button profile="rvb_buttonClose" id="buttonConfirmCondition" onClick="onClickConfirmGeneratorLifetime">
+                <ThreePartBitmap profile="rvb_buttonBg"/>
+                <ThreePartBitmap profile="rvb_outlineBg"/>
+            </Button>
+            <MultiTextOption profile="rvb_multiTextOption" id="textInputCurrentENGINELifetime">
+                <ThreePartBitmap profile="rvb_multiTextOptionBg" name="background">
+                    <ThreePartBitmap profile="rvb_outlineBg"/>
+                </ThreePartBitmap>
+                <Text profile="rvb_title" name="ignore" id="textCurrentENGINE" text="$l10n_RVB_Parts_currentValue"/>
+            </MultiTextOption>
+            <MultiTextOption profile="rvb_multiTextOption" id="textInputENGINEPercent">
+                <ThreePartBitmap profile="rvb_multiTextOptionBg" name="background">
+                    <ThreePartBitmap profile="rvb_outlineBg"/>
+                </ThreePartBitmap>
+                <Text profile="rvb_title" name="ignore" id="textRemainingENGINE" text="$l10n_RVB_Parts_remainingValue"/>
+            </MultiTextOption>
+            <Button profile="rvb_buttonClose" id="buttonConfirmCondition" onClick="onClickConfirmEngineLifetime">
+                <ThreePartBitmap profile="rvb_buttonBg"/>
+                <ThreePartBitmap profile="rvb_outlineBg"/>
+            </Button>
+            <MultiTextOption profile="rvb_multiTextOption_sec_column" id="textInputCurrentSELFSTARTERLifetime">
+                <ThreePartBitmap profile="rvb_multiTextOptionBg" name="background">
+                    <ThreePartBitmap profile="rvb_outlineBg"/>
+                </ThreePartBitmap>
+                <Text profile="rvb_title" name="ignore" id="textCurrentSELFSTARTER" text="$l10n_RVB_Parts_currentValue"/>
+            </MultiTextOption>
+            <MultiTextOption profile="rvb_multiTextOption" id="textInputSELFSTARTERPercent">
+                <ThreePartBitmap profile="rvb_multiTextOptionBg" name="background">
+                    <ThreePartBitmap profile="rvb_outlineBg"/>
+                </ThreePartBitmap>
+                <Text profile="rvb_title" name="ignore" id="textRemainingSELFSTARTER" text="$l10n_RVB_Parts_remainingValue"/>
+            </MultiTextOption>
+            <Button profile="rvb_buttonClose" id="buttonConfirmCondition" onClick="onClickConfirmSelfstarterLifetime">
+                <ThreePartBitmap profile="rvb_buttonBg"/>
+                <ThreePartBitmap profile="rvb_outlineBg"/>
+            </Button>
+            <MultiTextOption profile="rvb_multiTextOption" id="textInputCurrentBATTERYLifetime">
+                <ThreePartBitmap profile="rvb_multiTextOptionBg" name="background">
+                    <ThreePartBitmap profile="rvb_outlineBg"/>
+                </ThreePartBitmap>
+                <Text profile="rvb_title" name="ignore" id="textCurrentBATTERY" text="$l10n_RVB_Parts_currentValue"/>
+            </MultiTextOption>
+            <MultiTextOption profile="rvb_multiTextOption" id="textInputBATTERYPercent">
+                <ThreePartBitmap profile="rvb_multiTextOptionBg" name="background">
+                    <ThreePartBitmap profile="rvb_outlineBg"/>
+                </ThreePartBitmap>
+                <Text profile="rvb_title" name="ignore" id="textRemainingBATTERY" text="$l10n_RVB_Parts_remainingValue"/>
+            </MultiTextOption>
+            <Button profile="rvb_buttonClose" id="buttonConfirmCondition" onClick="onClickConfirmBatteryLifetime">
+                <ThreePartBitmap profile="rvb_buttonBg"/>
+                <ThreePartBitmap profile="rvb_outlineBg"/>
+            </Button>
+        </BoxLayout>
+    </GuiElement>
+    <GUIProfiles>
+        <Profile name="rvb_boxLayout" extends="emptyPanel" with="anchorTopLeft">
+            <position value="0px -31px"/>
+            <size value="1550px 710px"/>
+            <fitFlowToElements value="true"/>
+            <flowDirection value="vertical" />
+            <numFlows value="3"/>
+            <wrapAround value="true"/>
+        </Profile>
+        <Profile name="rvb_multiTextOptionLeft" extends="buttonBase" with="anchorStretchingYLeft">
+            <size value="40px 100%" />
+            <clickSound value="NONE" />
+            <sendActionOnRelease value="false" />
+            <iconRotation value="180" />
+            <iconSize value="7px 8px" />
+            <iconTextOffset value="-7px 0px" />
+            <iconSliceId value="gui.3dShop_arrow" />
+            <iconColor value="$preset_fs25_colorMainLight_80" />
+            <iconHighlightedColor value="$preset_fs25_colorMainHighlight" />
+            <iconFocusedColor value="$preset_fs25_colorMainHighlight" />
+            <iconPressedColor value="$preset_fs25_colorMainLight" />
+            <iconDisabledColor value="$preset_fs25_colorMainLight_80" />
+            <imageSliceId value="noSlice" />
+            <imageColor value="0 0 0 0" />
+            <imageHighlightedColor value="0 0 0 0" />
+            <imageFocusedColor value="0 0 0 0" />
+            <imageSelectedColor value="0 0 0 0" />
+            <imageDisabledColor value="0 0 0 0" />
+        </Profile>
+        <Profile name="rvb_multiTextOptionRight" extends="rvb_multiTextOptionLeft" with="anchorStretchingYRight">
+            <iconRotation value="0" />
+            <iconTextOffset value="7px 0px" />
+        </Profile>
+        <Profile name="rvb_title" extends="baseReference" with="anchorMiddleLeft">
+            <size value="210px 18px"/>
+            <position value="12px 31px"/>
+            <textSize value="18px"/>
+            <textAlignment value="left"/>
+            <textMaxWidth value="295px"/>
+            <textMinSize value="10px"/>
+            <textMaxNumLines value="1"/>
+            <textAutoWidth value="true"/>
+            <textLayoutMode value="resize"/>
+            <textAutoWidth value="true"/>
+            <textColor value="$preset_fs25_colorMainLight"/>
+        </Profile>
+        <Profile name="rvb_multiTextOption" extends="baseReference">
+            <size value="316px 36px"/>
+            <margin value="43px 20px 43px 20px"/>
+            <hideButtonOnLimitReached value="false"/>
+            <wrap value="true"/>
+            <autoAddDefaultElements value="true"/>
+            <defaultProfileButtonLeft value="rvb_multiTextOptionLeft"/>
+            <defaultProfileButtonRight value="rvb_multiTextOptionRight"/>
+            <defaultProfileText value="rvb_multiTextOptionText"/>
+        </Profile>
+        <Profile name="rvb_multiTextOption_First_line" extends="rvb_multiTextOption">
+            <margin value="43px 30px 43px 20px"/>
+        </Profile>
+        <Profile name="rvb_multiTextOption_sec_column" extends="rvb_multiTextOption">
+            <margin value="43px 116px 43px 20px"/>
+        </Profile>
+        <Profile name="rvb_multiTextOptionText" extends="rvb_textDefault" with="anchorStretchingYStretchingX">
+            <size value="100% 100%"/>
+            <absoluteSizeOffset value="50px 0px"/>
+            <textSize value="16px"/>
+            <textMaxNumLines value="1"/>
+            <textUpperCase value="true"/>
+            <textAlignment value="center"/>
+            <textLayoutMode value="scrolling"/>
+            <textScrollOnFocusOnly value="true"/>
+            <textColor value="$preset_fs25_colorMainLight"/>
+            <textDisabledColor value="$preset_fs25_colorMainLight_80"/>
+        </Profile>
+        <Profile name="rvb_textDefault" extends="baseReference">
+            <size value="250px 20px"/>
+            <textSize value="15px"/>
+            <textAlignment value="left"/>
+            <textColor value="$preset_fs25_colorMainLight"/>
+            <textDisabledColor value="$preset_colorDisabled"/>
+        </Profile>
+        <Profile name="rvb_multiTextOptionBg" extends="rvb_binaryOptionBg"> <!-- fs25_multiTextOptionBg -->
+            <imageDisabledColor value="$preset_fs25_colorMainDark"/>
+            <startImageDisabledColor value="$preset_fs25_colorMainDark"/>
+            <endImageDisabledColor value="$preset_fs25_colorMainDark"/>
+        </Profile>
+        <Profile name="rvb_binaryOptionBg" extends="baseReference" with="anchorStretchingYStretchingX">
+            <imageSliceId value="gui.3dShop_button_middle"/>
+            <imageColor value="$preset_fs25_colorGrey"/> 
+            <startImageSize value="10px 0"/>
+            <startImageSliceId value="gui.3dShop_button_left"/>
+            <startImageColor value="$preset_fs25_colorGrey"/>
+            <endImageSize value="10px 0"/>
+            <endImageSliceId value="gui.3dShop_button_right"/>
+            <endImageColor value="$preset_fs25_colorGrey"/>
+        </Profile>
+        <Profile name="rvb_outlineBg" extends="baseReference" with="pivotMiddleLeft">
+            <size value="316px 36px"/>
+            <imageColor value="$preset_fs25_colorGrey" />
+            <imageFocusedColor value="$preset_fs25_colorMainHighlight" />
+            <imageHighlightedColor value="$preset_fs25_colorMainHighlight"/>
+            <imageDisabledColor value="$preset_fs25_colorMainDark" />
+            <imageSliceId value="gui.3dShop_button_outline_middle" />
+            <startImageSize value="6px 0" />
+            <startImageColor value="$preset_fs25_colorGrey" />
+            <startImageFocusedColor value="$preset_fs25_colorMainHighlight" />
+            <startImageHighlightedColor value="$preset_fs25_colorMainHighlight"/>
+            <startImageDisabledColor value="$preset_fs25_colorMainDark" />
+            <startImageSliceId value="gui.3dShop_button_outline_left" />
+            <endImageSize value="6px 0" />
+            <endImageColor value="$preset_fs25_colorGrey" />
+            <endImageFocusedColor value="$preset_fs25_colorMainHighlight" />
+            <endImageHighlightedColor value="$preset_fs25_colorMainHighlight"/>
+            <endImageDisabledColor value="$preset_fs25_colorMainDark" />
+            <endImageSliceId value="gui.3dShop_button_outline_right" />
+        </Profile>
+        <Profile name="rvb_button" extends="emptyPanel" with="anchorMiddleRight">
+            <size value="316px 36px"/>
+            <margin value="43px 24px 43px 24px"/>
+            <iconSize value="22px 22px"/>
+            <iconTextOffset value="0px -1px"/>
+            <iconSliceId value="gui.tick"/>
+            <iconColor value="$preset_fs25_colorMainLight_80"/>
+            <iconFocusedColor value="$preset_fs25_colorMainHighlight"/>
+            <iconHighlightedColor value="$preset_fs25_colorMainHighlight"/>
+            <iconPressedColor value="$preset_fs25_colorMainLight_80"/>
+            <iconDisabledColor value="$preset_fs25_colorMainLight_80"/>
+            <textSize value="16px"/>
+            <textBold value="true"/>
+            <textUpperCase value="true"/>
+            <textAlignment value="center"/>
+            <textColor value="$preset_fs25_colorMainLight_80"/>
+            <textFocusedColor value="$preset_fs25_colorMainHighlight"/>
+            <textHighlightedColor value="$preset_fs25_colorMainHighlight"/>
+            <textDisabledColor value="$preset_fs25_colorMainLight_80"/>
+            <textPressedColor value="$preset_fs25_colorMainLight_80"/>
+            <textFocusedColor value="$preset_fs25_colorMainDark"/>
+        </Profile>
+        <Profile name="rvb_buttonClose" extends="rvb_button">
+            <margin value="43px -16px 43px 24px"/>
+        </Profile>
+        <Profile name="rvb_buttonBg" extends="rvb_multiTextOptionBg"/>
+    </GUIProfiles>
+</GUI>

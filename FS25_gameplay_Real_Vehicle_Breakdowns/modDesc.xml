@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<modDesc descVersion="105">
+    <author>MathiasHun</author>
+    <version>0.9.5.9</version>
+    <title>
+        <en>Real Vehicle Breakdowns</en>
+    </title>
+    <description>
+        <en><![CDATA[Thanks to this modification the vehicle's components will fail.
+The parts have been set to operating hours, for example, the thermostat breaks down after 150 hours.
+The system monitors the operating temperature of the vehicle, if the engine is still too cold, the vehicle may be damaged.
+After starting the vehicle, if the operating temperature of the engine has not yet reached a temperature above 50 °C, the vehicle will be damaged, this can be tracked on the damage info bar.
+At the moment, it is not yet specified whether in such a case only the motor or the parts belonging to the motor will be damaged.
+
+The mod is currently shared in Beta.
+
+To calculate vehicle service and repair costs, the purchase price and age of the vehicle are taken into account.
+I have to try it out so that I can make any fine adjustments.
+
+Opening Real Vehicle Breakdowns (RVB) - key combination "left Alt + w" (default)
+
+List of failures:
+Thermostat error, it can be two types
+1. Thermostat overheating, in this case the operating temperature is too high, the vehicle is damaged and fuel consumption increases.
+2. Thermostat overcooling, in this case the operating temperature fluctuates, fuel consumption increases.
+3. All front and rear lights are malfunctioning, this is how I currently  created the error generation. In the event of this error, the turn signals and hazard warning lights are functional.
+4. Glow plug, in this case, fuel consumption increases and the engine is more difficult to start.
+5. Windscreen wiper motor, in this case the wiper blades do not move. It is possible that it will cause other errors in the future.
+6. Generator, in this case the vehicle's battery is not recharged, so it may discharge and the engine cannot be started.
+7. Engine error, in this case the engine can be started and the max. speed 7 km/h.
+8. Self-starter, in this case the engine is more difficult to start or cannot be started at all.
+9. Battery, in this case the engine is more difficult to start or cannot be started at all.
+10. Service interval, in this case, if there is a value greater than the set service interval in the vehicle, the vehicle will be damaged.
+
+Causes of battery discharge: 
+a) you have turned off the vehicle's engine but not turned off the lights, the more lights are on, the faster the battery drains
+b) due to generator failure, the battery does not charge
+
+The battery can be charged in the workshop.
+When the engine is running and the generator is operational, the battery gradually charges.
+
+In the RVB menu, it is possible to select how often the vehicles must be serviced.
+The repair cost is calculated from the purchase value of the vehicle, later this may change to the extent that a minimum repair cost is determined. Because there are vehicles that the developers have priced very cheaply.
+The system does not yet include a hourly repair rates.
+
+Bug report, please visit https://github.com/MathiasHun/FS25_Real_Vehicle_Breakdowns_Beta/
+
+Recommended Dependencies (to avoid errors):
+- Wind Turbines Charging Station mod (i.e., FS25_electricChargeStation) - by HoT online Team https://www.kingmods.net/en/fs25/mods/62810/wind-turbines-charging-station
+- JCB E-tech Powerpack (i.e., FS25_JCB_Powerpack) - by RossN Mods https://www.farming-simulator.com/mod.php?mod_id=310865&title=fs2025
+
+Changelog 0.9.5.9:
+- RVB menu optimization
+- Keep your vehicle clean! 100% dirt + player-set daily service time = increased wear (engine, thermostat)
+- In cold conditions, the usable battery charge decreases, making starting more difficult.
+- If the vehicle is not used, the battery loses 3% of its charge per month.
+- In the vehicle workshop menu, the status of each vehicle is displayed, indicating whether it is currently under inspection, service, or repair.
+The expected duration of the process is also shown.
+- If the vehicle has a hood animation, it automatically opens during inspection/service/repair.
+- github issues#138 - Conflict with Dashboard Live
+
+Changelog 0.9.5.8:
+- MP Bug
+
+Changelog 0.9.5.7:
+- Reworked jump-start cable system for more reliable behavior.
+The vehicle must be jump-started for 5–15 seconds to start. However, if you turn off the jump-started vehicle and its battery level is still below 10%, it will not start again.
+This should now work correctly in multiplayer as well.
+- Several functions have been relocated. Hopefully they won’t cause any issues, but extensive testing and feedback are needed.
+- The vehicle HUD received a small update. The dashboard icons are now slightly visible even before the engine starts,
+and their brightness increases when the headlights are switched on.
+- github issues#126
+- github issues#124 - Workshop menu bug
+- github issues#121 - FR translation update - thanks by Squallqt
+- github issues#120 - Fixed DashboardLive compatibility issues
+- Fixed missing localization string: “Lépésköz” in RVBMenuPartsSettingsFrame.xml
+- Engine wear below 50 °C is now based on engine load instead of speed: above 70 % load, wear increases until the engine reaches 50 °C
+- Localization files optimized and completed.
+- Update - The following vehicles are “excluded” from RVB mode: https://github.com/MathiasHun/FS25_Real_Vehicle_Breakdowns_Beta/issues/114
+This is a quick release intended for testing, so you can try it before it is made available to the general public.
+
+Changelog 0.9.5.6:
+- The difficulty setting has been moved to Gameplay Settings.
+- You can now configure whether the vehicle workshop is open.
+- Engine Load in HUD
+- Engine wear below 50 °C is now based on engine load instead of speed: above 65 % load, wear increases until the engine reaches 50 °C
+- Choose the vehicle’s power carefully. If the engine is underpowered, higher engine load can lead to increased engine wear
+- Keep your vehicle clean! 100% dirt + 1 hour of operation = increased wear (engine, thermostat)
+- github issues#118 - attempt to call missing method 'getIsFaultBattery'
+- github issues#116 - Version v0.9.5.5 does not detect the battery
+- github issues#112 - Wear values too high
+- github issues#110 - RVB does not read the correct tires damage from Use Up Your Tyres mod
+- github issues#105 - Divide by zero error.
+- github issues#40 - AI workers should automatically shutdown lights/beacons when the vehicle engine stops, fixed
+- The following vehicles are “excluded” from RVB mode: https://github.com/MathiasHun/FS25_Real_Vehicle_Breakdowns_Beta/issues/114
+
+Changelog 0.9.5.5:
+- github issues#113 - Game Settings: Lifetime of Parts – Starter Displays Incorrect Value
+- github issues#111 - RVB tires repair cost is extremely high
+- github issues#109 - Not working on some vehicles
+- github issues#108 - Tires are not reset on vehicle reset via workshop reset
+- github issues#107 - strange object in 0,0,0 coordinates under vehicle
+- github issues#102 - Now compatible with the Highlands Fishing Expansion DLC
+- github issues#74 - Just a little compatibility issue between RVB + Vehicle Shop Storage 1.0.0.0 + Use Up Your Tyres 1.0.0.3
+- github issues#63 - Fuel gauges
+- The following vehicles are “excluded” from RVB mode:
+Base game vehicles:
+piaggio/ape50
+kubota/rtvxG850
+kubota/rtvx1140
+antonioCarraro/tigrecar3200
+Mod vehicles:
+FS25_JohnDeere_330_LawnTractor
+FS25_JohnDeere445
+TSN25_2doordefender
+DLC vehicles (highlandsFishingPack):
+canAm/outlanderPro
+canAm/outlanderMax
+canAm/defender
+
+Changelog 0.9.5.4:
+- The repair did not finish because a test code was left in. It has now been fixed.
+- Compatibility with the Use Up Your Tyres (FS25_useYourTyres) mod has been completed.
+In the RVB menu, the tyre lifetime can now be adjusted, for example to 340 km.
+Please note that tyre wear is affected by both of the following settings:
+Vehicle Failure in the RVB menu
+Tyre Usage Rate from the Use Up Your Tyres mod.
+- Missing workshop translation added.
+- github issues#99
+
+Changelog 0.9.5.3:
+- In MP games, time acceleration incorrectly changed the components’ maximum operating hours, fixed.
+- The battery’s lifespan affects its maximum charge capacity.
+- Added the ConsoleCommand rvb_VehicleDebug, which displays extended live data of the current vehicle (component condition, battery discharge, battery charge level,
+engine temperature, engine performance, etc.).
+- When engine faults occur, a reduction in performance and a speed limit have been introduced.
+- The Dutch language file has been updated, thanks to NozemOil1982.
+- github issues#97
+- github issues#62 Conflict with Vehicle Shop Storage, fixed.
+- There might have been something else, but I didn’t take notes. :)
+
+Changelog 0.9.5.2:
+- github issues#95
+- github issues#94
+- github issues#92
+
+Changelog 0.9.5.1:
+- github issues#92
+- github issues#90
+- github issues#89
+
+Changelog 0.9.5.0:
+- Available on the download page.
+
+Changelog 0.9.2.9:
+- Fixed an issue that prevented saved games from loading after updating to version v0.9.2.8
+
+Changelog 0.9.2.8:
+- github issues#79
+- github issues#78
+- github issues#76
+- github issues#71
+- Jump-starting modified
+
+Changelog 0.9.2.7:
+- github issues#75
+
+Changelog 0.9.2.6:
+- Missing value (21) added to WorkshopClose array
+- Fixed missing translation during jump-start/charging
+- Jumper cable length increased to 10 m
+- Now warns and breaks the jumper cable if either vehicle starts.
+
+Changelog 0.9.2.5:
+- github issues#74
+- github issues#68
+- github issues#66
+- github issues#63
+- Fixed <part/> issues in vehicles.xml
+- RVB on/off - 20 %
+
+Changelog 0.9.2.4:
+- github issues#65
+- github issues#64
+
+Changelog 0.9.2.3:
+- Fix for repeated jump-start cable warning message on the server.
+
+Changelog 0.9.2.2:
+- github issues#58
+- github issues#55
+- github issues#54
+- github issues#53
+- github issues#51 CZ translation update
+- github issues#50
+- github issues#47
+- github issues#45
+- github issues#51 NL translation update - thanks by NozemOil1982
+- github issues#31
+- github issues#4
+- Italian translation added - thanks by caymann lo re
+
+Changelog 0.9.2.1:
+- github issues#44
+- github issues#43
+
+Changelog 0.9.2.0:
+- Add new feature: Vehicle Jump Start - github issues#30, issues#37
+- Compatible with the FS25_electricChargeStation mod
+- github issues#40 - I only made a small change, it needs thorough testing
+- github issues#35
+- Ukrainian translation added - github issues#34
+- github issues#29
+
+Changelog 0.9.1.1:
+- The battery drains quickly - when using the yarder(shadow2391) (Koller K-300-T I tested) or using  Autodrive - fixed
+- github issues#27
+- github issues#22
+- General Settings loading (MP) bug – fixed
+
+Changelog 0.9.1.0:
+- github issues#23
+- github issues#20 - I hope
+- github issues#11 - Again
+- Excluded motorbike vehicle types from the mod
+- MP bug fixed
+- The vehicle's lights were not on, but its operating time increased, fixed.
+
+Changelog 0.9.0.7:
+- github issues#19 - Temporary, quick bug fix.
+- github issues#16
+- github issues#14
+- github issues#11
+- github issues#10
+
+Changelog 0.9.0.6:
+- github issues#18
+- github issues#16
+- Added Czech translation
+- github issues#14 ??
+- github issues#13
+- github issues#12
+- github issues#11
+- github issues#10
+- github issues#6
+- github issues#2
+
+Changelog 0.9.0.5:
+- Dynamic battery regeneration
+- HUD optimization
+- General settings - HUD display
+- Added Portuguese translation
+
+Changelog 0.9.0.4:
+- Upgrading from FS22 to FS25
+
+Changelog 0.9.0.3:
+- github issues#102
+- github issues#100
+
+Changelog 0.9.0.2:
+- github issues#99
+- github issues#98
+
+Changelog 0.9.0.1:
+- github issues#95
+
+Changelog 0.9.0.0:
+- Coming soon
+- I haven't had time for a 100% test yet
+
+Changelog 0.8.8.1:
+- github issues#27
+- github issues#55
+- github issues#75
+
+Changelog 0.8.8.0:
+- Added Vehicle Configuration
+- Added Vehicle Repaint
+- github issues#50
+- github issues#67
+- github issues#68
+- github issues#70
+- github issues#71
+- github issues#72
+Possibly even more :)
+
+Changelog 0.8.7.1:
+- Fixed 3 bugs
+
+Changelog 0.8.7.0:
+- Added opening new RVB menu. You can also open the RVB menu at the basic vehicle workshop trigger point. You can turn this off in the settings.
+- github issues#25
+- github issues#39 - the operating hours of Glow Plug and Starter its to low
+- github issues#40 
+- github issues#47
+- github issues#49
+- github issues#51
+- github issues#52
+- github issues#53
+- Added Turkish translation
+
+Changelog 0.8.6.3:
+- github issues#29
+- github issues#40 - After AI finish the work battery continue drops until goes empty
+- Added Spanish translation
+
+Changelog 0.8.6.2:
+- github issues#36 - AutoDrive problem
+- github issues#37 - Beacons should turn off too when there is no battery (This is subject to change)
+- Fixed, If the battery was discharged due to a generator failure, it was not possible to stop the engine.
+- Added new function - Each engine start reduces the battery charge level by 5%. Of course, if the generator is good, the battery will be charged
+
+Changelog 0.8.6.1:
+- github issues#35 - Battery dropped at 25% while engine was running
+
+Changelog 0.8.6.0:
+- github issues#21 - HUD icons scaling
+- github issues#22 - Error on dedicated multiplayer server
+- github issues#27 - Informational message now only appears once (to conflicts mods)
+- github issues#31 - Courseplay, AutoDrive conflicts
+- Added French translations
+- Added Damage bar selection
+- Added FS22 basic damage overwrite, inactive
+- Fixed, if the vehicle damage bar below 10%, no breakdowns when inspecting vehicle, resets vehicle damage bar to 100%. FS22 basic repair cost + inspection cost
+- Many other things :)
+
+Changelog 0.8.5.0:
+- Added vehicle HUD faults icon
+- github issues#10 - Window randomly pops up saying "The mechanic cannot repair this vehicle, visit RVB Service" - Courseplay conflicts
+- github issues#11 - Temperature indicator not working
+- github issues#13 - Many breakdowns
+- github issues#18 - HUD position fuel text wrong - I hope it's good now
+- Added Vehicle breakdown difficulty
+- Added Dutch, Polish translations
+- Many other things :)
+
+Changelog 0.8.2.0:
+- github issues#1
+- github issues#5
+- github issues#7
+- Added Brazilian/Portuguese, German, Russian translations
+
+Changelog 0.8.1.0:
+- Change menu opening button combination "left Alt + w"
+- Spark plug delete, add Glow plug
+- Gear shifter problem, maybe fixed, I didn't experience a gear shifter problem before
+- Change in breakdowns generator. The vehicle breakdowns can only if it is at least 8 months old. The chance of vehicle breakdowns has been reduced
+]]></en>
+
+    </description>
+    <iconFilename>icon_vehicleBreakdown.dds</iconFilename>
+
+    <l10n filenamePrefix="translations/l10n"/>
+
+    <multiplayer supported="true"/>
+
+    <fillTypes filename="data/battery_fillType.xml"/>
+
+    <!--<dependencies>
+        <dependency>FS25_JCB_Powerpack</dependency>
+        <dependency>FS25_electricChargeStation</dependency>
+    </dependencies>-->
+
+    <extraSourceFiles>
+        <sourceFile filename="scripts/RVBLoader.lua"/>
+        <sourceFile filename="scripts/hud/rvbDamageBar.lua"/>
+    </extraSourceFiles>
+
+    <actions>
+        <action name="RVB_MENU" category="VEHICLE" axisType="HALF"/>
+        <action name="RVB_SPEC" category="VEHICLE" axisType="HALF"/>
+        <action name="RVB_CONNECTING_JC" category="PLAYER" axisType="HALF"/>
+    </actions>
+
+    <inputBinding>
+        <actionBinding action="RVB_MENU">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_lalt KEY_w"/>
+        </actionBinding>
+        <actionBinding action="RVB_SPEC">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_lalt KEY_u"/>
+        </actionBinding>
+        <actionBinding action="RVB_CONNECTING_JC">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_r"/>
+        </actionBinding>
+    </inputBinding>
+
+    <placeableTypes>
+        <type name="chargingWindTurbine" parent="buyingStationWindTurbine" filename="$dataS/scripts/placeables/Placeable.lua">
+            <specialization name="chargingStation"/>
+        </type>
+    </placeableTypes>
+
+    <vehicleTypes>
+        <type name="palletbattery" className="Vehicle" parent="transportTrailer" filename="$dataS/scripts/vehicles/Vehicle.lua">
+            <specialization name="enterable"/>
+            <specialization name="fillUnit"/>
+            <specialization name="fillTriggerVehicle"/>
+        </type>	
+    </vehicleTypes>
+
+    <storeItems>
+        <storeItem xmlFilename="data/placeables/brandless/chargingStation/chargingStation.xml"/>
+        <storeItem xmlFilename="mods/FS25_electricChargeStation/electricChargeTurbine.xml"/>
+        <storeItem xmlFilename="mods/FS25_JCB_Powerpack/etechPowerpack.xml"/>
+    </storeItems>
+</modDesc>

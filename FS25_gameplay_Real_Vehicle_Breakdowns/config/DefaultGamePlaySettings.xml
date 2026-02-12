@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<rvbGamePlaySettings>
+   <dailyServiceInterval value="6"/>
+   <periodicServiceInterval value="40"/>
+   <workshopTime value="true"/>
+   <workshopOpen value="7"/>
+   <workshopClose value="16"/>
+   <workshopCountMax value="2"/>
+   <difficulty value="2"/>
+   <thermostatLifetime value="150"/>
+   <lightingsLifetime value="220"/>
+   <glowplugLifetime value="2"/>
+   <wipersLifetime value="80"/>
+   <generatorLifetime value="180"/>
+   <engineLifetime value="210"/>
+   <selfstarterLifetime value="3"/>
+   <batteryLifetime value="140"/>
+   <tireLifetime value="340"/>
+</rvbGamePlaySettings>

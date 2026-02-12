@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GUI onOpen="onOpen" onClose="onClose" onCreate="onCreate">
+    <GuiElement profile="newLayer"/>
+    <Bitmap profile="dialogFullscreenBg" id="dialogBg"/>
+    <GuiElement profile="fs25_dialogBg" id="dialogElement" size="1600px 900px">
+        <ThreePartBitmap profile="fs25_dialogBgMiddleSmall"/>
+        <ThreePartBitmap profile="fs25_dialogBgTopSmall"/>
+        <ThreePartBitmap profile="fs25_dialogBgBottom"/>
+        <GuiElement profile="fs25_dialogContentContainer">
+            <GuiElement profile="fs25_menuHeaderPanel" absoluteSizeOffset="0px 0px">
+                <Bitmap profile="rvb_menuHeaderIconBg">
+                    <Bitmap profile="fs25_menuHeaderIcon" imageSliceId="gui.icon_vehicleDealer_machines"/>
+                </Bitmap>
+                <Text profile="fs25_menuHeaderTitle" id="headerText" text="$l10n_ui_sellItem"/>
+                <RoundCorner profile="fs25_shopMoneyBoxBg" id="moneyBoxBg" position="0px 0px"/>
+                <BoxLayout profile="fs25_shopMoneyBox" id="moneyBox">
+                    <Text profile="fs25_shopBalance" text="$l10n_ui_balance"/>
+                    <Text profile="fs25_shopMoney" id="balanceElement"/>
+                </BoxLayout>
+            </GuiElement>
+            <Text profile="fs25_dialogTitle" id="titleText" position="0px -25px"/>
+            <BoxLayout profile="fs25_aiSettingsModeBox">
+                <BinaryOption profile="fs25_aiSettingsHeaderBinaryOption" id="modeElement" focusInit="onOpen" onClick="onClickMode"/>
+            </BoxLayout>
+            <GuiElement profile="rvb_SettingsBoxContainer">
+                <Bitmap profile="rvb_vehicleImage" visible="true" id="vehicleImage"/>
+                <GuiElement profile="rvb_SettingsBoxInner">
+                    <Bitmap profile="rvb_InfoRow" id="templateVehicleInfo">
+                        <Text profile="fs25_aiSettingsTemplateText" name="label"/>
+                        <Text profile="fs25_aiSettingsTemplateText" name="value" position="250px 0px"/>
+                    </Bitmap>
+                    <ScrollingLayout profile="fs25_aiSettingsBox" id="settingsBox"/>
+                    <ThreePartBitmap profile="fs25_subCategoryListSliderBox" position="10px 0px">
+                        <Slider profile="fs25_listSlider" dataElementId="settingsBox"/>
+                    </ThreePartBitmap>
+                </GuiElement>
+            </GuiElement>
+            <GuiElement profile="rvb_Container" id="mapBox">
+                <GuiElement profile="rvb_diagnosticsPanel" position="0px 0px" id="diagnosticsBox">
+                    <Text profile="rvb_Title" id="diagnosticsTitle" text="$l10n_RVB_Workshop_diagnostics"/>
+                    <ThreePartBitmap profile="rvb_rowSeparator" position="0px -30px"/>
+                    <SmoothList profile="rvb_diagnosticsList" id="diagnosticsList" position="0px -62px" onSelectionChange="onSelectionChange" focusChangeTop="nil" focusChangeBottom="nil" visible="true">
+                        <ListItem profile="rvb_diagnosticsRow" position="0px 0px" name="orderRowTemplate" onClick="onRowClick">
+                            <Text profile="rvb_partName" name="partName"/>
+                            <GuiElement profile="rvb_stateRow">
+                                <Text profile="rvb_stateLabel" text="$l10n_RVB_Workshop_status"/>
+                                <Text profile="rvb_statePercent" name="partPercent"/>
+                                <Text profile="rvb_stateCondition" name="partCondition"/>
+                                <ThreePartBitmap profile="rvb_statusBarBackground" name="timePlayed">
+                                    <ThreePartBitmap profile="rvb_statusBarFill" name="partBar"/>
+                                </ThreePartBitmap>
+                            </GuiElement>
+                            <GuiElement profile="rvb_actionRow">
+                                <Text profile="rvb_actionRepairLabel" text="$l10n_RVB_Workshop_repair"/>
+                                <BinaryOption profile="rvb_actionRepairSwitch" id="modeElements" onClick="onClickPart" name="checkPart"/>
+                            </GuiElement>
+                        </ListItem>
+                    </SmoothList>
+                    <ThreePartBitmap profile="fs25_subCategoryListSliderBox" position="10px -62px" id="diagnosticsSliderBox">
+                        <Slider profile="fs25_listSlider" dataElementId="diagnosticsList"/>
+                    </ThreePartBitmap>
+                    <Text profile="rvb_noServiceEntryText" id="noinspectionText" text="$l10n_RVB_Workshop_noinspection"/>
+                </GuiElement>
+                <GuiElement profile="rvb_diagnosticsPanel" position="0px 0px" id="serviceManualBox">
+                    <Text profile="rvb_Title" id="serviceManualTitle" text="$l10n_RVB_Workshop_diagnostics"/>
+                    <Bitmap profile="rvb_serviceHeaderRow" id="serviceManualHeader" position="0px -42px" size="850px 40px">
+                        <Text profile="rvb_serviceText" position="10px -0px" size="210px 40px" text="$l10n_RVB_Workshop_work" textAlignment="center"/>
+                        <Text profile="rvb_serviceText" position="220px -0px" size="155px 40px" text="$l10n_RVB_Workshop_date" textAlignment="center"/>
+                        <Text profile="rvb_serviceText" position="375px -0px" size="155px 40px" text="$l10n_RVB_Workshop_lifetime" textAlignment="center"/>
+                        <Text profile="rvb_serviceText" position="530px -0px" size="155px 40px" text="$l10n_RVB_Workshop_odometer" textAlignment="center"/>
+                        <Text profile="rvb_serviceText" position="685px -0px" size="155px 40px" text="$l10n_RVB_Workshop_cost" textAlignment="center"/>
+                        <ThreePartBitmap profile="fs25_lineSeparatorBottom" position="0px 2px"/>
+                    </Bitmap>
+                    <SmoothList profile="rvb_serviceList" id="serviceManualList" onDoubleClick="onButtonWarpToField" onSelectionChange="onSelectionChange" focusChangeTop="nil" focusChangeBottom="nil" visible="true">
+                        <ListItem profile="rvb_serviceRow">
+                            <GuiElement flowDirection="horizontal">
+                                <Text profile="rvb_serviceText" name="entryType" position="10px 20px" size="210px 40px"/>
+                                <Text profile="rvb_serviceText" name="entryTime" position="220px 20px" size="155px 40px" textAlignment="center"/>
+                                <Text profile="rvb_serviceText" name="operatingHours" position="375px 20px" size="155px 40px" textAlignment="center"/>
+                                <Text profile="rvb_serviceText" name="odometer" position="530px 20px" size="155px 40px" textAlignment="center"/>
+                                <Text profile="rvb_serviceText" name="cost" position="685px 20px" size="155px 40px" textAlignment="center"/>
+                            </GuiElement>
+                            <Text profile="rvb_serviceResult" name="result"/>
+                        </ListItem>
+                    </SmoothList>
+                    <ThreePartBitmap profile="fs25_subCategoryListSliderBox" position="10px -90px" id="serviceManualSliderBox">
+                        <Slider profile="fs25_listSlider" dataElementId="serviceManualList"/>
+                    </ThreePartBitmap>
+                    <Text profile="rvb_noServiceEntryText" id="noserviceManualEntryText" text="$l10n_RVB_Workshop_noserviceManualEntry"/>
+                </GuiElement>
+            </GuiElement>
+            <ThreePartBitmap profile="fs25_lineSeparatorTopHighlighted" absoluteSizeOffset="100px 0px" position="0px -120px"/>
+        </GuiElement>
+        <BoxLayout profile="fs25_dialogButtonBox" id="buttonsBox">
+            <Button profile="buttonDelete" text="$l10n_button_reset" onClick="onClickResetVehicle" id="resetVehicleButton"/>
+            <Bitmap profile="fs25_dialogButtonBoxSeparator"/>
+            <Button profile="buttonOK" text="$l10n_RVB_button_battery_ch" onClick="onClickChargingBattery" id="chargingBatteryButton"/>
+            <Bitmap profile="fs25_dialogButtonBoxSeparator"/>
+            <Button profile="buttonSelect" text="$l10n_RVB_button_inspection" onClick="onClickInspection" id="inspectionButton"/>
+            <Bitmap profile="fs25_dialogButtonBoxSeparator"/>
+            <Button profile="rvb_buttonService" text="$l10n_RVB_button_service" onClick="onClickService" id="serviceButton"/>
+            <Bitmap profile="fs25_dialogButtonBoxSeparator"/>
+            <Button profile="rvb_buttonRepair" text="$l10n_button_repair" onClick="onClickRepair" id="repairButton"/>
+            <Bitmap profile="fs25_dialogButtonBoxSeparator"/>
+            <Button profile="buttonBack" id="okButton" onClick="onClickBack" text="$l10n_button_back"/>
+        </BoxLayout>
+    </GuiElement>
+    <GUIProfiles>
+        <Profile name="rvb_menuHeaderIconBg" extends="baseReference" with="anchorMiddleLeft">
+            <size value="66px 66px" />
+            <position value="0px 0px" />
+            <imageSliceId value="gui.heading_iconBackground" />
+        </Profile>
+        <Profile name="rvb_SettingsBoxContainer" extends="emptyPanel" with="anchorTopLeft pivotTopLeft">
+            <size value="580px 200px" />
+            <position value="0px -100px" />
+        </Profile>
+        <Profile name="rvb_vehicleImage" extends="baseReference" with="anchorTopStretchingX pivotTopCenter">
+            <position value="25px 0px"/>
+            <size value="200px 200px"/>
+            <imageSliceId value="noSlice"/>
+        </Profile>
+        <Profile name="rvb_SettingsBoxInner" extends="emptyPanel" with="anchorTopLeft pivotTopLeft">
+            <size value="580px 450px" />
+            <position value="25px -210px" />
+        </Profile>
+        <Profile name="rvb_InfoRow" extends="baseReference" with="anchorTopLeft pivotTopLeft">
+            <height value="40px" />
+        </Profile>
+        <Profile name="rvb_actionRepairSwitch" extends="fs25_binaryOption" with="anchorMiddleRight">
+            <width value="200px" />
+            <position value="-27px 0px" />
+            <focusOnHighlight value="false" />
+        </Profile>
+        <Profile name="rvb_serviceHeaderRow" extends="baseReference" with="anchorTopStretchingX alternating">
+            <height value="40px"/>
+            <flowDirection value="horizontal"/>
+            <imageColor value="$preset_colorTransparent"/>
+        </Profile>
+        <Profile name="rvb_serviceList" extends="emptyPanel" with="anchorTopStretchingX">
+            <position value="0px -90px"/>
+            <size value="100% 100%"/>
+            <flowDirection value="vertical"/>
+            <clipLayout value="true"/>
+            <handleFocus value="false"/>
+            <handleHighlight value="false"/>
+            <listItemSpacing value="0px"/>
+        </Profile>
+        <Profile name="rvb_serviceRow" extends="baseReference" with="anchorTopStretchingX alternating">
+            <height value="80px"/>
+            <imageColor value="$preset_fs25_colorGrey"/>
+            <imageSelectedColor value="$preset_fs25_colorMainHighlight"/>
+            <alternateBackgroundColor value="$preset_fs25_colorGreyDark_50"/>
+            <listItemPadding value="10px" />
+        </Profile>
+        <Profile name="rvb_buttonService" extends="fs25_wideButton" with="touchButton">
+            <inputAction value="MENU_EXTRA_1"/>
+        </Profile>
+        <Profile name="rvb_buttonRepair" extends="fs25_wideButton" with="touchButton">
+            <inputAction value="MENU_EXTRA_2"/>
+        </Profile>
+        <Profile name="rvb_noServiceEntryText" extends="fs25_textDefault" with="anchorMiddleCenter">
+            <textSize value="15px"/>
+            <textAlignment value="center"/>
+            <textMaxNumLines value="2"/>
+        </Profile>
+        <Profile name="rvb_serviceText" extends="fs25_textDarkHighlight" with="anchorStretchingYStretchingX anchorMiddleLeft">
+            <textSize value="18px"/>
+            <textLayoutMode value="scrolling"/>
+            <textBold value="true"/>
+        </Profile>
+        <Profile name="rvb_serviceResult" extends="fs25_textDarkHighlight" with="anchorStretchingYStretchingX anchorMiddleLeft">
+            <textSize value="18px"/>
+            <textLayoutMode value="scrolling"/>
+            <textBold value="true"/>
+            <size value="850px 40px" />
+            <position value="10px -17px"/>
+            <padding value="10px"/>
+            <margin value="10px"/>
+        </Profile>
+        <Profile name="rvb_statePercent" extends="fs25_textDarkHighlight" with="anchorStretchingYCenter">
+            <width value="176px" />
+            <position value="-7px +14px" />
+            <textSize value="16px" />
+            <textLayoutMode value="scrolling" />
+            <textBold value="true" />
+            <textSelectedColor value="$preset_colorWhite" />
+        </Profile>
+        <Profile name="rvb_stateCondition" extends="fs25_textDarkHighlight" with="anchorStretchingYCenter">
+            <width value="176px" />
+            <position value="-7px -14px" />
+            <textSize value="16px" />
+            <textLayoutMode value="scrolling" />
+            <textBold value="true" />
+            <textSelectedColor value="$preset_colorWhite" />
+        </Profile>
+        <Profile name="rvb_statusBarBackground" extends="emptyPanel" with="anchorMiddleCenter">
+            <size value="176px 6px" />
+            <imageSliceId value="gui.progressbar_middle" />
+            <imageColor value="$preset_fs25_colorGreyLight" />
+            <imageSelectedColor value="$preset_fs25_colorMainDark" />
+            <startImageSize value="5px 0" />
+            <startImageSliceId value="gui.progressbar_left" />
+            <startImageSelectedColor value="$preset_fs25_colorMainDark" />
+            <endImageSize value="5px 0" />
+            <endImageSliceId value="gui.progressbar_right" />
+            <endImageSelectedColor value="$preset_fs25_colorMainDark" />
+            <position value="-8px 0px" />
+        </Profile>
+        <Profile name="rvb_statusBarFill" extends="emptyPanel" with="anchorStretchingYStretchingX pivotMiddleLeft">
+            <position value="-0.5px 0px" />
+            <imageSliceId value="gui.progressbar_middle" />
+            <imageColor value="$preset_fs25_colorMainHighlight" />
+            <imageSelectedColor value="$preset_fs25_colorMainLight" />
+            <startImageSize value="5px 0" />
+            <startImageSliceId value="gui.progressbar_left" />
+            <startImageSelectedColor value="$preset_fs25_colorMainLight" />
+            <endImageSize value="5px 0" />
+            <endImageSliceId value="gui.progressbar_right" />
+            <endImageSelectedColor value="$preset_fs25_colorMainLight" />
+        </Profile>
+        <Profile name="rvb_Container" extends="emptyPanel" with="anchorTopRight pivotTopRight">
+            <size value="850px 450px" />
+            <position value="-35px -142px" />
+        </Profile>
+        <Profile name="rvb_diagnosticsPanel" extends="emptyPanel" with="anchorTopRight">
+            <height value="576px"/>
+            <flowDirection value="vertical"/>
+            <alignmentY value="top"/>
+        </Profile>
+        <Profile name="rvb_Title" extends="fs25_textDefault" with="anchorMiddleCenter pivotTopCenter">
+            <textSize value="26px"/>
+            <textBold value="true"/>
+            <textUpperCase value="true"/>
+            <position value="0px 0px"/>
+            <textAlignment value="center" />
+        </Profile>
+        <Profile name="rvb_rowSeparator" extends="fs25_lineSeparatorTop" with="anchorTopStretchingX">
+            <absoluteSizeOffset value="0px 0px"/>
+            <position value="0px 23px"/>
+        </Profile>
+        <Profile name="rvb_diagnosticsList" extends="emptyPanel" with="anchorTopStretchingX">
+            <position value="0px 0px"/>
+            <size value="100% 100%"/>
+            <flowDirection value="vertical"/>
+            <clipLayout value="true"/>
+            <handleFocus value="false"/>
+            <handleHighlight value="false"/>
+            <listItemSpacing value="0px"/>
+        </Profile>
+        <Profile name="rvb_diagnosticsRow" extends="baseReference" with="anchorTopStretchingX alternating">
+            <height value="105px"/>
+            <padding value="20px 12px"/>
+            <imageColor value="$preset_fs25_colorGrey"/>
+            <imageSelectedColor value="$preset_fs25_colorMainHighlight"/>
+            <alternateBackgroundColor value="$preset_fs25_colorGreyDark_50"/>
+        </Profile>
+        <Profile name="rvb_partName" extends="fs25_textDefault" with="anchorTopLeft">
+            <textSize value="20px"/>
+            <textBold value="true"/>
+            <textUpperCase value="true" />
+            <textLayoutMode value="scrolling" />
+            <position value="15px -10px"/>
+        </Profile>
+        <Profile name="rvb_stateRow" extends="emptyPanel" with="anchorTopStretchingX">
+            <height value="26px"/>
+            <flowDirection value="horizontal"/>
+            <alignmentY value="middle"/>
+            <position value="15px -40px"/>
+        </Profile>
+        <Profile name="rvb_stateLabel" extends="fs25_textDefault" with="anchorMiddleLeft">
+            <textSize value="16px"/>
+            <textAutoWidth value="true"/>
+        </Profile>
+        <Profile name="rvb_actionRow" extends="emptyPanel" with="anchorTopLeft">
+            <height value="32px"/>
+            <flowDirection value="horizontal"/>
+            <elementSpacing value="120px"/>
+            <alignmentY value="middle"/>
+            <position value="15px -70px"/>
+        </Profile>
+        <Profile name="rvb_actionRepairLabel" extends="fs25_textDefault" with="anchorMiddleLeft">
+            <textSize value="16px"/>
+            <textAutoWidth value="true"/>
+        </Profile>
+    </GUIProfiles>
+</GUI>
