@@ -68,13 +68,6 @@ If you experience excessively fast component wear on a server, it is recommended
 If the issue persists after this, please report it.
 
 Thanks for helping improve the mod!🚜
-
-
-## 🔀Mod Conflict
-
-If you are using the Real Vehicle Breakdowns (RVB) mod, do not use the:
-- <strong>FS25_DisableTurnOffMotor</strong> - it will prevent the engine temperature from rising
-
 </br></br>
 <!---->
 # Please don’t share this version on other sites, it’s a VERY early BETA.</br>
@@ -99,6 +92,10 @@ The expected duration of the process is also shown.
 ## Recommended Dependencies (to avoid errors):
 - Wind Turbines Charging Station mod (i.e., FS25_electricChargeStation) - by HoT online Team [FS25_electricChargeStation](https://www.kingmods.net/en/fs25/mods/62810/wind-turbines-charging-station)
 - JCB E-tech Powerpack (i.e., FS25_JCB_Powerpack) - by RossN Mods [FS25_JCB_Powerpack](https://www.farming-simulator.com/mod.php?mod_id=310865&title=fs2025)
+
+## 🔀Mod Conflict
+If you are using the Real Vehicle Breakdowns (RVB) mod, do not use the:
+- <strong>FS25_DisableTurnOffMotor</strong> - it will prevent the engine temperature from rising
 
 ## Changelog 0.9.5.7:
 - Reworked jump-start cable system for more reliable behavior.
