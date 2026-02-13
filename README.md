@@ -58,7 +58,7 @@ If you run into problems, please help improve the mod by following these steps:
 
    - What did you expect to happen, and what actually happened?
 
-## 📌Important Notes:
+## 📌Important Notes
 
 A well-documented bug report helps me find and fix issues faster.
 
@@ -68,6 +68,13 @@ If you experience excessively fast component wear on a server, it is recommended
 If the issue persists after this, please report it.
 
 Thanks for helping improve the mod!🚜
+
+
+## 🔀Mod Conflict
+
+If you are using the Real Vehicle Breakdowns (RVB) mod, do not use the:
+- <strong>FS25_DisableTurnOffMotor</strong> - it will prevent the engine temperature from rising
+
 </br></br>
 <!---->
 # Please don’t share this version on other sites, it’s a VERY early BETA.</br>
