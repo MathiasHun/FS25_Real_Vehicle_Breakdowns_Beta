@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<l10n>
+    <translationContributors>XelaNull + Claude Code</translationContributors>
+    <elements>
+        <e k="input_RVB_MENU" v="RVB Menu" eh="befec422" />
+        <e k="input_RVB_SPEC" v="RVB til/fra" eh="ad0e92fa" />
+        <e k="input_RVB_CONNECTING_JC" v="Tilslut startkabler" eh="d65bafa2" />
+        <e k="action_RVB_DISCONNECTING_JC" v="Frakobl startkabler" eh="af92d5db" />
+        <e k="RVB_dialog_titleCONNECTING_JC" v="Tilslut startkabler" eh="d65bafa2" />
+        <e k="RVB_dialog_descCONNECTING_JC" v="Der er ikke behov for at starte %s med startkabler. Er du sikker på, at du vil fortsætte med at tilslutte startkablerne?" eh="4a72e523" tag="format"/>
+        <e k="RVB_addextra_connecting" v="Startkabler tilsluttet" eh="3893af14" />
+        <e k="RVB_blinking_connecting_toofar" v="Stræk ikke startkablet længere, ellers løsner det snart fra batteriet! (%s m)" eh="de01b5dd" tag="format"/>
+        <e k="RVB_blinking_disconnecting_toofar" v="Startkablet er for kort – det er blevet frakoblet!" eh="eed0846f" />
+        <e k="RVB_blinking_connecting_drive" v="Kør ikke væk, startkablerne er stadig tilsluttet! (%s m)" eh="e7083a37" tag="format"/>
+        <e k="RVB_blinking_connecting_length" v="Startkabel længde: %s m / %s m" eh="00d9d387" tag="format"/>
+        <e k="RVB_blinking_connecting_cableBroken" v="Startkablerne var tilsluttet. De blev beskadiget, så du måtte købe nye for %s." eh="5e93c08d" tag="format"/>
+        <e k="RVB_blinking_connecting" v="%s: Startkabler tilsluttet." eh="c2447083" tag="format"/>
+        <e k="RVB_blinking_connecting_order" v="Tilslut først det fungerende køretøj til startkablerne!" eh="7342e321" />
+        <e k="RVB_blinking_disconnecting" v="%s: Startkabler frakoblet." eh="1c1775a5" tag="format"/>
+        <e k="RVB_blinking_disconnecting_order" v="Frakobl først det døde køretøj fra startkablerne!" eh="e9970e17" />
+        <e k="RVB_MenuGameSettingsGame" v="Spilindstillinger" eh="f22e46f4" />
+        <e k="RVB_settingSectionHeader_Service" v="Service" eh="c2ba7e78" />
+        <e k="RVB_setting_dailyServiceInterval" v="Daglig service" eh="af302edf" />
+        <e k="RVB_toolTip_dailyServiceInterval" v="Hvor ofte daglig vedligeholdelse skal udføres. Denne funktion er i øjeblikket inaktiv." eh="5677120d" />
+        <e k="RVB_setting_periodicServiceInterval" v="Periodisk service" eh="37a54fc5" />
+        <e k="RVB_toolTip_periodicServiceInterval" v="Køretøjets serviceinterval." eh="c486215a" />
+        <e k="RVB_settingSectionHeader_Workshop" v="Køretøjsværksted" eh="1f942e17" />
+        <e k="RVB_setting_workshopTime" v="Værkstedets åbningstid" eh="d3841d21" />
+        <e k="RVB_toolTip_workshopTime" v="Hvis aktiveret, kan værkstedet kun bruges i de angivne åbningstider." eh="12d5b413" />
+        <e k="RVB_setting_workshopOpen" v="Åbningstid" eh="7ef9510d" />
+        <e k="RVB_toolTip_workshopOpen" v="Tidspunktet hvor køretøjsværkstedet åbner." eh="9fc2ad38" />
+        <e k="RVB_setting_workshopClose" v="Lukketid" eh="608cf18d" />
+        <e k="RVB_toolTip_workshopClose" v="Tidspunktet hvor køretøjsværkstedet lukker." eh="b09cc785" />
+        <e k="RVB_setting_workshopCountMax" v="Maksimalt antal køretøjer på værkstedet" eh="eaa9ec2d" />
+        <e k="RVB_toolTip_workshopCountMax" v="Her kan du indstille, hvor mange køretøjer der kan være på værkstedet ad gangen." eh="3fc3632c" />
+        <e k="RVB_settingSectionHeader_LifetimeofParts" v="Delenes levetid" eh="77504676" />
+        <e k="RVB_toolTip_lifetimeParts" v="Jo mindre dette tal er, desto hurtigere vil delen svigte." eh="670fee78" />
+        <e k="RVB_setting_thermostatLifetime" v="Termostat" eh="91e0b95d" />
+        <e k="RVB_setting_lightingsLifetime" v="Belysning" eh="2e4b97fd" />
+        <e k="RVB_setting_glowplugLifetime" v="Gløderør" eh="6fdb6ce6" />
+        <e k="RVB_setting_wipersLifetime" v="Vinduesviskere" eh="6fdb61c4" />
+        <e k="RVB_setting_generatorLifetime" v="Generator" eh="92a8f0b9" />
+        <e k="RVB_setting_engineLifetime" v="Motor" eh="7bfa3072" />
+        <e k="RVB_setting_selfstarterLifetime" v="Startmotor" eh="ee6085db" />
+        <e k="RVB_setting_batteryLifetime" v="Batteri" eh="d67c9286" />
+        <e k="RVB_setting_tireLifetime" v="Dæk" eh="e4b17d74" />
+        <e k="RVB_utils_hour" v="%s time" eh="0aaff306" tag="format"/>
+        <e k="RVB_utils_km" v="%s km" eh="7e78f68c" tag="format"/>
+        <e k="RVB_utils_maxcount" v="%s stk" eh="eb664c9a" tag="format"/>
+
+        <e k="RVB_MenuGameSettingsGeneral" v="Generelle indstillinger" eh="52f4393e" />
+        <e k="RVB_setting_alertDialog" v="Advarselsmeddelelse" eh="252527bd" />
+        <e k="RVB_toolTip_alertDialog" v="Hvis dit køretøj er beskadiget, vedligeholdt eller repareret, vises en advarselsmeddelelse midt på skærmen, mens du er i køretøjet." eh="1a4ff708" />
+        <e k="RVB_setting_rvbDifficulty" v="Køretøjsnedbrud" eh="b74e5c9c" />
+        <e k="RVB_toolTip_rvbDifficulty" v="I øjeblikket under udvikling, men klar til brug." eh="68ef8114" />
+        <e k="RVB_difficulty_slow" v="Langsom" eh="efa53979" />
+        <e k="RVB_difficulty_medium" v="Medium" eh="87f8a6ab" />
+        <e k="RVB_difficulty_fast" v="Hurtig" eh="e16b5b7f" />
+        <e k="RVB_setting_vehicleHud" v="Køretøjsdele HUD" eh="97c188e7" />
+        <e k="RVB_toolTip_vehicleHud" v="Viser køretøjets deles driftstimer (kan forbedre ydeevnen når slukket). Anbefales til test." eh="3fc04f06" />
+        <e k="RVB_settingSectionHeader_HUD" v="HUD-indstillinger" eh="c45776a5" />
+        <e k="RVB_setting_showTemp" v="Motortemperatur" eh="a6eab106" />
+        <e k="RVB_toolTip_showTemp" v="Her kan du slå visningen af motortemperaturen til eller fra." eh="77260a8c" />
+        <e k="RVB_setting_showRpm" v="Omdrejninger" eh="fe2284eb" />
+        <e k="RVB_toolTip_showRpm" v="Her kan du slå visningen af omdrejningstallet til eller fra." eh="a24f2ebc" />
+        <e k="RVB_setting_showFuel" v="Brændstof" eh="94fc563c" />
+        <e k="RVB_toolTip_showFuel" v="Her kan du slå visningen af brændstof til eller fra." eh="a762cfcc" />
+        <e k="RVB_setting_showMotorLoad" v="Motorbelastning" eh="62f58274" />
+        <e k="RVB_toolTip_showMotorLoad" v="Her kan du slå visningen af motorbelastningen til eller fra." eh="3a8bdda4" />
+        <e k="RVB_setting_showdebug" v="Fejlfinding" eh="231cf4c7" />
+        <e k="RVB_toolTip_showdebug" v="Viser fejlfinding i konsollen og log.txt (kan forbedre ydeevnen når slukket)" eh="b8ee92ac" />
+
+        <e k="RVB_MenuGamePartsSettings" v="Køretøjsindstillinger" eh="b33d07b8" />
+        <e k="RVB_Parts_stepInterval" v="Trininterval(%)" eh="a3db3e97" />
+        <e k="RVB_Parts_currentValue" v="Aktuel %s levetid" eh="6a16b34b" tag="format"/>
+        <e k="RVB_Parts_remainingValue" v="%s levetidsindstilling" eh="e5f12d35" tag="format"/>
+        <e k="RVB_part_rvbDifficulty" v="Køretøjsnedbrud" eh="b74e5c9c" />
+        <e k="RVB_Parts_utils_percent" v="%s %%" eh="7743aacb" tag="format"/>
+
+        <e k="RVB_WorkShopClose" v="Køretøjsværkstedet er lukket; kom venligst tilbage kl. %s." eh="64254a65" tag="format"/>
+        <e k="RVB_button_inspection" v="Eftersyn" eh="b4faa7ed" />
+        <e k="RVB_button_dailyservice" v="Daglig service" eh="af302edf" />
+        <e k="RVB_button_periodicservice" v="Periodisk service" eh="37a54fc5" />
+        <e k="RVB_button_battery_ch" v="Batteriopladning" eh="30a47fb3" />
+        <e k="RVB_button_service" v="Service" eh="c2ba7e78" />
+        <e k="RVB_inspectionDialog" v="Er du sikker på, at du vil efterse dette køretøj for %s?" eh="7401f205" tag="format"/>
+        <e k="RVB_inspectionTimeDialog" v="Køretøjseftersynet vil være færdigt kl. %s." eh="06135b4d" tag="format"/>
+        <e k="RVB_inspectionDayDialog" v="Køretøjseftersynet vil være færdigt i morgen kl. %s." eh="af1c4b1b" tag="format"/>
+        <e k="RVB_faultText_THERMOSTAT" v="Termostat" eh="91e0b95d" />
+        <e k="RVB_faultText_LIGHTINGS" v="Belysning" eh="2e4b97fd" />
+        <e k="RVB_faultText_GLOWPLUG" v="Gløderør" eh="6fdb6ce6" />
+        <e k="RVB_faultText_WIPERS" v="Vinduesviskere" eh="6fdb61c4" />
+        <e k="RVB_faultText_GENERATOR" v="Generator" eh="92a8f0b9" />
+        <e k="RVB_faultText_ENGINE" v="Motor" eh="7bfa3072" />
+        <e k="RVB_faultText_SELFSTARTER" v="Startmotor" eh="ee6085db" />
+        <e k="RVB_faultText_BATTERY" v="Batteri" eh="d67c9286" />
+        <e k="RVB_faultText_TIRE" v="Dæk" eh="e4b17d74" />
+        <e k="RVB_faultText_TIREFL" v="Venstre fordæk" eh="4a8014f5" />
+        <e k="RVB_faultText_TIREFR" v="Højre fordæk" eh="d65bdf73" />
+        <e k="RVB_faultText_TIRERL" v="Venstre bagdæk" eh="8058c09e" />
+        <e k="RVB_faultText_TIRERR" v="Højre bagdæk" eh="433ab1ca" />
+        <e k="RVB_repairErrorMechanics" v="Alle mekanikere er optaget, kun op til %s køretøjer kan repareres på samme tid." eh="8db25de5" tag="format"/>
+        <e k="RVB_repairTimeDialog" v="Køretøjsreparationen vil være færdig kl. %s." eh="1b895cdb" tag="format"/>
+        <e k="RVB_repairDayDialog" v="Køretøjsreparationen vil være færdig i morgen kl. %s." eh="3d3ab5be" tag="format"/>
+        <e k="RVB_ErrorList" v="Fejlliste:" eh="4e0dbac7" />
+        <e k="RVB_periodicserviceDialog" v="Er du sikker på, at du vil servicere køretøjet for %s?" eh="20eb9276" tag="format"/>
+        <e k="RVB_periodicserviceTimeDialog" v="Køretøjsservicen vil være færdig kl. %s." eh="1f9463c5" tag="format"/>
+        <e k="RVB_periodicserviceDayDialog" v="Køretøjsservicen vil være færdig i morgen kl. %s." eh="23dccb31" tag="format"/>
+        <e k="RVB_batteryChDialog" v="Er du sikker på, at du vil oplade køretøjets batteri for %s?" eh="94b16ee9" tag="format"/>
+        <e k="RVB_operatingTime" v="%02d time" eh="ec877abb" tag="format"/>
+        <e k="RVB_shop_operatingTimeG" v="%s:%s time" eh="53789ab2" tag="format"/>
+        <e k="RVB_alertmessage_inspection" v="Køretøjseftersyn i gang." eh="65fb0250" />
+        <e k="RVB_alertmessage_repair" v="Køretøjsreparation i gang." eh="e142d0e7" />
+        <e k="RVB_alertmessage_service" v="Køretøjsservice i gang." eh="b4b2edf3" />
+
+        <e k="RVB_list_battery" v="Batteri" eh="d67c9286" />
+
+        <e k="RVB_Workshop" v="Værksted" eh="8e5d9dbc" />
+        <e k="RVB_Workshop_diagnostics" v="Diagnostik" eh="36b64aad" />
+        <e k="RVB_Workshop_serviceManual" v="Servicelog" eh="076e552d" />
+        <e k="RVB_Workshop_noinspection" v="Køretøjet er ikke blevet efterset!" eh="58a6a5a1" />
+        <e k="RVB_Workshop_noserviceManualEntry" v="Ingen poster i serviceloggen!" eh="7bf99f4e" />
+        <e k="RVB_Workshop_status" v="Status:" eh="24a23d78" />
+        <e k="RVB_Workshop_repair" v="Reparér?" eh="e045471f" />
+        <e k="RVB_Workshop_work" v="Arbejde" eh="0f926353" />
+        <e k="RVB_Workshop_date" v="Dato" eh="44749712" />
+        <e k="RVB_Workshop_lifetime" v="Driftstimer" eh="cb932a6d" />
+        <e k="RVB_Workshop_odometer" v="Kilometerstand" eh="6e7f0879" />
+        <e k="RVB_Workshop_cost" v="Pris" eh="20b4f77b" />
+        <e k="RVB_WorkshopD_new" v="Ny" eh="03c2e7e4" />
+        <e k="RVB_WorkshopD_conExcellent" v="Fremragende stand" eh="d351c1b2" />
+        <e k="RVB_WorkshopD_conGood" v="God stand" eh="2acb21a1" />
+        <e k="RVB_WorkshopD_conUsed" v="Brugt men fungerer" eh="c7981b42" />
+        <e k="RVB_WorkshopD_conFaults" v="Tilbøjelig til fejl" eh="0d2d90ed" />
+        <e k="RVB_WorkshopD_conDown" v="Brudt sammen" eh="6d10dc80" />
+        <e k="RVB_WorkshopD_conReplace" v="Skal udskiftes" eh="aedbbab2" />
+        <e k="RVB_WorkshopS_repNeed" v="Reparation nødvendig. " eh="b9d46622" />
+        <e k="RVB_WorkshopS_repNoNeed" v="Ingen reparation nødvendig." eh="3363e3de" />
+        <e k="RVB_WorkshopS_month" v=" måned" eh="888b692b" />
+
+        <e k="RVB_WorkshopMessage_service" v="Du har overskredet det angivne serviceinterval med %s timer, så reparationen tog længere tid og kostede mere." eh="4793bc2c" tag="format"/>
+        <e k="RVB_WorkshopMessage_serviceDone" v="Service gennemført." eh="92a45efa" />
+        <e k="RVB_WorkshopMessage_repairDone" v="Reparation gennemført. Udskiftede/reparerede del(e): %s" eh="2a748e5d" tag="format"/>
+        <e k="RVB_WorkshopMessage_batteryDone" v="Batteri fuldt opladet." eh="1ab095d0" />
+        <e k="RVB_WorkshopMessage_vResetDone" v="Køretøjet er blevet nulstillet." eh="1d94103e" />
+
+        <e k="RVB_inspectionDialogFault" v="%s køretøj efterset, reparation nødvendig. %s" eh="63f23863" />
+        <e k="RVB_inspectionDialogEnd" v="%s køretøj efterset, ingen reparationer nødvendige." eh="adb75b1a" />
+        <e k="RVB_inspectionDialogEnd_other" v="%s køretøj efterset og repareret. Din mekaniker var meget travl, så en lærling reparerede dit køretøj. Denne lærling kan dog ikke oplyse, hvad der blev repareret på dit køretøj." eh="fca01ba3" />
+
+        <e k="RVB_serviceDialogEnd" v="Service af %s køretøj gennemført." eh="b705ad92" />
+        <e k="RVB_repairDialogEnd" v="Reparation af %s køretøj gennemført." eh="5ce51ccd" />
+        <e k="RVB_fault_engineload" v="Belast ikke motoren for meget for tidligt, den er stadig kold." eh="5de6f564" />
+        <e k="RVB_fault_engineload_hud" v="Motoren i %s får for meget belastning når den er kold." eh="36daf927" tag="format"/>
+        <e k="RVB_fault_lights" v="Lygterne virker ikke." eh="488daec3" />
+        <e k="RVB_lowjumper" v="Motoren starter ikke. Fortsæt med at starte med startkabler." eh="03bba9c6" />
+        <e k="RVB_lowjumperDonorMotor" v="Start det andet køretøjs motor." eh="78fe1392" />
+        <e k="RVB_fault_BHlights" v="Batteriniveauet er for lavt." eh="53fe34e3" />
+
+        <e k="RVB_DEAD_ENGINE_INSPECTION" v="Køretøjet kan ikke startes, eftersyn i gang." eh="8a60c6e5" />
+        <e k="RVB_DEAD_ENGINE_REPAIR" v="Køretøjet kan ikke startes, reparation i gang." eh="abd5663f" />
+        <e k="RVB_DEAD_ENGINE_SERVICE" v="Køretøjet kan ikke startes, service i gang." eh="71031492" />
+        <e k="RVB_DEAD_ENGINE_SUSPENSION" v="Køretøjets nøgler er hos mekanikeren, som holder pause." eh="7e1beb08" />
+        <e k="RVB_DEAD_ENGINE_BATTERY" v="Motoren starter ikke, batteriet er afladet." eh="07b5c4d5" />
+        <e k="RVB_DEAD_ENGINE_BATTERY_CHARGING" v="Køretøjet kan ikke startes, batteriopladning i gang." eh="8a2973cd" />
+        <e k="RVB_DEAD_ENGINE" v="Motoren starter ikke." eh="1a9fc846" />
+
+        <e k="RVB_fault_lights_INSPECTION" v="Belysningen kan ikke tændes, mens køretøjseftersynet er i gang." eh="1818828a" />
+        <e k="RVB_fault_lights_REPAIR" v="Belysningen kan ikke tændes, mens køretøjsreparationen er i gang." eh="3de16a52" />
+        <e k="RVB_fault_lights_SERVICE" v="Belysningen kan ikke tændes, mens køretøjsvedligeholdelsen er i gang." eh="c2a6e782" />
+
+        <e k="RVB_ErrorNotifi" v="Nedbrud: " eh="78b60278" />
+
+        <e k="infoDisplayExtension_tomorrow" v="i morgen " eh="83a2134f" />
+        <e k="infoDisplayExtension_currentPower" v="Effekt" eh="dd4fe0cc" />
+        <e k="infoDisplayExtension_inspectionVheicle" v="Køretøjseftersyn" eh="7276b8fd" />
+        <e k="infoDisplayExtension_repairVheicle" v="Køretøjsreparation" eh="6c545b62" />
+        <e k="infoDisplayExtension_serviceVheicle" v="Periodisk service" eh="37a54fc5" />
+
+        <e k="RVB_workshopVResetTitle" v="Nulstil køretøj" eh="9e1f8bcf" />
+        <e k="RVB_workshopVResetDesc" v="Er du sikker på, at du vil nulstille %s køretøjet til dets standardtilstand?" eh="36cbd838" tag="format"/>
+
+        <e k="electricChargeTurbine" v="Elektrisk vindmølleoplader" eh="2d67b055" />
+        <e k="function_powerpack" v="Brug denne til at oplade dine elkøretøjer og transportere elektrisk strøm til fjerntliggende steder." eh="eaa5e06e" />
+
+        <e k="Automatic_Repair_conflict_notice" v="Nogle modifikationer reparerer automatisk køretøjet, hvilket kan være i konflikt med &quot;Real Vehicle Breakdowns (RVB)&quot; tilstanden.
+
+For følgende modifikation(er) er automatisk reparation blevet tilsidesat af RVB-modden.
+
+Tilsidesatte modifikation(er): %s
+
+Tak for din forståelse.
+
+Med venlig hilsen,
+
+MathiasHun" eh="a611a9ae" tag="format"/>
+
+        <e k="RVB_aimessage_batterydischarged" v="%s AI-hjælper stoppede uventet arbejdet; køretøjets batteri er afladet!" eh="ee374dc3" />
+
+        <!-- DO NOT CHANGE THIS, ONLY IF THE FS25_USEYOURTYRES MOD ALREADY HAS AN OFFICIAL ENGLISH TRANSLATION -->
+        <e k="infohud_uytTyresWear" v="Dækslid" eh="7cffdd14" />
+        <!-- End of warning -->
+        <e k="rvb_infohud_uytTyresWear" v="Dæk %s" eh="33b244d3" tag="format"/>
+
+    </elements>
+</l10n>

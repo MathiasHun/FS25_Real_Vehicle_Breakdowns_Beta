@@ -2,187 +2,187 @@
 <l10n>
     <translationContributors>DoxoMatixo</translationContributors>
     <elements>
-        <e k="input_RVB_MENU" v="RVB Menüsü"/>
-        <e k="input_RVB_SPEC" v="RVB aç/kapat"/>
-        <e k="input_RVB_CONNECTING_JC" v="Takviye kabloları bağlanıyor"/>
-        <e k="action_RVB_DISCONNECTING_JC" v="Takviye kabloları çıkarılıyor"/>
-        <e k="RVB_dialog_titleCONNECTING_JC" v="Takviye kabloları bağlanıyor"/>
-        <e k="RVB_dialog_descCONNECTING_JC" v="%s aracının takviye ile çalıştırılmasına gerek yok. Takviye kablolarını bağlamaya devam etmek istediğinizden emin misiniz?" tag="format"/>
-        <e k="RVB_addextra_connecting" v="Takviye kabloları bağlandı"/>
-        <e k="RVB_blinking_connecting_toofar" v="Takviye kablosunu daha fazla germeyin, aksi halde aküden çıkabilir! (%s m)" tag="format"/>
-        <e k="RVB_blinking_disconnecting_toofar" v="Takviye kablosu çok kısa — bağlantı koptu!"/>
-        <e k="RVB_blinking_connecting_drive" v="Uzaklaşmayın, takviye kabloları hâlâ bağlı! (%s m)" tag="format"/>
-        <e k="RVB_blinking_connecting_length" v="Takviye kablosu uzunluğu: %s m / %s m" tag="format"/>
-        <e k="RVB_blinking_connecting_cableBroken" v="Takviye kabloları bağlıydı ancak hasar gördü. %s karşılığında yenisini almak zorunda kaldınız." tag="format"/>
-        <e k="RVB_blinking_connecting" v="%s: Takviye kabloları bağlandı." tag="format"/>
-        <e k="RVB_blinking_connecting_order" v="Önce çalışan aracı takviye kablolarına bağlayın!"/>
-        <e k="RVB_blinking_disconnecting" v="%s: Takviye kabloları çıkarıldı." tag="format"/>
-        <e k="RVB_blinking_disconnecting_order" v="Önce arızalı aracı takviye kablolarından ayırın!"/>
+        <e k="input_RVB_MENU" v="RVB Menüsü" eh="befec422" />
+        <e k="input_RVB_SPEC" v="RVB aç/kapat" eh="ad0e92fa" />
+        <e k="input_RVB_CONNECTING_JC" v="Takviye kabloları bağlanıyor" eh="d65bafa2" />
+        <e k="action_RVB_DISCONNECTING_JC" v="Takviye kabloları çıkarılıyor" eh="af92d5db" />
+        <e k="RVB_dialog_titleCONNECTING_JC" v="Takviye kabloları bağlanıyor" eh="d65bafa2" />
+        <e k="RVB_dialog_descCONNECTING_JC" v="%s aracının takviye ile çalıştırılmasına gerek yok. Takviye kablolarını bağlamaya devam etmek istediğinizden emin misiniz?" eh="4a72e523" tag="format"/>
+        <e k="RVB_addextra_connecting" v="Takviye kabloları bağlandı" eh="3893af14" />
+        <e k="RVB_blinking_connecting_toofar" v="Takviye kablosunu daha fazla germeyin, aksi halde aküden çıkabilir! (%s m)" eh="de01b5dd" tag="format"/>
+        <e k="RVB_blinking_disconnecting_toofar" v="Takviye kablosu çok kısa — bağlantı koptu!" eh="eed0846f" />
+        <e k="RVB_blinking_connecting_drive" v="Uzaklaşmayın, takviye kabloları hâlâ bağlı! (%s m)" eh="e7083a37" tag="format"/>
+        <e k="RVB_blinking_connecting_length" v="Takviye kablosu uzunluğu: %s m / %s m" eh="00d9d387" tag="format"/>
+        <e k="RVB_blinking_connecting_cableBroken" v="Takviye kabloları bağlıydı ancak hasar gördü. %s karşılığında yenisini almak zorunda kaldınız." eh="5e93c08d" tag="format"/>
+        <e k="RVB_blinking_connecting" v="%s: Takviye kabloları bağlandı." eh="c2447083" tag="format"/>
+        <e k="RVB_blinking_connecting_order" v="Önce çalışan aracı takviye kablolarına bağlayın!" eh="7342e321" />
+        <e k="RVB_blinking_disconnecting" v="%s: Takviye kabloları çıkarıldı." eh="1c1775a5" tag="format"/>
+        <e k="RVB_blinking_disconnecting_order" v="Önce arızalı aracı takviye kablolarından ayırın!" eh="e9970e17" />
 
-        <e k="RVB_MenuGameSettingsGame" v="Oyun Ayarları"/>
-        <e k="RVB_settingSectionHeader_Service" v="Hizmet"/>
-        <e k="RVB_setting_dailyServiceInterval" v="Günlük hizmet"/>
-        <e k="RVB_toolTip_dailyServiceInterval" v="Bakım günde ne sıklıkla yapılmalı? Bu özellik şu anda aktif değil."/>
-        <e k="RVB_setting_periodicServiceInterval" v="Periyodik bakım"/>
-        <e k="RVB_toolTip_periodicServiceInterval" v="Araç bakım aralığı."/>
-        <e k="RVB_settingSectionHeader_Workshop" v="Araç Atölyesi"/>
-        <e k="RVB_setting_workshopTime" v="Atölye Çalışma Saatleri"/>
-        <e k="RVB_toolTip_workshopTime" v="Etkinleştirilirse atölye yalnızca belirtilen saatlerde kullanılabilir."/>
-        <e k="RVB_setting_workshopOpen" v="Açılış Saati"/>
-        <e k="RVB_toolTip_workshopOpen" v="Araç atölyesinin açılış saati."/>
-        <e k="RVB_setting_workshopClose" v="Kapanış Saati"/>
-        <e k="RVB_toolTip_workshopClose" v="Araç atölyesinin kapanış saati."/>
-        <e k="RVB_setting_workshopCountMax" v="Atölyedeki maksimum araç sayısı"/>
-        <e k="RVB_toolTip_workshopCountMax" v="Atölyeye aynı anda kaç aracın girebileceğini buradan ayarlayabilirsiniz."/>
-        <e k="RVB_settingSectionHeader_LifetimeofParts" v="Parçaların Ömrü."/>
-        <e k="RVB_toolTip_lifetimeParts" v="Bu sayı ne kadar küçük, o kadar çabuk arızalanır."/>
-        <e k="RVB_setting_thermostatLifetime" v="Termostat"/>
-        <e k="RVB_setting_lightingsLifetime" v="Aydınlatma"/>
-        <e k="RVB_setting_glowplugLifetime" v="Buji"/>
-        <e k="RVB_setting_wipersLifetime" v="Silecekler"/>
-        <e k="RVB_setting_generatorLifetime" v="Şarj Dinamosu"/>
-        <e k="RVB_setting_engineLifetime" v="Motor"/>
-        <e k="RVB_setting_selfstarterLifetime" v="Marş Dinamosu"/>
-        <e k="RVB_setting_batteryLifetime" v="Akü"/>
-        <e k="RVB_setting_tireLifetime" v="Lastik"/>
-        <e k="RVB_utils_hour" v="%s saat" tag="format"/>
-        <e k="RVB_utils_km" v="%s km" tag="format"/>
-        <e k="RVB_utils_maxcount" v="%s adet" tag="format"/>
+        <e k="RVB_MenuGameSettingsGame" v="Oyun Ayarları" eh="f22e46f4" />
+        <e k="RVB_settingSectionHeader_Service" v="Hizmet" eh="c2ba7e78" />
+        <e k="RVB_setting_dailyServiceInterval" v="Günlük hizmet" eh="af302edf" />
+        <e k="RVB_toolTip_dailyServiceInterval" v="Bakım günde ne sıklıkla yapılmalı? Bu özellik şu anda aktif değil." eh="5677120d" />
+        <e k="RVB_setting_periodicServiceInterval" v="Periyodik bakım" eh="37a54fc5" />
+        <e k="RVB_toolTip_periodicServiceInterval" v="Araç bakım aralığı." eh="c486215a" />
+        <e k="RVB_settingSectionHeader_Workshop" v="Araç Atölyesi" eh="1f942e17" />
+        <e k="RVB_setting_workshopTime" v="Atölye Çalışma Saatleri" eh="d3841d21" />
+        <e k="RVB_toolTip_workshopTime" v="Etkinleştirilirse atölye yalnızca belirtilen saatlerde kullanılabilir." eh="12d5b413" />
+        <e k="RVB_setting_workshopOpen" v="Açılış Saati" eh="7ef9510d" />
+        <e k="RVB_toolTip_workshopOpen" v="Araç atölyesinin açılış saati." eh="9fc2ad38" />
+        <e k="RVB_setting_workshopClose" v="Kapanış Saati" eh="608cf18d" />
+        <e k="RVB_toolTip_workshopClose" v="Araç atölyesinin kapanış saati." eh="b09cc785" />
+        <e k="RVB_setting_workshopCountMax" v="Atölyedeki maksimum araç sayısı" eh="eaa9ec2d" />
+        <e k="RVB_toolTip_workshopCountMax" v="Atölyeye aynı anda kaç aracın girebileceğini buradan ayarlayabilirsiniz." eh="3fc3632c" />
+        <e k="RVB_settingSectionHeader_LifetimeofParts" v="Parçaların Ömrü." eh="77504676" />
+        <e k="RVB_toolTip_lifetimeParts" v="Bu sayı ne kadar küçük, o kadar çabuk arızalanır." eh="670fee78" />
+        <e k="RVB_setting_thermostatLifetime" v="Termostat" eh="91e0b95d" />
+        <e k="RVB_setting_lightingsLifetime" v="Aydınlatma" eh="2e4b97fd" />
+        <e k="RVB_setting_glowplugLifetime" v="Buji" eh="6fdb6ce6" />
+        <e k="RVB_setting_wipersLifetime" v="Silecekler" eh="6fdb61c4" />
+        <e k="RVB_setting_generatorLifetime" v="Şarj Dinamosu" eh="92a8f0b9" />
+        <e k="RVB_setting_engineLifetime" v="Motor" eh="7bfa3072" />
+        <e k="RVB_setting_selfstarterLifetime" v="Marş Dinamosu" eh="ee6085db" />
+        <e k="RVB_setting_batteryLifetime" v="Akü" eh="d67c9286" />
+        <e k="RVB_setting_tireLifetime" v="Lastik" eh="e4b17d74" />
+        <e k="RVB_utils_hour" v="%s saat" eh="0aaff306" tag="format"/>
+        <e k="RVB_utils_km" v="%s km" eh="7e78f68c" tag="format"/>
+        <e k="RVB_utils_maxcount" v="%s adet" eh="eb664c9a" tag="format"/>
 
-        <e k="RVB_MenuGameSettingsGeneral" v="Genel Ayarlar"/>
-        <e k="RVB_setting_alertDialog" v="Uyarı mesajı"/>
-        <e k="RVB_toolTip_alertDialog" v="Araç hasar gördüğünde, servise götürüldüğünde veya tamir edildiğinde araç içindeyseniz ekranın ortasında bir uyarı mesajı görünecektir."/>
-        <e k="RVB_setting_rvbDifficulty" v="Araç arızası"/>
-        <e k="RVB_toolTip_rvbDifficulty" v="Geliştirme aşamasında ama kullanıma hazır."/>
-        <e k="RVB_difficulty_slow" v="Yavaş"/>
-        <e k="RVB_difficulty_medium" v="Orta"/>
-        <e k="RVB_difficulty_fast" v="Hızlı"/>
-        <e k="RVB_setting_vehicleHud" v="Araç Parçaları HUD"/>
-        <e k="RVB_toolTip_vehicleHud" v="Araç parçalarının çalışma saatlerini gösterir (kapatıldığında performansı artırabilir). Test için önerilir."/>
-        <e k="RVB_settingSectionHeader_HUD" v="HUD Ayarları"/>
-        <e k="RVB_setting_showTemp" v="Motor Sıcaklığı"/>
-        <e k="RVB_toolTip_showTemp" v="Burada motor sıcaklığı görüntüsünü açıp kapatabilirsiniz."/>
-        <e k="RVB_setting_showRpm" v="RPM"/>
-        <e k="RVB_toolTip_showRpm" v="Burada Rpm görüntüsünü açıp kapatabilirsiniz."/>
-        <e k="RVB_setting_showFuel" v="Yakıt"/>
-        <e k="RVB_toolTip_showFuel" v="Burada yakıt görüntüsünü açıp kapatabilirsiniz."/>
-        <e k="RVB_setting_showMotorLoad" v="Motor Yükü"/>
-        <e k="RVB_toolTip_showMotorLoad" v="Motor yükü göstergesini açıp kapatabilirsiniz."/>
-        <e k="RVB_setting_showdebug" v="Sorun Giderme"/>
-        <e k="RVB_toolTip_showdebug" v="Konsolda ve log.txt dosyasında hata ayıklama bilgilerini gösterir (kapatıldığında performansı artırabilir)"/>
+        <e k="RVB_MenuGameSettingsGeneral" v="Genel Ayarlar" eh="52f4393e" />
+        <e k="RVB_setting_alertDialog" v="Uyarı mesajı" eh="252527bd" />
+        <e k="RVB_toolTip_alertDialog" v="Araç hasar gördüğünde, servise götürüldüğünde veya tamir edildiğinde araç içindeyseniz ekranın ortasında bir uyarı mesajı görünecektir." eh="1a4ff708" />
+        <e k="RVB_setting_rvbDifficulty" v="Araç arızası" eh="b74e5c9c" />
+        <e k="RVB_toolTip_rvbDifficulty" v="Geliştirme aşamasında ama kullanıma hazır." eh="68ef8114" />
+        <e k="RVB_difficulty_slow" v="Yavaş" eh="efa53979" />
+        <e k="RVB_difficulty_medium" v="Orta" eh="87f8a6ab" />
+        <e k="RVB_difficulty_fast" v="Hızlı" eh="e16b5b7f" />
+        <e k="RVB_setting_vehicleHud" v="Araç Parçaları HUD" eh="97c188e7" />
+        <e k="RVB_toolTip_vehicleHud" v="Araç parçalarının çalışma saatlerini gösterir (kapatıldığında performansı artırabilir). Test için önerilir." eh="3fc04f06" />
+        <e k="RVB_settingSectionHeader_HUD" v="HUD Ayarları" eh="c45776a5" />
+        <e k="RVB_setting_showTemp" v="Motor Sıcaklığı" eh="a6eab106" />
+        <e k="RVB_toolTip_showTemp" v="Burada motor sıcaklığı görüntüsünü açıp kapatabilirsiniz." eh="77260a8c" />
+        <e k="RVB_setting_showRpm" v="RPM" eh="fe2284eb" />
+        <e k="RVB_toolTip_showRpm" v="Burada Rpm görüntüsünü açıp kapatabilirsiniz." eh="a24f2ebc" />
+        <e k="RVB_setting_showFuel" v="Yakıt" eh="94fc563c" />
+        <e k="RVB_toolTip_showFuel" v="Burada yakıt görüntüsünü açıp kapatabilirsiniz." eh="a762cfcc" />
+        <e k="RVB_setting_showMotorLoad" v="Motor Yükü" eh="62f58274" />
+        <e k="RVB_toolTip_showMotorLoad" v="Motor yükü göstergesini açıp kapatabilirsiniz." eh="3a8bdda4" />
+        <e k="RVB_setting_showdebug" v="Sorun Giderme" eh="231cf4c7" />
+        <e k="RVB_toolTip_showdebug" v="Konsolda ve log.txt dosyasında hata ayıklama bilgilerini gösterir (kapatıldığında performansı artırabilir)" eh="b8ee92ac" />
 
-        <e k="RVB_MenuGamePartsSettings" v="Araç Ayarları"/>
-        <e k="RVB_Parts_stepInterval" v="Adım Aralığı (%)"/>
-        <e k="RVB_Parts_currentValue" v="Mevcut %s kullanım ömrü" tag="format"/>
-        <e k="RVB_Parts_remainingValue" v="%s kullanım ömrü ayarı" tag="format"/>
-        <e k="RVB_part_rvbDifficulty" v="Araç Arızası"/>
-        <e k="RVB_Parts_utils_percent" v="%s %%" tag="format"/>
+        <e k="RVB_MenuGamePartsSettings" v="Araç Ayarları" eh="b33d07b8" />
+        <e k="RVB_Parts_stepInterval" v="Adım Aralığı (%)" eh="a3db3e97" />
+        <e k="RVB_Parts_currentValue" v="Mevcut %s kullanım ömrü" eh="6a16b34b" tag="format"/>
+        <e k="RVB_Parts_remainingValue" v="%s kullanım ömrü ayarı" eh="e5f12d35" tag="format"/>
+        <e k="RVB_part_rvbDifficulty" v="Araç Arızası" eh="b74e5c9c" />
+        <e k="RVB_Parts_utils_percent" v="%s %%" eh="7743aacb" tag="format"/>
 
-        <e k="RVB_WorkShopClose" v="Araç tamirhanesi kapalı, saat %s’de geri gelin." tag="format"/>
-        <e k="RVB_button_inspection" v="İnceleme"/>
-        <e k="RVB_button_dailyservice" v="DGünlük servis"/>
-        <e k="RVB_button_periodicservice" v="Periyodik bakım"/>
-        <e k="RVB_button_battery_ch" v="Akü şarjı"/>
-        <e k="RVB_button_service" v="Bakım"/>
-        <e k="RVB_inspectionDialog" v="Bu aracı %s maliyetle incelemek istediğine emin misin?" tag="format"/>
-        <e k="RVB_inspectionTimeDialog" v="Araç muayenesi saat %s’de tamamlanacak." tag="format"/>
-        <e k="RVB_inspectionDayDialog" v="Araç incelemesi yarın saat %s’de tamamlanacak." tag="format"/>
-        <e k="RVB_faultText_THERMOSTAT" v="Termostat"/>
-        <e k="RVB_faultText_LIGHTINGS" v="Aydınlatma"/>
-        <e k="RVB_faultText_GLOWPLUG" v="Buji"/>
-        <e k="RVB_faultText_WIPERS" v="Silecekler"/>
-        <e k="RVB_faultText_GENERATOR" v="Şarj Dinamosu"/>
-        <e k="RVB_faultText_ENGINE" v="Motor"/>
-        <e k="RVB_faultText_SELFSTARTER" v="Marş Dinamosu"/>
-        <e k="RVB_faultText_BATTERY" v="Akü"/>
-        <e k="RVB_faultText_TIRE" v="Lastik"/>
-        <e k="RVB_faultText_TIREFL" v="Ön sol lastik"/>
-        <e k="RVB_faultText_TIREFR" v="Ön sağ lastik"/>
-        <e k="RVB_faultText_TIRERL" v="Arka sol lastik"/>
-        <e k="RVB_faultText_TIRERR" v="Arka sağ lastik"/>
-        <e k="RVB_repairErrorMechanics" v="Tüm ustalar meşgul, aynı anda en fazla %s araç tamir edilebilir." tag="format"/>
-        <e k="RVB_repairTimeDialog" v="Araç tamiri saat %s’de tamamlanacak." tag="format"/>
-        <e k="RVB_repairDayDialog" v="Araç tamiri yarın saat %s’de tamamlanacak." tag="format"/>
-        <e k="RVB_ErrorList" v="Hata listesi:" />
-        <e k="RVB_periodicserviceDialog" v="%s maliyetle aracı servise bırakmak istediğinizden emin misiniz?" tag="format"/>
-        <e k="RVB_periodicserviceTimeDialog" v="Araç servisi saat %s’de tamamlanacak." tag="format"/>
-        <e k="RVB_periodicserviceDayDialog" v="Araç servisi yarın saat %s’de tamamlanacak." tag="format"/>
-        <e k="RVB_batteryChDialog" v="%s maliyetle araç aküsünü şarj etmek istediğinizden emin misiniz?" tag="format"/>
-        <e k="RVB_operatingTime" v="%02d saat" tag="format"/>
-        <e k="RVB_shop_operatingTimeG" v="%s:%s saat" tag="format"/>
-        <e k="RVB_alertmessage_inspection" v="Araç incelemesi devam ediyor."/>
-        <e k="RVB_alertmessage_repair" v="Araç tamiri devam ediyor."/>
-        <e k="RVB_alertmessage_service" v="Araç servisi devam ediyor."/>
+        <e k="RVB_WorkShopClose" v="Araç tamirhanesi kapalı, saat %s’de geri gelin." eh="64254a65" tag="format"/>
+        <e k="RVB_button_inspection" v="İnceleme" eh="b4faa7ed" />
+        <e k="RVB_button_dailyservice" v="DGünlük servis" eh="af302edf" />
+        <e k="RVB_button_periodicservice" v="Periyodik bakım" eh="37a54fc5" />
+        <e k="RVB_button_battery_ch" v="Akü şarjı" eh="30a47fb3" />
+        <e k="RVB_button_service" v="Bakım" eh="c2ba7e78" />
+        <e k="RVB_inspectionDialog" v="Bu aracı %s maliyetle incelemek istediğine emin misin?" eh="7401f205" tag="format"/>
+        <e k="RVB_inspectionTimeDialog" v="Araç muayenesi saat %s’de tamamlanacak." eh="06135b4d" tag="format"/>
+        <e k="RVB_inspectionDayDialog" v="Araç incelemesi yarın saat %s’de tamamlanacak." eh="af1c4b1b" tag="format"/>
+        <e k="RVB_faultText_THERMOSTAT" v="Termostat" eh="91e0b95d" />
+        <e k="RVB_faultText_LIGHTINGS" v="Aydınlatma" eh="2e4b97fd" />
+        <e k="RVB_faultText_GLOWPLUG" v="Buji" eh="6fdb6ce6" />
+        <e k="RVB_faultText_WIPERS" v="Silecekler" eh="6fdb61c4" />
+        <e k="RVB_faultText_GENERATOR" v="Şarj Dinamosu" eh="92a8f0b9" />
+        <e k="RVB_faultText_ENGINE" v="Motor" eh="7bfa3072" />
+        <e k="RVB_faultText_SELFSTARTER" v="Marş Dinamosu" eh="ee6085db" />
+        <e k="RVB_faultText_BATTERY" v="Akü" eh="d67c9286" />
+        <e k="RVB_faultText_TIRE" v="Lastik" eh="e4b17d74" />
+        <e k="RVB_faultText_TIREFL" v="Ön sol lastik" eh="4a8014f5" />
+        <e k="RVB_faultText_TIREFR" v="Ön sağ lastik" eh="d65bdf73" />
+        <e k="RVB_faultText_TIRERL" v="Arka sol lastik" eh="8058c09e" />
+        <e k="RVB_faultText_TIRERR" v="Arka sağ lastik" eh="433ab1ca" />
+        <e k="RVB_repairErrorMechanics" v="Tüm ustalar meşgul, aynı anda en fazla %s araç tamir edilebilir." eh="8db25de5" tag="format"/>
+        <e k="RVB_repairTimeDialog" v="Araç tamiri saat %s’de tamamlanacak." eh="1b895cdb" tag="format"/>
+        <e k="RVB_repairDayDialog" v="Araç tamiri yarın saat %s’de tamamlanacak." eh="3d3ab5be" tag="format"/>
+        <e k="RVB_ErrorList" v="Hata listesi:" eh="4e0dbac7" />
+        <e k="RVB_periodicserviceDialog" v="%s maliyetle aracı servise bırakmak istediğinizden emin misiniz?" eh="20eb9276" tag="format"/>
+        <e k="RVB_periodicserviceTimeDialog" v="Araç servisi saat %s’de tamamlanacak." eh="1f9463c5" tag="format"/>
+        <e k="RVB_periodicserviceDayDialog" v="Araç servisi yarın saat %s’de tamamlanacak." eh="23dccb31" tag="format"/>
+        <e k="RVB_batteryChDialog" v="%s maliyetle araç aküsünü şarj etmek istediğinizden emin misiniz?" eh="94b16ee9" tag="format"/>
+        <e k="RVB_operatingTime" v="%02d saat" eh="ec877abb" tag="format"/>
+        <e k="RVB_shop_operatingTimeG" v="%s:%s saat" eh="53789ab2" tag="format"/>
+        <e k="RVB_alertmessage_inspection" v="Araç incelemesi devam ediyor." eh="65fb0250" />
+        <e k="RVB_alertmessage_repair" v="Araç tamiri devam ediyor." eh="e142d0e7" />
+        <e k="RVB_alertmessage_service" v="Araç servisi devam ediyor." eh="b4b2edf3" />
 
-        <e k="RVB_list_battery" v="Akü"/>
+        <e k="RVB_list_battery" v="Akü" eh="d67c9286" />
 
-        <e k="RVB_Workshop" v="Atölye"/>
-        <e k="RVB_Workshop_diagnostics" v="Teşhis"/>
-        <e k="RVB_Workshop_serviceManual" v="Servis Kaydı"/>
-        <e k="RVB_Workshop_noinspection" v="Araç henüz incelenmedi!"/>
-        <e k="RVB_Workshop_noserviceManualEntry" v="Servis kaydında giriş yok!"/>
-        <e k="RVB_Workshop_status" v="Durum:"/>
-        <e k="RVB_Workshop_repair" v="Tamir?"/>
-        <e k="RVB_Workshop_work" v="İşlem"/>
-        <e k="RVB_Workshop_date" v="Tarih"/>
-        <e k="RVB_Workshop_lifetime" v="Çalışma saatleri"/>
-        <e k="RVB_Workshop_odometer" v="Kilometre Sayacı"/>
-        <e k="RVB_Workshop_cost" v="Maliyet"/>
-        <e k="RVB_WorkshopD_new" v="Yeni"/>
-        <e k="RVB_WorkshopD_conExcellent" v="Mükemmel durumda"/>
-        <e k="RVB_WorkshopD_conGood" v="İyi durumda"/>
-        <e k="RVB_WorkshopD_conUsed" v="Kullanılmış ama çalışır durumda"/>
-        <e k="RVB_WorkshopD_conFaults" v="Arızaya yatkın"/>
-        <e k="RVB_WorkshopD_conDown" v="Arızalı"/>
-        <e k="RVB_WorkshopD_conReplace" v="Değiştirilmesi gerekiyor"/>
-        <e k="RVB_WorkshopS_repNeed" v="Tamir gerekiyor. "/>
-        <e k="RVB_WorkshopS_repNoNeed" v="Tamir gerekmiyor."/>
-        <e k="RVB_WorkshopS_month" v=" ay"/>
+        <e k="RVB_Workshop" v="Atölye" eh="8e5d9dbc" />
+        <e k="RVB_Workshop_diagnostics" v="Teşhis" eh="36b64aad" />
+        <e k="RVB_Workshop_serviceManual" v="Servis Kaydı" eh="076e552d" />
+        <e k="RVB_Workshop_noinspection" v="Araç henüz incelenmedi!" eh="58a6a5a1" />
+        <e k="RVB_Workshop_noserviceManualEntry" v="Servis kaydında giriş yok!" eh="7bf99f4e" />
+        <e k="RVB_Workshop_status" v="Durum:" eh="24a23d78" />
+        <e k="RVB_Workshop_repair" v="Tamir?" eh="e045471f" />
+        <e k="RVB_Workshop_work" v="İşlem" eh="0f926353" />
+        <e k="RVB_Workshop_date" v="Tarih" eh="44749712" />
+        <e k="RVB_Workshop_lifetime" v="Çalışma saatleri" eh="cb932a6d" />
+        <e k="RVB_Workshop_odometer" v="Kilometre Sayacı" eh="6e7f0879" />
+        <e k="RVB_Workshop_cost" v="Maliyet" eh="20b4f77b" />
+        <e k="RVB_WorkshopD_new" v="Yeni" eh="03c2e7e4" />
+        <e k="RVB_WorkshopD_conExcellent" v="Mükemmel durumda" eh="d351c1b2" />
+        <e k="RVB_WorkshopD_conGood" v="İyi durumda" eh="2acb21a1" />
+        <e k="RVB_WorkshopD_conUsed" v="Kullanılmış ama çalışır durumda" eh="c7981b42" />
+        <e k="RVB_WorkshopD_conFaults" v="Arızaya yatkın" eh="0d2d90ed" />
+        <e k="RVB_WorkshopD_conDown" v="Arızalı" eh="6d10dc80" />
+        <e k="RVB_WorkshopD_conReplace" v="Değiştirilmesi gerekiyor" eh="aedbbab2" />
+        <e k="RVB_WorkshopS_repNeed" v="Tamir gerekiyor. " eh="b9d46622" />
+        <e k="RVB_WorkshopS_repNoNeed" v="Tamir gerekmiyor." eh="3363e3de" />
+        <e k="RVB_WorkshopS_month" v=" ay" eh="888b692b" />
 
-        <e k="RVB_WorkshopMessage_service" v="Belirlenen servis aralığını %s saat aştınız, bu nedenle tamir daha uzun sürdü ve daha pahalı oldu." tag="format"/>
-        <e k="RVB_WorkshopMessage_serviceDone" v="Servis tamamlandı."/>
-        <e k="RVB_WorkshopMessage_repairDone" v="Tamir tamamlandı. Değiştirilen/onarılan parçalar: %s" tag="format"/>
-        <e k="RVB_WorkshopMessage_batteryDone" v="Akü tamamen şarj edildi."/>
-        <e k="RVB_WorkshopMessage_vResetDone" v="Araç sıfırlandı."/>
+        <e k="RVB_WorkshopMessage_service" v="Belirlenen servis aralığını %s saat aştınız, bu nedenle tamir daha uzun sürdü ve daha pahalı oldu." eh="4793bc2c" tag="format"/>
+        <e k="RVB_WorkshopMessage_serviceDone" v="Servis tamamlandı." eh="92a45efa" />
+        <e k="RVB_WorkshopMessage_repairDone" v="Tamir tamamlandı. Değiştirilen/onarılan parçalar: %s" eh="2a748e5d" tag="format"/>
+        <e k="RVB_WorkshopMessage_batteryDone" v="Akü tamamen şarj edildi." eh="1ab095d0" />
+        <e k="RVB_WorkshopMessage_vResetDone" v="Araç sıfırlandı." eh="1d94103e" />
 
-        <e k="RVB_inspectionDialogFault" v="Araç %s incelendi, onarım gerekiyor. %s"/>
-        <e k="RVB_inspectionDialogEnd" v="Araç %s incelendi, onarım gerektirmiyor."/>
-        <e k="RVB_inspectionDialogEnd_other" v="%s araç incelendi ve tamir edildi. Tamircinizin çok işi olduğu için çırak aracınızı tamir etti. Ancak çırak ustası olmadan tamir ettiği şeyleri listeleyemez."/>
+        <e k="RVB_inspectionDialogFault" v="Araç %s incelendi, onarım gerekiyor. %s" eh="63f23863" />
+        <e k="RVB_inspectionDialogEnd" v="Araç %s incelendi, onarım gerektirmiyor." eh="adb75b1a" />
+        <e k="RVB_inspectionDialogEnd_other" v="%s araç incelendi ve tamir edildi. Tamircinizin çok işi olduğu için çırak aracınızı tamir etti. Ancak çırak ustası olmadan tamir ettiği şeyleri listeleyemez." eh="fca01ba3" />
 
-        <e k="RVB_serviceDialogEnd" v="%s aracının servisi tamamlandı."/>
-        <e k="RVB_repairDialogEnd" v="%s aracının tamiri tamamlandı."/>
-        <e k="RVB_fault_engineload" v="Motor hâlâ soğukken fazla zorlamayın."/>
-        <e k="RVB_fault_engineload_hud" v="%s aracının motoru soğukken aşırı yüke maruz kalıyor." tag="format"/>
-        <e k="RVB_fault_lights" v="Aydınlatma çalışmıyor."/>
-        <e k="RVB_lowjumper" v="Motor çalışmıyor. Takviye işlemine devam et."/>
-        <e k="RVB_lowjumperDonorMotor" v="Diğer aracın motorunu çalıştır."/>
-        <e k="RVB_fault_BHlights" v="Pilin şarj düzeyi çok düşük."/>
+        <e k="RVB_serviceDialogEnd" v="%s aracının servisi tamamlandı." eh="b705ad92" />
+        <e k="RVB_repairDialogEnd" v="%s aracının tamiri tamamlandı." eh="5ce51ccd" />
+        <e k="RVB_fault_engineload" v="Motor hâlâ soğukken fazla zorlamayın." eh="5de6f564" />
+        <e k="RVB_fault_engineload_hud" v="%s aracının motoru soğukken aşırı yüke maruz kalıyor." eh="36daf927" tag="format"/>
+        <e k="RVB_fault_lights" v="Aydınlatma çalışmıyor." eh="488daec3" />
+        <e k="RVB_lowjumper" v="Motor çalışmıyor. Takviye işlemine devam et." eh="03bba9c6" />
+        <e k="RVB_lowjumperDonorMotor" v="Diğer aracın motorunu çalıştır." eh="78fe1392" />
+        <e k="RVB_fault_BHlights" v="Pilin şarj düzeyi çok düşük." eh="53fe34e3" />
 
-        <e k="RVB_DEAD_ENGINE_INSPECTION" v="Araç çalıştırılamıyor, inceleme devam ediyor."/>
-        <e k="RVB_DEAD_ENGINE_REPAIR" v="Araç çalıştırılamıyor, tamirat devam ediyor."/>
-        <e k="RVB_DEAD_ENGINE_SERVICE" v="Araç çalıştırılamıyor, servis bakım işlemi devam ediyor."/>
-        <e k="RVB_DEAD_ENGINE_SUSPENSION" v="Araç anahtarı tamircide ve o şu anda meşgul."/>
-        <e k="RVB_DEAD_ENGINE_BATTERY" v="Motor çalışmıyor, akü tamamen bitti."/>
-        <e k="RVB_DEAD_ENGINE_BATTERY_CHARGING" v="Araç çalıştırılamıyor, akü şarjı devam ediyor."/>
-        <e k="RVB_DEAD_ENGINE" v="Motor çalışmıyor."/>
+        <e k="RVB_DEAD_ENGINE_INSPECTION" v="Araç çalıştırılamıyor, inceleme devam ediyor." eh="8a60c6e5" />
+        <e k="RVB_DEAD_ENGINE_REPAIR" v="Araç çalıştırılamıyor, tamirat devam ediyor." eh="abd5663f" />
+        <e k="RVB_DEAD_ENGINE_SERVICE" v="Araç çalıştırılamıyor, servis bakım işlemi devam ediyor." eh="71031492" />
+        <e k="RVB_DEAD_ENGINE_SUSPENSION" v="Araç anahtarı tamircide ve o şu anda meşgul." eh="7e1beb08" />
+        <e k="RVB_DEAD_ENGINE_BATTERY" v="Motor çalışmıyor, akü tamamen bitti." eh="07b5c4d5" />
+        <e k="RVB_DEAD_ENGINE_BATTERY_CHARGING" v="Araç çalıştırılamıyor, akü şarjı devam ediyor." eh="8a2973cd" />
+        <e k="RVB_DEAD_ENGINE" v="Motor çalışmıyor." eh="1a9fc846" />
 
-        <e k="RVB_fault_lights_INSPECTION" v="Işıklar, araç muayenesi devam ederken açılabilir."/>
-        <e k="RVB_fault_lights_REPAIR" v="Işıklar, araç tamiri devam ederken açılabilir."/>
-        <e k="RVB_fault_lights_SERVICE" v="Işıklar, araç bakımı devam ederken açılabilir."/>
+        <e k="RVB_fault_lights_INSPECTION" v="Işıklar, araç muayenesi devam ederken açılabilir." eh="1818828a" />
+        <e k="RVB_fault_lights_REPAIR" v="Işıklar, araç tamiri devam ederken açılabilir." eh="3de16a52" />
+        <e k="RVB_fault_lights_SERVICE" v="Işıklar, araç bakımı devam ederken açılabilir." eh="c2a6e782" />
 
-        <e k="RVB_ErrorNotifi" v="Arıza(lar): "/>
+        <e k="RVB_ErrorNotifi" v="Arıza(lar): " eh="78b60278" />
 
-        <e k="infoDisplayExtension_tomorrow" v="Yarın "/>
-        <e k="infoDisplayExtension_currentPower" v="Güç"/>
-        <e k="infoDisplayExtension_inspectionVheicle" v="Araç muayenesi"/>
-        <e k="infoDisplayExtension_repairVheicle" v="Araç tamiri"/>
-        <e k="infoDisplayExtension_serviceVheicle" v="Periyodik bakım"/>
+        <e k="infoDisplayExtension_tomorrow" v="Yarın " eh="83a2134f" />
+        <e k="infoDisplayExtension_currentPower" v="Güç" eh="dd4fe0cc" />
+        <e k="infoDisplayExtension_inspectionVheicle" v="Araç muayenesi" eh="7276b8fd" />
+        <e k="infoDisplayExtension_repairVheicle" v="Araç tamiri" eh="6c545b62" />
+        <e k="infoDisplayExtension_serviceVheicle" v="Periyodik bakım" eh="37a54fc5" />
 
-        <e k="RVB_workshopVResetTitle" v="Araç Sıfırlama"/>
-        <e k="RVB_workshopVResetDesc" v="%s aracını varsayılan duruma sıfırlamak istediğinizden emin misiniz?" tag="format"/>
+        <e k="RVB_workshopVResetTitle" v="Araç Sıfırlama" eh="9e1f8bcf" />
+        <e k="RVB_workshopVResetDesc" v="%s aracını varsayılan duruma sıfırlamak istediğinizden emin misiniz?" eh="36cbd838" tag="format"/>
 
-        <e k="electricChargeTurbine" v="Elektrikli Rüzgar Türbini Şarj Cihazı"/>
-        <e k="function_powerpack" v="Elektrikli araçlarınızı şarj etmek ve elektriği uzak bölgelere taşımak için kullanın."/>
+        <e k="electricChargeTurbine" v="Elektrikli Rüzgar Türbini Şarj Cihazı" eh="2d67b055" />
+        <e k="function_powerpack" v="Elektrikli araçlarınızı şarj etmek ve elektriği uzak bölgelere taşımak için kullanın." eh="eaa5e06e" />
 
         <e k="Automatic_Repair_conflict_notice" v="Araçları otomatik olarak tamir eden modifikasyonlar var, bu nedenle &quot;Real Vehicle Breakdowns(RVB)&quot; modu bu modlarla çakışabilir.
 
@@ -194,14 +194,14 @@ Anlayışınız için teşekkür ederim.
 
 En iyi dileklerimle,
 
-MathiasHun" tag="format"/>
+MathiasHun" eh="a611a9ae" tag="format"/>
 
-        <e k="RVB_aimessage_batterydischarged" v="%s AI çalışanı beklenmedik bir şekilde çalışmayı durdurdu, aracın aküsü boşaldı!"/>
+        <e k="RVB_aimessage_batterydischarged" v="%s AI çalışanı beklenmedik bir şekilde çalışmayı durdurdu, aracın aküsü boşaldı!" eh="ee374dc3" />
 
         <!-- DO NOT CHANGE THIS, ONLY IF THE FS25_USEYOURTYRES MOD ALREADY HAS AN OFFICIAL TURKEY TRANSLATION -->
-        <e k="infohud_uytTyresWear" v="Tyres wear"/>
+        <e k="infohud_uytTyresWear" v="Tyres wear" eh="7cffdd14" />
         <!-- End of warning -->
-        <e k="rvb_infohud_uytTyresWear" v="Lastik %s" tag="format"/>
+        <e k="rvb_infohud_uytTyresWear" v="Lastik %s" eh="33b244d3" tag="format"/>
 
     </elements>
 </l10n>
