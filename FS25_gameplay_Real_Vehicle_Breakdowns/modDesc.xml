@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <modDesc descVersion="106">
     <author>MathiasHun</author>
-    <version>0.9.6.0</version>
+    <version>0.9.6.1</version>
     <title>
         <en>Real Vehicle Breakdowns</en>
     </title>
@@ -54,6 +54,9 @@ Mod Conflict
 If you are using the Real Vehicle Breakdowns (RVB) mod, do not use the:
 
 - FS25_DisableTurnOffMotor - it will prevent the engine temperature from rising
+
+Changelog 0.9.6.1:
+- github issues#141 - For some players, the game would not start after the update, this issue has now been fixed.
 
 Changelog 0.9.6.0:
 - Rethinking Automatic Engine Shutdown Disable Logic
