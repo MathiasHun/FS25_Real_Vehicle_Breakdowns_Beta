@@ -511,13 +511,12 @@ function VehicleBreakdowns:onLoad(savegame)
 		spec.isrvbSpecEnabled = false
 	end
 	if not spec.isrvbSpecEnabled then
-		return
+		-- github issues#141
+		--return
 	end
-	
-	
+
 	-- jumper kábel spec létrehozása
 	if self.spec_jumperCable == nil then
-
 		self.spec_jumperCable = {
 			connection = nil
 		}
@@ -2316,6 +2315,25 @@ function VehicleBreakdowns:saveToXMLFile(xmlFile, key, usedModNames)
 end
 
 function VehicleBreakdowns.onRegisterActionEvents(self, _, isActiveForInputIgnoreSelection)
+	if self.spec_faultData == nil then return end
+	local spec = self.spec_faultData
+	if spec.actionEvents == nil then spec.actionEvents = {} end
+	self:clearActionEventsTable(spec.actionEvents)
+	if isActiveForInputIgnoreSelection then
+		local set, actionEventIdSet = self:addActionEvent(spec.actionEvents, InputAction.RVB_MENU, self, VehicleBreakdowns.actionToggleRVBMenu, false, true, false, true, nil)
+		if set then
+			g_inputBinding:setActionEventTextPriority(actionEventIdSet, GS_PRIO_VERY_HIGH)
+			g_inputBinding:setActionEventTextVisibility(actionEventIdSet, true)
+			g_inputBinding:setActionEventActive(actionEventIdSet, true)
+		end
+		local setSpec, actionEventIdSetSpec = self:addActionEvent(spec.actionEvents, InputAction.RVB_SPEC, self, VehicleBreakdowns.actionToggleRVBSpecialization, false, true, false, true, nil)
+		if setSpec then
+			g_inputBinding:setActionEventTextPriority(actionEventIdSetSpec, GS_PRIO_VERY_HIGH)
+			g_inputBinding:setActionEventTextVisibility(actionEventIdSetSpec, true)
+			g_inputBinding:setActionEventActive(actionEventIdSetSpec, true)
+		end
+		--VehicleBreakdowns.updateActionEvents(self)
+	end
 	if self.spec_faultData == nil or not self.spec_faultData.isrvbSpecEnabled then return end
 	if self.isClient and (self.getIsEntered and self:getIsEntered()) then
 		local spec = self.spec_lights
@@ -2423,28 +2441,6 @@ function VehicleBreakdowns.onRegisterActionEvents(self, _, isActiveForInputIgnor
 			g_inputBinding:setActionEventTextVisibility(actionEventIdReverse, false)
 		end
 
-
-		if self.spec_faultData == nil then return end
-		local spec = self.spec_faultData
-		if spec.actionEvents == nil then spec.actionEvents = {} end
-		self:clearActionEventsTable(spec.actionEvents)
-		if isActiveForInputIgnoreSelection then
-			local set, actionEventIdSet = self:addActionEvent(spec.actionEvents, InputAction.RVB_MENU, self, VehicleBreakdowns.actionToggleRVBMenu, false, true, false, true, nil)
-			if set then
-				g_inputBinding:setActionEventTextPriority(actionEventIdSet, GS_PRIO_VERY_HIGH)
-				g_inputBinding:setActionEventTextVisibility(actionEventIdSet, true)
-				g_inputBinding:setActionEventActive(actionEventIdSet, true)
-			end
-			local setSpec, actionEventIdSetSpec = self:addActionEvent(spec.actionEvents, InputAction.RVB_SPEC, self, VehicleBreakdowns.actionToggleRVBSpecialization, false, true, false, true, nil)
-			if setSpec then
-				g_inputBinding:setActionEventTextPriority(actionEventIdSetSpec, GS_PRIO_VERY_HIGH)
-				g_inputBinding:setActionEventTextVisibility(actionEventIdSetSpec, true)
-				g_inputBinding:setActionEventActive(actionEventIdSetSpec, true)
-			end
-
-			--VehicleBreakdowns.updateActionEvents(self)
-		end
-			
 	end
 end
 
@@ -5074,9 +5070,8 @@ function VehicleBreakdowns.injPhysWheelUpdateContact(self)
 		vWheel.uytTravelledDist = 0
 	end
 	local rvb = self.vehicle.spec_faultData
-    if not rvb then return end
 	
-	if not rvb.isrvbSpecEnabled then return	end
+	if rvb == nil or not rvb.isrvbSpecEnabled then return end
 	
 	if self.contact == WheelContactType.GROUND or self.contact == WheelContactType.OBJECT then
 
