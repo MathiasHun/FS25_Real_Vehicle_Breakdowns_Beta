@@ -1,6 +1,6 @@
 # FS25_gameplay Real Vehicle Breakdowns Beta
 
-![image](https://github.com/MathiasHun/FS25_Real_Vehicle_Breakdowns_Beta/blob/main/icon_vehicleBreakdown256.png)
+![image](https://github.com/MathiasHun/FS25_Real_Vehicle_Breakdowns_Beta/blob/main/webicon_vehicleBreakdown_NEW.png)
 
 <div style="display: inline-flex; align-items: center;">
   <a href="https://www.youtube.com/watch?v=nu9aUVNbP1o" target="_blank" style="display: inline-block;">
