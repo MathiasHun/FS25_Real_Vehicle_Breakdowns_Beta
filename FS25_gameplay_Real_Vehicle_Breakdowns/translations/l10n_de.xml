@@ -2,186 +2,186 @@
 <l10n>
     <translationContributors>LSMT-elMatado</translationContributors>
     <elements>
-        <e k="input_RVB_MENU" v="RVB-Menü"/>
-        <e k="input_RVB_SPEC" v="RVB ein/aus"/>
-        <e k="input_RVB_CONNECTING_JC" v="Starthilfekabel anschließen"/>
-        <e k="action_RVB_DISCONNECTING_JC" v="Starthilfekabel trennen"/>
-        <e k="RVB_dialog_titleCONNECTING_JC" v="Starthilfekabel anschließen"/>
-        <e k="RVB_dialog_descCONNECTING_JC" v="Es ist nicht nötig, das Fahrzeug %s zu überbrücken. Bist du sicher, dass du trotzdem die Starthilfekabel anschließen willst?" tag="format"/>
-        <e k="RVB_addextra_connecting" v="Starthilfekabel angeschlossen"/>
-        <e k="RVB_blinking_connecting_toofar" v="Zieh das Starthilfekabel nicht weiter, sonst löst es sich bald von der Batterie! (%s m)" tag="format"/>
-        <e k="RVB_blinking_disconnecting_toofar" v="Das Starthilfekabel ist zu kurz – es hat sich gelöst!"/>
-        <e k="RVB_blinking_connecting_drive" v="Fahr nicht weg, die Starthilfekabel sind noch angeschlossen! (%s m)" tag="format"/>
-        <e k="RVB_blinking_connecting_length" v="Starthilfekabellänge: %s m / %s m" tag="format"/>
-        <e k="RVB_blinking_connecting_cableBroken" v="Die Starthilfekabel waren angeschlossen. Sie wurden beschädigt, daher musstest du neue für %s kaufen." tag="format"/>        
-        <e k="RVB_blinking_connecting" v="%s: Starthilfekabel angeschlossen." tag="format"/>
-        <e k="RVB_blinking_connecting_order" v="Verbinde zuerst das funktionierende Fahrzeug mit den Starthilfekabeln!"/>
-        <e k="RVB_blinking_disconnecting" v="%s: Starthilfekabel getrennt." tag="format"/>
-        <e k="RVB_blinking_disconnecting_order" v="Trenne zuerst das leere Fahrzeug von den Starthilfekabeln!"/>
-        <e k="RVB_MenuGameSettingsGame" v="Spieleinstellungen"/>
-        <e k="RVB_settingSectionHeader_Service" v="Service"/>
-        <e k="RVB_setting_dailyServiceInterval" v="Täglicher Service"/>
-        <e k="RVB_toolTip_dailyServiceInterval" v="Wie oft soll die Wartung pro Tag durchgeführt werden. Diese Funktion ist derzeit inaktiv."/>
-        <e k="RVB_setting_periodicServiceInterval" v="Regelmäßige Wartung"/>
-        <e k="RVB_toolTip_periodicServiceInterval" v="Wartungsintervall des Fahrzeugs."/>
-        <e k="RVB_settingSectionHeader_Workshop" v="Fahrzeugwerkstatt"/>
-        <e k="RVB_setting_workshopTime" v="Werkstattöffnungszeiten"/>
-        <e k="RVB_toolTip_workshopTime" v="Wenn aktiviert, kann die Werkstatt nur während der angegebenen Öffnungszeiten genutzt werden."/>
-        <e k="RVB_setting_workshopOpen" v="Öffnungszeit"/>
-        <e k="RVB_toolTip_workshopOpen" v="Die Zeit, zu der die Fahrzeugwerkstatt öffnet."/>
-        <e k="RVB_setting_workshopClose" v="Schließzeit"/>
-        <e k="RVB_toolTip_workshopClose" v="Die Zeit, zu der die Fahrzeugwerkstatt schließt."/>
-        <e k="RVB_setting_workshopCountMax" v="Maximale Fahrzeuge in der Werkstatt"/>
-        <e k="RVB_toolTip_workshopCountMax" v="Hier können Sie festlegen, wie viele Fahrzeuge gleichzeitig in die Werkstatt passen."/>
-        <e k="RVB_settingSectionHeader_LifetimeofParts" v="Lebensdauer der Teile"/>
-        <e k="RVB_toolTip_lifetimeParts" v="Je kleiner die Zahl, desto schneller wird sie ausfallen."/>
-        <e k="RVB_setting_thermostatLifetime" v="Thermostat"/>
-        <e k="RVB_setting_lightingsLifetime" v="Beleuchtung"/>
-        <e k="RVB_setting_glowplugLifetime" v="Glühkerzen"/>
-        <e k="RVB_setting_wipersLifetime" v="Scheibenwischer"/>
-        <e k="RVB_setting_generatorLifetime" v="Lichtmaschine"/>
-        <e k="RVB_setting_engineLifetime" v="Motor"/>
-        <e k="RVB_setting_selfstarterLifetime" v="Self-starter"/>
-        <e k="RVB_setting_batteryLifetime" v="Batterie"/>
-        <e k="RVB_setting_tireLifetime" v="Reifen"/>
-        <e k="RVB_utils_hour" v="%s Stunden" tag="format"/>
-        <e k="RVB_utils_km" v="%s km" tag="format"/>
-        <e k="RVB_utils_maxcount" v="%s Stk." tag="format"/>
+        <e k="input_RVB_MENU" v="RVB-Menü" eh="befec422" />
+        <e k="input_RVB_SPEC" v="RVB ein/aus" eh="ad0e92fa" />
+        <e k="input_RVB_CONNECTING_JC" v="Starthilfekabel anschließen" eh="d65bafa2" />
+        <e k="action_RVB_DISCONNECTING_JC" v="Starthilfekabel trennen" eh="af92d5db" />
+        <e k="RVB_dialog_titleCONNECTING_JC" v="Starthilfekabel anschließen" eh="d65bafa2" />
+        <e k="RVB_dialog_descCONNECTING_JC" v="Es ist nicht nötig, das Fahrzeug %s zu überbrücken. Bist du sicher, dass du trotzdem die Starthilfekabel anschließen willst?" eh="4a72e523" tag="format"/>
+        <e k="RVB_addextra_connecting" v="Starthilfekabel angeschlossen" eh="3893af14" />
+        <e k="RVB_blinking_connecting_toofar" v="Zieh das Starthilfekabel nicht weiter, sonst löst es sich bald von der Batterie! (%s m)" eh="de01b5dd" tag="format"/>
+        <e k="RVB_blinking_disconnecting_toofar" v="Das Starthilfekabel ist zu kurz – es hat sich gelöst!" eh="eed0846f" />
+        <e k="RVB_blinking_connecting_drive" v="Fahr nicht weg, die Starthilfekabel sind noch angeschlossen! (%s m)" eh="e7083a37" tag="format"/>
+        <e k="RVB_blinking_connecting_length" v="Starthilfekabellänge: %s m / %s m" eh="00d9d387" tag="format"/>
+        <e k="RVB_blinking_connecting_cableBroken" v="Die Starthilfekabel waren angeschlossen. Sie wurden beschädigt, daher musstest du neue für %s kaufen." eh="5e93c08d" tag="format"/>        
+        <e k="RVB_blinking_connecting" v="%s: Starthilfekabel angeschlossen." eh="c2447083" tag="format"/>
+        <e k="RVB_blinking_connecting_order" v="Verbinde zuerst das funktionierende Fahrzeug mit den Starthilfekabeln!" eh="7342e321" />
+        <e k="RVB_blinking_disconnecting" v="%s: Starthilfekabel getrennt." eh="1c1775a5" tag="format"/>
+        <e k="RVB_blinking_disconnecting_order" v="Trenne zuerst das leere Fahrzeug von den Starthilfekabeln!" eh="e9970e17" />
+        <e k="RVB_MenuGameSettingsGame" v="Spieleinstellungen" eh="f22e46f4" />
+        <e k="RVB_settingSectionHeader_Service" v="Service" eh="c2ba7e78" />
+        <e k="RVB_setting_dailyServiceInterval" v="Täglicher Service" eh="af302edf" />
+        <e k="RVB_toolTip_dailyServiceInterval" v="Wie oft soll die Wartung pro Tag durchgeführt werden. Diese Funktion ist derzeit inaktiv." eh="5677120d" />
+        <e k="RVB_setting_periodicServiceInterval" v="Regelmäßige Wartung" eh="37a54fc5" />
+        <e k="RVB_toolTip_periodicServiceInterval" v="Wartungsintervall des Fahrzeugs." eh="c486215a" />
+        <e k="RVB_settingSectionHeader_Workshop" v="Fahrzeugwerkstatt" eh="1f942e17" />
+        <e k="RVB_setting_workshopTime" v="Werkstattöffnungszeiten" eh="d3841d21" />
+        <e k="RVB_toolTip_workshopTime" v="Wenn aktiviert, kann die Werkstatt nur während der angegebenen Öffnungszeiten genutzt werden." eh="12d5b413" />
+        <e k="RVB_setting_workshopOpen" v="Öffnungszeit" eh="7ef9510d" />
+        <e k="RVB_toolTip_workshopOpen" v="Die Zeit, zu der die Fahrzeugwerkstatt öffnet." eh="9fc2ad38" />
+        <e k="RVB_setting_workshopClose" v="Schließzeit" eh="608cf18d" />
+        <e k="RVB_toolTip_workshopClose" v="Die Zeit, zu der die Fahrzeugwerkstatt schließt." eh="b09cc785" />
+        <e k="RVB_setting_workshopCountMax" v="Maximale Fahrzeuge in der Werkstatt" eh="eaa9ec2d" />
+        <e k="RVB_toolTip_workshopCountMax" v="Hier können Sie festlegen, wie viele Fahrzeuge gleichzeitig in die Werkstatt passen." eh="3fc3632c" />
+        <e k="RVB_settingSectionHeader_LifetimeofParts" v="Lebensdauer der Teile" eh="77504676" />
+        <e k="RVB_toolTip_lifetimeParts" v="Je kleiner die Zahl, desto schneller wird sie ausfallen." eh="670fee78" />
+        <e k="RVB_setting_thermostatLifetime" v="Thermostat" eh="91e0b95d" />
+        <e k="RVB_setting_lightingsLifetime" v="Beleuchtung" eh="2e4b97fd" />
+        <e k="RVB_setting_glowplugLifetime" v="Glühkerzen" eh="6fdb6ce6" />
+        <e k="RVB_setting_wipersLifetime" v="Scheibenwischer" eh="6fdb61c4" />
+        <e k="RVB_setting_generatorLifetime" v="Lichtmaschine" eh="92a8f0b9" />
+        <e k="RVB_setting_engineLifetime" v="Motor" eh="7bfa3072" />
+        <e k="RVB_setting_selfstarterLifetime" v="Self-starter" eh="ee6085db" />
+        <e k="RVB_setting_batteryLifetime" v="Batterie" eh="d67c9286" />
+        <e k="RVB_setting_tireLifetime" v="Reifen" eh="e4b17d74" />
+        <e k="RVB_utils_hour" v="%s Stunden" eh="0aaff306" tag="format"/>
+        <e k="RVB_utils_km" v="%s km" eh="7e78f68c" tag="format"/>
+        <e k="RVB_utils_maxcount" v="%s Stk." eh="eb664c9a" tag="format"/>
 
-        <e k="RVB_MenuGameSettingsGeneral" v="Allgemeine Einstellungen"/>
-        <e k="RVB_setting_alertDialog" v="Warnmeldung"/>
-        <e k="RVB_toolTip_alertDialog" v="Wenn Ihr Fahrzeug beschädigt, gewartet oder repariert wird, erscheint eine Warnmeldung in der Mitte des Bildschirms, wenn Sie sich im Fahrzeug befinden."/>
-        <e k="RVB_setting_rvbDifficulty" v="Fahrzeugpannen"/>
-        <e k="RVB_toolTip_rvbDifficulty" v="Es befindet sich in der Entwicklung, ist aber einsatzbereit."/>
-        <e k="RVB_difficulty_slow" v="Langsam"/>
-        <e k="RVB_difficulty_medium" v="Mittel"/>
-        <e k="RVB_difficulty_fast" v="Schnell"/>
-        <e k="RVB_setting_vehicleHud" v="Fahrzeugteile HUD"/>
-        <e k="RVB_toolTip_vehicleHud" v="Zeigt die Betriebsstunden der Fahrzeugteile an (kann die Leistung verbessern, wenn ausgeschaltet). Empfohlen für Tests."/>
-        <e k="RVB_settingSectionHeader_HUD" v="HUD-Einstellungen"/>
-        <e k="RVB_setting_showTemp" v="Motortemperatur"/>
-        <e k="RVB_toolTip_showTemp" v="Hier können Sie die Anzeige der Motortemperatur ein- oder ausschalten."/>
-        <e k="RVB_setting_showRpm" v="RPM"/>
-        <e k="RVB_toolTip_showRpm" v="Hier können Sie die Anzeige der RPM ein- oder ausschalten."/>
-        <e k="RVB_setting_showFuel" v="Kraftstoff"/>
-        <e k="RVB_toolTip_showFuel" v="Hier können Sie die Anzeige des Kraftstoffs ein- oder ausschalten."/>
-        <e k="RVB_setting_showMotorLoad" v="Motorlast"/>
-        <e k="RVB_toolTip_showMotorLoad" v="Hier können Sie die Anzeige der Motorlast ein- oder ausschalten."/>
-        <e k="RVB_setting_showdebug" v="Fehlerbehebung"/>
-        <e k="RVB_toolTip_showdebug" v="Zeigt Fehlerbehebung in der Konsole und log.txt an (kann die Leistung verbessern, wenn ausgeschaltet)"/>
+        <e k="RVB_MenuGameSettingsGeneral" v="Allgemeine Einstellungen" eh="52f4393e" />
+        <e k="RVB_setting_alertDialog" v="Warnmeldung" eh="252527bd" />
+        <e k="RVB_toolTip_alertDialog" v="Wenn Ihr Fahrzeug beschädigt, gewartet oder repariert wird, erscheint eine Warnmeldung in der Mitte des Bildschirms, wenn Sie sich im Fahrzeug befinden." eh="1a4ff708" />
+        <e k="RVB_setting_rvbDifficulty" v="Fahrzeugpannen" eh="b74e5c9c" />
+        <e k="RVB_toolTip_rvbDifficulty" v="Es befindet sich in der Entwicklung, ist aber einsatzbereit." eh="68ef8114" />
+        <e k="RVB_difficulty_slow" v="Langsam" eh="efa53979" />
+        <e k="RVB_difficulty_medium" v="Mittel" eh="87f8a6ab" />
+        <e k="RVB_difficulty_fast" v="Schnell" eh="e16b5b7f" />
+        <e k="RVB_setting_vehicleHud" v="Fahrzeugteile HUD" eh="97c188e7" />
+        <e k="RVB_toolTip_vehicleHud" v="Zeigt die Betriebsstunden der Fahrzeugteile an (kann die Leistung verbessern, wenn ausgeschaltet). Empfohlen für Tests." eh="3fc04f06" />
+        <e k="RVB_settingSectionHeader_HUD" v="HUD-Einstellungen" eh="c45776a5" />
+        <e k="RVB_setting_showTemp" v="Motortemperatur" eh="a6eab106" />
+        <e k="RVB_toolTip_showTemp" v="Hier können Sie die Anzeige der Motortemperatur ein- oder ausschalten." eh="77260a8c" />
+        <e k="RVB_setting_showRpm" v="RPM" eh="fe2284eb" />
+        <e k="RVB_toolTip_showRpm" v="Hier können Sie die Anzeige der RPM ein- oder ausschalten." eh="a24f2ebc" />
+        <e k="RVB_setting_showFuel" v="Kraftstoff" eh="94fc563c" />
+        <e k="RVB_toolTip_showFuel" v="Hier können Sie die Anzeige des Kraftstoffs ein- oder ausschalten." eh="a762cfcc" />
+        <e k="RVB_setting_showMotorLoad" v="Motorlast" eh="62f58274" />
+        <e k="RVB_toolTip_showMotorLoad" v="Hier können Sie die Anzeige der Motorlast ein- oder ausschalten." eh="3a8bdda4" />
+        <e k="RVB_setting_showdebug" v="Fehlerbehebung" eh="231cf4c7" />
+        <e k="RVB_toolTip_showdebug" v="Zeigt Fehlerbehebung in der Konsole und log.txt an (kann die Leistung verbessern, wenn ausgeschaltet)" eh="b8ee92ac" />
 
-        <e k="RVB_MenuGamePartsSettings" v="Fahrzeugeinstellungen"/>
-        <e k="RVB_Parts_stepInterval" v="Schrittintervall(%)"/>
-        <e k="RVB_Parts_currentValue" v="Aktuelle %s Lebensdauer" tag="format"/>
-        <e k="RVB_Parts_remainingValue" v="%s Lebensdauer-Einstellung" tag="format"/>
-        <e k="RVB_part_rvbDifficulty" v="Fahrzeugpannen"/>
-        <e k="RVB_Parts_utils_percent" v="%s %%" tag="format"/>
+        <e k="RVB_MenuGamePartsSettings" v="Fahrzeugeinstellungen" eh="b33d07b8" />
+        <e k="RVB_Parts_stepInterval" v="Schrittintervall(%)" eh="a3db3e97" />
+        <e k="RVB_Parts_currentValue" v="Aktuelle %s Lebensdauer" eh="6a16b34b" tag="format"/>
+        <e k="RVB_Parts_remainingValue" v="%s Lebensdauer-Einstellung" eh="e5f12d35" tag="format"/>
+        <e k="RVB_part_rvbDifficulty" v="Fahrzeugpannen" eh="b74e5c9c" />
+        <e k="RVB_Parts_utils_percent" v="%s %%" eh="7743aacb" tag="format"/>
 
-        <e k="RVB_WorkShopClose" v="Die Fahrzeugwerkstatt ist geschlossen, kommen Sie um %s Uhr wieder." tag="format"/>
-        <e k="RVB_button_inspection" v="Inspektion"/>
-        <e k="RVB_button_dailyservice" v="Täglicher Service"/>
-        <e k="RVB_button_periodicservice" v="Regelmäßiger Service"/>
-        <e k="RVB_button_battery_ch" v="Aufladen der Batterie"/>
-        <e k="RVB_button_service" v="Service"/>
-        <e k="RVB_inspectionDialog" v="Sind Sie sicher, dass Sie dieses Fahrzeug für %s € überprüfen können?" tag="format"/>
-        <e k="RVB_inspectionTimeDialog" v="Die Fahrzeuginspektion wird um %s Uhr abgeschlossen." tag="format"/>
-        <e k="RVB_inspectionDayDialog" v="Die Fahrzeuginspektion wird morgen um %s Uhr abgeschlossen." tag="format"/>
-        <e k="RVB_faultText_THERMOSTAT" v="Thermostat"/>
-        <e k="RVB_faultText_LIGHTINGS" v="Beleuchtung"/>
-        <e k="RVB_faultText_GLOWPLUG" v="Glühkerzen"/>
-        <e k="RVB_faultText_WIPERS" v="Scheibenwischer"/>
-        <e k="RVB_faultText_GENERATOR" v="Lichtmaschine"/>
-        <e k="RVB_faultText_ENGINE" v="Motor"/>
-        <e k="RVB_faultText_SELFSTARTER" v="Self-starter"/>
-        <e k="RVB_faultText_BATTERY" v="Batterie"/>
-        <e k="RVB_faultText_TIRE" v="Reifen"/>
-        <e k="RVB_faultText_TIREFL" v="Vorderer linker Reifen"/>
-        <e k="RVB_faultText_TIREFR" v="Vorderer rechter Reifen"/>
-        <e k="RVB_faultText_TIRERL" v="Hinterer linker Reifen"/>
-        <e k="RVB_faultText_TIRERR" v="Hinterer rechter Reifen"/>
-        <e k="RVB_repairErrorMechanics" v="All mechanics are busy, only up to %s vehicles can be repaired at the same time." tag="format"/>
-        <e k="RVB_repairTimeDialog" v="Die Fahrzeugreparatur wird um %s Uhr abgeschlossen." tag="format"/>
-        <e k="RVB_repairDayDialog" v="Die Fahrzeugreparatur wird morgen um %s Uhr abgeschlossen." tag="format"/>
-        <e k="RVB_ErrorList" v="Fehlerliste:" />
-        <e k="RVB_periodicserviceDialog" v="Sind Sie sicher, dass Sie das Fahrzeug für %s € warten lassen wollen?" tag="format"/>
-        <e k="RVB_periodicserviceTimeDialog" v="Die Wartung des Fahrzeugs wird um %s Uhr abgeschlossen sein." tag="format"/>
-        <e k="RVB_periodicserviceDayDialog" v="Die Wartung des Fahrzeugs wird morgen um %s Uhr abgeschlossen sein." tag="format"/>
-        <e k="RVB_batteryChDialog" v="Sind Sie sicher, dass Sie Ihre Fahrzeugbatterie für %s € aufladen wollen?" tag="format"/>
-        <e k="RVB_operatingTime" v="%02d Stunden" tag="format"/>
-        <e k="RVB_shop_operatingTimeG" v="%s:%s Stunden" tag="format"/>
-        <e k="RVB_alertmessage_inspection" v="Die Fahrzeuginspektion ist im Gange."/>
-        <e k="RVB_alertmessage_repair" v="Die Reparatur des Fahrzeugs ist im Gange."/>
-        <e k="RVB_alertmessage_service" v="Die Wartung des Fahrzeugs ist im Gange."/>
+        <e k="RVB_WorkShopClose" v="Die Fahrzeugwerkstatt ist geschlossen, kommen Sie um %s Uhr wieder." eh="64254a65" tag="format"/>
+        <e k="RVB_button_inspection" v="Inspektion" eh="b4faa7ed" />
+        <e k="RVB_button_dailyservice" v="Täglicher Service" eh="af302edf" />
+        <e k="RVB_button_periodicservice" v="Regelmäßiger Service" eh="37a54fc5" />
+        <e k="RVB_button_battery_ch" v="Aufladen der Batterie" eh="30a47fb3" />
+        <e k="RVB_button_service" v="Service" eh="c2ba7e78" />
+        <e k="RVB_inspectionDialog" v="Sind Sie sicher, dass Sie dieses Fahrzeug für %s € überprüfen können?" eh="7401f205" tag="format"/>
+        <e k="RVB_inspectionTimeDialog" v="Die Fahrzeuginspektion wird um %s Uhr abgeschlossen." eh="06135b4d" tag="format"/>
+        <e k="RVB_inspectionDayDialog" v="Die Fahrzeuginspektion wird morgen um %s Uhr abgeschlossen." eh="af1c4b1b" tag="format"/>
+        <e k="RVB_faultText_THERMOSTAT" v="Thermostat" eh="91e0b95d" />
+        <e k="RVB_faultText_LIGHTINGS" v="Beleuchtung" eh="2e4b97fd" />
+        <e k="RVB_faultText_GLOWPLUG" v="Glühkerzen" eh="6fdb6ce6" />
+        <e k="RVB_faultText_WIPERS" v="Scheibenwischer" eh="6fdb61c4" />
+        <e k="RVB_faultText_GENERATOR" v="Lichtmaschine" eh="92a8f0b9" />
+        <e k="RVB_faultText_ENGINE" v="Motor" eh="7bfa3072" />
+        <e k="RVB_faultText_SELFSTARTER" v="Self-starter" eh="ee6085db" />
+        <e k="RVB_faultText_BATTERY" v="Batterie" eh="d67c9286" />
+        <e k="RVB_faultText_TIRE" v="Reifen" eh="e4b17d74" />
+        <e k="RVB_faultText_TIREFL" v="Vorderer linker Reifen" eh="4a8014f5" />
+        <e k="RVB_faultText_TIREFR" v="Vorderer rechter Reifen" eh="d65bdf73" />
+        <e k="RVB_faultText_TIRERL" v="Hinterer linker Reifen" eh="8058c09e" />
+        <e k="RVB_faultText_TIRERR" v="Hinterer rechter Reifen" eh="433ab1ca" />
+        <e k="RVB_repairErrorMechanics" v="All mechanics are busy, only up to %s vehicles can be repaired at the same time." eh="8db25de5" tag="format"/>
+        <e k="RVB_repairTimeDialog" v="Die Fahrzeugreparatur wird um %s Uhr abgeschlossen." eh="1b895cdb" tag="format"/>
+        <e k="RVB_repairDayDialog" v="Die Fahrzeugreparatur wird morgen um %s Uhr abgeschlossen." eh="3d3ab5be" tag="format"/>
+        <e k="RVB_ErrorList" v="Fehlerliste:" eh="4e0dbac7" />
+        <e k="RVB_periodicserviceDialog" v="Sind Sie sicher, dass Sie das Fahrzeug für %s € warten lassen wollen?" eh="20eb9276" tag="format"/>
+        <e k="RVB_periodicserviceTimeDialog" v="Die Wartung des Fahrzeugs wird um %s Uhr abgeschlossen sein." eh="1f9463c5" tag="format"/>
+        <e k="RVB_periodicserviceDayDialog" v="Die Wartung des Fahrzeugs wird morgen um %s Uhr abgeschlossen sein." eh="23dccb31" tag="format"/>
+        <e k="RVB_batteryChDialog" v="Sind Sie sicher, dass Sie Ihre Fahrzeugbatterie für %s € aufladen wollen?" eh="94b16ee9" tag="format"/>
+        <e k="RVB_operatingTime" v="%02d Stunden" eh="ec877abb" tag="format"/>
+        <e k="RVB_shop_operatingTimeG" v="%s:%s Stunden" eh="53789ab2" tag="format"/>
+        <e k="RVB_alertmessage_inspection" v="Die Fahrzeuginspektion ist im Gange." eh="65fb0250" />
+        <e k="RVB_alertmessage_repair" v="Die Reparatur des Fahrzeugs ist im Gange." eh="e142d0e7" />
+        <e k="RVB_alertmessage_service" v="Die Wartung des Fahrzeugs ist im Gange." eh="b4b2edf3" />
 
-        <e k="RVB_list_battery" v="Batterie"/>
+        <e k="RVB_list_battery" v="Batterie" eh="d67c9286" />
 
-        <e k="RVB_Workshop" v="Werkstatt"/>
-        <e k="RVB_Workshop_diagnostics" v="Diagnose"/>
-        <e k="RVB_Workshop_serviceManual" v="Serviceprotokoll"/>
-        <e k="RVB_Workshop_noinspection" v="Fahrzeug wurde nicht inspiziert!"/>
-        <e k="RVB_Workshop_noserviceManualEntry" v="Keine Einträge im Serviceprotokoll!"/>
-        <e k="RVB_Workshop_status" v="Status:"/>
-        <e k="RVB_Workshop_repair" v="Reparatur?"/>
-        <e k="RVB_Workshop_work" v="Arbeit"/>
-        <e k="RVB_Workshop_date" v="Datum"/>
-        <e k="RVB_Workshop_lifetime" v="Betriebsstunden"/>
-        <e k="RVB_Workshop_odometer" v="Kilometerstand"/>
-        <e k="RVB_Workshop_cost" v="Kosten"/>
-        <e k="RVB_WorkshopD_new" v="Neu"/>
-        <e k="RVB_WorkshopD_conExcellent" v="Ausgezeichneter Zustand"/>
-        <e k="RVB_WorkshopD_conGood" v="Guter Zustand"/>
-        <e k="RVB_WorkshopD_conUsed" v="Gebraucht, aber funktionstüchtig"/>
-        <e k="RVB_WorkshopD_conFaults" v="Fehleranfällig"/>
-        <e k="RVB_WorkshopD_conDown" v="Defekt"/>
-        <e k="RVB_WorkshopD_conReplace" v="Zur Erneuerung fällig"/>
-        <e k="RVB_WorkshopS_repNeed" v="Reparatur erforderlich. "/>
-        <e k="RVB_WorkshopS_repNoNeed" v="Keine Reparatur erforderlich."/>
-        <e k="RVB_WorkshopS_month" v=" Monat"/>
+        <e k="RVB_Workshop" v="Werkstatt" eh="8e5d9dbc" />
+        <e k="RVB_Workshop_diagnostics" v="Diagnose" eh="36b64aad" />
+        <e k="RVB_Workshop_serviceManual" v="Serviceprotokoll" eh="076e552d" />
+        <e k="RVB_Workshop_noinspection" v="Fahrzeug wurde nicht inspiziert!" eh="58a6a5a1" />
+        <e k="RVB_Workshop_noserviceManualEntry" v="Keine Einträge im Serviceprotokoll!" eh="7bf99f4e" />
+        <e k="RVB_Workshop_status" v="Status:" eh="24a23d78" />
+        <e k="RVB_Workshop_repair" v="Reparatur?" eh="e045471f" />
+        <e k="RVB_Workshop_work" v="Arbeit" eh="0f926353" />
+        <e k="RVB_Workshop_date" v="Datum" eh="44749712" />
+        <e k="RVB_Workshop_lifetime" v="Betriebsstunden" eh="cb932a6d" />
+        <e k="RVB_Workshop_odometer" v="Kilometerstand" eh="6e7f0879" />
+        <e k="RVB_Workshop_cost" v="Kosten" eh="20b4f77b" />
+        <e k="RVB_WorkshopD_new" v="Neu" eh="03c2e7e4" />
+        <e k="RVB_WorkshopD_conExcellent" v="Ausgezeichneter Zustand" eh="d351c1b2" />
+        <e k="RVB_WorkshopD_conGood" v="Guter Zustand" eh="2acb21a1" />
+        <e k="RVB_WorkshopD_conUsed" v="Gebraucht, aber funktionstüchtig" eh="c7981b42" />
+        <e k="RVB_WorkshopD_conFaults" v="Fehleranfällig" eh="0d2d90ed" />
+        <e k="RVB_WorkshopD_conDown" v="Defekt" eh="6d10dc80" />
+        <e k="RVB_WorkshopD_conReplace" v="Zur Erneuerung fällig" eh="aedbbab2" />
+        <e k="RVB_WorkshopS_repNeed" v="Reparatur erforderlich. " eh="b9d46622" />
+        <e k="RVB_WorkshopS_repNoNeed" v="Keine Reparatur erforderlich." eh="3363e3de" />
+        <e k="RVB_WorkshopS_month" v=" Monat" eh="888b692b" />
 
-        <e k="RVB_WorkshopMessage_service" v="Du hast das festgelegte Serviceintervall um %s Stunden überschritten, daher dauerte die Reparatur länger und kostete mehr." tag="format"/>
-        <e k="RVB_WorkshopMessage_serviceDone" v="Service abgeschlossen."/>
-        <e k="RVB_WorkshopMessage_repairDone" v="Reparatur abgeschlossen. Ersetzte/reparierte Teile: %s" tag="format"/>
-        <e k="RVB_WorkshopMessage_batteryDone" v="Batterie vollständig geladen."/>
-        <e k="RVB_WorkshopMessage_vResetDone" v="Fahrzeug wurde zurückgesetzt."/>
+        <e k="RVB_WorkshopMessage_service" v="Du hast das festgelegte Serviceintervall um %s Stunden überschritten, daher dauerte die Reparatur länger und kostete mehr." eh="4793bc2c" tag="format"/>
+        <e k="RVB_WorkshopMessage_serviceDone" v="Service abgeschlossen." eh="92a45efa" />
+        <e k="RVB_WorkshopMessage_repairDone" v="Reparatur abgeschlossen. Ersetzte/reparierte Teile: %s" eh="2a748e5d" tag="format"/>
+        <e k="RVB_WorkshopMessage_batteryDone" v="Batterie vollständig geladen." eh="1ab095d0" />
+        <e k="RVB_WorkshopMessage_vResetDone" v="Fahrzeug wurde zurückgesetzt." eh="1d94103e" />
 
-        <e k="RVB_inspectionDialogFault" v="%s Fahrzeug inspiziert, Reparaturen erforderlich. %s"/>
-        <e k="RVB_inspectionDialogEnd" v="%s Fahrzeug inspiziert, keine Reparaturen erforderlich."/>
-        <e k="RVB_inspectionDialogEnd_other" v="%s fahrzeug wurde überprüft und repariert. Ihr Mechaniker hatte viel Arbeit, also hat ein unerfahrener Mechaniker Ihr Fahrzeug repariert. Dieser unerfahrene Mechaniker kann jedoch nicht auflisten, was er an Ihrem Fahrzeug repariert hat."/>
+        <e k="RVB_inspectionDialogFault" v="%s Fahrzeug inspiziert, Reparaturen erforderlich. %s" eh="63f23863" />
+        <e k="RVB_inspectionDialogEnd" v="%s Fahrzeug inspiziert, keine Reparaturen erforderlich." eh="adb75b1a" />
+        <e k="RVB_inspectionDialogEnd_other" v="%s fahrzeug wurde überprüft und repariert. Ihr Mechaniker hatte viel Arbeit, also hat ein unerfahrener Mechaniker Ihr Fahrzeug repariert. Dieser unerfahrene Mechaniker kann jedoch nicht auflisten, was er an Ihrem Fahrzeug repariert hat." eh="fca01ba3" />
 
-        <e k="RVB_serviceDialogEnd" v="Service für %s Fahrzeug abgeschlossen."/>
-        <e k="RVB_repairDialogEnd" v="Reparatur des %s Fahrzeugs abgeschlossen."/>
-        <e k="RVB_fault_engineload" v="Überlaste den Motor nicht zu früh, er ist noch kalt."/>
-        <e k="RVB_fault_engineload_hud" v="Der Motor von %s wird bei Kälte zu stark belastet." tag="format"/>
-        <e k="RVB_fault_lights" v="Die Beleuchtung funktioniert nicht."/>
-        <e k="RVB_lowjumper" v="Der Motor startet nicht. Setze das Überbrücken fort."/>
-        <e k="RVB_lowjumperDonorMotor" v="Starte den Motor des anderen Fahrzeugs."/>
-        <e k="RVB_fault_BHlights" v="Der Ladezustand der Batterie ist zu niedrig."/>
+        <e k="RVB_serviceDialogEnd" v="Service für %s Fahrzeug abgeschlossen." eh="b705ad92" />
+        <e k="RVB_repairDialogEnd" v="Reparatur des %s Fahrzeugs abgeschlossen." eh="5ce51ccd" />
+        <e k="RVB_fault_engineload" v="Überlaste den Motor nicht zu früh, er ist noch kalt." eh="5de6f564" />
+        <e k="RVB_fault_engineload_hud" v="Der Motor von %s wird bei Kälte zu stark belastet." eh="36daf927" tag="format"/>
+        <e k="RVB_fault_lights" v="Die Beleuchtung funktioniert nicht." eh="488daec3" />
+        <e k="RVB_lowjumper" v="Der Motor startet nicht. Setze das Überbrücken fort." eh="03bba9c6" />
+        <e k="RVB_lowjumperDonorMotor" v="Starte den Motor des anderen Fahrzeugs." eh="78fe1392" />
+        <e k="RVB_fault_BHlights" v="Der Ladezustand der Batterie ist zu niedrig." eh="53fe34e3" />
 
-        <e k="RVB_DEAD_ENGINE_INSPECTION" v="Fahrzeug kann nicht gestartet werden, Inspektion wird durchgeführt."/>
-        <e k="RVB_DEAD_ENGINE_REPAIR" v="Das Fahrzeug kann nicht gestartet werden, die Reparatur ist im Gange."/>
-        <e k="RVB_DEAD_ENGINE_SERVICE" v="Das Fahrzeug kann nicht gestartet werden, die Wartung ist im Gange."/>
-        <e k="RVB_DEAD_ENGINE_SUSPENSION" v="Der Fahrzeugschlüssel befindet sich bei dem Mechaniker, der sich gerade ausruht."/>
-        <e k="RVB_DEAD_ENGINE_BATTERY" v="Der Motor springt nicht an, die Batterie ist leer."/>
-        <e k="RVB_DEAD_ENGINE_BATTERY_CHARGING" v="Das Fahrzeug kann nicht gestartet werden, die Batterie wird gerade geladen."/>
-        <e k="RVB_DEAD_ENGINE" v="Motorschaden."/>
+        <e k="RVB_DEAD_ENGINE_INSPECTION" v="Fahrzeug kann nicht gestartet werden, Inspektion wird durchgeführt." eh="8a60c6e5" />
+        <e k="RVB_DEAD_ENGINE_REPAIR" v="Das Fahrzeug kann nicht gestartet werden, die Reparatur ist im Gange." eh="abd5663f" />
+        <e k="RVB_DEAD_ENGINE_SERVICE" v="Das Fahrzeug kann nicht gestartet werden, die Wartung ist im Gange." eh="71031492" />
+        <e k="RVB_DEAD_ENGINE_SUSPENSION" v="Der Fahrzeugschlüssel befindet sich bei dem Mechaniker, der sich gerade ausruht." eh="7e1beb08" />
+        <e k="RVB_DEAD_ENGINE_BATTERY" v="Der Motor springt nicht an, die Batterie ist leer." eh="07b5c4d5" />
+        <e k="RVB_DEAD_ENGINE_BATTERY_CHARGING" v="Das Fahrzeug kann nicht gestartet werden, die Batterie wird gerade geladen." eh="8a2973cd" />
+        <e k="RVB_DEAD_ENGINE" v="Motorschaden." eh="1a9fc846" />
 
-        <e k="RVB_fault_lights_INSPECTION" v="Die Beleuchtung kann nicht eingeschaltet werden, solange die Fahrzeuginspektion im Gange ist."/>
-        <e k="RVB_fault_lights_REPAIR" v="Die Beleuchtung kann nicht eingeschaltet werden, solange die Fahrzeugreparatur im Gange ist."/>
-        <e k="RVB_fault_lights_SERVICE" v="Die Beleuchtung kann nicht eingeschaltet werden, solange die Fahrzeugwartung im Gange ist."/>
+        <e k="RVB_fault_lights_INSPECTION" v="Die Beleuchtung kann nicht eingeschaltet werden, solange die Fahrzeuginspektion im Gange ist." eh="1818828a" />
+        <e k="RVB_fault_lights_REPAIR" v="Die Beleuchtung kann nicht eingeschaltet werden, solange die Fahrzeugreparatur im Gange ist." eh="3de16a52" />
+        <e k="RVB_fault_lights_SERVICE" v="Die Beleuchtung kann nicht eingeschaltet werden, solange die Fahrzeugwartung im Gange ist." eh="c2a6e782" />
 
-        <e k="RVB_ErrorNotifi" v="Aufschlüsselung(en): "/>
+        <e k="RVB_ErrorNotifi" v="Aufschlüsselung(en): " eh="78b60278" />
 
-        <e k="infoDisplayExtension_tomorrow" v="morgen "/>
-        <e k="infoDisplayExtension_currentPower" v="Kraft"/>
-        <e k="infoDisplayExtension_inspectionVheicle" v="Fahrzeuginspektion"/>
-        <e k="infoDisplayExtension_repairVheicle" v="Fahrzeugreparatur"/>
-        <e k="infoDisplayExtension_serviceVheicle" v="Regelmäßiger Service"/>
+        <e k="infoDisplayExtension_tomorrow" v="morgen " eh="83a2134f" />
+        <e k="infoDisplayExtension_currentPower" v="Kraft" eh="dd4fe0cc" />
+        <e k="infoDisplayExtension_inspectionVheicle" v="Fahrzeuginspektion" eh="7276b8fd" />
+        <e k="infoDisplayExtension_repairVheicle" v="Fahrzeugreparatur" eh="6c545b62" />
+        <e k="infoDisplayExtension_serviceVheicle" v="Regelmäßiger Service" eh="37a54fc5" />
 
-        <e k="RVB_workshopVResetTitle" v="Fahrzeug zurücksetzen"/>
-        <e k="RVB_workshopVResetDesc" v="Bist du sicher, dass du das %s Fahrzeug auf den Standardzustand zurücksetzen möchtest?" tag="format"/>
+        <e k="RVB_workshopVResetTitle" v="Fahrzeug zurücksetzen" eh="9e1f8bcf" />
+        <e k="RVB_workshopVResetDesc" v="Bist du sicher, dass du das %s Fahrzeug auf den Standardzustand zurücksetzen möchtest?" eh="36cbd838" tag="format"/>
 
-        <e k="electricChargeTurbine" v="Elektrischer Windturbinen-Ladegerät"/>
-        <e k="function_powerpack" v="Verwende dies, um deine Elektrofahrzeuge aufzuladen und elektrische Energie an entfernte Orte zu transportieren."/>
+        <e k="electricChargeTurbine" v="Elektrischer Windturbinen-Ladegerät" eh="2d67b055" />
+        <e k="function_powerpack" v="Verwende dies, um deine Elektrofahrzeuge aufzuladen und elektrische Energie an entfernte Orte zu transportieren." eh="eaa5e06e" />
 
         <e k="Automatic_Repair_conflict_notice" v="Es gibt Modifikationen, die das Fahrzeug automatisch reparieren, daher kann der Modus &quot;Reale Fahrzeugschäden (RVB)&quot; mit ihnen in Konflikt stehen.
 
@@ -193,13 +193,13 @@ Danke für Ihr Verständnisg.
 
 Alles Gute,
 
-MathiasHun" tag="format"/>
+MathiasHun" eh="a611a9ae" tag="format"/>
 
-        <e k="RVB_aimessage_batterydischarged" v="%s KI-Arbeiter hat unerwartet die Arbeit eingestellt, die Fahrzeugbatterie ist entladen!"/>
+        <e k="RVB_aimessage_batterydischarged" v="%s KI-Arbeiter hat unerwartet die Arbeit eingestellt, die Fahrzeugbatterie ist entladen!" eh="ee374dc3" />
 
         <!-- DO NOT CHANGE THIS, ONLY IF THE FS25_USEYOURTYRES MOD ALREADY HAS AN OFFICIAL DEUTSCHLAND TRANSLATION -->
-        <e k="infohud_uytTyresWear" v="Reifenverschleiß"/>
+        <e k="infohud_uytTyresWear" v="Reifenverschleiß" eh="7cffdd14" />
         <!-- End of warning -->
-        <e k="rvb_infohud_uytTyresWear" v="Reifen %s" tag="format"/>
+        <e k="rvb_infohud_uytTyresWear" v="Reifen %s" eh="33b244d3" tag="format"/>
     </elements>
 </l10n>
