@@ -150,11 +150,12 @@ function BatteryManager.getLightsDrain(vehicle)
 end
 
 function BatteryManager.onBatteryDrain(vehicle, dt)
-	local spec = vehicle.spec_faultData
+	local rvb = vehicle.spec_faultData
+	if rvb == nil or not rvb.isrvbSpecEnabled then return end
 	local spec_light = vehicle.spec_lights
-	local lightsOk = spec.parts[LIGHTINGS].fault == "empty"
-	--if not vehicle:getIsMotorStarted() and lightsOk and spec.isInitialized then
-	if lightsOk and spec.isInitialized then
+	local lightsOk = rvb.parts[LIGHTINGS].fault == "empty"
+	--if not vehicle:getIsMotorStarted() and lightsOk and rvb.isInitialized then
+	if lightsOk and rvb.isInitialized then
 		if vehicle:getBatteryFillLevelPercentage() < BATTERY_LEVEL.LIGHTS and vehicle:getBatteryFillLevelPercentage() >= BATTERY_LEVEL.LIGHTS_BEACONS then
 			if vehicle.deactivateLights ~= nil then
 				vehicle:setLightsTypesMask(0, true, true)
@@ -171,16 +172,16 @@ function BatteryManager.onBatteryDrain(vehicle, dt)
         if vehicle.isServer then
 			local activeDrain = BatteryManager.getLightsDrain(vehicle)
 			if activeDrain <= 0 then
-				if spec.batteryDrainAmount > 0 then
-					spec.batteryDrainAmount = 0
-					vehicle:raiseDirtyFlags(spec.batteryDrainDirtyFlag)
+				if rvb.batteryDrainAmount > 0 then
+					rvb.batteryDrainAmount = 0
+					vehicle:raiseDirtyFlags(rvb.batteryDrainDirtyFlag)
 				end
 				return
 			end
-			spec.batteryDrainUpdateTimer = (spec.batteryDrainUpdateTimer or 0) + dt
-			if spec.batteryDrainUpdateTimer >= RVB_DELAY.BATTERY_DRAIN then
-				BatteryManager.updateBatteryDrain(vehicle, spec.batteryDrainUpdateTimer, spec)
-				spec.batteryDrainUpdateTimer = 0
+			rvb.batteryDrainUpdateTimer = (rvb.batteryDrainUpdateTimer or 0) + dt
+			if rvb.batteryDrainUpdateTimer >= RVB_DELAY.BATTERY_DRAIN then
+				BatteryManager.updateBatteryDrain(vehicle, rvb.batteryDrainUpdateTimer, rvb)
+				rvb.batteryDrainUpdateTimer = 0
 			end
 			vehicle:raiseActive()
         end

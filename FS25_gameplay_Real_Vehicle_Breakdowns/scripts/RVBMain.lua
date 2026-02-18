@@ -198,37 +198,7 @@ function RVBMain.installSpecializations(vehicleTypeManager, specializationManage
 		Logging.error("  [RVB] getSpecializationByName(\"vehicleBreakdowns\") == nil")
 	else
 		for typeName, typeEntry in pairs(vehicleTypeManager:getTypes()) do
-			--[[and typeName ~= "FS25_lsfmFarmEquipmentPack.milkShuttle"]]
-			if typeEntry ~= nil and typeName ~= "locomotive" and typeName ~= "trainTrailer" and typeName ~= "trainTimberTrailer" and typeName ~= "conveyorBelt"
-			and	typeName ~= "seedTreater" and typeName ~= "conveyorBeltUnpowered" and typeName ~= "pickupConveyorBelt" and typeName ~= "motorbike" 
-			and typeName ~= "highPressureWasher" and typeName ~= "inlineWrapper"
-			and	typeName ~= "handToolMower"
-			and typeName ~= "FS25_gameplay_Real_Vehicle_Breakdowns.palletbattery" and typeName ~= "FS25_JCB_Powerpack.palletbattery"
-			and typeName ~= "FS25_lsfmFarmEquipmentPack.wheelBarrow" and typeName ~= "FS25_lsfmFarmEquipmentPack.wheelBarrowHay" 
-			and typeName ~= "FS25_lsfmFarmEquipmentPack.bicycle" and typeName ~= "FS25_lsfmFarmEquipmentPack.transportBarrow"
-			and typeName ~= "FS25_lsfmFarmEquipmentPack.transportBarrowBarrel" and typeName ~= "FS25_lsfmFarmEquipmentPack.transportBarrelModul"
-			and typeName ~= "FS25_lsfmFarmEquipmentPack.palletTruck" and typeName ~= "FS25_lsfmFarmEquipmentPack.transportBarrowAnimal"
-			and typeName ~= "FS25_Wheelbarrow.handTool"
-			and typeName ~= "FS25_talicska.wheelBarrow"
-			and typeName ~= "FS25_RefillableIBCTank.refillableIBCWithPump"
-			and typeName ~= "pdlc_highlandsFishingPack.selfPropelledLevelerExtended" and typeName ~= "pdlc_highlandsFishingPack.boat" 
-			and typeName ~= "pdlc_highlandsFishingPack.cargoBoat" and typeName ~= "pdlc_highlandsFishingPack.carFillableExtended"
-			and typeName ~= "FS25_MrChow_Heli_Bell_47.MRCHOW_HELICOPTER" and typeName ~= "FS25_dromadar.dromi"
-			and typeName ~= "Hashy_2025_Polaris_Ranger_2_4dr.Hashy" and typeName ~= "Hashy_Lowe_FM_1775_Boat.boat"
-			and typeName ~= "Hashy_2025_Bennington_QLINE_Pontoon_Boat.boat"
-			--and typeName ~= "FS25_JCB_6T.dumper"
-			and typeName ~= "FS25_polishWheelbarrow.polishWheelbarrow" and typeName ~= "FS25_ASM_FarmyardTrailerDolly.farmyardTrailerDolly"
-			and typeName ~= "FS25_FLC253.FLC2"
-			and typeName ~= "FS25_Profihopper.selfPropelledMowerFillable"
-			and typeName ~= "FS25_jenzBA725D.jenzBA725"
-			and typeName ~= "FS25_hubtexMaxX45.hubtexMaxx45"
-			and typeName ~= "FS25_ETV_216i.HRFF216i"
-			and typeName ~= "FS25_TailLiftPack.tailliftswapbody"
-			and typeName ~= "FS25_Sluicifer_Washplant.MobilWashplant" and typeName ~= "FS25_Astec_Hopper_Feeder.HopperFeeder"
-			and typeName ~= "FS25_marha_es_lo_mod.allat"
-			and typeName ~= "FS25_lovaskocsi.plo" and typeName ~= "FS25_lovaskocsi.plo2" and typeName ~= "FS25_lovaskocsi_tradicio.plo"
-			and typeName ~= "FS25_AN2.antonov"
-			then
+			if typeEntry ~= nil and not RVB_EXCLUDED_TYPES[typeName] then
 				if SpecializationUtil.hasSpecialization(Drivable, typeEntry.specializations) and
 					SpecializationUtil.hasSpecialization(Enterable, typeEntry.specializations) and
 					SpecializationUtil.hasSpecialization(Motorized, typeEntry.specializations) and
@@ -512,10 +482,10 @@ function RVBMain:getWorkshopCount()
 end
 function RVBMain:setWorkshopCount(workshopCount, noEventSend)
 	if self.workshopCount ~= workshopCount then
-        self.workshopCount = workshopCount
-        WorkshopCount_Event.sendEvent(self.workshopCount, noEventSend)
+		self.workshopCount = workshopCount
+		WorkshopCount_Event.sendEvent(self.workshopCount, noEventSend)
 		self.rvbDebugger:info("RVBMain \'%s\': %s", "workshopCount", tostring(workshopCount))
-    end
+	end
 end
 function RVBMain:getRVBDifficulty()
 	return self.gameplaySettings.difficulty
@@ -531,29 +501,29 @@ function RVBMain:setRVBDifficulty(difficulty, noEventSend)
 	g_messageCenter:publish(MessageType.SET_DIFFICULTY, difficulty)
 end
 function RVBMain:getPartBaseLifetime(partKey)
-    local GPSET = self.gameplaySettings
+	local GPSET = self.gameplaySettings
 
-    if partKey == THERMOSTAT then
-        return GPSET.thermostatLifetime
-    elseif partKey == LIGHTINGS then
-        return GPSET.lightingsLifetime
-    elseif partKey == GLOWPLUG then
-        return GPSET.glowplugLifetime
-    elseif partKey == WIPERS then
-        return GPSET.wipersLifetime
-    elseif partKey == GENERATOR then
-        return GPSET.generatorLifetime
-    elseif partKey == ENGINE then
-        return GPSET.engineLifetime
-    elseif partKey == SELFSTARTER then
-        return GPSET.selfstarterLifetime
-    elseif partKey == BATTERY then
-        return GPSET.batteryLifetime
-    elseif partKey == TIREFL or partKey == TIREFR or partKey == TIRERL or partKey == TIRERR then
-        return GPSET.tireLifetime
-    end
+	if partKey == THERMOSTAT then
+		return GPSET.thermostatLifetime
+	elseif partKey == LIGHTINGS then
+		return GPSET.lightingsLifetime
+	elseif partKey == GLOWPLUG then
+		return GPSET.glowplugLifetime
+	elseif partKey == WIPERS then
+		return GPSET.wipersLifetime
+	elseif partKey == GENERATOR then
+		return GPSET.generatorLifetime
+	elseif partKey == ENGINE then
+		return GPSET.engineLifetime
+	elseif partKey == SELFSTARTER then
+		return GPSET.selfstarterLifetime
+	elseif partKey == BATTERY then
+		return GPSET.batteryLifetime
+	elseif partKey == TIREFL or partKey == TIREFR or partKey == TIRERL or partKey == TIRERR then
+		return GPSET.tireLifetime
+	end
 
-    return 0
+	return 0
 end
 function RVBMain:getThermostatLifetime()
 	return self.gameplaySettings.thermostatLifetime
@@ -573,7 +543,7 @@ function RVBMain:getGlowplugLifetime()
 	return self.gameplaySettings.glowplugLifetime
 end
 function RVBMain:setGlowplugLifetime(glowplug, noEventSend)
-    glowplug = math.clamp(glowplug, rvb_Utils.SmallArrayMin, rvb_Utils.SmallArrayMax)
+	glowplug = math.clamp(glowplug, rvb_Utils.SmallArrayMin, rvb_Utils.SmallArrayMax)
 	self:updateGameplaySetting("glowplugLifetime", glowplug, "GLOWPLUG", noEventSend)
 end
 function RVBMain:getWipersLifetime()
@@ -619,18 +589,32 @@ function RVBMain:setTireLifetime(tire, noEventSend)
 	-- TIRES = "TIREFL", "TIREFR", "TIRERL", "TIRERR"
 	self:updateGameplaySetting("tireLifetime", tire, "TIRES", noEventSend)
 end
+function RVBMain:isAlwaysOpenWorkshop()
+	if g_workshopScreen ~= nil then
+		if g_workshopScreen.isMobileWorkshop then
+			return true
+		end
+		if g_workshopScreen.isOwnWorkshop then
+			return true
+		end
+	end
+	return false
+end
 function RVBMain.getWorkshopStatusMessage(self)
 	if not self:getIsWorkshopTime() then
-        return true, ""
-    end
-    local openHour, closeHour = self:getWorkshopOpen(), self:getWorkshopClose()
-    local currentHour = g_currentMission.environment.currentHour
-    local workshopStatus = currentHour >= openHour and currentHour < closeHour
-    local timeInfo = workshopStatus and "" or string.format(
-        g_i18n:getText("RVB_WorkShopClose"), 
-        string.format("%02d:%02d", openHour, 0)
-    )
-    return workshopStatus, timeInfo
+		return true, ""
+	end
+	if self:isAlwaysOpenWorkshop() then
+		return true, ""
+	end
+	local openHour, closeHour = self:getWorkshopOpen(), self:getWorkshopClose()
+	local currentHour = g_currentMission.environment.currentHour
+	local workshopStatus = currentHour >= openHour and currentHour < closeHour
+	local timeInfo = workshopStatus and "" or string.format(
+		g_i18n:getText("RVB_WorkShopClose"), 
+		string.format("%02d:%02d", openHour, 0)
+	)
+	return workshopStatus, timeInfo
 end
 
 function RVBMain:onWriteStream(streamId, connection)

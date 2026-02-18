@@ -628,6 +628,10 @@ function rvbWorkshopDialog.onClickInspection(self, _, _)
 		return
 	end
 
+	local isOwnWorkshop = g_rvbMain:isAlwaysOpenWorkshop()
+	if isOwnWorkshop then
+		INSPECTION.TIME = INSPECTION.TIME + math.random(10*60, 30*60)
+	end
 	local AddHour = math.floor(INSPECTION.TIME / 3600)
 	local AddMinute = math.floor(((INSPECTION.TIME / 3600) - AddHour) * 60)
 	local FinishDay, FinishHour, FinishMinute = vehicle:CalculateFinishTime(AddHour, AddMinute)
@@ -682,6 +686,10 @@ function rvbWorkshopDialog.onClickService(self, _, _)
 	end
     local specRVB = vehicle.spec_faultData
     local periodicService = RVB:getPeriodicService()
+	local isOwnWorkshop = g_rvbMain:isAlwaysOpenWorkshop()
+	if isOwnWorkshop then
+		SERVICE.BASE_TIME = SERVICE.BASE_TIME + math.random(20*60, 40*60)
+	end
     local hoursOverdue = math.max(0, math.floor(specRVB.operatingHours) - periodicService)
     local additionalTime = hoursOverdue * SERVICE.TIME
     local totalServiceTime = SERVICE.BASE_TIME + additionalTime
@@ -728,7 +736,7 @@ function rvbWorkshopDialog.onYesNoServiceDialog(self, yes)
     stopVehicle(vehicle)
     self:updateScreen()
 	self:updateButtons()
-g_workshopScreen.list:reloadData()
+	g_workshopScreen.list:reloadData()
 end
 function rvbWorkshopDialog.onClickRepair(self, _, _)
 	local vehicle = self.vehicle
@@ -756,6 +764,10 @@ function rvbWorkshopDialog.onClickRepair(self, _, _)
 			table.insert(faultListText, g_i18n:getText(FaultRegistry[key].name))
 			faultListTime = faultListTime + FaultRegistry[key].repairTime
 		end
+	end
+	local isOwnWorkshop = g_rvbMain:isAlwaysOpenWorkshop()
+	if isOwnWorkshop then
+		faultListTime = faultListTime + math.random(30*60, 50*60)
 	end
 	local AddHour = math.floor(faultListTime / 3600)
 	local AddMinute = math.floor(((faultListTime / 3600) - AddHour) * 60)

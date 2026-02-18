@@ -37,7 +37,7 @@ end
 if g_modIsLoaded["FS25_useYourTyres"] then
 	WorkshopScreen.update = Utils.appendedFunction(WorkshopScreen.update, rvbWorkshopScreen.update)
 end
-function rvbWorkshopScreen:WorkshopScreen_setVehicleDetails(vehicle, cell) print("WorkshopScreen_setVehicleDetails")
+function rvbWorkshopScreen:WorkshopScreen_setVehicleDetails(vehicle, cell)
 	if vehicle ~= nil then
 		local rvb = vehicle.spec_faultData
 		if rvb == nil or not rvb.isrvbSpecEnabled then

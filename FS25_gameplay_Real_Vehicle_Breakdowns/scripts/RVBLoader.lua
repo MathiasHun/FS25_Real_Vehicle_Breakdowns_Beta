@@ -52,7 +52,7 @@ end
 
 g_gui:loadProfiles(directory .. "menu/guiProfiles.xml")
 
-
+g_rvbMain = nil
 local vehicleBreakdowns
 local function isEnabled()
 	return vehicleBreakdowns ~= nil
@@ -90,6 +90,7 @@ function init()
 	MessageType.RVB_BLINKINGMESSAGE = nextMessageTypeId()
 	
 	vehicleBreakdowns = RVBMain:new(directory, modName)
+
 	RVBInfoDialog.register()
 	rvbWorkshopDialog.register()
 
@@ -107,6 +108,7 @@ function loadedMission(mission, node)
 		return
 	end
 	vehicleBreakdowns:onMissionLoaded(mission)
+	g_rvbMain = vehicleBreakdowns
 	g_rvbGameplaySettings = mission.vehicleBreakdowns.gameplaySettings
 	g_rvbGeneralSettings = mission.vehicleBreakdowns.generalSettings
 end

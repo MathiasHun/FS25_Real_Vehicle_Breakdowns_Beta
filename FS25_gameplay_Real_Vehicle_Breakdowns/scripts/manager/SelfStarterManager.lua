@@ -9,7 +9,7 @@ local variants = r.variants
 function SelfStarterManager.rbv_startMotor(vehicle)
 	if not vehicle then return end
 	local rvbspec = vehicle.spec_faultData
-	if not rvbspec then return end
+	if rvbspec == nil or not rvbspec.isrvbSpecEnabled then return end
 	if not r.isApplicable(vehicle) then return end
 	local part = rvbspec.parts[SELFSTARTER]
 	local prefaultName, fault = vehicle:getIsFaultStates(SELFSTARTER)
@@ -38,7 +38,7 @@ end
 function SelfStarterManager.startMotor(vehicle)
 	if vehicle == nil then return end
 	local rvbspec = vehicle.spec_faultData
-	if rvbspec == nil then return end
+	if rvbspec == nil or not rvbspec.isrvbSpecEnabled then return end
 	local part = rvbspec.parts[SELFSTARTER]
 	-- github issues#112 60 -> 30
 	local oneGameMinute = 30

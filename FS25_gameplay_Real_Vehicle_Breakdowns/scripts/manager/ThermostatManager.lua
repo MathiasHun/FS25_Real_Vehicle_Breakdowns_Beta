@@ -45,7 +45,7 @@ function ThermostatManager.updateThermostatHud(hud, vehicle, dt)
 	local hudThermostat = hud.temperature
 	local currentColor = hudThermostat.lastColor or hud:getDefaultHudColor()
 	local rvb = vehicle.spec_faultData
-	if rvb == nil then return end
+	if rvb == nil or not rvb.isrvbSpecEnabled then return end
 	local part = rvb.parts[THERMOSTAT]
 	if vehicle:getIsMotorStarted() then
 		local fault = part and part.fault or "empty"
@@ -97,7 +97,7 @@ function ThermostatManager.updateDirtHud(hud, vehicle, dt)
 	local hudThermostat = hud.temperature
 	local currentColor = hudThermostat.lastColor or hud:getDefaultHudColor()
 	local rvb = vehicle.spec_faultData
-	if rvb == nil then return end
+	if rvb == nil or not rvb.isrvbSpecEnabled then return end
 	if vehicle:getIsMotorStarted() then
 		hudThermostat.dirtPlay = false
 		local motorTemp = vehicle.spec_motorized.motorTemperature.value

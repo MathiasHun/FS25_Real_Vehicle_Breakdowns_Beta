@@ -27,6 +27,7 @@ function PartManager.getMaxPartLifetime(vehicle, partKey)
 end
 function PartManager.loadFromDefaultConfig(vehicle)
 	local spec = vehicle.spec_faultData
+	if spec == nil or not spec.isrvbSpecEnabled then return end
 	local GSET = g_currentMission.vehicleBreakdowns.generalSettings
 	local GPSET = g_currentMission.vehicleBreakdowns.gameplaySettings
 	spec.parts = {}
@@ -55,11 +56,16 @@ function PartManager.loadFromDefaultConfig(vehicle)
 	end
 end
 function PartManager.loadFromPostLoad(vehicle, savegame)
-	if not (vehicle and vehicle.spec_faultData) then
+	if not vehicle then
 		Logging.error("PartManager.onPostLoad() No vehicle.")
 		return false
 	end
+
 	local rvb = vehicle.spec_faultData
+	if not rvb or not rvb.isrvbSpecEnabled then
+		-- RVB nincs engedélyezve, nem kell hibát logolni
+		return false
+	end
 	local GSET = g_currentMission.vehicleBreakdowns.generalSettings
 	local GPSET = g_currentMission.vehicleBreakdowns.gameplaySettings
 	local keyparts = string.format("%s.%s.vehicleBreakdowns", savegame.key, g_vehicleBreakdownsModName)
@@ -79,6 +85,7 @@ function PartManager.loadFromPostLoad(vehicle, savegame)
 end
 function PartManager.savePartsToXML(vehicle, xmlFile, key)
 	local spec = vehicle.spec_faultData
+	if spec == nil or not spec.isrvbSpecEnabled then return end
 	local i = 0
 	for _, partKeyName in ipairs(g_vehicleBreakdownsPartKeys) do
 		local part = spec.parts[partKeyName]

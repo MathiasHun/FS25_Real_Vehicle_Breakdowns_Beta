@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
-<modDesc descVersion="105">
+<modDesc descVersion="106">
     <author>MathiasHun</author>
-    <version>0.9.5.9</version>
+    <version>0.9.6.0</version>
     <title>
         <en>Real Vehicle Breakdowns</en>
     </title>
@@ -48,6 +48,21 @@ Bug report, please visit https://github.com/MathiasHun/FS25_Real_Vehicle_Breakdo
 Recommended Dependencies (to avoid errors):
 - Wind Turbines Charging Station mod (i.e., FS25_electricChargeStation) - by HoT online Team https://www.kingmods.net/en/fs25/mods/62810/wind-turbines-charging-station
 - JCB E-tech Powerpack (i.e., FS25_JCB_Powerpack) - by RossN Mods https://www.farming-simulator.com/mod.php?mod_id=310865&title=fs2025
+
+Mod Conflict
+
+If you are using the Real Vehicle Breakdowns (RVB) mod, do not use the:
+
+- FS25_DisableTurnOffMotor - it will prevent the engine temperature from rising
+
+Changelog 0.9.6.0:
+- Rethinking Automatic Engine Shutdown Disable Logic
+- Rethinking RVB Specialization Exclusion Logic
+- If workshop hours are disabled, the finish time is now calculated correctly.
+- Own or mobile workshops are always open; inspections, service, or repairs can be started anytime,
+but the work duration may slightly increase due to mechanic dispatch time being simulated.
+- DescVersion increased
+- Added new mod icon
 
 Changelog 0.9.5.9:
 - RVB menu optimization

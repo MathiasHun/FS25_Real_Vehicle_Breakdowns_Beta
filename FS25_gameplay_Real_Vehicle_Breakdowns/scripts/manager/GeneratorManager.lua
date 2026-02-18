@@ -26,7 +26,7 @@ function GeneratorManager.updateHud(hud, vehicle, dt)
 	local HUD = hud.battery
 	local currentColor = HUD.lastColor or hud:getDefaultHudColor()--HUDCOLOR.DEFAULT
 	local rvb = vehicle.spec_faultData
-	if rvb == nil then return end
+	if rvb == nil or not rvb.isrvbSpecEnabled then return end
 	local part = rvb.parts[GENERATOR]
 	if vehicle:getIsMotorStarted() then
 		local fault = part and part.fault or "empty"
@@ -75,7 +75,7 @@ function GeneratorManager.updateHud(hud, vehicle, dt)
 end
 function GeneratorManager.chargeBatteryFromGenerator(vehicle, dt, isActiveForInputIgnoreSelection)
     local spec = vehicle.spec_faultData
-	if spec == nil then return end
+	if spec == nil or not spec.isrvbSpecEnabled then return end
 	local partGenerator = spec.parts[GENERATOR]
     local generatorBaseOutput = 60
     local maxGeneratorOutput = 120

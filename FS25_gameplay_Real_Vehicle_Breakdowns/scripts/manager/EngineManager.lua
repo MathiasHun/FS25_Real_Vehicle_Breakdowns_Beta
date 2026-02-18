@@ -26,7 +26,7 @@ function EngineManager.updateHud(hud, vehicle, dt)
 	local HUD = hud.engine
 	local currentColor = HUD.lastColor or hud:getDefaultHudColor()--HUDCOLOR.DEFAULT
 	local rvb = vehicle.spec_faultData
-	if rvb == nil then return end
+	if rvb == nil or not rvb.isrvbSpecEnabled then return end
 	local part = rvb.parts[ENGINE]
 	if vehicle:getIsMotorStarted() then
 		local fault = part and part.fault or "empty"

@@ -124,7 +124,7 @@ end
 
 local overwrittenFunctions = {
 	--{ original = "onPostLoad", replacement = rvbMotorized.onPostLoad },
-	{ original = "onUpdateTick", replacement = rvbMotorized.onUpdateTick },
+	--{ original = "onUpdateTick", replacement = rvbMotorized.onUpdateTick },
     { original = "updateMotorTemperature", replacement = rvbMotorized.updateMotorTemperature },
     { original = "getCanMotorRun", replacement = rvbMotorized.getCanMotorRun },
 	{ original = "getMotorNotAllowedWarning", replacement = rvbMotorized.getMotorNotAllowedWarning },
@@ -136,7 +136,6 @@ local overwrittenFunctions = {
 	{ original = "updateDamageAmount", replacement = rvbWearable.updateDamageAmount },
 }
 function VehicleBreakdowns.registerOverwrittenFunctions(vehicleType)
-	--SpecializationUtil.registerOverwrittenFunction(vehicleType, "setLightsTypesMask", VehicleBreakdowns.setLightsTypesMask)
 	for _, func in pairs(overwrittenFunctions) do
         SpecializationUtil.registerOverwrittenFunction(vehicleType, func.original, func.replacement)
     end
@@ -452,35 +451,44 @@ end
 function VehicleBreakdowns:isExcluded()
     if not self.configFileName then return false end
     --local modName = self.configFileName:match("mods[/\\]([^/\\]+)")
-    --return modName and RVB_EXCLUDEDMODS[modName
+    --return modName and RVB_EXCLUDED_MODS[modName
 	local cfg = self.configFileName
+	
+	local function logExcluded(name, type)
+		self.rvbDebugger:info("The '%s' %s is excluded from the RVB Specialization.", name, type)
+	end
 	-- 1) Mod mappanév (mods/)
-    local modName = cfg:match("mods[/\\]([^/\\]+)")
-    if modName and RVB_EXCLUDEDMODS[modName] then
-        return true
-    end
+	local modName = cfg:match("mods[/\\]([^/\\]+)")
+	if modName and RVB_EXCLUDED_MODS[modName] then
+		logExcluded(modName, "mod")
+		return true
+	end
 
-    -- 2) DLC mappanév (pdlc/)
-    local dlcName = cfg:match("pdlc[/\\]([^/\\]+)")
-    if dlcName and RVB_EXCLUDEDMODS[dlcName] then
-        return true
-    end
+	-- 2) DLC mappanév (pdlc/)
+	local dlcName = cfg:match("pdlc[/\\]([^/\\]+)")
+	if dlcName and RVB_EXCLUDED_MODS[dlcName] then
+		logExcluded(dlcName, "DLC")
+		return true
+	end
 
-    -- 3) Jármű XML neve
-    local vehicleFile = cfg:match("([^/\\]+)%.xml$")
-    if vehicleFile and RVB_EXCLUDEDMODS[vehicleFile] then
-        return true
-    end
+	-- 3) Jármű XML neve
+	local vehicleFile = cfg:match("([^/\\]+)%.xml$")
+	if vehicleFile and RVB_EXCLUDED_MODS[vehicleFile] then
+		logExcluded(vehicleFile, "vehicle")
+		return true
+	end
 	
 	-- 4) mod könyvtárnév alapján
-	for name, _ in pairs(RVB_EXCLUDEDMODS) do
+	-- Fallback for badly structured mods (last resort)
+	for name, _ in pairs(RVB_EXCLUDED_MODS) do
 		--local pattern = "[/\\]" .. name .. "[/\\]"
 		--local escapedName = name:gsub("/", "[/\\]"):gsub("\\", "[/\\]")
 		--local pattern = "[/\\]" .. escapedName .. "[/\\]"
 		--if cfg:find(escapedName) then
 		local normalizedName = name:gsub("\\", "/")
-        local normalizedPath = cfg:gsub("\\", "/")
-        if normalizedPath:find(normalizedName, 1, true) then
+		local normalizedPath = cfg:gsub("\\", "/")
+		if normalizedPath:find(normalizedName, 1, true) then
+			logExcluded(normalizedName, "mod/folder")
 			return true
 		end
 	end
@@ -495,6 +503,16 @@ function VehicleBreakdowns:onLoad(savegame)
 	end
 	
 	local spec = self.spec_faultData
+	
+	self.rvbDebugger = g_rvbMain.rvbDebugger
+	
+	spec.isrvbSpecEnabled = true
+	if self.isExcluded and self:isExcluded() then
+		spec.isrvbSpecEnabled = false
+	end
+	if not spec.isrvbSpecEnabled then
+		return
+	end
 	
 	
 	-- jumper kábel spec létrehozása
@@ -526,12 +544,12 @@ function VehicleBreakdowns:onLoad(savegame)
 	spec.jumperCableDirtyFlag			= self:getNextDirtyFlag()
 	
 
-	self.rvbDebugger = g_currentMission.vehicleBreakdowns.rvbDebugger
+	
 
 	spec.messageCenter = g_messageCenter	
 
 	
-	spec.isrvbSpecEnabled = true
+
 	spec.totaloperatingHours = 0
 	spec.operatingHours = 0
 	spec.dirtHeatOperatingHours = 0
@@ -618,7 +636,6 @@ spec.message = nil
 
 
 	spec.partfoot = 0
-	spec.rvblightsTypesMask = 0
 	
 
 	spec.lightingUpdateTimer = 0
@@ -716,16 +733,16 @@ spec.message = nil
 	
 	
 	
-	
+	local specMotorized = self.spec_motorized
 	
 	
 
 	self.currentTemperaturDay = g_currentMission.environment.weather:getCurrentTemperature()
-	self.currentTemperaturDay =  self.currentTemperaturDay - math.random(2,5)
-	self.spec_motorized.motorTemperature.value = self.currentTemperaturDay
-	self.spec_motorized.motorTemperature.valueMin = self.currentTemperaturDay
+	self.currentTemperaturDay = self.currentTemperaturDay - math.random(2,5)
+	specMotorized.motorTemperature.value = self.currentTemperaturDay
+	specMotorized.motorTemperature.valueMin = self.currentTemperaturDay
 	--self.spec_motorized.motorFan.disableTemperature = 85
-	self.spec_motorized.motorTemperature.valueMax = 122
+	specMotorized.motorTemperature.valueMax = 122
 	
 	self.tireDeformation = false
 
@@ -736,9 +753,14 @@ spec.message = nil
 
 	spec.fanEnableTemperature = 95
 	spec.fanDisableTemperature = 85
+
+	specMotorized.motorFan.defaultEnableTemp = specMotorized.motorFan.enableTemperature
+	specMotorized.motorFan.defaultDisableTemp = specMotorized.motorFan.disableTemperature
 	
-	self.spec_motorized.motorFan.defaultEnableTemp = self.spec_motorized.motorFan.enableTemperature
-	self.spec_motorized.motorFan.defaultDisableTemp = self.spec_motorized.motorFan.disableTemperature
+
+	specMotorized.motorStopTimerDuration = 60*24*1000
+	specMotorized.motorStopTimer = specMotorized.motorStopTimerDuration
+	self.rvbDebugger:info("overrides disabling automatic engine shutdown when the player is not near the vehicle.")
 
 	spec.lastFuelUsage = 0
 	spec.lastDefUsage = 0
@@ -869,10 +891,7 @@ spec.message = nil
 
 
 
-						
-	local spec_m = self.spec_motorized
-
-	if spec_m.motor ~= nil then
+	if specMotorized.motor ~= nil then
 	
 	
 	
@@ -1001,9 +1020,7 @@ spec.message = nil
 	spec.steeringWheels = {}
 	self:steeringWheels()
 	
-	if self.isExcluded and self:isExcluded() then
-		spec.isrvbSpecEnabled = false
-	end
+
 
 
 	
@@ -1042,17 +1059,6 @@ function VehicleBreakdowns:getBatteryFillUnitIndex()
 end
 
 
-
-
-
-
-function VehicleBreakdowns.setLightsTypesMask(self, superFunc, lightsTypesMask, force, noEventSend)
-	superFunc(self, lightsTypesMask, force, noEventSend)
-    local currentLightMask = self:getLightsTypesMask()
-	local rvb = self.spec_faultData
-	rvb.rvblightsTypesMask = currentLightMask
-    return
-end
 
 
 function VehicleBreakdowns:setBatteryDrainingIfStartMotor()
@@ -1321,25 +1327,44 @@ function VehicleBreakdowns:chargeBatteryViaJumpStart(dt, isActiveForInputIgnoreS
 	end
 end
 
-
 function VehicleBreakdowns:CalculateFinishTime(AddHour, AddMinute)
-    local currentTimeInMinutes = g_currentMission.environment.currentHour * 60 + g_currentMission.environment.currentMinute
-    local addTimeInMinutes = AddHour * 60 + AddMinute
-    local workshopOpenTime = g_rvbGameplaySettings.workshopOpen * 60
-    local workshopCloseTime = g_rvbGameplaySettings.workshopClose * 60
-    local finishDay = g_currentMission.environment.currentDay
-    if currentTimeInMinutes < workshopOpenTime then
-        currentTimeInMinutes = workshopOpenTime
-    end
-    local finishTimeInMinutes = currentTimeInMinutes + addTimeInMinutes
-    if finishTimeInMinutes >= workshopCloseTime then
-        finishDay = finishDay + 1
-        finishTimeInMinutes = workshopOpenTime + (finishTimeInMinutes - workshopCloseTime)
-    end
-    local finishHour = math.floor(finishTimeInMinutes / 60)
-    local finishMinute = finishTimeInMinutes % 60
-    return finishDay, finishHour, finishMinute
+	local env = g_currentMission.environment
+
+	local currentTimeInMinutes = env.currentHour * 60 + env.currentMinute
+	local addTimeInMinutes = AddHour * 60 + AddMinute
+	local finishDay = env.currentDay
+
+	if g_rvbMain:isAlwaysOpenWorkshop() or not g_rvbMain:getIsWorkshopTime() then
+		local finishTimeInMinutes = currentTimeInMinutes + addTimeInMinutes
+
+		if finishTimeInMinutes >= 1440 then
+			finishDay = finishDay + math.floor(finishTimeInMinutes / 1440)
+			finishTimeInMinutes = finishTimeInMinutes % 1440
+		end
+
+		local finishHour = math.floor(finishTimeInMinutes / 60)
+		local finishMinute = finishTimeInMinutes % 60
+		return finishDay, finishHour, finishMinute
+	end
+
+	local workshopOpenTime  = g_rvbGameplaySettings.workshopOpen * 60
+	local workshopCloseTime = g_rvbGameplaySettings.workshopClose * 60
+
+	if currentTimeInMinutes < workshopOpenTime then
+		currentTimeInMinutes = workshopOpenTime
+	end
+
+	local finishTimeInMinutes = currentTimeInMinutes + addTimeInMinutes
+
+	if finishTimeInMinutes >= workshopCloseTime then
+		finishDay = finishDay + 1
+		finishTimeInMinutes = workshopOpenTime + (finishTimeInMinutes - workshopCloseTime)
+	end
+	local finishHour = math.floor(finishTimeInMinutes / 60)
+	local finishMinute = finishTimeInMinutes % 60
+	return finishDay, finishHour, finishMinute
 end
+
 
 
 
@@ -2291,6 +2316,7 @@ function VehicleBreakdowns:saveToXMLFile(xmlFile, key, usedModNames)
 end
 
 function VehicleBreakdowns.onRegisterActionEvents(self, _, isActiveForInputIgnoreSelection)
+	if self.spec_faultData == nil or not self.spec_faultData.isrvbSpecEnabled then return end
 	if self.isClient and (self.getIsEntered and self:getIsEntered()) then
 		local spec = self.spec_lights
 		self:clearActionEventsTable(spec.actionEvents)
@@ -4551,7 +4577,7 @@ function VehicleBreakdowns:calculateCost(costType)
 		--local materialCost = self:getPrice() * ageFactor * REPAIR_COSTS[9]
 		local materialCost = self:getPrice() * ageFactor * SERVICE.COST
 		local baseserviceTime = 10800
-		local periodicService = g_currentMission.vehicleBreakdowns:getPeriodicService()
+		local periodicService = g_rvbMain:getPeriodicService()
 		local hoursOverdue = math.max(0, math.floor(specRVB.operatingHours) - periodicService)
 		local additionalTime = hoursOverdue * SERVICE.TIME
 		local totalServiceTime = baseserviceTime + additionalTime
@@ -5434,6 +5460,7 @@ function VehicleBreakdowns:onBlinkingMessage(vehicle, key, textKey)
 end	
 
 function VehicleBreakdowns:isRepairRequired(partId)
+	if self.spec_faultData == nil or not self.spec_faultData.isrvbSpecEnabled then return end
     local part = self.spec_faultData and self.spec_faultData.parts[partId]
     return part and part.repairreq or false
 end
