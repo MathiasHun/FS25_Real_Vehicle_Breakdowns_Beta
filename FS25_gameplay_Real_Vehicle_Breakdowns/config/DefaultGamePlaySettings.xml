@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <rvbGamePlaySettings>
-   <dailyServiceInterval value="6"/>
+   <dailyServiceInterval value="2"/>
    <periodicServiceInterval value="40"/>
    <workshopTime value="true"/>
    <workshopOpen value="7"/>
