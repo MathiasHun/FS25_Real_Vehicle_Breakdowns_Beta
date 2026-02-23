@@ -4,6 +4,11 @@ local modName = g_currentModName
 g_vehicleBreakdownsModName = modName
 g_vehicleBreakdownsDirectory = directory
 g_resetVehiclesRVB = {}
+g_rvbPlayer = nil
+g_rvbMain = nil
+g_rvbGameplaySettings = nil
+g_rvbGeneralSettings = nil
+g_maxLifetimeCache = {}
 
 local sourceFiles = {
 	-- Config
@@ -20,22 +25,7 @@ local sourceFiles = {
 	"scripts/gui/dialogs/RVBInfoDialog.lua",
 	"scripts/gui/dialogs/rvbWorkshopDialog.lua",
 	-- Events
-	"scripts/events/RVBRepairControlEvent.lua",
-	"scripts/events/RVBServiceRequest_Event.lua",
-	"scripts/events/RVBService_Event.lua",
-	"scripts/events/RVBInspectionRequest_Event.lua",
-	"scripts/events/RVBInspection_Event.lua",
-	"scripts/events/RVBRepairRequest_Event.lua",
-	"scripts/events/RVBRepair_Event.lua",
-	"scripts/events/RVBParts_Event.lua",
-	"scripts/events/RVBJumpStartingEvent.lua",
-	"scripts/events/BatteryFillUnitFillLevelEvent.lua",
-	"scripts/events/RVBLightingsStringsEvent.lua",
-	"scripts/events/RVBLightingsTypesMaskEvent.lua",
-	"scripts/events/RVBResetVehicle_Event.lua",
 	"scripts/events/RVBGenSettingsSync_Event.lua",
-	"scripts/events/RVBToggleSpec_Event.lua",
-	"scripts/events/JumperCableEvent.lua",
 	-- HUD
 	"scripts/hud/RVB_HUD.lua",
 	-- UTILS
@@ -45,14 +35,12 @@ local sourceFiles = {
 	-- PLAYER ACTION
 	"scripts/player/RVBPlayer.lua",
 }
-
-for _, file in ipairs(sourceFiles) do
-  source(Utils.getFilename(file, directory))
+for i = 1, #sourceFiles do
+    source(Utils.getFilename(sourceFiles[i], directory))
 end
 
 g_gui:loadProfiles(directory .. "menu/guiProfiles.xml")
 
-g_rvbMain = nil
 local vehicleBreakdowns
 local function isEnabled()
 	return vehicleBreakdowns ~= nil
@@ -67,33 +55,25 @@ function init()
 	SavegameSettingsEvent.writeStream = Utils.appendedFunction(SavegameSettingsEvent.writeStream, writeStream)
 	FillTypeManager.loadMapData = Utils.appendedFunction(FillTypeManager.loadMapData, loadBatteryType)
 	TypeManager.finalizeTypes = Utils.prependedFunction(TypeManager.finalizeTypes, validateVehicleTypes)
-	
-	
+
 	Mission00.loadMission00Finished = Utils.appendedFunction(Mission00.loadMission00Finished, function()
 		print("[RVB] Hooked into FSBaseMission:setPlannedDaysPerPeriod")
 	end)
 
-
 	MessageType.RVB_RESET_VEHICLE = nextMessageTypeId()
     MessageType.RVB_VEHICLE_RESET = nextMessageTypeId()
-	MessageType.RVB_START_REPAIR = nextMessageTypeId()
 	MessageType.RVB_START_SERVICE = nextMessageTypeId()
-	MessageType.RVB_START_INSPECTION = nextMessageTypeId()
-	MessageType.RVB_END_INSPECTION = nextMessageTypeId()
 	MessageType.SET_PARTS_LIFETIME = nextMessageTypeId()
 	MessageType.SET_WORKSHOP_STATE = nextMessageTypeId()
-	--MessageType.RVB_STARTMOTOR = nextMessageTypeId()
 	MessageType.SET_DIFFICULTY = nextMessageTypeId()
 	MessageType.SET_DAYSPERPERIOD = nextMessageTypeId()
 	MessageType.RVB_PROGRESS_MESSAGE = nextMessageTypeId()
 	MessageType.RVB_JUMPERCABLE_MESSAGE = nextMessageTypeId()
 	MessageType.RVB_BLINKINGMESSAGE = nextMessageTypeId()
-	
-	vehicleBreakdowns = RVBMain:new(directory, modName)
 
+	vehicleBreakdowns = RVBMain:new(directory, modName)
 	RVBInfoDialog.register()
 	rvbWorkshopDialog.register()
-
 end
 function loadMission(mission)
 	mission.vehicleBreakdowns = vehicleBreakdowns
@@ -163,33 +143,16 @@ function loadBatteryType()
 		delete(battery)
 	end
 end
-
-
-
 -- =========================================================================
 -- FSBaseMission:setPlannedDaysPerPeriod HOOK
 -- =========================================================================
-
 local FSBaseMission_setPlannedDaysPerPeriod = FSBaseMission.setPlannedDaysPerPeriod
-
--- Eredeti függvény megtartása és kiegészítése
 function FSBaseMission:setPlannedDaysPerPeriod(days, noEventSend)
-
-
-    -- Saját logika
-	-- Esemény küldése, ha a g_messageCenter már elérhető
-    if g_messageCenter ~= nil then
-		if days ~= self.missionInfo.plannedDaysPerPeriod then
-			g_messageCenter:publish(MessageType.SET_DAYSPERPERIOD, days)
-			print("[RVB] g_messageCenter: published SET_DAYSPERPERIOD message")
-		end
-    else
-        print("[RVB] Warning: g_messageCenter was nil when trying to publish SET_DAYSPERPERIOD")
-    end
-	
-	-- Eredeti futtatása
     FSBaseMission_setPlannedDaysPerPeriod(self, days, noEventSend)
-
+    if g_messageCenter ~= nil then
+        g_messageCenter:publish(MessageType.SET_DAYSPERPERIOD, days)
+        print("[RVB] published SET_DAYSPERPERIOD")
+    end
 end
 
 init()
