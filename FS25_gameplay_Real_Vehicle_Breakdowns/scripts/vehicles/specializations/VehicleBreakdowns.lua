@@ -3885,7 +3885,7 @@ end
 function VehicleBreakdowns:getPartsPercentage(part)
 	local spec = self.spec_faultData
 	--local maxLifetime = PartManager.getMaxPartLifetime(self, part)
-	local maxLifetime = spec.cachedMaxLifetime[key]
+	local maxLifetime = spec.cachedMaxLifetime[part]
 	return (spec.parts[part].operatingHours * 100) / maxLifetime
 end
 function VehicleBreakdowns:getFaultParts(part)
@@ -5691,3 +5691,4 @@ end
 if g_modIsLoaded["FS25_DashboardLive"] then
 	FS25_DashboardLive.DashboardLive.onUpdate = Utils.overwrittenFunction(FS25_DashboardLive.DashboardLive.onUpdate, VehicleBreakdowns.DashboardLive_onUpdate)
 end
+
