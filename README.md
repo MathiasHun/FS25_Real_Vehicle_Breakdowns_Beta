@@ -69,24 +69,17 @@ If the issue persists after this, please report it.
 
 Thanks for helping improve the mod!🚜
 </br></br>
-<!--
+<!-- -->
 # Please don’t share this version on other sites, it’s a VERY early BETA.</br>
-## <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=7">Download the latest developer TEST version 0.9.5.9</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
+## <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=7">Download the latest developer TEST version 0.9.6.2</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
 
-## Changelog 0.9.5.9:
-- RVB menu optimization
-- Keep your vehicle clean! 100% dirt + player-set daily service time = increased wear (engine, thermostat)
-- In cold conditions, the usable battery charge decreases, making starting more difficult.
-- If the vehicle is not used, the battery loses 3% of its charge per month.
-- In the vehicle workshop menu, the status of each vehicle is displayed, indicating whether it is currently under inspection, service, or repair.
-The expected duration of the process is also shown.
-- If the vehicle has a hood animation, it automatically opens during inspection/service/repair.
-- github issues#138 - Conflict with Dashboard Live
+## Changelog 0.9.6.2:
+- Conflict with FS25_EnhancedVehicle mod, TEMP and RMP displays are disabled.
+- MP Bug fixes
+- Code optimization (plus 2-5 FPS)
+- RVB ExactFillRootNode warning fixed
 
-## Changelog 0.9.5.8:
-- MP Bug
-
-</br></br></br>-->
+</br></br></br><!-- -->
 # <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=5">Download the latest developer version</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
 
 ## Recommended Dependencies (to avoid errors):
@@ -96,12 +89,6 @@ The expected duration of the process is also shown.
 ## 🔀Mod Conflict
 If you are using the Real Vehicle Breakdowns (RVB) mod, do not use the:
 - <strong>FS25_DisableTurnOffMotor</strong> - it will prevent the engine temperature from rising
-
-## Changelog 0.9.6.2:
-- Conflict with FS25_EnhancedVehicle mod, TEMP and RMP displays are disabled.
-- MP Bug fixes
-- Code optimization (plus 2-5 FPS)
-- RVB ExactFillRootNode warning fixed
 
 ## Changelog 0.9.6.1:
 - github issues#141 - For some players, the game would not start after the update, this issue has now been fixed.
