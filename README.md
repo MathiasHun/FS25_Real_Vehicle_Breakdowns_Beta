@@ -97,6 +97,12 @@ The expected duration of the process is also shown.
 If you are using the Real Vehicle Breakdowns (RVB) mod, do not use the:
 - <strong>FS25_DisableTurnOffMotor</strong> - it will prevent the engine temperature from rising
 
+## Changelog 0.9.6.2:
+- Conflict with FS25_EnhancedVehicle mod, TEMP and RMP displays are disabled.
+- MP Bug fixes
+- Code optimization (plus 2-5 FPS)
+- RVB ExactFillRootNode warning fixed
+
 ## Changelog 0.9.6.1:
 - github issues#141 - For some players, the game would not start after the update, this issue has now been fixed.
 
