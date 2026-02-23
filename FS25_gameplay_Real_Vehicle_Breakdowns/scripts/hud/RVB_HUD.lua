@@ -1,23 +1,22 @@
 
 local function colorsAreEqual(color1, color2)
-    if #color1 ~= #color2 then return false end
-    for i = 1, #color1 do
-        if color1[i] ~= color2[i] then return false end
-    end
-    return true
+	if #color1 ~= #color2 then return false end
+	for i = 1, #color1 do
+		if color1[i] ~= color2[i] then return false end
+	end
+	return true
 end
 local function colorsAreEqual_(c1, c2, eps)
-    if c1 == nil or c2 == nil then return false end
-    if #c1 ~= #c2 then return false end
-    eps = eps or 0.001
-    for i = 1, #c1 do
-        if math.abs(c1[i] - c2[i]) > eps then
-            return false
-        end
-    end
-    return true
+	if c1 == nil or c2 == nil then return false end
+	if #c1 ~= #c2 then return false end
+	eps = eps or 0.001
+	for i = 1, #c1 do
+		if math.abs(c1[i] - c2[i]) > eps then
+			return false
+		end
+	end
+	return true
 end
-
 
 RVB_HUD = {}
 local RVB_HUD_mt = Class(RVB_HUD, HUDDisplay)
@@ -28,9 +27,9 @@ RVB_HUD.LIGHT_WORK_FRONT = bit32.lshift(1, Lights.LIGHT_TYPE_WORK_FRONT)
 RVB_HUD.LIGHT_HIGHBEAM   = bit32.lshift(1, Lights.LIGHT_TYPE_HIGHBEAM)
 RVB_HUD.HUD_LIGHT_MASK = bit32.bor(
 	RVB_HUD.LIGHT_DEFAULT,
-    RVB_HUD.LIGHT_WORK_BACK,
-    RVB_HUD.LIGHT_WORK_FRONT,
-    RVB_HUD.LIGHT_HIGHBEAM
+	RVB_HUD.LIGHT_WORK_BACK,
+	RVB_HUD.LIGHT_WORK_FRONT,
+	RVB_HUD.LIGHT_HIGHBEAM
 )
 
 function RVB_HUD:new()
@@ -128,7 +127,7 @@ function RVB_HUD:update(dt)
 		end
 
 	else
-        self.isVehicleDrawSafe = false	
+		self.isVehicleDrawSafe = false	
 	end
 	local motorState = self.vehicle:getMotorState()
 	local RVBMain = g_currentMission.vehicleBreakdowns
@@ -156,7 +155,7 @@ function RVB_HUD:update(dt)
 	end
 end
 function RVB_HUD:getDefaultHudColor()
-    return self.hudDefaultColor or HUDCOLOR.DEFAULT
+	return self.hudDefaultColor or HUDCOLOR.DEFAULT
 end
 function RVB_HUD:storeScaledValues()
 	self.temperatureOffsetX, self.temperatureOffsetY = self:scalePixelValuesToScreenVector(34, -16)
@@ -191,14 +190,14 @@ function RVB_HUD:storeScaledValues()
 	self.debugBgRight:setColor(unpack({0, 0, 0, 0.55}))
 
 	self.speedBgScaleWidth = self:scalePixelToScreenWidth(5)
-	
+
 	self.tempTextOffsetX, self.tempTextOffsetY = self:scalePixelValuesToScreenVector(52, -59)
 	self.tempTextSize = self:scalePixelToScreenHeight(10)
 	self.rpmTextOffsetX, self.rpmTextOffsetY = self:scalePixelValuesToScreenVector(-54, -59)
 	self.rpmTextSize = self:scalePixelToScreenHeight(10)
 	self.fuelTextOffsetX, self.fuelTextOffsetY = self:scalePixelValuesToScreenVector(8, 4)
 	self.fuelTextSize = self:scalePixelToScreenHeight(13)
-	
+
 	self.debugTextSize = self:scalePixelToScreenHeight(14)
 	self.damageTextOffsetX, self.damageTextOffsetY = self:scalePixelValuesToScreenVector(20, 212)
 	self.thermostatTextOffsetX, self.thermostatTextOffsetY = self:scalePixelValuesToScreenVector(20, 192)
@@ -210,7 +209,7 @@ function RVB_HUD:storeScaledValues()
 	self.selfstarterTextOffsetX, self.selfstarterTextOffsetY = self:scalePixelValuesToScreenVector(20, 72)
 	self.batteryTextOffsetX, self.batteryTextOffsetY = self:scalePixelValuesToScreenVector(20, 52)
 	self.serviceDTextOffsetX, self.serviceDTextOffsetY = self:scalePixelValuesToScreenVector(20, 32)
-	
+
 	self.motorLoadTextOffsetX, self.motorLoadTextOffsetY = self:scalePixelValuesToScreenVector(-25, 32)
 	self.motorLoadTextSize = self:scalePixelToScreenHeight(11)
 end
@@ -225,7 +224,7 @@ function RVB_HUD:setVehicle(vehicle)
 	local hasVehicle = vehicle ~= nil
 	local isMotorized = hasVehicle and vehicle.spec_motorized ~= nil
 	if hasVehicle and isMotorized then
-        self.vehicle = vehicle
+		self.vehicle = vehicle
 		self.temperature.lastColor = nil
 		self.temperature.faultlastColor = nil
 		self.battery.lastColor = nil
@@ -235,7 +234,7 @@ function RVB_HUD:setVehicle(vehicle)
 		self.lights.lastColor = nil
 		self.lights.faultlastColor = nil
 		self.hudLightActive = false
-    end
+	end
 	if self.vehicle and self.vehicle.getConsumerFillUnitIndex ~= nil then
 		self.hasDiesel   = self.vehicle:getConsumerFillUnitIndex(FillType.DIESEL) ~= nil
 		self.hasElectric = self.vehicle:getConsumerFillUnitIndex(FillType.ELECTRICCHARGE) ~= nil
@@ -255,8 +254,8 @@ function RVB_HUD:draw()
 	local rvb = vehicle.spec_faultData
 	
 	if rvb ~= nil and not rvb.isrvbSpecEnabled then
-        return
-    end
+		return
+	end
 
 	g_currentMission.hud.speedMeter.speedTextSize = self:scalePixelToScreenHeight(43)
 
@@ -301,6 +300,9 @@ function RVB_HUD:draw()
 				setTextColor(unpack(HUDCOLOR.BASE))
 				setTextAlignment(RenderText.ALIGN_LEFT)
 			end
+			if g_modIsLoaded["FS25_EnhancedVehicle"] then
+				g_currentMission.EnhancedVehicle.hud.temp.enabled = false
+			end
 		end
 		if RVBMain:getIsShowRpmDisplay() and rvb ~= nil and self.hasDiesel then
 			if vehicle.spec_motorized ~= nil then --and vehicle.isServer then
@@ -321,6 +323,9 @@ function RVB_HUD:draw()
 				renderText(rpmTextOffsetX, rpmTextOffsetY + 0.002, self.rpmTextSize, rpm_txt2)
 				setTextColor(unpack(HUDCOLOR.BASE))
 				setTextAlignment(RenderText.ALIGN_LEFT)
+			end
+			if g_modIsLoaded["FS25_EnhancedVehicle"] then
+				g_currentMission.EnhancedVehicle.hud.rpm.enabled = false
 			end
 		end
 		if RVBMain:getIsShowFuelDisplay() and rvb ~= nil and (self.hasDiesel or self.hasElectric or self.hasMethane) then
@@ -446,25 +451,25 @@ function RVB_HUD:draw()
 
 
 		elseif motorState == MotorState.STARTING or motorState == MotorState.IGNITION then
-            self.temperature:setVisible(true)
+			self.temperature:setVisible(true)
 			self.temperature:setColor(unpack(HUDCOLOR.COOL))
-			
+
 			self.battery:setVisible(true)
 			self.battery:setColor(unpack(HUDCOLOR.CRITICAL))
-			
+
 			self.engine:setVisible(true)
 			self.engine:setColor(unpack(HUDCOLOR.WARNING))
-			
+
 			self.lights:setVisible(true)
 			self.lights:setColor(unpack(HUDCOLOR.WARNING))
-			
+
 			serviceVisible = true
 			--self.service:setVisible(true)
 			--self.service:setColor(unpack(HUDCOLOR.WARNING))
 			setTextColor(unpack(HUDCOLOR.WARNING))
 
 		else
-            self.temperature:setVisible(true) --false
+			self.temperature:setVisible(true) --false
 			self.temperature:setColor(unpack(self:getDefaultHudColor()))
 			self.battery:setVisible(true) --false
 			self.battery:setColor(unpack(self:getDefaultHudColor()))
@@ -475,7 +480,7 @@ function RVB_HUD:draw()
 			--self.service:setVisible(false)
 			setTextColor(unpack(self:getDefaultHudColor()))
 			serviceVisible = true --false
-			
+
 			self.temperature.lastColor = nil
 			self.temperature.faultlastColor = nil
 			self.battery.lastColor = nil
@@ -489,15 +494,15 @@ function RVB_HUD:draw()
 		self.temperature:setPosition(posX + self.temperatureOffsetX, posY + self.temperatureOffsetY)
 		self.temperature:render()
 		--setTextAlignment(RenderText.ALIGN_LEFT)
-		
+
 		self.battery:setPosition(posX + self.batteryOffsetX, posY + self.batteryOffsetY)
 		self.battery:render()
 		--setTextAlignment(RenderText.ALIGN_LEFT)
-		
+
 		self.engine:setPosition(posX + self.engineOffsetX, posY + self.engineOffsetY)
 		self.engine:render()
 		--setTextAlignment(RenderText.ALIGN_LEFT)
-		
+
 		self.lights:setPosition(posX + self.lightsOffsetX, posY + self.lightsOffsetY)
 		self.lights:render()
 		--setTextAlignment(RenderText.ALIGN_LEFT)
@@ -515,7 +520,7 @@ function RVB_HUD:draw()
 			setTextAlignment(RenderText.ALIGN_LEFT)
 		end
 	end
-	
+
 	if GSET.vhuddisplay then
 		local specf = vehicle.spec_faultData
 		if specf ~= nil and vehicle.spec_motorized ~= nil and self.hasDiesel then
@@ -530,7 +535,7 @@ function RVB_HUD:draw()
 			self.debugBg:render()
 			self.debugBgScale:render()
 			self.debugBgRight:render()
-		
+
 			--local specf = vehicle.spec_faultData
 			local COLOR = {}
 			COLOR.DEFAULT = {1, 1, 1, 1}
@@ -553,7 +558,7 @@ function RVB_HUD:draw()
 			setTextVerticalAlignment(RenderText.VERTICAL_ALIGN_TOP)
 			setTextBold(true)
 			renderText(damageTextOffsetX, damageTextOffsetY, self.debugTextSize, damage_Text)	
-		
+
 			local thermostatTextOffsetX = posX + self.thermostatTextOffsetX 
 			local thermostatTextOffsetY = posY + self.thermostatTextOffsetY
 			local maxLifetime = PartManager.getMaxPartLifetime(vehicle, THERMOSTAT)
@@ -589,7 +594,7 @@ function RVB_HUD:draw()
 			setTextVerticalAlignment(RenderText.VERTICAL_ALIGN_TOP)
 			setTextBold(true)
 			renderText(lightingsTextOffsetX, lightingsTextOffsetY, self.debugTextSize, lightings_Text)
-		
+
 			local glowplugTextOffsetX = posX + self.glowplugTextOffsetX 
 			local glowplugTextOffsetY = posY + self.glowplugTextOffsetY
 			local maxLifetime = PartManager.getMaxPartLifetime(vehicle, GLOWPLUG)
@@ -625,7 +630,7 @@ function RVB_HUD:draw()
 			setTextVerticalAlignment(RenderText.VERTICAL_ALIGN_TOP)
 			setTextBold(true)
 			renderText(wipersTextOffsetX, wipersTextOffsetY, self.debugTextSize, wipers_Text)
-		
+
 			local generatorTextOffsetX = posX + self.generatorTextOffsetX 
 			local generatorTextOffsetY = posY + self.generatorTextOffsetY
 			local maxLifetime = PartManager.getMaxPartLifetime(vehicle, GENERATOR)
@@ -680,7 +685,7 @@ function RVB_HUD:draw()
 			setTextVerticalAlignment(RenderText.VERTICAL_ALIGN_TOP)
 			setTextBold(true)
 			renderText(selfstarterTextOffsetX, selfstarterTextOffsetY, self.debugTextSize, selfstarter_Text)
-		
+
 			local batteryTextOffsetX = posX + self.batteryTextOffsetX 
 			local batteryTextOffsetY = posY + self.batteryTextOffsetY
 			local maxLifetime = PartManager.getMaxPartLifetime(vehicle, BATTERY)
@@ -698,7 +703,7 @@ function RVB_HUD:draw()
 			setTextVerticalAlignment(RenderText.VERTICAL_ALIGN_TOP)
 			setTextBold(true)
 			renderText(batteryTextOffsetX, batteryTextOffsetY, self.debugTextSize, battery_Text)
-			
+
 			local serviceDTextOffsetX = posX + self.serviceDTextOffsetX 
 			local serviceDTextOffsetY = posY + self.serviceDTextOffsetY
 			local Partfoot = (specf.operatingHours * 100) / g_currentMission.vehicleBreakdowns:getPeriodicService()
@@ -717,7 +722,7 @@ function RVB_HUD:draw()
 			renderText(serviceDTextOffsetX, serviceDTextOffsetY, self.debugTextSize, service_Text)
 		end
 	end
-	
+
 	setTextColor(1,1,1,1)
 	setTextAlignment(RenderText.ALIGN_LEFT)
 	setTextVerticalAlignment(RenderText.VERTICAL_ALIGN_BASELINE)
@@ -746,67 +751,66 @@ function RVB_renderMultiColumnTextAA(x, y, textSize, texts, spacingX, aligns)
 	setTextAlignment(RenderText.ALIGN_LEFT)
 end
 function RVB_renderMultiColumnText(x, y, textSize, texts, spacingX, aligns)
-    local lineHeight = getTextHeight(textSize, "A")
+	local lineHeight = getTextHeight(textSize, "A")
 
-    for col, text in ipairs(texts) do
-        local align = aligns and aligns[col] or RenderText.ALIGN_LEFT
-        setTextAlignment(align)
+	for col, text in ipairs(texts) do
+		local align = aligns and aligns[col] or RenderText.ALIGN_LEFT
+		setTextAlignment(align)
 
-        local lines_ = string.split(text, "\n")
-        local maxWidth = 0
+		local lines_ = string.split(text, "\n")
+		local maxWidth = 0
 
-        for i, line in ipairs(lines_) do
-            if line ~= "" then
-                local width = getTextWidth(textSize, line)
-                maxWidth = math.max(maxWidth, width)
+		for i, line in ipairs(lines_) do
+			if line ~= "" then
+				local width = getTextWidth(textSize, line)
+				maxWidth = math.max(maxWidth, width)
 
-                local drawX = x
-                if align == RenderText.ALIGN_RIGHT then
-                    drawX = x + width
-                elseif align == RenderText.ALIGN_CENTER then
-                    drawX = x + width * 0.5
-                end
+				local drawX = x
+				if align == RenderText.ALIGN_RIGHT then
+					drawX = x + width
+				elseif align == RenderText.ALIGN_CENTER then
+					drawX = x + width * 0.5
+				end
 
-                renderText(drawX, y - (i - 1) * lineHeight, textSize, line)
-            end
-        end
+				renderText(drawX, y - (i - 1) * lineHeight, textSize, line)
+			end
+		end
 
-        x = x + maxWidth + spacingX
-    end
+		x = x + maxWidth + spacingX
+	end
 
-    setTextAlignment(RenderText.ALIGN_LEFT)
+	setTextAlignment(RenderText.ALIGN_LEFT)
 end
 
 function RVB_HUD:vehicleDebug(vehicle)
-	
+
 	local spec = vehicle.spec_faultData
 	if vehicle.isClient and vehicle:getIsControlled() then
-		
+
 		local textSize = getCorrectTextSize(0.02)
 
-        local baseX, baseY = 0.2, 0.70
-        local yStep = 0.02
+		local baseX, baseY = 0.2, 0.70
+		local yStep = 0.02
 
 		setTextColor(1,1,1,1)
 		setTextBold(false)
 		setTextAlignment(RenderText.ALIGN_LEFT)
 
-        renderText(baseX, baseY, textSize, string.format("[VehicleBreakdowns Debug]"))
+		renderText(baseX, baseY, textSize, string.format("[VehicleBreakdowns Debug]"))
 
 		baseY = baseY - yStep
-        renderText(baseX, baseY, textSize, string.format("%s", vehicle:getFullName() or "unknown"))
-		
-		
+		renderText(baseX, baseY, textSize, string.format("%s", vehicle:getFullName() or "unknown"))
+
 		local batteryFillLevel = vehicle:getFillUnitFillLevel(vehicle:getBatteryFillUnitIndex()) --spec.batteryFillUnitIndex
- 		local motorSpec = vehicle.spec_motorized
-  		local motor = vehicle.getMotor and vehicle:getMotor()
+		local motorSpec = vehicle.spec_motorized
+		local motor = vehicle.getMotor and vehicle:getMotor()
 		local rpm = motor:getEqualizedMotorRpm()
 		local torque = motor:getTorqueCurveValue(rpm)
 		local kW = motor.peakMotorPower
 		local torque = motor:getMotorAvailableTorque()
 		local neededPtoTorque = motor:getMotorExternalTorque()
 		local motorPower = motor:getMotorRotSpeed() * (torque - neededPtoTorque) * 1000
-	
+
 		local baseX, baseY = 0.2, 0.64
 		local s11_ = ""
 		local s12_ = ""
@@ -824,12 +828,12 @@ function RVB_HUD:vehicleDebug(vehicle)
 		local s72_ = s62_ .. string.format("%1.2frpm available power: %1.2fhp %1.2fkW\n", motor:getNonClampedMotorRpm(), motorPower / 735.49875, motorPower / 1000)
 		RVB_renderMultiColumnText(baseX, baseY, textSize, { s71_, s72_ }, 0.008, { RenderText.ALIGN_RIGHT, RenderText.ALIGN_LEFT })
 		--Utils.renderMultiColumnText(baseX, baseY, textSize, { s71_, s72_ }, 0.008, { RenderText.ALIGN_RIGHT, RenderText.ALIGN_LEFT })
-		
+
         --baseY = baseY - yStep*2
 		local baseX, baseY = 0.2, 0.46
 		--setTextColor(1,1,1,1)
         -- Megjelenít néhány alkatrészt
-        local shown = 0
+		local shown = 0
 		
 		local v130_ = {
 			"\n",
@@ -894,5 +898,5 @@ function RVB_HUD:vehicleDebug(vehicle)
 
 		--setTextColor(1,1,1,1)
 		--setTextAlignment(RenderText.ALIGN_LEFT)
-    end
+	end
 end
