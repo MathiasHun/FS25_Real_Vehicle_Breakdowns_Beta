@@ -65,25 +65,10 @@ end
 function RVBPlayer:showWarning(messageKey, vehicle)
     g_currentMission:showBlinkingWarning(string.format(g_i18n:getText(messageKey), vehicle:getFullName()), 2000)
 end
-function RVBPlayer:getNearbyDonorVehicleOLD(maxDistance)
-    local px, py, pz = getWorldTranslation(g_localPlayer.rootNode)
-    for _, vehicle in pairs(g_currentMission.vehicleSystem.vehicles) do
-        local spec = vehicle.spec_jumperCable
-        if spec ~= nil and spec.connection ~= nil then
-            local conn = spec.connection
-            if conn.donor == vehicle and conn.receiver == nil then
-                local vx, vy, vz = getWorldTranslation(vehicle.rootNode)
-                local dist = MathUtil.vector3Length(px - vx, py - vy, pz - vz)
-
-                if dist <= maxDistance then
-                    return vehicle
-                end
-            end
-        end
-    end
-    return nil
-end
 function RVBPlayer:getNearbyDonorVehicle(receiver, maxDistance)
+	local receiverNode = receiver ~= nil and receiver.steeringAxleNode or nil
+	if receiverNode == nil then return nil end
+	local xReceiver, yReceiver, zReceiver = getWorldTranslation(receiverNode)
 	for key, vehicle in ipairs(g_currentMission.vehicleSystem.vehicles) do
 		local rvb = vehicle.spec_faultData
 		if rvb ~= nil and rvb.isrvbSpecEnabled then
@@ -92,9 +77,8 @@ function RVBPlayer:getNearbyDonorVehicle(receiver, maxDistance)
 				local conn = spec.connection
 				if conn.donor ~= nil and conn.receiver == nil then
 					if vehicle.steeringAxleNode ~= nil then
-						local x_vehicle, y_vehicle, z_vehicle = getWorldTranslation(vehicle.steeringAxleNode)
-						local x_receiver, y_receiver, z_receiver = getWorldTranslation(receiver.steeringAxleNode)
-						local distanceBetweenDonorAndReceiver = math.sqrt((x_receiver - x_vehicle)^2 + (z_receiver - z_vehicle)^2)
+						local xVehicle, yVehicle, zVehicle = getWorldTranslation(vehicle.steeringAxleNode)
+						local distanceBetweenDonorAndReceiver = math.sqrt((xReceiver - xVehicle)^2 + (zReceiver - zVehicle)^2)
 						if distanceBetweenDonorAndReceiver <= maxDistance then
 							return vehicle
 						end
@@ -105,17 +89,16 @@ function RVBPlayer:getNearbyDonorVehicle(receiver, maxDistance)
 	end
 	return nil
 end
-
 function RVBPlayer:searchForDonorNearPlayer(maxDistance)
-	local x_player, y_player, z_player = g_localPlayer:getPosition()
+	local xPlayer, yPlayer, zPlayer = g_localPlayer:getPosition()
 	for key, vehicle in ipairs(g_currentMission.vehicleSystem.vehicles) do
 		local rvb = vehicle.spec_faultData
 		if rvb ~= nil and rvb.isrvbSpecEnabled then
 			local spec = vehicle.spec_jumperCable
 			if spec ~= nil and spec.connection == nil then
 				if vehicle.steeringAxleNode ~= nil then
-					local x_vehicle, y_vehicle, z_vehicle = getWorldTranslation(vehicle.steeringAxleNode)
-					local distanceBetweenDonorAndReceiver = math.sqrt((x_player - x_vehicle)^2 + (z_player - z_vehicle)^2)
+					local xVehicle, yVehicle, zVehicle = getWorldTranslation(vehicle.steeringAxleNode)
+					local distanceBetweenDonorAndReceiver = math.sqrt((xPlayer - xVehicle)^2 + (zPlayer - zVehicle)^2)
 					if distanceBetweenDonorAndReceiver <= maxDistance then
 						return vehicle
 					end
@@ -125,16 +108,11 @@ function RVBPlayer:searchForDonorNearPlayer(maxDistance)
 	end
 	return nil
 end
-
-
 function RVBPlayer:actionEventConnectJumperCables()
     if self.targetVehicle == nil then return end
-	-- 1️ keresünk aktív donort a receiverhez
     local donor = self:getNearbyDonorVehicle(self.targetVehicle, JUMPERCABLE_LENGTH)
     if donor ~= nil then
-        -- receiver csatlakozik
         if self.targetVehicle ~= donor then
-			--print("receiver → csatlakozik " .. tostring(donor:getFullName()))
             self.targetVehicle:setJumperCableConnection(
                 donor,
                 JUMPERCABLE_STATE.CONNECT,
@@ -145,7 +123,6 @@ function RVBPlayer:actionEventConnectJumperCables()
             )
 			g_currentMission:showBlinkingWarning(string.format(g_i18n:getText("RVB_blinking_connecting"), self.targetVehicle:getFullName()), 1500)
 		else
-			--print("Mar donor → le csatlakozik " .. tostring(donor:getFullName()))
 			donor:setJumperCableConnection(
 				donor,
 				JUMPERCABLE_STATE.DONOR_DISCONNECT,
@@ -160,11 +137,8 @@ function RVBPlayer:actionEventConnectJumperCables()
 		self.targetVehicle:raiseActive()
         return
     end
-	
-	-- 2️ nincs donor → ez a jármű lehet donor
     local canBeDonor = self:searchForDonorNearPlayer(JUMPERCABLE_LENGTH)
     if canBeDonor ~= nil then
-		--print("donor → csatlakozik " .. tostring(self.targetVehicle:getFullName()))
 		if self.targetVehicle:getBatteryFillLevelPercentage() < BATTERY_LEVEL.MOTOR then
 			g_currentMission:showBlinkingWarning(string.format(g_i18n:getText("RVB_blinking_connecting_order"), self.targetVehicle:getFullName()), 1500)
 			return
@@ -177,22 +151,13 @@ function RVBPlayer:actionEventConnectJumperCables()
             0,
 			self.targetPlayer
         )
-		--print("targetPlayer "..self.targetPlayer)
-		--print("userId "..g_localPlayer.userId)
-		--print("playerUserId "..g_currentMission.playerUserId)
-		--print("getServerUserId "..g_currentMission:getServerUserId())
 		g_currentMission:showBlinkingWarning(string.format(g_i18n:getText("RVB_blinking_connecting"), self.targetVehicle:getFullName()), 1500)
-
 		self.targetVehicle:raiseActive()
 		return
     end
-	
 	local spec = self.targetVehicle.spec_jumperCable
 	if spec == nil then return end
-
-	-- 3️ receiver → le csatlakozik
     if spec.connection ~= nil and spec.connection.receiver == self.targetVehicle then
-		--print("receiver → le csatlakozik " .. tostring(self.targetVehicle:getFullName()))
         self.targetVehicle:setJumperCableConnection(
             spec.connection.donor,
             JUMPERCABLE_STATE.DISCONNECT,
@@ -206,10 +171,7 @@ function RVBPlayer:actionEventConnectJumperCables()
 		self.targetVehicle:raiseActive()
 		return
     end
-	
-	-- 4 donor → le csatlakozik
     if spec.connection ~= nil and spec.connection.donor == self.targetVehicle then
-		--print("donor → le csatlakozik " .. tostring(self.targetVehicle:getFullName()))
 		if spec.connection ~= nil and spec.connection.receiver ~= nil then
 			g_currentMission:showBlinkingWarning(g_i18n:getText("RVB_blinking_disconnecting_order"), 1500)
 			return
@@ -226,5 +188,4 @@ function RVBPlayer:actionEventConnectJumperCables()
 		self.targetVehicle:raiseActive()
 		return
     end
-
 end
