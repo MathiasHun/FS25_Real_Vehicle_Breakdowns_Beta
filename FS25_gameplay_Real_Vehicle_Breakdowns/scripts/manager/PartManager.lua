@@ -1,35 +1,65 @@
 
 PartManager = {}
-
+--local maxLifetimeCache = {}
+function PartManager.getMaxPartLifetime_OLD(vehicle, partKey)
+	local RVB = g_rvbMain
+	local GPSET = g_rvbGameplaySettings
+	local baseLifetime = RVB:getPartBaseLifetime(partKey)
+	if baseLifetime <= 0 then
+		return 0
+	end
+	local daysPerPeriod = g_currentMission.environment.plannedDaysPerPeriod or 1
+	local tireMultiplier = 1
+	if TYRE_PARTS[partKey] then
+		tireMultiplier = 1000
+	end
+	if GPSET.difficulty == 1 then
+		return baseLifetime * 2 * daysPerPeriod * tireMultiplier
+	elseif GPSET.difficulty == 2 then
+		return baseLifetime * 1 * daysPerPeriod * tireMultiplier
+	else
+		return baseLifetime / 2 * daysPerPeriod * tireMultiplier
+	end
+end
 function PartManager.getMaxPartLifetime(vehicle, partKey)
-    local RVB = g_currentMission.vehicleBreakdowns
-    local GPSET = RVB.gameplaySettings
-
-    local baseLifetime = RVB:getPartBaseLifetime(partKey)
-    if baseLifetime <= 0 then
-        return 0
-    end
-
-    local daysPerPeriod = g_currentMission.environment.plannedDaysPerPeriod or 1
-
-    local tireMultiplier = 1
-    if partKey == TIREFL or partKey == TIREFR or partKey == TIRERL or partKey == TIRERR then
-        tireMultiplier = 1000
-    end
-
-    if GPSET.difficulty == 1 then
-        return baseLifetime * 2 * daysPerPeriod * tireMultiplier
-    elseif GPSET.difficulty == 2 then
-        return baseLifetime * 1 * daysPerPeriod * tireMultiplier
-    else
-        return baseLifetime / 2 * daysPerPeriod * tireMultiplier
-    end
+	local RVB = g_rvbMain
+	local GPSET = g_rvbGameplaySettings
+	local mission = g_currentMission
+	local baseLifetime = RVB:getPartBaseLifetime(partKey)
+	if baseLifetime <= 0 then
+		return 0
+	end
+	local daysPerPeriod = 1
+	if mission ~= nil and mission.environment ~= nil then
+		daysPerPeriod = mission.environment.plannedDaysPerPeriod or 1
+	end
+	local difficulty = GPSET.difficulty or 2
+	local cache = g_maxLifetimeCache[partKey]
+	if cache ~= nil
+		and cache.baseLifetime == baseLifetime
+		and cache.daysPerPeriod == daysPerPeriod
+		and cache.difficulty == difficulty then
+		return cache.value
+	end
+	local tireMultiplier = TYRE_PARTS[partKey] and 1000 or 1
+	local difficultyMultiplier = 0.5
+	if difficulty == 1 then
+		difficultyMultiplier = 2
+	elseif difficulty == 2 then
+		difficultyMultiplier = 1
+	end
+	local value = baseLifetime * difficultyMultiplier * daysPerPeriod * tireMultiplier
+	g_maxLifetimeCache[partKey] = {
+		baseLifetime = baseLifetime,
+		daysPerPeriod = daysPerPeriod,
+		difficulty = difficulty,
+		value = value,
+	}
+	return value
 end
 function PartManager.loadFromDefaultConfig(vehicle)
 	local spec = vehicle.spec_faultData
 	if spec == nil or not spec.isrvbSpecEnabled then return end
-	local GSET = g_currentMission.vehicleBreakdowns.generalSettings
-	local GPSET = g_currentMission.vehicleBreakdowns.gameplaySettings
 	spec.parts = {}
 	local xmlFilePath = Utils.getFilename('config/PartsSettingsSetup.xml', g_vehicleBreakdownsDirectory)
 	local xmlFile = XMLFile.load("settingSetupXml", xmlFilePath)
@@ -60,14 +90,10 @@ function PartManager.loadFromPostLoad(vehicle, savegame)
 		Logging.error("PartManager.onPostLoad() No vehicle.")
 		return false
 	end
-
 	local rvb = vehicle.spec_faultData
-	if not rvb or not rvb.isrvbSpecEnabled then
-		-- RVB nincs engedélyezve, nem kell hibát logolni
+	if rvb == nil or not rvb.isrvbSpecEnabled then
 		return false
 	end
-	local GSET = g_currentMission.vehicleBreakdowns.generalSettings
-	local GPSET = g_currentMission.vehicleBreakdowns.gameplaySettings
 	local keyparts = string.format("%s.%s.vehicleBreakdowns", savegame.key, g_vehicleBreakdownsModName)
 	for i, partKey in ipairs(g_vehicleBreakdownsPartKeys) do
 		local part = rvb.parts[partKey]
