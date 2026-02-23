@@ -25,7 +25,6 @@ local sourceFiles = {
 	"scripts/gui/dialogs/RVBInfoDialog.lua",
 	"scripts/gui/dialogs/rvbWorkshopDialog.lua",
 	-- Events
-	"scripts/events/RVBGenSettingsSync_Event.lua",
 	-- HUD
 	"scripts/hud/RVB_HUD.lua",
 	-- UTILS
@@ -156,3 +155,4 @@ function FSBaseMission:setPlannedDaysPerPeriod(days, noEventSend)
 end
 
 init()
+
