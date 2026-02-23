@@ -1,6 +1,9 @@
 
 local function getIsElectricVehicle(vehicle)
-	if vehicle.spec_motorized.consumers == nil then return end
+	if vehicle == nil or vehicle.spec_motorized == nil or vehicle.spec_motorized.consumers == nil then
+		print("[RVB] Error: getIsElectricVehicle() vehicle or spec_motorized")
+		return false
+	end
 	for _, consumer in pairs(vehicle.spec_motorized.consumers) do
 		if consumer.fillType == FillType.ELECTRICCHARGE then
 			return true
@@ -19,8 +22,15 @@ local function getBreakChance(operatingHoursPercent, threshold)
 end
 local function randomBreakDown(vehicle, partName, critical, preThreshold, forceCheck)
 	local part = vehicle.spec_faultData and vehicle.spec_faultData.parts and vehicle.spec_faultData.parts[partName]
-	if not part then return false end
+	if not part then
+		print("[RVB] Error: randomBreakDown() part")
+		return false
+	end
 	local maxLifetime = PartManager.getMaxPartLifetime(vehicle, partName)
+	if maxLifetime == nil or maxLifetime <= 0 then 
+		print("[RVB] Error: randomBreakDown() maxLifetime")
+		return false
+	end
 	local percent = (part.operatingHours * 100) / maxLifetime
 	if forceCheck or percent >= critical then
 		return true
@@ -36,85 +46,92 @@ local function randomBreakDown(vehicle, partName, critical, preThreshold, forceC
 	--return math.random(100) <= chance
 end
 function getValidFaultVariants(vehicle, key, forceCheck)
-    local def = FaultRegistry[key]
-    if not def or not def.variants then return nil end
-    local variants = {}
-    if forceCheck then
-        local weighted = {}
-        local totalWeight = 0
-        for name, variant in pairs(def.variants) do
-            local weight = variant.severity or 1
-            totalWeight = totalWeight + weight
-            table.insert(weighted, {name=name, weight=weight})
-        end
-        local r = math.random() * totalWeight
-        local acc = 0
-        for _, v in ipairs(weighted) do
-            acc = acc + v.weight
-            if r <= acc then
-                return v.name
-            end
-        end
-    else
-        for name, variant in pairs(def.variants) do
-            local result = variant.threshold and variant.threshold(vehicle)
-            if result == true or (type(result) == "number" and math.random() < result) then
-                table.insert(variants, name)
-            end
-        end
-        if #variants > 0 then
-            return variants[math.random(#variants)]
-        end
-    end
-    return nil
+	local def = FaultRegistry[key]
+	if not def or not def.variants then return nil end
+	local variants = {}
+	if forceCheck then
+        --local weighted = {}
+        --local totalWeight = 0
+        --for name, variant in pairs(def.variants) do
+        --    local weight = variant.severity or 1
+        --    totalWeight = totalWeight + weight
+        --    table.insert(weighted, {name=name, weight=weight})
+        --end
+        --local r = math.random() * totalWeight
+        --local acc = 0
+        --for _, v in ipairs(weighted) do
+        --    acc = acc + v.weight
+        --    if r <= acc then
+        --        return v.name
+        --    end
+        --end
+		local chosenName, cumulativeWeight = nil, 0
+		for name, variant in pairs(def.variants) do
+			local weight = variant.severity or 1
+			if weight > 0 then
+				cumulativeWeight = cumulativeWeight + weight
+				if math.random() < (weight / cumulativeWeight) then
+					chosenName = name
+				end
+			end
+		end
+		return chosenName
+	else
+		for name, variant in pairs(def.variants) do
+			local result = variant.threshold and variant.threshold(vehicle)
+			if result == true or (type(result) == "number" and math.random() < result) then
+				table.insert(variants, name)
+			end
+		end
+		if #variants > 0 then
+			return variants[math.random(#variants)]
+		end
+	end
+	return nil
 end
-
 function applyEngineTorqueModifier(vehicle, factor)
-    local motor = vehicle.spec_motorized and vehicle.spec_motorized.motor
-    if not motor then return end
-    if not vehicle.spec_faultData.originalGetTorque then
-        vehicle.spec_faultData.originalGetTorque = motor.getTorqueCurveValue
-    end
-    motor.getTorqueCurveValue = function(m, rpm)
-        local originalFunc = vehicle.spec_faultData.originalGetTorque
-        local originalTorque = originalFunc(m, rpm)
-        return originalTorque * factor
-    end
-    vehicle:updateMotorProperties()
+	local motor = vehicle.spec_motorized and vehicle.spec_motorized.motor
+	if not motor then return end
+	if vehicle.spec_faultData.currentTorqueFactor == factor then return end
+	if not vehicle.spec_faultData.originalGetTorque then
+		vehicle.spec_faultData.originalGetTorque = motor.getTorqueCurveValue
+	end
+	motor.getTorqueCurveValue = function(m, rpm)
+		local originalFunc = vehicle.spec_faultData.originalGetTorque
+		local originalTorque = originalFunc(m, rpm)
+		return originalTorque * factor
+	end
+	vehicle.spec_faultData.currentTorqueFactor = factor
+	vehicle:updateMotorProperties()
 end
-
 function resetEngineTorque(vehicle)
-    local motor = vehicle.spec_motorized and vehicle.spec_motorized.motor
-    if not motor then return end
-    if vehicle.spec_faultData.originalGetTorque then
-        motor.getTorqueCurveValue = vehicle.spec_faultData.originalGetTorque
+	local motor = vehicle.spec_motorized and vehicle.spec_motorized.motor
+	if not motor then return end
+	if vehicle.spec_faultData.originalGetTorque then
+		motor.getTorqueCurveValue = vehicle.spec_faultData.originalGetTorque
 		vehicle.spec_faultData.originalGetTorque = nil
-        vehicle:updateMotorProperties()
-    end
+		vehicle.spec_faultData.currentTorqueFactor = nil
+		vehicle:updateMotorProperties()
+	end
 end
-
-
 function applySpeedLimit(vehicle, limitPercent)
-    local motor = vehicle.spec_motorized and vehicle.spec_motorized.motor
-    if not motor then return end
-
-    local orig = motor.originalMaxSpeed or motor.maxForwardSpeed
-
-    -- eredeti max sebesség mentése egyszer
-    if motor.originalMaxSpeed == nil then
+	local motor = vehicle.spec_motorized and vehicle.spec_motorized.motor
+	if not motor then return end
+	local orig = motor.originalMaxSpeed or motor.maxForwardSpeed
+	if motor.originalMaxSpeed == nil then
         motor.originalMaxSpeed = orig
     end
-    -- új sebesség
+	if motor._rvbSpeedLimitPercent == limitPercent then return end
     motor.maxForwardSpeed = motor.originalMaxSpeed * limitPercent
+	motor._rvbSpeedLimitPercent = limitPercent
 end
-
 function resetSpeedLimit(vehicle)
-    local motor = vehicle.spec_motorized.motor
-    if motor == nil then return end
-
-    if motor.originalMaxSpeed ~= nil then
-        motor.maxForwardSpeed = motor.originalMaxSpeed
-    end
+	local motor = vehicle.spec_motorized.motor
+	if motor == nil then return end
+	if motor.originalMaxSpeed ~= nil then
+		motor.maxForwardSpeed = motor.originalMaxSpeed
+		motor._rvbSpeedLimitPercent = nil
+	end
 end
 
 THERMOSTAT = "THERMOSTAT"
@@ -138,6 +155,31 @@ g_vehicleBreakdownsPartKeys = {
     TIREFL, TIREFR, TIRERL, TIRERR
 }
 
+EXCLUDED_IGNITION_PARTS = {
+    [THERMOSTAT] = true,
+    [LIGHTINGS] = true,
+    [WIPERS] = true,
+    [GENERATOR] = true,
+    [ENGINE] = true,
+    [BATTERY] = true,
+    [TIREFL] = true,
+    [TIREFR] = true,
+    [TIRERL] = true,
+    [TIRERR] = true
+}
+
+EXCLUDED_PARTS = {
+    [GLOWPLUG] = true,
+    [SELFSTARTER] = true
+}
+
+TYRE_PARTS = {
+	[TIREFL] = true,
+	[TIREFR] = true,
+	[TIRERL] = true,
+	[TIRERR] = true
+}
+
 WHEELTOPART = {
 	[1] = TIREFL,
 	[2] = TIREFR,
@@ -158,7 +200,7 @@ HUDCOLOR.COOL = { 0.0097, 0.4287, 0.6445, 1 }
 MS_PER_GAME_HOUR = 1000 * 60 * 60
  
 RVB_DELAY = {
-	PARTS_BREAKDOWNS = 100,
+	PARTS_BREAKDOWNS = 300,
 	PARTS_noBREAKDOWNS = 1200,
 	PARTS_OPERATINGHOURS = 2000,
 	LIGHTINGS_OPERATINGHOURS = 3000,
@@ -167,7 +209,8 @@ RVB_DELAY = {
 	BATTERY_DRAIN = 1100,
 	DIRT_HEAT = 5000,
 	MOTORTEMPERATURE = 50,             -- updateMotorTemperature()
-	MOTORLOAD = 800
+	MOTORLOAD = 800,
+	PROXIMITY = 500	
 }
 
 DIRT_HEAT_START_HOURS = 1.0     -- 1 játékóra után = g_rvbGameplaySettings.dailyServiceInterval, tehát ez törölhető
@@ -882,6 +925,7 @@ RVB_EXCLUDED_MODS = {
 	["FS25_MrChow_Heli_Bell_47"] = true,
 	["FS25_PaggioApePlus"] = true,
 	["FS25_PiaggioApe"] = true,
+	["FS25_Polaris_RMK_Pro"] = true,
 	["FS25_polishWheelbarrow"] = true,
 	["FS25_Profihopper"] = true,
 	["FS25_RefillableIBCTank"] = true,
