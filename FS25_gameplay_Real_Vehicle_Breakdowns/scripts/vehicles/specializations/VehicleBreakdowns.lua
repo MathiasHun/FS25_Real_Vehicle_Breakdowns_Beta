@@ -55,11 +55,17 @@ VehicleBreakdowns.TIRE_PRESSURE_MIN = 40 -- kPa
 VehicleBreakdowns.TIRE_PRESSURE_MAX = 180 -- kPa
 
 VehicleBreakdowns.INCREASE = 1.15
-VehicleBreakdowns.FLATE_MULTIPLIER = 0.005
+VehicleBreakdowns.FLAT_MULTIPLIER = 0.005
 VehicleBreakdowns.MAX_INPUT_MULTIPLIER = 10
 VehicleBreakdowns.INPUT_MULTIPLIER_STEP = 0.01
 
 VehicleBreakdowns.INFLATION_PRESSURE = 50 -- Ezt változtathatod
+VehicleBreakdowns.INFLATION_PRESSURE = 50 -- Ezt változtathatod
+
+local RVB_WORKSHOP_STATE_KEYS = {"service", "inspection", "repair"}
+local RVB_HOT_PARTS = {THERMOSTAT, ENGINE}
+local RVB_WEAR_PARTS = {THERMOSTAT, GENERATOR, ENGINE, BATTERY}
+
 
 	-- ================================
 	-- Helper függvény az egyes flag-ek frissítésére
@@ -109,11 +115,8 @@ VehicleBreakdowns.INFLATION_PRESSURE = 50 -- Ezt változtathatod
 	local function updateSuspensionState(self, workshopStatus)
 		local spec = self.spec_faultData
 		local isClosed = not workshopStatus
-
-		local rvbTables = {"service", "inspection", "repair"}
 		local anyChanged = false
-
-		for _, key in ipairs(rvbTables) do
+		for _, key in ipairs(RVB_WORKSHOP_STATE_KEYS) do
 			local data = spec[key]
 			if data and data.state ~= _G[string.upper(key) .. "_STATE"].NONE then
 				if updateFlag(self, key, isClosed) then
@@ -121,7 +124,6 @@ VehicleBreakdowns.INFLATION_PRESSURE = 50 -- Ezt változtathatod
 				end
 			end
 		end
-		-- opcionális: log, ha bármelyik változott
 		if anyChanged then
 			--print("Workshop state updated for "..self:getFullName())
 		end
@@ -557,18 +559,6 @@ function VehicleBreakdowns:onLoad(savegame)
 	spec.serviceManual = {}
 	
 	spec.parts = {}
-	--[[if self.isServer then
-		PartManager.loadPartsFromXML(self, savegame)
-		self:raiseDirtyFlags(spec.partsDirtyFlag)
-	else
-		-- kliens oldalon default inicializálás, hogy ne legyen nil
-		for _, partKey in ipairs(g_vehicleBreakdownsPartKeys) do
-			spec.parts[partKey] = PartManager.PartsDefaults({name = partKey})
-			if partKey == GLOWPLUG then
-				spec.parts[partKey].pre_random = math.random(1,5)
-			end
-		end
-	end]]
 	PartManager.loadFromDefaultConfig(self)
 
 
@@ -1221,93 +1211,48 @@ function VehicleBreakdowns:CalculateFinishTime(AddHour, AddMinute)
 	return finishDay, finishHour, finishMinute
 end
 
+
 function VehicleBreakdowns:onPostLoad(savegame)
 
-	if savegame == nil then
-        return
-    end
-	
+	local specFillunit = self.spec_fillUnit
 	local spec = self.spec_faultData
-    if spec == nil or not spec.isrvbSpecEnabled then
-        return
-    end
+	if spec == nil or not spec.isrvbSpecEnabled then
+		return
+	end
 
-
-	local p25 = self
-	local p26 = savegame
-
-	local v27 = p25.spec_fillUnit
-	if p25.isServer then
-		local fillUnitsToLoad = {}
-		
-		if p26 == nil or not p26.xmlFile:hasProperty(p26.key .. ".fillUnit") then --print("NINCS MENTES")
-			if not p25.vehicleLoadingData:getCustomParameter("spawnEmpty") then
-				
+	if self.isServer then
+		if savegame == nil or not savegame.xmlFile:hasProperty(savegame.key .. ".fillUnit") then
+			if not self.vehicleLoadingData:getCustomParameter("spawnEmpty") then
+				for fillUnitIndex, fillUnit in pairs(specFillunit.fillUnits) do
+					if fillUnit.fillTypeIndex == g_fillTypeManager:getFillTypeIndexByName("BATTERYCHARGE") then
+						fillUnit.fillLevel = 100
+					end
+				end
 			end
-			
 		else
-			
-			
-			local v34 = p26.xmlFile
-			local v35 = 0
+			local xmlFile = savegame.xmlFile
+			local i = 0
 			while true do
-				local v36 = string.format("%s.fillUnit.unit(%d)", p26.key, v35)
-				if not v34:hasProperty(v36) then
+				local key = string.format("%s.fillUnit.unit(%d)", savegame.key, i)
+				if not xmlFile:hasProperty(key) then
 					break
 				end
-				local v37 = v34:getValue(v36 .. "#index")
-				local v38
-				if fillUnitsToLoad[v37] == nil then
-					v38 = true
-				elseif fillUnitsToLoad[v37] == nil then
-					v38 = false
-				else
-					v38 = not p26.resetVehicles
+				local fillType = xmlFile:getValue(key .. "#fillType")
+				if fillType == "BATTERYCHARGE" then
+					local fillUnitIndex = xmlFile:getValue(key .. "#index")
+					local fillLevel = xmlFile:getValue(key .. "#fillLevel", 100)
+					specFillunit.fillUnits[fillUnitIndex].fillLevel = fillLevel
+					self:raiseDirtyFlags(specFillunit.dirtyFlag)
 				end
-				if v38 then
-					local v39 = v34:getValue(v36 .. "#fillType") --print("v39 fillType "..tostring(v39))
-					local v40 = v34:getValue(v36 .. "#fillLevel") --print("v40 fillLevel "..tostring(v40))
-					
-					if v39 == "BATTERYCHARGE" then
-						--if p25.isServer then
-						local v41 = g_fillTypeManager:getFillTypeIndexByName(v39) --print("v41 "..tostring(v41))
-						--p25:addFillUnitFillLevel(p25:getOwnerFarmId(), v37, v40, v41, ToolType.UNDEFINED, nil)
-						--local spec = p25.spec_faultData
-						p25.spec_fillUnit.fillUnits[v37].fillLevel = v40
-						--spec.RVB_BatteryFillLevel = v40
-						
-						p25:raiseDirtyFlags(p25.spec_fillUnit.dirtyFlag)
-						--end
-						if p25.isClient and not p25.isServer then
-							p25.spec_fillUnit.fillUnits[v37].fillLevel = v40
-						end
-
-					end
-					
-
-					local fillUnit = p25.spec_fillUnit.fillUnits[v37]
-					if fillUnit ~= nil then
-						for _, unit in ipairs(fillUnit.fillLevelAnimations) do
-					--		AnimatedVehicle.updateAnimationByName(p25, unit.name, 9999999, true)
-						end
-					end
-	
-				end
-				v35 = v35 + 1
+				i = i + 1
 			end
 		end
-		for _, v44 in ipairs(v27.fillUnits) do
-			--p25:updateAlarmTriggers(v44.alarmTriggers)
-		end
 	end
-	
 
-	if savegame == nil or savegame.resetVehicles then
-        --return
-    end
+	if savegame == nil then
+	    return
+	end
 
-    
-	
 	local rvbkey = string.format("%s.%s.%s", savegame.key, g_vehicleBreakdownsModName, "vehicleBreakdowns")
 	spec.isrvbSpecEnabled = savegame.xmlFile:getValue(rvbkey .. "#isrvbSpecEnabled", true)
 
@@ -1344,40 +1289,22 @@ function VehicleBreakdowns:onPostLoad(savegame)
 	spec.repair.cost         = savegame.xmlFile:getValue(keyrepair .. "#cost", 0)
 
 
-
-	--if spec.inspection[1] or spec.service[1] or spec.repair[1] then
 	if spec.inspection.state == INSPECTION_STATE.ACTIVE or spec.service.state == SERVICE_STATE.ACTIVE or spec.repair.state == REPAIR_STATE.ACTIVE then
-		local RVB = g_currentMission.vehicleBreakdowns
-
-		-- ha még nincs benne a jármű, hozzáadjuk
-		if not RVB.workshopVehicles[self] then
-			RVB.workshopVehicles[self] = true
-			RVB.workshopCount = RVB.workshopCount + 1
-			--print("onPostLoad workshopCount "..RVB.workshopCount)
-			WorkshopCount_Event.sendEvent(RVB.workshopCount)
+		if not g_rvbMain.workshopVehicles[self] then
+			g_rvbMain.workshopVehicles[self] = true
+			g_rvbMain.workshopCount = g_rvbMain.workshopCount + 1
+			WorkshopCount_Event.sendEvent(g_rvbMain.workshopCount)
 		end
 	end
-	
 
-	
 	if self.isServer then
-        PartManager.loadFromPostLoad(self, savegame)
-    end
-
-	--[[if savegame ~= nil and savegame.resetVehicles then
-		--print("onPostLoad " .. self:getFullName() .. " " .. tostring(savegame.resetVehicles))
-		for i, key in ipairs(g_vehicleBreakdownsPartKeys) do
-			local part = spec.parts[key]
-			--g_resetVehiclesRVB[self] = nil
-			print(string.format("Part %d: %s, Lifetime: %s, Operating Hours: %s, Repair Required: %s, Amount: %s, Cost: %s",
-			i, part.name, part.lifetime, part.operatingHours, tostring(part.repairreq), part.amount, part.cost))
-		end
-	end]]
+		PartManager.loadFromPostLoad(self, savegame)
+	end
 
 	local i = 0
 	local xmlFile = savegame.xmlFile
 	local key = string.format("%s.%s.vehicleBreakdowns.serviceManual", savegame.key, g_vehicleBreakdownsModName)
-    while true do
+	while true do
 		local entryKey = string.format("%s.entry(%d)", key, i)
 		if not xmlFile:hasProperty(entryKey) then
 			break
@@ -1387,7 +1314,7 @@ function VehicleBreakdowns:onPostLoad(savegame)
 			entryTime      = xmlFile:getValue(entryKey .. "#entryTime", 0),
 			operatingHours = xmlFile:getValue(entryKey .. "#operatingHours", 0),
 			odometer       = xmlFile:getValue(entryKey .. "#odometer", 0),
-			resultKey         = xmlFile:getValue(entryKey .. "#resultKey", ""),
+			resultKey      = xmlFile:getValue(entryKey .. "#resultKey", ""),
 			errorList      = {},
 			cost           = xmlFile:getValue(entryKey .. "#cost", 0)
 		}
@@ -1398,17 +1325,6 @@ function VehicleBreakdowns:onPostLoad(savegame)
 				entry.errorList = {legacy}
 			end
 		end
-
-    -- új formátum feldolgozása
-    --local errorCount = xmlFile:getValue(entryKey .. "#errorCount", 0)
-    --for j = 0, errorCount - 1 do
-    --    local errKey = xmlFile:getValue(entryKey .. ".error(" .. j .. ")#key", "")
-    --    if errKey ~= "" then
-    --        table.insert(entry.errorList, errKey)
-    --    end
-    --end
-
-		-- ÚJ formátum (lista)
 		local errorCount = xmlFile:getValue(entryKey .. "#errorCount", 0)
 		if errorCount ~= nil and errorCount > 0 then
 			for j = 0, errorCount - 1 do
@@ -1418,7 +1334,6 @@ function VehicleBreakdowns:onPostLoad(savegame)
 				end
 			end
 		end
-
 		table.insert(spec.serviceManual, entry)
 		i = i + 1
     end
@@ -1426,52 +1341,6 @@ function VehicleBreakdowns:onPostLoad(savegame)
 	if spec.totalRepairTime == nil then
         spec.totalRepairTime = 0.0
     end
-
-
-		
-		
-		
-if self.isServer then
-
-
-
-
-	local i = 0
-	local xmlFile = savegame.xmlFile
-	while true do
-		local key = string.format("%s.fillUnit.unit(%d)", savegame.key, i)
-		if not xmlFile:hasProperty(key) then
-			break
-		end
-
-		local fillTypeName = xmlFile:getValue(key.."#fillType")
-		if fillTypeName == "BATTERYCHARGE" then
-			local fillUnitIndex = xmlFile:getValue(key.."#index")
-			--print("fillUnitIndex "..fillUnitIndex)
-			local fillLevel = xmlFile:getValue(key.."#fillLevel", 100)
-			if self.isClient then
-		--	print("fillLevel "..fillLevel)
-			end
-		--	self.spec_fillUnit.fillUnits[fillUnitIndex].fillLevel = fillLevel
-		--	spec.RVB_BatteryFillLevel = fillLevel
-			--self:raiseDirtyFlags(spec.dirtyFlag)
-		end	
-
-		i = i + 1
-	end
-	
-	
-	
-	
-	
-end
-	
-
-	--print("onPostLoad " .. self:getFullName() .. g_rvbGameplaySettings.difficulty)
-	--g_messageCenter:publish(MessageType.SET_DIFFICULTY, g_rvbGameplaySettings.difficulty)
-	--print("onPostLoad END")
-
-
 
 end
 
@@ -3829,39 +3698,23 @@ function VehicleBreakdowns:onEnterVehicle()
 	if spec == nil or not spec.isrvbSpecEnabled then
 		return
 	end
-	--print("onEnterVehicle")
 	local specJumper = self.spec_jumperCable
 	local jumperReady = false
 	if specJumper ~= nil and specJumper.connection ~= nil then
 		local conn = specJumper.connection
-		--print("conn.donor " .. (conn.donor ~= nil and conn.donor:getFullName() or "nil"))
-		--print("conn.receiver " .. (conn.receiver ~= nil and conn.receiver:getFullName() or "nil"))
-		--print("conn.jumperTime "..conn.jumperTime)
-		--print("conn.jumperThreshold "..conn.jumperThreshold)
-
-		-- Ha donorban vagy receiver ülök showBlinkingWarning megjelenítése
 		if self.isClient and g_localPlayer:getCurrentVehicle() == self and self:getIsControlled() then
 			if conn.donor ~= nil and conn.donor.rootNode == self.rootNode
 			or conn.receiver ~= nil and conn.receiver.rootNode == self.rootNode then
 				g_currentMission:showBlinkingWarning(g_i18n:getText("RVB_addextra_connecting"), 1500)
 			end
 		end
-	
 	end
-	
-	print("onEnterVehicle cachedMaxLifetime ENGINE "..spec.cachedMaxLifetime[ENGINE])
-
 end
-
-
-
-
 function VehicleBreakdowns:onLeaveVehicle()
 	local spec = self.spec_faultData
 	if spec == nil or not spec.isrvbSpecEnabled then
 		return
 	end
-
 	if self.isClient and not self.isServer then
 		self.rvb_addextra_connecting = false
 	end
@@ -3869,7 +3722,6 @@ end
 
 function VehicleBreakdowns:mouseEvent(posX, posY, isDown, isUp, button)
 end
-
 function VehicleBreakdowns:keyEvent(unicode, sym, modifier, isDown)
 end
 
@@ -5287,14 +5139,13 @@ function VehicleBreakdowns:updateOperatingHours(msDelta, spec)
 			loadFactor = math.min(1 + math.pow(overload, 1.4) * 1.5, 1.6)
 		end
 	end
-	
+
 	if motorTemp >= 100 then
-		for _, partName in ipairs({THERMOSTAT, ENGINE}) do
+		for _, partName in ipairs(RVB_HOT_PARTS) do
 			local partData = spec.parts[partName]
 			partData.operatingHours = partData.operatingHours + runtimeIncrease * 1.2
 		end
 	end
-	
 	local RVBSET = g_currentMission.vehicleBreakdowns
 
 	if motorTemp < MOTORTEMP_THRESHOLD and (loadFactor > 1 or motorFactor > 1) and not spec.engineLoadWarningTriggered then
@@ -5320,7 +5171,7 @@ function VehicleBreakdowns:updateOperatingHours(msDelta, spec)
 
 	local boostedWear = runtimeIncrease * loadFactor * motorFactor * serviceFactor --* speedFactor
 	local normalWear  = runtimeIncrease
-    for _, partName in ipairs({THERMOSTAT, GENERATOR, ENGINE, BATTERY}) do
+    for _, partName in ipairs(RVB_WEAR_PARTS) do
         local partData = spec.parts[partName]
         local applied = false
 		--local wearToApply = ((motorFactor > 1 or speedFactor > 1) and (partName == THERMOSTAT or partName == ENGINE))
