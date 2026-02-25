@@ -210,7 +210,7 @@ RVB_DELAY = {
 	DIRT_HEAT = 5000,
 	MOTORTEMPERATURE = 50,             -- updateMotorTemperature()
 	MOTORLOAD = 800,
-	PROXIMITY = 500	
+	PROXIMITY = 5000
 }
 
 DIRT_HEAT_START_HOURS = 1.0     -- 1 játékóra után = g_rvbGameplaySettings.dailyServiceInterval, tehát ez törölhető
@@ -829,7 +829,7 @@ function checkAndShowAlertMessage(self, minute, key, textKey, interval)
 				-- HUD oldali értesítés is mehetne ide
 				-- g_currentMission.hud:addSideNotification(FSBaseMission.INGAME_NOTIFICATION_OK, string.format(g_i18n:getText(textKey.."_hud"), self:getFullName()), 2500)
 			end
-			self.rvbDebugger:info(g_i18n:getText(textKey.."_hud"), self:getFullName())
+			self.rvbDebugger:info("checkAndShowAlertMessage", g_i18n:getText(textKey.."_hud"), self:getFullName())
 			spec.alertMessage[key] = minute
 		end
 	end
@@ -862,6 +862,7 @@ RVB_EXCLUDED_MODS = {
 	["kubota/svl972"] = true,
 	["newHolland/l318"] = true,
 	["piaggio/ape50"] = true,
+	["skoda/enyaq"] = true,
 	-- DLC
 	-- highlandsFishingPack
 	["canAm/defender"] = true,
