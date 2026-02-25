@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <modDesc descVersion="106">
     <author>MathiasHun</author>
-    <version>0.9.6.2</version>
+    <version>0.9.6.3</version>
     <title>
         <en>Real Vehicle Breakdowns</en>
     </title>
@@ -55,11 +55,18 @@ If you are using the Real Vehicle Breakdowns (RVB) mod, do not use the:
 
 - FS25_DisableTurnOffMotor - it will prevent the engine temperature from rising
 
+Changelog 0.9.6.3:
+- RVBresetVehicle bug - fixed
+- MP Bug - fixed
+- Code optimization
+- Improved debugger system: errors/warnings are always shown, info messages remain menu-toggleable. Function names are now included in log output for easier traceability.
+- Moved battery-related functions into a dedicated BatteryManager module.
+
 Changelog 0.9.6.2:
 - Conflict with FS25_EnhancedVehicle mod, TEMP and RMP displays are disabled.
-- MP Bug fixes
+- MP Bug - fixed
 - Code optimization (plus 2-5 FPS)
-- RVB ExactFillRootNode warning fixed
+- RVB ExactFillRootNode warning - fixed
 
 Changelog 0.9.6.1:
 - github issues#141 - For some players, the game would not start after the update, this issue has now been fixed.
