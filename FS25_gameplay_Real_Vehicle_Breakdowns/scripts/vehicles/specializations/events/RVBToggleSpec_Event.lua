@@ -26,7 +26,7 @@ function RVBToggleSpec_Event:run(connection)
 	if self.vehicle ~= nil and self.vehicle:getIsSynchronized() then
 		local spec = self.vehicle.spec_faultData
 		spec.isrvbSpecEnabled = self.enabled
-		self.vehicle.rvbDebugger:info("specialization toggled to %s on vehicle %s", tostring(self.enabled), self.vehicle:getFullName())
+		self.vehicle.rvbDebugger:info("RVBToggleSpec_Event run", "specialization toggled to %s on vehicle %s", tostring(self.enabled), self.vehicle:getFullName())
 		if not connection:getIsServer() then
 			g_server:broadcastEvent(self, nil, nil, self.vehicle)
 		end
