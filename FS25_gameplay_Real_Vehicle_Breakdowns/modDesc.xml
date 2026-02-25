@@ -56,6 +56,7 @@ If you are using the Real Vehicle Breakdowns (RVB) mod, do not use the:
 - FS25_DisableTurnOffMotor - it will prevent the engine temperature from rising
 
 Changelog 0.9.6.3:
+- github issues#145 – Thanks to Squallqt for testing, feedback, and suggestions.
 - RVBresetVehicle bug - fixed
 - MP Bug - fixed
 - Code optimization
@@ -436,3 +437,4 @@ Changelog 0.8.1.0:
         <storeItem xmlFilename="mods/FS25_JCB_Powerpack/etechPowerpack.xml"/>
     </storeItems>
 </modDesc>
+
