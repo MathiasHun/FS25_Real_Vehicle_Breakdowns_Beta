@@ -20,10 +20,10 @@ function BatteryFillUnitFillLevelEvent:writeStream(streamId, connection)
 end
 function BatteryFillUnitFillLevelEvent:run(connection)
 	if self.vehicle ~= nil and self.vehicle:getIsSynchronized() then
-		self.vehicle:batteryChargeVehicle()
+		BatteryManager.batteryChargeVehicle(self.vehicle)
 	end
 	if not connection:getIsServer() then
-		if self.vehicle ~= nil and self.vehicle:getIsSynchronized() and self.vehicle.batteryChargeVehicle ~= nil then
+		if self.vehicle ~= nil and self.vehicle:getIsSynchronized() then
 			g_server:broadcastEvent(self)
 			g_messageCenter:publish(MessageType.VEHICLE_REPAIRED, self.vehicle)
 		end
