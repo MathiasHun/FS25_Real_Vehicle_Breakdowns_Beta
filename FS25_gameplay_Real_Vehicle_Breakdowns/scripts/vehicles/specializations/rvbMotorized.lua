@@ -10,7 +10,7 @@ function rvbMotorized.onPostLoad(self, superFunc, savegame)
     end
 
     -- Kihagyjuk a 10%-os refill logikát
-	self.rvbDebugger:info("'Motorized:onPostLoad' function overridden by RVB mod.")
+	self.rvbDebugger:info("Motorized:onPostLoad", "function overridden by RVB mod.")
 
 	spec.propellantFillUnitIndices = {}
 	for _, fillType in pairs({
@@ -56,8 +56,10 @@ function rvbMotorized.startMotor(self, superFunc, noEventSend)
 			SelfStarterManager.startMotor(self)
 
 			RVBParts_Event.sendEvent(self, rvbs.parts)
+			
+			BatteryManager.setBatteryDrainingIfStartMotor(self)
 		end
-		self:setBatteryDrainingIfStartMotor()
+		
 		
 		-- jelenlegi helye
 		rvbs.firstStart = true
@@ -293,7 +295,7 @@ function rvbMotorized.getCanMotorRunOLD(self, superFunc)
     end
 	local maxLifetime = PartManager.getMaxPartLifetime(self, ENGINE)
     local enginePercent = (rvb.parts[ENGINE].operatingHours * 100) / maxLifetime
-    local batteryFault = self:getBatteryFillLevelPercentage()
+    local batteryFault = BatteryManager.getBatteryFillLevelPercentage(self)
     local batteryOkay = rvb.batteryCHActive == false and batteryFault >= BATTERY_LEVEL.MOTOR
     local partGlowplug = rvb.parts[GLOWPLUG]
     local shortCircuit = (partGlowplug.fault ~= "empty" and partGlowplug.fault == "shortCircuit")
@@ -402,7 +404,7 @@ function rvbMotorized.getMotorNotAllowedWarning(self, superFunc, ...)
 	end
 
 	-- Battery check
-	--local batteryLevel = self:getBatteryFillLevelPercentage()
+	--local batteryLevel = BatteryManager.getBatteryFillLevelPercentage(self)
 	--if batteryLevel < BATTERY_LEVEL.MOTOR then
 	--	return g_i18n:getText("RVB_DEAD_ENGINE_BATTERY")
 	--end
