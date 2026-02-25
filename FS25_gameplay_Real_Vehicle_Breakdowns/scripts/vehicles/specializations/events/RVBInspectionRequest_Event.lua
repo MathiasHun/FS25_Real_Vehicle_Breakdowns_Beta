@@ -42,7 +42,7 @@ function RVBInspectionRequest_Event:run(connection)
     --end
 	if self.vehicle ~= nil and self.vehicle:getIsSynchronized() then
 		self.vehicle:startInspection(self.farmId)
-		self.vehicle.rvbDebugger:info("RVBInspectionRequest_Event startInspection on vehicle %s", self.vehicle:getFullName())
+		self.vehicle.rvbDebugger:info("RVBInspectionRequest_Event run", "startInspection on vehicle %s", self.vehicle:getFullName())
 		if not connection:getIsServer() then
 			g_server:broadcastEvent(self, nil, nil, self.vehicle)
 		end
