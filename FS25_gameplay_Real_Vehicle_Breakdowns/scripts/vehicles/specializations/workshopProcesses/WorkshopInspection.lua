@@ -115,7 +115,7 @@ function WorkshopInspection.finish(vehicle, spec)
                     part.fault = valid
                     part.repairreq = true
                     spec.faultList[i] = true
-                    vehicle.rvbDebugger:info("Vehicle part error: %s, specific error: %s", part.name, valid)
+                    vehicle.rvbDebugger:info("WorkshopInspection.finish", "Vehicle part error: %s, specific error: %s", part.name, valid)
                 end
             end
 
@@ -189,7 +189,7 @@ function WorkshopInspection.SyncClientServer(vehicle, inspection, message)
 	local spec = vehicle.spec_faultData
 	spec.inspection = inspection
 	if spec.inspection.state == INSPECTION_STATE.ACTIVE then
-		vehicle.rvbDebugger:info("The inspection of vehicle %s has started. Activated in the updateInspection(dt) function.", vehicle:getFullName())
+		vehicle.rvbDebugger:info("WorkshopInspection.SyncClientServer", "The inspection of vehicle %s has started. Activated in the updateInspection(dt) function.", vehicle:getFullName())
 		vehicle:raiseActive()
 	end
 
@@ -210,6 +210,7 @@ function WorkshopInspection.SyncClientServer(vehicle, inspection, message)
 
 	local i = spec.inspection
 	vehicle.rvbDebugger:info(
+		"WorkshopInspection.SyncClientServer", 
 		"The inspection of vehicle %s has been completed. Inspection data block: state=%s finishDay=%s finishHour=%s finishMinute=%s cost=%s factor=%s completed=%s",
 		vehicle:getFullName(),
 		tostring(i.state), tostring(i.finishDay), tostring(i.finishHour), tostring(i.finishMinute),
@@ -217,7 +218,7 @@ function WorkshopInspection.SyncClientServer(vehicle, inspection, message)
 	)
 	local inspectionNone = spec.inspection.state == INSPECTION_STATE.NONE
 	if vehicle.isClient and inspectionNone and vehicle.getIsEntered and vehicle:getIsEntered() then
-		vehicle.rvbDebugger:info("Inspection process for vehicle %s completed: requestActionEventUpdate().", vehicle:getFullName())
+		vehicle.rvbDebugger:info("WorkshopInspection.SyncClientServer", "Inspection process for vehicle %s completed: requestActionEventUpdate().", vehicle:getFullName())
 		vehicle:requestActionEventUpdate()
 	end
 end
