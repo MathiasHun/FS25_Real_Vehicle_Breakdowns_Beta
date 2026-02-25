@@ -139,7 +139,7 @@ function RVBPlayer:actionEventConnectJumperCables()
     end
     local canBeDonor = self:searchForDonorNearPlayer(JUMPERCABLE_LENGTH)
     if canBeDonor ~= nil then
-		if self.targetVehicle:getBatteryFillLevelPercentage() < BATTERY_LEVEL.MOTOR then
+		if BatteryManager.getBatteryFillLevelPercentage(self.targetVehicle) < BATTERY_LEVEL.MOTOR then
 			g_currentMission:showBlinkingWarning(string.format(g_i18n:getText("RVB_blinking_connecting_order"), self.targetVehicle:getFullName()), 1500)
 			return
 		end
