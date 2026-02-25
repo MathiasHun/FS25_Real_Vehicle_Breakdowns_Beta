@@ -96,7 +96,7 @@ end
 function rvbWorkshopDialog:updateScreen()
 	local vehicle = self.vehicle
 	if not (vehicle and vehicle.spec_faultData) then
-		self.rvbDebugger:warning("Vehicle or its faultData spec is missing for vehicle '%s'. Called from rvbWorkshopDialog.updateScreen().", vehicle and vehicle:getFullName() or "unknown")
+		self.rvbDebugger:warning("rvbWorkshopDialog:updateScreen", "Vehicle or its faultData spec is missing for vehicle '%s'.", vehicle and vehicle:getFullName() or "unknown")
 		return false
 	end
 	local rvb = vehicle.spec_faultData
@@ -210,20 +210,21 @@ end
 function rvbWorkshopDialog.updateButtons(self)
 	local vehicle = self.vehicle
 	if not (vehicle and vehicle.spec_faultData) then
-		self.rvbDebugger:warning("Vehicle or its faultData spec is missing for vehicle '%s'. Called from rvbWorkshopDialog.updateButtons().", vehicle and vehicle:getFullName() or "unknown")
+		self.rvbDebugger:warning("rvbWorkshopDialog:updateButtons", "Vehicle or its faultData spec is missing for vehicle '%s'.", vehicle and vehicle:getFullName() or "unknown")
 		return false
 	end
 	local rvb = vehicle.spec_faultData
 	local workshopStatus, timeInfo = g_currentMission.vehicleBreakdowns:getWorkshopStatusMessage()
 	-- BATTERYCHARGING
-	if vehicle:getBatteryFillLevelPercentage() then
-		if vehicle:getBatteryFillLevelPercentage() <= 0.5 then
+	local batteryLevelPercentage = BatteryManager.getBatteryFillLevelPercentage(vehicle)
+	if batteryLevelPercentage then
+		if batteryLevelPercentage <= 0.5 then
 			self.chargingBatteryButton:setText(string.format("%s (%s)", g_i18n:getText("RVB_button_battery_ch"), g_i18n:formatMoney(BATTERY_CHARGE_COST, 0, true, true)))
 		else
 			self.chargingBatteryButton:setLocaKey("RVB_button_battery_ch")
 		end
 	end
-	self.chargingBatteryButton:setDisabled(vehicle:getBatteryFillLevelPercentage() >= 0.5 or not workshopStatus)
+	self.chargingBatteryButton:setDisabled(batteryLevelPercentage >= 0.5 or not workshopStatus)
 	-- INSPECTION
 	local inspectionPrice = vehicle:getInspectionPrice()
 	--if not rvb.inspection[1] then
@@ -540,7 +541,7 @@ function rvbWorkshopDialog.onClickPart(self, state, element)
 		self.vehicle:setPartsRepairreq(part.name, element:getIsChecked())
 		self:updateButtons()
 		self.needsListReload = true
-		self.rvbDebugger:info("Repair Part %s: \'%s\'", part.name, tostring(element:getIsChecked()))
+		self.rvbDebugger:info("rvbWorkshopDialog.onClickPart", "Repair Part %s: \'%s\'", part.name, tostring(element:getIsChecked()))
 	end
 end
 function rvbWorkshopDialog.setStatusBarValue(_, bar, value)
@@ -556,7 +557,7 @@ end
 function rvbWorkshopDialog.onClickResetVehicle(self, _, _)
 	local vehicle = self.vehicle
 	if not (vehicle and vehicle.spec_faultData) then
-		self.rvbDebugger:warning("Vehicle or its faultData spec is missing for vehicle '%s'. Called from rvbWorkshopDialog.onClickResetVehicle().",
+		self.rvbDebugger:warning("rvbWorkshopDialog.onClickResetVehicle", "Vehicle or its faultData spec is missing for vehicle '%s'.",
 		vehicle and vehicle:getFullName() or "unknown")
 		return false
 	end
@@ -575,7 +576,8 @@ function rvbWorkshopDialog.onYesNoResetVehicleDialog(self, yes)
 		stopVehicle(vehicle)
 		self:updateScreen()
 		self:updateButtons()
-		g_workshopScreen.list:reloadData()
+		--g_workshopScreen.list:reloadData()
+		g_workshopScreen.needsListReload = true
 	end
 end
 function rvbWorkshopDialog.onVehicleResetEvent(self, vehicle, _)
@@ -587,7 +589,7 @@ end
 function rvbWorkshopDialog.onClickChargingBattery(self, _, _)
 	local vehicle = self.vehicle
 	if not (vehicle and vehicle.spec_faultData) then
-		self.rvbDebugger:warning("Vehicle or its faultData spec is missing for vehicle '%s'. Called from rvbWorkshopDialog.onClickChargingBattery().",
+		self.rvbDebugger:warning("rvbWorkshopDialog.onClickChargingBattery", "Vehicle or its faultData spec is missing for vehicle '%s'.",
 		vehicle and vehicle:getFullName() or "unknown")
 		return false
 	end
@@ -616,7 +618,7 @@ end
 function rvbWorkshopDialog.onClickInspection(self, _, _)
 	local vehicle = self.vehicle
 	if not (vehicle and vehicle.spec_faultData) then
-		self.rvbDebugger:warning("Vehicle or its faultData spec is missing for vehicle '%s'. Called from rvbWorkshopDialog.onClickInspection().",
+		self.rvbDebugger:warning("rvbWorkshopDialog.onClickInspection", "Vehicle or its faultData spec is missing for vehicle '%s'.",
 		vehicle and vehicle:getFullName() or "unknown")
 		return false
 	end
@@ -624,7 +626,7 @@ function rvbWorkshopDialog.onClickInspection(self, _, _)
 	local GPSET = RVB.gameplaySettings
 	if RVB.workshopCount >= GPSET.workshopCountMax then
 		InfoDialog.show(string.format(g_i18n:getText("RVB_repairErrorMechanics"), GPSET.workshopCountMax))
-		self.rvbDebugger:info("All mechanics are busy, only up to %s vehicles can be serviced at the same time.", GPSET.workshopCountMax)
+		self.rvbDebugger:info("rvbWorkshopDialog.onClickInspection", "All mechanics are busy, only up to %s vehicles can be serviced at the same time.", GPSET.workshopCountMax)
 		return
 	end
 
@@ -667,13 +669,14 @@ function rvbWorkshopDialog.onYesNoInspectionDialog(self, yes)
 	self:updateScreen()
 	self:updateButtons()
 
-	g_workshopScreen.list:reloadData()
+	--g_workshopScreen.list:reloadData()
+	g_workshopScreen.needsListReload = true
 
 end
 function rvbWorkshopDialog.onClickService(self, _, _)
     local vehicle = self.vehicle
     if not (vehicle and vehicle.spec_faultData) then
-		self.rvbDebugger:warning("Vehicle or its faultData spec is missing for vehicle '%s'. Called from rvbWorkshopDialog.onClickService().",
+		self.rvbDebugger:warning("rvbWorkshopDialog.onClickService", "Vehicle or its faultData spec is missing for vehicle '%s'.",
 		vehicle and vehicle:getFullName() or "unknown")
         return false
     end
@@ -681,7 +684,7 @@ function rvbWorkshopDialog.onClickService(self, _, _)
 	local GPSET = RVB.gameplaySettings
 	if RVB.workshopCount >= GPSET.workshopCountMax then
 		InfoDialog.show(string.format(g_i18n:getText("RVB_repairErrorMechanics"), GPSET.workshopCountMax))
-		self.rvbDebugger:info("All mechanics are busy, only up to %s vehicles can be serviced at the same time.", GPSET.workshopCountMax)
+		self.rvbDebugger:info("rvbWorkshopDialog.onClickService", "All mechanics are busy, only up to %s vehicles can be serviced at the same time.", GPSET.workshopCountMax)
 		return
 	end
     local specRVB = vehicle.spec_faultData
@@ -725,7 +728,7 @@ function rvbWorkshopDialog.onYesNoServiceDialog(self, yes)
     local rvb = vehicle.spec_faultData
     local preCalc = self.preCalculatedService
     if not preCalc then
-		self.rvbDebugger:error("No pre-calculated service time found!")
+		self.rvbDebugger:error("rvbWorkshopDialog.onYesNoServiceDialog", "No pre-calculated service time found!")
         return
     end
 	
@@ -736,12 +739,13 @@ function rvbWorkshopDialog.onYesNoServiceDialog(self, yes)
     stopVehicle(vehicle)
     self:updateScreen()
 	self:updateButtons()
-	g_workshopScreen.list:reloadData()
+	--g_workshopScreen.list:reloadData()
+	g_workshopScreen.needsListReload = true
 end
 function rvbWorkshopDialog.onClickRepair(self, _, _)
 	local vehicle = self.vehicle
 	if not (vehicle and vehicle.spec_faultData) then
-		self.rvbDebugger:warning("Vehicle or its faultData spec is missing for vehicle '%s'. Called from rvbWorkshopDialog.onClickRepair().",
+		self.rvbDebugger:warning("rvbWorkshopDialog.onClickRepair", "Vehicle or its faultData spec is missing for vehicle '%s'.",
 		vehicle and vehicle:getFullName() or "unknown")
 		return false
 	end
@@ -749,7 +753,7 @@ function rvbWorkshopDialog.onClickRepair(self, _, _)
 	local GPSET = RVB.gameplaySettings
 	if RVB.workshopCount >= GPSET.workshopCountMax then
 		InfoDialog.show(string.format(g_i18n:getText("RVB_repairErrorMechanics"), GPSET.workshopCountMax))
-		self.rvbDebugger:info("All mechanics are busy, only up to %s vehicles can be serviced at the same time.", GPSET.workshopCountMax)
+		self.rvbDebugger:info("rvbWorkshopDialog.onClickRepair", "All mechanics are busy, only up to %s vehicles can be serviced at the same time.", GPSET.workshopCountMax)
 		return
 	end
 	local rvb = vehicle.spec_faultData
@@ -805,7 +809,7 @@ function rvbWorkshopDialog.onYesNoRepairDialog(self, yes)
 	local currentDamageLevel = math.ceil((1 - damage)*100)
 	local preCalc = self.preCalculatedRepair
     if not preCalc then
-		self.rvbDebugger:error("No pre-calculated repair time found!")
+		self.rvbDebugger:error("rvbWorkshopDialog.onYesNoRepairDialog", "No pre-calculated repair time found!")
         return
     end
 	
@@ -816,7 +820,8 @@ function rvbWorkshopDialog.onYesNoRepairDialog(self, yes)
 	stopVehicle(vehicle)
 	self:updateScreen()
 	self:updateButtons()
-	g_workshopScreen.list:reloadData()
+	--g_workshopScreen.list:reloadData()
+	g_workshopScreen.needsListReload = true
 end
 function rvbWorkshopDialog.onVehicleRepairEvent(self, vehicle, _)
 	if vehicle == self.vehicle then
