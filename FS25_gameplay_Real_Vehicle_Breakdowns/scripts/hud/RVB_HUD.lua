@@ -360,7 +360,7 @@ function RVB_HUD:draw()
 		end
 	end
 
-	if RVBMain:getIsShowMotorLoadDisplay() and rvb ~= nil and (self.hasDiesel or self.hasElectric or self.hasMethane) then
+	if RVBMain:getIsShowMotorLoadDisplay() and rvb ~= nil and (self.hasDiesel or self.hasMethane) then --or self.hasElectric
 		if motorState == MotorState.ON then
 			local currentMotorLoad = string.format("%d", rvb.motorLoadPercent)
 			if self.lastmotorLoadText ~= currentMotorLoad then
@@ -801,7 +801,7 @@ function RVB_HUD:vehicleDebug(vehicle)
 		baseY = baseY - yStep
 		renderText(baseX, baseY, textSize, string.format("%s", vehicle:getFullName() or "unknown"))
 
-		local batteryFillLevel = vehicle:getFillUnitFillLevel(vehicle:getBatteryFillUnitIndex()) --spec.batteryFillUnitIndex
+		local batteryFillLevel = vehicle:getFillUnitFillLevel(BatteryManager.getBatteryFillUnitIndex(vehicle)) --spec.batteryFillUnitIndex
 		local motorSpec = vehicle.spec_motorized
 		local motor = vehicle.getMotor and vehicle:getMotor()
 		local rpm = motor:getEqualizedMotorRpm()
