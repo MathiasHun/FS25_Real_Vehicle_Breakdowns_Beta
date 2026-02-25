@@ -181,7 +181,7 @@ function RVBMain:onMissionLoaded(mission)
 
 	if g_currentMission.missionInfo.automaticMotorStartEnabled then
 		g_currentMission:setAutomaticMotorStartEnabled(false, true)
-		self.rvbDebugger:info("The RVB mod has disabled automatic engine start.")
+		self.rvbDebugger:info("onMissionLoaded", "The RVB mod has disabled automatic engine start.")
 	end
 
 	if g_modIsLoaded["FS25_VehicleExplorer"] then
@@ -373,7 +373,7 @@ function RVBMain:updateGeneralSetting(key, value, displayValue, noEventSend)
         self.generalSettings[key] = value
         self:saveGeneralettingsToXML()
 		local logValue = displayValue or tostring(value)
-        self.rvbDebugger:info("Settings \'%s\': %s", key, logValue)
+        self.rvbDebugger:info("updateGeneralSetting", "Settings \'%s\': %s", key, logValue)
     end
 end
 function RVBMain:getIsAlertMessage()
@@ -437,7 +437,7 @@ function RVBMain:updateGameplaySetting(key, value, part, noEventSend)
 		if key == "difficulty" then
 			--RVBGenSettingsSync_Event.sendEvent(value)
 		end
-		self.rvbDebugger:info("Settings \'%s\': %s", key, tostring(value))
+		self.rvbDebugger:info("updateGameplaySetting", "Settings \'%s\': %s", key, tostring(value))
     end
 end
 	
@@ -484,7 +484,7 @@ function RVBMain:setWorkshopCount(workshopCount, noEventSend)
 	if self.workshopCount ~= workshopCount then
 		self.workshopCount = workshopCount
 		WorkshopCount_Event.sendEvent(self.workshopCount, noEventSend)
-		self.rvbDebugger:info("RVBMain \'%s\': %s", "workshopCount", tostring(workshopCount))
+		self.rvbDebugger:info("setWorkshopCount", "\'%s\': %s", "workshopCount", tostring(workshopCount))
 	end
 end
 function RVBMain:getRVBDifficulty()
