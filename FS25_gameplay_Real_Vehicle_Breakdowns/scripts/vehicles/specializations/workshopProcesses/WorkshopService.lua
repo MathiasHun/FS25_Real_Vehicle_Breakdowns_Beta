@@ -85,7 +85,7 @@ function WorkshopService.update(vehicle, dt)
 		end
 		if not spec.startingService then
 			spec.startingService = spec.operatingHours
-			vehicle.rvbDebugger:info("VehicleBreakdowns:updateService startingService: %s", spec.startingService)
+			vehicle.rvbDebugger:info("WorkshopService.update", "VehicleBreakdowns:updateService startingService: %s", spec.startingService)
 		end
 
 		if serviceTime > 0 then
@@ -99,7 +99,7 @@ function WorkshopService.update(vehicle, dt)
 					spec.serviceToChange = 0
 					spec.operatingHours = math.max(spec.operatingHours - reduction, 0)
 					vehicle:raiseDirtyFlags(spec.rvbdirtyFlag)
-					vehicle.rvbDebugger:info("VehicleBreakdowns:updateService  serviceTime: %s", spec.operatingHours)
+					vehicle.rvbDebugger:info("WorkshopService.update", "VehicleBreakdowns:updateService  serviceTime: %s", spec.operatingHours)
 				end
 			end
 		end
@@ -181,7 +181,7 @@ function WorkshopService.SyncClientServer(vehicle, service, message)
 	local spec = vehicle.spec_faultData
 	spec.service = service
 	if spec.service.state == SERVICE_STATE.ACTIVE then
-		vehicle.rvbDebugger:info("The service of vehicle %s has started. Activated in the updateService(dt) function.", vehicle:getFullName())
+		vehicle.rvbDebugger:info("WorkshopService.SyncClientServer", "The service of vehicle %s has started. Activated in the updateService(dt) function.", vehicle:getFullName())
 		vehicle:raiseActive()
 	end
 	if message ~= nil and message.cost > 0 then
@@ -200,13 +200,14 @@ function WorkshopService.SyncClientServer(vehicle, service, message)
 	end
 	local s = spec.service
 	vehicle.rvbDebugger:info(
+		"WorkshopService.SyncClientServer", 
 		"The service of vehicle %s has been completed. Service data block: state=%s finishday=%s finishhour=%s finishminute=%s cost=%s",
 		vehicle:getFullName(),
 		tostring(s.state), tostring(s.finishDay), tostring(s.finishHour), tostring(s.finishMinute), tostring(s.cost)
 	)
 	local serviceNone = spec.service.state == SERVICE_STATE.NONE
 	if vehicle.isClient and serviceNone and vehicle.getIsEntered and vehicle:getIsEntered() then
-		vehicle.rvbDebugger:info("Service process for vehicle %s completed: requestActionEventUpdate().", vehicle:getFullName())
+		vehicle.rvbDebugger:info("WorkshopService.SyncClientServer", "Service process for vehicle %s completed: requestActionEventUpdate().", vehicle:getFullName())
 		vehicle:requestActionEventUpdate()
 	end
 end
