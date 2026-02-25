@@ -24,14 +24,11 @@ source(g_vehicleBreakdownsDirectory .. "scripts/vehicles/specializations/rvbMoto
 source(g_vehicleBreakdownsDirectory .. "scripts/vehicles/specializations/rvbWearable.lua")
 source(g_vehicleBreakdownsDirectory .. "scripts/vehicles/specializations/rvbAIJobVehicle.lua")
 source(g_vehicleBreakdownsDirectory .. "scripts/vehicles/specializations/rvbLights.lua")
-source(g_vehicleBreakdownsDirectory .. "scripts/placeables/specializations/rvbPlaceableChargingStation.lua")
 
 source(g_vehicleBreakdownsDirectory .. "scripts/vehicles/specializations/events/BatteryFillUnitFillLevelEvent.lua")
 source(g_vehicleBreakdownsDirectory .. "scripts/vehicles/specializations/events/JumperCableEvent.lua")
 source(g_vehicleBreakdownsDirectory .. "scripts/vehicles/specializations/events/RVBInspection_Event.lua")
 source(g_vehicleBreakdownsDirectory .. "scripts/vehicles/specializations/events/RVBInspectionRequest_Event.lua")
-source(g_vehicleBreakdownsDirectory .. "scripts/vehicles/specializations/events/RVBLightingsStringsEvent.lua")
-source(g_vehicleBreakdownsDirectory .. "scripts/vehicles/specializations/events/RVBLightingsTypesMaskEvent.lua")
 source(g_vehicleBreakdownsDirectory .. "scripts/vehicles/specializations/events/RVBParts_Event.lua")
 source(g_vehicleBreakdownsDirectory .. "scripts/vehicles/specializations/events/RVBRepair_Event.lua")
 source(g_vehicleBreakdownsDirectory .. "scripts/vehicles/specializations/events/RVBRepairRequest_Event.lua")
@@ -45,6 +42,8 @@ source(g_vehicleBreakdownsDirectory .. "scripts/vehicles/specializations/events/
 source(g_vehicleBreakdownsDirectory .. "scripts/vehicles/specializations/workshopProcesses/WorkshopService.lua")
 source(g_vehicleBreakdownsDirectory .. "scripts/vehicles/specializations/workshopProcesses/WorkshopInspection.lua")
 source(g_vehicleBreakdownsDirectory .. "scripts/vehicles/specializations/workshopProcesses/WorkshopRepair.lua")
+
+source(g_vehicleBreakdownsDirectory .. "scripts/placeables/specializations/rvbPlaceableChargingStation.lua")
 
 VehicleBreakdowns = {}
 
@@ -60,12 +59,18 @@ VehicleBreakdowns.MAX_INPUT_MULTIPLIER = 10
 VehicleBreakdowns.INPUT_MULTIPLIER_STEP = 0.01
 
 VehicleBreakdowns.INFLATION_PRESSURE = 50 -- Ezt változtathatod
-VehicleBreakdowns.INFLATION_PRESSURE = 50 -- Ezt változtathatod
 
 local RVB_WORKSHOP_STATE_KEYS = {"service", "inspection", "repair"}
 local RVB_HOT_PARTS = {THERMOSTAT, ENGINE}
 local RVB_WEAR_PARTS = {THERMOSTAT, GENERATOR, ENGINE, BATTERY}
 
+
+local function isWithinDistance(nodeA, nodeB, maxDistance)
+	local ax, ay, az = getWorldTranslation(nodeA)
+	local bx, by, bz = getWorldTranslation(nodeB)
+	local dx, dy, dz = ax - bx, ay - by, az - bz
+	return (dx * dx + dy * dy + dz * dz) < (maxDistance * maxDistance)
+end
 
 	-- ================================
 	-- Helper függvény az egyes flag-ek frissítésére
@@ -136,7 +141,6 @@ end
 function VehicleBreakdowns.registerFunctions(vehicleType)
 
 	SpecializationUtil.registerFunction(vehicleType, "rebuildLifetimeCache", VehicleBreakdowns.rebuildLifetimeCache)
-	SpecializationUtil.registerFunction(vehicleType, "setBatteryDrainingIfStartMotor", VehicleBreakdowns.setBatteryDrainingIfStartMotor)
 
 	SpecializationUtil.registerFunction(vehicleType, "DebugFaultPrint", VehicleBreakdowns.DebugFaultPrint)
 	SpecializationUtil.registerFunction(vehicleType, "getIsFaultThermostat", VehicleBreakdowns.getIsFaultThermostat)
@@ -161,7 +165,7 @@ function VehicleBreakdowns.registerFunctions(vehicleType)
 	SpecializationUtil.registerFunction(vehicleType, "getInspectionPrice", VehicleBreakdowns.getInspectionPrice)
 	SpecializationUtil.registerFunction(vehicleType, "getSellPrice_RVBClone", VehicleBreakdowns.getSellPrice_RVBClone)
 
-	SpecializationUtil.registerFunction(vehicleType, "onStartChargeBattery", VehicleBreakdowns.onStartChargeBattery)
+
 	
 	SpecializationUtil.registerFunction(vehicleType, "onStartDirtHeat", VehicleBreakdowns.onStartDirtHeat)
 	SpecializationUtil.registerFunction(vehicleType, "updateDirtHeat", VehicleBreakdowns.updateDirtHeat)
@@ -170,16 +174,12 @@ function VehicleBreakdowns.registerFunctions(vehicleType)
 	--SpecializationUtil.registerFunction(vehicleType, "getIsRVBMotorStarted", VehicleBreakdowns.getIsRVBMotorStarted)
 
 
-	
-	SpecializationUtil.registerFunction(vehicleType, "SyncClientServer_RVBBattery", VehicleBreakdowns.SyncClientServer_RVBBattery)
+
 	SpecializationUtil.registerFunction(vehicleType, "SyncClientServer_RVBParts", VehicleBreakdowns.SyncClientServer_RVBParts)
-	SpecializationUtil.registerFunction(vehicleType, "SyncClientServer_BatteryChargeLevel", VehicleBreakdowns.SyncClientServer_BatteryChargeLevel)
 	SpecializationUtil.registerFunction(vehicleType, "SyncClientServer_Other", VehicleBreakdowns.SyncClientServer_Other)
 
+
 	
-	SpecializationUtil.registerFunction(vehicleType, "getBatteryFillUnitIndex", VehicleBreakdowns.getBatteryFillUnitIndex)
-	
-	SpecializationUtil.registerFunction(vehicleType, "batteryChargeVehicle", VehicleBreakdowns.batteryChargeVehicle)
 
 	--SpecializationUtil.registerFunction(vehicleType, "rvbVehicleSetLifetime", VehicleBreakdowns.rvbVehicleSetLifetime)
 
@@ -193,8 +193,7 @@ function VehicleBreakdowns.registerFunctions(vehicleType)
 	SpecializationUtil.registerFunction(vehicleType, "setPartsRepairreq", VehicleBreakdowns.setPartsRepairreq)
 	
 	--SpecializationUtil.registerFunction(vehicleType, "updateTireDeformation", VehicleBreakdowns.updateTireDeformation)
-	SpecializationUtil.registerFunction(vehicleType, "adjustSteeringAngle", VehicleBreakdowns.adjustSteeringAngle)
-	
+
 
 	
 
@@ -275,12 +274,12 @@ function VehicleBreakdowns.registerFunctions(vehicleType)
 	SpecializationUtil.registerFunction(vehicleType, "isGeneratorRepairRequired", VehicleBreakdowns.isGeneratorRepairRequired)
 	SpecializationUtil.registerFunction(vehicleType, "isEngineRepairRequired", VehicleBreakdowns.isEngineRepairRequired)
 	SpecializationUtil.registerFunction(vehicleType, "isSelfStarterRepairRequired", VehicleBreakdowns.isSelfStarterRepairRequired)
-	SpecializationUtil.registerFunction(vehicleType, "isBatteryRepairRequired", VehicleBreakdowns.isBatteryRepairRequired)
+
 	
 	
 	SpecializationUtil.registerFunction(vehicleType, "getIsFaultStates", VehicleBreakdowns.getIsFaultStates)
 	
-	SpecializationUtil.registerFunction(vehicleType, "getBatteryFillLevelPercentage", VehicleBreakdowns.getBatteryFillLevelPercentage)
+
 	SpecializationUtil.registerFunction(vehicleType, "getVehicleSpeed", VehicleBreakdowns.getVehicleSpeed)
 	
 	SpecializationUtil.registerFunction(vehicleType, "lightingsFault", VehicleBreakdowns.lightingsFault)
@@ -329,7 +328,7 @@ function VehicleBreakdowns.registerOverwrittenFunctions(vehicleType)
 	SpecializationUtil.registerOverwrittenFunction(vehicleType, "updateDamageAmount", rvbWearable.updateDamageAmount)
 end
 function VehicleBreakdowns.registerEventListeners(vehicleType)
-	SpecializationUtil.registerEventListener(vehicleType, "onPreLoad", VehicleBreakdowns)
+	--SpecializationUtil.registerEventListener(vehicleType, "onPreLoad", VehicleBreakdowns)
 	SpecializationUtil.registerEventListener(vehicleType, "onLoad", VehicleBreakdowns)
 	SpecializationUtil.registerEventListener(vehicleType, "onPostLoad", VehicleBreakdowns)
 	SpecializationUtil.registerEventListener(vehicleType, "onLoadFinished", VehicleBreakdowns)
@@ -411,20 +410,12 @@ function VehicleBreakdowns.initSpecialization()
 	schemaSavegame:register(XMLValueType.FLOAT, serviceManual .. ".entry(?)#odometer", "")
 	schemaSavegame:register(XMLValueType.STRING, serviceManual .. ".entry(?)#result", "empty")
 	schemaSavegame:register(XMLValueType.STRING, serviceManual .. ".entry(?)#resultKey", "empty")
-	--schemaSavegame:register(XMLValueType.STRING, serviceManual .. ".entry(?)#errorList", "empty")
 	schemaSavegame:register(XMLValueType.INT,   serviceManual .. ".entry(?)#errorCount", "")
 	schemaSavegame:register(XMLValueType.STRING, serviceManual .. ".entry(?).error(?)#key", "empty")
 	schemaSavegame:register(XMLValueType.FLOAT, serviceManual .. ".entry(?)#cost", "Javítási költség")
 
 	schemaSavegame:setXMLSpecializationType()
 end
-
-function VehicleBreakdowns:onPreLoad(savegame)
-	--print("onPreLoad " .. self:getFullName() .. " " .. g_rvbGameplaySettings.difficulty)
-	--g_messageCenter:publish(MessageType.SET_DIFFICULTY, g_rvbGameplaySettings.difficulty)
-	--print("onPreLoad END")
-end
-
 
 
 function VehicleBreakdowns:isExcluded()
@@ -434,7 +425,7 @@ function VehicleBreakdowns:isExcluded()
 	local cfg = self.configFileName
 	
 	local function logExcluded(name, type)
-		self.rvbDebugger:info("The '%s' %s is excluded from the RVB Specialization.", name, type)
+		self.rvbDebugger:info("isExcluded", "The '%s' %s is excluded from the RVB Specialization.", name, type)
 	end
 	-- 1) Mod mappanév (mods/)
 	local modName = cfg:match("mods[/\\]([^/\\]+)")
@@ -480,7 +471,7 @@ function VehicleBreakdowns:onLoad(savegame)
 	if self.spec_faultData == nil then
 		self.spec_faultData = {}
 	end
-	
+
 	local spec = self.spec_faultData
 	
 	self.rvbDebugger = g_rvbMain.rvbDebugger
@@ -491,7 +482,7 @@ function VehicleBreakdowns:onLoad(savegame)
 	end
 	if not spec.isrvbSpecEnabled then
 		-- github issues#141
-		--return
+		return
 	end
 
 	-- jumper kábel spec létrehozása
@@ -562,7 +553,6 @@ function VehicleBreakdowns:onLoad(savegame)
 	PartManager.loadFromDefaultConfig(self)
 
 
-
 	spec.preCalculatedRepair = {}
     spec.preCalculatedRepair.day = 0
     spec.preCalculatedRepair.hour = 0
@@ -570,39 +560,19 @@ function VehicleBreakdowns:onLoad(savegame)
     spec.preCalculatedRepair.fault = 0
     spec.preCalculatedRepair.faultTime = 0
 	
-	
-	spec.battery = {}
-	spec.battery.drainTimer = 0
-	
-	spec.rvbupdateTimer = {
-		battery = 0,
-		repair = 0,
-		motorRun = 0
-	}
-
-	
-    
-    
-
-	
     
 	spec.message = nil
 
-	spec.partsToChange = 0
 	spec.serviceToChange = 0
-	spec.jumpstartToChange = 0
+
 	spec.jumperTimeToChange = 0
 	
-	spec.runtimeToChange = 0
-	spec.serviceRuntimeToChange = 0
-	spec.thermostatoverHeatingRuntimeToChange = 0
+
+
 	spec.glowplugRuntimeToChange = 0
-	spec.wiperRuntimeToChange = 0
-	spec.lightingsRuntimeToChange = 0
 
 
-	spec.partfoot = 0
-	
+
 
 	spec.lightingUpdateTimer = 0
 	spec.operatingHoursUpdateTimer = 0
@@ -727,7 +697,7 @@ function VehicleBreakdowns:onLoad(savegame)
 
 	specMotorized.motorStopTimerDuration = 60*24*1000
 	specMotorized.motorStopTimer = specMotorized.motorStopTimerDuration
-	self.rvbDebugger:info("overrides disabling automatic engine shutdown when the player is not near the vehicle.")
+	self.rvbDebugger:info("onLoad", "overrides disabling automatic engine shutdown when the player is not near the vehicle.")
 
 	spec.lastFuelUsage = 0
 	spec.lastDefUsage = 0
@@ -800,12 +770,7 @@ function VehicleBreakdowns:onLoad(savegame)
 	local RVB = g_currentMission.vehicleBreakdowns
 	--RVB:setRVBDifficulty(g_currentMission.vehicleBreakdowns.generalSettings.difficulty)
 	
-	
 
-	
-	
-	spec.motorStart_updateDelta = 0
-	spec.motorStart_updateRate = 600
 
 	spec.lights_request_A = false
 	spec.lights_request_B = false
@@ -833,8 +798,7 @@ function VehicleBreakdowns:onLoad(savegame)
 	local batteryLevel = 100
 	local spec_fillUnit = self.spec_fillUnit
 	
-	spec.updateDelta = 5001
-	spec.updateRate = 5000
+
 	
 	
 	spec.isRepairActive = false
@@ -863,14 +827,13 @@ function VehicleBreakdowns:onLoad(savegame)
 	spec.jumperCableConnections = { nil, nil }
 
 	self.players = {}
-	spec.isJumperCablesConnected = false
+
 	spec.isJumpStarting = false
-	spec.chargeRate = 0
+
 	spec.actionEvents = {}
 	
 	self.vehicle = nil
-	self.interactText = ""
-	self.actionEventIdJC = nil
+
 	
 	self.rvbjumperCableConnections = {}
 	self.rvb_addextra_connecting = false
@@ -910,7 +873,6 @@ function VehicleBreakdowns:onLoad(savegame)
 	if specMotorized.motor ~= nil and spec.isrvbSpecEnabled then
 	
 		local fillUnits = self.spec_fillUnit.fillUnits
-
 		local xmlFillUnit = XMLFile.load("vehicleXml", Utils.getFilename("config/battery_fillUnit.xml", g_currentMission.vehicleBreakdowns.modDirectory), Vehicle.xmlSchema)
 		local batteryKey = string.format("vehicle.fillUnit.fillUnitConfigurations.fillUnitConfiguration(0).fillUnits.fillUnit(0)")
 		local entry = {}
@@ -929,7 +891,7 @@ function VehicleBreakdowns:onLoad(savegame)
 		entry.hasDashboards = false
 		local fillUnits = self.spec_fillUnit.fillUnits
 		table.insert(fillUnits, entry)
-	
+
 		spec.batteryFillUnitIndex = #fillUnits
 		spec.RVB_BatteryFillLevel = entry.capacity
 
@@ -938,11 +900,12 @@ function VehicleBreakdowns:onLoad(savegame)
 	end
 	
 	if not spec.isrvbSpecEnabled then return end
-	local batteryFillUnitIndex = self:getBatteryFillUnitIndex()
+	local batteryFillUnitIndex = BatteryManager.getBatteryFillUnitIndex(self)
 	-- spec.batteryFillUnitIndex
 	-- github Version v0.9.5.5 does not detect the battery #116
-	self.spec_fillUnit.fillUnits[batteryFillUnitIndex].fillType = FillType.BATTERYCHARGE
-	self.spec_fillUnit.fillUnits[batteryFillUnitIndex].fillLevel = spec.RVB_BatteryFillLevel
+--	self.spec_fillUnit.fillUnits[batteryFillUnitIndex].fillType = FillType.BATTERYCHARGE
+--	self.spec_fillUnit.fillUnits[batteryFillUnitIndex].fillLevel = spec.RVB_BatteryFillLevel
+
 	
 	--[[if self.getConsumerFillUnitIndex ~= nil and self:getConsumerFillUnitIndex(FillType.DIESEL) ~= nil then
 
@@ -1009,169 +972,26 @@ function VehicleBreakdowns:onLoad(savegame)
 	
 end
 
-				
+
 function VehicleBreakdowns:steeringWheels()
 	local spec = self.spec_faultData
 	if self.spec_wheels ~= nil then
 		for _, wheel in pairs(self.spec_wheels.wheels) do
-			--print(wheel.wheelIndex .. " " .. tostring(wheel.driveNode).. " "..wheel.physics.rotSpeed)
 			if wheel.physics.rotSpeed ~= 0 then
-			--if wheel.driveNode ~= nil and wheel.driveNode ~= 0 then
 				table.insert(spec.steeringWheels, wheel.wheelIndex)
 			end
 		end
 	end
-	--print("Kormányozható kerekek indexei: ", table.concat(spec.steeringWheels, ", "))
-end
-	
-function VehicleBreakdowns:getBatteryFillUnitIndex()
-    local spec = self.spec_fillUnit
-    local batteryFillType = g_fillTypeManager:getFillTypeIndexByName("BATTERYCHARGE")
-    for fillUnitIndex, _ in ipairs(spec.fillUnits) do
-        if self:getFillUnitAllowsFillType(fillUnitIndex, batteryFillType) then
-            return fillUnitIndex
-        end
-    end
-    return nil
 end
 
 
 
 
-function VehicleBreakdowns:setBatteryDrainingIfStartMotor()
-	if self.isServer then
-		local spec = self.spec_faultData
-		if spec == nil or spec.batteryDrainStartMotorTriggered then return end
-		
-		local RVBSET = g_currentMission.vehicleBreakdowns
-		local batteryFillUnitIndex = self:getBatteryFillUnitIndex()
-		if batteryFillUnitIndex == nil then return end
-
-		local batteryPct = self:getBatteryFillLevelPercentage()
-
-		-- ==========================
-		-- Hideg hatás korrigálása
-		-- ==========================
-		local temperature = g_currentMission.environment.weather:getCurrentTemperature() -- °C
-		local tempFactor = 1.0
-		if temperature <= 0 then
-			if temperature >= -5 then
-				tempFactor = 0.65
-			elseif temperature >= -10 then
-				tempFactor = 0.55
-			else
-				tempFactor = 0.4
-			end
-		end
-		local effectiveBatteryPct = batteryPct * tempFactor
-
-		-- ==========================
-		-- Alap kisülés meghatározása
-		-- ==========================
-		local drainValue = 2
-		local electricIdx, dieselIdx
-		if self.getConsumerFillUnitIndex ~= nil then
-			electricIdx = self:getConsumerFillUnitIndex(FillType.ELECTRICCHARGE)
-			dieselIdx   = self:getConsumerFillUnitIndex(FillType.DIESEL)
-		end
-		if electricIdx ~= nil and dieselIdx == nil then
-			drainValue = 1
-		end
-	
-		-- ==========================
-		-- Bikázás ellenőrzése
-		-- ==========================
-		local specJumper = self.spec_jumperCable
-		local jumperActive, jumperReady, donorMotor = false, false, false
-		if specJumper ~= nil and specJumper.connection ~= nil then
-			local conn = specJumper.connection
-			jumperActive = true
-			jumperReady  = conn.jumperTime >= conn.jumperThreshold
-			donorMotor   = conn.donor:getMotorState() == MotorState.ON
-		end
-
-		-- ==========================
-		-- Hiba logika
-		-- ==========================
-		if effectiveBatteryPct <= BATTERY_LEVEL.MOTOR then
-			-- Bikázás folyamatban
-			if jumperActive and not jumperReady and donorMotor then
-				drainValue = 0
-				self:addBlinkingMessage("low_jumper", "RVB_lowjumper")
-			-- Bikakábel csatlakoztva, de Donor motor nem jár
-			elseif jumperActive and not donorMotor then
-				drainValue = 0
-				self:addBlinkingMessage("donorMotor", "RVB_lowjumperDonorMotor")
-			-- Alacsony akku / önindító hiba
-			elseif not jumperActive or self:getIsFaultSelfStarter() then
-				drainValue = 0.5
-				self:addBlinkingMessage("low_battery", "RVB_fault_BHlights")
-			-- Glowplug hiba
-			elseif self:isGlowPlugRepairRequired() then
-				drainValue = 1
-			end
-		end
-	
-		-- ==========================
-		-- Ellenőrzés és drain alkalmazása
-		-- ==========================
-		if effectiveBatteryPct < BATTERY_LEVEL.MOTOR or not spec.isInitialized then return end
-
-		local batteryFillLevel = self:getFillUnitFillLevel(batteryFillUnitIndex)
-		if batteryFillLevel <= 0 then return end
-
-		drainValue = math.min(drainValue, batteryFillLevel)
-
-		spec.batteryDrainStartMotorTriggered = true
-
-		self:addFillUnitFillLevel(self:getOwnerFarmId(), batteryFillUnitIndex, -drainValue, self:getFillUnitFillType(batteryFillUnitIndex), ToolType.UNDEFINED, nil)
-
-	end
-end
 
 
-function VehicleBreakdowns:batteryChargeVehicle()
-	if self.isServer then
-	local spec = self.spec_faultData
-	
-	
-	local CurEnvironment = g_currentMission.environment
-	local manualDesc = g_i18n:getText("RVB_WorkshopMessage_batteryDone")
-	local entry = {
-		entryType = BATTERYS.SERVICE_MANUAL,
-		entryTime = CurEnvironment.currentDay,
-		operatingHours = spec.totaloperatingHours,
-		odometer = 0,
-		--result = manualDesc,
-		resultKey = "RVB_WorkshopMessage_batteryDone",
-		errorList = {},
-		cost = 25
-	}
-	RVBserviceManual_Event.sendEvent(self, entry)
 
-	
-	--local maxLifetime = PartManager.getMaxPartLifetime(self, BATTERY)
-	local maxLifetime = spec.cachedMaxLifetime[BATTERY]
-	local usedFraction = spec.parts[BATTERY].operatingHours / maxLifetime
-	local batteryHealth = 1
-	if usedFraction >= 0.5 then
-		batteryHealth = 1 - (usedFraction - 0.5) / 0.5
-		batteryHealth = math.max(0.15, batteryHealth)
-	end
-	local maxBatteryPercent = 100 * batteryHealth
-	local batteryFillUnitIndex = self:getBatteryFillUnitIndex()
-	--spec.batteryFillUnitIndex
-																				-- 100
-	self:addFillUnitFillLevel(self:getOwnerFarmId(), batteryFillUnitIndex, maxBatteryPercent, self:getFillUnitFillType(batteryFillUnitIndex), ToolType.UNDEFINED, nil)
-	--if self.isServer then
-		g_currentMission:addMoney(-25, self:getOwnerFarmId(), MoneyType.VEHICLE_REPAIR, true, true)
-		local total, _ = g_farmManager:updateFarmStats(self:getOwnerFarmId(), "repairVehicleCount", 1)
-		if total ~= nil then
-			g_achievementManager:tryUnlock("VehicleRepairFirst", total)
-			g_achievementManager:tryUnlock("VehicleRepair", total)
-		end
-	end
-end
+
+
 
 function VehicleBreakdowns:CalculateFinishTime(AddHour, AddMinute)
 	local env = g_currentMission.environment
@@ -1211,48 +1031,44 @@ function VehicleBreakdowns:CalculateFinishTime(AddHour, AddMinute)
 	return finishDay, finishHour, finishMinute
 end
 
-
 function VehicleBreakdowns:onPostLoad(savegame)
-
-	local specFillunit = self.spec_fillUnit
 	local spec = self.spec_faultData
 	if spec == nil or not spec.isrvbSpecEnabled then
 		return
 	end
 
 	if self.isServer then
-		if savegame == nil or not savegame.xmlFile:hasProperty(savegame.key .. ".fillUnit") then
-			if not self.vehicleLoadingData:getCustomParameter("spawnEmpty") then
-				for fillUnitIndex, fillUnit in pairs(specFillunit.fillUnits) do
-					if fillUnit.fillTypeIndex == g_fillTypeManager:getFillTypeIndexByName("BATTERYCHARGE") then
-						fillUnit.fillLevel = 100
+		local specFillunit = self.spec_fillUnit
+		if specFillunit ~= nil then
+			local batteryIndex = BatteryManager.getBatteryFillUnitIndex(self)
+			if batteryIndex ~= nil then
+				local hasSaveData = false
+				if savegame ~= nil and savegame.xmlFile ~= nil and batteryIndex ~= nil then
+					local key = string.format("%s.fillUnit.unit(%d)", savegame.key, batteryIndex - 1)
+					hasSaveData = savegame.xmlFile:hasProperty(key)
+				end
+				--  ÚJ JÁTÉK / ÚJ JÁRMŰ
+				if not hasSaveData then
+					local fillUnit = specFillunit.fillUnits[batteryIndex]
+					if fillUnit ~= nil then
+						local fillTypeIndex = fillUnit.startFillTypeIndex
+						if fillTypeIndex == nil then
+							fillTypeIndex = g_fillTypeManager:getFillTypeIndexByName("BATTERYCHARGE")
+						end
+						local startLevel = fillUnit.startFillLevel or fillUnit.capacity or 100
+						self:addFillUnitFillLevel(self:getOwnerFarmId(), batteryIndex, startLevel, fillTypeIndex, ToolType.UNDEFINED, nil)
 					end
 				end
 			end
-		else
-			local xmlFile = savegame.xmlFile
-			local i = 0
-			while true do
-				local key = string.format("%s.fillUnit.unit(%d)", savegame.key, i)
-				if not xmlFile:hasProperty(key) then
-					break
-				end
-				local fillType = xmlFile:getValue(key .. "#fillType")
-				if fillType == "BATTERYCHARGE" then
-					local fillUnitIndex = xmlFile:getValue(key .. "#index")
-					local fillLevel = xmlFile:getValue(key .. "#fillLevel", 100)
-					specFillunit.fillUnits[fillUnitIndex].fillLevel = fillLevel
-					self:raiseDirtyFlags(specFillunit.dirtyFlag)
-				end
-				i = i + 1
-			end
+			--specFillunit.isInfoDirty = true
 		end
-	end
+	--end
 
-	if savegame == nil then
-	    return
-	end
+	--if savegame == nil then
+	--    return
+	---end
 
+	if savegame ~= nil then
 	local rvbkey = string.format("%s.%s.%s", savegame.key, g_vehicleBreakdownsModName, "vehicleBreakdowns")
 	spec.isrvbSpecEnabled = savegame.xmlFile:getValue(rvbkey .. "#isrvbSpecEnabled", true)
 
@@ -1297,9 +1113,9 @@ function VehicleBreakdowns:onPostLoad(savegame)
 		end
 	end
 
-	if self.isServer then
+	--if self.isServer then
 		PartManager.loadFromPostLoad(self, savegame)
-	end
+	--end
 
 	local i = 0
 	local xmlFile = savegame.xmlFile
@@ -1337,27 +1153,28 @@ function VehicleBreakdowns:onPostLoad(savegame)
 		table.insert(spec.serviceManual, entry)
 		i = i + 1
     end
-
+	end
+	
 	if spec.totalRepairTime == nil then
         spec.totalRepairTime = 0.0
     end
-
+	end
 end
 
 function VehicleBreakdowns:onLoadFinished(savegame)
 
-	if savegame == nil then
-		return
-	end
 	local rvb = self.spec_faultData
 	if not rvb then return end
 
 	if self.isExcluded and self:isExcluded() then
 		rvb.isrvbSpecEnabled = false
-		self.rvbDebugger:info("The Real Vehicle Breakdowns 'specialization' is disabled for the %s vehicle.", self:getFullName())
+		self.rvbDebugger:info("onLoadFinished", "The Real Vehicle Breakdowns 'specialization' is disabled for the %s vehicle.", self:getFullName())
 		return
 	end
 
+	if savegame == nil then
+		return
+	end
 	if g_modIsLoaded["FS25_useYourTyres"] then
 
 		if self.spec_wheels == nil then
@@ -1383,24 +1200,22 @@ function VehicleBreakdowns:onLoadFinished(savegame)
 				end
 			end
 		end
-
-		--local maxLifetime = PartManager.getMaxPartLifetime(self, TIREFL)
 		local maxLifetime = rvb.cachedMaxLifetime[TIREFL]
-		FS25_useYourTyres.UseYourTyres.USED_MAX_M = maxLifetime
+		if maxLifetime > 0 then
+			FS25_useYourTyres.UseYourTyres.USED_MAX_M = maxLifetime
+		else
+			self.rvbDebugger:warning("onLoadFinished", "Vehicle '%s': TIREFL maxLifetime not set (using default 0)", self:getFullName())
+		end
 
 		WheelPhysics.updateContact = Utils.appendedFunction(WheelPhysics.updateContact, VehicleBreakdowns.injPhysWheelUpdateContact)
 
 	end
-
 end
-
-
 
 function VehicleBreakdowns:SyncClientServer_serviceManual(entry, noEventSend)
 	local spec = self.spec_faultData
 	table.insert(spec.serviceManual, 1, entry)
 end
-
 
 function VehicleBreakdowns:getServiceManualEntry()
 	local spec = self.spec_faultData
@@ -1414,23 +1229,6 @@ end
 
 
 
-function VehicleBreakdowns.SyncClientServer_RVBBattery(vehicle, b1, b2, b3, b4, b5, b6, b7)
-    local spec = vehicle.spec_faultData
-    spec.battery = spec.battery or {}
-    spec.battery[1] = b1
-    spec.battery[2] = b2
-    spec.battery[3] = b3
-    spec.battery[4] = b4
-    spec.battery[5] = b5
-    spec.battery[6] = b6
-    spec.battery[7] = b7
---	vehicle:raiseDirtyFlags(spec.dirtyFlag)
-    if vehicle:getIsSynchronized() then
-    end
-end
-
-
-
 function VehicleBreakdowns:SyncClientServer_RVBParts(parts)
 	local spec = self.spec_faultData
 	spec.parts = parts
@@ -1439,16 +1237,13 @@ function VehicleBreakdowns:SyncClientServer_RVBParts(parts)
 	end
 end
 
-
-function VehicleBreakdowns.SyncClientServer_BatteryChargeLevel(vehicle, level)
-	local spec = vehicle.spec_faultData
-	spec.RVB_BatteryFillLevel = level
-end
-
 function VehicleBreakdowns:onReadStream(streamId, connection)
 
 	local spec = self.spec_faultData
-	if spec == nil then return end
+	local isEnabled = streamReadBool(streamId)
+	if not isEnabled then
+		return
+	end
 
 	spec.isrvbSpecEnabled = streamReadBool(streamId)
 	spec.totaloperatingHours = streamReadFloat32(streamId)
@@ -1456,27 +1251,27 @@ function VehicleBreakdowns:onReadStream(streamId, connection)
 	spec.dirtHeatOperatingHours = streamReadFloat32(streamId)
 
 	spec.inspection = spec.inspection or {}
-    spec.inspection.state        = streamReadInt16(streamId)
-    spec.inspection.finishDay    = streamReadInt16(streamId)
-    spec.inspection.finishHour   = streamReadInt16(streamId)
-    spec.inspection.finishMinute = streamReadInt16(streamId)
-    spec.inspection.cost         = streamReadFloat32(streamId)
-    spec.inspection.factor       = streamReadFloat32(streamId)
-    spec.inspection.completed    = streamReadBool(streamId)
+	spec.inspection.state        = streamReadInt16(streamId)
+	spec.inspection.finishDay    = streamReadInt16(streamId)
+	spec.inspection.finishHour   = streamReadInt16(streamId)
+	spec.inspection.finishMinute = streamReadInt16(streamId)
+	spec.inspection.cost         = streamReadFloat32(streamId)
+	spec.inspection.factor       = streamReadFloat32(streamId)
+	spec.inspection.completed    = streamReadBool(streamId)
 
 	spec.service = spec.service or {}
-    spec.service.state        = streamReadInt16(streamId)
-    spec.service.finishDay    = streamReadInt16(streamId)
-    spec.service.finishHour   = streamReadInt16(streamId)
-    spec.service.finishMinute = streamReadInt16(streamId)
-    spec.service.cost         = streamReadFloat32(streamId)
+	spec.service.state        = streamReadInt16(streamId)
+	spec.service.finishDay    = streamReadInt16(streamId)
+	spec.service.finishHour   = streamReadInt16(streamId)
+	spec.service.finishMinute = streamReadInt16(streamId)
+	spec.service.cost         = streamReadFloat32(streamId)
 
 	spec.repair = spec.repair or {}
-    spec.repair.state        = streamReadInt16(streamId)
-    spec.repair.finishDay    = streamReadInt16(streamId)
-    spec.repair.finishHour   = streamReadInt16(streamId)
-    spec.repair.finishMinute = streamReadInt16(streamId)
-    spec.repair.cost         = streamReadFloat32(streamId)
+	spec.repair.state        = streamReadInt16(streamId)
+	spec.repair.finishDay    = streamReadInt16(streamId)
+	spec.repair.finishHour   = streamReadInt16(streamId)
+	spec.repair.finishMinute = streamReadInt16(streamId)
+	spec.repair.cost         = streamReadFloat32(streamId)
 
 	local count = streamReadInt32(streamId)
 	for i = 1, count do
@@ -1495,14 +1290,14 @@ function VehicleBreakdowns:onReadStream(streamId, connection)
 
 	spec.serviceManual = {}
 	local count = streamReadInt32(streamId) or 0
-    for i=1, count do
-        local entry = {
-            entryType = streamReadInt16(streamId),
-            entryTime = streamReadInt16(streamId),
-            operatingHours = streamReadFloat32(streamId),
-            odometer = streamReadFloat32(streamId),
+	for i=1, count do
+		local entry = {
+			entryType = streamReadInt16(streamId),
+			entryTime = streamReadInt16(streamId),
+			operatingHours = streamReadFloat32(streamId),
+			odometer = streamReadFloat32(streamId),
 			resultKey = streamReadString(streamId),
-        }
+		}
 		local errCount = streamReadUInt8(streamId)
 		if errCount > 0 then
 			entry.errorList = {}
@@ -1511,80 +1306,54 @@ function VehicleBreakdowns:onReadStream(streamId, connection)
 			end
 		end
 		entry.cost = streamReadFloat32(streamId)
-        table.insert(spec.serviceManual, entry)
-    end
-	
+		table.insert(spec.serviceManual, entry)
+	end
+
 	spec.batteryDrainAmount = streamReadFloat32(streamId)
 	spec.batteryChargeAmount = streamReadFloat32(streamId)
-	
-	spec.RVB_BatteryFillLevel = streamReadFloat32(streamId)
-	spec.batteryFillUnitIndex = streamReadInt16(streamId)
-	
-	
-	--[[local hasConnection = streamReadBool(streamId)
-    if not hasConnection then
-        return
-    end
-	local donor = NetworkUtil.readNodeObject(streamId)
-	local state = streamReadInt16(streamId)
-	local hasReceiver = streamReadBool(streamId)
-    local receiver = nil
-    if hasReceiver then
-        receiver = NetworkUtil.readNodeObject(streamId)
-    end
-	local jumperTime = streamReadFloat32(streamId)
-	local jumperThreshold = streamReadInt32(streamId)
-	local activePlayerUserId = streamReadInt32(streamId)
 
-	if donor ~= nil and donor:getIsSynchronized() then
-        self.spec_jumperCable.connection = {
-            donor = donor,
-			state = state,
-            receiver = receiver,
-            jumperTime = jumperTime,
-			jumperThreshold = jumperThreshold,
-			activePlayerUserId = activePlayerUserId
-        }
-    end]]
+--	spec.RVB_BatteryFillLevel = streamReadFloat32(streamId)
+--	spec.batteryFillUnitIndex = streamReadInt16(streamId)
 
-
-	--if connection:getIsServer() then
 	g_messageCenter:publish(MessageType.SET_DIFFICULTY, g_rvbGameplaySettings.difficulty)
-	--end
 end
 
 function VehicleBreakdowns:onWriteStream(streamId, connection)
-	
+
 	local spec = self.spec_faultData
-	if spec == nil then return end
+	local isEnabled = spec ~= nil and spec.isrvbSpecEnabled
+	streamWriteBool(streamId, isEnabled)
+	if not isEnabled then
+		return
+	end
 
 	streamWriteBool(streamId, spec.isrvbSpecEnabled)
 	streamWriteFloat32(streamId, spec.totaloperatingHours)
 	streamWriteFloat32(streamId, spec.operatingHours)
 	streamWriteFloat32(streamId, spec.dirtHeatOperatingHours)
-	
+
 	spec.inspection = spec.inspection or {}
-    streamWriteInt16(streamId, spec.inspection.state or 1)
-    streamWriteInt16(streamId, spec.inspection.finishDay or 0)
-    streamWriteInt16(streamId, spec.inspection.finishHour or 0)
-    streamWriteInt16(streamId, spec.inspection.finishMinute or 0)
-    streamWriteFloat32(streamId, spec.inspection.cost or 0)
-    streamWriteFloat32(streamId, spec.inspection.factor or 0)
-    streamWriteBool(streamId, spec.inspection.completed or false)
+	streamWriteInt16(streamId, spec.inspection.state or 1)
+	streamWriteInt16(streamId, spec.inspection.finishDay or 0)
+	streamWriteInt16(streamId, spec.inspection.finishHour or 0)
+	streamWriteInt16(streamId, spec.inspection.finishMinute or 0)
+	streamWriteFloat32(streamId, spec.inspection.cost or 0)
+	streamWriteFloat32(streamId, spec.inspection.factor or 0)
+	streamWriteBool(streamId, spec.inspection.completed or false)
 
 	spec.service = spec.service or {}
-    streamWriteInt16(streamId, spec.service.state or 1)
-    streamWriteInt16(streamId, spec.service.finishDay or 0)
-    streamWriteInt16(streamId, spec.service.finishHour or 0)
-    streamWriteInt16(streamId, spec.service.finishMinute or 0)
-    streamWriteFloat32(streamId, spec.service.cost or 0)
+	streamWriteInt16(streamId, spec.service.state or 1)
+	streamWriteInt16(streamId, spec.service.finishDay or 0)
+	streamWriteInt16(streamId, spec.service.finishHour or 0)
+	streamWriteInt16(streamId, spec.service.finishMinute or 0)
+	streamWriteFloat32(streamId, spec.service.cost or 0)
 
 	spec.repair = spec.repair or {}
-    streamWriteInt16(streamId, spec.repair.state or 1)
-    streamWriteInt16(streamId, spec.repair.finishDay or 0)
-    streamWriteInt16(streamId, spec.repair.finishHour or 0)
-    streamWriteInt16(streamId, spec.repair.finishMinute or 0)
-    streamWriteFloat32(streamId, spec.repair.cost or 0)
+	streamWriteInt16(streamId, spec.repair.state or 1)
+	streamWriteInt16(streamId, spec.repair.finishDay or 0)
+	streamWriteInt16(streamId, spec.repair.finishHour or 0)
+	streamWriteInt16(streamId, spec.repair.finishMinute or 0)
+	streamWriteFloat32(streamId, spec.repair.cost or 0)
 
 	streamWriteInt32(streamId, table.count(spec.parts))
 	for key, part in pairs(spec.parts) do
@@ -1599,56 +1368,39 @@ function VehicleBreakdowns:onWriteStream(streamId, connection)
 	end
 
 	local count = #spec.serviceManual
-    streamWriteInt32(streamId, count)
-    for i=1, count do
-        local entry = spec.serviceManual[i]
-        streamWriteInt16(streamId, entry.entryType or 0)
-        streamWriteInt16(streamId, entry.entryTime or 0)
-        streamWriteFloat32(streamId, entry.operatingHours or 0)
-        streamWriteFloat32(streamId, entry.odometer or 0)
+	streamWriteInt32(streamId, count)
+	for i=1, count do
+		local entry = spec.serviceManual[i]
+		streamWriteInt16(streamId, entry.entryType or 0)
+		streamWriteInt16(streamId, entry.entryTime or 0)
+		streamWriteFloat32(streamId, entry.operatingHours or 0)
+		streamWriteFloat32(streamId, entry.odometer or 0)
 		streamWriteString(streamId, entry.resultKey or "")
 		local errors = entry.errorList or {}
 		streamWriteUInt8(streamId, #errors)
 		for _, errKey in ipairs(errors) do
 			streamWriteString(streamId, errKey)
 		end
-        streamWriteFloat32(streamId, entry.cost or 0)
-    end
+		streamWriteFloat32(streamId, entry.cost or 0)
+	end
 
 	streamWriteFloat32(streamId, spec.batteryDrainAmount)
 	streamWriteFloat32(streamId, spec.batteryChargeAmount)
 	
-	streamWriteFloat32(streamId, spec.RVB_BatteryFillLevel)
-	streamWriteInt16(streamId, spec.batteryFillUnitIndex)
-	
-	--[[local specJumper = self.spec_jumperCable
-    if specJumper == nil or specJumper.connection == nil then
-        streamWriteBool(streamId, false)
-        return
-    end
-    streamWriteBool(streamId, true)
-    local conn = specJumper.connection
-	NetworkUtil.writeNodeObject(streamId, conn.donor)
-	streamWriteInt16(streamId, conn.state or 0)
-	if conn.receiver ~= nil then
-		streamWriteBool(streamId, true)
-		NetworkUtil.writeNodeObject(streamId, conn.receiver)
-	else
-		streamWriteBool(streamId, false)
-	end
-	streamWriteFloat32(streamId, conn.jumperTime or 0)
-	streamWriteInt32(streamId, conn.jumperThreshold or 0)
-	streamWriteInt32(streamId, conn.activePlayerUserId or 0)]]
+--	streamWriteFloat32(streamId, spec.RVB_BatteryFillLevel)
+--	streamWriteInt16(streamId, spec.batteryFillUnitIndex)
 
 end
-
 
 function VehicleBreakdowns:onReadUpdateStream(streamId, timestamp, connection)
 
 	if connection:getIsServer() then
-	
+
 		local spec = self.spec_faultData
-		if spec == nil then return end
+		local isEnabled = streamReadBool(streamId)
+		if not isEnabled then
+			return
+		end
 
 		if streamReadBool(streamId) then
 			spec.isrvbSpecEnabled = streamReadBool(streamId)
@@ -1676,18 +1428,16 @@ function VehicleBreakdowns:onReadUpdateStream(streamId, timestamp, connection)
 		end
 
 		if streamReadBool(streamId) then
-			--for _, key in ipairs({TIREFL, TIREFR, TIRERL, TIRERR}) do
-			--	spec.parts[key].operatingHours = streamReadFloat32(streamId)
-			--end
-		--end
 			local count = streamReadUInt8(streamId)  -- olvassuk ki a 4-et
 			local tyres = {TIREFL, TIREFR, TIRERL, TIRERR}
 			for i = 1, count do
 				local key = tyres[i]
-				spec.parts[key].operatingHours = streamReadFloat32(streamId)
+				if key ~= nil and spec.parts[key] ~= nil then
+					spec.parts[key].operatingHours = streamReadFloat32(streamId)
+				end
 			end
 		end
-		
+
 		if streamReadBool(streamId) then
 			spec.motorTemperature = streamReadFloat32(streamId)
 			spec.fanEnabled = streamReadBool(streamId)
@@ -1701,17 +1451,17 @@ function VehicleBreakdowns:onReadUpdateStream(streamId, timestamp, connection)
 			self.spec_motorized.motorTemperature.value = streamReadFloat32(streamId)
 			self.spec_motorized.motorTemperature.valueSend = streamReadFloat32(streamId)
 		end
-		
+
 		if streamReadBool(streamId) then
 			spec.batteryDrainAmount = streamReadFloat32(streamId)
 		end
 		if streamReadBool(streamId) then
 			spec.batteryChargeAmount = streamReadFloat32(streamId)
 		end
-		
-		spec.RVB_BatteryFillLevel = streamReadFloat32(streamId)
-		spec.batteryFillUnitIndex = streamReadInt16(streamId)
-		
+
+--		spec.RVB_BatteryFillLevel = streamReadFloat32(streamId)
+--		spec.batteryFillUnitIndex = streamReadInt16(streamId)
+
 		if streamReadBool(streamId) then
 			local count = streamReadUInt8(streamId)
 			spec.uiJumperCableMessage = {}
@@ -1735,29 +1485,13 @@ function VehicleBreakdowns:onReadUpdateStream(streamId, timestamp, connection)
 					text = streamReadString(streamId)
 				}
 			end
-			--if count > 0 then
-			--	local last = spec.uiBlinkingMessage[count]
-			--	print("onReadUpdateStream " .. last.key)
-			--end
 			spec.hasNewUIBlinkingMessage = true
 		end
-		
-		
 
-		--[[if streamReadBool(streamId) then
-		local count = streamReadUInt8(streamId)
-		for i = 1, count do
-		local key = streamReadString(streamId)
-		local text = streamReadString(streamId)
-		g_messageCenter:publish(MessageType.RVB_PROGRESS_MESSAGE, self, key, text)
-		end
-		end]]
-
-		
 		if streamReadBool(streamId) then
 			spec.motorLoadPercent = streamReadFloat32(streamId) * 100
 		end
-		
+
 		if streamReadBool(streamId) then
 			spec.service.state = streamReadInt16(streamId)
 		end
@@ -1767,39 +1501,8 @@ function VehicleBreakdowns:onReadUpdateStream(streamId, timestamp, connection)
 		if streamReadBool(streamId) then
 			spec.repair.state = streamReadInt16(streamId)
 		end
-		--if self.spec_jumperCable.connection ~= nil then
-		--if streamReadBool(streamId) then
-		--	self.spec_jumperCable.connection.jumperTime = streamReadInt32(streamId)
-		--end
-		--end
-		
-		--[[local hasConnection = streamReadBool(streamId)
-		if hasConnection then
-			local donor = NetworkUtil.readNodeObject(streamId)
-			local state = streamReadInt16(streamId)
-			local hasReceiver = streamReadBool(streamId)
-			local receiver = nil
-			if hasReceiver then
-				receiver = NetworkUtil.readNodeObject(streamId)
-			end
-			local jumperTime = streamReadFloat32(streamId)
-			local jumperThreshold = streamReadInt32(streamId)
-			local activePlayerUserId = streamReadInt32(streamId)
-			--if donor ~= nil and donor:getIsSynchronized() then
-			if donor ~= nil then
-				self.spec_jumperCable.connection = {
-					donor = donor,
-					state = state,
-					receiver = receiver,
-					jumperTime = jumperTime,
-					jumperThreshold = jumperThreshold,
-					activePlayerUserId = activePlayerUserId
-				}
-			end
-		end]]
 
 	end
-
 end
 
 function VehicleBreakdowns:onWriteUpdateStream(streamId, connection, dirtyMask)
@@ -1807,8 +1510,12 @@ function VehicleBreakdowns:onWriteUpdateStream(streamId, connection, dirtyMask)
 	if not connection:getIsServer() then
 
 		local spec = self.spec_faultData
-		if spec == nil then return end
-	
+		local isEnabled = spec ~= nil and spec.isrvbSpecEnabled
+		streamWriteBool(streamId, isEnabled)
+		if not isEnabled then
+			return
+		end
+
 		if streamWriteBool(streamId, bit32.band(dirtyMask, spec.rvbdirtyFlag) ~= 0) then
 			streamWriteBool(streamId, spec.isrvbSpecEnabled)
 			streamWriteFloat32(streamId, spec.totaloperatingHours)
@@ -1829,7 +1536,7 @@ function VehicleBreakdowns:onWriteUpdateStream(streamId, connection, dirtyMask)
 				streamWriteBool(streamId, part.runOncePerStart)
 			end
 		end
-		
+
 		if streamWriteBool(streamId, bit32.band(dirtyMask, spec.updateTyreDirtyFlag) ~= 0) then
 			local tyres = {TIREFL, TIREFR, TIRERL, TIRERR}
 			streamWriteUInt8(streamId, 4)
@@ -1839,7 +1546,7 @@ function VehicleBreakdowns:onWriteUpdateStream(streamId, connection, dirtyMask)
 				end
 			end
 		end
-		
+
 		if streamWriteBool(streamId, bit32.band(dirtyMask, spec.motorizedDirtyFlag) ~= 0) then
 			streamWriteFloat32(streamId, spec.motorTemperature)
 			streamWriteBool(streamId, spec.fanEnabled)
@@ -1848,40 +1555,28 @@ function VehicleBreakdowns:onWriteUpdateStream(streamId, connection, dirtyMask)
 			streamWriteFloat32(streamId, spec.lastFuelUsage)
 			streamWriteFloat32(streamId, spec.lastDefUsage)
 			streamWriteFloat32(streamId, spec.lastAirUsage)
-		
+
 			self.spec_motorized.motorTemperature.valueSend = spec.motorTemperature
 			self.spec_motorized.motorFan.enabled = spec.fanEnabled
 			self.spec_motorized.motorFan.enableTemperature = spec.fanEnableTemperature
 			self.spec_motorized.motorFan.disableTemperature = spec.fanDisableTemperature
 		end
-		
+
 		if streamWriteBool(streamId, bit32.band(dirtyMask, spec.motorTemperatureDirtyFlag) ~= 0) then
 			streamWriteFloat32(streamId, self.spec_motorized.motorTemperature.value)
 			streamWriteFloat32(streamId, self.spec_motorized.motorTemperature.valueSend)
 		end
-		
+
 		if streamWriteBool(streamId, bit32.band(dirtyMask, spec.batteryDrainDirtyFlag) ~= 0) then
 			streamWriteFloat32(streamId, spec.batteryDrainAmount)
 		end
 		if streamWriteBool(streamId, bit32.band(dirtyMask, spec.batteryChargeDirtyFlag) ~= 0) then
 			streamWriteFloat32(streamId, spec.batteryChargeAmount)
 		end
-		
-		streamWriteFloat32(streamId, spec.RVB_BatteryFillLevel)
-		streamWriteInt16(streamId, spec.batteryFillUnitIndex)
-		
-		--[[if streamWriteBool(streamId, bit32.band(dirtyMask, spec.uiEventsDirtyFlag) ~= 0) then
-			local message = spec.uiProgressMessage
-			local count = #message
-			streamWriteUInt8(streamId, count)
-			for i = 1, count do
-				streamWriteString(streamId, message[i].key)
-				streamWriteString(streamId, message[i].text)
-			end
-			spec.uiProgressMessage = {}
-		end]]
 
-	
+--		streamWriteFloat32(streamId, spec.RVB_BatteryFillLevel)
+--		streamWriteInt16(streamId, spec.batteryFillUnitIndex)
+
 		if streamWriteBool(streamId, bit32.band(dirtyMask, spec.uiJumperCableMessageDirtyFlag) ~= 0) then
 			local message = spec.uiJumperCableMessage
 			local count = #message
@@ -1893,7 +1588,7 @@ function VehicleBreakdowns:onWriteUpdateStream(streamId, connection, dirtyMask)
 				streamWriteFloat32(streamId, message[i].value)
 			end
 		end
-		
+
 		if streamWriteBool(streamId, bit32.band(dirtyMask, spec.uiBlinkingDirtyFlag) ~= 0) then
 			local message = spec.uiBlinkingMessage or {}
 			local count = #message
@@ -1907,7 +1602,7 @@ function VehicleBreakdowns:onWriteUpdateStream(streamId, connection, dirtyMask)
 		if streamWriteBool(streamId, bit32.band(dirtyMask, spec.motorLoadDirtyFlag) ~= 0) then
 			streamWriteFloat32(streamId, spec.motorLoadPercent / 100)
 		end
-		
+
 		if streamWriteBool(streamId, bit32.band(dirtyMask, spec.serviceDirtyFlag) ~= 0) then
 			streamWriteInt16(streamId, spec.service.state)
 		end
@@ -1917,36 +1612,18 @@ function VehicleBreakdowns:onWriteUpdateStream(streamId, connection, dirtyMask)
 		if streamWriteBool(streamId, bit32.band(dirtyMask, spec.repairDirtyFlag) ~= 0) then
 			streamWriteInt16(streamId, spec.repair.state)
 		end
-		
-
-		--[[if streamWriteBool(streamId, bit32.band(dirtyMask, spec.jumperCableDirtyFlag) ~= 0) then
-			local specJumper = self.spec_jumperCable
-			if specJumper == nil or specJumper.connection == nil then
-				streamWriteBool(streamId, false)
-				return
-			end
-			streamWriteBool(streamId, true)
-			local conn = specJumper.connection
-			NetworkUtil.writeNodeObject(streamId, conn.donor)
-			streamWriteInt16(streamId, conn.state or 0)
-			if conn.receiver ~= nil then
-				streamWriteBool(streamId, true)
-				NetworkUtil.writeNodeObject(streamId, conn.receiver)
-			else
-				streamWriteBool(streamId, false)
-			end
-			streamWriteFloat32(streamId, conn.jumperTime or 0)
-			streamWriteInt32(streamId, conn.jumperThreshold or 0)
-			streamWriteInt32(streamId, conn.activePlayerUserId or 0)
-		end]]
 
 	end
 end
 
 function VehicleBreakdowns:saveToXMLFile(xmlFile, key, usedModNames)
 	local spec = self.spec_faultData
-
+	
 	xmlFile:setValue(key .. "#isrvbSpecEnabled", spec.isrvbSpecEnabled)
+
+	if spec == nil or not spec.isrvbSpecEnabled then
+		return
+	end
 	xmlFile:setValue(key .. "#TotaloperatingHours", spec.totaloperatingHours)
 	xmlFile:setValue(key .. "#operatingHours", spec.operatingHours)
 	xmlFile:setValue(key .. "#dirtHeatOperatingHours", spec.dirtHeatOperatingHours)
@@ -1974,7 +1651,7 @@ function VehicleBreakdowns:saveToXMLFile(xmlFile, key, usedModNames)
 	PartManager.savePartsToXML(self, xmlFile, key)
 
 	local manual = spec.serviceManual
-    if manual then
+	if manual then
 		local i = 0
 		for i, entry in ipairs(manual) do
 			local manualKey = string.format("%s.serviceManual.entry(%d)", key, i - 1)
@@ -1982,10 +1659,7 @@ function VehicleBreakdowns:saveToXMLFile(xmlFile, key, usedModNames)
 			xmlFile:setValue(manualKey.."#entryTime", entry.entryTime)
 			xmlFile:setValue(manualKey.."#operatingHours", entry.operatingHours)
 			xmlFile:setValue(manualKey.."#odometer", entry.odometer)
-			--xmlFile:setValue(manualKey.."#result", entry.result)
 			xmlFile:setValue(manualKey.."#resultKey", entry.resultKey)
-			--xmlFile:setValue(manualKey.."#errorList", entry.errorList)
-			-- errorList mentése
 			if entry.errorList ~= nil and #entry.errorList > 0 then
 				xmlFile:setValue(manualKey.."#errorCount", #entry.errorList)
 				for i, errKey in ipairs(entry.errorList) do
@@ -1994,10 +1668,9 @@ function VehicleBreakdowns:saveToXMLFile(xmlFile, key, usedModNames)
 			else
 				xmlFile:setValue(manualKey.."#errorCount", 0)
 			end
-
 			xmlFile:setValue(manualKey.."#cost", entry.cost)
-        end
-    end
+		end
+	end
 
 end
 
@@ -2027,8 +1700,9 @@ function VehicleBreakdowns.onRegisterActionEvents(self, _, isActiveForInputIgnor
 		self:clearActionEventsTable(spec.actionEvents)
 		local rvbToggleLights, rvbToggleLightsBack, rvbToggleLightFront, rvbToggleWorkLightBack, rvbToggleWorkLightFront, rvbToggleHighBeamLight
 		local rvbToggleBeaconLights, rvbToggleTurnLightHazard, rvbToggleTurnLightLeft, rvbToggleTurnLightRight
-		if self.getBatteryFillLevelPercentage then
-			if self:getBatteryFillLevelPercentage() > BATTERY_LEVEL.LIGHTS then
+		local batteryFillLevelPercentage = BatteryManager.getBatteryFillLevelPercentage(self)
+		if batteryFillLevelPercentage ~= nil then -- or ~= 1
+			if batteryFillLevelPercentage > BATTERY_LEVEL.LIGHTS then
 				rvbToggleLights = Lights.actionEventToggleLights
 				rvbToggleLightsBack = Lights.actionEventToggleLightsBack
 				rvbToggleLightFront = Lights.actionEventToggleLightFront
@@ -2039,7 +1713,7 @@ function VehicleBreakdowns.onRegisterActionEvents(self, _, isActiveForInputIgnor
 				rvbToggleTurnLightHazard = Lights.actionEventToggleTurnLightHazard
 				rvbToggleTurnLightLeft = Lights.actionEventToggleTurnLightLeft
 				rvbToggleTurnLightRight = Lights.actionEventToggleTurnLightRight
-			elseif self:getBatteryFillLevelPercentage() <= BATTERY_LEVEL.LIGHTS and self:getBatteryFillLevelPercentage() > BATTERY_LEVEL.LIGHTS_BEACONS then
+			elseif batteryFillLevelPercentage <= BATTERY_LEVEL.LIGHTS and batteryFillLevelPercentage > BATTERY_LEVEL.LIGHTS_BEACONS then
 				rvbToggleLights = VehicleBreakdowns.actionToggleLightsFault
 				rvbToggleLightsBack = VehicleBreakdowns.actionToggleLightsFault
 				rvbToggleLightFront = VehicleBreakdowns.actionToggleLightsFault
@@ -2050,7 +1724,7 @@ function VehicleBreakdowns.onRegisterActionEvents(self, _, isActiveForInputIgnor
 				rvbToggleTurnLightHazard = Lights.actionEventToggleTurnLightHazard
 				rvbToggleTurnLightLeft = Lights.actionEventToggleTurnLightLeft
 				rvbToggleTurnLightRight = Lights.actionEventToggleTurnLightRight
-			elseif self:getBatteryFillLevelPercentage() <= BATTERY_LEVEL.LIGHTS_BEACONS then
+			elseif batteryFillLevelPercentage <= BATTERY_LEVEL.LIGHTS_BEACONS then
 				rvbToggleLights = VehicleBreakdowns.actionToggleLightsFault
 				rvbToggleLightsBack = VehicleBreakdowns.actionToggleLightsFault
 				rvbToggleLightFront = VehicleBreakdowns.actionToggleLightsFault
@@ -2166,10 +1840,10 @@ end
 
 
 function VehicleBreakdowns:actionToggleRVBMenu()
-	local rvb = self.spec_faultData
-	if not rvb.isrvbSpecEnabled then
-        return
-    end
+	local spec = self.spec_faultData
+	if spec == nil or not spec.isrvbSpecEnabled then
+		return
+	end
 	if not self.isClient then
       return
     end
@@ -2199,33 +1873,25 @@ function VehicleBreakdowns:actionToggleLightsFault(actionName, inputValue, callb
 	local lightsText
 	if actionName == InputAction.TOGGLE_LIGHTS then
 		if not self:isLightingsRepairRequired() then
-			--if self:getBatteryFillLevelPercentage() < BATTERY_LEVEL.LIGHTS then
-				lightsText = "RVB_fault_BHlights"
-			--end
+			lightsText = "RVB_fault_BHlights"
 		else
 			lightsText = "RVB_fault_lights"
 		end
 	elseif actionName == InputAction.TOGGLE_HIGH_BEAM_LIGHT then
 		if not self:isLightingsRepairRequired() then
-			--if self:getBatteryFillLevelPercentage() < BATTERY_LEVEL.LIGHTS then
-				lightsText = "RVB_fault_BHlights"
-			--end
+			lightsText = "RVB_fault_BHlights"
 		else
 			lightsText = "RVB_fault_lights"
 		end
 	elseif actionName == InputAction.TOGGLE_BEACON_LIGHTS then
 		if not self:isLightingsRepairRequired() then
-			--if self:getBatteryFillLevelPercentage() ~= 0 and self:getBatteryFillLevelPercentage() < BATTERY_LEVEL.LIGHTS_BEACONS then
-				lightsText = "RVB_fault_BHlights"
-			--end
+			lightsText = "RVB_fault_BHlights"
 		else
 			lightsText = "RVB_fault_lights"
 		end
 	elseif actionName == InputAction.TOGGLE_BEACON_LIGHTS then
 		if not self:isLightingsRepairRequired() then
-			--if self:getBatteryFillLevelPercentage() ~= 0 and self:getBatteryFillLevelPercentage() < BATTERY_LEVEL.LIGHTS_BEACONS then
-				lightsText = "RVB_fault_BHlights"
-			--end
+			lightsText = "RVB_fault_BHlights"
 		else
 			lightsText = "RVB_fault_lights"
 		end
@@ -2258,37 +1924,6 @@ end
 
 
 
-
-
---[[function VehicleBreakdowns:onSetPartsLifetime(partsName, partsLifetime)
-	--print("DEBUG: onSetPartsLifetime called! " .. partsName, partsLifetime)
-    local GSET = g_currentMission.vehicleBreakdowns.generalSettings
-    local daysPerPeriod = g_currentMission.environment.plannedDaysPerPeriod
-    for _, vehicle in ipairs(g_currentMission.vehicleSystem.vehicles) do
-        if vehicle.spec_faultData then
-            local part = vehicle.spec_faultData.parts[partsName]
-            if part and part.lifetime ~= partsLifetime then
-                part.lifetime = partsLifetime
-                if GSET.difficulty == 1 then
-                    part.tmp_lifetime = part.lifetime * 2 * daysPerPeriod
-                elseif GSET.difficulty == 2 then
-                    part.tmp_lifetime = part.lifetime * 1 * daysPerPeriod
-                else
-                    part.tmp_lifetime = part.lifetime / 2 * daysPerPeriod
-                end
-                --Logging.info("[RVB] Updated %s lifetime to %s on %s", partsName, partsLifetime, vehicle:getFullName())
-				self.rvbDebugger:info("Updated %s lifetime to %s on %s", partsName, partsLifetime, vehicle:getFullName())
-				if self.isServer then
-					--vehicle:raiseDirtyFlags(vehicle.spec_faultData.partsDirtyFlag)
-				end
-				RVBParts_Event.sendEvent(vehicle, vehicle.spec_faultData.parts)
-            end
-        end
-    end
-end]]
-
-
-
 	
 function VehicleBreakdowns:onStartDirtHeat(dt)
 	local spec = self.spec_faultData
@@ -2318,18 +1953,7 @@ function VehicleBreakdowns:updateDirtHeat(msDelta, spec)
 end
 
 
-function VehicleBreakdowns:onStartChargeBattery(dt, isActiveForInputIgnoreSelection)
-	if self.isServer then
-		local spec = self.spec_faultData
-		if spec == nil then return end
-		spec.chargeBatteryUpdateTimer = (spec.chargeBatteryUpdateTimer or 0) + dt
-		if spec.chargeBatteryUpdateTimer >= RVB_DELAY.BATTERY_DRAIN then
-			GeneratorManager.chargeBatteryFromGenerator(self, spec.chargeBatteryUpdateTimer, isActiveForInputIgnoreSelection)
-			spec.chargeBatteryUpdateTimer = 0
-		end
-		self:raiseActive()
-	end
-end
+
 
 
 
@@ -2384,7 +2008,7 @@ function VehicleBreakdowns:updateOverheatingFailure(engineTemp)
 			rvbAIJobVehicle.StopAI(self)
 		end
 		self:stopMotor()
-		self.rvbDebugger:info("Engine stopped due to overheating! Temp = %.1f°C", engineTemp)
+		self.rvbDebugger:info("updateOverheatingFailure", "Engine stopped due to overheating! Temp = %.1f°C", engineTemp)
 	end
 end
 
@@ -2403,7 +2027,7 @@ function VehicleBreakdowns:updateEngineTorque(isActive)
 		return
 	end
 	local parts = spec.parts or nil
-	if parts == nil then self.rvbDebugger:error("updateEngineTorque: spec.parts is nil for vehicle '%s'", self:getFullName()) return end
+	if parts == nil then self.rvbDebugger:warning("updateEngineTorque", "spec.parts is nil for vehicle '%s'", self:getFullName()) return end
 	local partData = parts[ENGINE]
 	local registry = FaultRegistry[ENGINE]
 	if not partData or not registry or not registry.variants or not partData.pre_random then 
@@ -2415,13 +2039,14 @@ function VehicleBreakdowns:updateEngineTorque(isActive)
 		if variant and variant.torqueFactor then
 			local progress = 1.0
 			if partData.fault == "empty" and partData.prefault ~= "empty" and partData.pre_random > 0 then
-				--local maxLifetime = PartManager.getMaxPartLifetime(self, ENGINE)
 				local maxLifetime = spec.cachedMaxLifetime[ENGINE]
 				if maxLifetime > 0 then
 					local partFoot = (partData.operatingHours * 100) / maxLifetime
 					local diff = math.max(0, registry.breakThreshold - partFoot)
 					local maxDiff = partData.pre_random
 					progress = math.min(math.max(1 - (diff / maxDiff), 0), 1)
+				else
+					self.rvbDebugger:warning("updateEngineTorque", "Vehicle '%s': ENGINE maxLifetime not set (using default 0)", self:getFullName())
 				end
 			end
 			local dynamicTorque = 1 + (variant.torqueFactor - 1) * progress
@@ -2451,7 +2076,7 @@ function VehicleBreakdowns:updateEngineSpeedLimit(isActive)
 		return
 	end
 	local parts = spec.parts or nil
-	if parts == nil then self.rvbDebugger:error("updateEngineSpeedLimit: spec.parts is nil for vehicle '%s'", self:getFullName()) return end
+	if parts == nil then self.rvbDebugger:warning("updateEngineSpeedLimit", "spec.parts is nil for vehicle '%s'", self:getFullName()) return end
 	local partData = parts[ENGINE]
 	local registry = FaultRegistry[ENGINE]
 	if not partData or not registry or not registry.variants or not partData.pre_random then 
@@ -2499,12 +2124,15 @@ function VehicleBreakdowns:updateExhaustEffect()
 
     local progress = 1.0
     if partData.fault == "empty" and partData.prefault ~= "empty" then
-		--local maxLifetime = PartManager.getMaxPartLifetime(self, ENGINE)
 		local maxLifetime = spec.cachedMaxLifetime[ENGINE]
-        local partFoot = (partData.operatingHours * 100) / maxLifetime
-        local diff = math.max(0, registry.breakThreshold - partFoot)
-        local maxDiff = 5
-        progress = 1 - (diff / maxDiff)
+		if maxLifetime > 0 then
+			local partFoot = (partData.operatingHours * 100) / maxLifetime
+			local diff = math.max(0, registry.breakThreshold - partFoot)
+			local maxDiff = 5
+			progress = 1 - (diff / maxDiff)
+		else
+			self.rvbDebugger:warning("updateExhaustEffect", "Vehicle '%s': ENGINE maxLifetime not set (using default 0)", self:getFullName())
+		end
     end
 
     for _, exhaustEffect in ipairs(motorSpec.exhaustEffects) do
@@ -2764,7 +2392,7 @@ function VehicleBreakdowns:canBeDonor()
 	if spec.connection ~= nil then
 		return false, nil --"RVB_already_donor"
 	end
-	if self:getBatteryFillLevelPercentage() < BATTERY_LEVEL.MOTOR then
+	if BatteryManager.getBatteryFillLevelPercentage(self) < BATTERY_LEVEL.MOTOR then
 		return false, "RVB_blinking_connecting_order"
 	end
 	return true
@@ -2935,7 +2563,7 @@ function VehicleBreakdowns:ignitionMotor(dt)
 		jumperReady = conn.jumperTime >= conn.jumperThreshold and conn.donor:getMotorState() == MotorState.ON
 	end
 
-	local batteryLevel = self:getBatteryFillLevelPercentage()
+	local batteryLevel = BatteryManager.getBatteryFillLevelPercentage(self)
 	local batteryLow = batteryLevel <= BATTERY_LEVEL.MOTOR
 
 	if spec.prevBatteryLow == nil then
@@ -3085,27 +2713,7 @@ function VehicleBreakdowns:onUpdate(dt, isActiveForInput, isActiveForInputIgnore
 
 
 
-	
-	
-	
-	
-	
-	--print("getMotorState "..self:getMotorState())
 	local motorState = self:getMotorState()
-	-- remelem hogy maradhat így, ha nem torolni a feltetelt
-	--if motorState == MotorState.STARTING then
-	--	self:ignitionMotor(dt)
-	--end
-	
-
-
-	--self:onStartOverheatingFailure(dt)
-	
-	-- motor teljesítmény csökkentés hibák alapján
-	--self:updateEngineTorque(isActiveForInputIgnoreSelection)
-	
-	--self:updateEngineSpeedLimit(isActiveForInputIgnoreSelection)
-	
 
 	if self.isClient then
 		if motorState ~= MotorState.OFF then
@@ -3113,19 +2721,16 @@ function VehicleBreakdowns:onUpdate(dt, isActiveForInput, isActiveForInputIgnore
 		end
 	end
 
-
-	
-	-- onUpdate rész
 	spec.proximityUpdateTimer = (spec.proximityUpdateTimer or 0) + dt
-    if spec.proximityUpdateTimer >= RVB_DELAY.PROXIMITY then
-        spec.proximityUpdateTimer = 0
+	if spec.proximityUpdateTimer >= RVB_DELAY.PROXIMITY then
+		spec.proximityUpdateTimer = 0
 		local isPlayerInRange = false
-		if calcDistanceFrom(self.rootNode, g_localPlayer.rootNode) < 25 then
-			--print("distance ".. self:getFullName().." "..calcDistanceFrom(self.rootNode, g_localPlayer.rootNode))
+		local localPlayer = g_localPlayer
+		if localPlayer ~= nil and localPlayer.rootNode ~= nil and isWithinDistance(self.rootNode, localPlayer.rootNode, 25) then
 			isPlayerInRange = true
 		else
-			for _, enterable in pairs(g_currentMission.vehicleSystem.enterables) do
-				if enterable.spec_enterable and enterable.spec_enterable.isControlled and calcDistanceFrom(self.rootNode, enterable.rootNode) < 25 then
+			for _, enterable in ipairs(g_currentMission.vehicleSystem.enterables) do
+				if enterable.spec_enterable and enterable.spec_enterable.isControlled and enterable.rootNode ~= nil and isWithinDistance(self.rootNode, enterable.rootNode, 25) then
 					isPlayerInRange = true
 					break
 				end
@@ -3133,92 +2738,26 @@ function VehicleBreakdowns:onUpdate(dt, isActiveForInput, isActiveForInputIgnore
 		end
 		spec.isPlayerInRangeCached = isPlayerInRange
 	end
+
 	if spec.isPlayerInRangeCached and isActiveForInputIgnoreSelection then
 		self:updateAxisSteer(dt)
 	end
-	
-	
-	if spec.parts[TIREFL].repairreq then
-		--self.spec_drivable.lastInputValues.axisSteer = -0.04
-    end
 
 
 	self:onUpdateJumperCable(dt, isActiveForInputIgnoreSelection)
-
-
-	--self:updateService(dt)
-
-	--self:updateInspection(dt)
-
-	--self:updateRepair(dt)
-
-
-
-
-	--BatteryManager.onBatteryDrain(self, dt)
-	
-	if motorState == MotorState.IGNITION then
-		--print("IGNITION")
-	end
-
-	if motorState == MotorState.STARTING then -- or self:getMotorState() == MotorState.IGNITION then
-		--self:updatePartsIgnitionBreakdowns(dt)
-	end
-			
-	if self:getIsMotorStarted() then
-	
-	
-		if isActiveForInputIgnoreSelection then
-			local specMotorized = self.spec_motorized
-			--g_currentMission:addExtraPrintText("enableTemperature: "..specMotorized.motorFan.enableTemperature)
-			--g_currentMission:addExtraPrintText("disableTemperature: "..specMotorized.motorFan.disableTemperature)
-		end
-		
-
-
-		
-		--self:onStartOperatingHours(dt)
-
-		--self:onStartChargeBattery(dt, isActiveForInputIgnoreSelection)
-
-		--self:onStartWiperOperatingHours(dt)
-
-		-- belül időzítve 1200
-		--self:updatePartsBreakdowns(dt)
-		
-		--self:onStartDirtHeat(dt)
-
-	else
-		if self.isServer then
-			if spec.batteryChargeAmount > 0 then
-				spec.batteryChargeAmount = 0
-				self:raiseDirtyFlags(spec.batteryChargeDirtyFlag)
-			end
-		end
-
-
-	end
-
-	
-	--self:onStartLightingsOperatingHours(dt, isActiveForInputIgnoreSelection)
-	
-	if self.isClient and isActiveForInputIgnoreSelection then
-		--g_currentMission:addExtraPrintText("LIGHTINGS: "..spec.parts[LIGHTINGS].operatingHours)
-		--print("LIGHTINGS: "..spec.parts[LIGHTINGS].operatingHours)
-	end
-
 
 	if self.isServer then
 		spec.aiStopCheckTimer = (spec.aiStopCheckTimer or 0) + dt
 		if spec.aiStopCheckTimer >= RVB_DELAY.BATTERY_DRAIN then
 			spec.aiStopCheckTimer = 0
-			--local maxLifetime = PartManager.getMaxPartLifetime(self, ENGINE)
 			local maxLifetime = spec.cachedMaxLifetime[ENGINE]
 			local engine_percent = 0
 			if maxLifetime > 0 and spec.parts[ENGINE] ~= nil then
 				engine_percent = (spec.parts[ENGINE].operatingHours * 100) / maxLifetime
+			else
+				self.rvbDebugger:warning("onUpdate", "Vehicle '%s': ENGINE maxLifetime not set (using default 0)", self:getFullName())
 			end
-			if self:getIsFaultSelfStarter() or self:getBatteryFillLevelPercentage() < BATTERY_LEVEL.MOTOR or engine_percent >= 99 then
+			if self:getIsFaultSelfStarter() or BatteryManager.getBatteryFillLevelPercentage(self) < BATTERY_LEVEL.MOTOR or engine_percent >= 99 then
 				if g_modIsLoaded["FS25_AutoDrive"] and FS25_AutoDrive ~= nil and self.ad ~= nil and self.ad.stateModule ~= nil then
 					if self.ad.stateModule:isActive() then
 						self:stopAutoDrive(self)
@@ -3241,16 +2780,17 @@ function VehicleBreakdowns:onUpdate(dt, isActiveForInput, isActiveForInputIgnore
 			end
 			
 			if g_modIsLoaded["FS25_useYourTyres"] then
-				--local maxLifetime = PartManager.getMaxPartLifetime(self, TIREFL)
 				local maxLifetime = spec.cachedMaxLifetime[TIREFL]
-				if FS25_useYourTyres.UseYourTyres.USED_MAX_M ~= maxLifetime then
-					FS25_useYourTyres.UseYourTyres.USED_MAX_M = maxLifetime
+				if maxLifetime > 0 then
+					if FS25_useYourTyres.UseYourTyres.USED_MAX_M ~= maxLifetime then
+						FS25_useYourTyres.UseYourTyres.USED_MAX_M = maxLifetime
+					end
+				else
+					self.rvbDebugger:warning("onUpdate", "Vehicle '%s': TIREFL maxLifetime not set (using default 0)", self:getFullName())
 				end
 			end
 		end
 	end
-
-	
 	
 	if self:getIsMotorStarted() then
 		if self.isClient then
@@ -3266,21 +2806,22 @@ function VehicleBreakdowns:onUpdate(dt, isActiveForInput, isActiveForInputIgnore
 				g_soundManager:playSample(self.spec_motorized.samples.retarder)
 			end
 		end	
+	else
+		if self.isServer then
+			-- GeneratorManager
+			if spec.batteryChargeAmount > 0 then
+				spec.batteryChargeAmount = 0
+				self:raiseDirtyFlags(spec.batteryChargeDirtyFlag)
+			end
+		end
 	end
 	
-	
-	--if self:isLightingsRepairRequired() or self:getBatteryFillLevelPercentage() ~= nil and self:getBatteryFillLevelPercentage() ~= 0 then
-	--	self:lightingsFault()
-	--end
-	
 	if self.isServer then
-		if self:isLightingsRepairRequired() or (self:getBatteryFillLevelPercentage() ~= nil and self:getBatteryFillLevelPercentage() ~= 0) then
+		if self:isLightingsRepairRequired() or (BatteryManager.getBatteryFillLevelPercentage ~= nil and BatteryManager.getBatteryFillLevelPercentage(self) ~= 0) then
 			self:lightingsFault()
 		end
 	end
 
-
-	
 	
 	
 		--if self.isServer and self.isClient then
@@ -3306,7 +2847,6 @@ function VehicleBreakdowns:onUpdate(dt, isActiveForInput, isActiveForInputIgnore
 		end
 	end
 
-
 end
 
 
@@ -3323,38 +2863,30 @@ end
 
 function VehicleBreakdowns:updateAxisSteer(dt)
 	local spec = self.spec_faultData
-	
 	if spec == nil then return end
 	if self.spec_wheels == nil then return end
-
 	local tireTypeCrawler = WheelsUtil.getTireType("crawler")
-
 	local leftFlat, rightFlat = false, false
-
 	if spec.steeringWheels and #spec.steeringWheels > 2 then return end
-	
 	for _, wheelIdx in ipairs(spec.steeringWheels) do
 		local partName = WHEELTOPART[wheelIdx]
 		local partData = spec.parts[partName]
 		if partData == nil then 
-			--print("ERROR RVB updateAxisSteer() " .. self:getFullName() .. " " .. tostring(spec.parts[partName]))
 			return
 		end
 		if partData.fault and partData.fault ~= "empty" then
 			local registry = FaultRegistry[partName]
 			if registry and registry.variants then
 				local variant = registry.variants[partData.fault]
-				--print("Steering wheel", partName, "fault variant:", variant)
 				if wheelIdx == 1 or wheelIdx == 3 then
 					leftFlat = true
 				elseif wheelIdx == 2 or wheelIdx == 4 then
 					rightFlat = true
 				end
-				--print("leftFlat", tostring(leftFlat), "rightFlat:", tostring(rightFlat))
 			end
 		end
 	end
-	if self.getVehicleSpeed(self) > 2 then
+	if self.getVehicleSpeed(self) > 0 then
 		if leftFlat and not rightFlat then
 			self.spec_drivable.lastInputValues.axisSteer = -0.04
 		elseif rightFlat and not leftFlat then
@@ -3365,25 +2897,10 @@ function VehicleBreakdowns:updateAxisSteer(dt)
 			self.spec_drivable.lastInputValues.axisSteer = 0
 		end
 	end
-
-end
-
-
-
-
-function VehicleBreakdowns:adjustSteeringAngle(wheel, angleAdjustment)
-    local currentAngle = wheel.steeringAngle
-    wheel.steeringAngle = currentAngle + angleAdjustment
-    -- Kormányzási logika frissítése
-	if self.isServer and self.isAddedToPhysics then
-    setWheelShapeProps(wheel.node, wheel.wheelShape, 0, self:getBrakeForce()*wheel.brakeFactor, wheel.steeringAngle, wheel.rotationDamping)
-	end
 end
 
 
 function VehicleBreakdowns:updatePartsIgnitionBreakdowns(dt)
-    -- Időzítő beállítása a javítási igények frissítéséhez
-
 	self.ignitionUpdateTimer = (self.ignitionUpdateTimer or 0) + dt
 	local faultChanged = false
 	if self.ignitionUpdateTimer >= RVB_DELAY.PARTS_BREAKDOWNS then
@@ -3471,7 +2988,10 @@ function VehicleBreakdowns:updatePartsIgnitionBreakdowns(dt)
 								end
 							end
 						end
+					else
+						self.rvbDebugger:warning("updatePartsIgnitionBreakdowns", "Vehicle '%s': %s maxLifetime not set (using default 0)", self:getFullName(), key)
 					end
+
 				end
 			end	
 		end
@@ -3589,6 +3109,8 @@ function VehicleBreakdowns:updatePartsBreakdowns(dt)
 								end
 							end
 						end
+					else
+						self.rvbDebugger:warning("updatePartsBreakdowns", "Vehicle '%s': %s maxLifetime not set (using default 0)", self:getFullName(), key)
 					end
 				end
 			end	
@@ -3770,7 +3292,7 @@ function VehicleBreakdowns:onUpdateTick(dt, isActiveForInput, isActiveForInputIg
 			
 			self:onStartOperatingHours(dt)
 
-			self:onStartChargeBattery(dt, isActiveForInputIgnoreSelection)
+			BatteryManager.onStartChargeBattery(self, dt, isActiveForInputIgnoreSelection)
 
 			self:onStartWiperOperatingHours(dt)
 
@@ -3847,37 +3369,6 @@ function VehicleBreakdowns:onUpdateTick(dt, isActiveForInput, isActiveForInputIg
 		end
 	end
 	-- sync end
-
-	local batteryFillUnitIndex = self:getBatteryFillUnitIndex()
-	--rvb.batteryFillUnitIndex
-	rvb.updateBatteryTimer = rvb.updateBatteryTimer + dt
-	if self.isServer then
-		rvb.RVB_BatteryFillLevel = self.spec_fillUnit.fillUnits[batteryFillUnitIndex].fillLevel
-		if rvb.updateBatteryTimer >= 1000 then
-			self:raiseDirtyFlags(rvb.dirtyFlag)
-			rvb.updateBatteryTimer = 0
-		end
-	end
-	if self.isClient and not self.isServer then
-		if self.spec_fillUnit.fillUnits[batteryFillUnitIndex] == nil then
-			print("RVB ERROR: batteryFillUnitIndex is NIL for vehicle: "..tostring(self:getFullName()))
-		end
-		self.spec_fillUnit.fillUnits[batteryFillUnitIndex].fillLevel = rvb.RVB_BatteryFillLevel
-		self.spec_fillUnit.fillUnits[batteryFillUnitIndex].fillType = FillType.BATTERYCHARGE
-		--self:raiseDirtyFlags(self.spec_fillUnit.dirtyFlag)
-	end
-	
-	--[[if self.isClient and spec.hasNewUIProgressMessage then
-		for i = 1, #spec.uiProgressMessage do
-			local msg = spec.uiProgressMessage[i]
-			g_messageCenter:publish(MessageType.RVB_PROGRESS_MESSAGE, self, msg.key, msg.text)
-		end
-		spec.uiProgressMessage = {}
-		spec.hasNewUIProgressMessage = false
-	end]]
-	
-
-
 
 end
 
@@ -4057,12 +3548,12 @@ function VehicleBreakdowns:RVBresetVehicle(vehicle)
 			operatingHours = rvb.totaloperatingHours,
 			odometer = 0,
 			resultKey = "RVB_WorkshopMessage_vResetDone",
-			errorList = "",
+			errorList = {},
 			cost = 25
 		}
 		RVBserviceManual_Event.sendEvent(self, entry)
 		RVBParts_Event.sendEvent(self, rvb.parts)
-		local batteryFillUnitIndex = self:getBatteryFillUnitIndex()
+		local batteryFillUnitIndex = BatteryManager.getBatteryFillUnitIndex(self)
 		self:addFillUnitFillLevel(self:getOwnerFarmId(), batteryFillUnitIndex, 100, self:getFillUnitFillType(batteryFillUnitIndex), ToolType.UNDEFINED, nil)
 		local RVB = g_currentMission.vehicleBreakdowns
 		if RVB.workshopVehicles[self] then
@@ -4070,6 +3561,7 @@ function VehicleBreakdowns:RVBresetVehicle(vehicle)
 			RVB.workshopCount = RVB.workshopCount - 1
 			WorkshopCount_Event.sendEvent(RVB.workshopCount)
 		end
+		-- ha 4 tobb kerek van akkor az 5-6 nem resetel
 		if g_modIsLoaded["FS25_useYourTyres"] then
 			if self.spec_wheels ~= nil then
 				for wheelIdx, wheel in ipairs(self.spec_wheels.wheels) do
@@ -4107,10 +3599,7 @@ end
 function VehicleBreakdowns:FillUnit_loadFillUnitFromXML(xmlFile, key, entry, index)
 	local v_u_383_ = self.spec_fillUnit
 	entry.fillUnitIndex = index
-	--- RVB MOD START
-	--entry.capacity = xmlFile:getValue(key .. "#capacity", math.huge)
-	entry.capacity = xmlFile:getValue(key .. "#capacity", 100)
-	--- RVB MOD END
+	entry.capacity = xmlFile:getValue(key .. "#capacity", math.huge)
 	entry.defaultCapacity = entry.capacity
 	entry.updateMass = xmlFile:getValue(key .. "#updateMass", true)
 	entry.canBeUnloaded = xmlFile:getValue(key .. "#canBeUnloaded", true)
@@ -4477,7 +3966,7 @@ function VehicleBreakdowns:RVBhourChanged()
 	end
 
 	--- ---
-	local batteryFillUnitIndex = self:getBatteryFillUnitIndex()
+	local batteryFillUnitIndex = BatteryManager.getBatteryFillUnitIndex(self)
 	if batteryFillUnitIndex == nil then return end
 	if self.isServer then
 		if spec.batterySelfDischarge then
@@ -4493,7 +3982,6 @@ function VehicleBreakdowns:RVBhourChanged()
 	end
 	
 end
-
 
 function VehicleBreakdowns:onSetPartsLifetime(partsName, partsLifetime, oldLifetime)
 	if self.isServer then
@@ -4566,7 +4054,7 @@ function VehicleBreakdowns:applyLifetimeToPart(partsName, partsLifetime, oldLife
 				vehicle:rebuildLifetimeCache()
 			end
 
-			vehicle.rvbDebugger:info("Updated %s lifetime to %s on %s", partsName, partsLifetime, vehicle:getFullName())
+			vehicle.rvbDebugger:info("applyLifetimeToPart", "Updated %s lifetime to %s on %s", partsName, partsLifetime, vehicle:getFullName())
 
 			RVBParts_Event.sendEvent(vehicle, vehicle.spec_faultData.parts)
 		end
@@ -4630,7 +4118,7 @@ function VehicleBreakdowns:applyLifetimeToPart_NEW__(partsName, partsLifetime, o
 		vehicle:rebuildLifetimeCache()
 	end
 
-    vehicle.rvbDebugger:info("Updated %s lifetime to %s on %s", partsName, partsLifetime, vehicle:getFullName())
+    vehicle.rvbDebugger:info("applyLifetimeToPart", "Updated %s lifetime to %s on %s", partsName, partsLifetime, vehicle:getFullName())
 
     RVBParts_Event.sendEvent(vehicle, spec.parts)
 end
@@ -4695,7 +4183,7 @@ function VehicleBreakdowns:onSetDifficulty(difficulty)
         local part = spec.parts[key]
         if part ~= nil and part.name ~= nil and TYRE_PARTS[key] then
             -- jelenleg nincs aktív logika itt
-            -- ha később kell: itt a helye, de closure NÉLKÜL
+
         end
     end
 	
@@ -4765,7 +4253,7 @@ function VehicleBreakdowns:onWorkshopStateChanged()
 		local spec = self.spec_faultData
 		if spec ~= nil and spec.isrvbSpecEnabled then
 			updateSuspensionState(self, workshopStatus)
-			self.rvbDebugger:info("'onWorkshopStateChanged' function is for this %s", self:getFullName())
+			self.rvbDebugger:info("onWorkshopStateChanged", "'onWorkshopStateChanged' function is for this %s", self:getFullName())
 		end
 	end
 end
@@ -4822,7 +4310,7 @@ function VehicleBreakdowns:onProgressMessage(vehicle, key, textKey)
 	if vehicle.getIsEntered ~= nil and vehicle:getIsEntered() and vehicle:getIsControlled() then 
 		g_currentMission:showBlinkingWarning(g_i18n:getText(textKey), 1500)
 	end
-	vehicle.rvbDebugger:info(g_i18n:getText(textKey .. "_hud"), vehicle:getFullName())
+	vehicle.rvbDebugger:info("onProgressMessage", g_i18n:getText(textKey .. "_hud"), vehicle:getFullName())
 end
 
 function VehicleBreakdowns:addJumperCableMessage(method, key, text, value)
@@ -4859,14 +4347,14 @@ function VehicleBreakdowns:onJumperCableMessage(vehicle, method, key, textKey, v
 		if self.isClient then
 			local message = string.format(g_i18n:getText(textKey), g_i18n:formatMoney(value, 0, true, true))
 			g_currentMission.hud:addSideNotification(FSBaseMission.INGAME_NOTIFICATION_OK, message, 12000, GuiSoundPlayer.SOUND_SAMPLES.SUCCESS)
-			vehicle.rvbDebugger:info(message)
+			vehicle.rvbDebugger:info("onJumperCableMessage", message)
 		end
 	end
 	if method == "blinking" then
 		if vehicle.getIsEntered ~= nil and vehicle:getIsEntered() and vehicle:getIsControlled() then
 			g_currentMission:showBlinkingWarning(g_i18n:getText(textKey), 1500)
 		end
-		vehicle.rvbDebugger:info(g_i18n:getText(textKey), vehicle:getFullName())
+		vehicle.rvbDebugger:info("onJumperCableMessage", g_i18n:getText(textKey), vehicle:getFullName())
 	end
 end
 
@@ -4877,11 +4365,6 @@ function VehicleBreakdowns:addBlinkingMessage(key, text)
         key  = key,
         text = text
     })
-	--local list = spec.uiBlinkingMessage
-	--local last = list[#list]
-	--if last ~= nil then
-	--	print("disconnecting_toofar "..last.key)
-	--end
     spec.hasNewUIBlinkingMessage = true
     if self.isServer then
 		if key == "disconnecting_toofar" then
@@ -4899,7 +4382,7 @@ function VehicleBreakdowns:onBlinkingMessage(vehicle, key, textKey)
 	if vehicle.getIsEntered ~= nil and vehicle:getIsEntered() and vehicle:getIsControlled() then
 		g_currentMission:showBlinkingWarning(g_i18n:getText(textKey), 1500)
 	end
-	vehicle.rvbDebugger:info(g_i18n:getText(textKey), vehicle:getFullName())
+	vehicle.rvbDebugger:info("onBlinkingMessage", g_i18n:getText(textKey), vehicle:getFullName())
 end	
 
 function VehicleBreakdowns:isRepairRequired(partId)
@@ -4929,9 +4412,7 @@ end
 function VehicleBreakdowns:isSelfStarterRepairRequired()
     return self:isRepairRequired(SELFSTARTER)
 end
-function VehicleBreakdowns:isBatteryRepairRequired()
-    return self:isRepairRequired(BATTERY)
-end
+
 
 function VehicleBreakdowns:getIsFaultStates(partId)
     local part = self.spec_faultData and self.spec_faultData.parts[partId]
@@ -4972,36 +4453,18 @@ end
 
 
 
-function VehicleBreakdowns:getBatteryFillLevelPercentage()
-    if self.spec_faultData == nil then
-        return 1
-    end
-    local batteryFillUnitIndex = self:getBatteryFillUnitIndex()
-    if batteryFillUnitIndex ~= nil then
-        return tonumber(self:getFillUnitFillLevelPercentage(batteryFillUnitIndex))
-    end
-    return 1
-end
---[[function VehicleBreakdowns:getBatteryFillLevelPercentage()
-	local spec = self.spec_faultData
-	if spec == nil then return end
-	local batteryFillUnitIndex = self:getBatteryFillUnitIndex()
-	local dieselFillUnitIndex = self:getConsumerFillUnitIndex(FillType.DIESEL)
-	if batteryFillUnitIndex ~= nil and dieselFillUnitIndex ~= nil then
-		return tonumber(self:getFillUnitFillLevelPercentage(batteryFillUnitIndex)) or 1
-	end
-	return 1
-end]]
+
 function VehicleBreakdowns.getVehicleSpeed(vehicle)
     local speedKmh = math.max(Utils.getNoNil(vehicle.lastSpeed, 0) * 3600, 0)
     local useMiles = g_gameSettings:getValue("useMiles")
     return useMiles and (speedKmh * 0.621371192) or speedKmh
 end
 function VehicleBreakdowns:lightingsFault()
-	if self:isLightingsRepairRequired() or self:getBatteryFillLevelPercentage() < BATTERY_LEVEL.LIGHTS then
+	local batteryFillLevelPercentage = BatteryManager.getBatteryFillLevelPercentage(self)
+	if self:isLightingsRepairRequired() or batteryFillLevelPercentage < BATTERY_LEVEL.LIGHTS then
 		self:setLightsTypesMask(0, true, true)
 	end
-	if self:getBatteryFillLevelPercentage() < BATTERY_LEVEL.LIGHTS_BEACONS then
+	if batteryFillLevelPercentage < BATTERY_LEVEL.LIGHTS_BEACONS then
 		self:setBeaconLightsVisibility(false, true, true)
 		self:setTurnLightState(Lights.TURNLIGHT_OFF, true, true)
 	end
@@ -5021,7 +4484,7 @@ function VehicleBreakdowns:onStartLightingsOperatingHours(dt, isActiveForInputIg
 		local spec = self.spec_faultData
 		if spec == nil then return end
 		local parts = spec.parts
-		local batteryOk = self:getBatteryFillLevelPercentage() >= BATTERY_LEVEL.LIGHTS
+		local batteryOk = BatteryManager.getBatteryFillLevelPercentage(self) >= BATTERY_LEVEL.LIGHTS
 		local activeDrain = BatteryManager.getLightsDrain(self)
 		if activeDrain <= 0 then return end
 		local lightsFault  = parts[LIGHTINGS] and parts[LIGHTINGS].fault or "empty"
@@ -5039,10 +4502,13 @@ end
 function VehicleBreakdowns:updateLightingOperatingHours(msDelta, spec)
 	local runtimeIncrease = msDelta * g_currentMission.missionInfo.timeScale / MS_PER_GAME_HOUR
 	local partLightings = spec.parts[LIGHTINGS]
-	--local maxLifetime = PartManager.getMaxPartLifetime(self, LIGHTINGS)
 	local maxLifetime = spec.cachedMaxLifetime[LIGHTINGS]
-	partLightings.operatingHours = math.min(partLightings.operatingHours + runtimeIncrease, maxLifetime)
-	self:raiseDirtyFlags(spec.partsDirtyFlag)
+	if maxLifetime > 0 then
+		partLightings.operatingHours = math.min(partLightings.operatingHours + runtimeIncrease, maxLifetime)
+		self:raiseDirtyFlags(spec.partsDirtyFlag)
+	else
+		self.rvbDebugger:warning("updateLightingOperatingHours", "Vehicle '%s': LIGHTINGS maxLifetime not set (using default 0)", self:getFullName())
+	end
 end
 
 function VehicleBreakdowns:onStartOperatingHours(dt)
@@ -5237,10 +4703,13 @@ function VehicleBreakdowns:updateWiperOperatingHours(msDelta, spec)
 	local runtimeIncrease = msDelta * g_currentMission.missionInfo.timeScale / MS_PER_GAME_HOUR
 	local part = spec.parts[WIPERS]
 	if part == nil then return end
-	--local maxLifetime = PartManager.getMaxPartLifetime(self, WIPERS)
 	local maxLifetime = spec.cachedMaxLifetime[WIPERS]
-	part.operatingHours = math.min(part.operatingHours + runtimeIncrease, maxLifetime)
-	self:raiseDirtyFlags(spec.partsDirtyFlag)
+	if maxLifetime > 0 then
+		part.operatingHours = math.min(part.operatingHours + runtimeIncrease, maxLifetime)
+		self:raiseDirtyFlags(spec.partsDirtyFlag)
+	else
+		self.rvbDebugger:warning("updateWiperOperatingHours", "Vehicle '%s': WIPERS maxLifetime not set (using default 0)", self:getFullName())
+	end
 end
 
 
@@ -5427,7 +4896,7 @@ function VehicleBreakdowns.ConsoleCommands:addBreakdown(partKey, fault, pre)
 	end
 
 	if vehicle.spec_faultData and not vehicle.spec_faultData.isrvbSpecEnabled then
-		vehicle.rvbDebugger:info("'rvb_addPreBreakdown' function is not enabled for this %s", vehicle:getFullName())
+		vehicle.rvbDebugger:info("addBreakdown", "'rvb_addPreBreakdown' function is not enabled for this %s", vehicle:getFullName())
 		return
 	end
 	
@@ -5461,7 +4930,7 @@ function VehicleBreakdowns.ConsoleCommands:delBreakdown(partKey, pre)
         return 
     end
 	if vehicle.spec_faultData and not vehicle.spec_faultData.isrvbSpecEnabled then
-		vehicle.rvbDebugger:info("'rvb_delPreBreakdown' function is not enabled for this %s", vehicle:getFullName())
+		vehicle.rvbDebugger:info("delBreakdown", "'rvb_delPreBreakdown' function is not enabled for this %s", vehicle:getFullName())
 		return
 	end
     if not partKey then
@@ -5504,7 +4973,7 @@ function VehicleBreakdowns.ConsoleCommands:vehicleDebug(mode)
     end
     if vehicle.spec_faultData then
 		if not vehicle.spec_faultData.isrvbSpecEnabled then
-			vehicle.rvbDebugger:info("'rvb_VehicleDebug' function is not enabled for this %s", vehicle:getFullName())
+			vehicle.rvbDebugger:info("vehicleDebug", "'rvb_VehicleDebug' function is not enabled for this %s", vehicle:getFullName())
 			return
 		end
         -- Ha nincs paraméter megadva → toggle
@@ -5544,7 +5013,7 @@ function VehicleBreakdowns.ConsoleCommands:trieUse(trieId, value)
     end
     local rvb = vehicle.spec_faultData
 	if not rvb or not rvb.isrvbSpecEnabled then
-		vehicle.rvbDebugger:info("'rvb_trieUse' function is not enabled for this %s", vehicle:getFullName())
+		vehicle.rvbDebugger:info("trieUse", "'rvb_trieUse' function is not enabled for this %s", vehicle:getFullName())
 		return
 	end
 	if vehicle.spec_wheels ~= nil then
@@ -5691,4 +5160,3 @@ end
 if g_modIsLoaded["FS25_DashboardLive"] then
 	FS25_DashboardLive.DashboardLive.onUpdate = Utils.overwrittenFunction(FS25_DashboardLive.DashboardLive.onUpdate, VehicleBreakdowns.DashboardLive_onUpdate)
 end
-
