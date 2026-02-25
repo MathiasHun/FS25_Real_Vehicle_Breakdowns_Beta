@@ -74,6 +74,7 @@ Thanks for helping improve the mod!🚜
 ## <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=7">Download the latest developer TEST version 0.9.6.3</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
 
 ## Changelog 0.9.6.3:
+- github issues#145 – Thanks to Squallqt for testing, feedback, and suggestions.
 - RVBresetVehicle bug - fixed
 - MP Bug - fixed
 - Code optimization
