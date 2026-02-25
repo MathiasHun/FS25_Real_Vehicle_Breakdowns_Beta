@@ -148,11 +148,14 @@ end
 local FSBaseMission_setPlannedDaysPerPeriod = FSBaseMission.setPlannedDaysPerPeriod
 function FSBaseMission:setPlannedDaysPerPeriod(days, noEventSend)
     FSBaseMission_setPlannedDaysPerPeriod(self, days, noEventSend)
-    if g_messageCenter ~= nil then
-        g_messageCenter:publish(MessageType.SET_DAYSPERPERIOD, days)
-        print("[RVB] published SET_DAYSPERPERIOD")
-    end
+	local maxDays = Environment.MAX_DAYS_PER_PERIOD
+	local days_ = math.clamp(days, 1, maxDays)
+	if days_ ~= self.missionInfo.plannedDaysPerPeriod then
+		if g_messageCenter ~= nil then
+			g_messageCenter:publish(MessageType.SET_DAYSPERPERIOD, days)
+			print("[RVB] published SET_DAYSPERPERIOD")
+		end
+	end
 end
 
 init()
-
