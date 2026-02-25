@@ -69,7 +69,7 @@ If the issue persists after this, please report it.
 
 Thanks for helping improve the mod!🚜
 </br></br>
-<!-- -->
+<!-- 
 # Please don’t share this version on other sites, it’s a VERY early BETA.</br>
 ## <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=7">Download the latest developer TEST version 0.9.6.3</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
 
@@ -87,7 +87,7 @@ Thanks for helping improve the mod!🚜
 - Code optimization (plus 2-5 FPS)
 - RVB ExactFillRootNode warning - fixed
 
-</br></br></br><!-- -->
+</br></br></br> -->
 # <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=5">Download the latest developer version</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
 
 ## Recommended Dependencies (to avoid errors):
@@ -97,6 +97,20 @@ Thanks for helping improve the mod!🚜
 ## 🔀Mod Conflict
 If you are using the Real Vehicle Breakdowns (RVB) mod, do not use the:
 - <strong>FS25_DisableTurnOffMotor</strong> - it will prevent the engine temperature from rising
+
+## Changelog 0.9.6.3:
+- github issues#145 – Thanks to Squallqt for testing, feedback, and suggestions.
+- RVBresetVehicle bug - fixed
+- MP Bug - fixed
+- Code optimization
+- Improved debugger system: errors/warnings are always shown, info messages remain menu-toggleable. Function names are now included in log output for easier traceability.
+- Moved battery-related functions into a dedicated BatteryManager module.
+
+## Changelog 0.9.6.2:
+- Conflict with FS25_EnhancedVehicle mod, TEMP and RMP displays are disabled.
+- MP Bug - fixed
+- Code optimization (plus 2-5 FPS)
+- RVB ExactFillRootNode warning - fixed
 
 ## Changelog 0.9.6.1:
 - github issues#141 - For some players, the game would not start after the update, this issue has now been fixed.
