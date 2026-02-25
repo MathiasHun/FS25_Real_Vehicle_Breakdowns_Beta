@@ -71,13 +71,20 @@ Thanks for helping improve the mod!🚜
 </br></br>
 <!-- -->
 # Please don’t share this version on other sites, it’s a VERY early BETA.</br>
-## <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=7">Download the latest developer TEST version 0.9.6.2</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
+## <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=7">Download the latest developer TEST version 0.9.6.3</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
+
+## Changelog 0.9.6.3:
+- RVBresetVehicle bug - fixed
+- MP Bug - fixed
+- Code optimization
+- Improved debugger system: errors/warnings are always shown, info messages remain menu-toggleable. Function names are now included in log output for easier traceability.
+- Moved battery-related functions into a dedicated BatteryManager module.
 
 ## Changelog 0.9.6.2:
 - Conflict with FS25_EnhancedVehicle mod, TEMP and RMP displays are disabled.
-- MP Bug fixes
+- MP Bug - fixed
 - Code optimization (plus 2-5 FPS)
-- RVB ExactFillRootNode warning fixed
+- RVB ExactFillRootNode warning - fixed
 
 </br></br></br><!-- -->
 # <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=5">Download the latest developer version</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
