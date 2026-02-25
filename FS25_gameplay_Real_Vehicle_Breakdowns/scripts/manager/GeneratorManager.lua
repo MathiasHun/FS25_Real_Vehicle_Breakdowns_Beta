@@ -86,7 +86,7 @@ function GeneratorManager.chargeBatteryFromGenerator(vehicle, dt, isActiveForInp
 
     if motorState == MotorState.ON then
         if spec.isInitialized and vehicle.getConsumerFillUnitIndex ~= nil and vehicle:getConsumerFillUnitIndex(FillType.DIESEL) ~= nil then
-			local batteryFillUnitIndex = vehicle:getBatteryFillUnitIndex()
+			local batteryFillUnitIndex = BatteryManager.getBatteryFillUnitIndex(vehicle)
             local batteryFillLevel = vehicle:getFillUnitFillLevel(batteryFillUnitIndex)
 
 			-- számítsuk az akkumulátor egészségét 0–1 között
