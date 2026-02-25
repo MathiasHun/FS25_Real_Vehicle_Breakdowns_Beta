@@ -82,21 +82,21 @@ function WorkshopRepair.update(vehicle, dt)
 			for _, key in ipairs(g_vehicleBreakdownsPartKeys) do
 				local part = parts[key]
 				if not part then
-					vehicle.rvbDebugger:warning("Part key '%s' is missing in vehicle %s", key, vehicle:getFullName())
+					vehicle.rvbDebugger:warning("WorkshopRepair.update", "Part key '%s' is missing in vehicle %s", key, vehicle:getFullName())
 				elseif part.repairreq then
 					spec.totalRepairTime = spec.totalRepairTime + (FaultRegistry[key].repairTime or 0)
-					vehicle.rvbDebugger:info("VehicleBreakdowns:updateRepair TotalRepairTime: %s", spec.totalRepairTime)
+					vehicle.rvbDebugger:info("WorkshopRepair.update", "VehicleBreakdowns:updateRepair TotalRepairTime: %s", spec.totalRepairTime)
 				end
 			end
 		end
 		for _, key in ipairs(g_vehicleBreakdownsPartKeys) do
 			local part = parts[key]
 			if not part then
-				vehicle.rvbDebugger:warning("Part key '%s' is missing in vehicle %s", key, vehicle:getFullName())
+				vehicle.rvbDebugger:warning("WorkshopRepair.update", "Part key '%s' is missing in vehicle %s", key, vehicle:getFullName())
 			elseif part.repairreq then
 				if not part.startingOperatingHours then
 					part.startingOperatingHours = part.operatingHours
-					vehicle.rvbDebugger:info("VehicleBreakdowns:updateRepair %s startingOperatingHours: %s", part.name, part.startingOperatingHours)
+					vehicle.rvbDebugger:info("WorkshopRepair.update", "VehicleBreakdowns:updateRepair %s startingOperatingHours: %s", part.name, part.startingOperatingHours)
 				end
 				if spec.totalRepairTime > 0 then
 					local operatingHoursPerSecond = part.startingOperatingHours / spec.totalRepairTime
@@ -106,10 +106,10 @@ function WorkshopRepair.update(vehicle, dt)
 					if math.abs(repairToChange) > 0.1 then
 						reduction = spec.repairToChange
 						spec.repairToChange = 0
-						vehicle.rvbDebugger:info("VehicleBreakdowns:updateRepair  %s reduction: %s dt: %s", part.name, reduction, dt)
+						vehicle.rvbDebugger:info("WorkshopRepair.update", "VehicleBreakdowns:updateRepair  %s reduction: %s dt: %s", part.name, reduction, dt)
 						part.operatingHours = math.max(part.operatingHours - reduction, 0)
 						vehicle:raiseDirtyFlags(spec.partsDirtyFlag)
-						vehicle.rvbDebugger:info("VehicleBreakdowns:updateRepair  %s part.operatingHours: %s", part.name, part.operatingHours)
+						vehicle.rvbDebugger:info("WorkshopRepair.update", "VehicleBreakdowns:updateRepair  %s part.operatingHours: %s", part.name, part.operatingHours)
 					end
 				end
 			end
@@ -143,7 +143,7 @@ function WorkshopRepair.finish(vehicle, spec)
 	for _, key in ipairs(g_vehicleBreakdownsPartKeys) do
 		local part = spec.parts[key]
 		if not part then
-			vehicle.rvbDebugger:warning("Part key '%s' is missing in vehicle %s", key, vehicle:getFullName())
+			vehicle.rvbDebugger:warning("WorkshopRepair.finish", "Part key '%s' is missing in vehicle %s", key, vehicle:getFullName())
 		elseif part.repairreq then
 			--table.insert(partList, g_i18n:getText("RVB_faultText_" .. part.name))
 			table.insert(partList, "RVB_faultText_" .. part.name)
@@ -230,7 +230,7 @@ function WorkshopRepair.SyncClientServer(vehicle, repair, message)
 	spec.repair = repair
 
 	if spec.repair.state == REPAIR_STATE.ACTIVE then
-		vehicle.rvbDebugger:info("The repair of vehicle %s has started. Activated in the updateRepair(dt) function.", vehicle:getFullName())
+		vehicle.rvbDebugger:info("WorkshopRepair.SyncClientServer", "The repair of vehicle %s has started. Activated in the updateRepair(dt) function.", vehicle:getFullName())
 		vehicle:raiseActive()
 	end
 
@@ -251,13 +251,14 @@ function WorkshopRepair.SyncClientServer(vehicle, repair, message)
 
 	local r = spec.repair
 	vehicle.rvbDebugger:info(
+		"WorkshopRepair.SyncClientServer", 
 		"The repair of vehicle %s has been completed. Repair data block: state=%s finishDay=%s finishHour=%s finishMinute=%s cost=%s",
 		vehicle:getFullName(),
 		tostring(r.state), tostring(r.finishDay), tostring(r.finishHour), tostring(r.finishMinute), tostring(r.cost)
 	)
 	local repairNone = spec.repair.state == REPAIR_STATE.NONE
 	if vehicle.isClient and repairNone and vehicle.getIsEntered and vehicle:getIsEntered() then
-		vehicle.rvbDebugger:info("Repair process for vehicle %s completed: requestActionEventUpdate().", vehicle:getFullName())
+		vehicle.rvbDebugger:info("WorkshopRepair.SyncClientServer","Repair process for vehicle %s completed: requestActionEventUpdate().", vehicle:getFullName())
 		vehicle:requestActionEventUpdate()
 	end
 end
