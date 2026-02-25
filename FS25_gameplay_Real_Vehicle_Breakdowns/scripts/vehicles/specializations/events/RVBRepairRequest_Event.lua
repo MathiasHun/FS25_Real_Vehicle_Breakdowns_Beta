@@ -39,7 +39,7 @@ end]]
 function RVBRepairRequest_Event:run(connection)
 	if self.vehicle ~= nil and self.vehicle:getIsSynchronized() then
 		self.vehicle:startRepair(self.farmId)
-		self.vehicle.rvbDebugger:info("RVBRepairRequest_Event startRepair on vehicle %s", self.vehicle:getFullName())
+		self.vehicle.rvbDebugger:info("RVBRepairRequest_Event run", "startRepair on vehicle %s", self.vehicle:getFullName())
 		if not connection:getIsServer() then
 			g_server:broadcastEvent(self, nil, nil, self.vehicle)
 		end
