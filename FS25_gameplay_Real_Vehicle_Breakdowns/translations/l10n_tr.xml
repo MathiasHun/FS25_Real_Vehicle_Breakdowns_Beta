@@ -109,6 +109,7 @@
         <e k="RVB_periodicserviceDayDialog" v="Araç servisi yarın saat %s’de tamamlanacak." tag="format"/>
         <e k="RVB_batteryChDialog" v="%s maliyetle araç aküsünü şarj etmek istediğinizden emin misiniz?" tag="format"/>
         <e k="RVB_operatingTime" v="%02d saat" tag="format"/>
+        <e k="RVB_durationDialog" v="Toplam süre: %02d saat %02d dk" tag="format"/>
         <e k="RVB_shop_operatingTimeG" v="%s:%s saat" tag="format"/>
         <e k="RVB_alertmessage_inspection" v="Araç incelemesi devam ediyor."/>
         <e k="RVB_alertmessage_repair" v="Araç tamiri devam ediyor."/>

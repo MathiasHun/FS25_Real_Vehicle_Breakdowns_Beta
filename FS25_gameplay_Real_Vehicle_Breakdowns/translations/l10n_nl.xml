@@ -109,6 +109,7 @@
         <e k="RVB_periodicserviceDayDialog" v="Het voertuigonderhoud zal morgen om %s uur voltooid zijn." tag="format"/>
         <e k="RVB_batteryChDialog" v="Weet u zeker dat u de accu van uw voertuig wilt opladen voor %s kosten?" tag="format"/>
         <e k="RVB_operatingTime" v="%02d uren" tag="format"/>
+        <e k="RVB_durationDialog" v="Totale duur: %02d uur %02d min" tag="format"/>
         <e k="RVB_shop_operatingTimeG" v="%s:%s uur" tag="format"/>
         <e k="RVB_alertmessage_inspection" v="Voertuiginspectie is bezig."/>
         <e k="RVB_alertmessage_repair" v="Het voertuig wordt gerepareerd."/>

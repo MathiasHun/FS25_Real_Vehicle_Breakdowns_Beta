@@ -109,6 +109,7 @@
         <e k="RVB_periodicserviceDayDialog" v="Техогляд транспортного засобу буде закінченний завтра о %s годинні." tag="format"/>
         <e k="RVB_batteryChDialog" v="Ви впевнені, що хочете зарядити акумулятор вашого транспортного засобу за %s?" tag="format"/>
         <e k="RVB_operatingTime" v="%02d hour" tag="format"/>
+        <e k="RVB_durationDialog" v="Загальна тривалість: %02d год %02d хв" tag="format"/>
         <e k="RVB_shop_operatingTimeG" v="%s:%s година." tag="format"/>
         <e k="RVB_alertmessage_inspection" v="Проводиться техогляд транспортного засобу."/>
         <e k="RVB_alertmessage_repair" v="Ремонт транспортного засобу продовжується."/>

@@ -107,6 +107,7 @@
         <e k="RVB_periodicserviceDayDialog" v="A jármű szervizelése holnap %s órakor fejeződik be." tag="format"/>
         <e k="RVB_batteryChDialog" v="Biztosan felakarod tölteni a jármű akkumulátorát %s áron?" tag="format"/>
         <e k="RVB_operatingTime" v="%02d óra" tag="format"/>
+        <e k="RVB_durationDialog" v="Teljes időtartam: %02d óra %02d perc" tag="format"/>
         <e k="RVB_shop_operatingTimeG" v="%s:%s óra" tag="format"/>
         <e k="RVB_alertmessage_inspection" v="Jármű átvizsgálása folyamatban van."/>
         <e k="RVB_alertmessage_repair" v="Jármű javítása folyamatban van."/>

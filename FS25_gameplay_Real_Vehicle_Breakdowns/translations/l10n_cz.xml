@@ -108,6 +108,7 @@
         <e k="RVB_periodicserviceDayDialog" v="Servis vozidla bude dokončen zítra v %s." tag="format"/>
         <e k="RVB_batteryChDialog" v="Jste si jisti, že chcete nabít baterii vozidla za %s?" tag="format"/>
         <e k="RVB_operatingTime" v="%02d hod." tag="format"/>
+        <e k="RVB_durationDialog" v="Celková doba trvání: %02d hod. %02d min" tag="format"/>
         <e k="RVB_shop_operatingTimeG" v="%s:%s hod." tag="format"/>
         <e k="RVB_alertmessage_inspection" v="Probíhá prohlídka vozidla."/>
         <e k="RVB_alertmessage_repair" v="Probíhá oprava vozidla."/>

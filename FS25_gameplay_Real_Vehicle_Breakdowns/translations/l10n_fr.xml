@@ -108,6 +108,7 @@
         <e k="RVB_periodicserviceDayDialog" v="Le service du véhicule se termine demain à %s heures." tag="format"/>
         <e k="RVB_batteryChDialog" v="Es-tu sûr de vouloir charger la batterie du véhicule pour %s?" tag="format"/>
         <e k="RVB_operatingTime" v="%02d heure" tag="format"/>
+        <e k="RVB_durationDialog" v="Durée totale : %02d heure %02d minute" tag="format"/>
         <e k="RVB_shop_operatingTimeG" v="%s:%s heures" tag="format"/>
         <e k="RVB_alertmessage_inspection" v="Inspection du véhicule en cours."/>
         <e k="RVB_alertmessage_repair" v="Réparation du véhicule en cours."/>
