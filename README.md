@@ -44,13 +44,16 @@ If you run into problems, please help improve the mod by following these steps:
 
 2. Include the mod version number you are using (e.g., RVB: v0.9.6.1)
 
-3. Restart your savegame, and only enable this mod (and any other absolutely essential mods) when reproducing the issue.
+3. Specify whether you are playing **Singleplayer (SP)** or **Multiplayer (MP)**.
+   If Multiplayer, please also mention whether you were the **host** or a **client**.
 
-4. Upload your log.txt file to:
+4. Restart your savegame, and only enable this mod (and any other absolutely essential mods) when reproducing the issue.
+
+5. Upload your log.txt file to:
 
    - <a href="https://pastebin.com/">PasteBin</a>
 
-5. Describe the issue in detail:
+6. Describe the issue in detail:
 
    - Which vehicle or tool was involved?
 
