@@ -83,6 +83,7 @@
         <e k="RVB_button_periodicservice" v="Периодическое ТО"/>
         <e k="RVB_button_battery_ch" v="Зарядить аккумулятор"/>
         <e k="RVB_button_service" v="ТО"/>
+        <e k="RVB_durationDialog" v="Общая продолжительность: %02d ч. %02d мин" tag="format"/>
         <e k="RVB_inspectionDialog" v="Вы уверены, что хотите отправить это транспортное средство на техосмотр за %s?" tag="format"/>
         <e k="RVB_inspectionTimeDialog" v="Техосмотр транспортного средства будет завершён в %s часов." tag="format"/>
         <e k="RVB_inspectionDayDialog" v="Техосмотр ТС будет завершён завтра в %s часов." tag="format"/>
