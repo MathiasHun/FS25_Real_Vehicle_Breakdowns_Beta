@@ -84,6 +84,7 @@
         <e k="RVB_button_periodicservice" v="Okresowy serwis"/>
         <e k="RVB_button_battery_ch" v="Ładowanie akumulatora"/>
         <e k="RVB_button_service" v="Serwis"/>
+        <e k="RVB_durationDialog" v="Całkowity czas trwania: %02d godz. %02d min" tag="format"/>
         <e k="RVB_inspectionDialog" v="Czy na pewno możesz przeprowadzić inspekcję tego pojazdu za koszt %s?" tag="format"/>
         <e k="RVB_inspectionTimeDialog" v="Inspekcja pojazdu zostanie zakończona o %s godzinie." tag="format"/>
         <e k="RVB_inspectionDayDialog" v="Inspekcja pojazdu zostanie zakończona jutro o %s godzinie." tag="format"/>
