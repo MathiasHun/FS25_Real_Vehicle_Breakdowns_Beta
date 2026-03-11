@@ -695,7 +695,7 @@ function VehicleBreakdowns:onLoad(savegame)
 	specMotorized.motorFan.defaultDisableTemp = specMotorized.motorFan.disableTemperature
 	
 
-	specMotorized.motorStopTimerDuration = 60*24*1000
+	specMotorized.motorStopTimerDuration = 24*60*60*1000
 	specMotorized.motorStopTimer = specMotorized.motorStopTimerDuration
 	self.rvbDebugger:info("onLoad", "overrides disabling automatic engine shutdown when the player is not near the vehicle.")
 
@@ -4728,8 +4728,36 @@ function VehicleBreakdowns:openHoodForWorkshop(open)
     end
 
     -- Választható animációk listája ami biztos capotIC CapotIC Capot
-    local hoodAnims = { "capotIC", "CapotIC", "capot", "Capot", "motore", "hood", "Hood", "kapot", "Kapot", "Kapot_OLD", "Kapot_NEW" }
-    local anim
+    local hoodAnims = { "capotIC", "CapotIC", "capot", "Capot", "motore", "hood", "Hood", "kapot", "Kapot", "Kapot_OLD", "Kapot_NEW", "KlapaMaski",
+	"motorhaube", "svet_kapot", "ROTCABOPENER2",
+	"flapMoteur01_IC", "flapMoteur02_IC", "flap03", "flap01_IC", "flap02_Case_IC", "flap02_NH_IC", "flap04_IC" } --, "ladderAnimation"
+	
+	for _, anim in ipairs(hoodAnims) do
+        if specAV.animations[anim] ~= nil then
+
+            local currentTime = self:getAnimationTime(anim)
+            local isPlaying = self:getIsAnimationPlaying(anim)
+
+            if open then
+                if not g_gui:getIsGuiVisible() then
+					if not isPlaying then
+						if currentTime <= 0 then
+							self:playAnimation(anim, 1, 0)
+						end
+					end
+                end
+            else
+				if not isPlaying then
+					if currentTime >= 1 then
+						self:playAnimation(anim, -1, 1)
+					end
+				end
+            end
+
+        end
+    end
+	
+    --[[local anim
     for _, name in ipairs(hoodAnims) do
         if specAV.animations[name] ~= nil then
             anim = name
@@ -4755,7 +4783,7 @@ function VehicleBreakdowns:openHoodForWorkshop(open)
 				self:playAnimation(anim, -1, 1)
 			end
 		end
-	end
+	end]]
 
 end
 
