@@ -6,22 +6,22 @@ rvbWorkshopDialog.MODE.SERVICE_MANUAL = 2
 Enum(rvbWorkshopDialog.MODE)
 
 local function stopVehicle(vehicle)
-    if vehicle == nil then return end
-    if vehicle.StopAI then
-        vehicle:StopAI(vehicle)
-    end
-    if vehicle.stopMotor then
-        vehicle:stopMotor()
-    end
-    if vehicle.deactivateLights then
-        vehicle:deactivateLights()
-    end
-    local specM = vehicle.spec_motorized
-    if specM and specM.motor and specM.gearShiftMode then
-        specM.motor:setGearShiftMode(specM.gearShiftMode)
-    end
+	if vehicle == nil then return end
+	if vehicle.StopAI then
+		vehicle:StopAI(vehicle)
+	end
+	if vehicle.stopMotor then
+		vehicle:stopMotor()
+	end
+	if vehicle.deactivateLights then
+		vehicle:deactivateLights()
+	end
+	local specM = vehicle.spec_motorized
+	if specM and specM.motor and specM.gearShiftMode then
+		specM.motor:setGearShiftMode(specM.gearShiftMode)
+	end
 end
-	
+
 local rvbWorkshopDialog_mt = Class(rvbWorkshopDialog, MessageDialog, ScreenElement)
 function rvbWorkshopDialog.register()
 	local rvbworkshopdialog = rvbWorkshopDialog.new()
@@ -36,12 +36,11 @@ function rvbWorkshopDialog.show(vehicle)
 		--dialog.modeUp = false
 		--dialog.partBreakdowns = {}
 		--dialog.serviceManual = {}
-		dialog:updateScreen()
+		--dialog:updateScreen()
 		dialog:updateButtons()
 		g_gui:showDialog("rvbWorkshopDialog")
 	end
 end
-
 
 function rvbWorkshopDialog.new(target, custom_mt)
 	local dialog = MessageDialog.new(target, custom_mt or rvbWorkshopDialog_mt)
@@ -56,8 +55,6 @@ function rvbWorkshopDialog.createFromExistingGui(self, _)
 	local v16 = self.vehicle
 	rvbWorkshopDialog.show(v16)
 end
-
-
 
 function rvbWorkshopDialog:onCreate(self)
 end
@@ -88,10 +85,13 @@ function rvbWorkshopDialog.onClose(self)
 	self.vehicle = nil
 	g_messageCenter:unsubscribeAll(self)
 	--g_currentMission:showMoneyChange(MoneyType.SHOP_VEHICLE_BUY)
+	self.inspectionPlusDuration = 0
+	self.servicePlusDuration = 0
+	self.repairPlusDuration = 0
 end
 
 function rvbWorkshopDialog:onClickBack()
-    self:close()
+	self:close()
 end
 function rvbWorkshopDialog:updateScreen()
 	local vehicle = self.vehicle
@@ -101,9 +101,19 @@ function rvbWorkshopDialog:updateScreen()
 	end
 	local rvb = vehicle.spec_faultData
 	local workshopStatus, timeInfo = g_currentMission.vehicleBreakdowns:getWorkshopStatusMessage()
+	
+	local isOwnWorkshop = g_rvbMain:isAlwaysOpenWorkshop()
+	self.inspectionPlusDuration = 0
+	self.servicePlusDuration = 0
+	self.repairPlusDuration = 0
+	if isOwnWorkshop then
+		self.inspectionPlusDuration = math.random(10*60, 30*60)
+		self.servicePlusDuration = math.random(20*60, 40*60)
+		self.repairPlusDuration = math.random(30*60, 50*60)
+	end
 
 	self.vehicleImage:setImageFilename(vehicle:getImageFilename())
-	
+
 	self.templateVehicleInfo:setVisible(false)
 	for v29 = #self.settingsBox.elements, 1, -1 do
 		self.settingsBox.elements[v29]:delete()
@@ -124,7 +134,6 @@ function rvbWorkshopDialog:updateScreen()
 		sellPriceText = "-"
 	end
 
-		
 	local vehicleData = {
 		{g_i18n:getText("ui_name"), brandPrefix .. vehicle:getName()},
 		{g_i18n:getText("ui_age"), string.format(g_i18n:getText("shop_age"), vehicle.age)},
@@ -147,7 +156,7 @@ function rvbWorkshopDialog:updateScreen()
 	self.settingsBox:invalidateLayout()
 
 	self:infoTitle(vehicle)
-	
+
 	local isDiagnostics = self.selectedMode == rvbWorkshopDialog.MODE.DIAGNOSTICS
 	local isService = self.selectedMode == rvbWorkshopDialog.MODE.SERVICE_MANUAL
 
@@ -173,7 +182,7 @@ function rvbWorkshopDialog:updateScreen()
 		self.diagnosticsList:setDelegate(self)
 		self.diagnosticsList:reloadData()
 	end
-    if isService then
+	if isService then
 
 		self.serviceManual = {}
 		local entries = vehicle:getServiceManualEntry() or {}
@@ -205,7 +214,7 @@ function rvbWorkshopDialog:updateScreen()
 	self.serviceManualHeader:setVisible(isService)
 	self.serviceManualList:setVisible(isService)
 	self.serviceManualSliderBox:setVisible(isService and #self.serviceManual > 0)
- 
+
 end
 function rvbWorkshopDialog.updateButtons(self)
 	local vehicle = self.vehicle
@@ -315,12 +324,12 @@ function rvbWorkshopDialog.onClickMode(self, state, _)
 end
 
 function rvbWorkshopDialog.getNumberOfItemsInSection(self, list, section)
-   if self.selectedMode == rvbWorkshopDialog.MODE.DIAGNOSTICS then
-        return #self.partBreakdowns
-    elseif self.selectedMode == rvbWorkshopDialog.MODE.SERVICE_MANUAL then
-        return #self.serviceManual
-    end
-    return 0
+	if self.selectedMode == rvbWorkshopDialog.MODE.DIAGNOSTICS then
+		return #self.partBreakdowns
+	elseif self.selectedMode == rvbWorkshopDialog.MODE.SERVICE_MANUAL then
+		return #self.serviceManual
+	end
+	return 0
 end
 function rvbWorkshopDialog.onListSelectionChanged(self, _, _, p92)
 	--self:setVehicle(self.vehicles[p92])
@@ -330,12 +339,12 @@ end
 
 function rvbWorkshopDialog.populateCellForItemInSection(self, list, _, index, cell)
 	if self.selectedMode == rvbWorkshopDialog.MODE.DIAGNOSTICS then
-        local partID = self.partBreakdowns[index]
-        self:setVehicleDetails(partID, cell)
-    elseif self.selectedMode == rvbWorkshopDialog.MODE.SERVICE_MANUAL then
-        local partID = self.serviceManual[index]
-        self:setServiceManualDetails(partID, cell)
-    end
+		local partID = self.partBreakdowns[index]
+		self:setVehicleDetails(partID, cell)
+	elseif self.selectedMode == rvbWorkshopDialog.MODE.SERVICE_MANUAL then
+		local partID = self.serviceManual[index]
+		self:setServiceManualDetails(partID, cell)
+	end
 end
 												  -- p75, p76
 function rvbWorkshopDialog.setVehicleDetails(self, part, cell)
@@ -629,13 +638,9 @@ function rvbWorkshopDialog.onClickInspection(self, _, _)
 		self.rvbDebugger:info("rvbWorkshopDialog.onClickInspection", "All mechanics are busy, only up to %s vehicles can be serviced at the same time.", GPSET.workshopCountMax)
 		return
 	end
-
-	local isOwnWorkshop = g_rvbMain:isAlwaysOpenWorkshop()
-	if isOwnWorkshop then
-		INSPECTION.TIME = INSPECTION.TIME + math.random(10*60, 30*60)
-	end
-	local AddHour = math.floor(INSPECTION.TIME / 3600)
-	local AddMinute = math.floor(((INSPECTION.TIME / 3600) - AddHour) * 60)
+	local totalDuration = INSPECTION.TIME + self.inspectionPlusDuration
+	local AddHour = math.floor(totalDuration / 3600)
+	local AddMinute = math.floor(((totalDuration / 3600) - AddHour) * 60)
 	local FinishDay, FinishHour, FinishMinute = vehicle:CalculateFinishTime(AddHour, AddMinute)
 	local timeText = string.format("%02d:%02d", FinishHour, FinishMinute)
 	local DialogInspectionText = "RVB_inspectionTimeDialog"
@@ -643,6 +648,7 @@ function rvbWorkshopDialog.onClickInspection(self, _, _)
 		DialogInspectionText = "RVB_inspectionDayDialog"
 	end
 	local text = string.format(g_i18n:getText("RVB_inspectionDialog"), g_i18n:formatMoney(vehicle:getInspectionPrice(), 0, true, true)).."\n"..
+				 string.format(g_i18n:getText("RVB_durationDialog"), AddHour, AddMinute).."\n\n"..
 				 string.format(g_i18n:getText(DialogInspectionText), timeText)
 	local callback = self.onYesNoInspectionDialog
 	local yesSound = GuiSoundPlayer.SOUND_SAMPLES.CONFIG_SPRAY
@@ -674,12 +680,12 @@ function rvbWorkshopDialog.onYesNoInspectionDialog(self, yes)
 
 end
 function rvbWorkshopDialog.onClickService(self, _, _)
-    local vehicle = self.vehicle
-    if not (vehicle and vehicle.spec_faultData) then
+	local vehicle = self.vehicle
+	if not (vehicle and vehicle.spec_faultData) then
 		self.rvbDebugger:warning("rvbWorkshopDialog.onClickService", "Vehicle or its faultData spec is missing for vehicle '%s'.",
 		vehicle and vehicle:getFullName() or "unknown")
-        return false
-    end
+		return false
+	end
 	local RVB = g_currentMission.vehicleBreakdowns
 	local GPSET = RVB.gameplaySettings
 	if RVB.workshopCount >= GPSET.workshopCountMax then
@@ -687,57 +693,55 @@ function rvbWorkshopDialog.onClickService(self, _, _)
 		self.rvbDebugger:info("rvbWorkshopDialog.onClickService", "All mechanics are busy, only up to %s vehicles can be serviced at the same time.", GPSET.workshopCountMax)
 		return
 	end
-    local specRVB = vehicle.spec_faultData
-    local periodicService = RVB:getPeriodicService()
-	local isOwnWorkshop = g_rvbMain:isAlwaysOpenWorkshop()
-	if isOwnWorkshop then
-		SERVICE.BASE_TIME = SERVICE.BASE_TIME + math.random(20*60, 40*60)
+	local specRVB = vehicle.spec_faultData
+	local periodicService = RVB:getPeriodicService()
+	local totalDuration = SERVICE.BASE_TIME + self.servicePlusDuration
+	local hoursOverdue = math.max(0, math.floor(specRVB.operatingHours) - periodicService)
+	local additionalTime = hoursOverdue * SERVICE.TIME
+	local totalServiceTime = totalDuration + additionalTime
+	local AddHour = math.floor(totalServiceTime / 3600)
+	local AddMinute = math.floor(((totalServiceTime / 3600) - AddHour) * 60)
+	local FinishDay, FinishHour, FinishMinute = vehicle:CalculateFinishTime(AddHour, AddMinute)
+	self.preCalculatedService = {
+		totalTime = totalServiceTime,
+		periodicService = periodicService
+	}
+	local timeText = string.format("%02d:%02d", FinishHour, FinishMinute)
+	local DialogServiceText = "RVB_periodicserviceTimeDialog"
+	if FinishDay > g_currentMission.environment.currentDay then
+		DialogServiceText = "RVB_periodicserviceDayDialog"
 	end
-    local hoursOverdue = math.max(0, math.floor(specRVB.operatingHours) - periodicService)
-    local additionalTime = hoursOverdue * SERVICE.TIME
-    local totalServiceTime = SERVICE.BASE_TIME + additionalTime
-    local AddHour = math.floor(totalServiceTime / 3600)
-    local AddMinute = math.floor(((totalServiceTime / 3600) - AddHour) * 60)
-    local FinishDay, FinishHour, FinishMinute = vehicle:CalculateFinishTime(AddHour, AddMinute)
-    self.preCalculatedService = {
-        totalTime = totalServiceTime,
-        periodicService = periodicService
-    }
-    local timeText = string.format("%02d:%02d", FinishHour, FinishMinute)
-    local DialogServiceText = "RVB_periodicserviceTimeDialog"
-    if FinishDay > g_currentMission.environment.currentDay then
-        DialogServiceText = "RVB_periodicserviceDayDialog"
-    end
-    local text = string.format(g_i18n:getText("RVB_periodicserviceDialog"), g_i18n:formatMoney(vehicle:getServicePrice())) .. "\n" ..
-                 string.format(g_i18n:getText(DialogServiceText), timeText)
-    local callback = self.onYesNoServiceDialog
-    local yesSound = GuiSoundPlayer.SOUND_SAMPLES.CONFIG_SPRAY
-    YesNoDialog.show(callback, self, text, nil, nil, nil, nil, yesSound)
-    return true
+	local text = string.format(g_i18n:getText("RVB_periodicserviceDialog"), g_i18n:formatMoney(vehicle:getServicePrice())) .. "\n" ..
+				string.format(g_i18n:getText("RVB_durationDialog"), AddHour, AddMinute).."\n\n"..
+				string.format(g_i18n:getText(DialogServiceText), timeText)
+	local callback = self.onYesNoServiceDialog
+	local yesSound = GuiSoundPlayer.SOUND_SAMPLES.CONFIG_SPRAY
+	YesNoDialog.show(callback, self, text, nil, nil, nil, nil, yesSound)
+	return true
 end
 function rvbWorkshopDialog.onYesNoServiceDialog(self, yes)
-    local vehicle = self.vehicle
-    if not (yes and vehicle and vehicle.spec_faultData) then
-        return
-    end
-    local cost = vehicle:getServicePrice()
-    if g_currentMission:getMoney() < cost then
-        InfoDialog.show(g_i18n:getText("shop_messageNotEnoughMoneyToBuy"))
-        return
-    end
-    local rvb = vehicle.spec_faultData
-    local preCalc = self.preCalculatedService
-    if not preCalc then
+	local vehicle = self.vehicle
+	if not (yes and vehicle and vehicle.spec_faultData) then
+		return
+	end
+	local cost = vehicle:getServicePrice()
+	if g_currentMission:getMoney() < cost then
+		InfoDialog.show(g_i18n:getText("shop_messageNotEnoughMoneyToBuy"))
+		return
+	end
+	local rvb = vehicle.spec_faultData
+	local preCalc = self.preCalculatedService
+	if not preCalc then
 		self.rvbDebugger:error("rvbWorkshopDialog.onYesNoServiceDialog", "No pre-calculated service time found!")
-        return
-    end
+		return
+	end
 	
 	local farmId = g_currentMission:getFarmId()
 	--RVBServiceRequest_Event.sendEvent(vehicle, farmId)
 	g_client:getServerConnection():sendEvent(RVBServiceRequest_Event.new(vehicle, farmId))
 	
-    stopVehicle(vehicle)
-    self:updateScreen()
+	stopVehicle(vehicle)
+	self:updateScreen()
 	self:updateButtons()
 	--g_workshopScreen.list:reloadData()
 	g_workshopScreen.needsListReload = true
@@ -769,17 +773,14 @@ function rvbWorkshopDialog.onClickRepair(self, _, _)
 			faultListTime = faultListTime + FaultRegistry[key].repairTime
 		end
 	end
-	local isOwnWorkshop = g_rvbMain:isAlwaysOpenWorkshop()
-	if isOwnWorkshop then
-		faultListTime = faultListTime + math.random(30*60, 50*60)
-	end
-	local AddHour = math.floor(faultListTime / 3600)
-	local AddMinute = math.floor(((faultListTime / 3600) - AddHour) * 60)
+	local totalDuration = faultListTime + self.repairPlusDuration
+	local AddHour = math.floor(totalDuration / 3600)
+	local AddMinute = math.floor(((totalDuration / 3600) - AddHour) * 60)
 	local FinishDay, FinishHour, FinishMinute = vehicle:CalculateFinishTime(AddHour, AddMinute)
 	self.preCalculatedRepair = {
 		fault = #faultListText,
-		faultTime = faultListTime
-    }
+		faultTime = totalDuration
+	}
 	local timeText = string.format("%02d:%02d", FinishHour, FinishMinute)
 	local DialogRepairText = "RVB_repairTimeDialog"
 	if FinishDay > g_currentMission.environment.currentDay then
@@ -787,7 +788,8 @@ function rvbWorkshopDialog.onClickRepair(self, _, _)
 	end
 	if #faultListText > 0 then
 		local text = string.format(g_i18n:getText("ui_repairDialog"), g_i18n:formatMoney(self.vehicle:getRepairPrice_RVBClone(true))).."\n"..
-					 string.format(g_i18n:getText(DialogRepairText), timeText).."\n"..g_i18n:getText("RVB_ErrorList").."\n"..table.concat(faultListText,", ")
+					string.format(g_i18n:getText("RVB_durationDialog"), AddHour, AddMinute).."\n\n"..
+					string.format(g_i18n:getText(DialogRepairText), timeText).."\n"..g_i18n:getText("RVB_ErrorList").."\n"..table.concat(faultListText,", ")
 		local callback = self.onYesNoRepairDialog
 		local yesSound = GuiSoundPlayer.SOUND_SAMPLES.CONFIG_WRENCH
 		YesNoDialog.show(callback, self, text, nil, nil, nil, nil, yesSound)
