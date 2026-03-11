@@ -83,6 +83,7 @@
         <e k="RVB_button_periodicservice" v="Service périodique"/>
         <e k="RVB_button_battery_ch" v="Charge de la batterie"/>
         <e k="RVB_button_service" v="Service"/>
+        <e k="RVB_durationDialog" v="Durée totale : %02d heure %02d minute" tag="format"/>
         <e k="RVB_inspectionDialog" v="Es-tu sûr de vouloir inspecter ce véhicule pour %s?" tag="format"/>
         <e k="RVB_inspectionTimeDialog" v="L'inspection du véhicule se termine à %s heures." tag="format"/>
         <e k="RVB_inspectionDayDialog" v="L'inspection du véhicule se termine demain à %s heures." tag="format"/>
