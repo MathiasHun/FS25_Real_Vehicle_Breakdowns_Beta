@@ -84,6 +84,7 @@
         <e k="RVB_button_periodicservice" v="Periyodik bakım"/>
         <e k="RVB_button_battery_ch" v="Akü şarjı"/>
         <e k="RVB_button_service" v="Bakım"/>
+        <e k="RVB_durationDialog" v="Toplam süre: %02d saat %02d dk" tag="format"/>
         <e k="RVB_inspectionDialog" v="Bu aracı %s maliyetle incelemek istediğine emin misin?" tag="format"/>
         <e k="RVB_inspectionTimeDialog" v="Araç muayenesi saat %s’de tamamlanacak." tag="format"/>
         <e k="RVB_inspectionDayDialog" v="Araç incelemesi yarın saat %s’de tamamlanacak." tag="format"/>
