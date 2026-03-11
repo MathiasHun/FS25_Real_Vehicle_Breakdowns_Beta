@@ -82,6 +82,7 @@
         <e k="RVB_button_periodicservice" v="Periodic Service"/>
         <e k="RVB_button_battery_ch" v="Battery Charging"/>
         <e k="RVB_button_service" v="Service"/>
+        <e k="RVB_durationDialog" v="Total duration: %02d hour %02d min" tag="format"/>
         <e k="RVB_inspectionDialog" v="Are you sure you want to inspect this vehicle for %s?" tag="format"/>
         <e k="RVB_inspectionTimeDialog" v="The vehicle inspection will be completed at %s o'clock." tag="format"/>
         <e k="RVB_inspectionDayDialog" v="The vehicle inspection will be completed tomorrow at %s o'clock." tag="format"/>
@@ -202,5 +203,4 @@ MathiasHun" tag="format"/>
         <e k="rvb_infohud_uytTyresWear" v="Tyre %s" tag="format"/>
 
     </elements>
-
 </l10n>
