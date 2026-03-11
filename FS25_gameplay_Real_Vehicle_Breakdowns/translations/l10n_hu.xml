@@ -82,6 +82,7 @@
         <e k="RVB_button_periodicservice" v="Időszakos Szerviz"/>
         <e k="RVB_button_battery_ch" v="Akkumulátor töltés"/>
         <e k="RVB_button_service" v="Szerviz"/>
+        <e k="RVB_durationDialog" v="Teljes időtartam: %02d óra %02d perc" tag="format"/>
         <e k="RVB_inspectionDialog" v="Biztosan megvizsgáltatod ezt a járművet %s áron?" tag="format"/>
         <e k="RVB_inspectionTimeDialog" v="A jármű átvizsgálása %s órakor fejeződik be." tag="format"/>
         <e k="RVB_inspectionDayDialog" v="A jármű átvizsgálása holnap %s órakor fejeződik be." tag="format"/>
