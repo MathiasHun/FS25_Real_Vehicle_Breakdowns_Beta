@@ -83,6 +83,7 @@
         <e k="RVB_button_periodicservice" v="Pravidelný servis"/>
         <e k="RVB_button_battery_ch" v="Nabíjení baterie"/>
         <e k="RVB_button_service" v="Servis"/>
+        <e k="RVB_durationDialog" v="Celková doba trvání: %02d hod. %02d min" tag="format"/>
         <e k="RVB_inspectionDialog" v="Jste si jisti, že chcete toto vozidlo zkontrolovat za %s?" tag="format"/>
         <e k="RVB_inspectionTimeDialog" v="Kontrola vozidla bude dokončena v %s." tag="format"/>
         <e k="RVB_inspectionDayDialog" v="Kontrola vozidla bude dokončena zítra v %s." tag="format"/>
