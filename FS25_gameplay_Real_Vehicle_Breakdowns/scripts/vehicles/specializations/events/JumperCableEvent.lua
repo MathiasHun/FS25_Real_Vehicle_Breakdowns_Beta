@@ -34,7 +34,7 @@ function JumperCableEvent:readStream(streamId, connection)
 	self.jumperTime = streamReadFloat32(streamId)
 	self.jumperThreshold = streamReadInt32(streamId)
 	self.activePlayerUserId = streamReadInt32(streamId)
-    self:run(connection)
+	self:run(connection)
 end
 function JumperCableEvent:run(connection)
 	if self.vehicle ~= nil and self.vehicle:getIsSynchronized() then

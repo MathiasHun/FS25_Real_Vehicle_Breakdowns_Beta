@@ -21,7 +21,7 @@ end
 function RVBToggleSpec_Event:writeStream(streamId, connection)
 	NetworkUtil.writeNodeObject(streamId, self.vehicle)
 	streamWriteBool(streamId, self.enabled)
-end    
+end
 function RVBToggleSpec_Event:run(connection)
 	if self.vehicle ~= nil and self.vehicle:getIsSynchronized() then
 		local spec = self.vehicle.spec_faultData
