@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <modDesc descVersion="106">
     <author>MathiasHun</author>
-    <version>0.9.6.3</version>
+    <version>0.9.6.4</version>
     <title>
         <en>Real Vehicle Breakdowns</en>
     </title>
@@ -54,6 +54,16 @@ Mod Conflict
 If you are using the Real Vehicle Breakdowns (RVB) mod, do not use the:
 
 - FS25_DisableTurnOffMotor - it will prevent the engine temperature from rising
+
+Changelog 0.9.6.4:
+- When a vehicle was dirty, the “dirty time” did not reset after washing it.
+As a result, when the vehicle became 100% dirty again, overheating occurred immediately. The bug has been fixed.
+- github issues#157 – Vehicles automatically turned off after some time while motor is running in idle
+- github issues#155 – When vehicle in service, PLayers cant join server
+- github issues#152 – Add estimated duration for Inspection & Service
+- github issues#139 Updated – Vehicles with Hood Animation — List Needed
+- github issues#114 Updated – List of vehicles / mods excluded from Real Vehicle Breakdowns specialization
+- Code optimization
 
 Changelog 0.9.6.3:
 - github issues#145 – Thanks to Squallqt for testing, feedback, and suggestions.
@@ -437,4 +447,3 @@ Changelog 0.8.1.0:
         <storeItem xmlFilename="mods/FS25_JCB_Powerpack/etechPowerpack.xml"/>
     </storeItems>
 </modDesc>
-
