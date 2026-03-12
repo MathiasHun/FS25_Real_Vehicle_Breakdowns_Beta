@@ -7,19 +7,19 @@ BatteryManager = {}
 --local variants = r.variants
 
 local LIGHT_DRAIN = {
-    DIM = 0.25,
-    HIGH = 0.25,
-    WORK_FRONT = 0.15,
-    WORK_BACK = 0.15,
-    PIPE = 0.10,
-    TURN_LEFT = 0.01,
+	DIM = 0.25,
+	HIGH = 0.25,
+	WORK_FRONT = 0.15,
+	WORK_BACK = 0.15,
+	PIPE = 0.10,
+	TURN_LEFT = 0.01,
 	TURN_RIGHT = 0.01,
 	HAZARD = 0.02,
 	BEACON = 0.025,
-    BRAKE = 0.05,
-    REVERSE = 0.05,
-    TOP = 0.05,
-    BOTTOM = 0.05,
+	BRAKE = 0.05,
+	REVERSE = 0.05,
+	TOP = 0.05,
+	BOTTOM = 0.05,
 }
 
 BatteryManager.DEFAULT    = bit32.lshift(1, Lights.LIGHT_TYPE_DEFAULT)
@@ -30,30 +30,30 @@ BatteryManager.PIPE       = bit32.lshift(1, 4)
 
 
 local LIGHT_DRAIN_MASK = {
-    [BatteryManager.DEFAULT]    = 0.25,
-    [BatteryManager.HIGHBEAM]   = 0.25,
-    [BatteryManager.WORK_FRONT] = 0.15,
-    [BatteryManager.WORK_BACK]  = 0.15,
+	[BatteryManager.DEFAULT]    = 0.25,
+	[BatteryManager.HIGHBEAM]   = 0.25,
+	[BatteryManager.WORK_FRONT] = 0.15,
+	[BatteryManager.WORK_BACK]  = 0.15,
 	[BatteryManager.PIPE]       = 0.10,
 }
 
 function BatteryManager.getBatteryFillUnitIndex(self)
-    local spec = self.spec_fillUnit
-    local batteryFillType = g_fillTypeManager:getFillTypeIndexByName("BATTERYCHARGE")
-    for fillUnitIndex, _ in ipairs(spec.fillUnits) do
-        if self:getFillUnitAllowsFillType(fillUnitIndex, batteryFillType) then
-            return fillUnitIndex
-        end
-    end
-    return nil
+	local spec = self.spec_fillUnit
+	local batteryFillType = g_fillTypeManager:getFillTypeIndexByName("BATTERYCHARGE")
+	for fillUnitIndex, _ in ipairs(spec.fillUnits) do
+		if self:getFillUnitAllowsFillType(fillUnitIndex, batteryFillType) then
+			return fillUnitIndex
+		end
+	end
+	return nil
 end
 function BatteryManager.getActiveLights(vehicle)
-    local activeLights = {}
-    local spec = vehicle.spec_lights
-    if not spec then return activeLights end
+	local activeLights = {}
+	local spec = vehicle.spec_lights
+	if not spec then return activeLights end
 
-    --print("getActiveLights")
-    
+	--print("getActiveLights")
+
 	local LIGHT_TYPES = {
 		[0] = "DIM",        -- tompított
 		[1] = "WORK_BACK",  -- hátsó munkalámpa
@@ -64,99 +64,97 @@ function BatteryManager.getActiveLights(vehicle)
 		LIGHT_TYPES[4] = "PIPE"
 	end
 
-    for bit, name in pairs(LIGHT_TYPES) do
+	for bit, name in pairs(LIGHT_TYPES) do
 		--print("bit:", bit, "name:", name, "mask:", spec.lightsTypesMask)
-        if bit32.band(spec.lightsTypesMask, 2^bit) ~= 0 then
-            table.insert(activeLights, name)
-        end
-    end
+		if bit32.band(spec.lightsTypesMask, 2^bit) ~= 0 then
+			table.insert(activeLights, name)
+		end
+	end
 
-    if spec.turnLightState == Lights.TURNLIGHT_LEFT then
-        table.insert(activeLights, "TURN_LEFT")
-    elseif spec.turnLightState == Lights.TURNLIGHT_RIGHT then
-        table.insert(activeLights, "TURN_RIGHT")
-    elseif spec.turnLightState == Lights.TURNLIGHT_HAZARD then
-        table.insert(activeLights, "HAZARD")
-    end
+	if spec.turnLightState == Lights.TURNLIGHT_LEFT then
+		table.insert(activeLights, "TURN_LEFT")
+	elseif spec.turnLightState == Lights.TURNLIGHT_RIGHT then
+		table.insert(activeLights, "TURN_RIGHT")
+	elseif spec.turnLightState == Lights.TURNLIGHT_HAZARD then
+		table.insert(activeLights, "HAZARD")
+	end
 
-    if spec.beaconLightsActive then
-        table.insert(activeLights, "BEACON")
-    end
-	
+	if spec.beaconLightsActive then
+		table.insert(activeLights, "BEACON")
+	end
+
 	if spec.brakeLightsVisibility then
 		table.insert(activeLights, "BRAKE")
 	end
-	
-	if spec.topLightsVisibility then
-        --table.insert(activeLights, "TOP")
-    end
-    local default = 2 ^ Lights.LIGHT_TYPE_DEFAULT
-    if bit32.band(spec.lightsTypesMask, default) ~= 0 then
-        if spec.topLightsVisibility then
-            --local v131_ = 2 ^ spec.additionalLightTypes.topLight
-            --lightsTypesMask = bit32.bor(lightsTypesMask, v131_)
-        --    table.insert(activeLights, "TOP")
-        else
-            --local v132_ = 2 ^ spec.additionalLightTypes.bottomLight
-            --lightsTypesMask = bit32.bor(lightsTypesMask, v132_)
-        --    table.insert(activeLights, "BOTTOM")
-        end
-    end
-	
-	if spec.reverseLightsVisibility then
-        table.insert(activeLights, "REVERSE")
-    end
 
-    return activeLights
+	if spec.topLightsVisibility then
+		--table.insert(activeLights, "TOP")
+	end
+	local default = 2 ^ Lights.LIGHT_TYPE_DEFAULT
+	if bit32.band(spec.lightsTypesMask, default) ~= 0 then
+		if spec.topLightsVisibility then
+			--local v131_ = 2 ^ spec.additionalLightTypes.topLight
+			--lightsTypesMask = bit32.bor(lightsTypesMask, v131_)
+		--    table.insert(activeLights, "TOP")
+		else
+			--local v132_ = 2 ^ spec.additionalLightTypes.bottomLight
+			--lightsTypesMask = bit32.bor(lightsTypesMask, v132_)
+		--    table.insert(activeLights, "BOTTOM")
+		end
+	end
+
+	if spec.reverseLightsVisibility then
+		table.insert(activeLights, "REVERSE")
+	end
+
+	return activeLights
 end
 
 function BatteryManager.getLightsDrain_OLD(vehicle)
-    local active = BatteryManager.getActiveLights(vehicle)
-    local total = 0
-    for _, light in ipairs(active) do
+	local active = BatteryManager.getActiveLights(vehicle)
+	local total = 0
+	for _, light in ipairs(active) do
 		--print("Aktív lámpa: " .. light)
-        total = total + (LIGHT_DRAIN[light] or 0)
-    end
-    return total
+		total = total + (LIGHT_DRAIN[light] or 0)
+	end
+	return total
 end
-
-
 function BatteryManager.getLightsDrain(vehicle)
-    local spec = vehicle.spec_lights
-    if not spec then return 0 end
+	local spec = vehicle.spec_lights
+	if not spec then return 0 end
 
-    local mask = spec.lightsTypesMask
-    local total = 0
+	local mask = spec.lightsTypesMask
+	local total = 0
 
-    for lightMask, drain in pairs(LIGHT_DRAIN_MASK) do
-        if bit32.band(mask, lightMask) ~= 0 then
+	for lightMask, drain in pairs(LIGHT_DRAIN_MASK) do
+		if bit32.band(mask, lightMask) ~= 0 then
 			--print("lightMask "..lightMask)
-            total = total + drain
-        end
-    end
+			total = total + drain
+		end
+	end
 
-    -- külön kezelendők (nem maskosak)
-    if spec.turnLightState == Lights.TURNLIGHT_LEFT then
-        total = total + 0.01
-    elseif spec.turnLightState == Lights.TURNLIGHT_RIGHT then
-        total = total + 0.01
-    elseif spec.turnLightState == Lights.TURNLIGHT_HAZARD then
-        total = total + 0.02
-    end
+	-- külön kezelendők (nem maskosak)
+	if spec.turnLightState == Lights.TURNLIGHT_LEFT then
+		total = total + 0.01
+	elseif spec.turnLightState == Lights.TURNLIGHT_RIGHT then
+		total = total + 0.01
+	elseif spec.turnLightState == Lights.TURNLIGHT_HAZARD then
+		total = total + 0.02
+	end
 
-    if spec.beaconLightsActive then
-        total = total + 0.025
-    end
+	if spec.beaconLightsActive then
+		total = total + 0.025
+	end
 
-    if spec.brakeLightsVisibility then
-        total = total + 0.05
-    end
+	if spec.brakeLightsVisibility then
+		total = total + 0.05
+	end
 
-    if spec.reverseLightsVisibility then
-        total = total + 0.05
-    end
+	if spec.reverseLightsVisibility then
+		total = total + 0.05
+	end
 	--print("total "..total)
-    return total
+	return total
 end
 
 function BatteryManager.onBatteryDrain(vehicle, dt)
@@ -310,7 +308,7 @@ function BatteryManager.batteryChargeVehicle(self)
 		local entry = {
 			entryType = BATTERYS.SERVICE_MANUAL,
 			entryTime = CurEnvironment.currentDay,
-			operatingHours = spec.totaloperatingHours,
+			operatingHours = spec.totalOperatingHours,
 			odometer = 0,
 			resultKey = "RVB_WorkshopMessage_batteryDone",
 			errorList = {},
@@ -353,16 +351,16 @@ function BatteryManager.onStartChargeBattery(self, dt, isActiveForInputIgnoreSel
 	end
 end
 function BatteryManager.getBatteryFillLevelPercentage(self)
-    if self.spec_faultData == nil then
-        return 1
-    end
-    local batteryFillUnitIndex = BatteryManager.getBatteryFillUnitIndex(self)
-    if batteryFillUnitIndex ~= nil then
-        return tonumber(self:getFillUnitFillLevelPercentage(batteryFillUnitIndex))
-    end
-    return 1
+	if self.spec_faultData == nil then
+		return 1
+	end
+	local batteryFillUnitIndex = BatteryManager.getBatteryFillUnitIndex(self)
+	if batteryFillUnitIndex ~= nil then
+		return tonumber(self:getFillUnitFillLevelPercentage(batteryFillUnitIndex))
+	end
+	return 1
 end
 function BatteryManager.isBatteryRepairRequired(self)
-    return self:isRepairRequired(BATTERY)
+	return self:isRepairRequired(BATTERY)
 end
 return BatteryManager
