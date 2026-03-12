@@ -155,7 +155,7 @@ function WorkshopService.finish(vehicle, spec, manualDesc_more)
         odometer = 0,
         --result = manualDesc,
 		resultKey = "RVB_WorkshopMessage_serviceDone",
-		errorList = manualDesc_more,
+		errorList = manualDesc_more ~= "" and {manualDesc_more} or {},
         cost = removeMoney
     }
 
@@ -211,3 +211,4 @@ function WorkshopService.SyncClientServer(vehicle, service, message)
 		vehicle:requestActionEventUpdate()
 	end
 end
+
