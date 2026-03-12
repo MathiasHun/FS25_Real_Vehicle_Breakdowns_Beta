@@ -144,9 +144,9 @@ end
 
 function rvb_Utils.getWorkshopCloseIndex(value, defaultIndex)
 	if value == nil then
-        --print("Hiba: value értéke nil!")
-        return defaultIndex
-    end
+		--print("Hiba: value értéke nil!")
+		return defaultIndex
+	end
 	for i = #rvb_Utils.WorkshopClose, 1, -1 do
 		if rvb_Utils.WorkshopClose[i] <= value then
 			return i
@@ -168,9 +168,9 @@ end
 
 function rvb_Utils.getWorkshopCountMaxIndex(value, defaultIndex)
 	if value == nil then
-        --print("Hiba: value értéke nil!")
-        return defaultIndex
-    end
+		--print("Hiba: value értéke nil!")
+		return defaultIndex
+	end
 	for i = #rvb_Utils.WorkshopCountMax, 1, -1 do
 		if rvb_Utils.WorkshopCountMax[i] <= value then
 			return i
@@ -217,13 +217,13 @@ for i = rvb_Utils.LargeArrayMin, rvb_Utils.LargeArrayMax do
 	end
 end]]
 rvb_Utils.LargeArray = {
-    5, 10, 15, 20, 25, 30, 35, 40, 45, 50,
-    55, 60, 65, 70, 75, 80, 85, 90, 95, 100,
-    105, 110, 115, 120, 125, 130, 135, 140, 145, 150,
-    155, 160, 165, 170, 175, 180, 185, 190, 195, 200,
-    205, 210, 215, 220, 225, 230, 235, 240, 245, 250,
-    255, 260, 265, 270, 275, 280, 285, 290, 295, 300,
-    305, 310, 315, 320, 325, 330, 335, 340
+	5, 10, 15, 20, 25, 30, 35, 40, 45, 50,
+	55, 60, 65, 70, 75, 80, 85, 90, 95, 100,
+	105, 110, 115, 120, 125, 130, 135, 140, 145, 150,
+	155, 160, 165, 170, 175, 180, 185, 190, 195, 200,
+	205, 210, 215, 220, 225, 230, 235, 240, 245, 250,
+	255, 260, 265, 270, 275, 280, 285, 290, 295, 300,
+	305, 310, 315, 320, 325, 330, 335, 340
 }
 rvb_Utils.LargeArrayMin = 5
 rvb_Utils.LargeArrayMax = 340
@@ -242,17 +242,17 @@ rvb_Utils.SmallArrayMax = 6
 rvb_Utils.PercentStepArray = { 0.01, 0.1, 1, 10 }
 
 function rvb_Utils.to_upper(str)
-    local replacements = {
-        ["á"] = "Á", ["é"] = "É", ["í"] = "Í", ["ó"] = "Ó", ["ö"] = "Ö",
-        ["ő"] = "Ő", ["ú"] = "Ú", ["ü"] = "Ü", ["ű"] = "Ű"
-    }
-    -- Először alkalmazzuk a standard upper függvényt
-    local upper_str = string.upper(str)
-    -- Majd cseréljük ki az ékezetes kisbetűket nagybetűkre
-    for lower, upper in pairs(replacements) do
-        upper_str = upper_str:gsub(lower, upper)
-    end
-    return upper_str
+	local replacements = {
+		["á"] = "Á", ["é"] = "É", ["í"] = "Í", ["ó"] = "Ó", ["ö"] = "Ö",
+		["ő"] = "Ő", ["ú"] = "Ú", ["ü"] = "Ü", ["ű"] = "Ű"
+	}
+	-- Először alkalmazzuk a standard upper függvényt
+	local upper_str = string.upper(str)
+	-- Majd cseréljük ki az ékezetes kisbetűket nagybetűkre
+	for lower, upper in pairs(replacements) do
+		upper_str = upper_str:gsub(lower, upper)
+	end
+	return upper_str
 end
 
 --[[function rvb_Utils.appendedFunction(oldTarget, oldFunc, newTarget, newFunc)
@@ -264,11 +264,11 @@ end
 end]]
 
 function rvb_Utils.colorsAreEqual_QQQQQQQQQQQ(color1, color2)
-    if #color1 ~= #color2 then return false end
-    for i = 1, #color1 do
-        if color1[i] ~= color2[i] then return false end
-    end
-    return true
+	if #color1 ~= #color2 then return false end
+	for i = 1, #color1 do
+		if color1[i] ~= color2[i] then return false end
+	end
+	return true
 end
 function rvb_Utils.colorsAreEqual(c1, c2)
 	if not c1 or not c2 then return false end
