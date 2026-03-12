@@ -41,10 +41,11 @@ function RVBServiceRequest_Event.sendEvent(vehicle, farmId)
 end]]
 function RVBServiceRequest_Event:run(connection)
 	if self.vehicle ~= nil and self.vehicle:getIsSynchronized() then
-		self.vehicle:startService(self.farmId)
+		self.vehicle:startService(self.farmId, self.plusDuration)
 		self.vehicle.rvbDebugger:info("RVBServiceRequest_Event run", "startService on vehicle %s", self.vehicle:getFullName())
 		if not connection:getIsServer() then
 			g_server:broadcastEvent(self, nil, nil, self.vehicle)
 		end
 	end
+
 end
