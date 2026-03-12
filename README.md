@@ -85,7 +85,7 @@ Thanks for helping improve the mod!🚜
 - Moved battery-related functions into a dedicated BatteryManager module.
 
 ## Changelog 0.9.6.2:
-- Conflict with FS25_EnhancedVehicle mod, TEMP and RMP displays are disabled.
+- Conflict with FS25_EnhancedVehicle mod, TEMP and RPM displays are disabled.
 - MP Bug - fixed
 - Code optimization (plus 2-5 FPS)
 - RVB ExactFillRootNode warning - fixed
@@ -101,6 +101,16 @@ Thanks for helping improve the mod!🚜
 If you are using the Real Vehicle Breakdowns (RVB) mod, do not use the:
 - <strong>FS25_DisableTurnOffMotor</strong> - it will prevent the engine temperature from rising
 
+## Changelog 0.9.6.4:
+- When a vehicle was dirty, the “dirty time” did not reset after washing it.
+  As a result, when the vehicle became 100% dirty again, overheating occurred immediately. The bug has been fixed.
+- github issues#157 – Vehicles automatically turned off after some time while motor is running in idle
+- github issues#155 – When vehicle in service, PLayers cant join server
+- github issues#152 – Add estimated duration for Inspection & Service
+- github issues#139 Updated – Vehicles with Hood Animation — List Needed
+- github issues#114 Updated – List of vehicles / mods excluded from Real Vehicle Breakdowns specialization
+- Code optimization
+
 ## Changelog 0.9.6.3:
 - github issues#145 – Thanks to Squallqt for testing, feedback, and suggestions.
 - RVBresetVehicle bug - fixed
@@ -110,7 +120,7 @@ If you are using the Real Vehicle Breakdowns (RVB) mod, do not use the:
 - Moved battery-related functions into a dedicated BatteryManager module.
 
 ## Changelog 0.9.6.2:
-- Conflict with FS25_EnhancedVehicle mod, TEMP and RMP displays are disabled.
+- Conflict with FS25_EnhancedVehicle mod, TEMP and RPM displays are disabled.
 - MP Bug - fixed
 - Code optimization (plus 2-5 FPS)
 - RVB ExactFillRootNode warning - fixed
