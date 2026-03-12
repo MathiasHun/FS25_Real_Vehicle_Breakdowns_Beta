@@ -669,7 +669,7 @@ function rvbWorkshopDialog.onYesNoInspectionDialog(self, yes)
 	
 	local farmId = g_currentMission:getFarmId()
 	--RVBInspectionRequest_Event.sendEvent(vehicle, farmId)
-	g_client:getServerConnection():sendEvent(RVBInspectionRequest_Event.new(vehicle, farmId))
+	g_client:getServerConnection():sendEvent(RVBInspectionRequest_Event.new(vehicle, farmId, self.inspectionPlusDuration))
 
 	stopVehicle(vehicle)
 	self:updateScreen()
@@ -738,7 +738,7 @@ function rvbWorkshopDialog.onYesNoServiceDialog(self, yes)
 	
 	local farmId = g_currentMission:getFarmId()
 	--RVBServiceRequest_Event.sendEvent(vehicle, farmId)
-	g_client:getServerConnection():sendEvent(RVBServiceRequest_Event.new(vehicle, farmId))
+	g_client:getServerConnection():sendEvent(RVBServiceRequest_Event.new(vehicle, farmId, self.servicePlusDuration))
 	
 	stopVehicle(vehicle)
 	self:updateScreen()
@@ -810,14 +810,14 @@ function rvbWorkshopDialog.onYesNoRepairDialog(self, yes)
 	local damage = vehicle.spec_wearable.damage
 	local currentDamageLevel = math.ceil((1 - damage)*100)
 	local preCalc = self.preCalculatedRepair
-    if not preCalc then
+	if not preCalc then
 		self.rvbDebugger:error("rvbWorkshopDialog.onYesNoRepairDialog", "No pre-calculated repair time found!")
-        return
-    end
+		return
+	end
 	
 	local farmId = g_currentMission:getFarmId()
 	--RVBRepairRequest_Event.sendEvent(vehicle, farmId)
-	g_client:getServerConnection():sendEvent(RVBRepairRequest_Event.new(vehicle, farmId))
+	g_client:getServerConnection():sendEvent(RVBRepairRequest_Event.new(vehicle, farmId, self.repairPlusDuration))
 
 	stopVehicle(vehicle)
 	self:updateScreen()
