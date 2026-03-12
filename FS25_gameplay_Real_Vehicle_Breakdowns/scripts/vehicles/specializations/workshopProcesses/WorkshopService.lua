@@ -1,36 +1,38 @@
 
 WorkshopService = {}
+
+function WorkshopService.start(vehicle, farmId, plusDuration)
+	local spec = vehicle.spec_faultData
+	if spec.service.state ~= SERVICE_STATE.NONE then
+		return
+	end
+
+	local cost = vehicle:getServicePrice()
+
+	if g_currentMission:getMoney(farmId) < cost then
+		--print("WorkshopService:start(): " .. g_i18n:getText("shop_messageNotEnoughMoneyToBuy"))
+		vehicle.rvbDebugger:info("WorkshopService.start()", g_i18n:getText("shop_messageNotEnoughMoneyToBuy"))
+		return
+	end
 	
-function WorkshopService.start(vehicle, farmId)
-    local spec = vehicle.spec_faultData
-
-    if spec.service.state ~= SERVICE_STATE.NONE then
-        return
-    end
-
-    local cost = vehicle:getServicePrice()
-    if g_currentMission:getMoney(farmId) < cost then
-		print("WorkshopService:start(): " .. g_i18n:getText("shop_messageNotEnoughMoneyToBuy"))
-        return
-    end
-
 	local RVB = g_currentMission.vehicleBreakdowns
 	local periodicService = RVB:getPeriodicService()
-    local hoursOverdue = math.max(0, math.floor(spec.operatingHours) - periodicService)
-    local additionalTime = hoursOverdue * SERVICE.TIME
-    local totalServiceTime = SERVICE.BASE_TIME + additionalTime
-    local AddHour = math.floor(totalServiceTime / 3600)
-    local AddMinute = math.floor(((totalServiceTime / 3600) - AddHour) * 60)
-    local d,h,m = vehicle:CalculateFinishTime(AddHour, AddMinute)
+	local totalDuration = SERVICE.BASE_TIME + plusDuration
+	local hoursOverdue = math.max(0, math.floor(spec.operatingHours) - periodicService)
+	local additionalTime = hoursOverdue * SERVICE.TIME
+	local totalServiceTime = totalDuration + additionalTime
+	local AddHour = math.floor(totalServiceTime / 3600)
+	local AddMinute = math.floor(((totalServiceTime / 3600) - AddHour) * 60)
+	local d,h,m = vehicle:CalculateFinishTime(AddHour, AddMinute)
 	local service = spec.service
 
-    service.state = SERVICE_STATE.ACTIVE
-    service.finishDay = d
-    service.finishHour = h
-    service.finishMinute = m
-    service.cost = cost
+	service.state = SERVICE_STATE.ACTIVE
+	service.finishDay = d
+	service.finishHour = h
+	service.finishMinute = m
+	service.cost = cost
 
-    RVBService_Event.sendEvent(vehicle, service, {result=false,cost=0,text=""})
+	RVBService_Event.sendEvent(vehicle, service, {result=false,cost=0,text=""})
 
 	local RVB = g_currentMission.vehicleBreakdowns
 	if not RVB.workshopVehicles[vehicle] then
@@ -41,36 +43,27 @@ function WorkshopService.start(vehicle, farmId)
 
 end
 function WorkshopService.update(vehicle, dt)
-    if not vehicle.isServer then return end
+	if not vehicle.isServer then return end
 
-    local spec = vehicle.spec_faultData
-    local service = spec.service
+	local spec = vehicle.spec_faultData
+	local service = spec.service
+	local state = service.state or SERVICE_STATE.NONE
 
-    local state = service.state or SERVICE_STATE.NONE
+	if state == SERVICE_STATE.NONE then
+		return
+	end
 
-    if state == SERVICE_STATE.NONE then
-        return
-    end
-
-    local RVBSET = g_currentMission.vehicleBreakdowns
-    local env = g_currentMission.environment
-    local day, hour, minute = env.currentDay, env.currentHour, env.currentMinute
-    local insDay, insHour, insMinute = service.finishDay or 0, service.finishHour or 0, service.finishMinute or 0
+	local RVBSET = g_currentMission.vehicleBreakdowns
+	local env = g_currentMission.environment
+	local day, hour, minute = env.currentDay, env.currentHour, env.currentMinute
+	local insDay, insHour, insMinute = service.finishDay or 0, service.finishHour or 0, service.finishMinute or 0
 	local manualDesc_more = ""
 
-    if state == SERVICE_STATE.ACTIVE then
-        if minute % 5 == 0 and spec.alertMessage["service"] ~= minute then
-            spec.alertMessage["service"] = minute
-			--table.insert(spec.uiProgressMessage, {
-			--	key  = "service",
-			--	text = "RVB_alertmessage_service"
-			--})
-			--vehicle:raiseDirtyFlags(spec.uiEventsDirtyFlag)
-			--if vehicle.isServer and vehicle.isClient then
-			--	g_messageCenter:publish(MessageType.RVB_PROGRESS_MESSAGE, vehicle, "service", "RVB_alertmessage_service")
-			--end
+	if state == SERVICE_STATE.ACTIVE then
+		if minute % 5 == 0 and spec.alertMessage["service"] ~= minute then
+			spec.alertMessage["service"] = minute
 			vehicle:addBlinkingMessage("service", "RVB_alertmessage_service")
-        end
+		end
 
 		local moreservice = 0
 		local servicePeriodic = math.floor(spec.operatingHours)
@@ -89,7 +82,7 @@ function WorkshopService.update(vehicle, dt)
 		end
 
 		if serviceTime > 0 then
-			local servicePerSecond = spec.startingService  / serviceTime
+			local servicePerSecond = spec.startingService / serviceTime
 			local reduction = servicePerSecond * (dt / 1000) * g_currentMission.missionInfo.timeScale
 			if reduction ~= 0 and spec.operatingHours > 0 then
 				spec.serviceToChange = spec.serviceToChange + reduction
@@ -103,15 +96,11 @@ function WorkshopService.update(vehicle, dt)
 				end
 			end
 		end
-    end
+	end
 
-    if day > insDay or (day == insDay and hour > insHour) or (day == insDay and hour == insHour and minute >= insMinute) then
-        vehicle:finishService(spec, manualDesc_more)
-    end
-
-    --if state == SERVICE_STATE.ACTIVE or state == SERVICE_STATE.PAUSED then
-    --    vehicle:raiseActive()
-    --end
+	if day > insDay or (day == insDay and hour > insHour) or (day == insDay and hour == insHour and minute >= insMinute) then
+		vehicle:finishService(spec, manualDesc_more)
+	end
 	if state == SERVICE_STATE.ACTIVE then
 		vehicle:openHoodForWorkshop(true)
 		vehicle:raiseActive()
@@ -121,10 +110,10 @@ function WorkshopService.update(vehicle, dt)
 	end
 end
 function WorkshopService.finish(vehicle, spec, manualDesc_more)
-    local service = spec.service
-    local RVBSET = g_currentMission.vehicleBreakdowns
-    local env = g_currentMission.environment
-    local day = env.currentDay
+	local service = spec.service
+	local RVBSET = g_currentMission.vehicleBreakdowns
+	local env = g_currentMission.environment
+	local day = env.currentDay
 
 	spec.startingService = nil
 	local specM = vehicle.spec_motorized
@@ -134,34 +123,27 @@ function WorkshopService.finish(vehicle, spec, manualDesc_more)
 		specM.motorFan.disableTemperature = 85
 	end
 
-    --local manualDesc = g_i18n:getText("RVB_WorkshopMessage_serviceDone")
-	--manualDesc_more = manualDesc_more or ""
-	--if manualDesc_more ~= "" then
-	--	manualDesc = manualDesc .. " " .. manualDesc_more
-	--end
-    local keyText = "RVB_serviceDialogEnd"
-    local removeMoney = service.cost
+	local keyText = "RVB_serviceDialogEnd"
+	local removeMoney = service.cost
 
-    local message = {
-        result = true,
-        cost = removeMoney,
-        text = keyText
-    }
-
-    local entry = {
-        entryType = SERVICE.SERVICE_MANUAL,
-        entryTime = day,
-        operatingHours = spec.totaloperatingHours,
-        odometer = 0,
-        --result = manualDesc,
+	local message = {
+		result = true,
+		cost = removeMoney,
+		text = keyText
+	}
+	local entry = {
+		entryType = SERVICE.SERVICE_MANUAL,
+		entryTime = day,
+		operatingHours = spec.totalOperatingHours,
+		odometer = 0,
 		resultKey = "RVB_WorkshopMessage_serviceDone",
 		errorList = manualDesc_more ~= "" and {manualDesc_more} or {},
-        cost = removeMoney
-    }
+		cost = removeMoney
+	}
 
-    service.state = SERVICE_STATE.NONE
-    service.finishDay, service.finishHour, service.finishMinute, service.cost, service.factor, service.completed = 0,0,0,0,0,true
-    spec.alertMessage["service"] = -1
+	service.state = SERVICE_STATE.NONE
+	service.finishDay, service.finishHour, service.finishMinute, service.cost, service.factor, service.completed = 0,0,0,0,0,true
+	spec.alertMessage["service"] = -1
 
 	RVBserviceManual_Event.sendEvent(vehicle, entry)
 	RVBService_Event.sendEvent(vehicle, spec.service, message)
@@ -169,12 +151,13 @@ function WorkshopService.finish(vehicle, spec, manualDesc_more)
 	spec.operatingHours = 0
 	vehicle:raiseDirtyFlags(spec.rvbdirtyFlag)
 
-    local RVB = g_currentMission.vehicleBreakdowns
-    if RVB.workshopVehicles[vehicle] then
-        RVB.workshopVehicles[vehicle] = nil
-        RVB.workshopCount = RVB.workshopCount - 1
-        WorkshopCount_Event.sendEvent(RVB.workshopCount)
-    end
+	local RVB = g_currentMission.vehicleBreakdowns
+	if RVB.workshopVehicles[vehicle] then
+		RVB.workshopVehicles[vehicle] = nil
+		RVB.workshopCount = RVB.workshopCount - 1
+		WorkshopCount_Event.sendEvent(RVB.workshopCount)
+	end
+
 	vehicle:openHoodForWorkshop(false)
 end
 function WorkshopService.SyncClientServer(vehicle, service, message)
@@ -211,4 +194,3 @@ function WorkshopService.SyncClientServer(vehicle, service, message)
 		vehicle:requestActionEventUpdate()
 	end
 end
-

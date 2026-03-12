@@ -1,18 +1,19 @@
 
 WorkshopRepair = {}
-	
-function WorkshopRepair.start(vehicle, farmId)
-    local spec = vehicle.spec_faultData
 
-    if spec.repair.state ~= REPAIR_STATE.NONE then
-        return
-    end
+function WorkshopRepair.start(vehicle, farmId, plusDuration)
+	local spec = vehicle.spec_faultData
+	if spec.repair.state ~= REPAIR_STATE.NONE then
+		return
+	end
 
-    local cost = vehicle:getRepairPrice_RVBClone()
-    if g_currentMission:getMoney(farmId) < cost then
-		print("WorkshopRepair:start(): " .. g_i18n:getText("shop_messageNotEnoughMoneyToBuy"))
-        return
-    end
+	local cost = vehicle:getRepairPrice_RVBClone()
+
+	if g_currentMission:getMoney(farmId) < cost then
+		--print("WorkshopRepair:start(): " .. g_i18n:getText("shop_messageNotEnoughMoneyToBuy"))
+		vehicle.rvbDebugger:info("WorkshopRepair.start()", g_i18n:getText("shop_messageNotEnoughMoneyToBuy"))
+		return
+	end
 	
 	local faultListTime = 0
 	local faultListText = {}
@@ -23,19 +24,20 @@ function WorkshopRepair.start(vehicle, farmId)
 			faultListTime = faultListTime + FaultRegistry[key].repairTime
 		end
 	end
-	local AddHour = math.floor(faultListTime / 3600)
-	local AddMinute = math.floor(((faultListTime / 3600) - AddHour) * 60)
-    local d,h,m = vehicle:CalculateFinishTime(AddHour, AddMinute)
+	local totalDuration = faultListTime + plusDuration
+	local AddHour = math.floor(totalDuration / 3600)
+	local AddMinute = math.floor(((totalDuration / 3600) - AddHour) * 60)
+	local d,h,m = vehicle:CalculateFinishTime(AddHour, AddMinute)
 	local repair = spec.repair
 
-    repair.state = REPAIR_STATE.ACTIVE
-    repair.finishDay = d
-    repair.finishHour = h
-    repair.finishMinute = m
-    repair.cost = cost
+	repair.state = REPAIR_STATE.ACTIVE
+	repair.finishDay = d
+	repair.finishHour = h
+	repair.finishMinute = m
+	repair.cost = cost
 
-    RVBRepair_Event.sendEvent(vehicle, repair, {result=false,cost=0,text=""})
-	
+	RVBRepair_Event.sendEvent(vehicle, repair, {result=false,cost=0,text=""})
+
 	local RVB = g_currentMission.vehicleBreakdowns
 	if not RVB.workshopVehicles[vehicle] then
 		RVB.workshopVehicles[vehicle] = true
@@ -44,38 +46,28 @@ function WorkshopRepair.start(vehicle, farmId)
 	end
 
 end
-
 function WorkshopRepair.update(vehicle, dt)
-    if not vehicle.isServer then return end
+	if not vehicle.isServer then return end
 
-    local spec = vehicle.spec_faultData
-    local repair = spec.repair
+	local spec = vehicle.spec_faultData
+	local repair = spec.repair
 	local insCompleted = spec.inspection.completed
+	local state = repair.state or REPAIR_STATE.NONE
 
-    local state = repair.state or REPAIR_STATE.NONE
+	if state == REPAIR_STATE.NONE then
+		return
+	end
 
-    if state == REPAIR_STATE.NONE then
-        return
-    end
+	local RVBSET = g_currentMission.vehicleBreakdowns
+	local env = g_currentMission.environment
+	local day, hour, minute = env.currentDay, env.currentHour, env.currentMinute
+	local insDay, insHour, insMinute = repair.finishDay, repair.finishHour, repair.finishMinute
 
-    local RVBSET = g_currentMission.vehicleBreakdowns
-    local env = g_currentMission.environment
-    local day, hour, minute = env.currentDay, env.currentHour, env.currentMinute
-    local insDay, insHour, insMinute = repair.finishDay, repair.finishHour, repair.finishMinute
-
-    if state == REPAIR_STATE.ACTIVE and insCompleted then
-        if minute % 5 == 0 and spec.alertMessage["repair"] ~= minute then
-            spec.alertMessage["repair"] = minute
-			--table.insert(spec.uiProgressMessage, {
-			--	key  = "repair",
-			--	text = "RVB_alertmessage_repair"
-			--})
-			--vehicle:raiseDirtyFlags(spec.uiEventsDirtyFlag)
-			--if vehicle.isServer and vehicle.isClient then
-			--	g_messageCenter:publish(MessageType.RVB_PROGRESS_MESSAGE, vehicle, "repair", "RVB_alertmessage_repair")
-			--end
+	if state == REPAIR_STATE.ACTIVE and insCompleted then
+		if minute % 5 == 0 and spec.alertMessage["repair"] ~= minute then
+			spec.alertMessage["repair"] = minute
 			vehicle:addBlinkingMessage("repair", "RVB_alertmessage_repair")
-        end
+		end
 
 		local parts = spec.parts
 		if spec.totalRepairTime == 0.0 then
@@ -114,15 +106,11 @@ function WorkshopRepair.update(vehicle, dt)
 				end
 			end
 		end
-    end
+	end
 
-    if day > insDay or (day == insDay and hour > insHour) or (day == insDay and hour == insHour and minute >= insMinute) then
-        vehicle:finishRepair(spec)
-    end
-
-    --if state == REPAIR_STATE.ACTIVE or state == REPAIR_STATE.PAUSED then
-    --    vehicle:raiseActive()
-    --end
+	if day > insDay or (day == insDay and hour > insHour) or (day == insDay and hour == insHour and minute >= insMinute) then
+		vehicle:finishRepair(spec)
+	end
 	if state == REPAIR_STATE.ACTIVE then
 		vehicle:openHoodForWorkshop(true)
 		vehicle:raiseActive()
@@ -131,12 +119,11 @@ function WorkshopRepair.update(vehicle, dt)
 		vehicle:raiseActive()
 	end
 end
-
 function WorkshopRepair.finish(vehicle, spec)
-    local repair = spec.repair
-    local RVBSET = g_currentMission.vehicleBreakdowns
-    local env = g_currentMission.environment
-    local day = env.currentDay
+	local repair = spec.repair
+	local RVBSET = g_currentMission.vehicleBreakdowns
+	local env = g_currentMission.environment
+	local day = env.currentDay
 
 	local anyRepairDone = false
 	local partList = {}
@@ -145,7 +132,6 @@ function WorkshopRepair.finish(vehicle, spec)
 		if not part then
 			vehicle.rvbDebugger:warning("WorkshopRepair.finish", "Part key '%s' is missing in vehicle %s", key, vehicle:getFullName())
 		elseif part.repairreq then
-			--table.insert(partList, g_i18n:getText("RVB_faultText_" .. part.name))
 			table.insert(partList, "RVB_faultText_" .. part.name)
 			part.repairreq = false
 			part.operatingHours = 0
@@ -156,22 +142,20 @@ function WorkshopRepair.finish(vehicle, spec)
 			anyRepairDone = true
 		end
 	end
-	
-    if anyRepairDone then
-	
+
+	if anyRepairDone then
+
 		spec.ShortCircuitStop = false
 		spec.isRepairActive = false
 		spec.totalRepairTime = 0.0
-	
+
 		local specM = vehicle.spec_motorized
 		if specM then
 			specM.motorTemperature.value = vehicle.currentTemperaturDay
 			specM.motorFan.enableTemperature = 95
 			specM.motorFan.disableTemperature = 85
 		end
-		
-		--local partListText = table.concat(partList, ", ")
-		--local manualDesc = string.format(g_i18n:getText("RVB_WorkshopMessage_repairDone"), partListText)
+
 		local keyText = "RVB_repairDialogEnd"
 		local removeMoney = repair.cost
 
@@ -180,13 +164,11 @@ function WorkshopRepair.finish(vehicle, spec)
 			cost = removeMoney,
 			text = keyText
 		}
-
 		local entry = {
 			entryType = REPAIR.SERVICE_MANUAL,
 			entryTime = day,
-			operatingHours = spec.totaloperatingHours,
+			operatingHours = spec.totalOperatingHours,
 			odometer = 0,
-			--result = manualDesc,
 			resultKey = "RVB_WorkshopMessage_repairDone",
 			errorList = partList,
 			cost = removeMoney
@@ -208,9 +190,9 @@ function WorkshopRepair.finish(vehicle, spec)
 			RVB.workshopCount = RVB.workshopCount - 1
 			WorkshopCount_Event.sendEvent(RVB.workshopCount)
 		end
-		
+
 		vehicle:openHoodForWorkshop(false)
-		
+
 		resetEngineTorque(vehicle)
 
 		if g_modIsLoaded["FS25_useYourTyres"] then
@@ -248,7 +230,6 @@ function WorkshopRepair.SyncClientServer(vehicle, repair, message)
 			g_currentMission.hud:addSideNotification(FSBaseMission.INGAME_NOTIFICATION_OK, notiMessage, 10000, GuiSoundPlayer.SOUND_SAMPLES.SUCCESS)
 		end
 	end
-
 	local r = spec.repair
 	vehicle.rvbDebugger:info(
 		"WorkshopRepair.SyncClientServer", 
