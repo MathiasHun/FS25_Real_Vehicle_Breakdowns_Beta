@@ -295,7 +295,7 @@ function VehicleBreakdowns.registerFunctions(vehicleType)
 	
 	SpecializationUtil.registerFunction(vehicleType, "openHoodForWorkshop", VehicleBreakdowns.openHoodForWorkshop)
 
-	SpecializationUtil.registerFunction(vehicleType, "", VehicleBreakdowns.)
+	SpecializationUtil.registerFunction(vehicleType, "startInspection", VehicleBreakdowns.startInspection)
 	SpecializationUtil.registerFunction(vehicleType, "updateInspection", VehicleBreakdowns.updateInspection)
 	SpecializationUtil.registerFunction(vehicleType, "finishInspection", VehicleBreakdowns.finishInspection)
 	SpecializationUtil.registerFunction(vehicleType, "SyncClientServer_RVBInspection", VehicleBreakdowns.SyncClientServer_RVBInspection)
@@ -5191,5 +5191,6 @@ end
 if g_modIsLoaded["FS25_DashboardLive"] then
 	FS25_DashboardLive.DashboardLive.onUpdate = Utils.overwrittenFunction(FS25_DashboardLive.DashboardLive.onUpdate, VehicleBreakdowns.DashboardLive_onUpdate)
 end
+
 
 
