@@ -295,7 +295,7 @@ function VehicleBreakdowns.registerFunctions(vehicleType)
 	
 	SpecializationUtil.registerFunction(vehicleType, "openHoodForWorkshop", VehicleBreakdowns.openHoodForWorkshop)
 
-	SpecializationUtil.registerFunction(vehicleType, "startInspection", VehicleBreakdowns.startInspection)
+	SpecializationUtil.registerFunction(vehicleType, "", VehicleBreakdowns.)
 	SpecializationUtil.registerFunction(vehicleType, "updateInspection", VehicleBreakdowns.updateInspection)
 	SpecializationUtil.registerFunction(vehicleType, "finishInspection", VehicleBreakdowns.finishInspection)
 	SpecializationUtil.registerFunction(vehicleType, "SyncClientServer_RVBInspection", VehicleBreakdowns.SyncClientServer_RVBInspection)
@@ -4789,8 +4789,8 @@ function VehicleBreakdowns:openHoodForWorkshop(open)
 end
 
 	
-function VehicleBreakdowns:startInspection(farmId)
-	WorkshopInspection.start(self, farmId)
+function VehicleBreakdowns:startInspection(farmId, plusDuration)
+	WorkshopInspection.start(self, farmId, plusDuration)
 end
 function VehicleBreakdowns:updateInspection(dt)
 	WorkshopInspection.update(self, dt)
@@ -4802,8 +4802,8 @@ function VehicleBreakdowns:SyncClientServer_RVBInspection(inspection, message)
 	WorkshopInspection.SyncClientServer(self, inspection, message)
 end
 
-function VehicleBreakdowns:startService(farmId)
-    WorkshopService.start(self, farmId)
+function VehicleBreakdowns:startService(farmId, plusDuration)
+    WorkshopService.start(self, farmId, plusDuration)
 end
 function VehicleBreakdowns:updateService(dt)
 	WorkshopService.update(self, dt)
@@ -4815,8 +4815,8 @@ function VehicleBreakdowns:SyncClientServer_RVBService(service, message)
 	WorkshopService.SyncClientServer(self, service, message)
 end
 
-function VehicleBreakdowns:startRepair(farmId)
-	WorkshopRepair.start(self, farmId)
+function VehicleBreakdowns:startRepair(farmId, plusDuration)
+	WorkshopRepair.start(self, farmId, plusDuration)
 end
 function VehicleBreakdowns:updateRepair(dt)
 	WorkshopRepair.update(self, dt)
@@ -5191,4 +5191,5 @@ end
 if g_modIsLoaded["FS25_DashboardLive"] then
 	FS25_DashboardLive.DashboardLive.onUpdate = Utils.overwrittenFunction(FS25_DashboardLive.DashboardLive.onUpdate, VehicleBreakdowns.DashboardLive_onUpdate)
 end
+
 
