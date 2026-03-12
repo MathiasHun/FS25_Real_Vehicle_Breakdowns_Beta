@@ -1930,20 +1930,21 @@ end
 function VehicleBreakdowns:onStartDirtHeat(dt)
 	local spec = self.spec_faultData
 	if spec == nil or not self.isServer then return end
-	if self.isServer then
-		local dirt = self.spec_washable and self.spec_washable:getDirtAmount() or 0
-		if dirt > 0.99 then
-			spec.dirtHeatUpdateTimer = (spec.dirtHeatUpdateTimer or 0) + dt
-			if spec.dirtHeatUpdateTimer >= RVB_DELAY.DIRT_HEAT then
-				self:updateDirtHeat(spec.dirtHeatUpdateTimer, spec)
-				spec.dirtHeatUpdateTimer = 0
-			end
-			self:raiseActive()
-		else
+
+	local dirt = self.spec_washable and self.spec_washable:getDirtAmount() or 0
+	if dirt > 0.97 then
+		spec.dirtHeatUpdateTimer = (spec.dirtHeatUpdateTimer or 0) + dt
+		if spec.dirtHeatUpdateTimer >= RVB_DELAY.DIRT_HEAT then
+			self:updateDirtHeat(spec.dirtHeatUpdateTimer, spec)
+			spec.dirtHeatUpdateTimer = 0
+		end
+		self:raiseActive()
+	else
+		if dirt <= 0.6 then
 			if spec.dirtHeatOperatingHours > 0 then
 				spec.dirtHeatUpdateTimer = 0
-				--spec.dirtHeatOperatingHours = 0
-				self:raiseDirtyFlags(spec.dirtHeatDirtyFlag)
+				spec.dirtHeatOperatingHours = 0
+				--self:raiseDirtyFlags(spec.dirtHeatDirtyFlag)
 			end
 		end
 	end
@@ -1951,7 +1952,7 @@ end
 function VehicleBreakdowns:updateDirtHeat(msDelta, spec)
     local runtimeIncrease = msDelta * g_currentMission.missionInfo.timeScale / MS_PER_GAME_HOUR
     spec.dirtHeatOperatingHours = math.min(spec.dirtHeatOperatingHours + runtimeIncrease, 10)
-    self:raiseDirtyFlags(spec.dirtHeatDirtyFlag)
+    --self:raiseDirtyFlags(spec.dirtHeatDirtyFlag)
 end
 
 
@@ -5190,3 +5191,4 @@ end
 if g_modIsLoaded["FS25_DashboardLive"] then
 	FS25_DashboardLive.DashboardLive.onUpdate = Utils.overwrittenFunction(FS25_DashboardLive.DashboardLive.onUpdate, VehicleBreakdowns.DashboardLive_onUpdate)
 end
+
