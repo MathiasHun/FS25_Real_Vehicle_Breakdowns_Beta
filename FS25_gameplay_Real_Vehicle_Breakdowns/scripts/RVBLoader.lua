@@ -35,7 +35,7 @@ local sourceFiles = {
 	"scripts/player/RVBPlayer.lua",
 }
 for i = 1, #sourceFiles do
-    source(Utils.getFilename(sourceFiles[i], directory))
+	source(Utils.getFilename(sourceFiles[i], directory))
 end
 
 g_gui:loadProfiles(directory .. "menu/guiProfiles.xml")
@@ -60,7 +60,7 @@ function init()
 	end)
 
 	MessageType.RVB_RESET_VEHICLE = nextMessageTypeId()
-    MessageType.RVB_VEHICLE_RESET = nextMessageTypeId()
+	MessageType.RVB_VEHICLE_RESET = nextMessageTypeId()
 	MessageType.RVB_START_SERVICE = nextMessageTypeId()
 	MessageType.SET_PARTS_LIFETIME = nextMessageTypeId()
 	MessageType.SET_WORKSHOP_STATE = nextMessageTypeId()
@@ -147,7 +147,7 @@ end
 -- =========================================================================
 local FSBaseMission_setPlannedDaysPerPeriod = FSBaseMission.setPlannedDaysPerPeriod
 function FSBaseMission:setPlannedDaysPerPeriod(days, noEventSend)
-    FSBaseMission_setPlannedDaysPerPeriod(self, days, noEventSend)
+	FSBaseMission_setPlannedDaysPerPeriod(self, days, noEventSend)
 	local maxDays = Environment.MAX_DAYS_PER_PERIOD
 	local days_ = math.clamp(days, 1, maxDays)
 	if days_ ~= self.missionInfo.plannedDaysPerPeriod then

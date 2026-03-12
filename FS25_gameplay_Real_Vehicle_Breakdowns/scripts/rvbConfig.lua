@@ -119,10 +119,10 @@ function applySpeedLimit(vehicle, limitPercent)
 	if not motor then return end
 	local orig = motor.originalMaxSpeed or motor.maxForwardSpeed
 	if motor.originalMaxSpeed == nil then
-        motor.originalMaxSpeed = orig
-    end
+		motor.originalMaxSpeed = orig
+	end
 	if motor._rvbSpeedLimitPercent == limitPercent then return end
-    motor.maxForwardSpeed = motor.originalMaxSpeed * limitPercent
+	motor.maxForwardSpeed = motor.originalMaxSpeed * limitPercent
 	motor._rvbSpeedLimitPercent = limitPercent
 end
 function resetSpeedLimit(vehicle)
@@ -150,27 +150,27 @@ TIRERL2 = "TIRERL2"
 TIRERR2 = "TIRERR2"
 
 g_vehicleBreakdownsPartKeys = {
-    THERMOSTAT, LIGHTINGS, GLOWPLUG, WIPERS,
-    GENERATOR, ENGINE, SELFSTARTER, BATTERY,
-    TIREFL, TIREFR, TIRERL, TIRERR
+	THERMOSTAT, LIGHTINGS, GLOWPLUG, WIPERS,
+	GENERATOR, ENGINE, SELFSTARTER, BATTERY,
+	TIREFL, TIREFR, TIRERL, TIRERR
 }
 
 EXCLUDED_IGNITION_PARTS = {
-    [THERMOSTAT] = true,
-    [LIGHTINGS] = true,
-    [WIPERS] = true,
-    [GENERATOR] = true,
-    [ENGINE] = true,
-    [BATTERY] = true,
-    [TIREFL] = true,
-    [TIREFR] = true,
-    [TIRERL] = true,
-    [TIRERR] = true
+	[THERMOSTAT] = true,
+	[LIGHTINGS] = true,
+	[WIPERS] = true,
+	[GENERATOR] = true,
+	[ENGINE] = true,
+	[BATTERY] = true,
+	[TIREFL] = true,
+	[TIREFR] = true,
+	[TIRERL] = true,
+	[TIRERR] = true
 }
 
 EXCLUDED_PARTS = {
-    [GLOWPLUG] = true,
-    [SELFSTARTER] = true
+	[GLOWPLUG] = true,
+	[SELFSTARTER] = true
 }
 
 TYRE_PARTS = {
@@ -198,7 +198,7 @@ HUDCOLOR.COOL = { 0.0097, 0.4287, 0.6445, 1 }
 
 
 MS_PER_GAME_HOUR = 1000 * 60 * 60
- 
+
 RVB_DELAY = {
 	PARTS_BREAKDOWNS = 300,
 	PARTS_noBREAKDOWNS = 1200,
@@ -231,11 +231,11 @@ DIRT_HEAT = {
 BATTERY_DRAIN_TIME = 10800
 
 BATTERY_LEVEL = {
-    MOTOR = 0.10,               -- minimum töltöttség a motor indításához
-    LIGHTS = 0.05,              -- első/hátsó világítás
-    LIGHTS_BEACONS = 0.03,      -- villogó
-    LIGHTS_TURN = 0.03,         -- index
-    DISCONNECT_THRESHOLD = 0.95 -- ha ennél lejjebb esik, leválaszt akkut
+	MOTOR = 0.10,               -- minimum töltöttség a motor indításához
+	LIGHTS = 0.05,              -- első/hátsó világítás
+	LIGHTS_BEACONS = 0.03,      -- villogó
+	LIGHTS_TURN = 0.03,         -- index
+	DISCONNECT_THRESHOLD = 0.95 -- ha ennél lejjebb esik, leválaszt akkut
 }
 
 INSPECTION = {
@@ -271,22 +271,22 @@ MOTORTEMP_THRESHOLD = 50
 MOTORTEMP_LOAD_THRESHOLD = 0.70
 LOADPERCENTAGE_LOAD_THRESHOLD = 0.85
 LOADPERCENTAGE_THRESHOLD = 0.95
-	
+
 JUMPERCABLE_MINRADIUS = 6
 JUMPERCABLE_LENGTH = 10
 
 FaultRegistry = {
-    -- THERMOSTAT (termosztát)
-    [THERMOSTAT] = {
-        name = "RVB_faultText_THERMOSTAT",
-        description = "A termosztát hibái, motor túlmelegedés kockázata.",
-        motorState = {"STARTING", "ON"},
-        isApplicable = function(vehicle) return not getIsElectricVehicle(vehicle) end,
-        rvbSpec = function(vehicle) return vehicle and vehicle.spec_faultData or nil end,
-        breakThreshold = 90,
-        strictBreak = false,
-        repairTime = 10800,
-        cost = 0.0015,
+	-- THERMOSTAT (termosztát)
+	[THERMOSTAT] = {
+		name = "RVB_faultText_THERMOSTAT",
+		description = "A termosztát hibái, motor túlmelegedés kockázata.",
+		motorState = {"STARTING", "ON"},
+		isApplicable = function(vehicle) return not getIsElectricVehicle(vehicle) end,
+		rvbSpec = function(vehicle) return vehicle and vehicle.spec_faultData or nil end,
+		breakThreshold = 90,
+		strictBreak = false,
+		repairTime = 10800,
+		cost = 0.0015,
 		threshold = function(vehicle, pre_random, forceCheck)
 			local preThreshold = FaultRegistry[THERMOSTAT].breakThreshold
 			if pre_random > 0 then
@@ -294,16 +294,16 @@ FaultRegistry = {
 			end
 			return randomBreakDown(vehicle, THERMOSTAT, 99, preThreshold, forceCheck)
 		end,
-        hud = {temperatureBased=true, temp={default=95, cool=MOTORTEMP_THRESHOLD, warning="", critical=100}, visible=true},
-        variants = {
-            ["stuckClosed"] = { -- Nem nyit ki
-                severity = 0.8,
-                effects = {"engine_overheat", "coolant_pressure_rise", "component_wear_accelerated"},
-                threshold = function(vehicle) return math.random() < 0.05 end,
-                wear = function(vehicle)
-                    local spec = vehicle.spec_motorized
-                    return spec and spec.motorTemperature and spec.motorTemperature.value > 95
-                end,
+		hud = {temperatureBased=true, temp={default=95, cool=MOTORTEMP_THRESHOLD, warning="", critical=100}, visible=true},
+		variants = {
+			["stuckClosed"] = { -- Nem nyit ki
+				severity = 0.8,
+				effects = {"engine_overheat", "coolant_pressure_rise", "component_wear_accelerated"},
+				threshold = function(vehicle) return math.random() < 0.05 end,
+				wear = function(vehicle)
+					local spec = vehicle.spec_motorized
+					return spec and spec.motorTemperature and spec.motorTemperature.value > 95
+				end,
 				wearMultiplier = {
 					{component=ENGINE, multiplier=2},
 					{component=THERMOSTAT, multiplier=1.3},
@@ -323,15 +323,15 @@ FaultRegistry = {
 						--return HUDCOLOR.DEFAULT
 					end
 				end
-            },
-            ["stuckOpen"] = { -- Nem zár vissza
-                severity = 0.3,
-                effects = {"cold_running_engine", "increased_fuel_usage", "component_wear_accelerated"},
-                threshold = function(vehicle) return math.random() < 0.05 end,
-                wear = function(vehicle)
-                    local spec = vehicle.spec_motorized
-                    return spec and spec.motorTemperature and spec.motorTemperature.value < MOTORTEMP_THRESHOLD
-                end,
+			},
+			["stuckOpen"] = { -- Nem zár vissza
+				severity = 0.3,
+				effects = {"cold_running_engine", "increased_fuel_usage", "component_wear_accelerated"},
+				threshold = function(vehicle) return math.random() < 0.05 end,
+				wear = function(vehicle)
+					local spec = vehicle.spec_motorized
+					return spec and spec.motorTemperature and spec.motorTemperature.value < MOTORTEMP_THRESHOLD
+				end,
 				wearMultiplier = {
 					{component=ENGINE, multiplier=1.2},
 					{component=THERMOSTAT, multiplier=1.1}
@@ -373,20 +373,20 @@ FaultRegistry = {
 			}, -- Hűtőfolyadék áramlás akadályozása
 			--["mechanicalFailure"] = {severity=0.5, effects={"mechanical_failure"}, threshold=function(vehicle) return math.random() < 0.03 end}, -- Mechanikai törés / szelep deformáció
 			--["coolantLeak"] = {severity=0.6, effects={"coolant_leak"}, threshold=function(vehicle) return math.random() < 0.02 end}, -- Hűtőfolyadék szivárgás
-        }
-    },
+		}
+	},
 
-    -- LIGHTINGS (világítás)
-    [LIGHTINGS] = {
-        name = "RVB_faultText_LIGHTINGS",
-        description = "Világítás hibák: égő, vezérlés, kábelezés.",
-        motorState = {"STARTING", "ON"},
-        isApplicable = function(vehicle) return true end,
-        rvbSpec = function(vehicle) return vehicle and vehicle.spec_faultData or nil end,
-        breakThreshold = 95,
-        strictBreak = false,
-        repairTime = 5400,
-        cost = 0.005,
+	-- LIGHTINGS (világítás)
+	[LIGHTINGS] = {
+		name = "RVB_faultText_LIGHTINGS",
+		description = "Világítás hibák: égő, vezérlés, kábelezés.",
+		motorState = {"STARTING", "ON"},
+		isApplicable = function(vehicle) return true end,
+		rvbSpec = function(vehicle) return vehicle and vehicle.spec_faultData or nil end,
+		breakThreshold = 95,
+		strictBreak = false,
+		repairTime = 5400,
+		cost = 0.005,
 		threshold = function(vehicle, pre_random, forceCheck)
 			local preThreshold = FaultRegistry[LIGHTINGS].breakThreshold
 			if pre_random > 0 then
@@ -394,27 +394,27 @@ FaultRegistry = {
 			end
 			return randomBreakDown(vehicle, LIGHTINGS, 99, preThreshold, forceCheck)
 		end,
-        hud = {temperatureBased=false, condition={default=99, warning={}, fault={}, critical=100}, visible=true},
-        variants = {
-            ["burntBulb"] = {severity=0.7, effects={"burnt_bulb"}, threshold=function(vehicle) return math.random() < 0.05 end, hudcolor = HUDCOLOR.WARNING}, -- Égő kiégése
-            ["wiringShort"] = {severity=0.6, effects={"wiring_short"}, threshold=function(vehicle) return math.random() < 0.04 end, hudcolor = HUDCOLOR.WARNING}, -- Rövidzárlat / szakadás a vezetékekben
-            ["controlModuleFailure"] = {severity=0.5, effects={"control_module_failure"}, threshold=function(vehicle) return math.random() < 0.03 end, hudcolor = HUDCOLOR.WARNING}, -- Vezérlőmodul / relé hiba
-            ["ledFailure"] = {severity=0.4, effects={"led_failure"}, threshold=function(vehicle) return math.random() < 0.02 end, hudcolor = HUDCOLOR.WARNING}, -- LED modul hiba
-            ["corrodedConnector"] = {severity=0.3, effects={"corroded_connector"}, threshold=function(vehicle) return math.random() < 0.01 end, hudcolor = HUDCOLOR.WARNING}, -- Víz / korrózió a csatlakozóknál
-        }
-    },
+		hud = {temperatureBased=false, condition={default=99, warning={}, fault={}, critical=100}, visible=true},
+		variants = {
+			["burntBulb"] = {severity=0.7, effects={"burnt_bulb"}, threshold=function(vehicle) return math.random() < 0.05 end, hudcolor = HUDCOLOR.WARNING}, -- Égő kiégése
+			["wiringShort"] = {severity=0.6, effects={"wiring_short"}, threshold=function(vehicle) return math.random() < 0.04 end, hudcolor = HUDCOLOR.WARNING}, -- Rövidzárlat / szakadás a vezetékekben
+			["controlModuleFailure"] = {severity=0.5, effects={"control_module_failure"}, threshold=function(vehicle) return math.random() < 0.03 end, hudcolor = HUDCOLOR.WARNING}, -- Vezérlőmodul / relé hiba
+			["ledFailure"] = {severity=0.4, effects={"led_failure"}, threshold=function(vehicle) return math.random() < 0.02 end, hudcolor = HUDCOLOR.WARNING}, -- LED modul hiba
+			["corrodedConnector"] = {severity=0.3, effects={"corroded_connector"}, threshold=function(vehicle) return math.random() < 0.01 end, hudcolor = HUDCOLOR.WARNING}, -- Víz / korrózió a csatlakozóknál
+		}
+	},
 
-    -- GLOWPLUG (izzítógyertya)
-    [GLOWPLUG] = {
-        name = "RVB_faultText_GLOWPLUG",
-        description = "Izzítógyertya hibák, indítási problémák.",
-        motorState = {"STARTING"},
-        isApplicable = function(vehicle) return not getIsElectricVehicle(vehicle) end,
-        rvbSpec = function(vehicle) return vehicle and vehicle.spec_faultData or nil end,
-        breakThreshold = 80,
-        strictBreak = false,
-        repairTime = 7200,
-        cost = 0.004,
+	-- GLOWPLUG (izzítógyertya)
+	[GLOWPLUG] = {
+		name = "RVB_faultText_GLOWPLUG",
+		description = "Izzítógyertya hibák, indítási problémák.",
+		motorState = {"STARTING"},
+		isApplicable = function(vehicle) return not getIsElectricVehicle(vehicle) end,
+		rvbSpec = function(vehicle) return vehicle and vehicle.spec_faultData or nil end,
+		breakThreshold = 80,
+		strictBreak = false,
+		repairTime = 7200,
+		cost = 0.004,
 		threshold = function(vehicle, pre_random, forceCheck)
 			local preThreshold = FaultRegistry[GLOWPLUG].breakThreshold
 			if pre_random > 0 then
@@ -422,9 +422,9 @@ FaultRegistry = {
 			end
 			return randomBreakDown(vehicle, GLOWPLUG, 90, preThreshold, forceCheck)
 		end,
-        hud = {temperatureBased=false, condition={default=99, warning={}, fault={}, critical=100}, visible=false},
-        variants = {
-            ["burntGlowPlug"] = {
+		hud = {temperatureBased=false, condition={default=99, warning={}, fault={}, critical=100}, visible=false},
+		variants = {
+			["burntGlowPlug"] = {
 				severity=0.8,
 				effects={"burnt_glowplug"},
 				threshold=function(vehicle) return math.random() < 0.05 end,
@@ -435,7 +435,7 @@ FaultRegistry = {
 				},
 				exhaustEffect = {minRpmColor = {0.9, 0.9, 0.95, 1.4}, maxRpmColor = {0.9, 0.9, 0.95, 1.6}}
 			}, -- Kiégett gyertya
-            ["shortCircuit"] = {
+			["shortCircuit"] = {
 				severity=0.7,
 				effects={"short_circuit"},
 				threshold=function(vehicle) return math.random() < 0.05 end,
@@ -448,24 +448,24 @@ FaultRegistry = {
 				},
 				exhaustEffect = {minRpmColor = {0.9, 0.9, 0.95, 1.4}, maxRpmColor = {0.9, 0.9, 0.95, 1.6}}
 			}, -- Rövidzár
-            --["insufficientHeating"] = {severity=0.6, effects={"insufficient_heating"}, threshold=function(vehicle) return math.random() < 0.03 end}, -- Nem megfelelő felfűtés
-            --["connectorIssue"] = {severity=0.5, effects={"connector_issue"}, threshold=function(vehicle) return math.random() < 0.02 end}, -- Elektromos csatlakozás hibája
-            --["mechanicalDamage"] = {severity=0.4, effects={"mechanical_damage"}, threshold=function(vehicle) return math.random() < 0.01 end}, -- Mechanikai sérülés
-        }
-    },
+			--["insufficientHeating"] = {severity=0.6, effects={"insufficient_heating"}, threshold=function(vehicle) return math.random() < 0.03 end}, -- Nem megfelelő felfűtés
+			--["connectorIssue"] = {severity=0.5, effects={"connector_issue"}, threshold=function(vehicle) return math.random() < 0.02 end}, -- Elektromos csatlakozás hibája
+			--["mechanicalDamage"] = {severity=0.4, effects={"mechanical_damage"}, threshold=function(vehicle) return math.random() < 0.01 end}, -- Mechanikai sérülés
+		}
+	},
 
-    -- WIPERS (ablaktörlő)
-    [WIPERS] = {
-        name = "RVB_faultText_WIPERS",
-        description = "Ablaktörlő hibák, motor, lapát és vezérlés.",
-        motorState = {"ON"},
-        isApplicable = function(vehicle) return true end,
-        rvbSpec = function(vehicle) return vehicle and vehicle.spec_faultData or nil end,
-        breakThreshold = 70,
-        strictBreak = false,
-        repairTime = 1800,
-        cost = 0.002,
-        threshold = function(vehicle, pre_random, forceCheck)
+	-- WIPERS (ablaktörlő)
+	[WIPERS] = {
+		name = "RVB_faultText_WIPERS",
+		description = "Ablaktörlő hibák, motor, lapát és vezérlés.",
+		motorState = {"ON"},
+		isApplicable = function(vehicle) return true end,
+		rvbSpec = function(vehicle) return vehicle and vehicle.spec_faultData or nil end,
+		breakThreshold = 70,
+		strictBreak = false,
+		repairTime = 1800,
+		cost = 0.002,
+		threshold = function(vehicle, pre_random, forceCheck)
 			local preThreshold = FaultRegistry[WIPERS].breakThreshold
 			if pre_random > 0 then
 				preThreshold = preThreshold - pre_random
@@ -473,20 +473,20 @@ FaultRegistry = {
 			return randomBreakDown(vehicle, WIPERS, 80, preThreshold, forceCheck)
 		end,
 		hud = {temperatureBased=false, condition={default=99, warning={}, fault={}, critical=100}, visible=true},
-        variants = {
-            ["motorFailure"] = {severity=0.8, effects={"motor_failure"}, threshold=function(vehicle) return math.random() < 0.05 end}, -- Motor meghibásodása
-            ["wiperBladeWorn"] = {severity=0.7, effects={"wiper_blade_worn"}, threshold=function(vehicle) return math.random() < 0.05 end}, -- Lapát kopása
-            ["mechanicalObstruction"] = {severity=0.6, effects={"mechanical_obstruction"}, threshold=function(vehicle) return math.random() < 0.03 end}, -- Mechanikai akadály
-            ["controlFailure"] = {severity=0.5, effects={"control_failure"}, threshold=function(vehicle) return math.random() < 0.02 end}, -- Elektronikai vezérlés hibája
-            ["fuseRelayFault"] = {severity=0.4, effects={"fuse_relay_fault"}, threshold=function(vehicle) return math.random() < 0.01 end}, -- Biztosíték / relé meghibásodása
-        }
-    },
+		variants = {
+			["motorFailure"] = {severity=0.8, effects={"motor_failure"}, threshold=function(vehicle) return math.random() < 0.05 end}, -- Motor meghibásodása
+			["wiperBladeWorn"] = {severity=0.7, effects={"wiper_blade_worn"}, threshold=function(vehicle) return math.random() < 0.05 end}, -- Lapát kopása
+			["mechanicalObstruction"] = {severity=0.6, effects={"mechanical_obstruction"}, threshold=function(vehicle) return math.random() < 0.03 end}, -- Mechanikai akadály
+			["controlFailure"] = {severity=0.5, effects={"control_failure"}, threshold=function(vehicle) return math.random() < 0.02 end}, -- Elektronikai vezérlés hibája
+			["fuseRelayFault"] = {severity=0.4, effects={"fuse_relay_fault"}, threshold=function(vehicle) return math.random() < 0.01 end}, -- Biztosíték / relé meghibásodása
+		}
+	},
 
-    -- GENERATOR (generátor)
-    [GENERATOR] = {
-        name = "RVB_faultText_GENERATOR",
-        description = "Generátor hibák, töltésproblémák, mechanikai kopás.",
-        isMotorState = function(currentMotorState)
+	-- GENERATOR (generátor)
+	[GENERATOR] = {
+		name = "RVB_faultText_GENERATOR",
+		description = "Generátor hibák, töltésproblémák, mechanikai kopás.",
+		isMotorState = function(currentMotorState)
 			local validStates = {MotorState.ON}
 			for _, state in ipairs(validStates) do
 				if currentMotorState == state then
@@ -496,21 +496,21 @@ FaultRegistry = {
 			return false
 		end,
 		--{"STARTING", "ON"},
-        isApplicable = function(vehicle) return not getIsElectricVehicle(vehicle) end,
-        rvbSpec = function(vehicle) return vehicle and vehicle.spec_faultData or nil end,
-        breakThreshold = 90,
-        strictBreak = false,
-        repairTime = 5400,
-        cost = 0.010,
-        threshold = function(vehicle, pre_random, forceCheck)
+		isApplicable = function(vehicle) return not getIsElectricVehicle(vehicle) end,
+		rvbSpec = function(vehicle) return vehicle and vehicle.spec_faultData or nil end,
+		breakThreshold = 90,
+		strictBreak = false,
+		repairTime = 5400,
+		cost = 0.010,
+		threshold = function(vehicle, pre_random, forceCheck)
 			local preThreshold = FaultRegistry[GENERATOR].breakThreshold
 			if pre_random > 0 then
 				preThreshold = preThreshold - pre_random
 			end
 			return randomBreakDown(vehicle, GENERATOR, 98, preThreshold, forceCheck)
 		end,
-        hud = {temperatureBased=false, condition={default=90, warning={90,99}, critical=99}, visible=true},
-        variants = {
+		hud = {temperatureBased=false, condition={default=90, warning={90,99}, critical=99}, visible=true},
+		variants = {
 			["undercharging"] = {
 				severity = 0.3,  -- enyhe hiba, részleges töltésvesztés
 				effects = {"battery_not_charging"},
@@ -549,28 +549,28 @@ FaultRegistry = {
 			}
 		}
 
-    },
+	},
 
-    -- ENGINE (motor)
-    [ENGINE] = {
-        name = "RVB_faultText_ENGINE",
-        description = "Motor hibák, teljesítménycsökkenés, túlmelegedés, leállás.",
-        motorState = {"ON"},
-        isApplicable = function(vehicle) return not getIsElectricVehicle(vehicle) end,
-        rvbSpec = function(vehicle) return vehicle and vehicle.spec_faultData or nil end,
-        breakThreshold = 90,
-        strictBreak = false,
-        repairTime = 21600,
-        cost = 0.150,
-        threshold = function(vehicle, pre_random, forceCheck)
+	-- ENGINE (motor)
+	[ENGINE] = {
+		name = "RVB_faultText_ENGINE",
+		description = "Motor hibák, teljesítménycsökkenés, túlmelegedés, leállás.",
+		motorState = {"ON"},
+		isApplicable = function(vehicle) return not getIsElectricVehicle(vehicle) end,
+		rvbSpec = function(vehicle) return vehicle and vehicle.spec_faultData or nil end,
+		breakThreshold = 90,
+		strictBreak = false,
+		repairTime = 21600,
+		cost = 0.150,
+		threshold = function(vehicle, pre_random, forceCheck)
 			local preThreshold = FaultRegistry[ENGINE].breakThreshold
 			if pre_random > 0 then
 				preThreshold = preThreshold - pre_random
 			end
 			return randomBreakDown(vehicle, ENGINE, 96, preThreshold, forceCheck)
 		end,
-        hud = {temperatureBased=false, condition={default=90, warning={90,99}, critical=99}, visible=true},
-        variants = {
+		hud = {temperatureBased=false, condition={default=90, warning={90,99}, critical=99}, visible=true},
+		variants = {
 			-- Gyújtáskimaradás
 			["misfire"] = {
 				severity=0.4,
@@ -663,17 +663,17 @@ FaultRegistry = {
 		}
 	},
 			
-    -- SELFSTARTER (indítómotor)
-    [SELFSTARTER] = {
-        name = "RVB_faultText_SELFSTARTER",
-        description = "Indítómotor hibák, nehézkes vagy lehetetlen indítás.",
-        motorState = {"STARTING"},
-        isApplicable = function(vehicle) return not getIsElectricVehicle(vehicle) end,
-        rvbSpec = function(vehicle) return vehicle and vehicle.spec_faultData or nil end,
-        breakThreshold = 83,
-        strictBreak = false,
-        repairTime = 5400,
-        cost = 0.006,
+	-- SELFSTARTER (indítómotor)
+	[SELFSTARTER] = {
+		name = "RVB_faultText_SELFSTARTER",
+		description = "Indítómotor hibák, nehézkes vagy lehetetlen indítás.",
+		motorState = {"STARTING"},
+		isApplicable = function(vehicle) return not getIsElectricVehicle(vehicle) end,
+		rvbSpec = function(vehicle) return vehicle and vehicle.spec_faultData or nil end,
+		breakThreshold = 83,
+		strictBreak = false,
+		repairTime = 5400,
+		cost = 0.006,
 		threshold = function(vehicle, pre_random, forceCheck)
 			local preThreshold = FaultRegistry[SELFSTARTER].breakThreshold
 			if pre_random > 0 then
@@ -681,32 +681,32 @@ FaultRegistry = {
 			end
 			return randomBreakDown(vehicle, SELFSTARTER, 93, preThreshold, forceCheck)
 		end,
-        hud = {temperatureBased=false, condition={default=83, warning={83,99}, critical=99}, visible=true},
-        variants = {
-            ["noEngineCrank"] = {severity=0.8, effects={"no_engine_crank"}, threshold=function(vehicle) return math.random() < 0.05 end}, -- Nem indul
-            ["slowCrank"] = {severity=0.6, effects={"slow_crank"}, threshold=function(vehicle)
-                local battery = vehicle.spec_motorized and vehicle.spec_motorized.batteryCharge
-                return battery and battery.value < 0.5
-            end}, -- Lassú indítás
-        --    ["starterOverheat"] = {severity=0.7, effects={"starter_overheat"}, threshold=function(vehicle) return math.random() < 0.05 end}, -- Túlmelegedés
-            ["connectorIssue"] = {severity=0.4, effects={"connector_issue"}, threshold=function(vehicle) return math.random() < 0.02 end}, -- Elektromos csatlakozás hibája
-            ["relayFault"] = {severity=0.3, effects={"relay_fault"}, threshold=function(vehicle) return math.random() < 0.01 end}, -- Relé / kapcsoló hiba
-            ["intermittentStart"] = {severity=0.5, effects={"intermittent_start"}, threshold=function(vehicle) return math.random() < 0.02 end}, -- Időszakos indítási hiba
-            ["starterClickOnly"] = {severity=0.2, effects={"starter_click_only"}, threshold=function(vehicle) return math.random() < 0.03 end}, -- Csak kattanás hallatszik
-        }
-    },
+		hud = {temperatureBased=false, condition={default=83, warning={83,99}, critical=99}, visible=true},
+		variants = {
+			["noEngineCrank"] = {severity=0.8, effects={"no_engine_crank"}, threshold=function(vehicle) return math.random() < 0.05 end}, -- Nem indul
+			["slowCrank"] = {severity=0.6, effects={"slow_crank"}, threshold=function(vehicle)
+				local battery = vehicle.spec_motorized and vehicle.spec_motorized.batteryCharge
+				return battery and battery.value < 0.5
+			end}, -- Lassú indítás
+			--["starterOverheat"] = {severity=0.7, effects={"starter_overheat"}, threshold=function(vehicle) return math.random() < 0.05 end}, -- Túlmelegedés
+			["connectorIssue"] = {severity=0.4, effects={"connector_issue"}, threshold=function(vehicle) return math.random() < 0.02 end}, -- Elektromos csatlakozás hibája
+			["relayFault"] = {severity=0.3, effects={"relay_fault"}, threshold=function(vehicle) return math.random() < 0.01 end}, -- Relé / kapcsoló hiba
+			["intermittentStart"] = {severity=0.5, effects={"intermittent_start"}, threshold=function(vehicle) return math.random() < 0.02 end}, -- Időszakos indítási hiba
+			["starterClickOnly"] = {severity=0.2, effects={"starter_click_only"}, threshold=function(vehicle) return math.random() < 0.03 end}, -- Csak kattanás hallatszik
+		}
+	},
 
-    -- BATTERY (akkumulátor)
-    [BATTERY] = {
-        name = "RVB_faultText_BATTERY",
-        description = "Akkumulátor hibák: töltés, belső rövidzár, kapacitáscsökkenés.",
-        motorState = {"STARTING", "ON"},
-        isApplicable = function(vehicle) return true end,
-        rvbSpec = function(vehicle) return vehicle and vehicle.spec_faultData or nil end,
-        breakThreshold = 85,
-        strictBreak = false,
-        repairTime = 10800,
-        cost = 0.004,
+	-- BATTERY (akkumulátor)
+	[BATTERY] = {
+		name = "RVB_faultText_BATTERY",
+		description = "Akkumulátor hibák: töltés, belső rövidzár, kapacitáscsökkenés.",
+		motorState = {"STARTING", "ON"},
+		isApplicable = function(vehicle) return true end,
+		rvbSpec = function(vehicle) return vehicle and vehicle.spec_faultData or nil end,
+		breakThreshold = 85,
+		strictBreak = false,
+		repairTime = 10800,
+		cost = 0.004,
 		threshold = function(vehicle, pre_random, forceCheck)
 			local preThreshold = FaultRegistry[BATTERY].breakThreshold
 			if pre_random > 0 then
@@ -714,23 +714,23 @@ FaultRegistry = {
 			end
 			return randomBreakDown(vehicle, BATTERY, 95, preThreshold, forceCheck)
 		end,
-        hud = {temperatureBased=false, condition={default=90, warning={85,99}, critical=99}, visible=true},
-        variants = {
-            ["internalShort"] = {severity=0.8, effects={"internal_short"}, threshold=function(vehicle) return math.random() < 0.04 end}, -- Rövidzár belül
-            ["connectorIssue"] = {severity=0.3, effects={"connector_issue"}, threshold=function(vehicle) return math.random() < 0.01 end}, -- Polaritás / csatlakozás hibája
-            ["capacityLoss"] = {severity=0.6, effects={"capacity_loss"}, threshold=function(vehicle) return math.random() < 0.02 end}, -- Gyors elhasználódás / kapacitáscsökkenés
-        }
-    },
+		hud = {temperatureBased=false, condition={default=90, warning={85,99}, critical=99}, visible=true},
+		variants = {
+			["internalShort"] = {severity=0.8, effects={"internal_short"}, threshold=function(vehicle) return math.random() < 0.04 end}, -- Rövidzár belül
+			["connectorIssue"] = {severity=0.3, effects={"connector_issue"}, threshold=function(vehicle) return math.random() < 0.01 end}, -- Polaritás / csatlakozás hibája
+			["capacityLoss"] = {severity=0.6, effects={"capacity_loss"}, threshold=function(vehicle) return math.random() < 0.02 end}, -- Gyors elhasználódás / kapacitáscsökkenés
+		}
+	},
 	[TIREFL] = {
-        name = "RVB_faultText_TIREFL",
-        description = "",
-        motorState = {},
-        isApplicable = function(vehicle) return true end,
-        rvbSpec = function(vehicle) return vehicle and vehicle.spec_faultData or nil end,
-        breakThreshold = 70,
-        strictBreak = false,
-        repairTime = 1200,
-        cost = 0.006,
+		name = "RVB_faultText_TIREFL",
+		description = "",
+		motorState = {},
+		isApplicable = function(vehicle) return true end,
+		rvbSpec = function(vehicle) return vehicle and vehicle.spec_faultData or nil end,
+		breakThreshold = 70,
+		strictBreak = false,
+		repairTime = 1200,
+		cost = 0.006,
 		threshold = function(vehicle, pre_random, forceCheck)
 			local preThreshold = FaultRegistry[TIREFL].breakThreshold
 			if pre_random > 0 then
@@ -739,21 +739,21 @@ FaultRegistry = {
 			return randomBreakDown(vehicle, TIREFL, 90, preThreshold, forceCheck)
 		end,
 		hud = {temperatureBased=false, condition={default=99, warning={}, fault={}, critical=100}, visible=false},
-        variants = {
-            ["puncture"] = {severity=0.7, effects={}, threshold=function(vehicle) return math.random() < 0.5 end, hudcolor = HUDCOLOR.WARNING},
+		variants = {
+			["puncture"] = {severity=0.7, effects={}, threshold=function(vehicle) return math.random() < 0.5 end, hudcolor = HUDCOLOR.WARNING},
 			["flat_tire"] = {severity=0.7, effects={}, threshold=function(vehicle) return math.random() < 0.3 end, hudcolor = HUDCOLOR.WARNING}
-        }
-    },
+		}
+	},
 	[TIREFR] = {
-        name = "RVB_faultText_TIREFR",
-        description = "",
-        motorState = {},
-        isApplicable = function(vehicle) return true end,
-        rvbSpec = function(vehicle) return vehicle and vehicle.spec_faultData or nil end,
-        breakThreshold = 70,
-        strictBreak = false,
-        repairTime = 1200,
-        cost = 0.006,
+		name = "RVB_faultText_TIREFR",
+		description = "",
+		motorState = {},
+		isApplicable = function(vehicle) return true end,
+		rvbSpec = function(vehicle) return vehicle and vehicle.spec_faultData or nil end,
+		breakThreshold = 70,
+		strictBreak = false,
+		repairTime = 1200,
+		cost = 0.006,
 		threshold = function(vehicle, pre_random, forceCheck)
 			local preThreshold = FaultRegistry[TIREFR].breakThreshold
 			if pre_random > 0 then
@@ -762,21 +762,21 @@ FaultRegistry = {
 			return randomBreakDown(vehicle, TIREFR, 90, preThreshold, forceCheck)
 		end,
 		hud = {temperatureBased=false, condition={default=99, warning={}, fault={}, critical=100}, visible=false},
-        variants = {
-            ["puncture"] = {severity=0.7, effects={}, threshold=function(vehicle) return math.random() < 0.6 end, hudcolor = HUDCOLOR.WARNING},
+		variants = {
+			["puncture"] = {severity=0.7, effects={}, threshold=function(vehicle) return math.random() < 0.6 end, hudcolor = HUDCOLOR.WARNING},
 			["flat_tire"] = {severity=0.7, effects={}, threshold=function(vehicle) return math.random() < 0.4 end, hudcolor = HUDCOLOR.WARNING}
-        }
-    },
+		}
+	},
 	[TIRERL] = {
-        name = "RVB_faultText_TIRERL",
-        description = "",
-        motorState = {},
-        isApplicable = function(vehicle) return true end,
-        rvbSpec = function(vehicle) return vehicle and vehicle.spec_faultData or nil end,
-        breakThreshold = 70,
-        strictBreak = false,
-        repairTime = 2500,
-        cost = 0.011,
+		name = "RVB_faultText_TIRERL",
+		description = "",
+		motorState = {},
+		isApplicable = function(vehicle) return true end,
+		rvbSpec = function(vehicle) return vehicle and vehicle.spec_faultData or nil end,
+		breakThreshold = 70,
+		strictBreak = false,
+		repairTime = 2500,
+		cost = 0.011,
 		threshold = function(vehicle, pre_random, forceCheck)
 			local preThreshold = FaultRegistry[TIRERL].breakThreshold
 			if pre_random > 0 then
@@ -785,21 +785,21 @@ FaultRegistry = {
 			return randomBreakDown(vehicle, TIRERL, 90, preThreshold, forceCheck)
 		end,
 		hud = {temperatureBased=false, condition={default=99, warning={}, fault={}, critical=100}, visible=false},
-        variants = {
-            ["puncture"] = {severity=0.7, effects={}, threshold=function(vehicle) return math.random() < 0.7 end, hudcolor = HUDCOLOR.WARNING},
+		variants = {
+			["puncture"] = {severity=0.7, effects={}, threshold=function(vehicle) return math.random() < 0.7 end, hudcolor = HUDCOLOR.WARNING},
 			["flat_tire"] = {severity=0.7, effects={}, threshold=function(vehicle) return math.random() < 0.5 end, hudcolor = HUDCOLOR.WARNING}
-        }
-    },
+		}
+	},
 	[TIRERR] = {
-        name = "RVB_faultText_TIRERR",
-        description = "",
-        motorState = {},
-        isApplicable = function(vehicle) return true end,
-        rvbSpec = function(vehicle) return vehicle and vehicle.spec_faultData or nil end,
-        breakThreshold = 70,
-        strictBreak = false,
-        repairTime = 2500,
-        cost = 0.011,
+		name = "RVB_faultText_TIRERR",
+		description = "",
+		motorState = {},
+		isApplicable = function(vehicle) return true end,
+		rvbSpec = function(vehicle) return vehicle and vehicle.spec_faultData or nil end,
+		breakThreshold = 70,
+		strictBreak = false,
+		repairTime = 2500,
+		cost = 0.011,
 		threshold = function(vehicle, pre_random, forceCheck)
 			local preThreshold = FaultRegistry[TIRERR].breakThreshold
 			if pre_random > 0 then
@@ -808,11 +808,11 @@ FaultRegistry = {
 			return randomBreakDown(vehicle, TIRERR, 90, preThreshold, forceCheck)
 		end,
 		hud = {temperatureBased=false, condition={default=99, warning={}, fault={}, critical=100}, visible=false},
-        variants = {
-            ["puncture"] = {severity=0.7, effects={}, threshold=function(vehicle) return math.random() < 0.8 end, hudcolor = HUDCOLOR.WARNING},
+		variants = {
+			["puncture"] = {severity=0.7, effects={}, threshold=function(vehicle) return math.random() < 0.8 end, hudcolor = HUDCOLOR.WARNING},
 			["flat_tire"] = {severity=0.7, effects={}, threshold=function(vehicle) return math.random() < 0.4 end, hudcolor = HUDCOLOR.WARNING}
-        }
-    }
+		}
+	}
 	
 }
 
@@ -869,12 +869,16 @@ RVB_EXCLUDED_MODS = {
 	["canAm/outlanderMax"] = true,
 	["canAm/outlanderPro"] = true,
 	-- mods
+	["BW25_GardenTiller"] = true,
+	["FS25Rotakapa"] = true,
+	["FS25Rota_traki"] = true,
 	["FS25_AGCO_GoKart"] = true,
 	["FS25_AN2"] = true,
 	["FS25_ASM_FarmyardTrailerDolly"] = true,
 	["FS25_Astec_Hopper_Feeder"] = true,
 	["FS25_ATC200"] = true,
 	["FS25_CanAmOutlander800"] = true,
+	["FS25_CanAm_MaverickX3"] = true,
 	["FS25_dromadar"] = true,
 	["FS25_Efg_S50_Lux"] = true,
 	["FS25_EFG_S50_Pack"] = true,
@@ -923,7 +927,10 @@ RVB_EXCLUDED_MODS = {
 	["FS25_meridianTL1239AL"] = true,
 	["FS25_marha_es_lo_mod"] = true,
 	["FS25_Moffett_Forklift"] = true,
+	["FS25_Motorized_Bike"] = true,
 	["FS25_MrChow_Heli_Bell_47"] = true,
+	["FS25_MrChow_Heli_MD_500E"] = true,
+	["FS25_MrChow_Heli_Robinson_R22"] = true,
 	["FS25_PaggioApePlus"] = true,
 	["FS25_PiaggioApe"] = true,
 	["FS25_Polaris_RMK_Pro"] = true,
@@ -937,9 +944,16 @@ RVB_EXCLUDED_MODS = {
 	["FS25_talicska"] = true,
 	["FS25_Vermeer_S450TX"] = true,
 	["FS25_Wheelbarrow"] = true,
+	["Hashy_19_Harley_Softtail_Custom"] = true,
+	["Hashy_25_Kawi_ZX10"] = true,
+	["Hashy_2015_Honda_Goldwing"] = true,
+	["Hashy_2020_YZFR1M"] = true,
 	["Hashy_2025_Bennington_QLINE_Pontoon_Boat"] = true,
+	["Hashy_2025_GSXR_1000"] = true,
 	["Hashy_2025_Polaris_Ranger_2_4dr"] = true,
 	["Hashy_2025_RZR_1000_XP"] = true,
+	["Hashy_Honda_Z50A_Honda_Monkey"] = true,
 	["Hashy_Lowe_FM_1775_Boat"] = true,
+	["Hashy_Polaris_Slingshot"] = true,
 	["TSN25_2doordefender"] = true,
 }
