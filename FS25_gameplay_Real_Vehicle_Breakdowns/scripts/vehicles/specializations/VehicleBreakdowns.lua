@@ -164,26 +164,17 @@ function VehicleBreakdowns.registerFunctions(vehicleType)
 	SpecializationUtil.registerFunction(vehicleType, "getServicePrice", VehicleBreakdowns.getServicePrice)
 	SpecializationUtil.registerFunction(vehicleType, "getInspectionPrice", VehicleBreakdowns.getInspectionPrice)
 	SpecializationUtil.registerFunction(vehicleType, "getSellPrice_RVBClone", VehicleBreakdowns.getSellPrice_RVBClone)
-
-
 	
 	SpecializationUtil.registerFunction(vehicleType, "onStartDirtHeat", VehicleBreakdowns.onStartDirtHeat)
 	SpecializationUtil.registerFunction(vehicleType, "updateDirtHeat", VehicleBreakdowns.updateDirtHeat)
 
-
 	--SpecializationUtil.registerFunction(vehicleType, "getIsRVBMotorStarted", VehicleBreakdowns.getIsRVBMotorStarted)
-
-
 
 	SpecializationUtil.registerFunction(vehicleType, "SyncClientServer_RVBParts", VehicleBreakdowns.SyncClientServer_RVBParts)
 	SpecializationUtil.registerFunction(vehicleType, "SyncClientServer_Other", VehicleBreakdowns.SyncClientServer_Other)
 
 
-	
-
 	--SpecializationUtil.registerFunction(vehicleType, "rvbVehicleSetLifetime", VehicleBreakdowns.rvbVehicleSetLifetime)
-
-	
 	
 	SpecializationUtil.registerFunction(vehicleType, "updatePartsBreakdowns", VehicleBreakdowns.updatePartsBreakdowns)
 	SpecializationUtil.registerFunction(vehicleType, "updatePartsIgnitionBreakdowns", VehicleBreakdowns.updatePartsIgnitionBreakdowns)
@@ -193,17 +184,9 @@ function VehicleBreakdowns.registerFunctions(vehicleType)
 	SpecializationUtil.registerFunction(vehicleType, "setPartsRepairreq", VehicleBreakdowns.setPartsRepairreq)
 	
 	--SpecializationUtil.registerFunction(vehicleType, "updateTireDeformation", VehicleBreakdowns.updateTireDeformation)
-
-
-	
-
 	--SpecializationUtil.registerFunction(vehicleType, "setInflationPressure", VehicleBreakdowns.setInflationPressure)
 
-
 --	SpecializationUtil.registerFunction(vehicleType, "setRVBJumpStarting", VehicleBreakdowns.setRVBJumpStarting)
-
-	
-
 
 	SpecializationUtil.registerFunction(vehicleType, "onJumperCableMessage", VehicleBreakdowns.onJumperCableMessage)
 	SpecializationUtil.registerFunction(vehicleType, "addJumperCableMessage", VehicleBreakdowns.addJumperCableMessage)
@@ -214,12 +197,7 @@ function VehicleBreakdowns.registerFunctions(vehicleType)
 	SpecializationUtil.registerFunction(vehicleType, "setJumperCableConnection", VehicleBreakdowns.setJumperCableConnection)
 	SpecializationUtil.registerFunction(vehicleType, "canBeDonor", VehicleBreakdowns.canBeDonor)
 
-	
 	SpecializationUtil.registerFunction(vehicleType, "FillUnit_loadFillUnitFromXML", VehicleBreakdowns.FillUnit_loadFillUnitFromXML)
-	
-	
-
-	
 
 	SpecializationUtil.registerFunction(vehicleType, "getServiceManualEntry", VehicleBreakdowns.getServiceManualEntry)
 
@@ -237,20 +215,12 @@ function VehicleBreakdowns.registerFunctions(vehicleType)
 	SpecializationUtil.registerFunction(vehicleType, "onUpdateJumperCable", VehicleBreakdowns.onUpdateJumperCable)
 	SpecializationUtil.registerFunction(vehicleType, "onUpdateTickJumperCable", VehicleBreakdowns.onUpdateTickJumperCable)
 	
-
-
-	
 	SpecializationUtil.registerFunction(vehicleType, "ignitionMotor", VehicleBreakdowns.ignitionMotor)
-	
-	
-    
-    
+
 	SpecializationUtil.registerFunction(vehicleType, "steeringWheels", VehicleBreakdowns.steeringWheels)
 	SpecializationUtil.registerFunction(vehicleType, "updateAxisSteer", VehicleBreakdowns.updateAxisSteer)
 	
 	SpecializationUtil.registerFunction(vehicleType, "isExcluded", VehicleBreakdowns.isExcluded)
-	
-	
 
 	SpecializationUtil.registerFunction(vehicleType, "minuteChanged", VehicleBreakdowns.minuteChanged)
 	SpecializationUtil.registerFunction(vehicleType, "RVBhourChanged", VehicleBreakdowns.RVBhourChanged)
@@ -264,8 +234,6 @@ function VehicleBreakdowns.registerFunctions(vehicleType)
 	SpecializationUtil.registerFunction(vehicleType, "onRVBVehicleReset", VehicleBreakdowns.onRVBVehicleReset)
 	SpecializationUtil.registerFunction(vehicleType, "onProgressMessage", VehicleBreakdowns.onProgressMessage)
 
-	
-	
 	SpecializationUtil.registerFunction(vehicleType, "isRepairRequired", VehicleBreakdowns.isRepairRequired)
 	SpecializationUtil.registerFunction(vehicleType, "isThermostatRepairRequired", VehicleBreakdowns.isThermostatRepairRequired)
 	SpecializationUtil.registerFunction(vehicleType, "isLightingsRepairRequired", VehicleBreakdowns.isLightingsRepairRequired)
@@ -275,10 +243,7 @@ function VehicleBreakdowns.registerFunctions(vehicleType)
 	SpecializationUtil.registerFunction(vehicleType, "isEngineRepairRequired", VehicleBreakdowns.isEngineRepairRequired)
 	SpecializationUtil.registerFunction(vehicleType, "isSelfStarterRepairRequired", VehicleBreakdowns.isSelfStarterRepairRequired)
 
-	
-	
 	SpecializationUtil.registerFunction(vehicleType, "getIsFaultStates", VehicleBreakdowns.getIsFaultStates)
-	
 
 	SpecializationUtil.registerFunction(vehicleType, "getVehicleSpeed", VehicleBreakdowns.getVehicleSpeed)
 	
@@ -311,9 +276,6 @@ function VehicleBreakdowns.registerFunctions(vehicleType)
 	SpecializationUtil.registerFunction(vehicleType, "SyncClientServer_RVBRepair", VehicleBreakdowns.SyncClientServer_RVBRepair)
 	
 	SpecializationUtil.registerFunction(vehicleType, "updateEngineCooling", VehicleBreakdowns.updateEngineCooling)
-	
-	
-
 end
 function VehicleBreakdowns.registerOverwrittenFunctions(vehicleType)
 	SpecializationUtil.registerOverwrittenFunction(vehicleType, "onPostLoad", rvbMotorized.onPostLoad)
@@ -345,8 +307,6 @@ function VehicleBreakdowns.registerEventListeners(vehicleType)
 	SpecializationUtil.registerEventListener(vehicleType, "saveToXMLFile", VehicleBreakdowns)
 	SpecializationUtil.registerEventListener(vehicleType, "onDelete", VehicleBreakdowns)
 end
-
-
 function VehicleBreakdowns.initSpecialization()
 
 	-- vehicle schema
@@ -359,7 +319,9 @@ function VehicleBreakdowns.initSpecialization()
 
 	local rvbSavegameKey = string.format("vehicles.vehicle(?).%s.vehicleBreakdowns", g_vehicleBreakdownsModName)
 	schemaSavegame:register(XMLValueType.BOOL, rvbSavegameKey .. "#isrvbSpecEnabled", "RVB is enabled")
-	schemaSavegame:register(XMLValueType.FLOAT, rvbSavegameKey .. "#TotaloperatingHours", "Összes üzemóra")
+	schemaSavegame:register(XMLValueType.FLOAT, rvbSavegameKey .. "#totalOperatingHours", "Összes üzemóra")
+	-- KOV. FRISS. TOROLNI
+	schemaSavegame:register(XMLValueType.FLOAT, rvbSavegameKey .. "#TotaloperatingHours", "DEPRECATED total operating hours")
 	schemaSavegame:register(XMLValueType.FLOAT, rvbSavegameKey .. "#operatingHours", "futott üzemóra")
 	schemaSavegame:register(XMLValueType.FLOAT, rvbSavegameKey .. "#dirtHeatOperatingHours", "")
 
@@ -425,7 +387,7 @@ function VehicleBreakdowns:isExcluded()
 	local cfg = self.configFileName
 	
 	local function logExcluded(name, type)
-		self.rvbDebugger:info("isExcluded", "The '%s' %s is excluded from the RVB Specialization.", name, type)
+		self.rvbDebugger:info("VehicleBreakdowns:isExcluded", "The '%s' %s is excluded from the RVB Specialization.", name, type)
 	end
 	-- 1) Mod mappanév (mods/)
 	local modName = cfg:match("mods[/\\]([^/\\]+)")
@@ -517,9 +479,7 @@ function VehicleBreakdowns:onLoad(savegame)
 
 	spec.messageCenter = g_messageCenter	
 
-	
-
-	spec.totaloperatingHours = 0
+	spec.totalOperatingHours = 0
 	spec.operatingHours = 0
 	spec.dirtHeatOperatingHours = 0
 
@@ -660,10 +620,10 @@ function VehicleBreakdowns:onLoad(savegame)
 
     
 
-    if self.isClient then
+    --if self.isClient then
         --spec.samples = {}
         --spec.samples.air = g_soundManager:loadSampleFromXML(self.xmlFile.handle, "vehicle.tirePressure.sounds", "air", self.baseDirectory, self.components, 1, AudioGroup.VEHICLE, self.i3dMappings, self)
-    end
+    --end
 	
 	
 	
@@ -697,7 +657,7 @@ function VehicleBreakdowns:onLoad(savegame)
 
 	specMotorized.motorStopTimerDuration = 24*60*60*1000
 	specMotorized.motorStopTimer = specMotorized.motorStopTimerDuration
-	self.rvbDebugger:info("onLoad", "overrides disabling automatic engine shutdown when the player is not near the vehicle.")
+	self.rvbDebugger:info("VehicleBreakdowns:onLoad", "overrides disabling automatic engine shutdown when the player is not near the vehicle - %s", self:getFullName())
 
 	spec.lastFuelUsage = 0
 	spec.lastDefUsage = 0
@@ -769,11 +729,7 @@ function VehicleBreakdowns:onLoad(savegame)
 
 	local RVB = g_currentMission.vehicleBreakdowns
 	--RVB:setRVBDifficulty(g_currentMission.vehicleBreakdowns.generalSettings.difficulty)
-	
 
-
-	spec.lights_request_A = false
-	spec.lights_request_B = false
 
 	spec.faultListText = {}
 	spec.faultList = {}
@@ -820,9 +776,6 @@ function VehicleBreakdowns:onLoad(savegame)
 		currentPreFault = "empty"
 	}
 
-
-	spec.rvb_actionEventToggleLights = 0
-	
 	
 	spec.jumperCableConnections = { nil, nil }
 
@@ -1074,8 +1027,18 @@ function VehicleBreakdowns:onPostLoad(savegame)
 	local rvbkey = string.format("%s.%s.%s", savegame.key, g_vehicleBreakdownsModName, "vehicleBreakdowns")
 	spec.isrvbSpecEnabled = savegame.xmlFile:getValue(rvbkey .. "#isrvbSpecEnabled", true)
 
-	local totaloperatingHours = savegame.xmlFile:getValue(rvbkey .. "#TotaloperatingHours", spec.totaloperatingHours) 
-	spec.totaloperatingHours = math.max(Utils.getNoNil(totaloperatingHours, 0), 0)
+	-- KOV. FRISS. TOROLNI
+	XMLUtil.checkDeprecatedXMLElements(savegame.xmlFile, rvbkey .. "#TotaloperatingHours", rvbkey .. "#totalOperatingHours")
+	local totalOperatingHours = 0
+	if savegame.xmlFile:hasProperty(rvbkey .. "#totalOperatingHours") then
+		totalOperatingHours = savegame.xmlFile:getValue(rvbkey .. "#totalOperatingHours", spec.totalOperatingHours) 
+	else
+		totalOperatingHours = savegame.xmlFile:getValue(rvbkey .. "#TotaloperatingHours", spec.totalOperatingHours) 
+	end
+	--local totaloperatingHours = savegame.xmlFile:getValue(rvbkey .. "#TotaloperatingHours", spec.totaloperatingHours)
+	-- NEW
+	--local totaloperatingHours = savegame.xmlFile:getValue(rvbkey .. "#totalOperatingHours", spec.totalOperatingHours)
+	spec.totalOperatingHours = math.max(Utils.getNoNil(totalOperatingHours, 0), 0)
 	
 	local periodic = savegame.xmlFile:getValue(rvbkey .. "#operatingHours", spec.operatingHours)
 	spec.operatingHours = math.max(Utils.getNoNil(periodic, 0), 0)
@@ -1170,7 +1133,7 @@ function VehicleBreakdowns:onLoadFinished(savegame)
 
 	if self.isExcluded and self:isExcluded() then
 		rvb.isrvbSpecEnabled = false
-		self.rvbDebugger:info("onLoadFinished", "The Real Vehicle Breakdowns 'specialization' is disabled for the %s vehicle.", self:getFullName())
+		self.rvbDebugger:info("VehicleBreakdowns:onLoadFinished", "The Real Vehicle Breakdowns 'specialization' is disabled for the %s vehicle.", self:getFullName())
 		return
 	end
 
@@ -1206,7 +1169,7 @@ function VehicleBreakdowns:onLoadFinished(savegame)
 		if maxLifetime > 0 then
 			FS25_useYourTyres.UseYourTyres.USED_MAX_M = maxLifetime
 		else
-			self.rvbDebugger:warning("onLoadFinished", "Vehicle '%s': TIREFL maxLifetime not set (using default 0)", self:getFullName())
+			self.rvbDebugger:warning("VehicleBreakdowns:onLoadFinished", "Vehicle '%s': TIREFL maxLifetime not set (using default 0)", self:getFullName())
 		end
 
 		WheelPhysics.updateContact = Utils.appendedFunction(WheelPhysics.updateContact, VehicleBreakdowns.injPhysWheelUpdateContact)
@@ -1248,9 +1211,9 @@ function VehicleBreakdowns:onReadStream(streamId, connection)
 	end
 
 	spec.isrvbSpecEnabled = streamReadBool(streamId)
-	spec.totaloperatingHours = streamReadFloat32(streamId)
+	spec.totalOperatingHours = streamReadFloat32(streamId)
 	spec.operatingHours = streamReadFloat32(streamId)
-	spec.dirtHeatOperatingHours = streamReadFloat32(streamId)
+	--spec.dirtHeatOperatingHours = streamReadFloat16(streamId)
 
 	spec.inspection = spec.inspection or {}
 	spec.inspection.state        = streamReadInt16(streamId)
@@ -1330,9 +1293,9 @@ function VehicleBreakdowns:onWriteStream(streamId, connection)
 	end
 
 	streamWriteBool(streamId, spec.isrvbSpecEnabled)
-	streamWriteFloat32(streamId, spec.totaloperatingHours)
+	streamWriteFloat32(streamId, spec.totalOperatingHours)
 	streamWriteFloat32(streamId, spec.operatingHours)
-	streamWriteFloat32(streamId, spec.dirtHeatOperatingHours)
+	--streamWriteFloat16(streamId, spec.dirtHeatOperatingHours)
 
 	spec.inspection = spec.inspection or {}
 	streamWriteInt16(streamId, spec.inspection.state or 1)
@@ -1406,9 +1369,9 @@ function VehicleBreakdowns:onReadUpdateStream(streamId, timestamp, connection)
 
 		if streamReadBool(streamId) then
 			spec.isrvbSpecEnabled = streamReadBool(streamId)
-			spec.totaloperatingHours = streamReadFloat32(streamId)
+			spec.totalOperatingHours = streamReadFloat32(streamId)
 			spec.operatingHours = streamReadFloat32(streamId)
-			spec.dirtHeatOperatingHours = streamReadFloat32(streamId)
+			--spec.dirtHeatOperatingHours = streamReadFloat16(streamId)
 		end
 
 		if streamReadBool(streamId) then
@@ -1520,9 +1483,9 @@ function VehicleBreakdowns:onWriteUpdateStream(streamId, connection, dirtyMask)
 
 		if streamWriteBool(streamId, bit32.band(dirtyMask, spec.rvbdirtyFlag) ~= 0) then
 			streamWriteBool(streamId, spec.isrvbSpecEnabled)
-			streamWriteFloat32(streamId, spec.totaloperatingHours)
+			streamWriteFloat32(streamId, spec.totalOperatingHours)
 			streamWriteFloat32(streamId, spec.operatingHours)
-			streamWriteFloat32(streamId, spec.dirtHeatOperatingHours)
+			--streamWriteFloat16(streamId, spec.dirtHeatOperatingHours)
 		end
 
 		if streamWriteBool(streamId, bit32.band(dirtyMask, spec.partsDirtyFlag) ~= 0) then
@@ -1626,7 +1589,7 @@ function VehicleBreakdowns:saveToXMLFile(xmlFile, key, usedModNames)
 	if spec == nil or not spec.isrvbSpecEnabled then
 		return
 	end
-	xmlFile:setValue(key .. "#TotaloperatingHours", spec.totaloperatingHours)
+	xmlFile:setValue(key .. "#totalOperatingHours", spec.totalOperatingHours)
 	xmlFile:setValue(key .. "#operatingHours", spec.operatingHours)
 	xmlFile:setValue(key .. "#dirtHeatOperatingHours", spec.dirtHeatOperatingHours)
 
@@ -1930,7 +1893,6 @@ end
 function VehicleBreakdowns:onStartDirtHeat(dt)
 	local spec = self.spec_faultData
 	if spec == nil or not self.isServer then return end
-
 	local dirt = self.spec_washable and self.spec_washable:getDirtAmount() or 0
 	if dirt > 0.97 then
 		spec.dirtHeatUpdateTimer = (spec.dirtHeatUpdateTimer or 0) + dt
@@ -2011,7 +1973,7 @@ function VehicleBreakdowns:updateOverheatingFailure(engineTemp)
 			rvbAIJobVehicle.StopAI(self)
 		end
 		self:stopMotor()
-		self.rvbDebugger:info("updateOverheatingFailure", "Engine stopped due to overheating! Temp = %.1f°C", engineTemp)
+		self.rvbDebugger:info("VehicleBreakdowns:updateOverheatingFailure", "Engine stopped due to overheating! Temp = %.1f°C", engineTemp)
 	end
 end
 
@@ -2030,7 +1992,7 @@ function VehicleBreakdowns:updateEngineTorque(isActive)
 		return
 	end
 	local parts = spec.parts or nil
-	if parts == nil then self.rvbDebugger:warning("updateEngineTorque", "spec.parts is nil for vehicle '%s'", self:getFullName()) return end
+	if parts == nil then self.rvbDebugger:warning("VehicleBreakdowns:updateEngineTorque", "spec.parts is nil for vehicle '%s'", self:getFullName()) return end
 	local partData = parts[ENGINE]
 	local registry = FaultRegistry[ENGINE]
 	if not partData or not registry or not registry.variants or not partData.pre_random then 
@@ -2049,7 +2011,7 @@ function VehicleBreakdowns:updateEngineTorque(isActive)
 					local maxDiff = partData.pre_random
 					progress = math.min(math.max(1 - (diff / maxDiff), 0), 1)
 				else
-					self.rvbDebugger:warning("updateEngineTorque", "Vehicle '%s': ENGINE maxLifetime not set (using default 0)", self:getFullName())
+					self.rvbDebugger:warning("VehicleBreakdowns:updateEngineTorque", "Vehicle '%s': ENGINE maxLifetime not set (using default 0)", self:getFullName())
 				end
 			end
 			local dynamicTorque = 1 + (variant.torqueFactor - 1) * progress
@@ -2079,7 +2041,7 @@ function VehicleBreakdowns:updateEngineSpeedLimit(isActive)
 		return
 	end
 	local parts = spec.parts or nil
-	if parts == nil then self.rvbDebugger:warning("updateEngineSpeedLimit", "spec.parts is nil for vehicle '%s'", self:getFullName()) return end
+	if parts == nil then self.rvbDebugger:warning("VehicleBreakdowns:updateEngineSpeedLimit", "spec.parts is nil for vehicle '%s'", self:getFullName()) return end
 	local partData = parts[ENGINE]
 	local registry = FaultRegistry[ENGINE]
 	if not partData or not registry or not registry.variants or not partData.pre_random then 
@@ -2134,7 +2096,7 @@ function VehicleBreakdowns:updateExhaustEffect()
 			local maxDiff = 5
 			progress = 1 - (diff / maxDiff)
 		else
-			self.rvbDebugger:warning("updateExhaustEffect", "Vehicle '%s': ENGINE maxLifetime not set (using default 0)", self:getFullName())
+			self.rvbDebugger:warning("VehicleBreakdowns:updateExhaustEffect", "Vehicle '%s': ENGINE maxLifetime not set (using default 0)", self:getFullName())
 		end
     end
 
@@ -2758,7 +2720,7 @@ function VehicleBreakdowns:onUpdate(dt, isActiveForInput, isActiveForInputIgnore
 			if maxLifetime > 0 and spec.parts[ENGINE] ~= nil then
 				engine_percent = (spec.parts[ENGINE].operatingHours * 100) / maxLifetime
 			else
-				self.rvbDebugger:warning("onUpdate", "Vehicle '%s': ENGINE maxLifetime not set (using default 0)", self:getFullName())
+				self.rvbDebugger:warning("VehicleBreakdowns:onUpdate", "Vehicle '%s': ENGINE maxLifetime not set (using default 0)", self:getFullName())
 			end
 			if self:getIsFaultSelfStarter() or BatteryManager.getBatteryFillLevelPercentage(self) < BATTERY_LEVEL.MOTOR or engine_percent >= 99 then
 				if g_modIsLoaded["FS25_AutoDrive"] and FS25_AutoDrive ~= nil and self.ad ~= nil and self.ad.stateModule ~= nil then
@@ -2789,7 +2751,7 @@ function VehicleBreakdowns:onUpdate(dt, isActiveForInput, isActiveForInputIgnore
 						FS25_useYourTyres.UseYourTyres.USED_MAX_M = maxLifetime
 					end
 				else
-					self.rvbDebugger:warning("onUpdate", "Vehicle '%s': TIREFL maxLifetime not set (using default 0)", self:getFullName())
+					self.rvbDebugger:warning("VehicleBreakdowns:onUpdate", "Vehicle '%s': TIREFL maxLifetime not set (using default 0)", self:getFullName())
 				end
 			end
 		end
@@ -2992,7 +2954,7 @@ function VehicleBreakdowns:updatePartsIgnitionBreakdowns(dt)
 							end
 						end
 					else
-						self.rvbDebugger:warning("updatePartsIgnitionBreakdowns", "Vehicle '%s': %s maxLifetime not set (using default 0)", self:getFullName(), key)
+						self.rvbDebugger:warning("VehicleBreakdowns:updatePartsIgnitionBreakdowns", "Vehicle '%s': %s maxLifetime not set (using default 0)", self:getFullName(), key)
 					end
 
 				end
@@ -3113,7 +3075,7 @@ function VehicleBreakdowns:updatePartsBreakdowns(dt)
 							end
 						end
 					else
-						self.rvbDebugger:warning("updatePartsBreakdowns", "Vehicle '%s': %s maxLifetime not set (using default 0)", self:getFullName(), key)
+						self.rvbDebugger:warning("VehicleBreakdowns:updatePartsBreakdowns", "Vehicle '%s': %s maxLifetime not set (using default 0)", self:getFullName(), key)
 					end
 				end
 			end	
@@ -3504,7 +3466,7 @@ function VehicleBreakdowns:RVBresetVehicle(vehicle)
 	if self.isServer then
 		local rvb = self.spec_faultData
 		rvb.isrvbSpecEnabled = true
-		rvb.totaloperatingHours = 0
+		rvb.totalOperatingHours = 0
 		rvb.operatingHours = 0
 		rvb.dirtHeatOperatingHours = 0
 		self:raiseDirtyFlags(rvb.rvbdirtyFlag)
@@ -3548,7 +3510,7 @@ function VehicleBreakdowns:RVBresetVehicle(vehicle)
 		local entry = {
 			entryType = RESET.SERVICE_MANUAL,
 			entryTime = CurEnvironment.currentDay,
-			operatingHours = rvb.totaloperatingHours,
+			operatingHours = rvb.totalOperatingHours,
 			odometer = 0,
 			resultKey = "RVB_WorkshopMessage_vResetDone",
 			errorList = {},
@@ -4057,7 +4019,7 @@ function VehicleBreakdowns:applyLifetimeToPart(partsName, partsLifetime, oldLife
 				vehicle:rebuildLifetimeCache()
 			end
 
-			vehicle.rvbDebugger:info("applyLifetimeToPart", "Updated %s lifetime to %s on %s", partsName, partsLifetime, vehicle:getFullName())
+			vehicle.rvbDebugger:info("VehicleBreakdowns:applyLifetimeToPart", "Updated %s lifetime to %s on %s", partsName, partsLifetime, vehicle:getFullName())
 
 			RVBParts_Event.sendEvent(vehicle, vehicle.spec_faultData.parts)
 		end
@@ -4121,7 +4083,7 @@ function VehicleBreakdowns:applyLifetimeToPart_NEW__(partsName, partsLifetime, o
 		vehicle:rebuildLifetimeCache()
 	end
 
-    vehicle.rvbDebugger:info("applyLifetimeToPart", "Updated %s lifetime to %s on %s", partsName, partsLifetime, vehicle:getFullName())
+    vehicle.rvbDebugger:info("VehicleBreakdowns:applyLifetimeToPart", "Updated %s lifetime to %s on %s", partsName, partsLifetime, vehicle:getFullName())
 
     RVBParts_Event.sendEvent(vehicle, spec.parts)
 end
@@ -4256,7 +4218,7 @@ function VehicleBreakdowns:onWorkshopStateChanged()
 		local spec = self.spec_faultData
 		if spec ~= nil and spec.isrvbSpecEnabled then
 			updateSuspensionState(self, workshopStatus)
-			self.rvbDebugger:info("onWorkshopStateChanged", "'onWorkshopStateChanged' function is for this %s", self:getFullName())
+			self.rvbDebugger:info("VehicleBreakdowns:onWorkshopStateChanged", "'onWorkshopStateChanged' function is for this %s", self:getFullName())
 		end
 	end
 end
@@ -4313,7 +4275,7 @@ function VehicleBreakdowns:onProgressMessage(vehicle, key, textKey)
 	if vehicle.getIsEntered ~= nil and vehicle:getIsEntered() and vehicle:getIsControlled() then 
 		g_currentMission:showBlinkingWarning(g_i18n:getText(textKey), 1500)
 	end
-	vehicle.rvbDebugger:info("onProgressMessage", g_i18n:getText(textKey .. "_hud"), vehicle:getFullName())
+	vehicle.rvbDebugger:info("VehicleBreakdowns:onProgressMessage", g_i18n:getText(textKey .. "_hud"), vehicle:getFullName())
 end
 
 function VehicleBreakdowns:addJumperCableMessage(method, key, text, value)
@@ -4350,14 +4312,14 @@ function VehicleBreakdowns:onJumperCableMessage(vehicle, method, key, textKey, v
 		if self.isClient then
 			local message = string.format(g_i18n:getText(textKey), g_i18n:formatMoney(value, 0, true, true))
 			g_currentMission.hud:addSideNotification(FSBaseMission.INGAME_NOTIFICATION_OK, message, 12000, GuiSoundPlayer.SOUND_SAMPLES.SUCCESS)
-			vehicle.rvbDebugger:info("onJumperCableMessage", message)
+			vehicle.rvbDebugger:info("VehicleBreakdowns:onJumperCableMessage", message)
 		end
 	end
 	if method == "blinking" then
 		if vehicle.getIsEntered ~= nil and vehicle:getIsEntered() and vehicle:getIsControlled() then
 			g_currentMission:showBlinkingWarning(g_i18n:getText(textKey), 1500)
 		end
-		vehicle.rvbDebugger:info("onJumperCableMessage", g_i18n:getText(textKey), vehicle:getFullName())
+		vehicle.rvbDebugger:info("VehicleBreakdowns:onJumperCableMessage", g_i18n:getText(textKey), vehicle:getFullName())
 	end
 end
 
@@ -4385,7 +4347,7 @@ function VehicleBreakdowns:onBlinkingMessage(vehicle, key, textKey)
 	if vehicle.getIsEntered ~= nil and vehicle:getIsEntered() and vehicle:getIsControlled() then
 		g_currentMission:showBlinkingWarning(g_i18n:getText(textKey), 1500)
 	end
-	vehicle.rvbDebugger:info("onBlinkingMessage", g_i18n:getText(textKey), vehicle:getFullName())
+	vehicle.rvbDebugger:info("VehicleBreakdowns:onBlinkingMessage", g_i18n:getText(textKey), vehicle:getFullName())
 end	
 
 function VehicleBreakdowns:isRepairRequired(partId)
@@ -4510,7 +4472,7 @@ function VehicleBreakdowns:updateLightingOperatingHours(msDelta, spec)
 		partLightings.operatingHours = math.min(partLightings.operatingHours + runtimeIncrease, maxLifetime)
 		self:raiseDirtyFlags(spec.partsDirtyFlag)
 	else
-		self.rvbDebugger:warning("updateLightingOperatingHours", "Vehicle '%s': LIGHTINGS maxLifetime not set (using default 0)", self:getFullName())
+		self.rvbDebugger:warning("VehicleBreakdowns:updateLightingOperatingHours", "Vehicle '%s': LIGHTINGS maxLifetime not set (using default 0)", self:getFullName())
 	end
 end
 
@@ -4549,7 +4511,7 @@ function VehicleBreakdowns:updateOperatingHours(msDelta, spec)
 
 	local runtimeIncrease = msDelta * g_currentMission.missionInfo.timeScale / MS_PER_GAME_HOUR
 	
-	spec.totaloperatingHours = spec.totaloperatingHours + runtimeIncrease
+	spec.totalOperatingHours = spec.totalOperatingHours + runtimeIncrease
 	spec.operatingHours = spec.operatingHours + runtimeIncrease
 
 	local isWorking = false
@@ -4711,7 +4673,7 @@ function VehicleBreakdowns:updateWiperOperatingHours(msDelta, spec)
 		part.operatingHours = math.min(part.operatingHours + runtimeIncrease, maxLifetime)
 		self:raiseDirtyFlags(spec.partsDirtyFlag)
 	else
-		self.rvbDebugger:warning("updateWiperOperatingHours", "Vehicle '%s': WIPERS maxLifetime not set (using default 0)", self:getFullName())
+		self.rvbDebugger:warning("VehicleBreakdowns:updateWiperOperatingHours", "Vehicle '%s': WIPERS maxLifetime not set (using default 0)", self:getFullName())
 	end
 end
 
@@ -4730,7 +4692,7 @@ function VehicleBreakdowns:openHoodForWorkshop(open)
 
     -- Választható animációk listája ami biztos capotIC CapotIC Capot
     local hoodAnims = { "capotIC", "CapotIC", "capot", "Capot", "motore", "hood", "Hood", "kapot", "Kapot", "Kapot_OLD", "Kapot_NEW", "KlapaMaski",
-	"motorhaube", "svet_kapot", "ROTCABOPENER2",
+	"motorhaube", "svet_kapot", "ROTCABOPENER2", "ROTCABOPENER", "CAPOTA", "Capota",
 	"flapMoteur01_IC", "flapMoteur02_IC", "flap03", "flap01_IC", "flap02_Case_IC", "flap02_NH_IC", "flap04_IC" } --, "ladderAnimation"
 	
 	for _, anim in ipairs(hoodAnims) do
@@ -4788,7 +4750,6 @@ function VehicleBreakdowns:openHoodForWorkshop(open)
 
 end
 
-	
 function VehicleBreakdowns:startInspection(farmId, plusDuration)
 	WorkshopInspection.start(self, farmId, plusDuration)
 end
@@ -4927,7 +4888,7 @@ function VehicleBreakdowns.ConsoleCommands:addBreakdown(partKey, fault, pre)
 	end
 
 	if vehicle.spec_faultData and not vehicle.spec_faultData.isrvbSpecEnabled then
-		vehicle.rvbDebugger:info("addBreakdown", "'rvb_addPreBreakdown' function is not enabled for this %s", vehicle:getFullName())
+		vehicle.rvbDebugger:info("VehicleBreakdowns.ConsoleCommands:addBreakdown", "'rvb_addPreBreakdown' function is not enabled for this %s", vehicle:getFullName())
 		return
 	end
 	
@@ -4961,7 +4922,7 @@ function VehicleBreakdowns.ConsoleCommands:delBreakdown(partKey, pre)
         return 
     end
 	if vehicle.spec_faultData and not vehicle.spec_faultData.isrvbSpecEnabled then
-		vehicle.rvbDebugger:info("delBreakdown", "'rvb_delPreBreakdown' function is not enabled for this %s", vehicle:getFullName())
+		vehicle.rvbDebugger:info("VehicleBreakdowns.ConsoleCommands:delBreakdown", "'rvb_delPreBreakdown' function is not enabled for this %s", vehicle:getFullName())
 		return
 	end
     if not partKey then
@@ -5004,7 +4965,7 @@ function VehicleBreakdowns.ConsoleCommands:vehicleDebug(mode)
     end
     if vehicle.spec_faultData then
 		if not vehicle.spec_faultData.isrvbSpecEnabled then
-			vehicle.rvbDebugger:info("vehicleDebug", "'rvb_VehicleDebug' function is not enabled for this %s", vehicle:getFullName())
+			vehicle.rvbDebugger:info("VehicleBreakdowns.ConsoleCommands:vehicleDebug", "'rvb_VehicleDebug' function is not enabled for this %s", vehicle:getFullName())
 			return
 		end
         -- Ha nincs paraméter megadva → toggle
@@ -5044,7 +5005,7 @@ function VehicleBreakdowns.ConsoleCommands:trieUse(trieId, value)
     end
     local rvb = vehicle.spec_faultData
 	if not rvb or not rvb.isrvbSpecEnabled then
-		vehicle.rvbDebugger:info("trieUse", "'rvb_trieUse' function is not enabled for this %s", vehicle:getFullName())
+		vehicle.rvbDebugger:info("VehicleBreakdowns.ConsoleCommands:trieUse", "'rvb_trieUse' function is not enabled for this %s", vehicle:getFullName())
 		return
 	end
 	if vehicle.spec_wheels ~= nil then
@@ -5191,6 +5152,3 @@ end
 if g_modIsLoaded["FS25_DashboardLive"] then
 	FS25_DashboardLive.DashboardLive.onUpdate = Utils.overwrittenFunction(FS25_DashboardLive.DashboardLive.onUpdate, VehicleBreakdowns.DashboardLive_onUpdate)
 end
-
-
-
