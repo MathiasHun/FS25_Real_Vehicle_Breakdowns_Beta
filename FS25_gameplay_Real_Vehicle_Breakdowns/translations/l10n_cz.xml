@@ -5,6 +5,7 @@
         <e k="input_RVB_MENU" v="Skutečné poruchy vozidel(RVB)"/>
         <e k="input_RVB_SPEC" v="RVB zap/vyp"/>
         <e k="input_RVB_CONNECTING_JC" v="Připojení startovacích kabelů"/>
+        <e k="input_RVB_CLOGGED" v="Uvolnit ucpání"/>
         <e k="action_RVB_DISCONNECTING_JC" v="Odpojení startovacích kabelů"/>
         <e k="RVB_dialog_titleCONNECTING_JC" v="Připojení propojovacích kabelů"/>
         <e k="RVB_dialog_descCONNECTING_JC" v="Vozidlo %s není třeba startovat. Jste si jisti, že chcete pokračovat v připojování startovacích kabelů?" tag="format"/>
@@ -18,7 +19,13 @@
         <e k="RVB_blinking_connecting_order" v="Nejprve připojte funkční vozidlo ke startovacím kabelům!"/>
         <e k="RVB_blinking_disconnecting" v="%s: Startovací kabely odpojeny." tag="format"/>
         <e k="RVB_blinking_disconnecting_order" v="Nejprve odpojte mrtvé vozidlo od startovacích kabelů!"/>
+        <e k="RVB_blinking_balerClogged" v="%s lis na balíky je ucpaný!" tag="format"/>
+        <e k="RVB_blinking_forageWagonClogged" v="%s nákladní vůz je ucpaný!" tag="format"/>
         <e k="RVB_MenuGameSettingsGame" v="Nastavení hry"/>
+        <e k="RVB_setting_timeMode" v="Režim výpočtu času"/>
+        <e k="RVB_toolTip_timeMode" v="Určuje, zda systém počítá čas podle herního času nebo reálného času (například životnost součástí)."/>
+        <e k="RVB_timeMode_game" v="Herní čas"/>
+        <e k="RVB_timeMode_real" v="Reálný čas"/>
         <e k="RVB_settingSectionHeader_Service" v="Servis"/>
         <e k="RVB_setting_dailyServiceInterval" v="Denní servis"/>
         <e k="RVB_toolTip_dailyServiceInterval" v="Jak často by měla být prováděna denní údržba. Tato funkce je v současné době neaktivní."/>
@@ -83,7 +90,10 @@
         <e k="RVB_button_periodicservice" v="Pravidelný servis"/>
         <e k="RVB_button_battery_ch" v="Nabíjení baterie"/>
         <e k="RVB_button_service" v="Servis"/>
-        <e k="RVB_durationDialog" v="Celková doba trvání: %02d hod. %02d min" tag="format"/>
+        <e k="RVB_durationDialog" v="Celková doba: "/>
+        <e k="RVB_durationDay" v="%d dní" tag="format"/>
+        <e k="RVB_durationHour" v="%d hodin" tag="format"/>
+        <e k="RVB_durationMinute" v="%d minut" tag="format"/>
         <e k="RVB_inspectionDialog" v="Jste si jisti, že chcete toto vozidlo zkontrolovat za %s?" tag="format"/>
         <e k="RVB_inspectionTimeDialog" v="Kontrola vozidla bude dokončena v %s." tag="format"/>
         <e k="RVB_inspectionDayDialog" v="Kontrola vozidla bude dokončena zítra v %s." tag="format"/>
@@ -103,10 +113,14 @@
         <e k="RVB_repairErrorMechanics" v="Všichni mechanici jsou zaneprázdněni, současně lze opravovat maximálně %s vozidel." tag="format"/>
         <e k="RVB_repairTimeDialog" v="Oprava vozidla bude dokončena v %s." tag="format"/>
         <e k="RVB_repairDayDialog" v="Oprava vozidla bude dokončena zítra v %s." tag="format"/>
-        <e k="RVB_ErrorList" v="Seznam závad:" />
-        <e k="RVB_periodicserviceDialog" v="Jste si jisti, že chcete vozidlo servisovat za %s?" tag="format"/>
-        <e k="RVB_periodicserviceTimeDialog" v="Servis vozidla bude dokončen v %s." tag="format"/>
-        <e k="RVB_periodicserviceDayDialog" v="Servis vozidla bude dokončen zítra v %s." tag="format"/>
+
+        <e k="RVB_ErrorList" v="Seznam závad:"/>
+        <e k="RVB_periodicserviceDialog" v="Opravdu chceš servisovat vozidlo za %s?" tag="format"/>
+        <e k="RVB_periodicserviceDayDialog" v="Servis vozidla bude dokončen zítra v %s hodin." tag="format"/>
+        <e k="RVB_periodicserviceTimeDialog" v="Servis vozidla bude dokončen dnes v %s." tag="format"/>
+        <e k="RVB_periodicserviceTomorrowDialog" v="Servis vozidla bude dokončen zítra v %s." tag="format"/>
+        <e k="RVB_periodicserviceDaysDialog" v="Servis vozidla bude dokončen za %d dní v %s." tag="format"/>
+
         <e k="RVB_batteryChDialog" v="Jste si jisti, že chcete nabít baterii vozidla za %s?" tag="format"/>
         <e k="RVB_operatingTime" v="%02d hod." tag="format"/>
         <e k="RVB_shop_operatingTimeG" v="%s:%s hod." tag="format"/>
@@ -202,6 +216,8 @@ MathiasHun" tag="format"/>
         <e k="infohud_uytTyresWear" v="Tyres wear"/>
         <!-- End of warning -->
         <e k="rvb_infohud_uytTyresWear" v="Pneumatika %s" tag="format"/>
+
+        <e k="infohud_uytBatteryChargeTime" v="Zbývající doba nabíjení"/>
 
     </elements>
 </l10n>

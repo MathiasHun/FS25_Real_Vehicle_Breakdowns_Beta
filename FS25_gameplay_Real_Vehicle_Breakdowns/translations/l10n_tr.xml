@@ -5,6 +5,7 @@
         <e k="input_RVB_MENU" v="RVB Menüsü"/>
         <e k="input_RVB_SPEC" v="RVB aç/kapat"/>
         <e k="input_RVB_CONNECTING_JC" v="Takviye kabloları bağlanıyor"/>
+        <e k="input_RVB_CLOGGED" v="Tıkanıklığı aç"/>
         <e k="action_RVB_DISCONNECTING_JC" v="Takviye kabloları çıkarılıyor"/>
         <e k="RVB_dialog_titleCONNECTING_JC" v="Takviye kabloları bağlanıyor"/>
         <e k="RVB_dialog_descCONNECTING_JC" v="%s aracının takviye ile çalıştırılmasına gerek yok. Takviye kablolarını bağlamaya devam etmek istediğinizden emin misiniz?" tag="format"/>
@@ -18,8 +19,13 @@
         <e k="RVB_blinking_connecting_order" v="Önce çalışan aracı takviye kablolarına bağlayın!"/>
         <e k="RVB_blinking_disconnecting" v="%s: Takviye kabloları çıkarıldı." tag="format"/>
         <e k="RVB_blinking_disconnecting_order" v="Önce arızalı aracı takviye kablolarından ayırın!"/>
-
+        <e k="RVB_blinking_balerClogged" v="%s balya makinesi tıkandı!" tag="format"/>
+        <e k="RVB_blinking_forageWagonClogged" v="%s yükleme vagonu tıkandı!" tag="format"/>
         <e k="RVB_MenuGameSettingsGame" v="Oyun Ayarları"/>
+        <e k="RVB_setting_timeMode" v="Zaman hesaplama modu"/>
+        <e k="RVB_toolTip_timeMode" v="Sistemin zamanı oyun süresine mi yoksa gerçek zamana göre mi hesaplayacağını belirler (örneğin parçaların ömrü)."/>
+        <e k="RVB_timeMode_game" v="Oyun süresi"/>
+        <e k="RVB_timeMode_real" v="Gerçek zaman"/>
         <e k="RVB_settingSectionHeader_Service" v="Hizmet"/>
         <e k="RVB_setting_dailyServiceInterval" v="Günlük hizmet"/>
         <e k="RVB_toolTip_dailyServiceInterval" v="Bakım günde ne sıklıkla yapılmalı? Bu özellik şu anda aktif değil."/>
@@ -84,7 +90,10 @@
         <e k="RVB_button_periodicservice" v="Periyodik bakım"/>
         <e k="RVB_button_battery_ch" v="Akü şarjı"/>
         <e k="RVB_button_service" v="Bakım"/>
-        <e k="RVB_durationDialog" v="Toplam süre: %02d saat %02d dk" tag="format"/>
+        <e k="RVB_durationDialog" v="Toplam süre: "/>
+        <e k="RVB_durationDay" v="%d gün" tag="format"/>
+        <e k="RVB_durationHour" v="%d saat" tag="format"/>
+        <e k="RVB_durationMinute" v="%d dakika" tag="format"/>
         <e k="RVB_inspectionDialog" v="Bu aracı %s maliyetle incelemek istediğine emin misin?" tag="format"/>
         <e k="RVB_inspectionTimeDialog" v="Araç muayenesi saat %s’de tamamlanacak." tag="format"/>
         <e k="RVB_inspectionDayDialog" v="Araç incelemesi yarın saat %s’de tamamlanacak." tag="format"/>
@@ -104,10 +113,14 @@
         <e k="RVB_repairErrorMechanics" v="Tüm ustalar meşgul, aynı anda en fazla %s araç tamir edilebilir." tag="format"/>
         <e k="RVB_repairTimeDialog" v="Araç tamiri saat %s’de tamamlanacak." tag="format"/>
         <e k="RVB_repairDayDialog" v="Araç tamiri yarın saat %s’de tamamlanacak." tag="format"/>
-        <e k="RVB_ErrorList" v="Hata listesi:" />
+
+        <e k="RVB_ErrorList" v="Hata listesi:"/>
         <e k="RVB_periodicserviceDialog" v="%s maliyetle aracı servise bırakmak istediğinizden emin misiniz?" tag="format"/>
-        <e k="RVB_periodicserviceTimeDialog" v="Araç servisi saat %s’de tamamlanacak." tag="format"/>
-        <e k="RVB_periodicserviceDayDialog" v="Araç servisi yarın saat %s’de tamamlanacak." tag="format"/>
+        <e k="RVB_periodicserviceDayDialog" v="Araç bakımı yarın %s saatinde tamamlanacak." tag="format"/>
+        <e k="RVB_periodicserviceTimeDialog" v="Araç bakımı bugün %s saatinde tamamlanacak." tag="format"/>
+        <e k="RVB_periodicserviceTomorrowDialog" v="Araç bakımı yarın %s saatinde tamamlanacak." tag="format"/>
+        <e k="RVB_periodicserviceDaysDialog" v="Araç bakımı %d gün sonra %s saatinde tamamlanacak." tag="format"/>
+
         <e k="RVB_batteryChDialog" v="%s maliyetle araç aküsünü şarj etmek istediğinizden emin misiniz?" tag="format"/>
         <e k="RVB_operatingTime" v="%02d saat" tag="format"/>
         <e k="RVB_shop_operatingTimeG" v="%s:%s saat" tag="format"/>
@@ -203,6 +216,8 @@ MathiasHun" tag="format"/>
         <e k="infohud_uytTyresWear" v="Tyres wear"/>
         <!-- End of warning -->
         <e k="rvb_infohud_uytTyresWear" v="Lastik %s" tag="format"/>
+
+        <e k="infohud_uytBatteryChargeTime" v="Kalan şarj süresi"/>
 
     </elements>
 </l10n>

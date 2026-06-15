@@ -4,6 +4,7 @@
         <e k="input_RVB_MENU" v="RVB Menu"/>
         <e k="input_RVB_SPEC" v="RVB on/off"/>
         <e k="input_RVB_CONNECTING_JC" v="Connecting jumper cables"/>
+        <e k="input_RVB_CLOGGED" v="Unclog"/>
         <e k="action_RVB_DISCONNECTING_JC" v="Disconnecting jumper cables"/>
         <e k="RVB_dialog_titleCONNECTING_JC" v="Connecting jumper cables"/>
         <e k="RVB_dialog_descCONNECTING_JC" v="There is no need to jump-start the %s vehicle. Are you sure you want to continue connecting the jumper cables?" tag="format"/>
@@ -17,7 +18,13 @@
         <e k="RVB_blinking_connecting_order" v="First, connect the working vehicle to the jumper cables!"/>
         <e k="RVB_blinking_disconnecting" v="%s: Jumper cables disconnected." tag="format"/>
         <e k="RVB_blinking_disconnecting_order" v="First, disconnect the dead vehicle from the jumper cables!"/>
+        <e k="RVB_blinking_balerClogged" v="%s baler is clogged!" tag="format"/>
+        <e k="RVB_blinking_forageWagonClogged" v="%s loading wagon is clogged!" tag="format"/>
         <e k="RVB_MenuGameSettingsGame" v="Game Settings"/>
+        <e k="RVB_setting_timeMode" v="Time Calculation Mode"/>
+        <e k="RVB_toolTip_timeMode" v="Determines whether the system calculates time based on game time or real time (for example, the lifetime of parts)."/>
+        <e k="RVB_timeMode_game" v="Game Time"/>
+        <e k="RVB_timeMode_real" v="Real Time"/>
         <e k="RVB_settingSectionHeader_Service" v="Service"/>
         <e k="RVB_setting_dailyServiceInterval" v="Daily Service"/>
         <e k="RVB_toolTip_dailyServiceInterval" v="How often maintenance should be performed daily. This feature is currently inactive."/>
@@ -82,7 +89,10 @@
         <e k="RVB_button_periodicservice" v="Periodic Service"/>
         <e k="RVB_button_battery_ch" v="Battery Charging"/>
         <e k="RVB_button_service" v="Service"/>
-        <e k="RVB_durationDialog" v="Total duration: %02d hour %02d min" tag="format"/>
+        <e k="RVB_durationDialog" v="Total duration: "/>
+        <e k="RVB_durationDay" v="%d days" tag="format"/>
+        <e k="RVB_durationHour" v="%d hours" tag="format"/>
+        <e k="RVB_durationMinute" v="%d minutes" tag="format"/>
         <e k="RVB_inspectionDialog" v="Are you sure you want to inspect this vehicle for %s?" tag="format"/>
         <e k="RVB_inspectionTimeDialog" v="The vehicle inspection will be completed at %s o'clock." tag="format"/>
         <e k="RVB_inspectionDayDialog" v="The vehicle inspection will be completed tomorrow at %s o'clock." tag="format"/>
@@ -102,10 +112,14 @@
         <e k="RVB_repairErrorMechanics" v="All mechanics are busy, only up to %s vehicles can be repaired at the same time." tag="format"/>
         <e k="RVB_repairTimeDialog" v="The vehicle repair will be completed at %s o'clock." tag="format"/>
         <e k="RVB_repairDayDialog" v="The vehicle repair will be completed tomorrow at %s o'clock." tag="format"/>
+
         <e k="RVB_ErrorList" v="Error list:"/>
         <e k="RVB_periodicserviceDialog" v="Are you sure you want to service the vehicle for %s?" tag="format"/>
-        <e k="RVB_periodicserviceTimeDialog" v="The vehicle service will be completed at %s o'clock." tag="format"/>
-        <e k="RVB_periodicserviceDayDialog" v="The vehicle service will be completed tomorrow at %s o'clock." tag="format"/>
+        <e k="RVB_periodicserviceDayDialog" v="Vehicle maintenance will be completed tomorrow at %s." tag="format"/>
+        <e k="RVB_periodicserviceTimeDialog" v="Vehicle maintenance will be completed today at %s." tag="format"/>
+        <e k="RVB_periodicserviceTomorrowDialog" v="Vehicle maintenance will be completed tomorrow at %s." tag="format"/>
+        <e k="RVB_periodicserviceDaysDialog" v="Vehicle maintenance will be completed in %d days at %s." tag="format"/>
+
         <e k="RVB_batteryChDialog" v="Are you sure you want to charge the vehicle's battery for %s?" tag="format"/>
         <e k="RVB_operatingTime" v="%02d hour" tag="format"/>
         <e k="RVB_shop_operatingTimeG" v="%s:%s hour" tag="format"/>
@@ -201,6 +215,8 @@ MathiasHun" tag="format"/>
         <e k="infohud_uytTyresWear" v="Tyres wear"/>
         <!-- End of warning -->
         <e k="rvb_infohud_uytTyresWear" v="Tyre %s" tag="format"/>
+
+        <e k="infohud_uytBatteryChargeTime" v="Remaining charging time"/>
 
     </elements>
 </l10n>
