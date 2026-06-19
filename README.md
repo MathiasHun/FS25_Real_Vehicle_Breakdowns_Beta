@@ -91,6 +91,27 @@ Thanks for helping improve the mod!🚜
 - RVB ExactFillRootNode warning - fixed
 
 </br></br></br> -->
+
+## Hi everyone!
+
+Unfortunately, I haven't completely finished the new version yet, and I’m going on vacation. Once I’m back home, I’ll have time to continue working on it, and the new version will be released.
+
+## Planned Changelog 0.9.6.5:
+
+Added the option to select game time / real time in the menu.
+Optimized the breakdown system functions.
+Added dependency: FS25_gameplay_RoadMaster
+Changed fuel consumption behavior when the engine is cold, overheating, or during failures. Basically, the whole system has been reworked.
+Reworked or completely rewritten the lighting failure system. I’m sure you’ll like this one.
+GitHub issue #166 – Mercedes-Benz Trucks Unimog U 2400 bug fixed.
+Thanks to mrmachiavelli for testing and feedback.
+GitHub issue #150 – Thanks to Squallqt for testing, feedback, and suggestions.
+GitHub issue #114 updated – Updated the list of vehicles/mods excluded from the Real Vehicle Breakdowns specialization.
+
+There will also be a small surprise included, which is still in beta. 😊
+
+## See you after my vacation! 🚜
+
 # <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=5">Download the latest developer version</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
 
 ## Recommended Dependencies (to avoid errors):
