@@ -98,15 +98,14 @@ Unfortunately, I haven't completely finished the new version yet, and I’m goin
 
 ## Planned Changelog 0.9.6.5:
 
-Added the option to select game time / real time in the menu.
-Optimized the breakdown system functions.
-Added dependency: FS25_gameplay_RoadMaster
-Changed fuel consumption behavior when the engine is cold, overheating, or during failures. Basically, the whole system has been reworked.
-Reworked or completely rewritten the lighting failure system. I’m sure you’ll like this one.
-GitHub issue #166 – Mercedes-Benz Trucks Unimog U 2400 bug fixed.
-Thanks to mrmachiavelli for testing and feedback.
-GitHub issue #150 – Thanks to Squallqt for testing, feedback, and suggestions.
-GitHub issue #114 updated – Updated the list of vehicles/mods excluded from the Real Vehicle Breakdowns specialization.
+- Added the option to select game time / real time in the menu.
+- Optimized the breakdown system functions.
+- Added dependency: FS25_gameplay_RoadMaster
+- Changed fuel consumption behavior when the engine is cold, overheating, or during failures. Basically, the whole system has been reworked.
+- Reworked or completely rewritten the lighting failure system. I’m sure you’ll like this one.
+- GitHub issue #166 – Mercedes-Benz Trucks Unimog U 2400 bug fixed. Thanks to mrmachiavelli for testing and feedback.
+- GitHub issue #150 – Thanks to Squallqt for testing, feedback, and suggestions.
+- GitHub issue #114 updated – Updated the list of vehicles/mods excluded from the Real Vehicle Breakdowns specialization.
 
 There will also be a small surprise included, which is still in beta. 😊
 
