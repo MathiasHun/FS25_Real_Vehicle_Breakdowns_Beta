@@ -851,6 +851,9 @@ RVB_EXCLUDED_TYPES = {
 	["pdlc_highlandsFishingPack.carFillableExtended"] = true,
 	["pdlc_highlandsFishingPack.cargoBoat"] = true,
 	["pdlc_highlandsFishingPack.selfPropelledLevelerExtended"] = true,
+	-- pdlc_emergencyPack
+	["pdlc_emergencyPack.hoseReel"] = true,
+	["pdlc_emergencyPack.trafficCart"] = true,
 }
 
 RVB_EXCLUDED_MODS = {
@@ -894,6 +897,7 @@ RVB_EXCLUDED_MODS = {
 	["FS25_Husqvarna_TS146XK"] = true,
 	["FS25_JCB_Powerpack"] = true,
 	["FS25_jenzBA725D"] = true,
+	["FS25_JLGTrackedLift"] = true,
 	["FS25_JohnDeere56"] = true,
 	["FS25_JohnDeere110_112_RoundFender"] = true,
 	["FS25_JohnDeere445"] = true,
@@ -956,4 +960,5 @@ RVB_EXCLUDED_MODS = {
 	["Hashy_Lowe_FM_1775_Boat"] = true,
 	["Hashy_Polaris_Slingshot"] = true,
 	["TSN25_2doordefender"] = true,
+	["FS25_Cmelak"] = true
 }
