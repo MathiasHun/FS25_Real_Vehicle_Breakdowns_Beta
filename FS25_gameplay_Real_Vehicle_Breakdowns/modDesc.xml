@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
-<modDesc descVersion="106">
+<modDesc descVersion="111">
     <author>MathiasHun</author>
-    <version>0.9.6.4</version>
+    <version>0.9.6.5</version>
     <title>
         <en>Real Vehicle Breakdowns</en>
     </title>
@@ -54,6 +54,11 @@ Mod Conflict
 If you are using the Real Vehicle Breakdowns (RVB) mod, do not use the:
 
 - FS25_DisableTurnOffMotor - it will prevent the engine temperature from rising
+
+Changelog 0.9.6.5:
+- Now compatible with the Emergency Pack DLC
+- github issues#114 Updated – List of vehicles / mods excluded from Real Vehicle Breakdowns specialization
+- DescVersion increased
 
 Changelog 0.9.6.4:
 - When a vehicle was dirty, the “dirty time” did not reset after washing it.
