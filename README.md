@@ -72,26 +72,19 @@ If the issue persists after this, please report it.
 
 Thanks for helping improve the mod!🚜
 </br></br>
-<!-- 
+<!--  -->
 # Please don’t share this version on other sites, it’s a VERY early BETA.</br>
-## <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=7">Download the latest developer TEST version 0.9.6.3</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
+## <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=7">Download the latest developer TEST version 0.9.6.5</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
 
-## Changelog 0.9.6.3:
-- github issues#145 – Thanks to Squallqt for testing, feedback, and suggestions.
-- RVBresetVehicle bug - fixed
-- MP Bug - fixed
-- Code optimization
-- Improved debugger system: errors/warnings are always shown, info messages remain menu-toggleable. Function names are now included in log output for easier traceability.
-- Moved battery-related functions into a dedicated BatteryManager module.
+## Changelog 0.9.6.5:
+- Now compatible with the Emergency Pack DLC
+- github issues#114 Updated – List of vehicles / mods excluded from Real Vehicle Breakdowns specialization
+- DescVersion increased
 
-## Changelog 0.9.6.2:
-- Conflict with FS25_EnhancedVehicle mod, TEMP and RPM displays are disabled.
-- MP Bug - fixed
-- Code optimization (plus 2-5 FPS)
-- RVB ExactFillRootNode warning - fixed
-
-</br></br></br> -->
-
+This is only a small update, released so you can see that I'm still actively working on the mod.</br>
+A much larger update is currently in development. However, I ended up reworking several parts of the mod, so the next major release is taking a little longer than originally planned.
+</br></br></br>
+<!-- 
 ## Hi everyone!
 
 Unfortunately, I haven't completely finished the new version yet, and I’m going on vacation. Once I’m back home, I’ll have time to continue working on it, and the new version will be released.
@@ -110,7 +103,7 @@ Unfortunately, I haven't completely finished the new version yet, and I’m goin
 There will also be a small surprise included, which is still in beta. 😊
 
 ## See you after my vacation! 🚜
-
+ -->
 # <p dir="auto"><strong><a href="https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?cat_id=4&dlc_id=5">Download the latest developer version</a></strong> (the file FS25_gameplay_Real_Vehicle_Breakdowns.zip).</p>
 
 ## Recommended Dependencies (to avoid errors):
