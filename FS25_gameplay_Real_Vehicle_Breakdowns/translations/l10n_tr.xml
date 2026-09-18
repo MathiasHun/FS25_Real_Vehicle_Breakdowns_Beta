@@ -6,6 +6,8 @@
         <e k="input_RVB_SPEC" v="RVB aç/kapat"/>
         <e k="input_RVB_CONNECTING_JC" v="Takviye kabloları bağlanıyor"/>
         <e k="input_RVB_CLOGGED" v="Tıkanıklığı aç"/>
+        <e k="input_RVB_PARTS" v="Aküyü çıkar"/>
+        <e k="action_RVB_PARTS_empty" v="Akü çıkarıldı"/>
         <e k="action_RVB_DISCONNECTING_JC" v="Takviye kabloları çıkarılıyor"/>
         <e k="RVB_dialog_titleCONNECTING_JC" v="Takviye kabloları bağlanıyor"/>
         <e k="RVB_dialog_descCONNECTING_JC" v="%s aracının takviye ile çalıştırılmasına gerek yok. Takviye kablolarını bağlamaya devam etmek istediğinizden emin misiniz?" tag="format"/>
@@ -68,7 +70,7 @@
         <e k="RVB_settingSectionHeader_HUD" v="HUD Ayarları"/>
         <e k="RVB_setting_showTemp" v="Motor Sıcaklığı"/>
         <e k="RVB_toolTip_showTemp" v="Burada motor sıcaklığı görüntüsünü açıp kapatabilirsiniz."/>
-        <e k="RVB_setting_showRpm" v="RPM"/>
+        <e k="RVB_setting_showRpm" v="Dev/Dk"/>
         <e k="RVB_toolTip_showRpm" v="Burada Rpm görüntüsünü açıp kapatabilirsiniz."/>
         <e k="RVB_setting_showFuel" v="Yakıt"/>
         <e k="RVB_toolTip_showFuel" v="Burada yakıt görüntüsünü açıp kapatabilirsiniz."/>
@@ -94,25 +96,67 @@
         <e k="RVB_durationDay" v="%d gün" tag="format"/>
         <e k="RVB_durationHour" v="%d saat" tag="format"/>
         <e k="RVB_durationMinute" v="%d dakika" tag="format"/>
+        <e k="RVB_serviceSelectTitle" v="Servis Seç"/>
+        <e k="RVB_serviceSelectDescription" v="İstediğiniz servis türünü seçin:"/>
+        <e k="RVB_inspectionSelectTitle" v="Muayene Seç"/>
+        <e k="RVB_inspectionSelectDescription" v="İstediğiniz muayene türünü seçin:"/>
+        <e k="RVB_inspectionEngine" v="Motor"/>
+        <e k="RVB_inspectionElectrical" v="Elektrik sistemi"/>
+        <e k="RVB_inspectionLighting" v="Aydınlatma"/>
+        <e k="RVB_inspectionMechanical" v="Süspansiyon ve mekanik"/>
+        <e k="RVB_inspectionTires" v="Lastikler ve tekerlekler"/>
+        <e k="RVB_inspectionFull" v="Tam muayene"/>
         <e k="RVB_inspectionDialog" v="Bu aracı %s maliyetle incelemek istediğine emin misin?" tag="format"/>
         <e k="RVB_inspectionTimeDialog" v="Araç muayenesi saat %s’de tamamlanacak." tag="format"/>
         <e k="RVB_inspectionDayDialog" v="Araç incelemesi yarın saat %s’de tamamlanacak." tag="format"/>
+        <e k="RVB_inspectionDaysDialog" v="Araç muayenesi %d gün içinde, %s tarihinde tamamlanacak." tag="format"/>
         <e k="RVB_faultText_THERMOSTAT" v="Termostat"/>
         <e k="RVB_faultText_LIGHTINGS" v="Aydınlatma"/>
         <e k="RVB_faultText_GLOWPLUG" v="Buji"/>
         <e k="RVB_faultText_WIPERS" v="Silecekler"/>
         <e k="RVB_faultText_GENERATOR" v="Şarj Dinamosu"/>
         <e k="RVB_faultText_ENGINE" v="Motor"/>
-        <e k="RVB_faultText_SELFSTARTER" v="Marş Dinamosu"/>
+        <e k="RVB_faultText_SELFSTARTER" v="Marş Dinamosu"/> 
         <e k="RVB_faultText_BATTERY" v="Akü"/>
         <e k="RVB_faultText_TIRE" v="Lastik"/>
         <e k="RVB_faultText_TIREFL" v="Ön sol lastik"/>
         <e k="RVB_faultText_TIREFR" v="Ön sağ lastik"/>
         <e k="RVB_faultText_TIRERL" v="Arka sol lastik"/>
         <e k="RVB_faultText_TIRERR" v="Arka sağ lastik"/>
+        <e k="RVB_faultText_TIRERL2" v="Arka 2 sol lastik"/>
+        <e k="RVB_faultText_TIRERR2" v="Arka 2 sağ lastik"/>
+        <e k="RVB_faultText_TIRERL3" v="Arka 3 sol lastik"/>
+        <e k="RVB_faultText_TIRERR3" v="Arka 3 sağ lastik"/>
+
+        <e k="RVB_faultType_engine" v="Motor"/>
+        <e k="RVB_faultType_electrical" v="Elektrik sistemi"/>
+        <e k="RVB_faultType_lights" v="Aydınlatma"/>
+        <e k="RVB_faultType_mechanical" v="Mekanik sistem"/>
+        <e k="RVB_faultType_tires" v="Lastikler"/>
+
+        <e k="RVB_fillType_battery" v="Akü"/>
+        <e k="RVB_fillType_motoroil" v="Motor yağı"/>
+        <e k="RVB_fillType_coolant" v="Soğutma sıvısı"/>
+
+        <e k="RVB_lightFaultsText_LOWBEAM" v="Kısa far"/>
+        <e k="RVB_lightFaultsText_HIGHBEAM" v="Uzun far"/>
+        <e k="RVB_lightFaultsText_WORKFRONT" v="Ön çalışma lambası"/>
+        <e k="RVB_lightFaultsText_WORKBACK" v="Arka çalışma lambası"/>
+        <e k="RVB_lightFaultsText_TURNLEFT" v="Sol dönüş sinyali"/>
+        <e k="RVB_lightFaultsText_TURNRIGHT" v="Sağ dönüş sinyali"/>
+        <e k="RVB_lightFaultsText_TURNHAZARD" v="Dörtlü flaşörler"/>
+        <e k="RVB_lightFaultsText_BRAKE" v="Fren lambası"/>
+        <e k="RVB_lightFaultsText_REVERSEL" v="Geri vites lambası"/>
+        <e k="RVB_lightFaultsText_BEACON" v="Tepe lambası"/>
+        <e k="RVB_lightFaultsText_PIPE" v="Boşaltma borusu çalışma lambası"/>
         <e k="RVB_repairErrorMechanics" v="Tüm ustalar meşgul, aynı anda en fazla %s araç tamir edilebilir." tag="format"/>
         <e k="RVB_repairTimeDialog" v="Araç tamiri saat %s’de tamamlanacak." tag="format"/>
+        <e k="RVB_repairDialog" v="Bu aracı %s karşılığında onarmak istediğinizden emin misiniz?" tag="format"/>
         <e k="RVB_repairDayDialog" v="Araç tamiri yarın saat %s’de tamamlanacak." tag="format"/>
+        <e k="RVB_repairDaysDialog" v="Araç onarımı %s konumunda %d gün içinde tamamlanacak." tag="format"/>
+
+
+
 
         <e k="RVB_ErrorList" v="Hata listesi:"/>
         <e k="RVB_periodicserviceDialog" v="%s maliyetle aracı servise bırakmak istediğinizden emin misiniz?" tag="format"/>
@@ -143,11 +187,11 @@
         <e k="RVB_Workshop_odometer" v="Kilometre Sayacı"/>
         <e k="RVB_Workshop_cost" v="Maliyet"/>
         <e k="RVB_WorkshopD_new" v="Yeni"/>
-        <e k="RVB_WorkshopD_conExcellent" v="Mükemmel durumda"/>
-        <e k="RVB_WorkshopD_conGood" v="İyi durumda"/>
-        <e k="RVB_WorkshopD_conUsed" v="Kullanılmış ama çalışır durumda"/>
-        <e k="RVB_WorkshopD_conFaults" v="Arızaya yatkın"/>
-        <e k="RVB_WorkshopD_conDown" v="Arızalı"/>
+        <e k="RVB_WorkshopD_conOK" v="İyi durumda"/>
+        <e k="RVB_WorkshopD_conMinor" v="Küçük sorunlar"/>
+        <e k="RVB_WorkshopD_conMedium" v="Orta düzeyde sorunlar"/>
+        <e k="RVB_WorkshopD_conMajor" v="Büyük sorunlar"/>
+        <e k="RVB_WorkshopD_conDead" v="Arızalı / Değiştirilmesi gerekiyor"/>
         <e k="RVB_WorkshopD_conReplace" v="Değiştirilmesi gerekiyor"/>
         <e k="RVB_WorkshopS_repNeed" v="Tamir gerekiyor. "/>
         <e k="RVB_WorkshopS_repNoNeed" v="Tamir gerekmiyor."/>
@@ -210,7 +254,7 @@ En iyi dileklerimle,
 
 MathiasHun" tag="format"/>
 
-        <e k="RVB_aimessage_batterydischarged" v="%s AI çalışanı beklenmedik bir şekilde çalışmayı durdurdu, aracın aküsü boşaldı!"/>
+        <e k="RVB_aimessage_batterydischarged" v="%s AI çalışanı beklenmedik bir şekilde çalışmayı durdurdu, aracın aküsü boşaldı!" tag="format"/>
 
         <!-- DO NOT CHANGE THIS, ONLY IF THE FS25_USEYOURTYRES MOD ALREADY HAS AN OFFICIAL TURKEY TRANSLATION -->
         <e k="infohud_uytTyresWear" v="Tyres wear"/>
@@ -218,6 +262,37 @@ MathiasHun" tag="format"/>
         <e k="rvb_infohud_uytTyresWear" v="Lastik %s" tag="format"/>
 
         <e k="infohud_uytBatteryChargeTime" v="Kalan şarj süresi"/>
+
+        <e k="typeDesc_battery" v="Akü"/>
+
+        <e k="name_batterySmall" v="Küçük akü"/>
+        <e k="name_batteryMedium" v="Orta boy akü"/>
+        <e k="name_batteryBig" v="Büyük akü"/>
+
+        <e k="function_batteryBig75" v="Küçük kapasiteli, 75 Ah akü"/>
+        <e k="function_batteryBig80" v="Küçük kapasiteli, 80 Ah akü"/>
+        <e k="function_batteryBig90" v="Küçük kapasiteli, 90 Ah akü"/>
+        <e k="function_batteryBig100" v="Orta kapasiteli, 100 Ah akü"/>
+        <e k="function_batteryBig120" v="Orta kapasiteli, 120 Ah akü"/>
+        <e k="function_batteryBig140" v="Yüksek kapasiteli, 140 Ah akü"/>
+        <e k="function_batteryBig150" v="Yüksek kapasiteli, 150 Ah akü"/>
+        <e k="function_batteryBig180" v="Yüksek kapasiteli, 180 Ah akü"/>
+        <e k="function_batteryBig200" v="Yüksek kapasiteli, 200 Ah akü"/>
+
+        <e k="unit_ampereHourShort" v="Ah"/>
+        <e k="RVB_action_batteryWorkshop" v="Aküyü tak"/>
+
+        <e k="RVB_allBatteriesInstalled" v="Tüm aküler zaten araca takılı."/>
+        <e k="RVB_wrongBattery" v="Yanlış akü.
+
+Araca takılı akü: %.0f Ah
+Seçilen akü: %.0f Ah" tag="format"/>
+        <e k="RVB_tooManyVehicles" v="Lütfen diğer araçları uzaklaştırın! Tetikleme alanında şu anda %d araç var, ancak aynı anda akünün yanında yalnızca bir araç bulunabilir." tag="format"/>
+        <e k="RVB_tooManyVehicles_hud" v="Tetikleme alanında çok fazla araç var!"/>
+        <e k="RVB_batteryInstallation" v="Akü takılıyor: %d%%" tag="format"/>
+        <e k="RVB_batteryRemoval" v="Akü çıkarılıyor: %d%%" tag="format"/>
+        <e k="RVB_vehicleEnteredTrigger" v="%s akünün yakınında." tag="format"/>
+        <e k="RVB_vehicleLeftTrigger" v="%s artık akünün yakınında değil." tag="format"/>
 
     </elements>
 </l10n>

@@ -6,6 +6,8 @@
         <e k="input_RVB_SPEC" v="RVB włącz/wyłącz"/>
         <e k="input_RVB_CONNECTING_JC" v="Podłączanie kabli rozruchowych"/>
         <e k="input_RVB_CLOGGED" v="Odetkaj"/>
+        <e k="input_RVB_PARTS" v="Wyjmij akumulator"/>
+        <e k="action_RVB_PARTS_empty" v="Akumulator wyjęty"/>
         <e k="action_RVB_DISCONNECTING_JC" v="Odłączanie kabli rozruchowych"/>
         <e k="RVB_dialog_titleCONNECTING_JC" v="Podłączanie kabli rozruchowych"/>
         <e k="RVB_dialog_descCONNECTING_JC" v="Nie ma potrzeby uruchamiania pojazdu %s kablami rozruchowymi. Czy na pewno chcesz kontynuować podłączanie kabli?" tag="format"/>
@@ -46,7 +48,7 @@
         <e k="RVB_setting_lightingsLifetime" v="Oświetlenie"/>
         <e k="RVB_setting_glowplugLifetime" v="Świeca żarowa"/>
         <e k="RVB_setting_wipersLifetime" v="Wycieraczki przedniej szyby"/>
-        <e k="RVB_setting_generatorLifetime" v="Generator"/>
+        <e k="RVB_setting_generatorLifetime" v="Alternator"/>
         <e k="RVB_setting_engineLifetime" v="Silnik"/>
         <e k="RVB_setting_selfstarterLifetime" v="Rozrusznik"/>
         <e k="RVB_setting_batteryLifetime" v="Akumulator"/>
@@ -68,7 +70,7 @@
         <e k="RVB_settingSectionHeader_HUD" v="Ustawienia HUD"/>
         <e k="RVB_setting_showTemp" v="Temperatura silnika"/>
         <e k="RVB_toolTip_showTemp" v="Tutaj możesz włączyć lub wyłączyć wyświetlanie temperatury silnika."/>
-        <e k="RVB_setting_showRpm" v="RPM"/>
+        <e k="RVB_setting_showRpm" v="Obroty/min"/>
         <e k="RVB_toolTip_showRpm" v="Tutaj możesz włączyć lub wyłączyć wyświetlanie obrotów RPM."/>
         <e k="RVB_setting_showFuel" v="Paliwo"/>
         <e k="RVB_toolTip_showFuel" v="Tutaj możesz włączyć lub wyłączyć wyświetlanie paliwa."/>
@@ -94,14 +96,25 @@
         <e k="RVB_durationDay" v="%d dni" tag="format"/>
         <e k="RVB_durationHour" v="%d godzin" tag="format"/>
         <e k="RVB_durationMinute" v="%d minut" tag="format"/>
+        <e k="RVB_serviceSelectTitle" v="Wybierz serwis"/>
+        <e k="RVB_serviceSelectDescription" v="Wybierz rodzaj serwisu:"/>
+        <e k="RVB_inspectionSelectTitle" v="Wybierz przegląd"/>
+        <e k="RVB_inspectionSelectDescription" v="Wybierz rodzaj przeglądu:"/>
+        <e k="RVB_inspectionEngine" v="Silnik"/>
+        <e k="RVB_inspectionElectrical" v="Układ elektryczny"/>
+        <e k="RVB_inspectionLighting" v="Oświetlenie"/>
+        <e k="RVB_inspectionMechanical" v="Zawieszenie i mechanika"/>
+        <e k="RVB_inspectionTires" v="Opony i koła"/>
+        <e k="RVB_inspectionFull" v="Pełny przegląd"/>
         <e k="RVB_inspectionDialog" v="Czy na pewno możesz przeprowadzić inspekcję tego pojazdu za koszt %s?" tag="format"/>
         <e k="RVB_inspectionTimeDialog" v="Inspekcja pojazdu zostanie zakończona o %s godzinie." tag="format"/>
         <e k="RVB_inspectionDayDialog" v="Inspekcja pojazdu zostanie zakończona jutro o %s godzinie." tag="format"/>
+        <e k="RVB_inspectionDaysDialog" v="Przegląd pojazdu zostanie ukończony za %d dni w %s." tag="format"/>
         <e k="RVB_faultText_THERMOSTAT" v="Termostat"/>
         <e k="RVB_faultText_LIGHTINGS" v="Oświetlenie"/>
         <e k="RVB_faultText_GLOWPLUG" v="Świeca żarowa"/>
         <e k="RVB_faultText_WIPERS" v="Wycieraczki przedniej szyby"/>
-        <e k="RVB_faultText_GENERATOR" v="Generator"/>
+        <e k="RVB_faultText_GENERATOR" v="Alternator"/>
         <e k="RVB_faultText_ENGINE" v="Silnik"/>
         <e k="RVB_faultText_SELFSTARTER" v="Rozrusznik"/> 
         <e k="RVB_faultText_BATTERY" v="Akumulator"/>
@@ -110,9 +123,40 @@
         <e k="RVB_faultText_TIREFR" v="Przednia prawa opona"/>
         <e k="RVB_faultText_TIRERL" v="Tylna lewa opona"/>
         <e k="RVB_faultText_TIRERR" v="Tylna prawa opona"/>
+        <e k="RVB_faultText_TIRERL2" v="Tylna 2 lewa opona"/>
+        <e k="RVB_faultText_TIRERR2" v="Tylna 2 prawa opona"/>
+        <e k="RVB_faultText_TIRERL3" v="Tylna 3 lewa opona"/>
+        <e k="RVB_faultText_TIRERR3" v="Tylna 3 prawa opona"/>
+
+        <e k="RVB_faultType_engine" v="Silnik"/>
+        <e k="RVB_faultType_electrical" v="Układ elektryczny"/>
+        <e k="RVB_faultType_lights" v="Oświetlenie"/>
+        <e k="RVB_faultType_mechanical" v="Układ mechaniczny"/>
+        <e k="RVB_faultType_tires" v="Opony"/>
+
+        <e k="RVB_fillType_battery" v="Akumulator"/>
+        <e k="RVB_fillType_motoroil" v="Olej silnikowy"/>
+        <e k="RVB_fillType_coolant" v="Płyn chłodniczy"/>
+
+        <e k="RVB_lightFaultsText_LOWBEAM" v="Światła mijania"/>
+        <e k="RVB_lightFaultsText_HIGHBEAM" v="Światła drogowe"/>
+        <e k="RVB_lightFaultsText_WORKFRONT" v="Przednie światło robocze"/>
+        <e k="RVB_lightFaultsText_WORKBACK" v="Tylne światło robocze"/>
+        <e k="RVB_lightFaultsText_TURNLEFT" v="Lewy kierunkowskaz"/>
+        <e k="RVB_lightFaultsText_TURNRIGHT" v="Prawy kierunkowskaz"/>
+        <e k="RVB_lightFaultsText_TURNHAZARD" v="Światła awaryjne"/>
+        <e k="RVB_lightFaultsText_BRAKE" v="Światło hamowania"/>
+        <e k="RVB_lightFaultsText_REVERSEL" v="Światło cofania"/>
+        <e k="RVB_lightFaultsText_BEACON" v="Światło ostrzegawcze"/>
+        <e k="RVB_lightFaultsText_PIPE" v="Światło robocze rury wysypowej"/>
         <e k="RVB_repairErrorMechanics" v="Wszyscy mechanicy są zajęci, jednocześnie można naprawiać maksymalnie %s pojazdów." tag="format"/>
         <e k="RVB_repairTimeDialog" v="Naprawa pojazdu zostanie zakończona o %s godzinie." tag="format"/>
+        <e k="RVB_repairDialog" v="Czy na pewno chcesz naprawić ten pojazd za %s?" tag="format"/>
         <e k="RVB_repairDayDialog" v="Naprawa pojazdu zostanie zakończona jutro o %s godzinie." tag="format"/>
+        <e k="RVB_repairDaysDialog" v="Naprawa pojazdu zostanie ukończona za %d dni o %s." tag="format"/>
+
+
+
 
         <e k="RVB_ErrorList" v="Lista błędów:"/>
         <e k="RVB_periodicserviceDialog" v="Czy na pewno chcesz przeprowadzić serwis pojazdu za koszt %s?" tag="format"/>
@@ -135,7 +179,7 @@
         <e k="RVB_Workshop_serviceManual" v="Dziennik serwisowy"/>
         <e k="RVB_Workshop_noinspection" v="Pojazd nie został poddany inspekcji!"/>
         <e k="RVB_Workshop_noserviceManualEntry" v="Brak wpisów w dzienniku serwisowym!"/>
-        <e k="RVB_Workshop_status" v="Status:"/>
+        <e k="RVB_Workshop_status" v="Stan:"/>
         <e k="RVB_Workshop_repair" v="Naprawa?"/>
         <e k="RVB_Workshop_work" v="Praca"/>
         <e k="RVB_Workshop_date" v="Data"/>
@@ -143,11 +187,11 @@
         <e k="RVB_Workshop_odometer" v="Przebieg"/>
         <e k="RVB_Workshop_cost" v="Koszt"/>
         <e k="RVB_WorkshopD_new" v="Nowy"/>
-        <e k="RVB_WorkshopD_conExcellent" v="Stan doskonały"/>
-        <e k="RVB_WorkshopD_conGood" v="Stan dobry"/>
-        <e k="RVB_WorkshopD_conUsed" v="Używany, ale sprawny"/>
-        <e k="RVB_WorkshopD_conFaults" v="Podatny na awarie"/>
-        <e k="RVB_WorkshopD_conDown" v="Zepsuty"/>
+        <e k="RVB_WorkshopD_conOK" v="Dobry stan"/>
+        <e k="RVB_WorkshopD_conMinor" v="Drobne problemy"/>
+        <e k="RVB_WorkshopD_conMedium" v="Umiarkowane problemy"/>
+        <e k="RVB_WorkshopD_conMajor" v="Poważne problemy"/>
+        <e k="RVB_WorkshopD_conDead" v="Uszkodzony / Wymaga wymiany"/>
         <e k="RVB_WorkshopD_conReplace" v="Do wymiany"/>
         <e k="RVB_WorkshopS_repNeed" v="Wymagana naprawa."/>
         <e k="RVB_WorkshopS_repNoNeed" v="Naprawa nie jest wymagana."/>
@@ -210,7 +254,7 @@ Wszystkiego najlepszego,
 
 MathiasHun" tag="format"/>
 
-        <e k="RVB_aimessage_batterydischarged" v="%s Pracownik AI nieoczekiwanie przestał działać, akumulator pojazdu jest rozładowany!"/>
+        <e k="RVB_aimessage_batterydischarged" v="%s Pracownik AI nieoczekiwanie przestał działać, akumulator pojazdu jest rozładowany!" tag="format"/>
 
         <!-- DO NOT CHANGE THIS, ONLY IF THE FS25_USEYOURTYRES MOD ALREADY HAS AN OFFICIAL POLAND TRANSLATION -->
         <e k="infohud_uytTyresWear" v="Zużycie opon"/>
@@ -218,6 +262,37 @@ MathiasHun" tag="format"/>
         <e k="rvb_infohud_uytTyresWear" v="Opona %s" tag="format"/>
 
         <e k="infohud_uytBatteryChargeTime" v="Pozostały czas ładowania"/>
+
+        <e k="typeDesc_battery" v="Akumulator"/>
+
+        <e k="name_batterySmall" v="Mały akumulator"/>
+        <e k="name_batteryMedium" v="Średni akumulator"/>
+        <e k="name_batteryBig" v="Duży akumulator"/>
+
+        <e k="function_batteryBig75" v="Akumulator o małej pojemności, 75 Ah"/>
+        <e k="function_batteryBig80" v="Akumulator o małej pojemności, 80 Ah"/>
+        <e k="function_batteryBig90" v="Akumulator o małej pojemności, 90 Ah"/>
+        <e k="function_batteryBig100" v="Akumulator o średniej pojemności, 100 Ah"/>
+        <e k="function_batteryBig120" v="Akumulator o średniej pojemności, 120 Ah"/>
+        <e k="function_batteryBig140" v="Akumulator o dużej pojemności, 140 Ah"/>
+        <e k="function_batteryBig150" v="Akumulator o dużej pojemności, 150 Ah"/>
+        <e k="function_batteryBig180" v="Akumulator o dużej pojemności, 180 Ah"/>
+        <e k="function_batteryBig200" v="Akumulator o dużej pojemności, 200 Ah"/>
+
+        <e k="unit_ampereHourShort" v="Ah"/>
+        <e k="RVB_action_batteryWorkshop" v="Włóż akumulator"/>
+
+        <e k="RVB_allBatteriesInstalled" v="Wszystkie akumulatory są już zamontowane w pojeździe."/>
+        <e k="RVB_wrongBattery" v="Nieprawidłowy akumulator.
+
+Akumulator zamontowany w pojeździe: %.0f Ah
+Wybrany akumulator: %.0f Ah" tag="format"/>
+        <e k="RVB_tooManyVehicles" v="Usuń pozostałe pojazdy! Obecnie w obszarze wyzwalania znajdują się %d pojazdy, ale w pobliżu akumulatora może znajdować się tylko jeden pojazd naraz." tag="format"/>
+        <e k="RVB_tooManyVehicles_hud" v="Za dużo pojazdów w obszarze wyzwalania!"/>
+        <e k="RVB_batteryInstallation" v="Montaż akumulatora: %d%%" tag="format"/>
+        <e k="RVB_batteryRemoval" v="Demontaż akumulatora: %d%%" tag="format"/>
+        <e k="RVB_vehicleEnteredTrigger" v="%s znajduje się w pobliżu akumulatora." tag="format"/>
+        <e k="RVB_vehicleLeftTrigger" v="%s nie znajduje się już w pobliżu akumulatora." tag="format"/>
 
     </elements>
 </l10n>

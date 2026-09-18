@@ -2,10 +2,12 @@
 <l10n>
     <translationContributors>etrigo1</translationContributors>
     <elements>
-        <e k="input_RVB_MENU" v="Menu RVB"/>
+        <e k="input_RVB_MENU" v="Menu do RVB"/>
         <e k="input_RVB_SPEC" v="RVB ligar/desligar"/>
         <e k="input_RVB_CONNECTING_JC" v="A ligar os cabos de arranque"/>
         <e k="input_RVB_CLOGGED" v="Desentupir"/>
+        <e k="input_RVB_PARTS" v="Remover bateria"/>
+        <e k="action_RVB_PARTS_empty" v="Bateria removida"/>
         <e k="action_RVB_DISCONNECTING_JC" v="A desligar os cabos de arranque"/>
         <e k="RVB_dialog_titleCONNECTING_JC" v="A ligar os cabos de arranque"/>
         <e k="RVB_dialog_descCONNECTING_JC" v="Não é necessário arrancar o veículo %s com cabos. Tem a certeza de que quer continuar a ligar os cabos?" tag="format"/>
@@ -94,25 +96,67 @@
         <e k="RVB_durationDay" v="%d dias" tag="format"/>
         <e k="RVB_durationHour" v="%d horas" tag="format"/>
         <e k="RVB_durationMinute" v="%d minutos" tag="format"/>
+        <e k="RVB_serviceSelectTitle" v="Selecionar serviço"/>
+        <e k="RVB_serviceSelectDescription" v="Selecione o tipo de serviço desejado:"/>
+        <e k="RVB_inspectionSelectTitle" v="Selecionar inspeção"/>
+        <e k="RVB_inspectionSelectDescription" v="Selecione o tipo de inspeção desejado:"/>
+        <e k="RVB_inspectionEngine" v="Motor"/>
+        <e k="RVB_inspectionElectrical" v="Sistema elétrico"/>
+        <e k="RVB_inspectionLighting" v="Iluminação"/>
+        <e k="RVB_inspectionMechanical" v="Suspensão e mecânica"/>
+        <e k="RVB_inspectionTires" v="Pneus e rodas"/>
+        <e k="RVB_inspectionFull" v="Inspeção completa"/>
         <e k="RVB_inspectionDialog" v="Tens a certeza que queres inspecionar este veículo por %s?" tag="format"/>
         <e k="RVB_inspectionTimeDialog" v="A inspeção do veículo será concluída às %s." tag="format"/>
         <e k="RVB_inspectionDayDialog" v="A inspeção do veículo será concluída amanhã às %s." tag="format"/>
+        <e k="RVB_inspectionDaysDialog" v="A inspeção do veículo será concluída em %d dias às %s." tag="format"/>
         <e k="RVB_faultText_THERMOSTAT" v="Termóstato"/>
         <e k="RVB_faultText_LIGHTINGS" v="Iluminação"/>
         <e k="RVB_faultText_GLOWPLUG" v="Velas de Incandescência"/>
         <e k="RVB_faultText_WIPERS" v="Limpadores de Vidro"/>
         <e k="RVB_faultText_GENERATOR" v="Gerador"/>
         <e k="RVB_faultText_ENGINE" v="Motor"/>
-        <e k="RVB_faultText_SELFSTARTER" v="Arranque"/>
+        <e k="RVB_faultText_SELFSTARTER" v="Arranque"/> 
         <e k="RVB_faultText_BATTERY" v="Bateria"/>
         <e k="RVB_faultText_TIRE" v="Pneu"/>
         <e k="RVB_faultText_TIREFL" v="Pneu dianteiro esquerdo"/>
         <e k="RVB_faultText_TIREFR" v="Pneu dianteiro direito"/>
         <e k="RVB_faultText_TIRERL" v="Pneu traseiro esquerdo"/>
         <e k="RVB_faultText_TIRERR" v="Pneu traseiro direito"/>
+        <e k="RVB_faultText_TIRERL2" v="Pneu traseiro 2 esquerdo"/>
+        <e k="RVB_faultText_TIRERR2" v="Pneu traseiro 2 direito"/>
+        <e k="RVB_faultText_TIRERL3" v="Pneu traseiro 3 esquerdo"/>
+        <e k="RVB_faultText_TIRERR3" v="Pneu traseiro 3 direito"/>
+
+        <e k="RVB_faultType_engine" v="Motor"/>
+        <e k="RVB_faultType_electrical" v="Sistema elétrico"/>
+        <e k="RVB_faultType_lights" v="Iluminação"/>
+        <e k="RVB_faultType_mechanical" v="Sistema mecânico"/>
+        <e k="RVB_faultType_tires" v="Pneus"/>
+
+        <e k="RVB_fillType_battery" v="Bateria"/>
+        <e k="RVB_fillType_motoroil" v="Óleo do motor"/>
+        <e k="RVB_fillType_coolant" v="Líquido de arrefecimento"/>
+
+        <e k="RVB_lightFaultsText_LOWBEAM" v="Luz baixa"/>
+        <e k="RVB_lightFaultsText_HIGHBEAM" v="Luz alta"/>
+        <e k="RVB_lightFaultsText_WORKFRONT" v="Luz de trabalho dianteira"/>
+        <e k="RVB_lightFaultsText_WORKBACK" v="Luz de trabalho traseira"/>
+        <e k="RVB_lightFaultsText_TURNLEFT" v="Pisca esquerdo"/>
+        <e k="RVB_lightFaultsText_TURNRIGHT" v="Pisca direito"/>
+        <e k="RVB_lightFaultsText_TURNHAZARD" v="Luzes de emergência"/>
+        <e k="RVB_lightFaultsText_BRAKE" v="Luz de travão"/>
+        <e k="RVB_lightFaultsText_REVERSEL" v="Luz de marcha-atrás"/>
+        <e k="RVB_lightFaultsText_BEACON" v="Luz rotativa"/>
+        <e k="RVB_lightFaultsText_PIPE" v="Luz de trabalho do tubo de descarga"/>
         <e k="RVB_repairErrorMechanics" v="Todos os mecânicos estão ocupados, apenas até %s veículos podem ser reparados ao mesmo tempo." tag="format"/>
         <e k="RVB_repairTimeDialog" v="O reparo do veículo será concluído às %s." tag="format"/>
+        <e k="RVB_repairDialog" v="Tem a certeza de que pretende reparar este veículo por %s?" tag="format"/>
         <e k="RVB_repairDayDialog" v="O reparo do veículo será concluído amanhã às %s." tag="format"/>
+        <e k="RVB_repairDaysDialog" v="A reparação do veículo será concluída em %d dias, em %s." tag="format"/>
+
+
+
 
         <e k="RVB_ErrorList" v="Lista de Erros:"/>
         <e k="RVB_periodicserviceDialog" v="Tens a certeza que queres realizar o serviço do veículo por %s?" tag="format"/>
@@ -143,11 +187,11 @@
         <e k="RVB_Workshop_odometer" v="Contador de Quilómetros"/>
         <e k="RVB_Workshop_cost" v="Custo"/>
         <e k="RVB_WorkshopD_new" v="Novo"/>
-        <e k="RVB_WorkshopD_conExcellent" v="Excelente estado"/>
-        <e k="RVB_WorkshopD_conGood" v="Bom estado"/>
-        <e k="RVB_WorkshopD_conUsed" v="Usado, mas funcional"/>
-        <e k="RVB_WorkshopD_conFaults" v="Propenso a falhas"/>
-        <e k="RVB_WorkshopD_conDown" v="Avariado"/>
+        <e k="RVB_WorkshopD_conOK" v="Bom estado"/>
+        <e k="RVB_WorkshopD_conMinor" v="Problemas ligeiros"/>
+        <e k="RVB_WorkshopD_conMedium" v="Problemas moderados"/>
+        <e k="RVB_WorkshopD_conMajor" v="Problemas graves"/>
+        <e k="RVB_WorkshopD_conDead" v="Defeituoso / Necessita de substituição"/>
         <e k="RVB_WorkshopD_conReplace" v="Precisa de substituição"/>
         <e k="RVB_WorkshopS_repNeed" v="Reparação necessária. "/>
         <e k="RVB_WorkshopS_repNoNeed" v="Nenhuma reparação necessária."/>
@@ -210,7 +254,7 @@ Tudo de bom,
 
 MathiasHun" tag="format"/>
 
-        <e k="RVB_aimessage_batterydischarged" v="O assistente AI %s parou inesperadamente de trabalhar; a bateria do veículo descarregou!"/>
+        <e k="RVB_aimessage_batterydischarged" v="O assistente AI %s parou inesperadamente de trabalhar; a bateria do veículo descarregou!" tag="format"/>
 
         <!-- DO NOT CHANGE THIS, ONLY IF THE FS25_USEYOURTYRES MOD ALREADY HAS AN OFFICIAL PORTUGAL TRANSLATION -->
         <e k="infohud_uytTyresWear" v="Tyres wear"/>
@@ -218,6 +262,37 @@ MathiasHun" tag="format"/>
         <e k="rvb_infohud_uytTyresWear" v="Pneu %s" tag="format"/>
 
         <e k="infohud_uytBatteryChargeTime" v="Tempo restante de carregamento"/>
+
+        <e k="typeDesc_battery" v="Bateria"/>
+
+        <e k="name_batterySmall" v="Bateria pequena"/>
+        <e k="name_batteryMedium" v="Bateria média"/>
+        <e k="name_batteryBig" v="Bateria grande"/>
+
+        <e k="function_batteryBig75" v="Bateria de pequena capacidade, 75 Ah"/>
+        <e k="function_batteryBig80" v="Bateria de pequena capacidade, 80 Ah"/>
+        <e k="function_batteryBig90" v="Bateria de pequena capacidade, 90 Ah"/>
+        <e k="function_batteryBig100" v="Bateria de capacidade média, 100 Ah"/>
+        <e k="function_batteryBig120" v="Bateria de capacidade média, 120 Ah"/>
+        <e k="function_batteryBig140" v="Bateria de grande capacidade, 140 Ah"/>
+        <e k="function_batteryBig150" v="Bateria de grande capacidade, 150 Ah"/>
+        <e k="function_batteryBig180" v="Bateria de grande capacidade, 180 Ah"/>
+        <e k="function_batteryBig200" v="Bateria de grande capacidade, 200 Ah"/>
+
+        <e k="unit_ampereHourShort" v="Ah"/>
+        <e k="RVB_action_batteryWorkshop" v="Instalar bateria"/>
+
+        <e k="RVB_allBatteriesInstalled" v="Todas as baterias já estão instaladas no veículo."/>
+        <e k="RVB_wrongBattery" v="Bateria incorreta.
+
+Bateria instalada no veículo: %.0f Ah
+Bateria selecionada: %.0f Ah" tag="format"/>
+        <e k="RVB_tooManyVehicles" v="Afaste os outros veículos! Há atualmente %d veículos na área de acionamento, mas apenas um pode ficar perto da bateria de cada vez." tag="format"/>
+        <e k="RVB_tooManyVehicles_hud" v="Há veículos demais na área de acionamento!"/>
+        <e k="RVB_batteryInstallation" v="Instalação da bateria: %d%%" tag="format"/>
+        <e k="RVB_batteryRemoval" v="Remoção da bateria: %d%%" tag="format"/>
+        <e k="RVB_vehicleEnteredTrigger" v="%s está perto da bateria." tag="format"/>
+        <e k="RVB_vehicleLeftTrigger" v="%s não está mais perto da bateria." tag="format"/>
 
     </elements>
 </l10n>

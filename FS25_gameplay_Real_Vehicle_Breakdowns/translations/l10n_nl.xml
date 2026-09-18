@@ -3,10 +3,12 @@
     <translationContributors>Hilbert1982</translationContributors>
     <translationContributors>NozemOil1982</translationContributors>
     <elements>
-        <e k="input_RVB_MENU" v="RVB Menu"/>
+        <e k="input_RVB_MENU" v="RVB-menu"/>
         <e k="input_RVB_SPEC" v="RVB aan/uit"/>
         <e k="input_RVB_CONNECTING_JC" v="Startkabels aankoppelen"/>
         <e k="input_RVB_CLOGGED" v="Ontstoppen"/>
+        <e k="input_RVB_PARTS" v="Accu verwijderen"/>
+        <e k="action_RVB_PARTS_empty" v="Accu verwijderd"/>
         <e k="action_RVB_DISCONNECTING_JC" v="Startkabels afkoppelen"/>
         <e k="RVB_dialog_titleCONNECTING_JC" v="Startkabels aankoppelen"/>
         <e k="RVB_dialog_descCONNECTING_JC" v="Het is niet nodig om het %s voertuig te starten. Weet u zeker dat u wilt doorgaan met het aansluiten van de startkabels?" tag="format"/>
@@ -62,14 +64,14 @@
         <e k="RVB_setting_rvbDifficulty" v="Autopech"/>
         <e k="RVB_toolTip_rvbDifficulty" v="Het is in ontwikkeling, maar klaar voor gebruik."/>
         <e k="RVB_difficulty_slow" v="Langzaam"/>
-        <e k="RVB_difficulty_medium" v="Medium"/>
+        <e k="RVB_difficulty_medium" v="Gemiddeld"/>
         <e k="RVB_difficulty_fast" v="Snel"/>
         <e k="RVB_setting_vehicleHud" v="Voertuigonderdelen HUD"/>
         <e k="RVB_toolTip_vehicleHud" v="Toont de bedrijfsuren van de voertuigonderdelen (kan de prestaties verbeteren als dit is uitgeschakeld). Aanbevolen voor testen."/>
         <e k="RVB_settingSectionHeader_HUD" v="HUD-instellingen"/>
         <e k="RVB_setting_showTemp" v="Motortemperatuur"/>
         <e k="RVB_toolTip_showTemp" v="Hier kunt u de weergave van de motortemperatuur in- of uitschakelen."/>
-        <e k="RVB_setting_showRpm" v="RPM"/>
+        <e k="RVB_setting_showRpm" v="TPM"/>
         <e k="RVB_toolTip_showRpm" v="Hier kunt u de weergave van het RPM in- of uitschakelen."/>
         <e k="RVB_setting_showFuel" v="Brandstof"/>
         <e k="RVB_toolTip_showFuel" v="Hier kun je de weergave van brandstof in- of uitschakelen."/>
@@ -90,30 +92,72 @@
         <e k="RVB_button_dailyservice" v="Dagelijkse service"/>
         <e k="RVB_button_periodicservice" v="Periodieke service"/>
         <e k="RVB_button_battery_ch" v="Batterij wordt opgeladen"/>
-        <e k="RVB_button_service" v="Service"/>
+        <e k="RVB_button_service" v="Onderhoud"/>
         <e k="RVB_durationDialog" v="Totale duur: "/>
         <e k="RVB_durationDay" v="%d dagen" tag="format"/>
         <e k="RVB_durationHour" v="%d uur" tag="format"/>
         <e k="RVB_durationMinute" v="%d minuten" tag="format"/>
+        <e k="RVB_serviceSelectTitle" v="Onderhoud selecteren"/>
+        <e k="RVB_serviceSelectDescription" v="Selecteer het type onderhoud dat je wilt uitvoeren:"/>
+        <e k="RVB_inspectionSelectTitle" v="Inspectie selecteren"/>
+        <e k="RVB_inspectionSelectDescription" v="Selecteer het type inspectie dat je wilt uitvoeren:"/>
+        <e k="RVB_inspectionEngine" v="Motor"/>
+        <e k="RVB_inspectionElectrical" v="Elektrisch systeem"/>
+        <e k="RVB_inspectionLighting" v="Verlichting"/>
+        <e k="RVB_inspectionMechanical" v="Ophanging en mechanica"/>
+        <e k="RVB_inspectionTires" v="Banden en wielen"/>
+        <e k="RVB_inspectionFull" v="Volledige inspectie"/>
         <e k="RVB_inspectionDialog" v="Weet u zeker dat u dit voertuig kunt inspecteren voor %s kosten?" tag="format"/>
         <e k="RVB_inspectionTimeDialog" v="Voertuiginspectie zal voltooid zijn om %s uur." tag="format"/>
         <e k="RVB_inspectionDayDialog" v="De voertuiginspectie wordt morgen om %s uur voltooid." tag="format"/>
+        <e k="RVB_inspectionDaysDialog" v="De voertuiginspectie wordt over %d dagen voltooid om %s." tag="format"/>
         <e k="RVB_faultText_THERMOSTAT" v="Thermostaat"/>
         <e k="RVB_faultText_LIGHTINGS" v="Verlichting"/>
         <e k="RVB_faultText_GLOWPLUG" v="Gloeispiraal"/>
         <e k="RVB_faultText_WIPERS" v="Ruitenwissers"/>
         <e k="RVB_faultText_GENERATOR" v="Dynamo"/>
         <e k="RVB_faultText_ENGINE" v="Motor"/>
-        <e k="RVB_faultText_SELFSTARTER" v="Zelfstarter"/>
+        <e k="RVB_faultText_SELFSTARTER" v="Zelfstarter"/> 
         <e k="RVB_faultText_BATTERY" v="Batterij"/>
         <e k="RVB_faultText_TIRE" v="Band"/>
         <e k="RVB_faultText_TIREFL" v="Linker voorband"/>
         <e k="RVB_faultText_TIREFR" v="Rechter voorband"/>
         <e k="RVB_faultText_TIRERL" v="Linker achterband"/>
         <e k="RVB_faultText_TIRERR" v="Rechter achterband"/>
+        <e k="RVB_faultText_TIRERL2" v="Linker achterband 2"/>
+        <e k="RVB_faultText_TIRERR2" v="Rechter achterband 2"/>
+        <e k="RVB_faultText_TIRERL3" v="Linker achterband 3"/>
+        <e k="RVB_faultText_TIRERR3" v="Rechter achterband 3"/>
+
+        <e k="RVB_faultType_engine" v="Motor"/>
+        <e k="RVB_faultType_electrical" v="Elektrisch systeem"/>
+        <e k="RVB_faultType_lights" v="Verlichting"/>
+        <e k="RVB_faultType_mechanical" v="Mechanisch systeem"/>
+        <e k="RVB_faultType_tires" v="Banden"/>
+
+        <e k="RVB_fillType_battery" v="Accu"/>
+        <e k="RVB_fillType_motoroil" v="Motorolie"/>
+        <e k="RVB_fillType_coolant" v="Koelvloeistof"/>
+
+        <e k="RVB_lightFaultsText_LOWBEAM" v="Dimlicht"/>
+        <e k="RVB_lightFaultsText_HIGHBEAM" v="Grootlicht"/>
+        <e k="RVB_lightFaultsText_WORKFRONT" v="Werklicht voor"/>
+        <e k="RVB_lightFaultsText_WORKBACK" v="Werklicht achter"/>
+        <e k="RVB_lightFaultsText_TURNLEFT" v="Linker richtingaanwijzer"/>
+        <e k="RVB_lightFaultsText_TURNRIGHT" v="Rechter richtingaanwijzer"/>
+        <e k="RVB_lightFaultsText_TURNHAZARD" v="Waarschuwingsknipperlichten"/>
+        <e k="RVB_lightFaultsText_BRAKE" v="Remlicht"/>
+        <e k="RVB_lightFaultsText_REVERSEL" v="Achteruitrijlicht"/>
+        <e k="RVB_lightFaultsText_BEACON" v="Zwaailicht"/>
+        <e k="RVB_lightFaultsText_PIPE" v="Werklicht van de lospijp"/>
         <e k="RVB_repairErrorMechanics" v="Alle monteurs zijn bezet, er kunnen maximaal %s voertuigen tegelijk worden gerepareerd." tag="format"/>
         <e k="RVB_repairTimeDialog" v="De reparatie van het voertuig zal voltooid zijn om %s uur." tag="format"/>
+        <e k="RVB_repairDialog" v="Weet je zeker dat je dit voertuig wilt repareren voor %s?" tag="format"/>
         <e k="RVB_repairDayDialog" v="De reparatie van het voertuig wordt morgen om %s uur voltooid." tag="format"/>
+        <e k="RVB_repairDaysDialog" v="De reparatie van het voertuig is over %d dagen voltooid bij %s." tag="format"/>
+
+
+
 
         <e k="RVB_ErrorList" v="Foutenlijst:"/>
         <e k="RVB_periodicserviceDialog" v="Weet u zeker dat u het voertuig wilt laten onderhouden voor %s kosten?" tag="format"/>
@@ -144,11 +188,11 @@
         <e k="RVB_Workshop_odometer" v="Kilometerstand"/>
         <e k="RVB_Workshop_cost" v="Kosten"/>
         <e k="RVB_WorkshopD_new" v="Nieuw"/>
-        <e k="RVB_WorkshopD_conExcellent" v="Uitstekende staat"/>
-        <e k="RVB_WorkshopD_conGood" v="Goede staat"/>
-        <e k="RVB_WorkshopD_conUsed" v="Gebruikt maar werkend"/>
-        <e k="RVB_WorkshopD_conFaults" v="Storingsgevoelig"/>
-        <e k="RVB_WorkshopD_conDown" v="Defect"/>
+        <e k="RVB_WorkshopD_conOK" v="Goede staat"/>
+        <e k="RVB_WorkshopD_conMinor" v="Kleine problemen"/>
+        <e k="RVB_WorkshopD_conMedium" v="Gemiddelde problemen"/>
+        <e k="RVB_WorkshopD_conMajor" v="Grote problemen"/>
+        <e k="RVB_WorkshopD_conDead" v="Defect / moet worden vervangen"/>
         <e k="RVB_WorkshopD_conReplace" v="Vervanging nodig"/>
         <e k="RVB_WorkshopS_repNeed" v="Reparatie nodig."/>
         <e k="RVB_WorkshopS_repNoNeed" v="Geen reparatie nodig."/>
@@ -211,7 +255,7 @@ Al het beste,
 
 MathiasHun" tag="format"/>
 
-        <e k="RVB_aimessage_batterydischarged" v="%s AI-arbeider is onverwacht gestopt met werken, de accu van het voertuig is leeg!"/>
+        <e k="RVB_aimessage_batterydischarged" v="%s AI-arbeider is onverwacht gestopt met werken, de accu van het voertuig is leeg!" tag="format"/>
 
         <!-- DO NOT CHANGE THIS, ONLY IF THE FS25_USEYOURTYRES MOD ALREADY HAS AN OFFICIAL NETHERLANDS TRANSLATION -->
         <e k="infohud_uytTyresWear" v="Tyres wear"/>
@@ -219,6 +263,37 @@ MathiasHun" tag="format"/>
         <e k="rvb_infohud_uytTyresWear" v="Band %s" tag="format"/>
 
         <e k="infohud_uytBatteryChargeTime" v="Resterende laadtijd"/>
+
+        <e k="typeDesc_battery" v="Accu"/>
+
+        <e k="name_batterySmall" v="Kleine accu"/>
+        <e k="name_batteryMedium" v="Gemiddelde accu"/>
+        <e k="name_batteryBig" v="Grote accu"/>
+
+        <e k="function_batteryBig75" v="Accu met kleine capaciteit, 75 Ah"/>
+        <e k="function_batteryBig80" v="Accu met kleine capaciteit, 80 Ah"/>
+        <e k="function_batteryBig90" v="Accu met kleine capaciteit, 90 Ah"/>
+        <e k="function_batteryBig100" v="Accu met gemiddelde capaciteit, 100 Ah"/>
+        <e k="function_batteryBig120" v="Accu met gemiddelde capaciteit, 120 Ah"/>
+        <e k="function_batteryBig140" v="Accu met grote capaciteit, 140 Ah"/>
+        <e k="function_batteryBig150" v="Accu met grote capaciteit, 150 Ah"/>
+        <e k="function_batteryBig180" v="Accu met grote capaciteit, 180 Ah"/>
+        <e k="function_batteryBig200" v="Accu met grote capaciteit, 200 Ah"/>
+
+        <e k="unit_ampereHourShort" v="Ah"/>
+        <e k="RVB_action_batteryWorkshop" v="Accu plaatsen"/>
+
+        <e k="RVB_allBatteriesInstalled" v="Alle accu's zijn al in het voertuig geplaatst."/>
+        <e k="RVB_wrongBattery" v="Onjuiste accu.
+
+Accu in het voertuig: %.0f Ah
+Geselecteerde accu: %.0f Ah" tag="format"/>
+        <e k="RVB_tooManyVehicles" v="Verplaats de andere voertuigen! Er staan momenteel %d voertuigen in het triggergebied, maar er mag slechts één voertuig tegelijk bij de accu staan." tag="format"/>
+        <e k="RVB_tooManyVehicles_hud" v="Te veel voertuigen in het triggergebied!"/>
+        <e k="RVB_batteryInstallation" v="Accu plaatsen: %d%%" tag="format"/>
+        <e k="RVB_batteryRemoval" v="Accu verwijderen: %d%%" tag="format"/>
+        <e k="RVB_vehicleEnteredTrigger" v="%s staat bij de accu." tag="format"/>
+        <e k="RVB_vehicleLeftTrigger" v="%s staat niet meer bij de accu." tag="format"/>
 
     </elements>
 </l10n>

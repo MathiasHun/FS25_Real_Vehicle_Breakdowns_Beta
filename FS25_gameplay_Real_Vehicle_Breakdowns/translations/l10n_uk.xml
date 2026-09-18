@@ -6,6 +6,8 @@
         <e k="input_RVB_SPEC" v="RVB увімк./вимк."/>
         <e k="input_RVB_CONNECTING_JC" v="Підключення пускових кабелів"/>
         <e k="input_RVB_CLOGGED" v="Прочистити"/>
+        <e k="input_RVB_PARTS" v="Зняти акумулятор"/>
+        <e k="action_RVB_PARTS_empty" v="Акумулятор знято"/>
         <e k="action_RVB_DISCONNECTING_JC" v="Відключення пускових кабелів"/>
         <e k="RVB_dialog_titleCONNECTING_JC" v="Підключення пускових кабелів"/>
         <e k="RVB_dialog_descCONNECTING_JC" v="Немає потреби запускати транспортний засіб %s від зовнішнього джерела. Ви впевнені, що хочете продовжити підключення пускових кабелів?" tag="format"/>
@@ -68,7 +70,7 @@
         <e k="RVB_settingSectionHeader_HUD" v="Налаштування HUD"/>
         <e k="RVB_setting_showTemp" v="Температура двигуна"/>
         <e k="RVB_toolTip_showTemp" v="Тут ви можете включити или виключити відображення температури двигуна."/>
-        <e k="RVB_setting_showRpm" v="RPM"/>
+        <e k="RVB_setting_showRpm" v="Об/хв"/>
         <e k="RVB_toolTip_showRpm" v="Тут ви можете включити или виключити відображення RPM."/>
         <e k="RVB_setting_showFuel" v="Паливо"/>
         <e k="RVB_toolTip_showFuel" v="Тут ви можете включити или виключити відображення палива."/>
@@ -94,25 +96,67 @@
         <e k="RVB_durationDay" v="%d днів" tag="format"/>
         <e k="RVB_durationHour" v="%d год" tag="format"/>
         <e k="RVB_durationMinute" v="%d хв" tag="format"/>
+        <e k="RVB_serviceSelectTitle" v="Вибір обслуговування"/>
+        <e k="RVB_serviceSelectDescription" v="Виберіть потрібний тип обслуговування:"/>
+        <e k="RVB_inspectionSelectTitle" v="Вибір огляду"/>
+        <e k="RVB_inspectionSelectDescription" v="Виберіть потрібний тип огляду:"/>
+        <e k="RVB_inspectionEngine" v="Двигун"/>
+        <e k="RVB_inspectionElectrical" v="Електрична система"/>
+        <e k="RVB_inspectionLighting" v="Освітлення"/>
+        <e k="RVB_inspectionMechanical" v="Підвіска та механіка"/>
+        <e k="RVB_inspectionTires" v="Шини та колеса"/>
+        <e k="RVB_inspectionFull" v="Повний огляд"/>
         <e k="RVB_inspectionDialog" v="Ви впевнені, що хочете відправити цей транспортний засіб на техогляд за %s?" tag="format"/>
         <e k="RVB_inspectionTimeDialog" v="Техогляд транспортного засобу буде закінченний в %s годин." tag="format"/>
         <e k="RVB_inspectionDayDialog" v="Техогляд ТЗ буде закінченний завтра в %s годин." tag="format"/>
+        <e k="RVB_inspectionDaysDialog" v="Огляд транспортного засобу буде завершено через %d дн. о %s." tag="format"/>
         <e k="RVB_faultText_THERMOSTAT" v="Термостат"/>
         <e k="RVB_faultText_LIGHTINGS" v="Освітлювальнні прилади"/>
         <e k="RVB_faultText_GLOWPLUG" v="Свічка розжарювання"/>
         <e k="RVB_faultText_WIPERS" v="Склоочистники"/>
         <e k="RVB_faultText_GENERATOR" v="Генератор"/>
         <e k="RVB_faultText_ENGINE" v="Двигун"/>
-        <e k="RVB_faultText_SELFSTARTER" v="Стартер"/>
+        <e k="RVB_faultText_SELFSTARTER" v="Стартер"/> 
         <e k="RVB_faultText_BATTERY" v="Акумулятор"/>
         <e k="RVB_faultText_TIRE" v="Шини/Гусениці"/>
         <e k="RVB_faultText_TIREFL" v="Передня ліва шина"/>
         <e k="RVB_faultText_TIREFR" v="Передня права шина"/>
         <e k="RVB_faultText_TIRERL" v="Задня ліва шина"/>
         <e k="RVB_faultText_TIRERR" v="Задня права шина"/>
+        <e k="RVB_faultText_TIRERL2" v="Задня 2 ліва шина"/>
+        <e k="RVB_faultText_TIRERR2" v="Задня 2 права шина"/>
+        <e k="RVB_faultText_TIRERL3" v="Задня 3 ліва шина"/>
+        <e k="RVB_faultText_TIRERR3" v="Задня 3 права шина"/>
+
+        <e k="RVB_faultType_engine" v="Двигун"/>
+        <e k="RVB_faultType_electrical" v="Електрична система"/>
+        <e k="RVB_faultType_lights" v="Освітлення"/>
+        <e k="RVB_faultType_mechanical" v="Механічна система"/>
+        <e k="RVB_faultType_tires" v="Шини"/>
+
+        <e k="RVB_fillType_battery" v="Акумулятор"/>
+        <e k="RVB_fillType_motoroil" v="Моторна олива"/>
+        <e k="RVB_fillType_coolant" v="Охолоджувальна рідина"/>
+
+        <e k="RVB_lightFaultsText_LOWBEAM" v="Ближнє світло"/>
+        <e k="RVB_lightFaultsText_HIGHBEAM" v="Дальнє світло"/>
+        <e k="RVB_lightFaultsText_WORKFRONT" v="Передня робоча фара"/>
+        <e k="RVB_lightFaultsText_WORKBACK" v="Задня робоча фара"/>
+        <e k="RVB_lightFaultsText_TURNLEFT" v="Лівий покажчик повороту"/>
+        <e k="RVB_lightFaultsText_TURNRIGHT" v="Правий покажчик повороту"/>
+        <e k="RVB_lightFaultsText_TURNHAZARD" v="Аварійна світлова сигналізація"/>
+        <e k="RVB_lightFaultsText_BRAKE" v="Стоп-сигнал"/>
+        <e k="RVB_lightFaultsText_REVERSEL" v="Ліхтар заднього ходу"/>
+        <e k="RVB_lightFaultsText_BEACON" v="Проблисковий маячок"/>
+        <e k="RVB_lightFaultsText_PIPE" v="Робоча фара вивантажувальної труби"/>
         <e k="RVB_repairErrorMechanics" v="Усі механіки зайняті, одночасно можна ремонтувати не більше %s транспортних засобів." tag="format"/>
         <e k="RVB_repairTimeDialog" v="Ремонт транспортного засобу буде закінченний в %s годин." tag="format"/>
+        <e k="RVB_repairDialog" v="Ви впевнені, що хочете відремонтувати цей транспортний засіб за %s?" tag="format"/>
         <e k="RVB_repairDayDialog" v="Ремонт транспортного засобу буде закінченний завтра в %s годин." tag="format"/>
+        <e k="RVB_repairDaysDialog" v="Ремонт транспортного засобу буде завершено через %d дн. у %s." tag="format"/>
+
+
+
 
         <e k="RVB_ErrorList" v="Список неполадок:"/>
         <e k="RVB_periodicserviceDialog" v="Ви впевнені, що хочете відремонтувати транспортний засіб за %s?" tag="format"/>
@@ -122,7 +166,7 @@
         <e k="RVB_periodicserviceDaysDialog" v="Обслуговування транспорту буде завершено через %d днів о %s." tag="format"/>
 
         <e k="RVB_batteryChDialog" v="Ви впевнені, що хочете зарядити акумулятор вашого транспортного засобу за %s?" tag="format"/>
-        <e k="RVB_operatingTime" v="%02d hour" tag="format"/>
+        <e k="RVB_operatingTime" v="%02d година" tag="format"/>
         <e k="RVB_shop_operatingTimeG" v="%s:%s година." tag="format"/>
         <e k="RVB_alertmessage_inspection" v="Проводиться техогляд транспортного засобу."/>
         <e k="RVB_alertmessage_repair" v="Ремонт транспортного засобу продовжується."/>
@@ -143,11 +187,11 @@
         <e k="RVB_Workshop_odometer" v="Пробіг"/>
         <e k="RVB_Workshop_cost" v="Вартість"/>
         <e k="RVB_WorkshopD_new" v="Новий"/>
-        <e k="RVB_WorkshopD_conExcellent" v="Відмінний стан"/>
-        <e k="RVB_WorkshopD_conGood" v="Хороший стан"/>
-        <e k="RVB_WorkshopD_conUsed" v="Використаний, але працездатний"/>
-        <e k="RVB_WorkshopD_conFaults" v="Схильний до несправностей"/>
-        <e k="RVB_WorkshopD_conDown" v="Зламаний"/>
+        <e k="RVB_WorkshopD_conOK" v="Справний стан"/>
+        <e k="RVB_WorkshopD_conMinor" v="Незначні несправності"/>
+        <e k="RVB_WorkshopD_conMedium" v="Помірні несправності"/>
+        <e k="RVB_WorkshopD_conMajor" v="Серйозні несправності"/>
+        <e k="RVB_WorkshopD_conDead" v="Несправний / Потребує заміни"/>
         <e k="RVB_WorkshopD_conReplace" v="Підлягає заміні"/>
         <e k="RVB_WorkshopS_repNeed" v="Потрібен ремонт. "/>
         <e k="RVB_WorkshopS_repNoNeed" v="Ремонт не потрібен."/>
@@ -178,7 +222,7 @@
         <e k="RVB_DEAD_ENGINE_SUSPENSION" v="Ключ від ТЗ у механіка, який зараз відпочиває."/>
         <e k="RVB_DEAD_ENGINE_BATTERY" v="Двигун не запуститься – акумулятор розряджений."/>
         <e k="RVB_DEAD_ENGINE_BATTERY_CHARGING" v="Двигун не запуститься – йде зарядка акумулятора."/>
-        <e k="RVB_DEAD_ENGINE" v="The engine does not start."/>
+        <e k="RVB_DEAD_ENGINE" v="Двигун не запускається."/>
 
         <e k="RVB_fault_lights_INSPECTION" v="Освітлення не може бути вімкненим, поки йде перевірка ТЗ."/>
         <e k="RVB_fault_lights_REPAIR" v="Освітлення не може бути вімкненим, поки йде ремонт ТЗ."/>
@@ -210,7 +254,7 @@
 
 MathiasHun" tag="format"/>
 
-        <e k="RVB_aimessage_batterydischarged" v="Працівний на %s зупинив роботу, акумулятор ТЗ розряджений!"/>
+        <e k="RVB_aimessage_batterydischarged" v="Працівний на %s зупинив роботу, акумулятор ТЗ розряджений!" tag="format"/>
 
         <!-- DO NOT CHANGE THIS, ONLY IF THE FS25_USEYOURTYRES MOD ALREADY HAS AN OFFICIAL UKRAINE TRANSLATION -->
         <e k="infohud_uytTyresWear" v="Tyres wear"/>
@@ -218,6 +262,37 @@ MathiasHun" tag="format"/>
         <e k="rvb_infohud_uytTyresWear" v="Шини %s" tag="format"/>
 
         <e k="infohud_uytBatteryChargeTime" v="Залишок часу заряджання"/>
+
+        <e k="typeDesc_battery" v="Акумулятор"/>
+
+        <e k="name_batterySmall" v="Малий акумулятор"/>
+        <e k="name_batteryMedium" v="Середній акумулятор"/>
+        <e k="name_batteryBig" v="Великий акумулятор"/>
+
+        <e k="function_batteryBig75" v="Акумулятор малої ємності, 75 А·год"/>
+        <e k="function_batteryBig80" v="Акумулятор малої ємності, 80 А·год"/>
+        <e k="function_batteryBig90" v="Акумулятор малої ємності, 90 А·год"/>
+        <e k="function_batteryBig100" v="Акумулятор середньої ємності, 100 А·год"/>
+        <e k="function_batteryBig120" v="Акумулятор середньої ємності, 120 А·год"/>
+        <e k="function_batteryBig140" v="Акумулятор великої ємності, 140 А·год"/>
+        <e k="function_batteryBig150" v="Акумулятор великої ємності, 150 А·год"/>
+        <e k="function_batteryBig180" v="Акумулятор великої ємності, 180 А·год"/>
+        <e k="function_batteryBig200" v="Акумулятор великої ємності, 200 А·год"/>
+
+        <e k="unit_ampereHourShort" v="А·год"/>
+        <e k="RVB_action_batteryWorkshop" v="Встановити акумулятор"/>
+
+        <e k="RVB_allBatteriesInstalled" v="Усі акумулятори вже встановлені в транспортному засобі."/>
+        <e k="RVB_wrongBattery" v="Неправильний акумулятор.
+
+Акумулятор, встановлений у транспортному засобі: %.0f А·год
+Вибраний акумулятор: %.0f А·год" tag="format"/>
+        <e k="RVB_tooManyVehicles" v="Приберіть інші транспортні засоби! Зараз у зоні активації перебуває %d транспортних засобів, але біля акумулятора одночасно може перебувати лише один." tag="format"/>
+        <e k="RVB_tooManyVehicles_hud" v="Забагато транспортних засобів у зоні активації!"/>
+        <e k="RVB_batteryInstallation" v="Встановлення акумулятора: %d%%" tag="format"/>
+        <e k="RVB_batteryRemoval" v="Зняття акумулятора: %d%%" tag="format"/>
+        <e k="RVB_vehicleEnteredTrigger" v="%s перебуває біля акумулятора." tag="format"/>
+        <e k="RVB_vehicleLeftTrigger" v="%s більше не перебуває біля акумулятора." tag="format"/>
 
     </elements>
 </l10n>

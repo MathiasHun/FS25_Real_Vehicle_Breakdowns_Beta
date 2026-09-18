@@ -6,6 +6,8 @@
         <e k="input_RVB_SPEC" v="RVB включить/выключить"/>
         <e k="input_RVB_CONNECTING_JC" v="Подключение проводов прикуривания"/>
         <e k="input_RVB_CLOGGED" v="Прочистить"/>
+        <e k="input_RVB_PARTS" v="Снять аккумулятор"/>
+        <e k="action_RVB_PARTS_empty" v="Аккумулятор снят"/>
         <e k="action_RVB_DISCONNECTING_JC" v="Отключение проводов прикуривания"/>
         <e k="RVB_dialog_titleCONNECTING_JC" v="Подключение проводов прикуривания"/>
         <e k="RVB_dialog_descCONNECTING_JC" v="Нет необходимости запускать транспортное средство %s с помощью проводов. Вы уверены, что хотите продолжить подключение?" tag="format"/>
@@ -52,7 +54,7 @@
         <e k="RVB_setting_batteryLifetime" v="Аккумулятор"/>
         <e k="RVB_setting_tireLifetime" v="Шины/Гусеницы"/>
         <e k="RVB_utils_hour" v="%s час." tag="format"/>
-        <e k="RVB_utils_km" v="%s km" tag="format"/>
+        <e k="RVB_utils_km" v="%s км" tag="format"/>
         <e k="RVB_utils_maxcount" v="%s шт" tag="format"/>
 
         <e k="RVB_MenuGameSettingsGeneral" v="Общие настройки"/>
@@ -68,7 +70,7 @@
         <e k="RVB_settingSectionHeader_HUD" v="Настройки HUD"/>
         <e k="RVB_setting_showTemp" v="Температура двигателя"/>
         <e k="RVB_toolTip_showTemp" v="Здесь вы можете включить или выключить отображение температуры двигателя."/>
-        <e k="RVB_setting_showRpm" v="RPM"/>
+        <e k="RVB_setting_showRpm" v="Обороты"/>
         <e k="RVB_toolTip_showRpm" v="Здесь вы можете включить или выключить отображение RPM."/>
         <e k="RVB_setting_showFuel" v="Топливо"/>
         <e k="RVB_toolTip_showFuel" v="Здесь вы можете включить или выключить отображение топлива."/>
@@ -94,25 +96,67 @@
         <e k="RVB_durationDay" v="%d дней" tag="format"/>
         <e k="RVB_durationHour" v="%d часов" tag="format"/>
         <e k="RVB_durationMinute" v="%d минут" tag="format"/>
+        <e k="RVB_serviceSelectTitle" v="Выбор обслуживания"/>
+        <e k="RVB_serviceSelectDescription" v="Выберите тип обслуживания:"/>
+        <e k="RVB_inspectionSelectTitle" v="Выбор диагностики"/>
+        <e k="RVB_inspectionSelectDescription" v="Выберите тип диагностики:"/>
+        <e k="RVB_inspectionEngine" v="Двигатель"/>
+        <e k="RVB_inspectionElectrical" v="Электрическая система"/>
+        <e k="RVB_inspectionLighting" v="Освещение"/>
+        <e k="RVB_inspectionMechanical" v="Подвеска и механика"/>
+        <e k="RVB_inspectionTires" v="Шины и колёса"/>
+        <e k="RVB_inspectionFull" v="Полная диагностика"/>
         <e k="RVB_inspectionDialog" v="Вы уверены, что хотите отправить это транспортное средство на техосмотр за %s?" tag="format"/>
         <e k="RVB_inspectionTimeDialog" v="Техосмотр транспортного средства будет завершён в %s часов." tag="format"/>
         <e k="RVB_inspectionDayDialog" v="Техосмотр ТС будет завершён завтра в %s часов." tag="format"/>
+        <e k="RVB_inspectionDaysDialog" v="Диагностика транспортного средства будет завершена через %d дн. в %s." tag="format"/>
         <e k="RVB_faultText_THERMOSTAT" v="Термостат"/>
         <e k="RVB_faultText_LIGHTINGS" v="Осветительные приборы"/>
         <e k="RVB_faultText_GLOWPLUG" v="Свеча накаливания"/>
         <e k="RVB_faultText_WIPERS" v="Стеклоочистители"/>
         <e k="RVB_faultText_GENERATOR" v="Генератор"/>
         <e k="RVB_faultText_ENGINE" v="Двигатель"/>
-        <e k="RVB_faultText_SELFSTARTER" v="Стартер"/>
+        <e k="RVB_faultText_SELFSTARTER" v="Стартер"/> 
         <e k="RVB_faultText_BATTERY" v="Аккумулятор"/>
         <e k="RVB_faultText_TIRE" v="Шины/гусеницы"/>
         <e k="RVB_faultText_TIREFL" v="Передняя левая шина"/>
         <e k="RVB_faultText_TIREFR" v="Передняя правая шина"/>
         <e k="RVB_faultText_TIRERL" v="Задняя левая шина"/>
         <e k="RVB_faultText_TIRERR" v="Задняя правая шина"/>
+        <e k="RVB_faultText_TIRERL2" v="Задняя 2 левая шина"/>
+        <e k="RVB_faultText_TIRERR2" v="Задняя 2 правая шина"/>
+        <e k="RVB_faultText_TIRERL3" v="Задняя 3 левая шина"/>
+        <e k="RVB_faultText_TIRERR3" v="Задняя 3 правая шина"/>
+
+        <e k="RVB_faultType_engine" v="Двигатель"/>
+        <e k="RVB_faultType_electrical" v="Электрическая система"/>
+        <e k="RVB_faultType_lights" v="Освещение"/>
+        <e k="RVB_faultType_mechanical" v="Механическая система"/>
+        <e k="RVB_faultType_tires" v="Шины"/>
+
+        <e k="RVB_fillType_battery" v="Аккумулятор"/>
+        <e k="RVB_fillType_motoroil" v="Моторное масло"/>
+        <e k="RVB_fillType_coolant" v="Охлаждающая жидкость"/>
+
+        <e k="RVB_lightFaultsText_LOWBEAM" v="Ближний свет"/>
+        <e k="RVB_lightFaultsText_HIGHBEAM" v="Дальний свет"/>
+        <e k="RVB_lightFaultsText_WORKFRONT" v="Передняя рабочая фара"/>
+        <e k="RVB_lightFaultsText_WORKBACK" v="Задняя рабочая фара"/>
+        <e k="RVB_lightFaultsText_TURNLEFT" v="Левый указатель поворота"/>
+        <e k="RVB_lightFaultsText_TURNRIGHT" v="Правый указатель поворота"/>
+        <e k="RVB_lightFaultsText_TURNHAZARD" v="Аварийная световая сигнализация"/>
+        <e k="RVB_lightFaultsText_BRAKE" v="Стоп-сигнал"/>
+        <e k="RVB_lightFaultsText_REVERSEL" v="Фара заднего хода"/>
+        <e k="RVB_lightFaultsText_BEACON" v="Проблесковый маячок"/>
+        <e k="RVB_lightFaultsText_PIPE" v="Рабочая фара выгрузной трубы"/>
         <e k="RVB_repairErrorMechanics" v="Все механики заняты, одновременно можно ремонтировать только %s транспортных средств." tag="format"/>
         <e k="RVB_repairTimeDialog" v="Ремонт транспортного средства будет завершён в %s часов." tag="format"/>
+        <e k="RVB_repairDialog" v="Вы уверены, что хотите отремонтировать это транспортное средство за %s?" tag="format"/>
         <e k="RVB_repairDayDialog" v="Ремонт транспортного средства будет завершён завтра в %s часов." tag="format"/>
+        <e k="RVB_repairDaysDialog" v="Ремонт транспортного средства будет завершён через %d дн. в %s." tag="format"/>
+
+
+
 
         <e k="RVB_ErrorList" v="Список неисправностей:"/>
         <e k="RVB_periodicserviceDialog" v="Вы уверены, что хотите отремонтировать транспортное средство за %s?" tag="format"/>
@@ -143,11 +187,11 @@
         <e k="RVB_Workshop_odometer" v="Пробег"/>
         <e k="RVB_Workshop_cost" v="Стоимость"/>
         <e k="RVB_WorkshopD_new" v="Новый"/>
-        <e k="RVB_WorkshopD_conExcellent" v="Отличное состояние"/>
-        <e k="RVB_WorkshopD_conGood" v="Хорошее состояние"/>
-        <e k="RVB_WorkshopD_conUsed" v="Б/у, но рабочее"/>
-        <e k="RVB_WorkshopD_conFaults" v="Склонно к поломкам"/>
-        <e k="RVB_WorkshopD_conDown" v="Сломано"/>
+        <e k="RVB_WorkshopD_conOK" v="Хорошее состояние"/>
+        <e k="RVB_WorkshopD_conMinor" v="Незначительные неисправности"/>
+        <e k="RVB_WorkshopD_conMedium" v="Умеренные неисправности"/>
+        <e k="RVB_WorkshopD_conMajor" v="Серьёзные неисправности"/>
+        <e k="RVB_WorkshopD_conDead" v="Неисправно / требуется замена"/>
         <e k="RVB_WorkshopD_conReplace" v="Требуется замена"/>
         <e k="RVB_WorkshopS_repNeed" v="Требуется ремонт. "/>
         <e k="RVB_WorkshopS_repNoNeed" v="Ремонт не требуется."/>
@@ -210,7 +254,7 @@
 
 MathiasHun" tag="format"/>
 
-        <e k="RVB_aimessage_batterydischarged" v="Работник на %s прекратил работу, аккумулятор ТС разряжен!"/>
+        <e k="RVB_aimessage_batterydischarged" v="Работник на %s прекратил работу, аккумулятор ТС разряжен!" tag="format"/>
 
         <!-- DO NOT CHANGE THIS, ONLY IF THE FS25_USEYOURTYRES MOD ALREADY HAS AN OFFICIAL RUSSIA TRANSLATION -->
         <e k="infohud_uytTyresWear" v="Tyres wear"/>
@@ -218,6 +262,37 @@ MathiasHun" tag="format"/>
         <e k="rvb_infohud_uytTyresWear" v="Шины %s" tag="format"/>
 
         <e k="infohud_uytBatteryChargeTime" v="Оставшееся время зарядки"/>
+
+        <e k="typeDesc_battery" v="Аккумулятор"/>
+
+        <e k="name_batterySmall" v="Малый аккумулятор"/>
+        <e k="name_batteryMedium" v="Средний аккумулятор"/>
+        <e k="name_batteryBig" v="Большой аккумулятор"/>
+
+        <e k="function_batteryBig75" v="Аккумулятор малой ёмкости, 75 А·ч"/>
+        <e k="function_batteryBig80" v="Аккумулятор малой ёмкости, 80 А·ч"/>
+        <e k="function_batteryBig90" v="Аккумулятор малой ёмкости, 90 А·ч"/>
+        <e k="function_batteryBig100" v="Аккумулятор средней ёмкости, 100 А·ч"/>
+        <e k="function_batteryBig120" v="Аккумулятор средней ёмкости, 120 А·ч"/>
+        <e k="function_batteryBig140" v="Аккумулятор большой ёмкости, 140 А·ч"/>
+        <e k="function_batteryBig150" v="Аккумулятор большой ёмкости, 150 А·ч"/>
+        <e k="function_batteryBig180" v="Аккумулятор большой ёмкости, 180 А·ч"/>
+        <e k="function_batteryBig200" v="Аккумулятор большой ёмкости, 200 А·ч"/>
+
+        <e k="unit_ampereHourShort" v="А·ч"/>
+        <e k="RVB_action_batteryWorkshop" v="Установить аккумулятор"/>
+
+        <e k="RVB_allBatteriesInstalled" v="Все аккумуляторы уже установлены в транспортном средстве."/>
+        <e k="RVB_wrongBattery" v="Неподходящий аккумулятор.
+
+Аккумулятор в транспортном средстве: %.0f А·ч
+Выбранный аккумулятор: %.0f А·ч" tag="format"/>
+        <e k="RVB_tooManyVehicles" v="Уберите другие транспортные средства! Сейчас в зоне срабатывания находятся транспортные средства в количестве %d, но рядом с аккумулятором одновременно может находиться только одно." tag="format"/>
+        <e k="RVB_tooManyVehicles_hud" v="Слишком много транспортных средств в зоне срабатывания!"/>
+        <e k="RVB_batteryInstallation" v="Установка аккумулятора: %d%%" tag="format"/>
+        <e k="RVB_batteryRemoval" v="Снятие аккумулятора: %d%%" tag="format"/>
+        <e k="RVB_vehicleEnteredTrigger" v="%s находится рядом с аккумулятором." tag="format"/>
+        <e k="RVB_vehicleLeftTrigger" v="%s больше не находится рядом с аккумулятором." tag="format"/>
 
     </elements>
 </l10n>
