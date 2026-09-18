@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<l10n><!-- https://chatgpt.com/c/6aa3aa8d-6fd8-83eb-9c50-265c75426b43 -->
+<l10n>
     <elements>
         <e k="input_RVB_MENU" v="RVB Menü"/>
         <e k="input_RVB_SPEC" v="RVB be/ki"/>
