@@ -2,7 +2,7 @@
 <l10n>
     <translationContributors>SniperKittenCZ</translationContributors>
     <elements>
-        <e k="input_RVB_MENU" v="Nabídka RVB"/>
+        <e k="input_RVB_MENU" v="Skutečné poruchy vozidel RVB"/>
         <e k="input_RVB_SPEC" v="RVB zap/vyp"/>
         <e k="input_RVB_CONNECTING_JC" v="Připojení startovacích kabelů"/>
         <e k="input_RVB_CLOGGED" v="Uvolnit ucpání"/>
