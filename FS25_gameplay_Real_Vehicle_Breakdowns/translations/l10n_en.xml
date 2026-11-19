@@ -39,10 +39,10 @@
         <e k="RVB_toolTip_workshopOpen" v="The time when the vehicle workshop opens."/>
         <e k="RVB_setting_workshopClose" v="Closing Time"/>
         <e k="RVB_toolTip_workshopClose" v="The time when the vehicle workshop closes."/>
-        <e k="RVB_setting_workshopCountMax" v="Maximum Vehicles in workshop"/>
+        <e k="RVB_setting_workshopCountMax" v="Maximum Number of Vehicles in the Workshop"/>
         <e k="RVB_toolTip_workshopCountMax" v="Here you can set how many vehicles can fit in the workshop at once."/>
         <e k="RVB_settingSectionHeader_LifetimeofParts" v="Lifetime of Parts"/>
-        <e k="RVB_toolTip_lifetimeParts" v="The smaller this number, the sooner it will fail."/>
+        <e k="RVB_toolTip_lifetimeParts" v="The smaller this value, the sooner a breakdown will occur."/>
         <e k="RVB_setting_thermostatLifetime" v="Thermostat"/>
         <e k="RVB_setting_lightingsLifetime" v="Lighting"/>
         <e k="RVB_setting_glowplugLifetime" v="Glow Plug"/>
@@ -79,7 +79,7 @@
         <e k="RVB_toolTip_showdebug" v="Displays debug information in the console and log.txt (can improve performance when turned off)"/>
 
         <e k="RVB_MenuGamePartsSettings" v="Vehicle Settings"/>
-        <e k="RVB_Parts_stepInterval" v="Step Interval(%)"/>
+        <e k="RVB_Parts_stepInterval" v="Step Interval (%)"/>
         <e k="RVB_Parts_currentValue" v="Current %s lifespan" tag="format"/>
         <e k="RVB_Parts_remainingValue" v="%s lifespan setting" tag="format"/>
         <e k="RVB_part_rvbDifficulty" v="Vehicle Breakdown"/>
@@ -103,7 +103,7 @@
         <e k="RVB_inspectionElectrical" v="Electrical system"/>
         <e k="RVB_inspectionLighting" v="Lighting"/>
         <e k="RVB_inspectionMechanical" v="Suspension and mechanics"/>
-        <e k="RVB_inspectionTires" v="Tires and wheels"/>
+        <e k="RVB_inspectionTires" v="Tires and Wheels"/>
         <e k="RVB_inspectionFull" v="Full inspection"/>
         <e k="RVB_inspectionDialog" v="Are you sure you want to inspect this vehicle for %s?" tag="format"/>
         <e k="RVB_inspectionTimeDialog" v="The vehicle inspection will be completed at %s o'clock." tag="format"/>
@@ -118,19 +118,19 @@
         <e k="RVB_faultText_SELFSTARTER" v="Starter"/> 
         <e k="RVB_faultText_BATTERY" v="Battery"/>
         <e k="RVB_faultText_TIRE" v="Tire"/>
-        <e k="RVB_faultText_TIREFL" v="Front left tire"/>
-        <e k="RVB_faultText_TIREFR" v="Front right tire"/>
-        <e k="RVB_faultText_TIRERL" v="Rear left tire"/>
-        <e k="RVB_faultText_TIRERR" v="Rear right tire"/>
-        <e k="RVB_faultText_TIRERL2" v="Rear 2 left tire"/>
-        <e k="RVB_faultText_TIRERR2" v="Rear 2 right tire"/>
-        <e k="RVB_faultText_TIRERL3" v="Rear 3 left tire"/>
-        <e k="RVB_faultText_TIRERR3" v="Rear 3 right tire"/>
+        <e k="RVB_faultText_TIREFL" v="Front Left Tire"/>
+        <e k="RVB_faultText_TIREFR" v="Front Right Tire"/>
+        <e k="RVB_faultText_TIRERL" v="Rear Left Tire"/>
+        <e k="RVB_faultText_TIRERR" v="Rear Right Tire"/>
+        <e k="RVB_faultText_TIRERL2" v="Rear 2. Left Tire"/>
+        <e k="RVB_faultText_TIRERR2" v="Rear 2. Right Tire"/>
+        <e k="RVB_faultText_TIRERL3" v="Rear 3. Left Tire"/>
+        <e k="RVB_faultText_TIRERR3" v="Rear 3. Right Tire"/>
 
         <e k="RVB_faultType_engine" v="Engine"/>
         <e k="RVB_faultType_electrical" v="Electrical system"/>
         <e k="RVB_faultType_lights" v="Lighting"/>
-        <e k="RVB_faultType_mechanical" v="Mechanical system"/>
+        <e k="RVB_faultType_mechanical" v="Mechanical System"/>
         <e k="RVB_faultType_tires" v="Tires"/>
 
         <e k="RVB_fillType_battery" v="Battery"/>
@@ -154,9 +154,6 @@
         <e k="RVB_repairDayDialog" v="The vehicle repair will be completed tomorrow at %s o'clock." tag="format"/>
         <e k="RVB_repairDaysDialog" v="The vehicle repair will be completed in %d days at %s." tag="format"/>
 
-
-
-
         <e k="RVB_ErrorList" v="Error list:"/>
         <e k="RVB_periodicserviceDialog" v="Are you sure you want to service the vehicle for %s?" tag="format"/>
         <e k="RVB_periodicserviceDayDialog" v="Vehicle maintenance will be completed tomorrow at %s." tag="format"/>
@@ -178,8 +175,11 @@
         <e k="RVB_Workshop_serviceManual" v="Service Log"/>
         <e k="RVB_Workshop_noinspection" v="Vehicle has not been inspected!"/>
         <e k="RVB_Workshop_noserviceManualEntry" v="No entries in the service log!"/>
-        <e k="RVB_Workshop_status" v="Status:"/>
-        <e k="RVB_Workshop_repair" v="Repair?"/>
+        <e k="RVB_workshop" v="RVB Workshop"/>
+        <e k="RVB_workshop_part" v="Component"/>
+        <e k="RVB_workshop_condition" v="Condition"/>
+        <e k="RVB_workshop_value" v="Value"/>
+        <e k="RVB_workshop_repair" v="Repair?"/>
         <e k="RVB_Workshop_work" v="Work"/>
         <e k="RVB_Workshop_date" v="Date"/>
         <e k="RVB_Workshop_lifetime" v="Operating hours"/>
@@ -196,6 +196,98 @@
         <e k="RVB_WorkshopS_repNoNeed" v="No repair needed."/>
         <e k="RVB_WorkshopS_month" v=" month"/>
 
+        <e k="RVB_faultDetail_ENGINE_misfire" v="Engine: misfire. Symptoms: rough engine operation, reduced power and increased fuel consumption."/>
+        <e k="RVB_faultDetail_ENGINE_lowOilPressure" v="Engine: low oil pressure. Symptoms: reduced power and increased engine wear."/>
+        <e k="RVB_faultDetail_ENGINE_headGasketFailure" v="Engine: head gasket failure. Symptoms: overheating and increased component wear."/>
+        <e k="RVB_faultDetail_ENGINE_overheating" v="Engine: overheating. Symptoms: high engine temperature and reduced power."/>
+        <e k="RVB_faultDetail_ENGINE_compressionLoss" v="Engine: loss of compression. Symptoms: reduced engine power."/>
+        <e k="RVB_faultDetail_ENGINE_sensorFault" v="Engine: sensor fault. Symptoms: incorrect engine control."/>
+        <e k="RVB_faultDetail_THERMOSTAT_stuckClosed" v="Thermostat: stuck closed. Symptom: the engine may overheat."/>
+        <e k="RVB_faultDetail_THERMOSTAT_stuckOpen" v="Thermostat: stuck open. Symptom: the engine warms up slowly or runs too cold."/>
+        <e k="RVB_faultDetail_THERMOSTAT_restrictedFlow" v="Thermostat: restricted coolant flow. Symptom: the engine may overheat."/>
+        <e k="RVB_faultDetail_GLOWPLUG_burntGlowPlug" v="Glow plug: burnt out. Symptom: the engine is harder to start."/>
+        <e k="RVB_faultDetail_GLOWPLUG_shortCircuit" v="Glow plug: short circuit. Symptom: the engine is harder to start."/>
+
+        <e k="RVB_faultDetail_BATTERY_discharged" v="Battery: discharged. Symptom: the engine is difficult or impossible to start."/>
+        <e k="RVB_faultDetail_BATTERY_connectorIssue" v="Battery: loose or corroded connection. Symptom: difficult starting and unreliable electrical operation."/>
+        <e k="RVB_faultDetail_BATTERY_sulfated" v="Battery: capacity loss due to sulfation. Symptom: weak starting performance and rapid discharge."/>
+        <e k="RVB_faultDetail_BATTERY_internalShort" v="Battery: internal short circuit. Symptom: the battery cannot hold a charge, and the engine is difficult or impossible to start."/>
+
+        <e k="RVB_faultDetail_GENERATOR_undercharging" v="Generator: insufficient charging. Symptom: battery charge may decrease while driving."/>
+        <e k="RVB_faultDetail_GENERATOR_wiringIssue" v="Generator: wiring or connection fault. Symptom: charging may be interrupted or fluctuate."/>
+        <e k="RVB_faultDetail_GENERATOR_bearingWear" v="Generator: bearing wear. Symptom: unusual noise and reduced charging performance."/>
+        <e k="RVB_faultDetail_GENERATOR_statorShort" v="Generator: stator winding short circuit. Symptom: the generator cannot charge the battery properly."/>
+        <e k="RVB_faultDetail_GENERATOR_voltageIrregularity" v="Generator: voltage regulator fault. Symptom: fluctuating charging voltage, which may damage the battery."/>
+
+        <e k="RVB_faultDetail_SELFSTARTER_solenoidFailure" v="Starter: solenoid failure. Symptom: clicking or unsuccessful starting."/>
+        <e k="RVB_faultDetail_SELFSTARTER_brushWear" v="Starter: brush wear. Symptom: slow or intermittent engine starting."/>
+        <e k="RVB_faultDetail_SELFSTARTER_starterMotorWear" v="Starter: starter motor wear. Symptom: the engine starts slowly or with difficulty."/>
+        <e k="RVB_faultDetail_SELFSTARTER_gearWear" v="Starter: drive gear wear. Symptom: the starter struggles to engage with the engine and unusual noise may occur."/>
+        <e k="RVB_faultDetail_SELFSTARTER_shortCircuit" v="Starter: short circuit. Symptom: starting may fail and the electrical system may also be damaged."/>
+
+        <e k="RVB_faultDetail_WIPERS_motorWear" v="Wipers: motor wear or failure. Symptom: the wipers operate slowly or stop working."/>
+
+        <e k="RVB_faultDetail_LOWBEAM_burntBulb" v="Lighting: burnt-out bulb. Symptom: the affected light does not illuminate."/>
+        <e k="RVB_faultDetail_HIGHBEAM_burntBulb" v="Lighting: burnt-out bulb. Symptom: the affected light does not illuminate."/>
+        <e k="RVB_faultDetail_WORKFRONT_burntBulb" v="Lighting: burnt-out bulb. Symptom: the affected light does not illuminate."/>
+        <e k="RVB_faultDetail_WORKBACK_burntBulb" v="Lighting: burnt-out bulb. Symptom: the affected light does not illuminate."/>
+        <e k="RVB_faultDetail_TURNLEFT_burntBulb" v="Lighting: burnt-out bulb. Symptom: the affected turn signal does not work."/>
+        <e k="RVB_faultDetail_TURNRIGHT_burntBulb" v="Lighting: burnt-out bulb. Symptom: the affected turn signal does not work."/>
+        <e k="RVB_faultDetail_TURNHAZARD_burntBulb" v="Lighting: burnt-out bulb. Symptom: the affected hazard warning light does not work."/>
+        <e k="RVB_faultDetail_BRAKE_burntBulb" v="Lighting: burnt-out bulb. Symptom: the affected brake light does not illuminate."/>
+        <e k="RVB_faultDetail_REVERSEL_burntBulb" v="Lighting: burnt-out bulb. Symptom: the affected reverse light does not illuminate."/>
+        <e k="RVB_faultDetail_BEACON_burntBulb" v="Lighting: burnt-out bulb. Symptom: the beacon does not work."/>
+        <e k="RVB_faultDetail_PIPE_burntBulb" v="Lighting: burnt-out bulb. Symptom: the unloading auger work light does not illuminate."/>
+
+        <e k="RVB_faultDetail_LOWBEAM_wiringShort" v="Lighting: wiring fault or short circuit. Symptom: the light may flicker or go out."/>
+        <e k="RVB_faultDetail_HIGHBEAM_wiringShort" v="Lighting: wiring fault or short circuit. Symptom: the light may flicker or go out."/>
+        <e k="RVB_faultDetail_WORKFRONT_wiringShort" v="Lighting: wiring fault or short circuit. Symptom: the light may flicker or go out."/>
+        <e k="RVB_faultDetail_WORKBACK_wiringShort" v="Lighting: wiring fault or short circuit. Symptom: the light may flicker or go out."/>
+        <e k="RVB_faultDetail_TURNLEFT_wiringShort" v="Lighting: wiring fault or short circuit. Symptom: the turn signal may stop flashing or flash irregularly."/>
+        <e k="RVB_faultDetail_TURNRIGHT_wiringShort" v="Lighting: wiring fault or short circuit. Symptom: the turn signal may stop flashing or flash irregularly."/>
+        <e k="RVB_faultDetail_TURNHAZARD_wiringShort" v="Lighting: wiring fault or short circuit. Symptom: the hazard lights may stop flashing or flash irregularly."/>
+        <e k="RVB_faultDetail_BRAKE_wiringShort" v="Lighting: wiring fault or short circuit. Symptom: the brake light may operate intermittently."/>
+        <e k="RVB_faultDetail_REVERSEL_wiringShort" v="Lighting: wiring fault or short circuit. Symptom: the reverse light may operate intermittently."/>
+        <e k="RVB_faultDetail_BEACON_wiringShort" v="Lighting: wiring fault or short circuit. Symptom: the beacon may flicker or go out."/>
+        <e k="RVB_faultDetail_PIPE_wiringShort" v="Lighting: wiring fault or short circuit. Symptom: the unloading auger work light may flicker or go out."/>
+
+        <e k="RVB_faultDetail_LOWBEAM_ledFailure" v="Lighting: LED module failure. Symptom: light output may decrease or the light may go out."/>
+        <e k="RVB_faultDetail_HIGHBEAM_ledFailure" v="Lighting: LED module failure. Symptom: light output may decrease or the light may go out."/>
+        <e k="RVB_faultDetail_WORKFRONT_ledFailure" v="Lighting: LED module failure. Symptom: light output may decrease or the work light may go out."/>
+
+        <e k="RVB_faultDetail_LOWBEAM_controlModuleFailure" v="Lighting: control module failure. Symptom: the light may flicker, become dimmer or fail to switch on."/>
+        <e k="RVB_faultDetail_HIGHBEAM_controlModuleFailure" v="Lighting: control module failure. Symptom: the light may flicker, become dimmer or fail to switch on."/>
+
+        <e k="RVB_faultDetail_LOWBEAM_corrodedConnector" v="Lighting: corroded connector. Symptom: the light may flicker or go out intermittently."/>
+        <e k="RVB_faultDetail_HIGHBEAM_corrodedConnector" v="Lighting: corroded connector. Symptom: the light may flicker or go out intermittently."/>
+        <e k="RVB_faultDetail_WORKFRONT_corrodedConnector" v="Lighting: corroded connector. Symptom: the work light may flicker or go out intermittently."/>
+        <e k="RVB_faultDetail_WORKBACK_corrodedConnector" v="Lighting: corroded connector. Symptom: the work light may flicker or go out intermittently."/>
+        <e k="RVB_faultDetail_TURNLEFT_corrodedConnector" v="Lighting: corroded connector. Symptom: the turn signal may operate intermittently."/>
+        <e k="RVB_faultDetail_TURNRIGHT_corrodedConnector" v="Lighting: corroded connector. Symptom: the turn signal may operate intermittently."/>
+        <e k="RVB_faultDetail_TURNHAZARD_corrodedConnector" v="Lighting: corroded connector. Symptom: the hazard lights may operate intermittently."/>
+        <e k="RVB_faultDetail_BRAKE_corrodedConnector" v="Lighting: corroded connector. Symptom: the brake light may operate intermittently."/>
+        <e k="RVB_faultDetail_REVERSEL_corrodedConnector" v="Lighting: corroded connector. Symptom: the reverse light may operate intermittently."/>
+        <e k="RVB_faultDetail_BEACON_corrodedConnector" v="Lighting: corroded connector. Symptom: the beacon may flicker or go out intermittently."/>
+        <e k="RVB_faultDetail_PIPE_corrodedConnector" v="Lighting: corroded connector. Symptom: the unloading auger work light may flicker or go out intermittently."/>
+
+        <e k="RVB_faultDetail_TIREFL_treadWorn" v="Front left tire: worn tread. Symptom: reduced traction."/>
+        <e k="RVB_faultDetail_TIREFR_treadWorn" v="Front right tire: worn tread. Symptom: reduced traction."/>
+        <e k="RVB_faultDetail_TIRERL_treadWorn" v="Rear left tire: worn tread. Symptom: reduced traction."/>
+        <e k="RVB_faultDetail_TIRERR_treadWorn" v="Rear right tire: worn tread. Symptom: reduced traction."/>
+        <e k="RVB_faultDetail_TIRERL2_treadWorn" v="Second rear left tire: worn tread. Symptom: reduced traction."/>
+        <e k="RVB_faultDetail_TIRERR2_treadWorn" v="Second rear right tire: worn tread. Symptom: reduced traction."/>
+        <e k="RVB_faultDetail_TIRERL3_treadWorn" v="Third rear left tire: worn tread. Symptom: reduced traction."/>
+        <e k="RVB_faultDetail_TIRERR3_treadWorn" v="Third rear right tire: worn tread. Symptom: reduced traction."/>
+
+        <e k="RVB_faultDetail_TIREFL_puncture" v="Front left tire: puncture. Symptoms: reduced traction and impaired vehicle handling."/>
+        <e k="RVB_faultDetail_TIREFR_puncture" v="Front right tire: puncture. Symptoms: reduced traction and impaired vehicle handling."/>
+        <e k="RVB_faultDetail_TIRERL_puncture" v="Rear left tire: puncture. Symptoms: reduced traction and impaired vehicle handling."/>
+        <e k="RVB_faultDetail_TIRERR_puncture" v="Rear right tire: puncture. Symptoms: reduced traction and impaired vehicle handling."/>
+        <e k="RVB_faultDetail_TIRERL2_puncture" v="Second rear left tire: puncture. Symptoms: reduced traction and impaired vehicle handling."/>
+        <e k="RVB_faultDetail_TIRERR2_puncture" v="Second rear right tire: puncture. Symptoms: reduced traction and impaired vehicle handling."/>
+        <e k="RVB_faultDetail_TIRERL3_puncture" v="Third rear left tire: puncture. Symptoms: reduced traction and impaired vehicle handling."/>
+        <e k="RVB_faultDetail_TIRERR3_puncture" v="Third rear right tire: puncture. Symptoms: reduced traction and impaired vehicle handling."/>
+
         <e k="RVB_WorkshopMessage_service" v="You have exceeded the specified service interval by %s hours, so the repair took longer and cost more." tag="format"/>
         <e k="RVB_WorkshopMessage_serviceDone" v="Service completed."/>
         <e k="RVB_WorkshopMessage_repairDone" v="Repair completed. Replaced/repaired part(s): %s" tag="format"/>
@@ -204,7 +296,7 @@
 
         <e k="RVB_inspectionDialogFault" v="%s vehicle inspected, repair needed. %s"/>
         <e k="RVB_inspectionDialogEnd" v="%s vehicle inspected, no repairs needed."/>
-        <e k="RVB_inspectionDialogEnd_other" v="%s vehicle inspected and repaired. Your mechanic was very busy, so a junior mechanic repaired your vehicle. However, this junior mechanic cannot list what was fixed on your vehicle."/>
+        <e k="RVB_inspectionDialogEnd_other" v="%s vehicle was inspected and repaired. Your mechanic had a lot of work to do, so a junior mechanic carried out the repair. However, this junior mechanic cannot list what was repaired on the vehicle."/>
 
         <e k="RVB_serviceDialogEnd" v="Service for %s vehicle completed."/>
         <e k="RVB_repairDialogEnd" v="Repair of %s vehicle completed."/>
@@ -222,6 +314,7 @@
         <e k="RVB_DEAD_ENGINE_BATTERY" v="Engine won't start, battery discharged."/>
         <e k="RVB_DEAD_ENGINE_BATTERY_CHARGING" v="Vehicle cannot be started, battery charging in progress."/>
         <e k="RVB_DEAD_ENGINE" v="The engine does not start."/>
+        <e k="RVB_WARNING_lowCrankingVoltage" v="Low cranking voltage: %.2f V! Engine starting disabled (Minimum: %.2f V)!" tag="format"/>
 
         <e k="RVB_fault_lights_INSPECTION" v="The lighting cannot be turned on while the vehicle inspection is in progress."/>
         <e k="RVB_fault_lights_REPAIR" v="The lighting cannot be turned on while the vehicle repair is in progress."/>
@@ -241,17 +334,7 @@
         <e k="electricChargeTurbine" v="Electric Wind Turbine Charger"/>
         <e k="function_powerpack" v="Use this to charge your electric vehicles and transport electric power to remote locations."/>
 
-        <e k="Automatic_Repair_conflict_notice" v="Some modifications automatically repair the vehicle, which may conflict with the &quot;Real Vehicle Breakdowns(RVB)&quot; mode.
-
-For the following modification(s), automatic repair has been overridden by the RVB mod.
-
-Overridden modification(s): %s
-
-Thank you for your understanding.
-
-Best regards,
-
-MathiasHun" tag="format"/>
+        <e k="Automatic_Repair_conflict_notice" v="Some modifications automatically repair the vehicle, which may conflict with the &quot;Real Vehicle Breakdowns(RVB)&quot; mode.&#xD;&#xA;&#xD;&#xA;For the following modification(s), automatic repair has been overridden by the RVB mod.&#xD;&#xA;&#xD;&#xA;Overridden modification(s): %s&#xD;&#xA;&#xD;&#xA;Thank you for your understanding.&#xD;&#xA;&#xD;&#xA;Best regards,&#xD;&#xA;&#xD;&#xA;MathiasHun" tag="format"/>
 
         <e k="RVB_aimessage_batterydischarged" v="%s AI helper unexpectedly stopped working, the vehicle's battery has discharged!" tag="format"/>
 
@@ -263,35 +346,59 @@ MathiasHun" tag="format"/>
         <e k="infohud_uytBatteryChargeTime" v="Remaining charging time"/>
 
         <e k="typeDesc_battery" v="Battery"/>
+        <e k="batteryCapacity" v="Battery capacity (Ah)"/>
 
         <e k="name_batterySmall" v="Small battery"/>
         <e k="name_batteryMedium" v="Medium battery"/>
         <e k="name_batteryBig" v="Large battery"/>
 
-        <e k="function_batteryBig75" v="Small capacity, 75 Ah battery"/>
-        <e k="function_batteryBig80" v="Small capacity, 80 Ah battery"/>
-        <e k="function_batteryBig90" v="Small capacity, 90 Ah battery"/>
-        <e k="function_batteryBig100" v="Medium capacity, 100 Ah battery"/>
-        <e k="function_batteryBig120" v="Medium capacity, 120 Ah battery"/>
-        <e k="function_batteryBig140" v="Large capacity, 140 Ah battery"/>
-        <e k="function_batteryBig150" v="Large capacity, 150 Ah battery"/>
-        <e k="function_batteryBig180" v="Large capacity, 180 Ah battery"/>
-        <e k="function_batteryBig200" v="Large capacity, 200 Ah battery"/>
+        <e k="function_battery" v="Battery with selectable capacity, ranging from 75 to 200 Ah."/>
 
         <e k="unit_ampereHourShort" v="Ah"/>
+
+        <e k="RVB_batteryConnection_series" v="series connection"/>
+        <e k="RVB_batteryConnection_parallel" v="parallel connection"/>
+        <e k="RVB_batteryConnection_mixed" v="series-parallel connection"/>
+
         <e k="RVB_action_batteryWorkshop" v="Insert battery"/>
 
         <e k="RVB_allBatteriesInstalled" v="All batteries are already installed in the vehicle."/>
-        <e k="RVB_wrongBattery" v="Incorrect battery.
-
-Battery installed in the vehicle: %.0f Ah
-Selected battery: %.0f Ah" tag="format"/>
+        <e k="RVB_wrongBattery" v="Incorrect battery.&#xD;&#xA;Battery installed in the vehicle: %.0f Ah&#xD;&#xA;Selected battery: %.0f Ah" tag="format"/>
         <e k="RVB_tooManyVehicles" v="Please move the other vehicles out! There are currently %d vehicles in the trigger area, but only one can be near the battery at a time." tag="format"/>
         <e k="RVB_tooManyVehicles_hud" v="Too many vehicles in the trigger area!"/>
         <e k="RVB_batteryInstallation" v="Battery installation: %d%%" tag="format"/>
         <e k="RVB_batteryRemoval" v="Battery removal: %d%%" tag="format"/>
         <e k="RVB_vehicleEnteredTrigger" v="%s is near the battery." tag="format"/>
         <e k="RVB_vehicleLeftTrigger" v="%s is no longer near the battery." tag="format"/>
+        <e k="rvbHelp_general" v="Real Vehicle Breakdowns"/>
+        <e k="rvbHelp_general_overview" v="General Overview"/>
+        <e k="rvbHelp_general_overview_title" v="Mod Overview"/>
+        <e k="rvbHelp_general_overview_text" v="The Real Vehicle Breakdowns (RVB) mod aims to make vehicle operation more realistic and unpredictable in Farming Simulator 25. The mod introduces a complex breakdown and maintenance system in which vehicle components have their own service life. Usage, operating hours, engine load, operating temperature and maintenance can all affect the condition of vehicles. Improper operation and neglected maintenance can lead to premature wear, breakdowns and, in extreme cases, complete vehicle failure. Breakdowns can affect various systems, including engine operation, the cooling system, electrical equipment, the starting system and lighting. Battery condition, charge level and ambient temperature can also affect engine starting. Vehicle condition can be monitored through the RVB's dedicated interface. The workshop system allows inspections, scheduled maintenance and repairs to be carried out. The associated costs are influenced by factors such as vehicle value and age. The aim of RVB is to make vehicle operation about more than just getting the job done: monitoring machine condition, performing proper maintenance and dealing with unexpected breakdowns also become part of the gameplay."/>
+
+        <e k="rvbHelp_general_features_title" v="Main Features"/>
+        <e k="rvbHelp_general_features_text" v="Real Vehicle Breakdowns manages several systems that affect vehicle operation, condition and reliability."/>
+        <e k="rvbHelp_general_features_maintenance_title" v="Maintenance and Component Lifespan"/>
+        <e k="rvbHelp_general_features_maintenance_text" v="Vehicle components have a defined service life. Operating hours, intensity of use and maintenance all affect their condition. The system allows periodic maintenance, inspections and necessary repairs to be carried out."/>
+        <e k="rvbHelp_general_features_failures_title" v="Breakdowns"/>
+        <e k="rvbHelp_general_features_failures_text" v="Vehicles can experience various mechanical and electrical faults. Breakdowns can affect engine performance, starting, cooling, lighting and the operation of electrical systems."/>
+        <e k="rvbHelp_general_features_battery_title" v="Battery and Electrical System"/>
+        <e k="rvbHelp_general_features_battery_text" v="Battery charge level, condition and temperature affect engine starting. Lighting and other electrical consumers use power, while the running alternator recharges the battery."/>
+        <e k="rvbHelp_general_features_workshop_title" v="Workshop and Repairs"/>
+        <e k="rvbHelp_general_features_workshop_text" v="Vehicle condition can be checked, maintenance performed and repairs carried out in the workshop. Each procedure has its own duration and cost."/>
+        <e k="rvbHelp_general_features_gameplay_title" v="Customizable Gameplay"/>
+        <e k="rvbHelp_general_features_gameplay_text" v="The mod settings allow you to customize breakdown difficulty, maintenance intervals and other operating parameters."/>
+
+        <e k="rvbHelp_battery" v="Battery System"/>
+        <e k="rvbHelp_battery_overview" v="Battery Overview"/>
+        <e k="rvbHelp_battery_capacity_title" v="Battery Capacity"/>
+        <e k="rvbHelp_battery_capacity_text" v="Battery capacity is measured in amp-hours (Ah)."/>
+        <e k="rvbHelp_battery_connection_title" v="Battery Connections"/>
+        <e k="rvbHelp_battery_connection_text" v="Vehicles can use parallel or series battery configurations."/>
+
+        <e k="rvbHelp_engine" v="Engine"/>
+        <e k="rvbHelp_engine_starting" v="Engine Starting"/>
+        <e k="rvbHelp_engine_starting_title" v="Starting Requirements"/>
+        <e k="rvbHelp_engine_starting_text" v="The battery must provide sufficient cranking current for the engine."/>
 
     </elements>
 </l10n>

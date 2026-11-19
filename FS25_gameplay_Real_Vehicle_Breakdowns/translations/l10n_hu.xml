@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <l10n>
     <elements>
-        <e k="input_RVB_MENU" v="RVB Menü"/>
+        <e k="input_RVB_MENU" v="RVB-Menü"/>
         <e k="input_RVB_SPEC" v="RVB be/ki"/>
         <e k="input_RVB_CONNECTING_JC" v="Indítókábel csatlakoztatása"/>
         <e k="input_RVB_CLOGGED" v="Eltömődés"/>
@@ -39,10 +39,10 @@
         <e k="RVB_toolTip_workshopOpen" v="A járműműhely nyitásának időpontja."/>
         <e k="RVB_setting_workshopClose" v="Zárási idő"/>
         <e k="RVB_toolTip_workshopClose" v="A járműműhely zárásának időpontja."/>
-        <e k="RVB_setting_workshopCountMax" v="Maximum járművek a műhelyben"/>
+        <e k="RVB_setting_workshopCountMax" v="Járművek maximális száma a műhelyben"/>
         <e k="RVB_toolTip_workshopCountMax" v="Itt szabhatod meg, hány jármű fér be egyszerre a műhelybe."/>
         <e k="RVB_settingSectionHeader_LifetimeofParts" v="Alkatrészek élettartama"/>
-        <e k="RVB_toolTip_lifetimeParts" v="Minél kisebb ez a szám, annál hamarabb fog meghibásodni."/>
+        <e k="RVB_toolTip_lifetimeParts" v="Minél kisebb ez az érték, annál hamarabb következik be a meghibásodás."/>
         <e k="RVB_setting_thermostatLifetime" v="Termosztát"/>
         <e k="RVB_setting_lightingsLifetime" v="Világítás"/>
         <e k="RVB_setting_glowplugLifetime" v="Izzítógyertya"/>
@@ -51,7 +51,7 @@
         <e k="RVB_setting_engineLifetime" v="Motor"/>
         <e k="RVB_setting_selfstarterLifetime" v="Önindító"/>
         <e k="RVB_setting_batteryLifetime" v="Akkumulátor"/>
-        <e k="RVB_setting_tireLifetime" v="Gumi"/>
+        <e k="RVB_setting_tireLifetime" v="Gumiabroncs"/>
         <e k="RVB_utils_hour" v="%s óra" tag="format"/>
         <e k="RVB_utils_km" v="%s km" tag="format"/>
         <e k="RVB_utils_maxcount" v="%s db" tag="format"/>
@@ -79,7 +79,7 @@
         <e k="RVB_toolTip_showdebug" v="Megjeleníti a hibakeresést a konzolon és log.txt-ben. (kikapcsolva fokozhatja a teljesítményt)"/>
 
         <e k="RVB_MenuGamePartsSettings" v="Járműbeállítások"/>
-        <e k="RVB_Parts_stepInterval" v="Lépésköz(%)"/>
+        <e k="RVB_Parts_stepInterval" v="Lépésköz (%)"/>
         <e k="RVB_Parts_currentValue" v="Jelenlegi %s élettartama" tag="format"/>
         <e k="RVB_Parts_remainingValue" v="%s élettartam, beállítás" tag="format"/>
         <e k="RVB_part_rvbDifficulty" v="Jármű meghibásodása"/>
@@ -89,26 +89,26 @@
         <e k="RVB_button_inspection" v="Átvizsgálás"/>
         <e k="RVB_button_dailyservice" v="Napi szerviz"/>
         <e k="RVB_button_periodicservice" v="Időszakos szerviz"/>
-        <e k="RVB_button_battery_ch" v="Akkumulátor töltés"/>
+        <e k="RVB_button_battery_ch" v="Akkumulátortöltés"/>
         <e k="RVB_button_service" v="Szerviz"/>
         <e k="RVB_durationDialog" v="Teljes időtartam: "/>
         <e k="RVB_durationDay" v="%d nap" tag="format"/>
         <e k="RVB_durationHour" v="%d óra" tag="format"/>
         <e k="RVB_durationMinute" v="%d perc" tag="format"/>
-        <e k="RVB_serviceSelectTitle" v="Szerviz kiválasztása"/><!--NEW-->
-        <e k="RVB_serviceSelectDescription" v="Válaszd ki, milyen szervizt szeretnél:"/><!--NEW-->
-        <e k="RVB_inspectionSelectTitle" v="Átvizsgálás kiválasztása"/><!--NEW-->
-        <e k="RVB_inspectionSelectDescription" v="Válaszd ki, milyen átvizsgálást szeretnél:"/><!--NEW-->
-        <e k="RVB_inspectionEngine" v="Motor"/><!--NEW-->
-        <e k="RVB_inspectionElectrical" v="Elektromos rendszer"/><!--NEW-->
-        <e k="RVB_inspectionLighting" v="Világítás"/><!--NEW-->
-        <e k="RVB_inspectionMechanical" v="Futómű és mechanika"/><!--NEW-->
-        <e k="RVB_inspectionTires" v="Gumik és kerekek"/><!--NEW-->
-        <e k="RVB_inspectionFull" v="Teljes átvizsgálás"/><!--NEW-->
+        <e k="RVB_serviceSelectTitle" v="Szerviz kiválasztása"/>
+        <e k="RVB_serviceSelectDescription" v="Válaszd ki, milyen szervizt szeretnél:"/>
+        <e k="RVB_inspectionSelectTitle" v="Átvizsgálás kiválasztása"/>
+        <e k="RVB_inspectionSelectDescription" v="Válaszd ki, milyen átvizsgálást szeretnél:"/>
+        <e k="RVB_inspectionEngine" v="Motor"/>
+        <e k="RVB_inspectionElectrical" v="Elektromos rendszer"/>
+        <e k="RVB_inspectionLighting" v="Világítás"/>
+        <e k="RVB_inspectionMechanical" v="Futómű és mechanika"/>
+        <e k="RVB_inspectionTires" v="Gumiabroncsok és kerekek"/>
+        <e k="RVB_inspectionFull" v="Teljes átvizsgálás"/>
         <e k="RVB_inspectionDialog" v="Biztosan át akarod vizsgáltatni ezt a járművet %s összegért?" tag="format"/>
         <e k="RVB_inspectionTimeDialog" v="A jármű átvizsgálása %s órakor fejeződik be." tag="format"/>
         <e k="RVB_inspectionDayDialog" v="A jármű átvizsgálása holnap %s órakor fejeződik be." tag="format"/>
-        <e k="RVB_inspectionDaysDialog" v="A jármű átvizsgálása %d nap múlva %s-kor fejeződik be." tag="format"/><!--NEW-->
+        <e k="RVB_inspectionDaysDialog" v="A jármű átvizsgálása %d nap múlva %s-kor fejeződik be." tag="format"/>
         <e k="RVB_faultText_THERMOSTAT" v="Termosztát"/>
         <e k="RVB_faultText_LIGHTINGS" v="Világítás"/>
         <e k="RVB_faultText_GLOWPLUG" v="Izzítógyertya"/>
@@ -117,49 +117,46 @@
         <e k="RVB_faultText_ENGINE" v="Motor"/>
         <e k="RVB_faultText_SELFSTARTER" v="Önindító"/> 
         <e k="RVB_faultText_BATTERY" v="Akkumulátor"/>
-        <e k="RVB_faultText_TIRE" v="Gumi"/>
-        <e k="RVB_faultText_TIREFL" v="Bal első gumi"/>
-        <e k="RVB_faultText_TIREFR" v="Jobb első gumi"/>
-        <e k="RVB_faultText_TIRERL" v="Bal hátsó gumi"/>
-        <e k="RVB_faultText_TIRERR" v="Jobb hátsó gumi"/>
-        <e k="RVB_faultText_TIRERL2" v="Bal 2. hátsó gumi"/>
-        <e k="RVB_faultText_TIRERR2" v="Jobb 2. hátsó gumi"/>
-        <e k="RVB_faultText_TIRERL3" v="Bal 3. hátsó gumi"/>
-        <e k="RVB_faultText_TIRERR3" v="Jobb 3. hátsó gumi"/>
+        <e k="RVB_faultText_TIRE" v="Gumiabroncs"/>
+        <e k="RVB_faultText_TIREFL" v="Bal első gumiabroncs"/>
+        <e k="RVB_faultText_TIREFR" v="Jobb első gumiabroncs"/>
+        <e k="RVB_faultText_TIRERL" v="Bal hátsó gumiabroncs"/>
+        <e k="RVB_faultText_TIRERR" v="Jobb hátsó gumiabroncs"/>
+        <e k="RVB_faultText_TIRERL2" v="Bal 2. hátsó gumiabroncs"/>
+        <e k="RVB_faultText_TIRERR2" v="Jobb 2. hátsó gumiabroncs"/>
+        <e k="RVB_faultText_TIRERL3" v="Bal 3. hátsó gumiabroncs"/>
+        <e k="RVB_faultText_TIRERR3" v="Jobb 3. hátsó gumiabroncs"/>
 
-        <e k="RVB_faultType_engine" v="Motor"/><!--NEW-->
-        <e k="RVB_faultType_electrical" v="Elektromos rendszer"/><!--NEW-->
-        <e k="RVB_faultType_lights" v="Világítás"/><!--NEW-->
-        <e k="RVB_faultType_mechanical" v="Mechanikus rendszer"/><!--NEW-->
-        <e k="RVB_faultType_tires" v="Gumiabroncsok"/><!--NEW-->
+        <e k="RVB_faultType_engine" v="Motor"/>
+        <e k="RVB_faultType_electrical" v="Elektromos rendszer"/>
+        <e k="RVB_faultType_lights" v="Világítás"/>
+        <e k="RVB_faultType_mechanical" v="Mechanikai rendszer"/>
+        <e k="RVB_faultType_tires" v="Gumiabroncsok"/>
 
-        <e k="RVB_fillType_battery" v="Akkumulátor"/><!--NEW-->
-        <e k="RVB_fillType_motoroil" v="Motorolaj"/><!--NEW-->
-        <e k="RVB_fillType_coolant" v="Hűtőfolyadék"/><!--NEW-->
+        <e k="RVB_fillType_battery" v="Akkumulátor"/>
+        <e k="RVB_fillType_motoroil" v="Motorolaj"/>
+        <e k="RVB_fillType_coolant" v="Hűtőfolyadék"/>
 
-        <e k="RVB_lightFaultsText_LOWBEAM" v="Tompított lámpa"/><!--NEW-->
-        <e k="RVB_lightFaultsText_HIGHBEAM" v="Távolsági fényszóró"/><!--NEW-->
-        <e k="RVB_lightFaultsText_WORKFRONT" v="Első munkalámpa"/><!--NEW-->
-        <e k="RVB_lightFaultsText_WORKBACK" v="Hátsó munkalámpa"/><!--NEW-->
-        <e k="RVB_lightFaultsText_TURNLEFT" v="Bal oldali irányjelző"/><!--NEW-->
-        <e k="RVB_lightFaultsText_TURNRIGHT" v="Jobb oldali irányjelző"/><!--NEW-->
-        <e k="RVB_lightFaultsText_TURNHAZARD" v="Vészvillogó"/><!--NEW-->
-        <e k="RVB_lightFaultsText_BRAKE" v="Féklámpa"/><!--NEW-->
-        <e k="RVB_lightFaultsText_REVERSEL" v="Tolatólámpa"/><!--NEW-->
-        <e k="RVB_lightFaultsText_BEACON" v="Villogó jelzőfény"/><!--NEW-->
-        <e k="RVB_lightFaultsText_PIPE" v="Ürítőcső-munkalámpa"/><!--NEW-->
+        <e k="RVB_lightFaultsText_LOWBEAM" v="Tompított lámpa"/>
+        <e k="RVB_lightFaultsText_HIGHBEAM" v="Távolsági fényszóró"/>
+        <e k="RVB_lightFaultsText_WORKFRONT" v="Első munkalámpa"/>
+        <e k="RVB_lightFaultsText_WORKBACK" v="Hátsó munkalámpa"/>
+        <e k="RVB_lightFaultsText_TURNLEFT" v="Bal oldali irányjelző"/>
+        <e k="RVB_lightFaultsText_TURNRIGHT" v="Jobb oldali irányjelző"/>
+        <e k="RVB_lightFaultsText_TURNHAZARD" v="Vészvillogó"/>
+        <e k="RVB_lightFaultsText_BRAKE" v="Féklámpa"/>
+        <e k="RVB_lightFaultsText_REVERSEL" v="Tolatólámpa"/>
+        <e k="RVB_lightFaultsText_BEACON" v="Villogó jelzőfény"/>
+        <e k="RVB_lightFaultsText_PIPE" v="Ürítőcső-munkalámpa"/>
         <e k="RVB_repairErrorMechanics" v="Minden szerelő foglalt, egyszerre legfeljebb %s jármű javítható." tag="format"/>
         <e k="RVB_repairTimeDialog" v="A jármű javítása %s órakor fejeződik be." tag="format"/>
-        <e k="RVB_repairDialog" v="Biztosan meg akarod javítani ezt a járművet %s összegért?" tag="format"/><!--NEW-->
+        <e k="RVB_repairDialog" v="Biztosan meg akarod javítani ezt a járművet %s összegért?" tag="format"/>
         <e k="RVB_repairDayDialog" v="A jármű javítása holnap %s órakor fejeződik be." tag="format"/>
-        <e k="RVB_repairDaysDialog" v="A jármű javítása %d nap múlva %s-kor fejeződik be." tag="format"/><!--NEW-->
-
-
-
+        <e k="RVB_repairDaysDialog" v="A jármű javítása %d nap múlva %s-kor fejeződik be." tag="format"/>
 
         <e k="RVB_ErrorList" v="Hibalista:" />
         <e k="RVB_periodicserviceDialog" v="Biztosan szervizeltetni akarod ezt a járművet %s összegért?" tag="format"/>
-        <e k="RVB_periodicserviceDayDialog" v="A jármű szervizelése holnap %s órakor fejeződik be." tag="format"/><!--DEL-->
+        <e k="RVB_periodicserviceDayDialog" v="A jármű szervizelése holnap %s órakor fejeződik be." tag="format"/>
         <e k="RVB_periodicserviceTimeDialog" v="A jármű szervizelése ma %s-kor fejeződik be." tag="format"/>
         <e k="RVB_periodicserviceTomorrowDialog" v="A jármű szervizelése holnap %s-kor fejeződik be." tag="format"/>
         <e k="RVB_periodicserviceDaysDialog" v="A jármű szervizelése %d nap múlva %s-kor fejeződik be." tag="format"/>
@@ -178,23 +175,118 @@
         <e k="RVB_Workshop_serviceManual" v="Szervizkönyv"/>
         <e k="RVB_Workshop_noinspection" v="Nincs átvizsgálva a jármű!"/>
         <e k="RVB_Workshop_noserviceManualEntry" v="Nincs bejegyzés a szervizkönyvbe!"/>
-        <e k="RVB_Workshop_status" v="Állapot:"/>
-        <e k="RVB_Workshop_repair" v="Javítás?"/>
+        <e k="RVB_workshop" v="RVB Műhely"/>
+        <e k="RVB_workshop_part" v="Alkatrész"/>
+        <e k="RVB_workshop_condition" v="Állapot"/>
+        <e k="RVB_workshop_value" v="Érték"/>
+        <e k="RVB_workshop_repair" v="Javítás?"/>
         <e k="RVB_Workshop_work" v="Munka"/>
         <e k="RVB_Workshop_date" v="Dátum"/>
         <e k="RVB_Workshop_lifetime" v="Üzemóra"/>
         <e k="RVB_Workshop_odometer" v="Km-állás"/>
         <e k="RVB_Workshop_cost" v="Költség"/>
-        <e k="RVB_WorkshopD_new" v="Újszerű állapotú"/><!--NEW-->
-        <e k="RVB_WorkshopD_conOK" v="Jó állapotú"/><!--NEW-->
-        <e k="RVB_WorkshopD_conMinor" v="Enyhe rendellenesség"/><!--NEW-->
-        <e k="RVB_WorkshopD_conMedium" v="Közepes rendellenesség"/><!--NEW-->
-        <e k="RVB_WorkshopD_conMajor" v="Jelentős rendellenesség"/><!--NEW-->
-        <e k="RVB_WorkshopD_conDead" v="Meghibásodott / Cserére szorul"/><!--NEW-->
+        <e k="RVB_WorkshopD_new" v="Újszerű állapotú"/>
+        <e k="RVB_WorkshopD_conOK" v="Jó állapotú"/>
+        <e k="RVB_WorkshopD_conMinor" v="Enyhe rendellenesség"/>
+        <e k="RVB_WorkshopD_conMedium" v="Közepes rendellenesség"/>
+        <e k="RVB_WorkshopD_conMajor" v="Jelentős rendellenesség"/>
+        <e k="RVB_WorkshopD_conDead" v="Meghibásodott / Cserére szorul"/>
         <e k="RVB_WorkshopD_conReplace" v="Cserére érett"/>
         <e k="RVB_WorkshopS_repNeed" v="Javítás szükséges. "/>
         <e k="RVB_WorkshopS_repNoNeed" v="Javítás nem szükséges."/>
         <e k="RVB_WorkshopS_month" v=" hónap"/>
+
+        <e k="RVB_faultDetail_ENGINE_misfire" v="Motor: gyújtáskimaradás. Tünetek: egyenetlen motorjárás, csökkent teljesítmény és megnövekedett üzemanyag-fogyasztás."/>
+        <e k="RVB_faultDetail_ENGINE_lowOilPressure" v="Motor: alacsony olajnyomás. Tünetek: csökkent teljesítmény és fokozott motorkopás."/>
+        <e k="RVB_faultDetail_ENGINE_headGasketFailure" v="Motor: hengerfejtömítés-hiba. Tünetek: túlmelegedés és fokozott alkatrészkopás."/>
+        <e k="RVB_faultDetail_ENGINE_overheating" v="Motor: túlmelegedési hiba. Tünetek: magas motorhőmérséklet és csökkent teljesítmény."/>
+        <e k="RVB_faultDetail_ENGINE_compressionLoss" v="Motor: kompresszióvesztés. Tünetek: csökkent motorteljesítmény."/>
+        <e k="RVB_faultDetail_ENGINE_sensorFault" v="Motor: érzékelőhiba. Tünetek: hibás motorvezérlés."/>
+        <e k="RVB_faultDetail_THERMOSTAT_stuckClosed" v="Termosztát: zárt állapotban beragadt. Tünet: a motor túlmelegedhet."/>
+        <e k="RVB_faultDetail_THERMOSTAT_stuckOpen" v="Termosztát: nyitott állapotban beragadt. Tünet: a motor lassan melegszik fel vagy túl hidegen üzemel."/>
+        <e k="RVB_faultDetail_THERMOSTAT_restrictedFlow" v="Termosztát: korlátozott hűtőfolyadék-áramlás. Tünet: a motor túlmelegedhet."/>
+        <e k="RVB_faultDetail_GLOWPLUG_burntGlowPlug" v="Izzítógyertya: kiégett. Tünet: a motor nehezebben indul."/>
+        <e k="RVB_faultDetail_GLOWPLUG_shortCircuit" v="Izzítógyertya: rövidzárlat. Tünet: nehezebb motorindítás."/>
+
+        <e k="RVB_faultDetail_BATTERY_discharged" v="Akkumulátor: lemerült. Tünet: a motor nehezen indul vagy nem indítható."/>
+        <e k="RVB_faultDetail_BATTERY_connectorIssue" v="Akkumulátor: laza vagy oxidált csatlakozás. Tünet: nehéz indítás és bizonytalan elektromos működés."/>
+        <e k="RVB_faultDetail_BATTERY_sulfated" v="Akkumulátor: szulfátosodás miatti kapacitásvesztés. Tünet: gyenge indítás és gyors lemerülés."/>
+        <e k="RVB_faultDetail_BATTERY_internalShort" v="Akkumulátor: belső zárlat. Tünet: az akkumulátor nem tartja a töltést, a motor nehezen vagy egyáltalán nem indul."/>
+
+        <e k="RVB_faultDetail_GENERATOR_undercharging" v="Generátor: elégtelen töltés. Tünet: az akkumulátor töltöttsége menet közben csökkenhet."/>
+        <e k="RVB_faultDetail_GENERATOR_wiringIssue" v="Generátor: vezetékezési vagy csatlakozási hiba. Tünet: a töltés kimaradhat vagy ingadozhat."/>
+        <e k="RVB_faultDetail_GENERATOR_bearingWear" v="Generátor: csapágykopás. Tünet: rendellenes zaj és csökkenő töltési teljesítmény."/>
+        <e k="RVB_faultDetail_GENERATOR_statorShort" v="Generátor: állórésztekercs-zárlat. Tünet: a generátor nem tölti megfelelően az akkumulátort."/>
+        <e k="RVB_faultDetail_GENERATOR_voltageIrregularity" v="Generátor: feszültségszabályzó-hiba. Tünet: ingadozó töltés, amely károsíthatja az akkumulátort."/>
+
+        <e k="RVB_faultDetail_SELFSTARTER_solenoidFailure" v="Önindító: behúzómágnes-hiba. Tünet: kattogás vagy sikertelen indítás."/>
+        <e k="RVB_faultDetail_SELFSTARTER_brushWear" v="Önindító: szénkefekopás. Tünet: lassú vagy időszakosan sikertelen motorindítás."/>
+        <e k="RVB_faultDetail_SELFSTARTER_starterMotorWear" v="Önindító: az indítómotor kopása. Tünet: a motor lassan vagy nehezen indul."/>
+        <e k="RVB_faultDetail_SELFSTARTER_gearWear" v="Önindító: a meghajtó fogaskerék kopása. Tünet: az önindító nehezen kapcsolódik a motorhoz, és rendellenes zaj hallható."/>
+        <e k="RVB_faultDetail_SELFSTARTER_shortCircuit" v="Önindító: rövidzárlat. Tünet: az indítás sikertelen lehet, és az elektromos rendszer is károsodhat."/>
+
+        <e k="RVB_faultDetail_WIPERS_motorWear" v="Ablaktörlő: a motor kopása vagy meghibásodása. Tünet: az ablaktörlő lassan működik vagy megáll."/>
+
+        <e k="RVB_faultDetail_LOWBEAM_burntBulb" v="Világítás: kiégett izzó. Tünet: az érintett lámpa nem világít."/>
+        <e k="RVB_faultDetail_HIGHBEAM_burntBulb" v="Világítás: kiégett izzó. Tünet: az érintett lámpa nem világít."/>
+        <e k="RVB_faultDetail_WORKFRONT_burntBulb" v="Világítás: kiégett izzó. Tünet: az érintett lámpa nem világít."/>
+        <e k="RVB_faultDetail_WORKBACK_burntBulb" v="Világítás: kiégett izzó. Tünet: az érintett lámpa nem világít."/>
+        <e k="RVB_faultDetail_TURNLEFT_burntBulb" v="Világítás: kiégett izzó. Tünet: az érintett irányjelző nem működik."/>
+        <e k="RVB_faultDetail_TURNRIGHT_burntBulb" v="Világítás: kiégett izzó. Tünet: az érintett irányjelző nem működik."/>
+        <e k="RVB_faultDetail_TURNHAZARD_burntBulb" v="Világítás: kiégett izzó. Tünet: az érintett vészvillogó-lámpa nem működik."/>
+        <e k="RVB_faultDetail_BRAKE_burntBulb" v="Világítás: kiégett izzó. Tünet: az érintett féklámpa nem világít."/>
+        <e k="RVB_faultDetail_REVERSEL_burntBulb" v="Világítás: kiégett izzó. Tünet: az érintett tolatólámpa nem világít."/>
+        <e k="RVB_faultDetail_BEACON_burntBulb" v="Világítás: kiégett izzó. Tünet: a jelzőfény nem működik."/>
+        <e k="RVB_faultDetail_PIPE_burntBulb" v="Világítás: kiégett izzó. Tünet: az ürítőcső munkalámpája nem világít."/>
+
+        <e k="RVB_faultDetail_LOWBEAM_wiringShort" v="Világítás: vezetékezési hiba vagy rövidzárlat. Tünet: a lámpa villoghat vagy kialudhat."/>
+        <e k="RVB_faultDetail_HIGHBEAM_wiringShort" v="Világítás: vezetékezési hiba vagy rövidzárlat. Tünet: a lámpa villoghat vagy kialudhat."/>
+        <e k="RVB_faultDetail_WORKFRONT_wiringShort" v="Világítás: vezetékezési hiba vagy rövidzárlat. Tünet: a lámpa villoghat vagy kialudhat."/>
+        <e k="RVB_faultDetail_WORKBACK_wiringShort" v="Világítás: vezetékezési hiba vagy rövidzárlat. Tünet: a lámpa villoghat vagy kialudhat."/>
+        <e k="RVB_faultDetail_TURNLEFT_wiringShort" v="Világítás: vezetékezési hiba vagy rövidzárlat. Tünet: az irányjelző villogása kimaradhat vagy szabálytalanná válhat."/>
+        <e k="RVB_faultDetail_TURNRIGHT_wiringShort" v="Világítás: vezetékezési hiba vagy rövidzárlat. Tünet: az irányjelző villogása kimaradhat vagy szabálytalanná válhat."/>
+        <e k="RVB_faultDetail_TURNHAZARD_wiringShort" v="Világítás: vezetékezési hiba vagy rövidzárlat. Tünet: a vészvillogó működése kimaradhat vagy szabálytalanná válhat."/>
+        <e k="RVB_faultDetail_BRAKE_wiringShort" v="Világítás: vezetékezési hiba vagy rövidzárlat. Tünet: a féklámpa működése bizonytalanná válhat."/>
+        <e k="RVB_faultDetail_REVERSEL_wiringShort" v="Világítás: vezetékezési hiba vagy rövidzárlat. Tünet: a tolatólámpa működése bizonytalanná válhat."/>
+        <e k="RVB_faultDetail_BEACON_wiringShort" v="Világítás: vezetékezési hiba vagy rövidzárlat. Tünet: a jelzőfény villoghat vagy kialudhat."/>
+        <e k="RVB_faultDetail_PIPE_wiringShort" v="Világítás: vezetékezési hiba vagy rövidzárlat. Tünet: az ürítőcső munkalámpája villoghat vagy kialudhat."/>
+
+        <e k="RVB_faultDetail_LOWBEAM_ledFailure" v="Világítás: LED-modul meghibásodása. Tünet: a fényerő csökkenhet vagy a lámpa kialudhat."/>
+        <e k="RVB_faultDetail_HIGHBEAM_ledFailure" v="Világítás: LED-modul meghibásodása. Tünet: a fényerő csökkenhet vagy a lámpa kialudhat."/>
+        <e k="RVB_faultDetail_WORKFRONT_ledFailure" v="Világítás: LED-modul meghibásodása. Tünet: a fényerő csökkenhet vagy a munkalámpa kialudhat."/>
+
+        <e k="RVB_faultDetail_LOWBEAM_controlModuleFailure" v="Világítás: vezérlőmodul-hiba. Tünet: a lámpa villoghat, halványabban világíthat vagy nem kapcsolható be."/>
+        <e k="RVB_faultDetail_HIGHBEAM_controlModuleFailure" v="Világítás: vezérlőmodul-hiba. Tünet: a lámpa villoghat, halványabban világíthat vagy nem kapcsolható be."/>
+
+        <e k="RVB_faultDetail_LOWBEAM_corrodedConnector" v="Világítás: korrodált csatlakozó. Tünet: a lámpa villoghat vagy időnként kialudhat."/>
+        <e k="RVB_faultDetail_HIGHBEAM_corrodedConnector" v="Világítás: korrodált csatlakozó. Tünet: a lámpa villoghat vagy időnként kialudhat."/>
+        <e k="RVB_faultDetail_WORKFRONT_corrodedConnector" v="Világítás: korrodált csatlakozó. Tünet: a munkalámpa villoghat vagy időnként kialudhat."/>
+        <e k="RVB_faultDetail_WORKBACK_corrodedConnector" v="Világítás: korrodált csatlakozó. Tünet: a munkalámpa villoghat vagy időnként kialudhat."/>
+        <e k="RVB_faultDetail_TURNLEFT_corrodedConnector" v="Világítás: korrodált csatlakozó. Tünet: az irányjelző működése időszakossá válhat."/>
+        <e k="RVB_faultDetail_TURNRIGHT_corrodedConnector" v="Világítás: korrodált csatlakozó. Tünet: az irányjelző működése időszakossá válhat."/>
+        <e k="RVB_faultDetail_TURNHAZARD_corrodedConnector" v="Világítás: korrodált csatlakozó. Tünet: a vészvillogó működése időszakossá válhat."/>
+        <e k="RVB_faultDetail_BRAKE_corrodedConnector" v="Világítás: korrodált csatlakozó. Tünet: a féklámpa működése időszakossá válhat."/>
+        <e k="RVB_faultDetail_REVERSEL_corrodedConnector" v="Világítás: korrodált csatlakozó. Tünet: a tolatólámpa működése időszakossá válhat."/>
+        <e k="RVB_faultDetail_BEACON_corrodedConnector" v="Világítás: korrodált csatlakozó. Tünet: a jelzőfény villoghat vagy időnként kialudhat."/>
+        <e k="RVB_faultDetail_PIPE_corrodedConnector" v="Világítás: korrodált csatlakozó. Tünet: az ürítőcső munkalámpája villoghat vagy időnként kialudhat."/>
+
+        <e k="RVB_faultDetail_TIREFL_treadWorn" v="Bal első gumiabroncs: kopott futófelület. Tünet: csökkenhet a tapadás."/>
+        <e k="RVB_faultDetail_TIREFR_treadWorn" v="Jobb első gumiabroncs: kopott futófelület. Tünet: csökkenhet a tapadás."/>
+        <e k="RVB_faultDetail_TIRERL_treadWorn" v="Bal hátsó gumiabroncs: kopott futófelület. Tünet: csökkenhet a tapadás."/>
+        <e k="RVB_faultDetail_TIRERR_treadWorn" v="Jobb hátsó gumiabroncs: kopott futófelület. Tünet: csökkenhet a tapadás."/>
+        <e k="RVB_faultDetail_TIRERL2_treadWorn" v="Második bal hátsó gumiabroncs: kopott futófelület. Tünet: csökkenhet a tapadás."/>
+        <e k="RVB_faultDetail_TIRERR2_treadWorn" v="Második jobb hátsó gumiabroncs: kopott futófelület. Tünet: csökkenhet a tapadás."/>
+        <e k="RVB_faultDetail_TIRERL3_treadWorn" v="Harmadik bal hátsó gumiabroncs: kopott futófelület. Tünet: csökkenhet a tapadás."/>
+        <e k="RVB_faultDetail_TIRERR3_treadWorn" v="Harmadik jobb hátsó gumiabroncs: kopott futófelület. Tünet: csökkenhet a tapadás."/>
+
+        <e k="RVB_faultDetail_TIREFL_puncture" v="Bal első gumiabroncs: defekt. Tünet: csökkenhet a tapadás és romolhat a jármű irányíthatósága."/>
+        <e k="RVB_faultDetail_TIREFR_puncture" v="Jobb első gumiabroncs: defekt. Tünet: csökkenhet a tapadás és romolhat a jármű irányíthatósága."/>
+        <e k="RVB_faultDetail_TIRERL_puncture" v="Bal hátsó gumiabroncs: defekt. Tünet: csökkenhet a tapadás és romolhat a jármű irányíthatósága."/>
+        <e k="RVB_faultDetail_TIRERR_puncture" v="Jobb hátsó gumiabroncs: defekt. Tünet: csökkenhet a tapadás és romolhat a jármű irányíthatósága."/>
+        <e k="RVB_faultDetail_TIRERL2_puncture" v="Második bal hátsó gumiabroncs: defekt. Tünet: csökkenhet a tapadás és romolhat a jármű irányíthatósága."/>
+        <e k="RVB_faultDetail_TIRERR2_puncture" v="Második jobb hátsó gumiabroncs: defekt. Tünet: csökkenhet a tapadás és romolhat a jármű irányíthatósága."/>
+        <e k="RVB_faultDetail_TIRERL3_puncture" v="Harmadik bal hátsó gumiabroncs: defekt. Tünet: csökkenhet a tapadás és romolhat a jármű irányíthatósága."/>
+        <e k="RVB_faultDetail_TIRERR3_puncture" v="Harmadik jobb hátsó gumiabroncs: defekt. Tünet: csökkenhet a tapadás és romolhat a jármű irányíthatósága."/>
 
         <e k="RVB_WorkshopMessage_service" v="A megadott szervizintervallumot %s órával túllépted, ezért a javítás tovább tartott és többe került." tag="format"/>
         <e k="RVB_WorkshopMessage_serviceDone" v="Szervizelés befejeződött."/>
@@ -204,7 +296,7 @@
 
         <e k="RVB_inspectionDialogFault" v="%s jármű átvizsgálása befejeződött, javítás szükséges. %s"/>
         <e k="RVB_inspectionDialogEnd" v="%s jármű átvizsgálása befejeződött, nem szükséges a javítás."/>
-        <e k="RVB_inspectionDialogEnd_other" v="%s járművet átvizsgálták és megjavították. Szerelőjének sok munkája volt, ezért egy kezdő szerelő javította meg a járművedet. Ez a kezdő szerelő azonban nem tudja felsorolni, hogy mit javított meg a járműveden."/>
+        <e k="RVB_inspectionDialogEnd_other" v="%s járművet átvizsgálták és megjavították. A szerelőnek sok munkája volt, ezért egy kezdő szerelő javította meg a járművedet. Ez a kezdő szerelő azonban nem tudja felsorolni, hogy mit javított meg a járműveden."/>
 
         <e k="RVB_serviceDialogEnd" v="%s jármű szervizelése befejeződött."/>
         <e k="RVB_repairDialogEnd" v="%s jármű javítása befejeződött."/>
@@ -220,8 +312,9 @@
         <e k="RVB_DEAD_ENGINE_SERVICE" v="Jármű nem indítható, szervizelés folyamatban van."/>
         <e k="RVB_DEAD_ENGINE_SUSPENSION" v="Jármű kulcsa a szerelőnél van, aki éppen pihen."/>
         <e k="RVB_DEAD_ENGINE_BATTERY" v="Motor nem indul, akkumulátor lemerült."/>
-        <e k="RVB_DEAD_ENGINE_BATTERY_CHARGING" v="Jármű nem indítható, akkumulátor töltés folyamatban van."/>
+        <e k="RVB_DEAD_ENGINE_BATTERY_CHARGING" v="Jármű nem indítható, akkumulátortöltés folyamatban van."/>
         <e k="RVB_DEAD_ENGINE" v="A motor nem indul."/>
+        <e k="RVB_WARNING_lowCrankingVoltage" v="Alacsony indítási feszültség: %.2f V! A motor indítása letiltva (Minimum: %.2f V)!" tag="format"/>
 
         <e k="RVB_fault_lights_INSPECTION" v="A világítás nem kapcsolható, amíg a jármű átvizsgálása folyamatban van."/>
         <e k="RVB_fault_lights_REPAIR" v="A világítás nem kapcsolható, amíg a jármű javítása folyamatban van."/>
@@ -233,65 +326,80 @@
         <e k="infoDisplayExtension_currentPower" v="Teljesítmény"/>
         <e k="infoDisplayExtension_inspectionVheicle" v="Jármű átvizsgálás"/>
         <e k="infoDisplayExtension_repairVheicle" v="Járműjavítás"/>
-        <e k="infoDisplayExtension_serviceVheicle" v="Időszakos Szerviz"/>
+        <e k="infoDisplayExtension_serviceVheicle" v="Időszakos szerviz"/>
 
-        <e k="RVB_workshopVResetTitle" v="Jármű visszaállítása"/>
+        <e k="RVB_workshopVResetTitle" v="Jármű-visszaállítás"/>
         <e k="RVB_workshopVResetDesc" v="Biztosan visszaállítod a %s járművet alapállapotba?" tag="format"/>
 
         <e k="electricChargeTurbine" v="Elektromos szélturbina-töltő"/>
-        <e k="function_powerpack" v="Használd ezt elektromos járműveid feltöltésére és az energia távoli helyekre való szállítására."/> <!-- NEW -->
+        <e k="function_powerpack" v="Használd ezt elektromos járműveid feltöltésére és az energia távoli helyekre való szállítására."/>
 
-        <e k="Automatic_Repair_conflict_notice" v="Vannak módosítások, amelyek automatikusan javítják a járművet, ezért a &quot;Valódi jármű meghibásodások(RVB)&quot; mód ütközhet velük.
-
-Az alábbi listában szereplő módosítás(ok) esetében az automatikus javítást az RVB mod felülírta.
-
-Felülírt módosítás(ok): %s
-
-Megértésedet köszönöm.
-
-Minden jót,
-
-MathiasHun" tag="format"/>
+        <e k="Automatic_Repair_conflict_notice" v="Vannak módosítások, amelyek automatikusan javítják a járművet, ezért a &quot;Valódi jármű meghibásodások(RVB)&quot; mód ütközhet velük.&#xD;&#xA;&#xD;&#xA;Az alábbi listában szereplő módosítás(ok) esetében az automatikus javítást az RVB mod felülírta.&#xD;&#xA;&#xD;&#xA;Felülírt módosítás(ok): %s&#xD;&#xA;&#xD;&#xA;Megértésedet köszönöm.&#xD;&#xA;&#xD;&#xA;Minden jót,&#xD;&#xA;&#xD;&#xA;MathiasHun" tag="format"/>
 
         <e k="RVB_aimessage_batterydischarged" v="%s gépi segítő váratlanul abbahagyta a munkát, a jármű akkumulátora lemerült!" tag="format"/>
 
         <!-- EZEN NE VÁLTOZTASS, CSAK AKKOR, HA A FS25_useYourTyres MOD MÁR RENDELKEZIK HIVATALOS MAGYAR FORDÍTÁSSAL -->
         <e k="infohud_uytTyresWear" v="Tyres wear"/>
         <!-- Figyelmeztetés vége -->
-        <e k="rvb_infohud_uytTyresWear" v="Gumi %s" tag="format"/>
+        <e k="rvb_infohud_uytTyresWear" v="Gumiabroncs %s" tag="format"/>
 
         <e k="infohud_uytBatteryChargeTime" v="Hátralévő töltési idő"/>
 
         <e k="typeDesc_battery" v="Akkumulátor"/>
+        <e k="batteryCapacity" v="Akkumulátor kapacitása (Ah)"/>
 
         <e k="name_batterySmall" v="Kis akkumulátor"/>
         <e k="name_batteryMedium" v="Közepes akkumulátor"/>
         <e k="name_batteryBig" v="Nagy akkumulátor"/>
 
-        <e k="function_batteryBig75" v="Kis kapacitású, 75 Ah-s akkumulátor"/>
-        <e k="function_batteryBig80" v="Kis kapacitású, 80 Ah-s akkumulátor"/>
-        <e k="function_batteryBig90" v="Kis kapacitású, 90 Ah-s akkumulátor"/>
-        <e k="function_batteryBig100" v="Közepes kapacitású, 100 Ah-s akkumulátor"/>
-        <e k="function_batteryBig120" v="Közepes kapacitású, 120 Ah-s akkumulátor"/>
-        <e k="function_batteryBig140" v="Nagy kapacitású, 140 Ah-s akkumulátor"/>
-        <e k="function_batteryBig150" v="Nagy kapacitású, 150 Ah-s akkumulátor"/>
-        <e k="function_batteryBig180" v="Nagy kapacitású, 180 Ah-s akkumulátor"/>
-        <e k="function_batteryBig200" v="Nagy kapacitású, 200 Ah-s akkumulátor"/>
+        <e k="function_battery" v="Választható kapacitású akkumulátor, 75 és 200 Ah között."/>
 
         <e k="unit_ampereHourShort" v="Ah"/>
+
+        <e k="RVB_batteryConnection_series" v="soros kapcsolás"/>
+        <e k="RVB_batteryConnection_parallel" v="párhuzamos kapcsolás"/>
+        <e k="RVB_batteryConnection_mixed" v="vegyes kapcsolás"/>
+
         <e k="RVB_action_batteryWorkshop" v="Akkumulátor behelyezése"/>
 
         <e k="RVB_allBatteriesInstalled" v="A járműben már minden akkumulátor be van szerelve."/>
-        <e k="RVB_wrongBattery" v="Nem megfelelő akkumulátor.
-
-A járműben lévő akkumulátor: %.0f Ah
-A kiválasztott akkumulátor: %.0f Ah" tag="format"/>
+        <e k="RVB_wrongBattery" v="Nem megfelelő akkumulátor.&#xD;&#xA;&#xD;&#xA;A járműben lévő akkumulátor: %.0f Ah&#xD;&#xA;A kiválasztott akkumulátor: %.0f Ah" tag="format"/>
         <e k="RVB_tooManyVehicles" v="Kérlek, állj ki a többi járművel! Jelenleg %d gép van az aktiválási ponton, de egyszerre csak egy lehet az akkumulátor közelében." tag="format"/>
         <e k="RVB_tooManyVehicles_hud" v="Túl sok gép van az aktiválási ponton!"/>
         <e k="RVB_batteryInstallation" v="Akkumulátor beszerelése: %d%%" tag="format"/>
         <e k="RVB_batteryRemoval" v="Akkumulátor kiszerelése: %d%%" tag="format"/>
         <e k="RVB_vehicleEnteredTrigger" v="%s jármű az akkumulátor közelében van." tag="format"/>
         <e k="RVB_vehicleLeftTrigger" v="%s jármű már nincs az akkumulátor közelében." tag="format"/>
+
+        <e k="rvbHelp_general" v="Real Vehicle Breakdowns"/>
+        <e k="rvbHelp_general_overview" v="Általános ismertető"/>
+        <e k="rvbHelp_general_overview_title" v="Mod bemutatása"/>
+        <e k="rvbHelp_general_overview_text" v="A Real Vehicle Breakdowns (RVB) célja, hogy valósághűbbé és kiszámíthatatlanabbá tegye a járművek üzemeltetését a Farming Simulator 25-ben. A mod egy összetett meghibásodási és karbantartási rendszert vezet be, amelyben a járművek alkatrészei saját élettartammal rendelkeznek. A használat, az üzemórák, a motor terhelése, az üzemi hőmérséklet és a karbantartás mind hatással lehetnek a járművek állapotára. A nem megfelelő üzemeltetés és az elhanyagolt karbantartás idő előtti kopáshoz, meghibásodásokhoz, szélsőséges esetben pedig a jármű működésképtelenségéhez vezethet. A meghibásodások többek között a motor működését, a hűtőrendszert, az elektromos berendezéseket, az indítórendszert és a világítást is érinthetik. Az akkumulátor állapota, töltöttsége és a külső hőmérséklet szintén befolyásolhatja a motor indíthatóságát. A járművek állapota az RVB saját kezelőfelületén követhető nyomon. A műhelyrendszeren keresztül ellenőrzés, időszakos karbantartás és javítás végezhető, a felmerülő költségeket pedig többek között a jármű értéke és életkora is befolyásolja. Az RVB célja, hogy a járművezetés ne csak a munkavégzésről szóljon: a gépek állapotának figyelemmel kísérése, a megfelelő karbantartás és a váratlan meghibásodások kezelése is a játékmenet részévé váljon."/>
+
+        <e k="rvbHelp_general_features_title" v="Főbb funkciók"/>
+        <e k="rvbHelp_general_features_text" v="A Real Vehicle Breakdowns számos rendszert kezel, amelyek hatással vannak a járművek működésére, állapotára és megbízhatóságára."/>
+        <e k="rvbHelp_general_features_maintenance_title" v="Karbantartás és alkatrészek élettartama"/>
+        <e k="rvbHelp_general_features_maintenance_text" v="A járművek alkatrészei meghatározott élettartammal rendelkeznek. Az üzemórák, a használat intenzitása és a karbantartás egyaránt befolyásolják az állapotukat. A rendszer lehetőséget biztosít az időszakos karbantartásra, az ellenőrzésre és a szükséges javításokra."/>
+        <e k="rvbHelp_general_features_failures_title" v="Meghibásodások"/>
+        <e k="rvbHelp_general_features_failures_text" v="A járművek különböző műszaki hibákat tapasztalhatnak. A meghibásodások befolyásolhatják a motor teljesítményét, az indíthatóságot, a hűtést, a világítást és az elektromos rendszerek működését."/>
+        <e k="rvbHelp_general_features_battery_title" v="Akkumulátor és elektromos rendszer"/>
+        <e k="rvbHelp_general_features_battery_text" v="Az akkumulátor töltöttsége, állapota és hőmérséklete hatással van a motor indíthatóságára. A világítás és más elektromos fogyasztók energiát használnak fel, a működő generátor pedig visszatölti az akkumulátort."/>
+        <e k="rvbHelp_general_features_workshop_title" v="Műhely és javítás"/>
+        <e k="rvbHelp_general_features_workshop_text" v="A műhelyben a járművek állapota ellenőrizhető, karbantartás és javítás végezhető. A munkafolyamatoknak saját időtartamuk és költségük van."/>
+        <e k="rvbHelp_general_features_gameplay_title" v="Testreszabható játékmenet"/>
+        <e k="rvbHelp_general_features_gameplay_text" v="A mod beállításai lehetőséget biztosítanak a meghibásodások nehézségének, a karbantartási időközöknek és egyéb működési paramétereknek a testreszabására."/>
+
+        <e k="rvbHelp_battery" v="Akkumulátorrendszer"/>
+        <e k="rvbHelp_battery_overview" v="Akkumulátor ismertető"/>
+        <e k="rvbHelp_battery_capacity_title" v="Akkumulátorkapacitás"/>
+        <e k="rvbHelp_battery_capacity_text" v="Az akkumulátor kapacitását amperórában (Ah) mérjük."/>
+        <e k="rvbHelp_battery_connection_title" v="Akkumulátorok kapcsolása"/>
+        <e k="rvbHelp_battery_connection_text" v="A járművek párhuzamos vagy soros akkumulátorkapcsolást használhatnak."/>
+
+        <e k="rvbHelp_engine" v="Motor"/>
+        <e k="rvbHelp_engine_starting" v="Motorindítás"/>
+        <e k="rvbHelp_engine_starting_title" v="Indítási feltételek"/>
+        <e k="rvbHelp_engine_starting_text" v="Az akkumulátornak elegendő indítóáramot kell biztosítania a motor számára."/>
 
     </elements>
 </l10n>

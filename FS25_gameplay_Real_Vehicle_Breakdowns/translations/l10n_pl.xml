@@ -43,7 +43,7 @@
         <e k="RVB_setting_workshopCountMax" v="Maksymalna liczba pojazdów w warsztacie"/>
         <e k="RVB_toolTip_workshopCountMax" v="Tutaj możesz ustawić, ile pojazdów może jednocześnie znajdować się w warsztacie."/>
         <e k="RVB_settingSectionHeader_LifetimeofParts" v="Żywotność części."/>
-        <e k="RVB_toolTip_lifetimeParts" v="Im mniejsza ta liczba, tym szybciej nastąpi awaria."/>
+        <e k="RVB_toolTip_lifetimeParts" v="Im mniejsza ta wartość, tym szybciej dojdzie do awarii."/>
         <e k="RVB_setting_thermostatLifetime" v="Termostat"/>
         <e k="RVB_setting_lightingsLifetime" v="Oświetlenie"/>
         <e k="RVB_setting_glowplugLifetime" v="Świeca żarowa"/>
@@ -80,7 +80,7 @@
         <e k="RVB_toolTip_showdebug" v="Wyświetla diagnostykę w konsoli i log.txt (może poprawić wydajność po wyłączeniu)"/>
 
         <e k="RVB_MenuGamePartsSettings" v="Ustawienia pojazdu"/>
-        <e k="RVB_Parts_stepInterval" v="Interwał kroków (%)"/>
+        <e k="RVB_Parts_stepInterval" v="Odstęp kroku (%)"/>
         <e k="RVB_Parts_currentValue" v="Aktualna żywotność %s" tag="format"/>
         <e k="RVB_Parts_remainingValue" v="Ustawienie żywotności %s" tag="format"/>
         <e k="RVB_part_rvbDifficulty" v="Awaria pojazdu"/>
@@ -123,10 +123,10 @@
         <e k="RVB_faultText_TIREFR" v="Przednia prawa opona"/>
         <e k="RVB_faultText_TIRERL" v="Tylna lewa opona"/>
         <e k="RVB_faultText_TIRERR" v="Tylna prawa opona"/>
-        <e k="RVB_faultText_TIRERL2" v="Tylna 2 lewa opona"/>
-        <e k="RVB_faultText_TIRERR2" v="Tylna 2 prawa opona"/>
-        <e k="RVB_faultText_TIRERL3" v="Tylna 3 lewa opona"/>
-        <e k="RVB_faultText_TIRERR3" v="Tylna 3 prawa opona"/>
+        <e k="RVB_faultText_TIRERL2" v="Druga tylna lewa opona"/>
+        <e k="RVB_faultText_TIRERR2" v="Druga tylna prawa opona"/>
+        <e k="RVB_faultText_TIRERL3" v="Trzecia tylna lewa opona"/>
+        <e k="RVB_faultText_TIRERR3" v="Trzecia tylna prawa opona"/>
 
         <e k="RVB_faultType_engine" v="Silnik"/>
         <e k="RVB_faultType_electrical" v="Układ elektryczny"/>
@@ -155,9 +155,6 @@
         <e k="RVB_repairDayDialog" v="Naprawa pojazdu zostanie zakończona jutro o %s godzinie." tag="format"/>
         <e k="RVB_repairDaysDialog" v="Naprawa pojazdu zostanie ukończona za %d dni o %s." tag="format"/>
 
-
-
-
         <e k="RVB_ErrorList" v="Lista błędów:"/>
         <e k="RVB_periodicserviceDialog" v="Czy na pewno chcesz przeprowadzić serwis pojazdu za koszt %s?" tag="format"/>
         <e k="RVB_periodicserviceDayDialog" v="Serwis pojazdu zostanie zakończony jutro o %s." tag="format"/>
@@ -179,8 +176,11 @@
         <e k="RVB_Workshop_serviceManual" v="Dziennik serwisowy"/>
         <e k="RVB_Workshop_noinspection" v="Pojazd nie został poddany inspekcji!"/>
         <e k="RVB_Workshop_noserviceManualEntry" v="Brak wpisów w dzienniku serwisowym!"/>
-        <e k="RVB_Workshop_status" v="Stan:"/>
-        <e k="RVB_Workshop_repair" v="Naprawa?"/>
+        <e k="RVB_workshop" v="Warsztat RVB"/>
+        <e k="RVB_workshop_part" v="Komponent"/>
+        <e k="RVB_workshop_condition" v="Stan"/>
+        <e k="RVB_workshop_value" v="Wartość"/>
+        <e k="RVB_workshop_repair" v="Naprawić?"/>
         <e k="RVB_Workshop_work" v="Praca"/>
         <e k="RVB_Workshop_date" v="Data"/>
         <e k="RVB_Workshop_lifetime" v="Godziny pracy"/>
@@ -197,6 +197,98 @@
         <e k="RVB_WorkshopS_repNoNeed" v="Naprawa nie jest wymagana."/>
         <e k="RVB_WorkshopS_month" v=" miesiąc"/>
 
+        <e k="RVB_faultDetail_ENGINE_misfire" v="Silnik: wypadanie zapłonów. Objawy: nierówna praca silnika, spadek mocy i zwiększone zużycie paliwa."/>
+        <e k="RVB_faultDetail_ENGINE_lowOilPressure" v="Silnik: niskie ciśnienie oleju. Objawy: spadek mocy i zwiększone zużycie silnika."/>
+        <e k="RVB_faultDetail_ENGINE_headGasketFailure" v="Silnik: uszkodzona uszczelka pod głowicą. Objawy: przegrzewanie i zwiększone zużycie podzespołów."/>
+        <e k="RVB_faultDetail_ENGINE_overheating" v="Silnik: przegrzanie. Objawy: wysoka temperatura silnika i spadek mocy."/>
+        <e k="RVB_faultDetail_ENGINE_compressionLoss" v="Silnik: utrata kompresji. Objawy: spadek mocy silnika."/>
+        <e k="RVB_faultDetail_ENGINE_sensorFault" v="Silnik: awaria czujnika. Objawy: nieprawidłowe sterowanie silnikiem."/>
+        <e k="RVB_faultDetail_THERMOSTAT_stuckClosed" v="Termostat: zablokowany w pozycji zamkniętej. Objaw: silnik może się przegrzewać."/>
+        <e k="RVB_faultDetail_THERMOSTAT_stuckOpen" v="Termostat: zablokowany w pozycji otwartej. Objaw: silnik wolno się nagrzewa lub pracuje w zbyt niskiej temperaturze."/>
+        <e k="RVB_faultDetail_THERMOSTAT_restrictedFlow" v="Termostat: ograniczony przepływ płynu chłodzącego. Objaw: silnik może się przegrzewać."/>
+        <e k="RVB_faultDetail_GLOWPLUG_burntGlowPlug" v="Świeca żarowa: przepalona. Objaw: rozruch silnika jest utrudniony."/>
+        <e k="RVB_faultDetail_GLOWPLUG_shortCircuit" v="Świeca żarowa: zwarcie. Objaw: rozruch silnika jest utrudniony."/>
+
+        <e k="RVB_faultDetail_BATTERY_discharged" v="Akumulator: rozładowany. Objaw: uruchomienie silnika jest trudne lub niemożliwe."/>
+        <e k="RVB_faultDetail_BATTERY_connectorIssue" v="Akumulator: luźne lub skorodowane połączenie. Objaw: utrudniony rozruch i niestabilne działanie instalacji elektrycznej."/>
+        <e k="RVB_faultDetail_BATTERY_sulfated" v="Akumulator: utrata pojemności wskutek zasiarczenia. Objaw: słabszy rozruch i szybkie rozładowywanie się."/>
+        <e k="RVB_faultDetail_BATTERY_internalShort" v="Akumulator: zwarcie wewnętrzne. Objaw: akumulator nie utrzymuje ładunku, a uruchomienie silnika jest trudne lub niemożliwe."/>
+
+        <e k="RVB_faultDetail_GENERATOR_undercharging" v="Alternator: niewystarczające ładowanie. Objaw: poziom naładowania akumulatora może spadać podczas jazdy."/>
+        <e k="RVB_faultDetail_GENERATOR_wiringIssue" v="Alternator: usterka przewodów lub połączenia. Objaw: ładowanie może być przerywane lub niestabilne."/>
+        <e k="RVB_faultDetail_GENERATOR_bearingWear" v="Alternator: zużyte łożysko. Objaw: nietypowy hałas i słabsze ładowanie."/>
+        <e k="RVB_faultDetail_GENERATOR_statorShort" v="Alternator: zwarcie uzwojenia stojana. Objaw: alternator nie ładuje prawidłowo akumulatora."/>
+        <e k="RVB_faultDetail_GENERATOR_voltageIrregularity" v="Alternator: usterka regulatora napięcia. Objaw: wahania napięcia ładowania mogące uszkodzić akumulator."/>
+
+        <e k="RVB_faultDetail_SELFSTARTER_solenoidFailure" v="Rozrusznik: awaria elektromagnesu. Objaw: klikanie lub nieudana próba rozruchu."/>
+        <e k="RVB_faultDetail_SELFSTARTER_brushWear" v="Rozrusznik: zużyte szczotki. Objaw: powolny lub przerywany rozruch silnika."/>
+        <e k="RVB_faultDetail_SELFSTARTER_starterMotorWear" v="Rozrusznik: zużyty silnik elektryczny. Objaw: silnik uruchamia się powoli lub z trudem."/>
+        <e k="RVB_faultDetail_SELFSTARTER_gearWear" v="Rozrusznik: zużyte koło zębate napędu. Objaw: rozrusznik ma trudności z zazębieniem z silnikiem i może wydawać nietypowe dźwięki."/>
+        <e k="RVB_faultDetail_SELFSTARTER_shortCircuit" v="Rozrusznik: zwarcie. Objaw: rozruch może się nie powieść, a instalacja elektryczna może ulec uszkodzeniu."/>
+
+        <e k="RVB_faultDetail_WIPERS_motorWear" v="Wycieraczki: zużyty lub uszkodzony silnik. Objaw: wycieraczki działają powoli lub przestają działać."/>
+
+        <e k="RVB_faultDetail_LOWBEAM_burntBulb" v="Oświetlenie: przepalona żarówka. Objaw: odpowiednia lampa nie świeci."/>
+        <e k="RVB_faultDetail_HIGHBEAM_burntBulb" v="Oświetlenie: przepalona żarówka. Objaw: odpowiednia lampa nie świeci."/>
+        <e k="RVB_faultDetail_WORKFRONT_burntBulb" v="Oświetlenie: przepalona żarówka. Objaw: odpowiednia lampa nie świeci."/>
+        <e k="RVB_faultDetail_WORKBACK_burntBulb" v="Oświetlenie: przepalona żarówka. Objaw: odpowiednia lampa nie świeci."/>
+        <e k="RVB_faultDetail_TURNLEFT_burntBulb" v="Oświetlenie: przepalona żarówka. Objaw: odpowiedni kierunkowskaz nie działa."/>
+        <e k="RVB_faultDetail_TURNRIGHT_burntBulb" v="Oświetlenie: przepalona żarówka. Objaw: odpowiedni kierunkowskaz nie działa."/>
+        <e k="RVB_faultDetail_TURNHAZARD_burntBulb" v="Oświetlenie: przepalona żarówka. Objaw: odpowiednie światła awaryjne nie działają."/>
+        <e k="RVB_faultDetail_BRAKE_burntBulb" v="Oświetlenie: przepalona żarówka. Objaw: odpowiednie światło stopu nie świeci."/>
+        <e k="RVB_faultDetail_REVERSEL_burntBulb" v="Oświetlenie: przepalona żarówka. Objaw: odpowiednie światło cofania nie świeci."/>
+        <e k="RVB_faultDetail_BEACON_burntBulb" v="Oświetlenie: przepalona żarówka. Objaw: lampa ostrzegawcza nie działa."/>
+        <e k="RVB_faultDetail_PIPE_burntBulb" v="Oświetlenie: przepalona żarówka. Objaw: lampa robocza ślimaka rozładunkowego nie świeci."/>
+
+        <e k="RVB_faultDetail_LOWBEAM_wiringShort" v="Oświetlenie: usterka instalacji elektrycznej lub zwarcie. Objaw: światło może migotać lub zgasnąć."/>
+        <e k="RVB_faultDetail_HIGHBEAM_wiringShort" v="Oświetlenie: usterka instalacji elektrycznej lub zwarcie. Objaw: światło może migotać lub zgasnąć."/>
+        <e k="RVB_faultDetail_WORKFRONT_wiringShort" v="Oświetlenie: usterka instalacji elektrycznej lub zwarcie. Objaw: światło może migotać lub zgasnąć."/>
+        <e k="RVB_faultDetail_WORKBACK_wiringShort" v="Oświetlenie: usterka instalacji elektrycznej lub zwarcie. Objaw: światło może migotać lub zgasnąć."/>
+        <e k="RVB_faultDetail_TURNLEFT_wiringShort" v="Oświetlenie: usterka instalacji elektrycznej lub zwarcie. Objaw: kierunkowskaz może przestać migać lub migać nieregularnie."/>
+        <e k="RVB_faultDetail_TURNRIGHT_wiringShort" v="Oświetlenie: usterka instalacji elektrycznej lub zwarcie. Objaw: kierunkowskaz może przestać migać lub migać nieregularnie."/>
+        <e k="RVB_faultDetail_TURNHAZARD_wiringShort" v="Oświetlenie: usterka instalacji elektrycznej lub zwarcie. Objaw: światła awaryjne mogą przestać migać lub migać nieregularnie."/>
+        <e k="RVB_faultDetail_BRAKE_wiringShort" v="Oświetlenie: usterka instalacji elektrycznej lub zwarcie. Objaw: światło stopu może działać nieregularnie."/>
+        <e k="RVB_faultDetail_REVERSEL_wiringShort" v="Oświetlenie: usterka instalacji elektrycznej lub zwarcie. Objaw: światło cofania może działać nieregularnie."/>
+        <e k="RVB_faultDetail_BEACON_wiringShort" v="Oświetlenie: usterka instalacji elektrycznej lub zwarcie. Objaw: lampa ostrzegawcza może migotać lub zgasnąć."/>
+        <e k="RVB_faultDetail_PIPE_wiringShort" v="Oświetlenie: usterka instalacji elektrycznej lub zwarcie. Objaw: lampa robocza ślimaka rozładunkowego może migotać lub zgasnąć."/>
+
+        <e k="RVB_faultDetail_LOWBEAM_ledFailure" v="Oświetlenie: awaria modułu LED. Objaw: jasność światła może spaść lub światło może zgasnąć."/>
+        <e k="RVB_faultDetail_HIGHBEAM_ledFailure" v="Oświetlenie: awaria modułu LED. Objaw: jasność światła może spaść lub światło może zgasnąć."/>
+        <e k="RVB_faultDetail_WORKFRONT_ledFailure" v="Oświetlenie: awaria modułu LED. Objaw: jasność światła może spaść lub lampa robocza może zgasnąć."/>
+
+        <e k="RVB_faultDetail_LOWBEAM_controlModuleFailure" v="Oświetlenie: awaria modułu sterującego. Objaw: światło może migotać, świecić słabiej lub nie włączać się."/>
+        <e k="RVB_faultDetail_HIGHBEAM_controlModuleFailure" v="Oświetlenie: awaria modułu sterującego. Objaw: światło może migotać, świecić słabiej lub nie włączać się."/>
+
+        <e k="RVB_faultDetail_LOWBEAM_corrodedConnector" v="Oświetlenie: skorodowane złącze. Objaw: światło może migotać lub okresowo gasnąć."/>
+        <e k="RVB_faultDetail_HIGHBEAM_corrodedConnector" v="Oświetlenie: skorodowane złącze. Objaw: światło może migotać lub okresowo gasnąć."/>
+        <e k="RVB_faultDetail_WORKFRONT_corrodedConnector" v="Oświetlenie: skorodowane złącze. Objaw: lampa robocza może migotać lub okresowo gasnąć."/>
+        <e k="RVB_faultDetail_WORKBACK_corrodedConnector" v="Oświetlenie: skorodowane złącze. Objaw: lampa robocza może migotać lub okresowo gasnąć."/>
+        <e k="RVB_faultDetail_TURNLEFT_corrodedConnector" v="Oświetlenie: skorodowane złącze. Objaw: kierunkowskaz może działać nieregularnie."/>
+        <e k="RVB_faultDetail_TURNRIGHT_corrodedConnector" v="Oświetlenie: skorodowane złącze. Objaw: kierunkowskaz może działać nieregularnie."/>
+        <e k="RVB_faultDetail_TURNHAZARD_corrodedConnector" v="Oświetlenie: skorodowane złącze. Objaw: światła awaryjne mogą działać nieregularnie."/>
+        <e k="RVB_faultDetail_BRAKE_corrodedConnector" v="Oświetlenie: skorodowane złącze. Objaw: światło hamowania może działać nieregularnie."/>
+        <e k="RVB_faultDetail_REVERSEL_corrodedConnector" v="Oświetlenie: skorodowane złącze. Objaw: światło cofania może działać nieregularnie."/>
+        <e k="RVB_faultDetail_BEACON_corrodedConnector" v="Oświetlenie: skorodowane złącze. Objaw: lampa ostrzegawcza może migotać lub okresowo gasnąć."/>
+        <e k="RVB_faultDetail_PIPE_corrodedConnector" v="Oświetlenie: skorodowane złącze. Objaw: lampa robocza przenośnika ślimakowego może migotać lub okresowo gasnąć."/>
+
+        <e k="RVB_faultDetail_TIREFL_treadWorn" v="Lewe przednie koło: zużyty bieżnik. Objaw: mniejsza przyczepność."/>
+        <e k="RVB_faultDetail_TIREFR_treadWorn" v="Prawe przednie koło: zużyty bieżnik. Objaw: mniejsza przyczepność."/>
+        <e k="RVB_faultDetail_TIRERL_treadWorn" v="Lewe tylne koło: zużyty bieżnik. Objaw: mniejsza przyczepność."/>
+        <e k="RVB_faultDetail_TIRERR_treadWorn" v="Prawe tylne koło: zużyty bieżnik. Objaw: mniejsza przyczepność."/>
+        <e k="RVB_faultDetail_TIRERL2_treadWorn" v="Drugie lewe tylne koło: zużyty bieżnik. Objaw: mniejsza przyczepność."/>
+        <e k="RVB_faultDetail_TIRERR2_treadWorn" v="Drugie prawe tylne koło: zużyty bieżnik. Objaw: mniejsza przyczepność."/>
+        <e k="RVB_faultDetail_TIRERL3_treadWorn" v="Trzecie lewe tylne koło: zużyty bieżnik. Objaw: mniejsza przyczepność."/>
+        <e k="RVB_faultDetail_TIRERR3_treadWorn" v="Trzecie prawe tylne koło: zużyty bieżnik. Objaw: mniejsza przyczepność."/>
+
+        <e k="RVB_faultDetail_TIREFL_puncture" v="Lewe przednie koło: przebita opona. Objawy: mniejsza przyczepność i gorsze prowadzenie pojazdu."/>
+        <e k="RVB_faultDetail_TIREFR_puncture" v="Prawe przednie koło: przebita opona. Objawy: mniejsza przyczepność i gorsze prowadzenie pojazdu."/>
+        <e k="RVB_faultDetail_TIRERL_puncture" v="Lewe tylne koło: przebita opona. Objawy: mniejsza przyczepność i gorsze prowadzenie pojazdu."/>
+        <e k="RVB_faultDetail_TIRERR_puncture" v="Prawe tylne koło: przebita opona. Objawy: mniejsza przyczepność i gorsze prowadzenie pojazdu."/>
+        <e k="RVB_faultDetail_TIRERL2_puncture" v="Drugie lewe tylne koło: przebita opona. Objawy: mniejsza przyczepność i gorsze prowadzenie pojazdu."/>
+        <e k="RVB_faultDetail_TIRERR2_puncture" v="Drugie prawe tylne koło: przebita opona. Objawy: mniejsza przyczepność i gorsze prowadzenie pojazdu."/>
+        <e k="RVB_faultDetail_TIRERL3_puncture" v="Trzecie lewe tylne koło: przebita opona. Objawy: mniejsza przyczepność i gorsze prowadzenie pojazdu."/>
+        <e k="RVB_faultDetail_TIRERR3_puncture" v="Trzecie prawe tylne koło: przebita opona. Objawy: mniejsza przyczepność i gorsze prowadzenie pojazdu."/>
+
         <e k="RVB_WorkshopMessage_service" v="Przekroczyłeś określony interwał serwisowy o %s godzin, dlatego naprawa trwała dłużej i kosztowała więcej." tag="format"/>
         <e k="RVB_WorkshopMessage_serviceDone" v="Serwis zakończony."/>
         <e k="RVB_WorkshopMessage_repairDone" v="Naprawa zakończona. Wymienione/naprawione części: %s" tag="format"/>
@@ -205,7 +297,7 @@
 
         <e k="RVB_inspectionDialogFault" v="Pojazd %s skontrolowany, wymagane naprawy. %s"/>
         <e k="RVB_inspectionDialogEnd" v="Pojazd %s skontrolowany, naprawy nie są wymagane."/>
-        <e k="RVB_inspectionDialogEnd_other" v="Pojazd %s został skontrolowany i naprawiony. Twój mechanik miał dużo pracy, więc początkujący mechanik naprawił Twój pojazd. Jednak ten początkujący mechanik nie jest w stanie wypisać tego, co naprawił w Twoim pojeździe."/>
+        <e k="RVB_inspectionDialogEnd_other" v="Pojazd %s został sprawdzony i naprawiony. Mechanik miał dużo pracy, dlatego naprawę wykonał młodszy mechanik. Nie potrafi on jednak wymienić naprawionych elementów pojazdu."/>
 
         <e k="RVB_serviceDialogEnd" v="Serwis pojazdu %s zakończony."/>
         <e k="RVB_repairDialogEnd" v="Naprawa pojazdu %s zakończona."/>
@@ -223,6 +315,7 @@
         <e k="RVB_DEAD_ENGINE_BATTERY" v="Silnik nie uruchamia się, akumulator jest rozładowany." />
         <e k="RVB_DEAD_ENGINE_BATTERY_CHARGING" v="Pojazd nie może być uruchomiony, trwa ładowanie akumulatora."/>
         <e k="RVB_DEAD_ENGINE" v="Silnik nie uruchamia się."/>
+        <e k="RVB_WARNING_lowCrankingVoltage" v="Zbyt niskie napięcie podczas rozruchu: %.2f V! Uruchamianie silnika zablokowane (minimum: %.2f V)!" tag="format"/>
 
         <e k="RVB_fault_lights_INSPECTION" v="Oświetlenie nie może zostać włączone, dopóki trwa inspekcja pojazdu."/>
         <e k="RVB_fault_lights_REPAIR" v="Oświetlenie nie może zostać włączone, dopóki trwa naprawa pojazdu."/>
@@ -242,17 +335,7 @@
         <e k="electricChargeTurbine" v="Elektryczna ładowarka turbiny wiatrowej"/>
         <e k="function_powerpack" v="Użyj tego, aby ładować pojazdy elektryczne i transportować energię elektryczną do odległych lokalizacji."/>
 
-        <e k="Automatic_Repair_conflict_notice" v="Istnieją modyfikacje, które automatycznie naprawiają pojazd, co może kolidować z trybem &quot;Real Vehicle Breakdowns(RVB)&quot;.
-
-Dla poniższych modyfikacji automatyczna naprawa została nadpisana przez mod RVB.
-
-Nadpisane modyfikacje: %s
-
-Dziękuję za zrozumienie.
-
-Wszystkiego najlepszego,
-
-MathiasHun" tag="format"/>
+        <e k="Automatic_Repair_conflict_notice" v="Niektóre modyfikacje automatycznie naprawiają pojazd, co może kolidować z trybem &quot;Real Vehicle Breakdowns(RVB)&quot;.&#xD;&#xA;&#xD;&#xA;W przypadku poniższych modyfikacji mod RVB zastąpił automatyczną naprawę.&#xD;&#xA;&#xD;&#xA;Modyfikacje, których dotyczy zmiana: %s&#xD;&#xA;&#xD;&#xA;Dziękujemy za wyrozumiałość.&#xD;&#xA;&#xD;&#xA;Z poważaniem,&#xD;&#xA;&#xD;&#xA;MathiasHun" tag="format"/>
 
         <e k="RVB_aimessage_batterydischarged" v="%s Pracownik AI nieoczekiwanie przestał działać, akumulator pojazdu jest rozładowany!" tag="format"/>
 
@@ -264,35 +347,59 @@ MathiasHun" tag="format"/>
         <e k="infohud_uytBatteryChargeTime" v="Pozostały czas ładowania"/>
 
         <e k="typeDesc_battery" v="Akumulator"/>
+        <e k="batteryCapacity" v="Pojemność akumulatora (Ah)"/>
 
         <e k="name_batterySmall" v="Mały akumulator"/>
         <e k="name_batteryMedium" v="Średni akumulator"/>
         <e k="name_batteryBig" v="Duży akumulator"/>
 
-        <e k="function_batteryBig75" v="Akumulator o małej pojemności, 75 Ah"/>
-        <e k="function_batteryBig80" v="Akumulator o małej pojemności, 80 Ah"/>
-        <e k="function_batteryBig90" v="Akumulator o małej pojemności, 90 Ah"/>
-        <e k="function_batteryBig100" v="Akumulator o średniej pojemności, 100 Ah"/>
-        <e k="function_batteryBig120" v="Akumulator o średniej pojemności, 120 Ah"/>
-        <e k="function_batteryBig140" v="Akumulator o dużej pojemności, 140 Ah"/>
-        <e k="function_batteryBig150" v="Akumulator o dużej pojemności, 150 Ah"/>
-        <e k="function_batteryBig180" v="Akumulator o dużej pojemności, 180 Ah"/>
-        <e k="function_batteryBig200" v="Akumulator o dużej pojemności, 200 Ah"/>
+        <e k="function_battery" v="Akumulator z możliwością wyboru pojemności od 75 do 200 Ah."/>
 
         <e k="unit_ampereHourShort" v="Ah"/>
+
+        <e k="RVB_batteryConnection_series" v="połączenie szeregowe"/>
+        <e k="RVB_batteryConnection_parallel" v="połączenie równoległe"/>
+        <e k="RVB_batteryConnection_mixed" v="połączenie szeregowo-równoległe"/>
+
         <e k="RVB_action_batteryWorkshop" v="Włóż akumulator"/>
 
         <e k="RVB_allBatteriesInstalled" v="Wszystkie akumulatory są już zamontowane w pojeździe."/>
-        <e k="RVB_wrongBattery" v="Nieprawidłowy akumulator.
-
-Akumulator zamontowany w pojeździe: %.0f Ah
-Wybrany akumulator: %.0f Ah" tag="format"/>
+        <e k="RVB_wrongBattery" v="Nieprawidłowy akumulator.&#xD;&#xA;&#xD;&#xA;Akumulator zamontowany w pojeździe: %.0f Ah&#xD;&#xA;&#xD;&#xA;Wybrany akumulator: %.0f Ah" tag="format"/>
         <e k="RVB_tooManyVehicles" v="Usuń pozostałe pojazdy! Obecnie w obszarze wyzwalania znajdują się %d pojazdy, ale w pobliżu akumulatora może znajdować się tylko jeden pojazd naraz." tag="format"/>
         <e k="RVB_tooManyVehicles_hud" v="Za dużo pojazdów w obszarze wyzwalania!"/>
         <e k="RVB_batteryInstallation" v="Montaż akumulatora: %d%%" tag="format"/>
         <e k="RVB_batteryRemoval" v="Demontaż akumulatora: %d%%" tag="format"/>
         <e k="RVB_vehicleEnteredTrigger" v="%s znajduje się w pobliżu akumulatora." tag="format"/>
         <e k="RVB_vehicleLeftTrigger" v="%s nie znajduje się już w pobliżu akumulatora." tag="format"/>
+        <e k="rvbHelp_general" v="Real Vehicle Breakdowns"/>
+        <e k="rvbHelp_general_overview" v="Informacje ogólne"/>
+        <e k="rvbHelp_general_overview_title" v="Opis moda"/>
+        <e k="rvbHelp_general_overview_text" v="Mod Real Vehicle Breakdowns (RVB) ma na celu zwiększenie realizmu i nieprzewidywalności użytkowania pojazdów w Farming Simulator 25. Wprowadza rozbudowany system awarii i konserwacji, w którym poszczególne podzespoły pojazdu mają określoną żywotność. Na ich stan wpływają m.in. sposób użytkowania, liczba godzin pracy, obciążenie silnika, temperatura robocza i konserwacja. Niewłaściwa eksploatacja oraz zaniedbania mogą prowadzić do przedwczesnego zużycia, awarii, a w skrajnych przypadkach do całkowitego unieruchomienia pojazdu. Usterki mogą dotyczyć różnych układów, w tym pracy silnika, układu chłodzenia, instalacji elektrycznej, układu rozruchowego i oświetlenia. Na uruchamianie silnika wpływają również stan i poziom naładowania akumulatora oraz temperatura otoczenia. Stan pojazdu można monitorować za pomocą dedykowanego interfejsu RVB. W warsztacie można przeprowadzać przeglądy, planową konserwację i naprawy. Koszty tych usług zależą m.in. od wartości i wieku pojazdu. Celem RVB jest sprawienie, by użytkowanie pojazdów nie ograniczało się do wykonania zadania: monitorowanie stanu maszyn, właściwa konserwacja i radzenie sobie z niespodziewanymi awariami również stają się częścią rozgrywki."/>
+
+        <e k="rvbHelp_general_features_title" v="Główne funkcje"/>
+        <e k="rvbHelp_general_features_text" v="Real Vehicle Breakdowns zarządza kilkoma układami wpływającymi na działanie, stan i niezawodność pojazdów."/>
+        <e k="rvbHelp_general_features_maintenance_title" v="Konserwacja i żywotność podzespołów"/>
+        <e k="rvbHelp_general_features_maintenance_text" v="Podzespoły pojazdu mają określoną żywotność. Na ich stan wpływają liczba godzin pracy, intensywność użytkowania i konserwacja. System umożliwia przeprowadzanie okresowych przeglądów, konserwacji i niezbędnych napraw."/>
+        <e k="rvbHelp_general_features_failures_title" v="Awarie"/>
+        <e k="rvbHelp_general_features_failures_text" v="W pojazdach mogą występować różne usterki mechaniczne i elektryczne. Awarie mogą wpływać na osiągi silnika, rozruch, chłodzenie, oświetlenie i działanie układów elektrycznych."/>
+        <e k="rvbHelp_general_features_battery_title" v="Akumulator i instalacja elektryczna"/>
+        <e k="rvbHelp_general_features_battery_text" v="Poziom naładowania, stan i temperatura akumulatora wpływają na uruchamianie silnika. Oświetlenie i inne odbiorniki elektryczne pobierają energię, a pracujący alternator ładuje akumulator."/>
+        <e k="rvbHelp_general_features_workshop_title" v="Warsztat i naprawy"/>
+        <e k="rvbHelp_general_features_workshop_text" v="W warsztacie można sprawdzić stan pojazdu, przeprowadzić konserwację i wykonać naprawy. Każda czynność ma określony czas trwania i koszt."/>
+        <e k="rvbHelp_general_features_gameplay_title" v="Dostosowywanie rozgrywki"/>
+        <e k="rvbHelp_general_features_gameplay_text" v="Ustawienia moda pozwalają dostosować poziom trudności awarii, częstotliwość konserwacji i inne parametry eksploatacji."/>
+
+        <e k="rvbHelp_battery" v="Układ akumulatora"/>
+        <e k="rvbHelp_battery_overview" v="Informacje o akumulatorze"/>
+        <e k="rvbHelp_battery_capacity_title" v="Pojemność akumulatora"/>
+        <e k="rvbHelp_battery_capacity_text" v="Pojemność akumulatora jest mierzona w amperogodzinach (Ah)."/>
+        <e k="rvbHelp_battery_connection_title" v="Połączenie akumulatorów"/>
+        <e k="rvbHelp_battery_connection_text" v="Pojazdy mogą korzystać z akumulatorów połączonych równolegle lub szeregowo."/>
+
+        <e k="rvbHelp_engine" v="Silnik"/>
+        <e k="rvbHelp_engine_starting" v="Uruchamianie silnika"/>
+        <e k="rvbHelp_engine_starting_title" v="Wymagania dotyczące rozruchu"/>
+        <e k="rvbHelp_engine_starting_text" v="Akumulator musi zapewniać wystarczający prąd rozruchowy."/>
 
     </elements>
 </l10n>

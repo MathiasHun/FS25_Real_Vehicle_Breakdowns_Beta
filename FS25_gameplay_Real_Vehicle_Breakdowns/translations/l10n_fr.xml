@@ -43,7 +43,7 @@
         <e k="RVB_setting_workshopCountMax" v="Nombre maximal de véhicules dans l'atelier"/>
         <e k="RVB_toolTip_workshopCountMax" v="Ici, vous pouvez définir combien de véhicules peuvent tenir dans l'atelier en même temps."/>
         <e k="RVB_settingSectionHeader_LifetimeofParts" v="Durée de vie des pièces"/>
-        <e k="RVB_toolTip_lifetimeParts" v="Plus cette valeur est faible, plus la pièce tombera rapidement en panne."/>
+        <e k="RVB_toolTip_lifetimeParts" v="Plus cette valeur est faible, plus vite une panne surviendra."/>
         <e k="RVB_setting_thermostatLifetime" v="Thermostat"/>
         <e k="RVB_setting_lightingsLifetime" v="Éclairage"/>
         <e k="RVB_setting_glowplugLifetime" v="Bougie de préchauffage"/>
@@ -80,7 +80,7 @@
         <e k="RVB_toolTip_showdebug" v="Affiche les informations de débogage dans la console et le log.txt (peut améliorer les performances lorsqu'il est désactivé)"/>
 
         <e k="RVB_MenuGamePartsSettings" v="Paramètres du véhicule"/>
-        <e k="RVB_Parts_stepInterval" v="Intervalle de progression (%)"/>
+        <e k="RVB_Parts_stepInterval" v="Intervalle des étapes (%)"/>
         <e k="RVB_Parts_currentValue" v="Durée de vie actuelle de %s" tag="format"/>
         <e k="RVB_Parts_remainingValue" v="Réglage de la durée de vie de %s" tag="format"/>
         <e k="RVB_part_rvbDifficulty" v="Panne du véhicule"/>
@@ -155,9 +155,6 @@
         <e k="RVB_repairDayDialog" v="La réparation du véhicule sera terminée demain à %s heures." tag="format"/>
         <e k="RVB_repairDaysDialog" v="La réparation du véhicule sera terminée dans %d jours à %s." tag="format"/>
 
-
-
-
         <e k="RVB_ErrorList" v="Liste des erreurs :"/>
         <e k="RVB_periodicserviceDialog" v="Êtes-vous sûr de vouloir entretenir le véhicule pour %s ?" tag="format"/>
         <e k="RVB_periodicserviceDayDialog" v="L'entretien du véhicule sera terminé demain à %s." tag="format"/>
@@ -179,8 +176,11 @@
         <e k="RVB_Workshop_serviceManual" v="Carnet d'entretien"/>
         <e k="RVB_Workshop_noinspection" v="Le véhicule n'a pas été inspecté !"/>
         <e k="RVB_Workshop_noserviceManualEntry" v="Aucune entrée dans le carnet d'entretien !"/>
-        <e k="RVB_Workshop_status" v="Statut :"/>
-        <e k="RVB_Workshop_repair" v="Réparer ?"/>
+        <e k="RVB_workshop" v="Atelier RVB"/>
+        <e k="RVB_workshop_part" v="Composant"/>
+        <e k="RVB_workshop_condition" v="État"/>
+        <e k="RVB_workshop_value" v="Valeur"/>
+        <e k="RVB_workshop_repair" v="Réparer ?"/>
         <e k="RVB_Workshop_work" v="Travail"/>
         <e k="RVB_Workshop_date" v="Date"/>
         <e k="RVB_Workshop_lifetime" v="Heures de fonctionnement"/>
@@ -197,6 +197,98 @@
         <e k="RVB_WorkshopS_repNoNeed" v="Aucune réparation nécessaire."/>
         <e k="RVB_WorkshopS_month" v=" mois"/>
 
+        <e k="RVB_faultDetail_ENGINE_misfire" v="Moteur : ratés d’allumage. Symptômes : fonctionnement irrégulier, puissance réduite et consommation de carburant accrue."/>
+        <e k="RVB_faultDetail_ENGINE_lowOilPressure" v="Moteur : pression d’huile insuffisante. Symptômes : puissance réduite et usure accrue du moteur."/>
+        <e k="RVB_faultDetail_ENGINE_headGasketFailure" v="Moteur : défaillance du joint de culasse. Symptômes : surchauffe et usure accrue des composants."/>
+        <e k="RVB_faultDetail_ENGINE_overheating" v="Moteur : surchauffe. Symptômes : température moteur élevée et puissance réduite."/>
+        <e k="RVB_faultDetail_ENGINE_compressionLoss" v="Moteur : perte de compression. Symptôme : puissance moteur réduite."/>
+        <e k="RVB_faultDetail_ENGINE_sensorFault" v="Moteur : défaillance d’un capteur. Symptôme : gestion moteur incorrecte."/>
+        <e k="RVB_faultDetail_THERMOSTAT_stuckClosed" v="Thermostat : bloqué en position fermée. Symptôme : le moteur risque de surchauffer."/>
+        <e k="RVB_faultDetail_THERMOSTAT_stuckOpen" v="Thermostat : bloqué en position ouverte. Symptôme : le moteur chauffe lentement ou reste trop froid."/>
+        <e k="RVB_faultDetail_THERMOSTAT_restrictedFlow" v="Thermostat : circulation du liquide de refroidissement limitée. Symptôme : le moteur risque de surchauffer."/>
+        <e k="RVB_faultDetail_GLOWPLUG_burntGlowPlug" v="Bougie de préchauffage : grillée. Symptôme : le moteur est plus difficile à démarrer."/>
+        <e k="RVB_faultDetail_GLOWPLUG_shortCircuit" v="Bougie de préchauffage : court-circuit. Symptôme : le moteur est plus difficile à démarrer."/>
+
+        <e k="RVB_faultDetail_BATTERY_discharged" v="Batterie : déchargée. Symptôme : le moteur est difficile, voire impossible, à démarrer."/>
+        <e k="RVB_faultDetail_BATTERY_connectorIssue" v="Batterie : connexion desserrée ou corrodée. Symptôme : démarrage difficile et fonctionnement électrique peu fiable."/>
+        <e k="RVB_faultDetail_BATTERY_sulfated" v="Batterie : perte de capacité due à la sulfatation. Symptôme : démarrage faible et décharge rapide."/>
+        <e k="RVB_faultDetail_BATTERY_internalShort" v="Batterie : court-circuit interne. Symptôme : la batterie ne tient pas la charge et le moteur est difficile, voire impossible, à démarrer."/>
+
+        <e k="RVB_faultDetail_GENERATOR_undercharging" v="Alternateur : charge insuffisante. Symptôme : la charge de la batterie peut diminuer pendant la conduite."/>
+        <e k="RVB_faultDetail_GENERATOR_wiringIssue" v="Alternateur : défaut de câblage ou de connexion. Symptôme : la charge peut être interrompue ou irrégulière."/>
+        <e k="RVB_faultDetail_GENERATOR_bearingWear" v="Alternateur : usure des roulements. Symptôme : bruit inhabituel et performances de charge réduites."/>
+        <e k="RVB_faultDetail_GENERATOR_statorShort" v="Alternateur : court-circuit du bobinage du stator. Symptôme : l’alternateur ne peut pas recharger correctement la batterie."/>
+        <e k="RVB_faultDetail_GENERATOR_voltageIrregularity" v="Alternateur : défaillance du régulateur de tension. Symptôme : tension de charge fluctuante, susceptible d’endommager la batterie."/>
+
+        <e k="RVB_faultDetail_SELFSTARTER_solenoidFailure" v="Démarreur : défaillance du solénoïde. Symptôme : cliquetis ou échec du démarrage."/>
+        <e k="RVB_faultDetail_SELFSTARTER_brushWear" v="Démarreur : usure des balais. Symptôme : démarrage lent ou intermittent."/>
+        <e k="RVB_faultDetail_SELFSTARTER_starterMotorWear" v="Démarreur : usure du moteur de démarrage. Symptôme : le moteur démarre lentement ou difficilement."/>
+        <e k="RVB_faultDetail_SELFSTARTER_gearWear" v="Démarreur : usure du pignon d’entraînement. Symptôme : le démarreur peine à s’engager avec le moteur et peut produire un bruit inhabituel."/>
+        <e k="RVB_faultDetail_SELFSTARTER_shortCircuit" v="Démarreur : court-circuit. Symptôme : le démarrage peut échouer et le système électrique risque également d’être endommagé."/>
+
+        <e k="RVB_faultDetail_WIPERS_motorWear" v="Essuie-glaces : moteur usé ou défectueux. Symptôme : les essuie-glaces fonctionnent lentement ou ne fonctionnent plus."/>
+
+        <e k="RVB_faultDetail_LOWBEAM_burntBulb" v="Éclairage : ampoule grillée. Symptôme : le feu concerné ne s’allume pas."/>
+        <e k="RVB_faultDetail_HIGHBEAM_burntBulb" v="Éclairage : ampoule grillée. Symptôme : le feu concerné ne s’allume pas."/>
+        <e k="RVB_faultDetail_WORKFRONT_burntBulb" v="Éclairage : ampoule grillée. Symptôme : le feu concerné ne s’allume pas."/>
+        <e k="RVB_faultDetail_WORKBACK_burntBulb" v="Éclairage : ampoule grillée. Symptôme : le feu concerné ne s’allume pas."/>
+        <e k="RVB_faultDetail_TURNLEFT_burntBulb" v="Éclairage : ampoule grillée. Symptôme : le clignotant concerné ne fonctionne pas."/>
+        <e k="RVB_faultDetail_TURNRIGHT_burntBulb" v="Éclairage : ampoule grillée. Symptôme : le clignotant concerné ne fonctionne pas."/>
+        <e k="RVB_faultDetail_TURNHAZARD_burntBulb" v="Éclairage : ampoule grillée. Symptôme : les feux de détresse concernés ne fonctionnent pas."/>
+        <e k="RVB_faultDetail_BRAKE_burntBulb" v="Éclairage : ampoule grillée. Symptôme : le feu stop concerné ne s’allume pas."/>
+        <e k="RVB_faultDetail_REVERSEL_burntBulb" v="Éclairage : ampoule grillée. Symptôme : le feu de recul concerné ne s’allume pas."/>
+        <e k="RVB_faultDetail_BEACON_burntBulb" v="Éclairage : ampoule grillée. Symptôme : le gyrophare ne fonctionne pas."/>
+        <e k="RVB_faultDetail_PIPE_burntBulb" v="Éclairage : ampoule grillée. Symptôme : le feu de travail de la vis de vidange ne s’allume pas."/>
+
+        <e k="RVB_faultDetail_LOWBEAM_wiringShort" v="Éclairage : défaut de câblage ou court-circuit. Symptôme : le feu peut clignoter ou s’éteindre."/>
+        <e k="RVB_faultDetail_HIGHBEAM_wiringShort" v="Éclairage : défaut de câblage ou court-circuit. Symptôme : le feu peut clignoter ou s’éteindre."/>
+        <e k="RVB_faultDetail_WORKFRONT_wiringShort" v="Éclairage : défaut de câblage ou court-circuit. Symptôme : le feu peut clignoter ou s’éteindre."/>
+        <e k="RVB_faultDetail_WORKBACK_wiringShort" v="Éclairage : défaut de câblage ou court-circuit. Symptôme : le feu peut clignoter ou s’éteindre."/>
+        <e k="RVB_faultDetail_TURNLEFT_wiringShort" v="Éclairage : défaut de câblage ou court-circuit. Symptôme : le clignotant peut cesser de clignoter ou clignoter de façon irrégulière."/>
+        <e k="RVB_faultDetail_TURNRIGHT_wiringShort" v="Éclairage : défaut de câblage ou court-circuit. Symptôme : le clignotant peut cesser de clignoter ou clignoter de façon irrégulière."/>
+        <e k="RVB_faultDetail_TURNHAZARD_wiringShort" v="Éclairage : défaut de câblage ou court-circuit. Symptôme : les feux de détresse peuvent cesser de clignoter ou clignoter de façon irrégulière."/>
+        <e k="RVB_faultDetail_BRAKE_wiringShort" v="Éclairage : défaut de câblage ou court-circuit. Symptôme : le feu stop peut fonctionner par intermittence."/>
+        <e k="RVB_faultDetail_REVERSEL_wiringShort" v="Éclairage : défaut de câblage ou court-circuit. Symptôme : le feu de recul peut fonctionner par intermittence."/>
+        <e k="RVB_faultDetail_BEACON_wiringShort" v="Éclairage : défaut de câblage ou court-circuit. Symptôme : le gyrophare peut clignoter ou s’éteindre."/>
+        <e k="RVB_faultDetail_PIPE_wiringShort" v="Éclairage : défaut de câblage ou court-circuit. Symptôme : le feu de travail de la vis de vidange peut clignoter ou s’éteindre."/>
+
+        <e k="RVB_faultDetail_LOWBEAM_ledFailure" v="Éclairage : module LED défectueux. Symptôme : l’intensité lumineuse peut diminuer ou le feu peut s’éteindre."/>
+        <e k="RVB_faultDetail_HIGHBEAM_ledFailure" v="Éclairage : module LED défectueux. Symptôme : l’intensité lumineuse peut diminuer ou le feu peut s’éteindre."/>
+        <e k="RVB_faultDetail_WORKFRONT_ledFailure" v="Éclairage : défaillance du module LED. Symptôme : l’intensité lumineuse peut diminuer ou le phare de travail peut s’éteindre."/>
+
+        <e k="RVB_faultDetail_LOWBEAM_controlModuleFailure" v="Éclairage : défaillance du module de commande. Symptôme : le phare peut clignoter, faiblir ou ne pas s’allumer."/>
+        <e k="RVB_faultDetail_HIGHBEAM_controlModuleFailure" v="Éclairage : défaillance du module de commande. Symptôme : le phare peut clignoter, faiblir ou ne pas s’allumer."/>
+
+        <e k="RVB_faultDetail_LOWBEAM_corrodedConnector" v="Éclairage : connecteur corrodé. Symptôme : le phare peut clignoter ou s’éteindre par intermittence."/>
+        <e k="RVB_faultDetail_HIGHBEAM_corrodedConnector" v="Éclairage : connecteur corrodé. Symptôme : le phare peut clignoter ou s’éteindre par intermittence."/>
+        <e k="RVB_faultDetail_WORKFRONT_corrodedConnector" v="Éclairage : connecteur corrodé. Symptôme : le phare de travail peut clignoter ou s’éteindre par intermittence."/>
+        <e k="RVB_faultDetail_WORKBACK_corrodedConnector" v="Éclairage : connecteur corrodé. Symptôme : le phare de travail peut clignoter ou s’éteindre par intermittence."/>
+        <e k="RVB_faultDetail_TURNLEFT_corrodedConnector" v="Éclairage : connecteur corrodé. Symptôme : le clignotant peut fonctionner par intermittence."/>
+        <e k="RVB_faultDetail_TURNRIGHT_corrodedConnector" v="Éclairage : connecteur corrodé. Symptôme : le clignotant peut fonctionner par intermittence."/>
+        <e k="RVB_faultDetail_TURNHAZARD_corrodedConnector" v="Éclairage : connecteur corrodé. Symptôme : les feux de détresse peuvent fonctionner par intermittence."/>
+        <e k="RVB_faultDetail_BRAKE_corrodedConnector" v="Éclairage : connecteur corrodé. Symptôme : le feu stop peut fonctionner par intermittence."/>
+        <e k="RVB_faultDetail_REVERSEL_corrodedConnector" v="Éclairage : connecteur corrodé. Symptôme : le feu de recul peut fonctionner par intermittence."/>
+        <e k="RVB_faultDetail_BEACON_corrodedConnector" v="Éclairage : connecteur corrodé. Symptôme : le gyrophare peut clignoter ou s’éteindre par intermittence."/>
+        <e k="RVB_faultDetail_PIPE_corrodedConnector" v="Éclairage : connecteur corrodé. Symptôme : le phare de travail de la vis de déchargement peut clignoter ou s’éteindre par intermittence."/>
+
+        <e k="RVB_faultDetail_TIREFL_treadWorn" v="Pneu avant gauche : bande de roulement usée. Symptôme : adhérence réduite."/>
+        <e k="RVB_faultDetail_TIREFR_treadWorn" v="Pneu avant droit : bande de roulement usée. Symptôme : adhérence réduite."/>
+        <e k="RVB_faultDetail_TIRERL_treadWorn" v="Pneu arrière gauche : bande de roulement usée. Symptôme : adhérence réduite."/>
+        <e k="RVB_faultDetail_TIRERR_treadWorn" v="Pneu arrière droit : bande de roulement usée. Symptôme : adhérence réduite."/>
+        <e k="RVB_faultDetail_TIRERL2_treadWorn" v="Deuxième pneu arrière gauche : bande de roulement usée. Symptôme : adhérence réduite."/>
+        <e k="RVB_faultDetail_TIRERR2_treadWorn" v="Deuxième pneu arrière droit : bande de roulement usée. Symptôme : adhérence réduite."/>
+        <e k="RVB_faultDetail_TIRERL3_treadWorn" v="Troisième pneu arrière gauche : bande de roulement usée. Symptôme : adhérence réduite."/>
+        <e k="RVB_faultDetail_TIRERR3_treadWorn" v="Troisième pneu arrière droit : bande de roulement usée. Symptôme : adhérence réduite."/>
+
+        <e k="RVB_faultDetail_TIREFL_puncture" v="Pneu avant gauche : crevaison. Symptômes : adhérence réduite et tenue de route altérée."/>
+        <e k="RVB_faultDetail_TIREFR_puncture" v="Pneu avant droit : crevaison. Symptômes : adhérence réduite et tenue de route altérée."/>
+        <e k="RVB_faultDetail_TIRERL_puncture" v="Pneu arrière gauche : crevaison. Symptômes : adhérence réduite et tenue de route altérée."/>
+        <e k="RVB_faultDetail_TIRERR_puncture" v="Pneu arrière droit : crevaison. Symptômes : adhérence réduite et tenue de route altérée."/>
+        <e k="RVB_faultDetail_TIRERL2_puncture" v="Deuxième pneu arrière gauche : crevaison. Symptômes : adhérence réduite et tenue de route altérée."/>
+        <e k="RVB_faultDetail_TIRERR2_puncture" v="Deuxième pneu arrière droit : crevaison. Symptômes : adhérence réduite et tenue de route altérée."/>
+        <e k="RVB_faultDetail_TIRERL3_puncture" v="Troisième pneu arrière gauche : crevaison. Symptômes : adhérence réduite et tenue de route altérée."/>
+        <e k="RVB_faultDetail_TIRERR3_puncture" v="Troisième pneu arrière droit : crevaison. Symptômes : adhérence réduite et tenue de route altérée."/>
+
         <e k="RVB_WorkshopMessage_service" v="Vous avez dépassé l'intervalle d'entretien spécifié de %s heures, la réparation a donc pris plus de temps et coûté plus cher." tag="format"/>
         <e k="RVB_WorkshopMessage_serviceDone" v="Entretien terminé."/>
         <e k="RVB_WorkshopMessage_repairDone" v="Réparation terminée. Pièce(s) remplacée(s)/réparée(s) : %s" tag="format"/>
@@ -205,7 +297,7 @@
 
         <e k="RVB_inspectionDialogFault" v="Véhicule %s inspecté, réparation nécessaire. %s"/>
         <e k="RVB_inspectionDialogEnd" v="Véhicule %s inspecté, aucune réparation nécessaire."/>
-        <e k="RVB_inspectionDialogEnd_other" v="Véhicule %s inspecté et réparé. Votre mécanicien était très occupé, un mécanicien junior a donc réparé votre véhicule. Cependant, ce mécanicien junior ne peut pas indiquer ce qui a été réparé sur votre véhicule."/>
+        <e k="RVB_inspectionDialogEnd_other" v="Le véhicule %s a été inspecté et réparé. Votre mécanicien avait beaucoup de travail, alors un mécanicien débutant s'est chargé de la réparation. Toutefois, ce dernier ne peut pas indiquer les réparations effectuées sur le véhicule."/>
 
         <e k="RVB_serviceDialogEnd" v="Entretien du véhicule %s terminé."/>
         <e k="RVB_repairDialogEnd" v="Réparation du véhicule %s terminée."/>
@@ -223,6 +315,7 @@
         <e k="RVB_DEAD_ENGINE_BATTERY" v="Le moteur ne démarre pas, la batterie est déchargée."/>
         <e k="RVB_DEAD_ENGINE_BATTERY_CHARGING" v="Le véhicule ne peut pas démarrer, la batterie est en cours de chargement."/>
         <e k="RVB_DEAD_ENGINE" v="Le moteur ne démarre pas."/>
+        <e k="RVB_WARNING_lowCrankingVoltage" v="Tension de démarrage trop basse : %.2f V ! Démarrage du moteur désactivé (minimum : %.2f V) !" tag="format"/>
 
         <e k="RVB_fault_lights_INSPECTION" v="L'éclairage ne peut pas être allumé pendant l'inspection du véhicule."/>
         <e k="RVB_fault_lights_REPAIR" v="L'éclairage ne peut pas être allumé pendant la réparation du véhicule."/>
@@ -242,17 +335,7 @@
         <e k="electricChargeTurbine" v="Chargeur éolien électrique"/>
         <e k="function_powerpack" v="Utilisez ceci pour charger vos véhicules électriques et transporter de l'énergie électrique vers des endroits éloignés."/>
 
-        <e k="Automatic_Repair_conflict_notice" v="Certaines modifications réparent automatiquement le véhicule, ce qui peut entrer en conflit avec le mode &quot;Real Vehicle Breakdowns(RVB)&quot;.
-
-Pour les modifications suivantes, la réparation automatique a été désactivée par le mod RVB.
-
-Modification(s) remplacée(s) : %s
-
-Merci de votre compréhension.
-
-Cordialement,
-
-MathiasHun" tag="format"/>
+        <e k="Automatic_Repair_conflict_notice" v="Certaines modifications réparent automatiquement le véhicule, ce qui peut entrer en conflit avec le mode &quot;Real Vehicle Breakdowns (RVB)&quot;.&#xD;&#xA;&#xD;&#xA;Pour les modifications suivantes, le mod RVB a désactivé la réparation automatique.&#xD;&#xA;&#xD;&#xA;Modifications concernées : %s&#xD;&#xA;&#xD;&#xA;Merci de votre compréhension.&#xD;&#xA;&#xD;&#xA;Cordialement,&#xD;&#xA;&#xD;&#xA;MathiasHun" tag="format"/>
 
         <e k="RVB_aimessage_batterydischarged" v="%s l'assistant IA a soudainement cessé de fonctionner, la batterie du véhicule est déchargée !" tag="format"/>
 
@@ -264,35 +347,59 @@ MathiasHun" tag="format"/>
         <e k="infohud_uytBatteryChargeTime" v="Temps de charge restant"/>
 
         <e k="typeDesc_battery" v="Batterie"/>
+        <e k="batteryCapacity" v="Capacité de la batterie (Ah)"/>
 
         <e k="name_batterySmall" v="Petite batterie"/>
         <e k="name_batteryMedium" v="Batterie moyenne"/>
         <e k="name_batteryBig" v="Grande batterie"/>
 
-        <e k="function_batteryBig75" v="Batterie de petite capacité, 75 Ah"/>
-        <e k="function_batteryBig80" v="Batterie de petite capacité, 80 Ah"/>
-        <e k="function_batteryBig90" v="Batterie de petite capacité, 90 Ah"/>
-        <e k="function_batteryBig100" v="Batterie de capacité moyenne, 100 Ah"/>
-        <e k="function_batteryBig120" v="Batterie de capacité moyenne, 120 Ah"/>
-        <e k="function_batteryBig140" v="Batterie de grande capacité, 140 Ah"/>
-        <e k="function_batteryBig150" v="Batterie de grande capacité, 150 Ah"/>
-        <e k="function_batteryBig180" v="Batterie de grande capacité, 180 Ah"/>
-        <e k="function_batteryBig200" v="Batterie de grande capacité, 200 Ah"/>
+        <e k="function_battery" v="Batterie à capacité réglable, de 75 à 200 Ah."/>
 
         <e k="unit_ampereHourShort" v="Ah"/>
+
+        <e k="RVB_batteryConnection_series" v="branchement en série"/>
+        <e k="RVB_batteryConnection_parallel" v="branchement en parallèle"/>
+        <e k="RVB_batteryConnection_mixed" v="branchement série-parallèle"/>
+
         <e k="RVB_action_batteryWorkshop" v="Installer la batterie"/>
 
         <e k="RVB_allBatteriesInstalled" v="Toutes les batteries sont déjà installées dans le véhicule."/>
-        <e k="RVB_wrongBattery" v="Batterie incorrecte.
-
-Batterie installée dans le véhicule : %.0f Ah
-Batterie sélectionnée : %.0f Ah" tag="format"/>
+        <e k="RVB_wrongBattery" v="Batterie inadaptée.&#xD;&#xA;&#xD;&#xA;Batterie installée dans le véhicule : %.0f Ah&#xD;&#xA;&#xD;&#xA;Batterie sélectionnée : %.0f Ah" tag="format"/>
         <e k="RVB_tooManyVehicles" v="Veuillez éloigner les autres véhicules ! Il y a actuellement %d véhicules dans la zone de détection, mais un seul peut se trouver près de la batterie à la fois." tag="format"/>
         <e k="RVB_tooManyVehicles_hud" v="Trop de véhicules dans la zone de détection !"/>
         <e k="RVB_batteryInstallation" v="Installation de la batterie : %d%%" tag="format"/>
         <e k="RVB_batteryRemoval" v="Retrait de la batterie : %d%%" tag="format"/>
         <e k="RVB_vehicleEnteredTrigger" v="%s est près de la batterie." tag="format"/>
         <e k="RVB_vehicleLeftTrigger" v="%s n’est plus près de la batterie." tag="format"/>
+        <e k="rvbHelp_general" v="Real Vehicle Breakdowns"/>
+        <e k="rvbHelp_general_overview" v="Présentation générale"/>
+        <e k="rvbHelp_general_overview_title" v="Présentation du mod"/>
+        <e k="rvbHelp_general_overview_text" v="Le mod Real Vehicle Breakdowns (RVB) vise à rendre l'utilisation des véhicules plus réaliste et imprévisible dans Farming Simulator 25. Il introduit un système complexe de pannes et d'entretien dans lequel chaque composant du véhicule possède sa propre durée de vie. L'utilisation, les heures de fonctionnement, la charge du moteur, la température de fonctionnement et l'entretien peuvent tous influer sur l'état des véhicules. Une utilisation inappropriée et un entretien négligé peuvent entraîner une usure prématurée, des pannes et, dans les cas extrêmes, une défaillance complète du véhicule. Les pannes peuvent toucher différents systèmes, notamment le moteur, le refroidissement, l'équipement électrique, le démarrage et l'éclairage. L'état de la batterie, son niveau de charge et la température ambiante peuvent également influer sur le démarrage du moteur. L'état du véhicule peut être surveillé grâce à l'interface dédiée de RVB. Le système d'atelier permet d'effectuer des inspections, des entretiens périodiques et des réparations. Les coûts associés dépendent de facteurs tels que la valeur et l'âge du véhicule. RVB vise à faire de l'utilisation des véhicules bien plus qu'une simple exécution des tâches : surveiller l'état des machines, effectuer un entretien adéquat et gérer les pannes imprévues font également partie du jeu."/>
+
+        <e k="rvbHelp_general_features_title" v="Fonctionnalités principales"/>
+        <e k="rvbHelp_general_features_text" v="Real Vehicle Breakdowns gère plusieurs systèmes qui influent sur le fonctionnement, l'état et la fiabilité des véhicules."/>
+        <e k="rvbHelp_general_features_maintenance_title" v="Entretien et durée de vie des composants"/>
+        <e k="rvbHelp_general_features_maintenance_text" v="Les composants des véhicules ont une durée de vie définie. Les heures de fonctionnement, l'intensité d'utilisation et l'entretien influent tous sur leur état. Le système permet d'effectuer des entretiens périodiques, des inspections et les réparations nécessaires."/>
+        <e k="rvbHelp_general_features_failures_title" v="Pannes"/>
+        <e k="rvbHelp_general_features_failures_text" v="Les véhicules peuvent subir diverses défaillances mécaniques et électriques. Les pannes peuvent affecter les performances du moteur, le démarrage, le refroidissement, l’éclairage et le fonctionnement des systèmes électriques."/>
+        <e k="rvbHelp_general_features_battery_title" v="Batterie et système électrique"/>
+        <e k="rvbHelp_general_features_battery_text" v="Le niveau de charge, l’état et la température de la batterie influent sur le démarrage du moteur. L’éclairage et les autres consommateurs électriques utilisent de l’énergie, tandis que l’alternateur recharge la batterie lorsque le moteur tourne."/>
+        <e k="rvbHelp_general_features_workshop_title" v="Atelier et réparations"/>
+        <e k="rvbHelp_general_features_workshop_text" v="L’état du véhicule peut être contrôlé, l’entretien effectué et les réparations réalisées à l’atelier. Chaque intervention a sa propre durée et son propre coût."/>
+        <e k="rvbHelp_general_features_gameplay_title" v="Personnalisation du jeu"/>
+        <e k="rvbHelp_general_features_gameplay_text" v="Les paramètres du mod vous permettent de personnaliser la difficulté des pannes, les intervalles d’entretien et d’autres paramètres de fonctionnement."/>
+
+        <e k="rvbHelp_battery" v="Système de batterie"/>
+        <e k="rvbHelp_battery_overview" v="Aperçu de la batterie"/>
+        <e k="rvbHelp_battery_capacity_title" v="Capacité de la batterie"/>
+        <e k="rvbHelp_battery_capacity_text" v="La capacité de la batterie se mesure en ampères-heures (Ah)."/>
+        <e k="rvbHelp_battery_connection_title" v="Branchements de la batterie"/>
+        <e k="rvbHelp_battery_connection_text" v="Les véhicules peuvent être équipés de batteries montées en parallèle ou en série."/>
+
+        <e k="rvbHelp_engine" v="Moteur"/>
+        <e k="rvbHelp_engine_starting" v="Démarrage du moteur"/>
+        <e k="rvbHelp_engine_starting_title" v="Conditions de démarrage"/>
+        <e k="rvbHelp_engine_starting_text" v="La batterie doit fournir un courant de démarrage suffisant au moteur."/>
 
     </elements>
 </l10n>

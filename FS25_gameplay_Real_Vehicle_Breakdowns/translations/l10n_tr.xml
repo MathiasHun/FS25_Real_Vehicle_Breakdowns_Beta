@@ -40,10 +40,10 @@
         <e k="RVB_toolTip_workshopOpen" v="Araç atölyesinin açılış saati."/>
         <e k="RVB_setting_workshopClose" v="Kapanış Saati"/>
         <e k="RVB_toolTip_workshopClose" v="Araç atölyesinin kapanış saati."/>
-        <e k="RVB_setting_workshopCountMax" v="Atölyedeki maksimum araç sayısı"/>
+        <e k="RVB_setting_workshopCountMax" v="Atölyedeki Araç Sayısı Üst Sınırı"/>
         <e k="RVB_toolTip_workshopCountMax" v="Atölyeye aynı anda kaç aracın girebileceğini buradan ayarlayabilirsiniz."/>
         <e k="RVB_settingSectionHeader_LifetimeofParts" v="Parçaların Ömrü."/>
-        <e k="RVB_toolTip_lifetimeParts" v="Bu sayı ne kadar küçük, o kadar çabuk arızalanır."/>
+        <e k="RVB_toolTip_lifetimeParts" v="Bu değer ne kadar düşükse arıza o kadar erken meydana gelir."/>
         <e k="RVB_setting_thermostatLifetime" v="Termostat"/>
         <e k="RVB_setting_lightingsLifetime" v="Aydınlatma"/>
         <e k="RVB_setting_glowplugLifetime" v="Buji"/>
@@ -104,7 +104,7 @@
         <e k="RVB_inspectionElectrical" v="Elektrik sistemi"/>
         <e k="RVB_inspectionLighting" v="Aydınlatma"/>
         <e k="RVB_inspectionMechanical" v="Süspansiyon ve mekanik"/>
-        <e k="RVB_inspectionTires" v="Lastikler ve tekerlekler"/>
+        <e k="RVB_inspectionTires" v="Lastikler ve Tekerlekler"/>
         <e k="RVB_inspectionFull" v="Tam muayene"/>
         <e k="RVB_inspectionDialog" v="Bu aracı %s maliyetle incelemek istediğine emin misin?" tag="format"/>
         <e k="RVB_inspectionTimeDialog" v="Araç muayenesi saat %s’de tamamlanacak." tag="format"/>
@@ -131,7 +131,7 @@
         <e k="RVB_faultType_engine" v="Motor"/>
         <e k="RVB_faultType_electrical" v="Elektrik sistemi"/>
         <e k="RVB_faultType_lights" v="Aydınlatma"/>
-        <e k="RVB_faultType_mechanical" v="Mekanik sistem"/>
+        <e k="RVB_faultType_mechanical" v="Mekanik Sistem"/>
         <e k="RVB_faultType_tires" v="Lastikler"/>
 
         <e k="RVB_fillType_battery" v="Akü"/>
@@ -155,9 +155,6 @@
         <e k="RVB_repairDayDialog" v="Araç tamiri yarın saat %s’de tamamlanacak." tag="format"/>
         <e k="RVB_repairDaysDialog" v="Araç onarımı %s konumunda %d gün içinde tamamlanacak." tag="format"/>
 
-
-
-
         <e k="RVB_ErrorList" v="Hata listesi:"/>
         <e k="RVB_periodicserviceDialog" v="%s maliyetle aracı servise bırakmak istediğinizden emin misiniz?" tag="format"/>
         <e k="RVB_periodicserviceDayDialog" v="Araç bakımı yarın %s saatinde tamamlanacak." tag="format"/>
@@ -179,8 +176,11 @@
         <e k="RVB_Workshop_serviceManual" v="Servis Kaydı"/>
         <e k="RVB_Workshop_noinspection" v="Araç henüz incelenmedi!"/>
         <e k="RVB_Workshop_noserviceManualEntry" v="Servis kaydında giriş yok!"/>
-        <e k="RVB_Workshop_status" v="Durum:"/>
-        <e k="RVB_Workshop_repair" v="Tamir?"/>
+        <e k="RVB_workshop" v="RVB Atölyesi"/>
+        <e k="RVB_workshop_part" v="Bileşen"/>
+        <e k="RVB_workshop_condition" v="Durum"/>
+        <e k="RVB_workshop_value" v="Değer"/>
+        <e k="RVB_workshop_repair" v="Onarılsın mı?"/>
         <e k="RVB_Workshop_work" v="İşlem"/>
         <e k="RVB_Workshop_date" v="Tarih"/>
         <e k="RVB_Workshop_lifetime" v="Çalışma saatleri"/>
@@ -197,6 +197,98 @@
         <e k="RVB_WorkshopS_repNoNeed" v="Tamir gerekmiyor."/>
         <e k="RVB_WorkshopS_month" v=" ay"/>
 
+        <e k="RVB_faultDetail_ENGINE_misfire" v="Motor: Ateşleme hatası. Belirtiler: motorun düzensiz çalışması, güç kaybı ve yakıt tüketiminin artması."/>
+        <e k="RVB_faultDetail_ENGINE_lowOilPressure" v="Motor: Yağ basıncı düşük. Belirtiler: güç kaybı ve motor aşınmasının artması."/>
+        <e k="RVB_faultDetail_ENGINE_headGasketFailure" v="Motor: Silindir kapak contası arızası. Belirtiler: aşırı ısınma ve bileşen aşınmasının artması."/>
+        <e k="RVB_faultDetail_ENGINE_overheating" v="Motor: Aşırı ısınma. Belirtiler: yüksek motor sıcaklığı ve güç kaybı."/>
+        <e k="RVB_faultDetail_ENGINE_compressionLoss" v="Motor: Kompresyon kaybı. Belirtiler: motor gücünün azalması."/>
+        <e k="RVB_faultDetail_ENGINE_sensorFault" v="Motor: sensör arızası. Belirti: motor kontrolü hatalı."/>
+        <e k="RVB_faultDetail_THERMOSTAT_stuckClosed" v="Termostat: kapalı konumda sıkışmış. Belirti: motor aşırı ısınabilir."/>
+        <e k="RVB_faultDetail_THERMOSTAT_stuckOpen" v="Termostat: açık konumda sıkışmış. Belirti: motor geç ısınır veya fazla soğuk çalışır."/>
+        <e k="RVB_faultDetail_THERMOSTAT_restrictedFlow" v="Termostat: soğutma sıvısı akışı kısıtlı. Belirti: motor aşırı ısınabilir."/>
+        <e k="RVB_faultDetail_GLOWPLUG_burntGlowPlug" v="Kızdırma bujisi: yanmış. Belirti: motoru çalıştırmak zorlaşır."/>
+        <e k="RVB_faultDetail_GLOWPLUG_shortCircuit" v="Kızdırma bujisi: kısa devre. Belirti: motoru çalıştırmak zorlaşır."/>
+
+        <e k="RVB_faultDetail_BATTERY_discharged" v="Akü: boşalmış. Belirti: motoru çalıştırmak zorlaşır veya imkânsız hâle gelir."/>
+        <e k="RVB_faultDetail_BATTERY_connectorIssue" v="Akü: bağlantı gevşek veya oksitlenmiş. Belirti: motoru çalıştırmak zorlaşır ve elektrik sistemi güvenilir çalışmaz."/>
+        <e k="RVB_faultDetail_BATTERY_sulfated" v="Akü: sülfatlaşma nedeniyle kapasite kaybı. Belirti: marş performansı düşer ve akü çabuk boşalır."/>
+        <e k="RVB_faultDetail_BATTERY_internalShort" v="Akü: iç kısa devre. Belirti: akü şarj tutmaz ve motoru çalıştırmak zorlaşır veya imkânsız hâle gelir."/>
+
+        <e k="RVB_faultDetail_GENERATOR_undercharging" v="Alternatör: yetersiz şarj. Belirti: sürüş sırasında akü şarjı azalabilir."/>
+        <e k="RVB_faultDetail_GENERATOR_wiringIssue" v="Alternatör: kablo veya bağlantı arızası. Belirti: şarj kesilebilir veya dalgalanabilir."/>
+        <e k="RVB_faultDetail_GENERATOR_bearingWear" v="Alternatör: rulman aşınması. Belirti: olağandışı ses ve düşük şarj performansı."/>
+        <e k="RVB_faultDetail_GENERATOR_statorShort" v="Alternatör: stator sargısında kısa devre. Belirti: alternatör aküyü düzgün şarj edemez."/>
+        <e k="RVB_faultDetail_GENERATOR_voltageIrregularity" v="Alternatör: voltaj regülatörü arızası. Belirti: şarj voltajı dalgalanır ve akü zarar görebilir."/>
+
+        <e k="RVB_faultDetail_SELFSTARTER_solenoidFailure" v="Marş motoru: solenoid arızası. Belirti: tıklama sesi duyulur veya motor çalışmaz."/>
+        <e k="RVB_faultDetail_SELFSTARTER_brushWear" v="Marş motoru: fırça aşınması. Belirti: motor yavaş veya aralıklı çalışır."/>
+        <e k="RVB_faultDetail_SELFSTARTER_starterMotorWear" v="Marş motoru: motor aşınması. Belirti: motor yavaş veya zor çalışır."/>
+        <e k="RVB_faultDetail_SELFSTARTER_gearWear" v="Marş motoru: tahrik dişlisi aşınması. Belirti: marş motoru motoru kavramakta zorlanır ve olağandışı ses duyulabilir."/>
+        <e k="RVB_faultDetail_SELFSTARTER_shortCircuit" v="Marş motoru: kısa devre. Belirti: motor çalışmayabilir ve elektrik sistemi de zarar görebilir."/>
+
+        <e k="RVB_faultDetail_WIPERS_motorWear" v="Silecekler: motor aşınmış veya arızalı. Belirti: silecekler yavaş çalışır ya da durur."/>
+
+        <e k="RVB_faultDetail_LOWBEAM_burntBulb" v="Aydınlatma: ampul yanmış. Belirti: ilgili lamba yanmaz."/>
+        <e k="RVB_faultDetail_HIGHBEAM_burntBulb" v="Aydınlatma: ampul yanmış. Belirti: ilgili lamba yanmaz."/>
+        <e k="RVB_faultDetail_WORKFRONT_burntBulb" v="Aydınlatma: ampul yanmış. Belirti: ilgili lamba yanmaz."/>
+        <e k="RVB_faultDetail_WORKBACK_burntBulb" v="Aydınlatma: ampul yanmış. Belirti: ilgili lamba yanmaz."/>
+        <e k="RVB_faultDetail_TURNLEFT_burntBulb" v="Aydınlatma: ampul yanmış. Belirti: ilgili sinyal lambası çalışmıyor."/>
+        <e k="RVB_faultDetail_TURNRIGHT_burntBulb" v="Aydınlatma: ampul yanmış. Belirti: ilgili sinyal lambası çalışmıyor."/>
+        <e k="RVB_faultDetail_TURNHAZARD_burntBulb" v="Aydınlatma: ampul yanmış. Belirti: ilgili dörtlü ikaz lambası çalışmıyor."/>
+        <e k="RVB_faultDetail_BRAKE_burntBulb" v="Aydınlatma: ampul yanmış. Belirti: ilgili fren lambası yanmıyor."/>
+        <e k="RVB_faultDetail_REVERSEL_burntBulb" v="Aydınlatma: ampul yanmış. Belirti: ilgili geri vites lambası yanmıyor."/>
+        <e k="RVB_faultDetail_BEACON_burntBulb" v="Aydınlatma: ampul yanmış. Belirti: tepe lambası çalışmıyor."/>
+        <e k="RVB_faultDetail_PIPE_burntBulb" v="Aydınlatma: ampul yanmış. Belirti: boşaltma helezonunun çalışma lambası yanmıyor."/>
+
+        <e k="RVB_faultDetail_LOWBEAM_wiringShort" v="Aydınlatma: kablo arızası veya kısa devre. Belirti: lamba titreyebilir ya da sönebilir."/>
+        <e k="RVB_faultDetail_HIGHBEAM_wiringShort" v="Aydınlatma: kablo arızası veya kısa devre. Belirti: lamba titreyebilir ya da sönebilir."/>
+        <e k="RVB_faultDetail_WORKFRONT_wiringShort" v="Aydınlatma: kablo arızası veya kısa devre. Belirti: lamba titreyebilir ya da sönebilir."/>
+        <e k="RVB_faultDetail_WORKBACK_wiringShort" v="Aydınlatma: kablo arızası veya kısa devre. Belirti: lamba titreyebilir ya da sönebilir."/>
+        <e k="RVB_faultDetail_TURNLEFT_wiringShort" v="Aydınlatma: kablo arızası veya kısa devre. Belirti: sinyal lambası yanıp sönmeyi durdurabilir veya düzensiz yanıp sönebilir."/>
+        <e k="RVB_faultDetail_TURNRIGHT_wiringShort" v="Aydınlatma: kablo arızası veya kısa devre. Belirti: sinyal lambası yanıp sönmeyi durdurabilir veya düzensiz yanıp sönebilir."/>
+        <e k="RVB_faultDetail_TURNHAZARD_wiringShort" v="Aydınlatma: kablo arızası veya kısa devre. Belirti: dörtlü ikaz lambaları yanıp sönmeyi durdurabilir veya düzensiz yanıp sönebilir."/>
+        <e k="RVB_faultDetail_BRAKE_wiringShort" v="Aydınlatma: kablo arızası veya kısa devre. Belirti: fren lambası aralıklı olarak çalışabilir."/>
+        <e k="RVB_faultDetail_REVERSEL_wiringShort" v="Aydınlatma: kablo arızası veya kısa devre. Belirti: geri vites lambası aralıklı olarak çalışabilir."/>
+        <e k="RVB_faultDetail_BEACON_wiringShort" v="Aydınlatma: kablo arızası veya kısa devre. Belirti: tepe lambası titreyebilir ya da sönebilir."/>
+        <e k="RVB_faultDetail_PIPE_wiringShort" v="Aydınlatma: kablo arızası veya kısa devre. Belirti: boşaltma helezonunun çalışma lambası titreyebilir ya da sönebilir."/>
+
+        <e k="RVB_faultDetail_LOWBEAM_ledFailure" v="Aydınlatma: LED modülü arızası. Belirti: ışık gücü azalabilir veya lamba sönebilir."/>
+        <e k="RVB_faultDetail_HIGHBEAM_ledFailure" v="Aydınlatma: LED modülü arızası. Belirti: ışık gücü azalabilir veya lamba sönebilir."/>
+        <e k="RVB_faultDetail_WORKFRONT_ledFailure" v="Aydınlatma: LED modülü arızası. Belirti: ışık gücü azalabilir veya çalışma lambası sönebilir."/>
+
+        <e k="RVB_faultDetail_LOWBEAM_controlModuleFailure" v="Aydınlatma: kontrol modülü arızası. Belirti: lamba titreyebilir, ışığı azalabilir veya yanmayabilir."/>
+        <e k="RVB_faultDetail_HIGHBEAM_controlModuleFailure" v="Aydınlatma: kontrol modülü arızası. Belirti: lamba titreyebilir, ışığı azalabilir veya yanmayabilir."/>
+
+        <e k="RVB_faultDetail_LOWBEAM_corrodedConnector" v="Aydınlatma: bağlantı noktası paslanmış. Belirti: lamba titreyebilir veya aralıklı olarak sönebilir."/>
+        <e k="RVB_faultDetail_HIGHBEAM_corrodedConnector" v="Aydınlatma: bağlantı noktası paslanmış. Belirti: lamba titreyebilir veya aralıklı olarak sönebilir."/>
+        <e k="RVB_faultDetail_WORKFRONT_corrodedConnector" v="Aydınlatma: soket korozyona uğramış. Belirti: çalışma lambası titreyebilir veya zaman zaman sönebilir."/>
+        <e k="RVB_faultDetail_WORKBACK_corrodedConnector" v="Aydınlatma: soket korozyona uğramış. Belirti: çalışma lambası titreyebilir veya zaman zaman sönebilir."/>
+        <e k="RVB_faultDetail_TURNLEFT_corrodedConnector" v="Aydınlatma: soket korozyona uğramış. Belirti: sinyal lambası zaman zaman çalışmayabilir."/>
+        <e k="RVB_faultDetail_TURNRIGHT_corrodedConnector" v="Aydınlatma: soket korozyona uğramış. Belirti: sinyal lambası zaman zaman çalışmayabilir."/>
+        <e k="RVB_faultDetail_TURNHAZARD_corrodedConnector" v="Aydınlatma: soket korozyona uğramış. Belirti: dörtlü flaşörler zaman zaman çalışmayabilir."/>
+        <e k="RVB_faultDetail_BRAKE_corrodedConnector" v="Aydınlatma: soket korozyona uğramış. Belirti: fren lambası zaman zaman çalışmayabilir."/>
+        <e k="RVB_faultDetail_REVERSEL_corrodedConnector" v="Aydınlatma: soket korozyona uğramış. Belirti: geri vites lambası zaman zaman çalışmayabilir."/>
+        <e k="RVB_faultDetail_BEACON_corrodedConnector" v="Aydınlatma: soket korozyona uğramış. Belirti: tepe lambası titreyebilir veya zaman zaman sönebilir."/>
+        <e k="RVB_faultDetail_PIPE_corrodedConnector" v="Aydınlatma: soket korozyona uğramış. Belirti: boşaltma helezonunun çalışma lambası titreyebilir veya zaman zaman sönebilir."/>
+
+        <e k="RVB_faultDetail_TIREFL_treadWorn" v="Ön sol lastik: dişler aşınmış. Belirti: çekiş azalır."/>
+        <e k="RVB_faultDetail_TIREFR_treadWorn" v="Ön sağ lastik: dişler aşınmış. Belirti: çekiş azalır."/>
+        <e k="RVB_faultDetail_TIRERL_treadWorn" v="Arka sol lastik: dişler aşınmış. Belirti: çekiş azalır."/>
+        <e k="RVB_faultDetail_TIRERR_treadWorn" v="Arka sağ lastik: dişler aşınmış. Belirti: çekiş azalır."/>
+        <e k="RVB_faultDetail_TIRERL2_treadWorn" v="İkinci arka sol lastik: dişler aşınmış. Belirti: çekiş azalır."/>
+        <e k="RVB_faultDetail_TIRERR2_treadWorn" v="İkinci arka sağ lastik: dişler aşınmış. Belirti: çekiş azalır."/>
+        <e k="RVB_faultDetail_TIRERL3_treadWorn" v="Üçüncü arka sol lastik: dişler aşınmış. Belirti: çekiş azalır."/>
+        <e k="RVB_faultDetail_TIRERR3_treadWorn" v="Üçüncü arka sağ lastik: dişler aşınmış. Belirti: çekiş azalır."/>
+
+        <e k="RVB_faultDetail_TIREFL_puncture" v="Ön sol lastik: patlak. Belirtiler: çekiş azalır ve aracın yol tutuşu bozulur."/>
+        <e k="RVB_faultDetail_TIREFR_puncture" v="Ön sağ lastik: patlak. Belirtiler: çekiş azalır ve aracın yol tutuşu bozulur."/>
+        <e k="RVB_faultDetail_TIRERL_puncture" v="Arka sol lastik: patlak. Belirtiler: çekiş azalır ve aracın yol tutuşu bozulur."/>
+        <e k="RVB_faultDetail_TIRERR_puncture" v="Arka sağ lastik: patlak. Belirtiler: çekiş azalır ve aracın yol tutuşu bozulur."/>
+        <e k="RVB_faultDetail_TIRERL2_puncture" v="İkinci arka sol lastik: patlak. Belirtiler: çekiş azalır ve aracın yol tutuşu bozulur."/>
+        <e k="RVB_faultDetail_TIRERR2_puncture" v="İkinci arka sağ lastik: patlak. Belirtiler: çekiş azalır ve aracın yol tutuşu bozulur."/>
+        <e k="RVB_faultDetail_TIRERL3_puncture" v="Üçüncü arka sol lastik: patlak. Belirtiler: çekiş azalır ve aracın yol tutuşu bozulur."/>
+        <e k="RVB_faultDetail_TIRERR3_puncture" v="Üçüncü arka sağ lastik: patlak. Belirtiler: çekiş azalır ve aracın yol tutuşu bozulur."/>
+
         <e k="RVB_WorkshopMessage_service" v="Belirlenen servis aralığını %s saat aştınız, bu nedenle tamir daha uzun sürdü ve daha pahalı oldu." tag="format"/>
         <e k="RVB_WorkshopMessage_serviceDone" v="Servis tamamlandı."/>
         <e k="RVB_WorkshopMessage_repairDone" v="Tamir tamamlandı. Değiştirilen/onarılan parçalar: %s" tag="format"/>
@@ -205,7 +297,7 @@
 
         <e k="RVB_inspectionDialogFault" v="Araç %s incelendi, onarım gerekiyor. %s"/>
         <e k="RVB_inspectionDialogEnd" v="Araç %s incelendi, onarım gerektirmiyor."/>
-        <e k="RVB_inspectionDialogEnd_other" v="%s araç incelendi ve tamir edildi. Tamircinizin çok işi olduğu için çırak aracınızı tamir etti. Ancak çırak ustası olmadan tamir ettiği şeyleri listeleyemez."/>
+        <e k="RVB_inspectionDialogEnd_other" v="%s aracı kontrol edildi ve onarıldı. Tamircinizin yapması gereken çok iş vardı, bu nedenle onarımı yardımcı tamirci gerçekleştirdi. Ancak bu yardımcı tamirci, araçta nelerin onarıldığını listeleyemiyor."/>
 
         <e k="RVB_serviceDialogEnd" v="%s aracının servisi tamamlandı."/>
         <e k="RVB_repairDialogEnd" v="%s aracının tamiri tamamlandı."/>
@@ -223,6 +315,7 @@
         <e k="RVB_DEAD_ENGINE_BATTERY" v="Motor çalışmıyor, akü tamamen bitti."/>
         <e k="RVB_DEAD_ENGINE_BATTERY_CHARGING" v="Araç çalıştırılamıyor, akü şarjı devam ediyor."/>
         <e k="RVB_DEAD_ENGINE" v="Motor çalışmıyor."/>
+        <e k="RVB_WARNING_lowCrankingVoltage" v="Marş gerilimi düşük: %.2f V! Motorun çalıştırılması devre dışı (Minimum: %.2f V)!" tag="format"/>
 
         <e k="RVB_fault_lights_INSPECTION" v="Işıklar, araç muayenesi devam ederken açılabilir."/>
         <e k="RVB_fault_lights_REPAIR" v="Işıklar, araç tamiri devam ederken açılabilir."/>
@@ -242,17 +335,7 @@
         <e k="electricChargeTurbine" v="Elektrikli Rüzgar Türbini Şarj Cihazı"/>
         <e k="function_powerpack" v="Elektrikli araçlarınızı şarj etmek ve elektriği uzak bölgelere taşımak için kullanın."/>
 
-        <e k="Automatic_Repair_conflict_notice" v="Araçları otomatik olarak tamir eden modifikasyonlar var, bu nedenle &quot;Real Vehicle Breakdowns(RVB)&quot; modu bu modlarla çakışabilir.
-
-Aşağıdaki modifikasyon(lar) için otomatik onarım RVB modu tarafından devre dışı bırakıldı.
-
-Üzerine yazılmış modifikasyon(lar): %s
-
-Anlayışınız için teşekkür ederim.
-
-En iyi dileklerimle,
-
-MathiasHun" tag="format"/>
+        <e k="Automatic_Repair_conflict_notice" v="Bazı modifikasyonlar aracı otomatik olarak onarır ve bu durum &quot;Real Vehicle Breakdowns(RVB)&quot; modu ile çakışabilir.&#xD;&#xA;&#xD;&#xA;Aşağıdaki modifikasyonların otomatik onarım özelliği RVB modu tarafından devre dışı bırakıldı.&#xD;&#xA;&#xD;&#xA;Devre dışı bırakılan modifikasyon(lar): %s&#xD;&#xA;&#xD;&#xA;Anlayışınız için teşekkür ederiz.&#xD;&#xA;&#xD;&#xA;Saygılarımızla,&#xD;&#xA;&#xD;&#xA;MathiasHun" tag="format"/>
 
         <e k="RVB_aimessage_batterydischarged" v="%s AI çalışanı beklenmedik bir şekilde çalışmayı durdurdu, aracın aküsü boşaldı!" tag="format"/>
 
@@ -264,35 +347,59 @@ MathiasHun" tag="format"/>
         <e k="infohud_uytBatteryChargeTime" v="Kalan şarj süresi"/>
 
         <e k="typeDesc_battery" v="Akü"/>
+        <e k="batteryCapacity" v="Akü kapasitesi (Ah)"/>
 
         <e k="name_batterySmall" v="Küçük akü"/>
         <e k="name_batteryMedium" v="Orta boy akü"/>
         <e k="name_batteryBig" v="Büyük akü"/>
 
-        <e k="function_batteryBig75" v="Küçük kapasiteli, 75 Ah akü"/>
-        <e k="function_batteryBig80" v="Küçük kapasiteli, 80 Ah akü"/>
-        <e k="function_batteryBig90" v="Küçük kapasiteli, 90 Ah akü"/>
-        <e k="function_batteryBig100" v="Orta kapasiteli, 100 Ah akü"/>
-        <e k="function_batteryBig120" v="Orta kapasiteli, 120 Ah akü"/>
-        <e k="function_batteryBig140" v="Yüksek kapasiteli, 140 Ah akü"/>
-        <e k="function_batteryBig150" v="Yüksek kapasiteli, 150 Ah akü"/>
-        <e k="function_batteryBig180" v="Yüksek kapasiteli, 180 Ah akü"/>
-        <e k="function_batteryBig200" v="Yüksek kapasiteli, 200 Ah akü"/>
+        <e k="function_battery" v="75 ile 200 Ah arasında seçilebilir kapasiteye sahip akü."/>
 
         <e k="unit_ampereHourShort" v="Ah"/>
+
+        <e k="RVB_batteryConnection_series" v="seri bağlantı"/>
+        <e k="RVB_batteryConnection_parallel" v="paralel bağlantı"/>
+        <e k="RVB_batteryConnection_mixed" v="seri-paralel bağlantı"/>
+
         <e k="RVB_action_batteryWorkshop" v="Aküyü tak"/>
 
         <e k="RVB_allBatteriesInstalled" v="Tüm aküler zaten araca takılı."/>
-        <e k="RVB_wrongBattery" v="Yanlış akü.
-
-Araca takılı akü: %.0f Ah
-Seçilen akü: %.0f Ah" tag="format"/>
+        <e k="RVB_wrongBattery" v="Yanlış akü.&#xD;&#xA;&#xD;&#xA;Araçta takılı akü: %.0f Ah&#xD;&#xA;&#xD;&#xA;Seçilen akü: %.0f Ah" tag="format"/>
         <e k="RVB_tooManyVehicles" v="Lütfen diğer araçları uzaklaştırın! Tetikleme alanında şu anda %d araç var, ancak aynı anda akünün yanında yalnızca bir araç bulunabilir." tag="format"/>
         <e k="RVB_tooManyVehicles_hud" v="Tetikleme alanında çok fazla araç var!"/>
         <e k="RVB_batteryInstallation" v="Akü takılıyor: %d%%" tag="format"/>
         <e k="RVB_batteryRemoval" v="Akü çıkarılıyor: %d%%" tag="format"/>
         <e k="RVB_vehicleEnteredTrigger" v="%s akünün yakınında." tag="format"/>
         <e k="RVB_vehicleLeftTrigger" v="%s artık akünün yakınında değil." tag="format"/>
+        <e k="rvbHelp_general" v="Real Vehicle Breakdowns"/>
+        <e k="rvbHelp_general_overview" v="Genel Bakış"/>
+        <e k="rvbHelp_general_overview_title" v="Mod Hakkında"/>
+        <e k="rvbHelp_general_overview_text" v="Real Vehicle Breakdowns (RVB) modu, Farming Simulator 25'te araç kullanımını daha gerçekçi ve öngörülemez hâle getirmeyi amaçlar. Mod, araç bileşenlerinin kendilerine ait kullanım ömürlerinin bulunduğu kapsamlı bir arıza ve bakım sistemi sunar. Kullanım şekli, çalışma saati, motor yükü, çalışma sıcaklığı ve bakım; araçların durumunu etkileyebilir. Hatalı kullanım ve ihmal edilen bakım, erken aşınmaya, arızalara ve hatta en kötü durumda aracın tamamen çalışmaz hâle gelmesine yol açabilir. Arızalar; motorun çalışması, soğutma sistemi, elektrik donanımı, marş sistemi ve aydınlatma dâhil olmak üzere çeşitli sistemleri etkileyebilir. Akünün durumu, şarj seviyesi ve ortam sıcaklığı da motorun çalıştırılmasını etkileyebilir. Araçların durumu, RVB'ye özel arayüz üzerinden takip edilebilir. Atölye sistemi; kontrollerin, planlı bakımların ve onarımların yapılmasını sağlar. Bu işlemlerin maliyetleri araç değeri ve yaşı gibi etkenlere bağlıdır. RVB'nin amacı, araç kullanımını yalnızca işi bitirmekten ibaret olmaktan çıkarmaktır: makine durumunu takip etmek, doğru bakımı yapmak ve beklenmedik arızalarla ilgilenmek de oyunun bir parçası hâline gelir."/>
+
+        <e k="rvbHelp_general_features_title" v="Temel Özellikler"/>
+        <e k="rvbHelp_general_features_text" v="Real Vehicle Breakdowns, araçların kullanımını, durumunu ve güvenilirliğini etkileyen çeşitli sistemleri yönetir."/>
+        <e k="rvbHelp_general_features_maintenance_title" v="Bakım ve Bileşen Ömrü"/>
+        <e k="rvbHelp_general_features_maintenance_text" v="Araç bileşenlerinin belirli bir kullanım ömrü vardır. Çalışma saati, kullanım yoğunluğu ve bakım; bileşenlerin durumunu etkiler. Sistem, düzenli bakım, kontroller ve gerekli onarımların yapılmasını sağlar."/>
+        <e k="rvbHelp_general_features_failures_title" v="Arızalar"/>
+        <e k="rvbHelp_general_features_failures_text" v="Araçlarda çeşitli mekanik ve elektrik arızaları meydana gelebilir. Arızalar motor performansını, çalıştırmayı, soğutmayı, aydınlatmayı ve elektrik sistemlerinin işleyişini etkileyebilir."/>
+        <e k="rvbHelp_general_features_battery_title" v="Akü ve Elektrik Sistemi"/>
+        <e k="rvbHelp_general_features_battery_text" v="Akünün şarj seviyesi, durumu ve sıcaklığı motorun çalıştırılmasını etkiler. Aydınlatma ve diğer elektrikli donanımlar güç tüketirken çalışan alternatör aküyü şarj eder."/>
+        <e k="rvbHelp_general_features_workshop_title" v="Atölye ve Onarımlar"/>
+        <e k="rvbHelp_general_features_workshop_text" v="Araçların durumu atölyede kontrol edilebilir, bakımları yapılabilir ve onarımları gerçekleştirilebilir. Her işlemin kendine özgü süresi ve maliyeti vardır."/>
+        <e k="rvbHelp_general_features_gameplay_title" v="Özelleştirilebilir Oynanış"/>
+        <e k="rvbHelp_general_features_gameplay_text" v="Mod ayarları; arıza zorluğunu, bakım aralıklarını ve diğer çalışma parametrelerini özelleştirmenizi sağlar."/>
+
+        <e k="rvbHelp_battery" v="Akü Sistemi"/>
+        <e k="rvbHelp_battery_overview" v="Aküye Genel Bakış"/>
+        <e k="rvbHelp_battery_capacity_title" v="Akü Kapasitesi"/>
+        <e k="rvbHelp_battery_capacity_text" v="Akü kapasitesi amper-saat (Ah) cinsinden ölçülür."/>
+        <e k="rvbHelp_battery_connection_title" v="Akü Bağlantıları"/>
+        <e k="rvbHelp_battery_connection_text" v="Araçlarda paralel veya seri akü bağlantıları kullanılabilir."/>
+
+        <e k="rvbHelp_engine" v="Motor"/>
+        <e k="rvbHelp_engine_starting" v="Motoru Çalıştırma"/>
+        <e k="rvbHelp_engine_starting_title" v="Çalıştırma Gereksinimleri"/>
+        <e k="rvbHelp_engine_starting_text" v="Akü, motoru çalıştırmak için yeterli marş akımını sağlamalıdır."/>
 
     </elements>
 </l10n>

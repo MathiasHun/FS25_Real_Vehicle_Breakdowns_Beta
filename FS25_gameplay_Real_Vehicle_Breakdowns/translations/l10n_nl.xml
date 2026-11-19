@@ -41,10 +41,10 @@
         <e k="RVB_toolTip_workshopOpen" v="De tijd waarop de voertuigwerkplaats opent."/>
         <e k="RVB_setting_workshopClose" v="Sluitingstijd"/>
         <e k="RVB_toolTip_workshopClose" v="De tijd waarop de voertuigwerkplaats sluit."/>
-        <e k="RVB_setting_workshopCountMax" v="Maximaal aantal voertuigen in de werkplaats"/>
+        <e k="RVB_setting_workshopCountMax" v="Maximumaantal voertuigen in de werkplaats"/>
         <e k="RVB_toolTip_workshopCountMax" v="Hier kunt u instellen hoeveel voertuigen tegelijk in de werkplaats kunnen staan."/>
         <e k="RVB_settingSectionHeader_LifetimeofParts" v="Levensduur van onderdelen"/>
-        <e k="RVB_toolTip_lifetimeParts" v="Hoe kleiner dit getal, hoe sneller het defect raakt."/>
+        <e k="RVB_toolTip_lifetimeParts" v="Hoe lager deze waarde, hoe eerder er een defect optreedt."/>
         <e k="RVB_setting_thermostatLifetime" v="Thermostaat"/>
         <e k="RVB_setting_lightingsLifetime" v="Verlichting"/>
         <e k="RVB_setting_glowplugLifetime" v="Gloeispiraal"/>
@@ -120,14 +120,14 @@
         <e k="RVB_faultText_SELFSTARTER" v="Zelfstarter"/> 
         <e k="RVB_faultText_BATTERY" v="Batterij"/>
         <e k="RVB_faultText_TIRE" v="Band"/>
-        <e k="RVB_faultText_TIREFL" v="Linker voorband"/>
-        <e k="RVB_faultText_TIREFR" v="Rechter voorband"/>
-        <e k="RVB_faultText_TIRERL" v="Linker achterband"/>
-        <e k="RVB_faultText_TIRERR" v="Rechter achterband"/>
-        <e k="RVB_faultText_TIRERL2" v="Linker achterband 2"/>
-        <e k="RVB_faultText_TIRERR2" v="Rechter achterband 2"/>
-        <e k="RVB_faultText_TIRERL3" v="Linker achterband 3"/>
-        <e k="RVB_faultText_TIRERR3" v="Rechter achterband 3"/>
+        <e k="RVB_faultText_TIREFL" v="Linkervoorband"/>
+        <e k="RVB_faultText_TIREFR" v="Rechtervoorband"/>
+        <e k="RVB_faultText_TIRERL" v="Linkerachterband"/>
+        <e k="RVB_faultText_TIRERR" v="Rechterachterband"/>
+        <e k="RVB_faultText_TIRERL2" v="Tweede linkerachterband"/>
+        <e k="RVB_faultText_TIRERR2" v="Tweede rechterachterband"/>
+        <e k="RVB_faultText_TIRERL3" v="Derde linkerachterband"/>
+        <e k="RVB_faultText_TIRERR3" v="Derde rechterachterband"/>
 
         <e k="RVB_faultType_engine" v="Motor"/>
         <e k="RVB_faultType_electrical" v="Elektrisch systeem"/>
@@ -156,9 +156,6 @@
         <e k="RVB_repairDayDialog" v="De reparatie van het voertuig wordt morgen om %s uur voltooid." tag="format"/>
         <e k="RVB_repairDaysDialog" v="De reparatie van het voertuig is over %d dagen voltooid bij %s." tag="format"/>
 
-
-
-
         <e k="RVB_ErrorList" v="Foutenlijst:"/>
         <e k="RVB_periodicserviceDialog" v="Weet u zeker dat u het voertuig wilt laten onderhouden voor %s kosten?" tag="format"/>
         <e k="RVB_periodicserviceDayDialog" v="Het onderhoud van het voertuig is morgen om %s voltooid." tag="format"/>
@@ -180,8 +177,11 @@
         <e k="RVB_Workshop_serviceManual" v="Serviceverslag"/>
         <e k="RVB_Workshop_noinspection" v="Voertuig is nog niet geïnspecteerd!"/>
         <e k="RVB_Workshop_noserviceManualEntry" v="Geen vermeldingen in het serviceverslag!"/>
-        <e k="RVB_Workshop_status" v="Status:"/>
-        <e k="RVB_Workshop_repair" v="Repareren?"/>
+        <e k="RVB_workshop" v="RVB-werkplaats"/>
+        <e k="RVB_workshop_part" v="Onderdeel"/>
+        <e k="RVB_workshop_condition" v="Staat"/>
+        <e k="RVB_workshop_value" v="Waarde"/>
+        <e k="RVB_workshop_repair" v="Repareren?"/>
         <e k="RVB_Workshop_work" v="Werk"/>
         <e k="RVB_Workshop_date" v="Datum"/>
         <e k="RVB_Workshop_lifetime" v="Bedrijfsuren"/>
@@ -198,6 +198,98 @@
         <e k="RVB_WorkshopS_repNoNeed" v="Geen reparatie nodig."/>
         <e k="RVB_WorkshopS_month" v=" maand"/>
 
+        <e k="RVB_faultDetail_ENGINE_misfire" v="Motor: ontstekingsproblemen. Symptomen: onregelmatige motorloop, minder vermogen en hoger brandstofverbruik."/>
+        <e k="RVB_faultDetail_ENGINE_lowOilPressure" v="Motor: lage oliedruk. Symptomen: minder vermogen en verhoogde motorslijtage."/>
+        <e k="RVB_faultDetail_ENGINE_headGasketFailure" v="Motor: defecte koppakking. Symptomen: oververhitting en verhoogde slijtage van onderdelen."/>
+        <e k="RVB_faultDetail_ENGINE_overheating" v="Motor: oververhitting. Symptomen: hoge motortemperatuur en minder vermogen."/>
+        <e k="RVB_faultDetail_ENGINE_compressionLoss" v="Motor: compressieverlies. Symptoom: minder motorvermogen."/>
+        <e k="RVB_faultDetail_ENGINE_sensorFault" v="Motor: sensorstoring. Symptoom: onjuiste motorregeling."/>
+        <e k="RVB_faultDetail_THERMOSTAT_stuckClosed" v="Thermostaat: blijft gesloten. Symptoom: de motor kan oververhit raken."/>
+        <e k="RVB_faultDetail_THERMOSTAT_stuckOpen" v="Thermostaat: blijft open. Symptoom: de motor warmt langzaam op of draait te koud."/>
+        <e k="RVB_faultDetail_THERMOSTAT_restrictedFlow" v="Thermostaat: beperkte koelvloeistofstroom. Symptoom: de motor kan oververhit raken."/>
+        <e k="RVB_faultDetail_GLOWPLUG_burntGlowPlug" v="Gloeibougie: doorgebrand. Symptoom: de motor start moeilijker."/>
+        <e k="RVB_faultDetail_GLOWPLUG_shortCircuit" v="Gloeibougie: kortsluiting. Symptoom: de motor start moeilijker."/>
+
+        <e k="RVB_faultDetail_BATTERY_discharged" v="Accu: ontladen. Symptoom: de motor start moeilijk of helemaal niet."/>
+        <e k="RVB_faultDetail_BATTERY_connectorIssue" v="Accu: losse of gecorrodeerde aansluiting. Symptoom: moeilijk starten en onbetrouwbare werking van de elektrische systemen."/>
+        <e k="RVB_faultDetail_BATTERY_sulfated" v="Accu: capaciteitsverlies door sulfatering. Symptoom: zwakke startprestaties en snelle ontlading."/>
+        <e k="RVB_faultDetail_BATTERY_internalShort" v="Accu: interne kortsluiting. Symptoom: de accu houdt geen lading vast en de motor start moeilijk of helemaal niet."/>
+
+        <e k="RVB_faultDetail_GENERATOR_undercharging" v="Dynamo: onvoldoende laadvermogen. Symptoom: de acculading kan tijdens het rijden afnemen."/>
+        <e k="RVB_faultDetail_GENERATOR_wiringIssue" v="Dynamo: storing in de bedrading of aansluiting. Symptoom: het laden kan worden onderbroken of schommelen."/>
+        <e k="RVB_faultDetail_GENERATOR_bearingWear" v="Dynamo: lagerslijtage. Symptoom: ongebruikelijke geluiden en verminderd laadvermogen."/>
+        <e k="RVB_faultDetail_GENERATOR_statorShort" v="Dynamo: kortsluiting in de statorwikkeling. Symptoom: de dynamo kan de accu niet goed opladen."/>
+        <e k="RVB_faultDetail_GENERATOR_voltageIrregularity" v="Dynamo: storing in de spanningsregelaar. Symptoom: schommelende laadspanning, die de accu kan beschadigen."/>
+
+        <e k="RVB_faultDetail_SELFSTARTER_solenoidFailure" v="Startmotor: defecte solenoïde. Symptoom: klikken of niet kunnen starten."/>
+        <e k="RVB_faultDetail_SELFSTARTER_brushWear" v="Startmotor: versleten koolborstels. Symptoom: de motor start langzaam of met tussenpozen."/>
+        <e k="RVB_faultDetail_SELFSTARTER_starterMotorWear" v="Startmotor: slijtage aan de startmotor. Symptoom: de motor start langzaam of met moeite."/>
+        <e k="RVB_faultDetail_SELFSTARTER_gearWear" v="Startmotor: slijtage aan het aandrijftandwiel. Symptoom: de startmotor grijpt moeilijk aan op de motor en kan ongebruikelijke geluiden maken."/>
+        <e k="RVB_faultDetail_SELFSTARTER_shortCircuit" v="Startmotor: kortsluiting. Symptoom: starten kan mislukken en ook het elektrische systeem kan beschadigd raken."/>
+
+        <e k="RVB_faultDetail_WIPERS_motorWear" v="Ruitenwissers: versleten of defecte motor. Symptoom: de ruitenwissers bewegen langzaam of werken niet meer."/>
+
+        <e k="RVB_faultDetail_LOWBEAM_burntBulb" v="Verlichting: doorgebrande lamp. Symptoom: de betreffende lamp brandt niet."/>
+        <e k="RVB_faultDetail_HIGHBEAM_burntBulb" v="Verlichting: doorgebrande lamp. Symptoom: de betreffende lamp brandt niet."/>
+        <e k="RVB_faultDetail_WORKFRONT_burntBulb" v="Verlichting: doorgebrande lamp. Symptoom: de betreffende lamp brandt niet."/>
+        <e k="RVB_faultDetail_WORKBACK_burntBulb" v="Verlichting: doorgebrande lamp. Symptoom: de betreffende lamp brandt niet."/>
+        <e k="RVB_faultDetail_TURNLEFT_burntBulb" v="Verlichting: lampje doorgebrand. Symptoom: de betreffende richtingaanwijzer werkt niet."/>
+        <e k="RVB_faultDetail_TURNRIGHT_burntBulb" v="Verlichting: lampje doorgebrand. Symptoom: de betreffende richtingaanwijzer werkt niet."/>
+        <e k="RVB_faultDetail_TURNHAZARD_burntBulb" v="Verlichting: lampje doorgebrand. Symptoom: de betreffende alarmlichten werken niet."/>
+        <e k="RVB_faultDetail_BRAKE_burntBulb" v="Verlichting: lampje doorgebrand. Symptoom: het betreffende remlicht brandt niet."/>
+        <e k="RVB_faultDetail_REVERSEL_burntBulb" v="Verlichting: lampje doorgebrand. Symptoom: het betreffende achteruitrijlicht brandt niet."/>
+        <e k="RVB_faultDetail_BEACON_burntBulb" v="Verlichting: lampje doorgebrand. Symptoom: het zwaailicht werkt niet."/>
+        <e k="RVB_faultDetail_PIPE_burntBulb" v="Verlichting: lampje doorgebrand. Symptoom: de werklamp van de losvijzel brandt niet."/>
+
+        <e k="RVB_faultDetail_LOWBEAM_wiringShort" v="Verlichting: bedradingsstoring of kortsluiting. Symptoom: de lamp kan flikkeren of uitvallen."/>
+        <e k="RVB_faultDetail_HIGHBEAM_wiringShort" v="Verlichting: bedradingsstoring of kortsluiting. Symptoom: de lamp kan flikkeren of uitvallen."/>
+        <e k="RVB_faultDetail_WORKFRONT_wiringShort" v="Verlichting: bedradingsstoring of kortsluiting. Symptoom: de lamp kan flikkeren of uitvallen."/>
+        <e k="RVB_faultDetail_WORKBACK_wiringShort" v="Verlichting: bedradingsstoring of kortsluiting. Symptoom: de lamp kan flikkeren of uitvallen."/>
+        <e k="RVB_faultDetail_TURNLEFT_wiringShort" v="Verlichting: bedradingsstoring of kortsluiting. Symptoom: de richtingaanwijzer kan stoppen met knipperen of onregelmatig knipperen."/>
+        <e k="RVB_faultDetail_TURNRIGHT_wiringShort" v="Verlichting: bedradingsstoring of kortsluiting. Symptoom: de richtingaanwijzer kan stoppen met knipperen of onregelmatig knipperen."/>
+        <e k="RVB_faultDetail_TURNHAZARD_wiringShort" v="Verlichting: bedradingsstoring of kortsluiting. Symptoom: de alarmlichten kunnen stoppen met knipperen of onregelmatig knipperen."/>
+        <e k="RVB_faultDetail_BRAKE_wiringShort" v="Verlichting: bedradingsstoring of kortsluiting. Symptoom: het remlicht kan soms werken en soms uitvallen."/>
+        <e k="RVB_faultDetail_REVERSEL_wiringShort" v="Verlichting: bedradingsstoring of kortsluiting. Symptoom: het achteruitrijlicht kan soms werken en soms uitvallen."/>
+        <e k="RVB_faultDetail_BEACON_wiringShort" v="Verlichting: bedradingsstoring of kortsluiting. Symptoom: het zwaailicht kan flikkeren of uitvallen."/>
+        <e k="RVB_faultDetail_PIPE_wiringShort" v="Verlichting: bedradingsstoring of kortsluiting. Symptoom: de werklamp van de losvijzel kan flikkeren of uitvallen."/>
+
+        <e k="RVB_faultDetail_LOWBEAM_ledFailure" v="Verlichting: LED-module defect. Symptoom: de lichtopbrengst kan afnemen of de lamp kan uitvallen."/>
+        <e k="RVB_faultDetail_HIGHBEAM_ledFailure" v="Verlichting: LED-module defect. Symptoom: de lichtopbrengst kan afnemen of de lamp kan uitvallen."/>
+        <e k="RVB_faultDetail_WORKFRONT_ledFailure" v="Verlichting: LED-module defect. Symptoom: de lichtopbrengst kan afnemen of de werklamp kan uitvallen."/>
+
+        <e k="RVB_faultDetail_LOWBEAM_controlModuleFailure" v="Verlichting: regelmodule defect. Symptoom: de lamp kan flikkeren, zwakker gaan branden of niet inschakelen."/>
+        <e k="RVB_faultDetail_HIGHBEAM_controlModuleFailure" v="Verlichting: regelmodule defect. Symptoom: de lamp kan flikkeren, zwakker gaan branden of niet inschakelen."/>
+
+        <e k="RVB_faultDetail_LOWBEAM_corrodedConnector" v="Verlichting: stekker gecorrodeerd. Symptoom: de lamp kan flikkeren of af en toe uitvallen."/>
+        <e k="RVB_faultDetail_HIGHBEAM_corrodedConnector" v="Verlichting: stekker gecorrodeerd. Symptoom: de lamp kan flikkeren of af en toe uitvallen."/>
+        <e k="RVB_faultDetail_WORKFRONT_corrodedConnector" v="Verlichting: gecorrodeerde aansluiting. Symptoom: het werklampje kan flikkeren of af en toe uitvallen."/>
+        <e k="RVB_faultDetail_WORKBACK_corrodedConnector" v="Verlichting: gecorrodeerde aansluiting. Symptoom: het werklampje kan flikkeren of af en toe uitvallen."/>
+        <e k="RVB_faultDetail_TURNLEFT_corrodedConnector" v="Verlichting: gecorrodeerde aansluiting. Symptoom: de richtingaanwijzer kan af en toe uitvallen."/>
+        <e k="RVB_faultDetail_TURNRIGHT_corrodedConnector" v="Verlichting: gecorrodeerde aansluiting. Symptoom: de richtingaanwijzer kan af en toe uitvallen."/>
+        <e k="RVB_faultDetail_TURNHAZARD_corrodedConnector" v="Verlichting: gecorrodeerde aansluiting. Symptoom: de waarschuwingslichten kunnen af en toe uitvallen."/>
+        <e k="RVB_faultDetail_BRAKE_corrodedConnector" v="Verlichting: gecorrodeerde aansluiting. Symptoom: het remlicht kan af en toe uitvallen."/>
+        <e k="RVB_faultDetail_REVERSEL_corrodedConnector" v="Verlichting: gecorrodeerde aansluiting. Symptoom: het achteruitrijlicht kan af en toe uitvallen."/>
+        <e k="RVB_faultDetail_BEACON_corrodedConnector" v="Verlichting: gecorrodeerde aansluiting. Symptoom: het zwaailicht kan flikkeren of af en toe uitvallen."/>
+        <e k="RVB_faultDetail_PIPE_corrodedConnector" v="Verlichting: gecorrodeerde aansluiting. Symptoom: de werklamp van de losvijzel kan flikkeren of af en toe uitvallen."/>
+
+        <e k="RVB_faultDetail_TIREFL_treadWorn" v="Linkervoorband: versleten profiel. Symptoom: minder grip."/>
+        <e k="RVB_faultDetail_TIREFR_treadWorn" v="Rechtervoorband: versleten profiel. Symptoom: minder grip."/>
+        <e k="RVB_faultDetail_TIRERL_treadWorn" v="Linkerachterband: versleten profiel. Symptoom: minder grip."/>
+        <e k="RVB_faultDetail_TIRERR_treadWorn" v="Rechterachterband: versleten profiel. Symptoom: minder grip."/>
+        <e k="RVB_faultDetail_TIRERL2_treadWorn" v="Tweede linkerachterband: versleten profiel. Symptoom: minder grip."/>
+        <e k="RVB_faultDetail_TIRERR2_treadWorn" v="Tweede rechterachterband: versleten profiel. Symptoom: minder grip."/>
+        <e k="RVB_faultDetail_TIRERL3_treadWorn" v="Derde linkerachterband: versleten profiel. Symptoom: minder grip."/>
+        <e k="RVB_faultDetail_TIRERR3_treadWorn" v="Derde rechterachterband: versleten profiel. Symptoom: minder grip."/>
+
+        <e k="RVB_faultDetail_TIREFL_puncture" v="Linkervoorband: lek. Symptomen: minder grip en slechtere bestuurbaarheid."/>
+        <e k="RVB_faultDetail_TIREFR_puncture" v="Rechtervoorband: lek. Symptomen: minder grip en slechtere bestuurbaarheid."/>
+        <e k="RVB_faultDetail_TIRERL_puncture" v="Linkerachterband: lek. Symptomen: minder grip en slechtere bestuurbaarheid."/>
+        <e k="RVB_faultDetail_TIRERR_puncture" v="Rechterachterband: lek. Symptomen: minder grip en slechtere bestuurbaarheid."/>
+        <e k="RVB_faultDetail_TIRERL2_puncture" v="Tweede linkerachterband: lek. Symptomen: minder grip en slechtere bestuurbaarheid."/>
+        <e k="RVB_faultDetail_TIRERR2_puncture" v="Tweede rechterachterband: lek. Symptomen: minder grip en slechtere bestuurbaarheid."/>
+        <e k="RVB_faultDetail_TIRERL3_puncture" v="Derde linkerachterband: lek. Symptomen: minder grip en slechtere bestuurbaarheid."/>
+        <e k="RVB_faultDetail_TIRERR3_puncture" v="Derde rechterachterband: lek. Symptomen: minder grip en slechtere bestuurbaarheid."/>
+
         <e k="RVB_WorkshopMessage_service" v="U heeft het opgegeven service-interval met %s uur overschreden, daarom duurde de reparatie langer en kostte het meer." tag="format"/>
         <e k="RVB_WorkshopMessage_serviceDone" v="Onderhoud voltooid."/>
         <e k="RVB_WorkshopMessage_repairDone" v="Reparatie voltooid. Vervangen/gerepareerde onderdeel(en): %s" tag="format"/>
@@ -206,7 +298,7 @@
 
         <e k="RVB_inspectionDialogFault" v="%s voertuig geïnspecteerd, reparatie vereist. %s"/>
         <e k="RVB_inspectionDialogEnd" v="%s voertuig geïnspecteerd, geen reparaties vereist."/>
-        <e k="RVB_inspectionDialogEnd_other" v="%s voertuig is geïnspecteerd en gerepareerd. Uw monteur had veel werk, dus een beginnende monteur heeft uw voertuig gerepareerd. Deze beginnende monteur kan echter niet opsommen wat hij aan uw voertuig heeft gerepareerd."/>
+        <e k="RVB_inspectionDialogEnd_other" v="Het voertuig %s is geïnspecteerd en gerepareerd. De monteur had veel werk, dus een leerling-monteur heeft de reparatie uitgevoerd. Deze leerling-monteur kan echter niet aangeven wat er aan het voertuig is gerepareerd."/>
 
         <e k="RVB_serviceDialogEnd" v="Service voor voertuig %s voltooid."/>
         <e k="RVB_repairDialogEnd" v="Reparatie van voertuig %s voltooid."/>
@@ -224,6 +316,7 @@
         <e k="RVB_DEAD_ENGINE_BATTERY" v="Motor start niet, accu is leeg."/>
         <e k="RVB_DEAD_ENGINE_BATTERY_CHARGING" v="Voertuig kan niet worden gestart, de batterij wordt opgeladen."/>
         <e k="RVB_DEAD_ENGINE" v="De motor start niet."/>
+        <e k="RVB_WARNING_lowCrankingVoltage" v="Lage startspanning: %.2f V! Motor starten uitgeschakeld (minimum: %.2f V)!" tag="format"/>
 
         <e k="RVB_fault_lights_INSPECTION" v="De verlichting kan niet worden ingeschakeld zolang de inspectie van het voertuig bezig is."/>
         <e k="RVB_fault_lights_REPAIR" v="De verlichting kan niet worden ingeschakeld zolang de reparatie van het voertuig bezig is."/>
@@ -243,17 +336,7 @@
         <e k="electricChargeTurbine" v="Elektrische windturbinelader"/>
         <e k="function_powerpack" v="Gebruik dit om uw elektrische voertuigen op te laden en elektrische energie naar afgelegen locaties te transporteren."/>
 
-        <e k="Automatic_Repair_conflict_notice" v="Er zijn modificaties die het voertuig automatisch repareren, wat kan conflicteren met de modus &quot;Echte voertuig pech(RVB)&quot;.
-
-Bij de onderstaande wijziging(en) is de automatische reparatie overschreven door de RVB-mod.
-
-Overschreven wijziging(en): %s
-
-Bedankt voor uw begrip.
-
-Al het beste,
-
-MathiasHun" tag="format"/>
+        <e k="Automatic_Repair_conflict_notice" v="Sommige aanpassingen repareren het voertuig automatisch. Dit kan conflicteren met de modus &quot;Real Vehicle Breakdowns(RVB)&quot;.&#xD;&#xA;&#xD;&#xA;Voor de volgende aanpassing(en) is de automatische reparatie overschreven door de RVB-mod.&#xD;&#xA;&#xD;&#xA;Overschreven aanpassing(en): %s&#xD;&#xA;&#xD;&#xA;Bedankt voor uw begrip.&#xD;&#xA;&#xD;&#xA;Met vriendelijke groet,&#xD;&#xA;&#xD;&#xA;MathiasHun" tag="format"/>
 
         <e k="RVB_aimessage_batterydischarged" v="%s AI-arbeider is onverwacht gestopt met werken, de accu van het voertuig is leeg!" tag="format"/>
 
@@ -265,35 +348,59 @@ MathiasHun" tag="format"/>
         <e k="infohud_uytBatteryChargeTime" v="Resterende laadtijd"/>
 
         <e k="typeDesc_battery" v="Accu"/>
+        <e k="batteryCapacity" v="Batterijcapaciteit (Ah)"/>
 
         <e k="name_batterySmall" v="Kleine accu"/>
         <e k="name_batteryMedium" v="Gemiddelde accu"/>
         <e k="name_batteryBig" v="Grote accu"/>
 
-        <e k="function_batteryBig75" v="Accu met kleine capaciteit, 75 Ah"/>
-        <e k="function_batteryBig80" v="Accu met kleine capaciteit, 80 Ah"/>
-        <e k="function_batteryBig90" v="Accu met kleine capaciteit, 90 Ah"/>
-        <e k="function_batteryBig100" v="Accu met gemiddelde capaciteit, 100 Ah"/>
-        <e k="function_batteryBig120" v="Accu met gemiddelde capaciteit, 120 Ah"/>
-        <e k="function_batteryBig140" v="Accu met grote capaciteit, 140 Ah"/>
-        <e k="function_batteryBig150" v="Accu met grote capaciteit, 150 Ah"/>
-        <e k="function_batteryBig180" v="Accu met grote capaciteit, 180 Ah"/>
-        <e k="function_batteryBig200" v="Accu met grote capaciteit, 200 Ah"/>
+        <e k="function_battery" v="Accu met selecteerbare capaciteit van 75 tot 200 Ah."/>
 
         <e k="unit_ampereHourShort" v="Ah"/>
+
+        <e k="RVB_batteryConnection_series" v="serieschakeling"/>
+        <e k="RVB_batteryConnection_parallel" v="parallelschakeling"/>
+        <e k="RVB_batteryConnection_mixed" v="serie-parallelschakeling"/>
+
         <e k="RVB_action_batteryWorkshop" v="Accu plaatsen"/>
 
         <e k="RVB_allBatteriesInstalled" v="Alle accu's zijn al in het voertuig geplaatst."/>
-        <e k="RVB_wrongBattery" v="Onjuiste accu.
-
-Accu in het voertuig: %.0f Ah
-Geselecteerde accu: %.0f Ah" tag="format"/>
+        <e k="RVB_wrongBattery" v="Verkeerde accu.&#xD;&#xA;&#xD;&#xA;Accu gemonteerd in het voertuig: %.0f Ah&#xD;&#xA;&#xD;&#xA;Geselecteerde accu: %.0f Ah" tag="format"/>
         <e k="RVB_tooManyVehicles" v="Verplaats de andere voertuigen! Er staan momenteel %d voertuigen in het triggergebied, maar er mag slechts één voertuig tegelijk bij de accu staan." tag="format"/>
         <e k="RVB_tooManyVehicles_hud" v="Te veel voertuigen in het triggergebied!"/>
         <e k="RVB_batteryInstallation" v="Accu plaatsen: %d%%" tag="format"/>
         <e k="RVB_batteryRemoval" v="Accu verwijderen: %d%%" tag="format"/>
         <e k="RVB_vehicleEnteredTrigger" v="%s staat bij de accu." tag="format"/>
         <e k="RVB_vehicleLeftTrigger" v="%s staat niet meer bij de accu." tag="format"/>
+        <e k="rvbHelp_general" v="Real Vehicle Breakdowns"/>
+        <e k="rvbHelp_general_overview" v="Algemeen overzicht"/>
+        <e k="rvbHelp_general_overview_title" v="Mod-overzicht"/>
+        <e k="rvbHelp_general_overview_text" v="De mod Real Vehicle Breakdowns (RVB) maakt het gebruik van voertuigen in Farming Simulator 25 realistischer en onvoorspelbaarder. De mod introduceert een uitgebreid storings- en onderhoudssysteem waarin voertuigonderdelen een eigen levensduur hebben. Gebruik, bedrijfsuren, motorbelasting, bedrijfstemperatuur en onderhoud kunnen allemaal invloed hebben op de staat van voertuigen. Onjuist gebruik en achterstallig onderhoud kunnen leiden tot vroegtijdige slijtage, storingen en in extreme gevallen tot volledige uitval van het voertuig. Storingen kunnen verschillende systemen treffen, waaronder de motor, het koelsysteem, de elektrische installatie, het startsysteem en de verlichting. Ook de staat en het laadniveau van de accu en de omgevingstemperatuur kunnen van invloed zijn op het starten van de motor. De staat van voertuigen kan worden gecontroleerd via de speciale interface van RVB. In de werkplaats kun je inspecties, gepland onderhoud en reparaties uitvoeren. De bijbehorende kosten zijn onder meer afhankelijk van de waarde en leeftijd van het voertuig. RVB maakt voertuiggebruik meer dan alleen het werk uitvoeren: ook de staat van machines controleren, ze goed onderhouden en onverwachte storingen verhelpen worden onderdeel van de gameplay."/>
+
+        <e k="rvbHelp_general_features_title" v="Belangrijkste functies"/>
+        <e k="rvbHelp_general_features_text" v="Real Vehicle Breakdowns beheert verschillende systemen die van invloed zijn op de werking, staat en betrouwbaarheid van voertuigen."/>
+        <e k="rvbHelp_general_features_maintenance_title" v="Onderhoud en levensduur van onderdelen"/>
+        <e k="rvbHelp_general_features_maintenance_text" v="Voertuigonderdelen hebben een vastgestelde levensduur. Bedrijfsuren, gebruiksintensiteit en onderhoud beïnvloeden allemaal hun staat. Met het systeem kun je periodiek onderhoud en inspecties uitvoeren en noodzakelijke reparaties laten doen."/>
+        <e k="rvbHelp_general_features_failures_title" v="Storingen"/>
+        <e k="rvbHelp_general_features_failures_text" v="Voertuigen kunnen verschillende mechanische en elektrische storingen krijgen. Storingen kunnen invloed hebben op de motorprestaties, het starten, de koeling, de verlichting en de werking van elektrische systemen."/>
+        <e k="rvbHelp_general_features_battery_title" v="Accu en elektrisch systeem"/>
+        <e k="rvbHelp_general_features_battery_text" v="Het laadniveau, de staat en de temperatuur van de accu beïnvloeden het starten van de motor. Verlichting en andere elektrische verbruikers gebruiken stroom, terwijl de draaiende dynamo de accu oplaadt."/>
+        <e k="rvbHelp_general_features_workshop_title" v="Werkplaats en reparaties"/>
+        <e k="rvbHelp_general_features_workshop_text" v="In de werkplaats kun je de staat van voertuigen controleren, onderhoud uitvoeren en reparaties laten doen. Elke handeling heeft een eigen duur en kostprijs."/>
+        <e k="rvbHelp_general_features_gameplay_title" v="Aanpasbare gameplay"/>
+        <e k="rvbHelp_general_features_gameplay_text" v="Met de modinstellingen kun je de moeilijkheidsgraad van defecten, onderhoudsintervallen en andere bedrijfsparameters aanpassen."/>
+
+        <e k="rvbHelp_battery" v="Accusysteem"/>
+        <e k="rvbHelp_battery_overview" v="Accuoverzicht"/>
+        <e k="rvbHelp_battery_capacity_title" v="Accucapaciteit"/>
+        <e k="rvbHelp_battery_capacity_text" v="De accucapaciteit wordt gemeten in ampère-uur (Ah)."/>
+        <e k="rvbHelp_battery_connection_title" v="Accuaansluitingen"/>
+        <e k="rvbHelp_battery_connection_text" v="Voertuigen kunnen accu's parallel of in serie schakelen."/>
+
+        <e k="rvbHelp_engine" v="Motor"/>
+        <e k="rvbHelp_engine_starting" v="Motor starten"/>
+        <e k="rvbHelp_engine_starting_title" v="Startvereisten"/>
+        <e k="rvbHelp_engine_starting_text" v="De accu moet voldoende startstroom leveren om de motor te starten."/>
 
     </elements>
 </l10n>
